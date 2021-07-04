@@ -1,4 +1,4 @@
-# Table of contents
+# Study Notes Index
 <hr>
 
 ======= UNDER CONSTRUCTION =======
@@ -89,3 +89,5 @@
 ### 4.6 Web Development
 
 ### 4.7 D3
+
+<br>
