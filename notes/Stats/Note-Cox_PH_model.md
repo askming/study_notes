@@ -4,6 +4,8 @@ tags: survival analysis
 
 # ​Cox PH model
 
+<hr>
+
 ##  Assumptions
 
 Though the Cox model is non-parametric to the extent that no assumptions are made about form of the baseline hazard, there are still a number of important issues which need be assessed before the model results can be safely applied.

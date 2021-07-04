@@ -4,6 +4,8 @@ tags: survival analysis
 
 # Competing risk models
 
+<hr>
+
 ## Why doing competing risk model
 
 - In competing risk analysis, individuals experiencing the competing risk event have zero probability of experiencing the event of interest. 
