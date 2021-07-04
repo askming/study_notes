@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[book] Causal inference in statistics a primer &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="[book] Analysis of Observational Health Care Data Using SAS" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" />
+    <link rel="prev" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study notes index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Book-Causal inference in statistics a primer.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Causal inference in statistics a primer.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-1-preliminaries-statistical-and-causal-models">
+   Chapter 1 Preliminaries: Statistical and Causal Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simpson-s-paradox">
+     Simpson’s Paradox
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1">
+       Example 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2">
+       Example 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-3-segregated-data-doesn-t-give-correct-answer">
+       Example 3 (segregated data doesn’t give correct answer)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-2-graphical-models-and-their-applications">
+   Chapter 2 Graphical Models and Their Applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-3-the-effects-of-interventions">
+   Chapter 3 The Effects of Interventions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interventions">
+     3.1 Interventions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-adjustment-formula">
+     3.2 The Adjustment Formula
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-adjust-or-not-to-adjust">
+       3.2.1 To Adjust or not to Adjust
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-interventions-and-the-truncated-product-rule">
+       3.2.2 Multiple Interventions and the Truncated Product Rule
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-backdoor-criterion">
+     3.3 The Backdoor Criterion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-front-door-criterion">
+     3.4 The Front-Door Criterion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-interventions-and-covariate-specific-effects">
+     3.5 Conditional Interventions and Covariate-Specific Effects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inverse-probability-weighing">
+     3.6 Inverse Probability Weighing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mediation">
+     3.7 Mediation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causual-inference-in-linear-systems">
+     3.8 Causual Inference in Linear Systems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#structual-vesus-regression-coefficients">
+       3.8.1 Structual vesus Regression Coefficients
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-causal-interpretation-of-structural-coefficients">
+       3.8.2 The Causal Interpretation of Structural Coefficients
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#indentifying-structural-coefficients-and-causal-effect">
+       3.8.3 Indentifying Structural Coefficients and Causal Effect
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mediation-in-linear-systems">
+       3.8.4 Mediation in Linear Systems
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="book-causal-inference-in-statistics-a-primer">
+<h1>[book] Causal inference in statistics <em>a primer</em><a class="headerlink" href="#book-causal-inference-in-statistics-a-primer" title="Permalink to this headline">¶</a></h1>
+<hr>
+<p><em>a study note of <span id="id1">[<a class="reference internal" href="#id10">Pearl <em>et al.</em>, 2016</a>]</span></em></p>
+<div class="section" id="chapter-1-preliminaries-statistical-and-causal-models">
+<h2>Chapter 1 Preliminaries: Statistical and Causal Models<a class="headerlink" href="#chapter-1-preliminaries-statistical-and-causal-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="simpson-s-paradox">
+<h3>Simpson’s Paradox<a class="headerlink" href="#simpson-s-paradox" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The paradox refers to the existence of data in which a statistical association that holds for an entire popu- lation is reversed in every subpopulation.</p>
+</div></blockquote>
+<div class="section" id="example-1">
+<h4>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h4>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/3a11164d_20200421090218.png" /></p>
+<p>The first row shows the outcome for male patients; the second row shows the outcome for female patients; and the third row shows the outcome for all patients, regardless of gender. In male patients, drug takers had a better recovery rate than those who went without the drug (93% vs 87%). In female patients, again, those who took the drug had a better recovery rate than nontakers (73% vs 69%). However, in the combined population, those who did not take the drug had a better recovery rate than those who did (83% vs 78%).</p>
+<p><strong>Explaination:</strong></p>
+<blockquote>
+<div><p>As we can see from the data, women are significantly more likely to take the drug than men are (<em>i.e. there is gender imbalance in the two treatment arm</em>). So, the reason the drug appears to be harmful overall is that, if we select a drug user at random, that person is more likely to be a woman and hence less likely to recover than a random person who does not take the drug.
+Put differently, being a woman is a common cause of both drug taking and failure to recover. Therefore, to assess the effectiveness, we need to compare subjects of the same gender <em>(i.e. control for gender</em>), thereby ensuring that any difference in recovery rates between those who take the drug and those who do not is not ascribable to estrogen.</p>
+</div></blockquote>
+</div>
+<div class="section" id="example-2">
+<h4>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h4>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/af05e8f9_20200421110946.png" /></p>
+<p>We see that there is a general trend downward in each group; the more young people exercise, the lower their cholesterol is, and the same applies for middle-aged people and the elderly.
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/d7c225ea_20200421111024.png" /></p>
+<p>However, we use the same scatter plot, but we don’t segregate by gender (as in Figure 1.2), we see a general trend upward; the more a person exercises, the higher their cholesterol is.</p>
+<p><strong>Explaination:</strong></p>
+<blockquote>
+<div><p>Older people, who are more likely to exercise (Figure 1.1), are also more likely to have high cholesterol regardless of exercise, then the reversal is easily explained, and easily resolved. Age is a common cause of both treatment (exercise) and outcome (cholesterol). So we should look at the age-segregated data in order to compare same-age people and thereby eliminate the possibility that the high exercisers in each group we examine are more likely to have high cholesterol due to their age, and not due to exercising.</p>
+</div></blockquote>
+</div>
+<div class="section" id="example-3-segregated-data-doesn-t-give-correct-answer">
+<h4>Example 3 (segregated data doesn’t give correct answer)<a class="headerlink" href="#example-3-segregated-data-doesn-t-give-correct-answer" title="Permalink to this headline">¶</a></h4>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/49d255fb_20200421111052.png" /></p>
+<p>we looked at the same numbers from our first example of drug taking and recovery, instead of recording participants’ gender, patients’ blood pressure were recorded <strong>at the end of the experiment</strong>. In this case, we know that the drug affects recovery by lowering the blood pressure of those who take it—but unfortunately, it also has a toxic effect. At the end of our experiment, we receive the results shown in Table 1.2. (Table 1.2 is numerically identical to Table 1.1, with the exception of the column labels, which have been switched.)</p>
+<p><strong>Explaination:</strong></p>
+<blockquote>
+<div><p>In the general population, the drug might improve recovery rates because of its effect on blood pressure. But in the subpopulations—the group of people whose posttreatment BP is high and the group whose posttreatment BP is low—we, of course, would not see that effect; we would only see the drug’s toxic effect.
+Treatment –&gt; blood pressure –&gt; outcome, conditional on blood pressure will remove the treatment effect on the outcome</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>There is, in fact, no way to represent any causal information in contingency tables (such as Tables 1.1 and 1.2), on which statistical inference is often based. (why? is it because contingency tables can only represent association instead of causation?)</p></li>
+<li><p>In order to rigorously approach our understanding of the causal story behind data, we need four things:</p>
+<ul>
+<li><p>A working definition of “causation.” (<strong>A variable X is a cause of a variable Y if Y in any way relies on X for its value.</strong>  or <strong>X is a cause of Y if Y listens to X and decides its value in response to what it hears.</strong>)</p></li>
+<li><p>A method by which to formally articulate causal assumptions—that is, to create causal models.</p></li>
+<li><p>A method by which to link the structure of a causal model to features of data.</p></li>
+<li><p>A method by which to draw conclusions from the combination of causal assumptions embedded in a model and data.</p></li>
+</ul>
+</li>
+</ul>
+<hr>
+</div>
+</div>
+</div>
+<div class="section" id="chapter-2-graphical-models-and-their-applications">
+<h2>Chapter 2 Graphical Models and Their Applications<a class="headerlink" href="#chapter-2-graphical-models-and-their-applications" title="Permalink to this headline">¶</a></h2>
+<hr>
+</div>
+<div class="section" id="chapter-3-the-effects-of-interventions">
+<h2>Chapter 3 The Effects of Interventions<a class="headerlink" href="#chapter-3-the-effects-of-interventions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="interventions">
+<h3>3.1 Interventions<a class="headerlink" href="#interventions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When we <em>intervene</em> on a variable in a model, we fix its value. We change the system, and the values of other variables often change as a result. When we <em>condition</em> on a variable, we change nothing; we merely narrow our focus to the subset of cases in which the variable takes the value we are interested in.</p></li>
+<li><p>When we intervene to fix the value of a variable, we curtail the natural tendency of that variable to vary in response to other variables in nature. This amounts to performing a kind of surgery on the graphical model, removing all edges directed into that variable.</p></li>
+<li><p>Intervening on a variable results in a totally different pattern of dependencies than conditioning on a variable. Moreover, the latter can be obtained directly from the data set; while the former varies depending on the structure of the causal graph.</p></li>
+<li><p>In notation, we distinguish between cases where a variable <span class="math notranslate nohighlight">\(X\)</span> takes a value <span class="math notranslate nohighlight">\(x\)</span> naturally and cases where we fix <span class="math notranslate nohighlight">\(X = x\)</span> by denoting the latter <span class="math notranslate nohighlight">\(do(X = x)\)</span>. So <span class="math notranslate nohighlight">\(P(Y = y|X = x)\)</span> is the probability that <span class="math notranslate nohighlight">\(Y = y\)</span> conditional on finding <span class="math notranslate nohighlight">\(X = x\)</span>, while <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is the probability that <span class="math notranslate nohighlight">\(Y = y\)</span> when we <em>intervene</em> to make <span class="math notranslate nohighlight">\(X = x\)</span>.</p>
+<ul>
+<li><p>In the distributional terminology, <span class="math notranslate nohighlight">\(P(Y = y|X = x)\)</span> reflects the population distribution of <span class="math notranslate nohighlight">\(Y\)</span> among individuals whose <span class="math notranslate nohighlight">\(X\)</span> value is <span class="math notranslate nohighlight">\(x\)</span>. On the other hand, <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> represents the population distribution of <span class="math notranslate nohighlight">\(Y\)</span> <em>if everyone in the population</em> had their <span class="math notranslate nohighlight">\(X\)</span> value fixed at <span class="math notranslate nohighlight">\(x\)</span>. We similarly write <span class="math notranslate nohighlight">\(P(Y = y|do(X = x), Z = z)\)</span> to denote the conditional probability of <span class="math notranslate nohighlight">\(Y = y\)</span>, given <span class="math notranslate nohighlight">\(Z = z\)</span>, in the distribution created by the intervention <span class="math notranslate nohighlight">\(do(X = x)\)</span>.</p></li>
+</ul>
+</li>
+<li><p>It is worth noting here that we are making a tacit assumption here that the intervention has no “side effects,” that is, that assigning the value <span class="math notranslate nohighlight">\(x\)</span> for the valuable <span class="math notranslate nohighlight">\(X\)</span> for an individual does not alter subsequent variables in a direct way.</p></li>
+</ul>
+</div>
+<div class="section" id="the-adjustment-formula">
+<h3>3.2 The Adjustment Formula<a class="headerlink" href="#the-adjustment-formula" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Denoting the first intervention by <span class="math notranslate nohighlight">\(do(X = 1)\)</span> and the second by <span class="math notranslate nohighlight">\(do(X = 0)\)</span>, our task is to estimate the difference
+$<span class="math notranslate nohighlight">\(P(Y = 1|do(X = 1)) − P(Y = 1|do(X = 0))\)</span>$
+which is known as the “<strong>causal effect difference</strong>,” or “<strong>average causal effect</strong>” (ACE).</p></li>
+<li><p>The causal effect <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is equal to the conditional probability <span class="math notranslate nohighlight">\(P_m(Y = y|X = x)\)</span> that prevails in the manipulated model of Figure 3.4.<br />
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/9aef4d0e_20200421111120.png" /></p>
+<ul>
+<li><p>the marginal probability <span class="math notranslate nohighlight">\(P(Z = z)\)</span> is invariant under the intervention, because the process determining <span class="math notranslate nohighlight">\(Z\)</span> is not affected by removing the arrow from <span class="math notranslate nohighlight">\(Z\)</span> to <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+<li><p>the conditional probability <span class="math notranslate nohighlight">\(P(Y = y|Z = z, X = x)\)</span> is invariant, because the process by which <span class="math notranslate nohighlight">\(Y\)</span> responds to <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Z, Y = f (x, z, u_Y )\)</span>, remains the same, regardless of whether <span class="math notranslate nohighlight">\(X\)</span> changes spontaneously or by deliberate manipulation. We can therefore write two equations of invariance:
+$<span class="math notranslate nohighlight">\(P_m(Y=y|Z=z,X=x)=P(Y=y|Z=z,X=x) \text{ and } P_m(Z=z)=P(Z=z)\)</span>$</p></li>
+<li><p>using the invariance relations, we obtain a formula for the causal effect, in terms of preintervention probabilities:
+$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e07f6e15-e1ee-4619-a85d-537ccb56ee31">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e07f6e15-e1ee-4619-a85d-537ccb56ee31" title="Permalink to this equation">¶</a></span>\[\begin{align}{ll}
+        P(Y = y|do(X = x)) &amp; = P_m(Y = y|X = x)\\
+        &amp; = \sum_z P_m(Y = y|X = x,Z = z)P_m(Z = z|X = x)\\
+        &amp; = \sum_z P_m(Y = y|X = x,Z = z)P_m(Z = z)\\
+        &amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
+        \end{align}\]</div>
+<div class="math notranslate nohighlight">
+\[
+        - This is called the *adjustment formula*, it computes the association between X and $Y$ for each value $z$ of $Z$, then averages over those values. This procedure is referred to as “**adjusting for $Z$**” or “**controlling for $Z$**&quot;.
+        - No adjustment is needed in a randomized controlled experiment since, in such a setting, the data are generated by a model which already possesses the structure of Figure 3.4, hence, $P_m = P$ regardless of any factors $Z$ that affect $Y$.  
+      - In practice, investigators use adjustments in randomized experiments as well, for the purpose of *minimizing sampling variations* (Cox 1958)
+  
+    - The graph of Figure 3.5 shows no arrow entering X, since X has no parents. This means that no surgery is required; the conditions under which data were obtained were such that treatment was assigned “as if randomized.” If there was a factor that would make subjects prefer or reject treatment, such a factor should show up in the model; the absence of such a factor gives us the license to treat X as a randomized treatment.
+![输入图片描述](https://raw.githubusercontent.com/askming/picgo/master/1dbc495f_20200421111147.png)      
+      
+      - Under such conditions, the intervention graph is equal to the original graph—no arrow need be removed—and the adjustment formula reduces to
+          $$P(Y = y|do(X = x)) = P(Y = y|X = x)\]</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="to-adjust-or-not-to-adjust">
+<h4>3.2.1 To Adjust or not to Adjust<a class="headerlink" href="#to-adjust-or-not-to-adjust" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p><strong>The Causal Effect Rule</strong>: Given a graph G in which a set of variables PA are designated
+as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dd98c964-775e-4597-94d1-a3a4c118f7f7">
+<span class="eqno">(3)<a class="headerlink" href="#equation-dd98c964-775e-4597-94d1-a3a4c118f7f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  P(Y = y| do(X = x)) &amp; = \sum_z P(Y = y | X = x, PA = z) P(PA = z)\\
+  &amp; = \sum_z \frac{P(Y = y | X = x, PA = z) P(PA = z) * P(X=x|PA = z)}{P(X=x|PA = z)}\\
+  &amp; = \sum_z \frac{P(Y = y, X = x, PA = z)}{P(X=x|PA = z)}
+  \end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(z\)</span> ranges over all the combinations of values that the variables in PA can take and <span class="math notranslate nohighlight">\(P(X=x|PA = z)\)</span> is the <em>propensity score</em>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="multiple-interventions-and-the-truncated-product-rule">
+<h4>3.2.2 Multiple Interventions and the Truncated Product Rule<a class="headerlink" href="#multiple-interventions-and-the-truncated-product-rule" title="Permalink to this headline">¶</a></h4>
+<div class="amsmath math notranslate nohighlight" id="equation-2db71486-d03f-48f8-8efa-312aaf1d5840">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2db71486-d03f-48f8-8efa-312aaf1d5840" title="Permalink to this equation">¶</a></span>\[\begin{align}
+P(x, y, z) &amp; = P(z)P(x|z)P(y|x, z)\\
+P(z, y|do(x)) &amp; = P_m(z)P_m(y|x, z) = P(z)P(y|x, z)\\
+\Rightarrow
+P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
+\end{align}\]</div>
+<ul class="simple">
+<li><p>It tells us that the conditional probability <span class="math notranslate nohighlight">\(P(x|z)\)</span> is all we need to know in order to predict the effect of an intervention <span class="math notranslate nohighlight">\(do(x)\)</span> from nonexperimental data governed by the distribution <span class="math notranslate nohighlight">\(P(x, y, z)\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-backdoor-criterion">
+<h3>3.3 The Backdoor Criterion<a class="headerlink" href="#the-backdoor-criterion" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><em>Challenge</em>: variables may have unmeasured parents that, though represented in the graph, may be inaccessible for measurement. In those cases, we need to find an alternative set of variables to adjust for.</p></li>
+<li><p><em>Question</em>: Under what conditions does a causal story permit us to compute the causal effect of one variable on another, from data obtained by passive observations, with no interventions? (Under what conditions, is the structure of the causal graph sufficient for computing a causal effect from a given data set?)</p></li>
+<li><p><em>Solution</em>: one of the most important tools we use to determine whether we can compute a causal effect is a simple test called the <strong>backdoor criterion</strong>. Using it, we can determine whether, for any two variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> in a causal model represented by a DAG, which set of variables <span class="math notranslate nohighlight">\(Z\)</span> in that model should be conditioned on when searching for the causal relationship between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<ul class="simple">
+<li><p><strong>Definition (The Backdoor Criterion)</strong>: Given an ordered pair of variables <span class="math notranslate nohighlight">\((X, Y)\)</span> in a directed acyclic graph <span class="math notranslate nohighlight">\(G\)</span>, a set of variables <span class="math notranslate nohighlight">\(Z\)</span> satisfies the backdoor criterion relative to <span class="math notranslate nohighlight">\((X, Y)\)</span> if no node in <span class="math notranslate nohighlight">\(Z\)</span> is a descendant of <span class="math notranslate nohighlight">\(X\)</span>, and <span class="math notranslate nohighlight">\(Z\)</span> blocks every path between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> that contains an arrow into <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+<li><p>If a set of variables <span class="math notranslate nohighlight">\(Z\)</span> satisfies the backdoor criterion for <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, then the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is given by the formula</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  P(Y = y|do(X = x)) = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
+  \]</div>
+<ul>
+<li><p>When trying to find the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>, we want the nodes we condition on to block any “backdoor” path in which one end has an arrow into <span class="math notranslate nohighlight">\(X\)</span>, because such paths may make <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> dependent, but are obviously not transmitting causal influences from <span class="math notranslate nohighlight">\(X\)</span>, and if we do not block them, they will confound the effect that <span class="math notranslate nohighlight">\(X\)</span> has on <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
+<li><p>Consider the fact that <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is an empirical fact of nature, not a byproduct of our analysis. That means that any suitable variable or set of variables that we adjust on—whether it be <span class="math notranslate nohighlight">\(PA(X)\)</span> or any other set that conforms to the backdoor criterion—must return the same result for <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span>. In the case we looked at in Figure 3.6 (<span class="math notranslate nohighlight">\(Y \leftarrow X \leftarrow Z \rightarrow W \rightarrow Y\)</span>), this means that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1f2017db-fe40-447c-9e34-807bfc25f8da">
+<span class="eqno">(5)<a class="headerlink" href="#equation-1f2017db-fe40-447c-9e34-807bfc25f8da" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;&amp; \sum_w P(Y = y|X = x,W = w)P(W = w) \\
+    &amp;&amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
+    \end{align}\]</div>
+<ul class="simple">
+<li><p>In the cases where we have multiple observed sets of variables suitable for adjustment (e.g., in Figure 3.6, if both W and Z had been observed), it provides us with a choice of which variables to adjust for.</p></li>
+<li><p>The equality constitutes a testable constraint on the data when all the adjustment variables are observed, much like the rules of <span class="math notranslate nohighlight">\(d\)</span>-separation.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-front-door-criterion">
+<h3>3.4 The Front-Door Criterion<a class="headerlink" href="#the-front-door-criterion" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><em>Problem</em>: The backdoor criterion provides us with a simple method of identifying sets of covariates that should be adjusted for when we seek to estimate causal effects from nonexperimental data. It does not, however, exhaust all ways of estimating such effects. The <span class="math notranslate nohighlight">\(do\)</span>-operator can be applied to graphical patterns that do not satisfy the backdoor criterion to identify effects that on first sight seem to be beyond one’s reach.</p></li>
+<li><p>The <strong>front-door</strong> formula</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3b675f7c-18a2-48e9-97f2-79ebf0cd0b94">
+<span class="eqno">(6)<a class="headerlink" href="#equation-3b675f7c-18a2-48e9-97f2-79ebf0cd0b94" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  P(Y =y | do(X = x)) = \\
+  \sum_z\sum_x' P(Y = y | Z = z, X = x') P(X = x') P(Z = z|X = x) 
+  \end{align}\]</div>
+</li>
+<li><p><strong>Definition (Front-Door)</strong> A set of variables <span class="math notranslate nohighlight">\(Z\)</span> is said to satisfy the front-door criterion relative to an ordered pair of variables <span class="math notranslate nohighlight">\((X, Y)\)</span> if</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z\)</span> intercepts all directed paths from <span class="math notranslate nohighlight">\(X\)</span> to <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
+<li><p>There is no unblocked path from <span class="math notranslate nohighlight">\(X\)</span> to <span class="math notranslate nohighlight">\(Z\)</span>.</p></li>
+<li><p>All backdoor paths from <span class="math notranslate nohighlight">\(Z\)</span> to <span class="math notranslate nohighlight">\(Y\)</span> are blocked by <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Theorem (Front-Door Adjustment)</strong> If <span class="math notranslate nohighlight">\(Z\)</span> satisfies the front-door criterion relative to <span class="math notranslate nohighlight">\((X, Y)\)</span> and if <span class="math notranslate nohighlight">\(P(x, z) &gt; 0\)</span>, then the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is identifiable and is given by the formula
+$<span class="math notranslate nohighlight">\(P(y|do(x)) = \sum_z P(z|x) \sum_{x′} P(y|x′, z)P(x′)\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="conditional-interventions-and-covariate-specific-effects">
+<h3>3.5 Conditional Interventions and Covariate-Specific Effects<a class="headerlink" href="#conditional-interventions-and-covariate-specific-effects" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="inverse-probability-weighing">
+<h3>3.6 Inverse Probability Weighing<a class="headerlink" href="#inverse-probability-weighing" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="mediation">
+<h3>3.7 Mediation<a class="headerlink" href="#mediation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="causual-inference-in-linear-systems">
+<h3>3.8 Causual Inference in Linear Systems<a class="headerlink" href="#causual-inference-in-linear-systems" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="structual-vesus-regression-coefficients">
+<h4>3.8.1 Structual vesus Regression Coefficients<a class="headerlink" href="#structual-vesus-regression-coefficients" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="the-causal-interpretation-of-structural-coefficients">
+<h4>3.8.2 The Causal Interpretation of Structural Coefficients<a class="headerlink" href="#the-causal-interpretation-of-structural-coefficients" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="indentifying-structural-coefficients-and-causal-effect">
+<h4>3.8.3 Indentifying Structural Coefficients and Causal Effect<a class="headerlink" href="#indentifying-structural-coefficients-and-causal-effect" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="mediation-in-linear-systems">
+<h4>3.8.4 Mediation in Linear Systems<a class="headerlink" href="#mediation-in-linear-systems" title="Permalink to this headline">¶</a></h4>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">PGJ16</a></span></dt>
+<dd><p>Judea Pearl, Madelyn Glymour, and Nicholas P Jewell. <em>Causal inference in statistics: A primer</em>. John Wiley &amp; Sons, 2016.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Book-Regression%20Modeling%20Strategies.html" title="previous page">[book] Regression Modeling Strategies</a>
+    <a class='right-next' id="next-link" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="next page">[book] Analysis of Observational Health Care Data Using SAS</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

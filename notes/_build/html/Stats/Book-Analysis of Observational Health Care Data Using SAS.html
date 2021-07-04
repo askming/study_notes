@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
-    <link rel="prev" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
+    <link rel="prev" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -100,6 +100,14 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
    [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -342,8 +350,8 @@ Bang and Robins, 2005).</p></li>
 <h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3081ec9e-8903-41de-b9df-b184a31b7e5f">
-<span class="eqno">(2)<a class="headerlink" href="#equation-3081ec9e-8903-41de-b9df-b184a31b7e5f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-59b0396d-3214-4a8e-9bb8-f9b0d4a833ef">
+<span class="eqno">(7)<a class="headerlink" href="#equation-59b0396d-3214-4a8e-9bb8-f9b0d4a833ef" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{\Delta}_{DR} \\
    &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
    &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
@@ -356,8 +364,8 @@ Bang and Robins, 2005).</p></li>
   SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-27a05468-d8f0-47f1-906c-e50e0e0f20fb">
-<span class="eqno">(3)<a class="headerlink" href="#equation-27a05468-d8f0-47f1-906c-e50e0e0f20fb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-31e9a3f8-d6f3-4a5b-ab49-7247c62e057e">
+<span class="eqno">(8)<a class="headerlink" href="#equation-31e9a3f8-d6f3-4a5b-ab49-7247c62e057e" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{I}_i \\
   &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
   &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}
@@ -399,7 +407,7 @@ Bang and Robins, 2005).</p></li>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Book-Regression%20Modeling%20Strategies.html" title="previous page">[book] Regression Modeling Strategies</a>
+    <a class='left-prev' id="prev-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="previous page">[book] Causal inference in statistics <em>a primer</em></a>
     <a class='right-next' id="next-link" href="Note-Survival_Analysis.html" title="next page">Survival Analysis</a>
 
         </div>
