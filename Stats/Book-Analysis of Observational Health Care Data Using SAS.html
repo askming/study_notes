@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[book] Analysis of Observational Health Care Data Using SAS &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
+    <link rel="prev" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study notes index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Book-Analysis of Observational Health Care Data Using SAS.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Analysis of Observational Health Care Data Using SAS.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects">
+   Chapter 2-3 Propensity Score Stratification and Regression / Propensity Score Matching for Estimating  Treatment Effects
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-propensity-score-ps">
+     1. Estimating propensity score (PS)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-ps">
+   2. Using PS
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assess-the-balance-after-applying-ps-method">
+     3. Assess the balance after applying PS method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-treatment-effect">
+     4. Estimating treatment effect
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensitivity-analysis-for-ps">
+     5. Sensitivity analysis for PS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-4-doubly-robust-estimation-of-treatment-effects">
+   Chapter 4 Doubly Robust Estimation of Treatment Effects
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conceptual-overview">
+     Conceptual overview
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistical-model">
+     Statistical model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="book-analysis-of-observational-health-care-data-using-sas">
+<h1>[book] Analysis of Observational Health Care Data Using SAS<a class="headerlink" href="#book-analysis-of-observational-health-care-data-using-sas" title="Permalink to this headline">¶</a></h1>
+<hr>
+<div class="section" id="chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects">
+<h2>Chapter 2-3 Propensity Score Stratification and Regression / Propensity Score Matching for Estimating  Treatment Effects<a class="headerlink" href="#chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="estimating-propensity-score-ps">
+<h3>1. Estimating propensity score (PS)<a class="headerlink" href="#estimating-propensity-score-ps" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Logistic regression</p></li>
+<li><p>Probit regression: <span class="math notranslate nohighlight">\(P(Y=1|X) = \Phi(X^T\beta)\)</span>, where <span class="math notranslate nohighlight">\(\Phi(\cdot)\)</span> is the CDF of standard normal distribution</p></li>
+<li><p>discriminant analysis</p></li>
+<li><p>CART</p></li>
+<li><p>Neural nets</p></li>
+<li><p>GAM(?)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="using-ps">
+<h2>2. Using PS<a class="headerlink" href="#using-ps" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Stratification</p></li>
+<li><p>Matching: with caliper (0.2 SD of logit of PS <a class="footnote-reference brackets" href="#rot" id="id1">1</a>)</p></li>
+<li><p>Regression covariate</p></li>
+<li><p>IPW (Chapter 5): <span class="math notranslate nohighlight">\(\frac{1}{p_i}\)</span> for treatment arm, <span class="math notranslate nohighlight">\(\frac{1}{1-p_i}\)</span> for control arm, where <span class="math notranslate nohighlight">\(p_i\)</span> is the PS for subject <span class="math notranslate nohighlight">\(i\)</span></p></li>
+</ul>
+<div class="section" id="assess-the-balance-after-applying-ps-method">
+<h3>3. Assess the balance after applying PS method<a class="headerlink" href="#assess-the-balance-after-applying-ps-method" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>standardized difference of each covariate</p></li>
+<li><p>PS distribution</p></li>
+<li><p>distribution of the covariates</p></li>
+<li><p>goodness of fit statistics</p></li>
+</ul>
+</div>
+<div class="section" id="estimating-treatment-effect">
+<h3>4. Estimating treatment effect<a class="headerlink" href="#estimating-treatment-effect" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>treatment effect estimate</p></li>
+<li><p>S.E. of treatment effect</p></li>
+</ul>
+</div>
+<div class="section" id="sensitivity-analysis-for-ps">
+<h3>5. Sensitivity analysis for PS<a class="headerlink" href="#sensitivity-analysis-for-ps" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="chapter-4-doubly-robust-estimation-of-treatment-effects">
+<h2>Chapter 4 Doubly Robust Estimation of Treatment Effects<a class="headerlink" href="#chapter-4-doubly-robust-estimation-of-treatment-effects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conceptual-overview">
+<h3>Conceptual overview<a class="headerlink" href="#conceptual-overview" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Doubly robust (DR) estimation builds on the propensity score approach of Rosenbaum and Rubin (1983) and the inverse probability of weighting (IPW) approach of Robins and colleagues (Robins, 1998; Robins, 1999a; Robins, 1999b; Robins et al., 2000).</p></li>
+<li><p>DR estimation combines inverse probability weighting by a propensity score with regression modeling of the relationship between covariates and outcome for each treatment.</p>
+<ul>
+<li><p>It combines it in such a way that, as long as <em>either</em> the propensity score model <em>or</em> the outcome regression models are correctly specified, the effect of the exposure on the outcome will be correctly estimated, assuming that there are no unmeasured confounders (Robins et al., 1994; Robins, 2000; van der Laan and Robins, 2003;
+Bang and Robins, 2005).</p></li>
+</ul>
+</li>
+<li><p>Procedure</p>
+<ul>
+<li><p>one builds and fits a (binary) regression model for the probability that a particular patient received a given treatment as a function of that individual’s covariates (the propensity score).</p></li>
+<li><p>Maximum likelihood regression is conducted separately within the exposed and unexposed populations to predict the mean response (outcome) as a function of confounders and risk factors.</p></li>
+<li><p>each individual observation is given a weight equal to the inverse of the probability of the treatment he/she received based on baseline covariates (as in IPW analysis) to create two pseudopopulations of subjects that represent the expected response in the entire population under those two treatment conditions.</p></li>
+</ul>
+</li>
+<li><p>one trades a possible loss of precision in using the DR estimator for this additional protection.</p></li>
+</ul>
+</div>
+<div class="section" id="statistical-model">
+<h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>The estimator of the causal effect</p>
+<div class="amsmath math notranslate nohighlight" id="equation-59b0396d-3214-4a8e-9bb8-f9b0d4a833ef">
+<span class="eqno">(7)<a class="headerlink" href="#equation-59b0396d-3214-4a8e-9bb8-f9b0d4a833ef" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \hat{\Delta}_{DR} \\
+   &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
+   &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
+  &amp; = \hat{\mu_{1, Dr}} - \hat{\mu}_{0, DR}
+  \end{align}\]</div>
+</li>
+<li><p>The standard error for the DR estimator is estimated using the delta method</p>
+<div class="math notranslate nohighlight">
+\[
+  SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-31e9a3f8-d6f3-4a5b-ab49-7247c62e057e">
+<span class="eqno">(8)<a class="headerlink" href="#equation-31e9a3f8-d6f3-4a5b-ab49-7247c62e057e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \hat{I}_i \\
+  &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
+  &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}
+  \end{align}\]</div>
+</li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="rot"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>rule of thumb</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="previous page">[book] Causal inference in statistics <em>a primer</em></a>
+    <a class='right-next' id="next-link" href="Note-Survival_Analysis.html" title="next page">Survival Analysis</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
