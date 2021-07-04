@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Competing risk models &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="​Cox PH model" href="Note-Cox_PH_model.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study notes index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Competing risk models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Competing_Risk_Regression.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Competing_Risk_Regression.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-doing-competing-risk-model">
+   Why doing competing risk model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-concepts">
+   Basic concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Competing risk models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cause-specific-hazard-modeling">
+     1. Cause-specific hazard modeling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cumulative-incidence-cif-modeling-or-proportional-subdistribution-hazards-model-psh-or-fine-and-gray-model">
+     2. Cumulative incidence (CIF) modeling (or proportional subdistribution hazards model (PSH), or Fine and Gray model)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-for-psh-model">
+   Software for PSH model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="competing-risk-models">
+<h1>Competing risk models<a class="headerlink" href="#competing-risk-models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-doing-competing-risk-model">
+<h2>Why doing competing risk model<a class="headerlink" href="#why-doing-competing-risk-model" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>In competing risk analysis, individuals experiencing the competing risk event have zero probability of experiencing the event of interest.</p></li>
+<li><p>In contrast, the naïve Kaplan-Meier approach assumes that these individuals would experience the same probability of event of interest in pure theory (non-informative censoring).</p>
+<ul>
+<li><p>Thus, the latter <u>overestimates</u> the cumulative incidence <u>of the event of interest</u>.</p></li>
+</ul>
+</li>
+<li><p><strong>Cumulative incidence</strong> derived from Kaplan-Meier estimator is always <strong>larger</strong> than that obtained by accounting for competing risks.</p>
+<ul>
+<li><p>In Kaplan-Meier estimation, an individual is removed from the risk set when the individual experiences competing event, i.e. treated as non-informative censoring case.</p></li>
+<li><p>Within competing risk framework, the overall survival probability is calculated, which accoutns for any type of event,  thus is <strong>lower</strong> compared with that from naive KM estimate.</p></li>
+</ul>
+</li>
+<li><p>Treating competing risk (e.g. death) as censoring is not appropriate:</p>
+<ul>
+<li><p>it removes the importance of competing event difference between the groups that may mislead the primary comparison by introduing bias</p></li>
+<li><p>the primary outcome is not independent of the competing risk, in which case, treating the competing risk as censoring violates the non-informative censoring assumption</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="basic-concepts">
+<h2>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><strong>Cause-specific hazard function</strong>, <span class="math notranslate nohighlight">\(h_k(t)\)</span>: the instantaneous rate of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> conditional on survival until time t or later
+$<span class="math notranslate nohighlight">\(
+h_k(t) = \lim_{\Delta t\rightarrow0}\frac{P(t&lt;T&lt;t+\Delta t, \delta=k|T&gt;t)} {\Delta t}, k=1, \cdots, K
+\)</span>$</p></li>
+<li><p><strong>Cumulative incidence function</strong> (CIF or <strong>subdistribution function</strong>), is the prob. of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> prior to time <span class="math notranslate nohighlight">\(t\)</span>
+$<span class="math notranslate nohighlight">\(
+F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
+\)</span>$</p>
+<ul>
+<li><p>it’s not a true probability distribution</p></li>
+<li><div class="math notranslate nohighlight">
+\[
+    F_k(t) = \int_0^tS(u)h_k(u)du = \int_0^t S(u)dH_k(u), k = 1, \cdots, K
+    \]</div>
+<ul class="simple">
+<li><p>where <span class="math notranslate nohighlight">\(H_k(t) = \int_0^t h_k(u)du\)</span> is the cause-specific cumulative hazard function and</p></li>
+<li><p><span class="math notranslate nohighlight">\(S(t) = \exp(-\sum_{k=1}^K H_k(t))\)</span> is the overall survival function, which is the probability of surviving beyond time <span class="math notranslate nohighlight">\(t\)</span></p></li>
+</ul>
+</li>
+<li><p>when <span class="math notranslate nohighlight">\(K &gt; 1\)</span> (i.e. in the presence of competing risk), the one-to-one relationship does not exist between the cause-specific hazard function and the corresponding CIF</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Competing risk models<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cause-specific-hazard-modeling">
+<h3>1. Cause-specific hazard modeling<a class="headerlink" href="#cause-specific-hazard-modeling" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>This model assumes competing events other than the primary event of interest as consoring. For cause <span class="math notranslate nohighlight">\(k\)</span>, a separate proportional hazards model can be assumed:
+$<span class="math notranslate nohighlight">\(
+h_k(t)={h}_{k0}(t)\exp(\beta_k'Z)
+\)</span><span class="math notranslate nohighlight">\(
+and the partial likelihood function for \)</span>k<span class="math notranslate nohighlight">\(th event is given as
+\)</span><span class="math notranslate nohighlight">\(
+{L}(\beta_k) = \prod_i\left(\exp(\beta'_kZ_i)\over\sum_{j\in\tilde{\mathcal{R}_i}}\exp(\beta'_kZ_j)\right)^{\delta_i \equiv k}
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\mathcal{R}_i<span class="math notranslate nohighlight">\( denotes the risk set at \)</span>X_i<span class="math notranslate nohighlight">\( and contains individuals who don't fail from any cause or are not censored before \)</span>X_i$.</p></li>
+<li><p>Because competing risks are present, it is no longer appropriate to interpret the cause-specific hazard ratios in terms of a relative risk type of measure as regular hazard ratios. As <span id="id2">[<a class="reference internal" href="#id12">Andersen and Keiding, 2012</a>]</span> point out, this is a direct consequence of the loss of the one-to-one relationship between the cause-specific hazard function and the cumulative incidence function.</p></li>
+</ul>
+</div>
+<div class="section" id="cumulative-incidence-cif-modeling-or-proportional-subdistribution-hazards-model-psh-or-fine-and-gray-model">
+<h3>2. Cumulative incidence (CIF) modeling (or proportional subdistribution hazards model (PSH), or Fine and Gray model)<a class="headerlink" href="#cumulative-incidence-cif-modeling-or-proportional-subdistribution-hazards-model-psh-or-fine-and-gray-model" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>This method models the subdistribution hazard, which is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+  \tilde{h}_k(t)=\frac{d}{dt}\log(1-F_k(t))
+  \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+  \tilde{h}_k(t)=\tilde{h}_{k0}(t)\exp(\beta_k'Z)
+  \]</div>
+</li>
+<li><p>The pseudo-liklihood function is written as</p>
+<div class="math notranslate nohighlight">
+\[
+  \tilde{L}(\beta_k) = \prod_i\left(\exp(\beta'_kZ_i)\over\sum_{j\in\tilde{\mathcal{R}_i}}\omega_{ij}\exp(\beta'_kZ_j)\right)^{\delta_i \equiv k}
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega_{ij}\)</span> is the subject-specific weight for those in the risk set. Subject who experience no event of interest before <span class="math notranslate nohighlight">\(X_i\)</span> are assigned weight <span class="math notranslate nohighlight">\(\omega_{ij} =1\)</span>, and subject who experience competing events before <span class="math notranslate nohighlight">\(X_i\)</span> are given weight <span class="math notranslate nohighlight">\(\omega_{ij} = \frac{\hat{G}(X_i)}{\hat{G}(\min(X_j, X_i))}\)</span>, which decrease with time (refers to event time <span class="math notranslate nohighlight">\(X_i\)</span>). <span class="math notranslate nohighlight">\(\hat{G}(t)\)</span> is the KM estimate of the survival function of the censoring distribution, which is the cumulative prob. that a subject is still be followed at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<ul class="simple">
+<li><p>The new risk set <span class="math notranslate nohighlight">\(\tilde{\mathcal{R}}_i\)</span> is modified from the risk set definition that comes from the regular likelihood in order to accommodate the subdistribution hazard. The difference is that the new risk set includes subjects who have experienced a competing event before <span class="math notranslate nohighlight">\(X_i\)</span> and are therefore immortal.</p></li>
+<li><p>The subdistribution hazard function might not have the proper interpretation of an instantaneous risk of failure <span id="id3">[<a class="reference internal" href="#id12">Andersen and Keiding, 2012</a>]</span>. <span id="id4">[<a class="reference internal" href="#id13">Austin and Fine, 2017</a>]</span> provided practical recommendations for interpreting the regression coefficients and reporting the results properly.</p></li>
+</ul>
+</li>
+<li><p>As with Cox models, <strong>Fine and Gray</strong> is also based on proportional hazards.</p>
+<ul class="simple">
+<li><p>The alternative <strong>Gray’s test</strong> is a non-parametric test that does not rely on the proportional hazards assumption; however, it does not offer an effect size or the ability to adjust for confounders, analogous to the log-rank test</p></li>
+</ul>
+</li>
+<li><p>In <strong>Subdistribution hazard ratio (SHR)</strong>, the magnitude of which is affected by both the time to event of interest among survivors and the probability of competing event. It assesses the association between an intervention and primary event of interest <em>accounting for the existence</em> of the alternative outcome of competing event.</p></li>
+<li><p>Difference between <u>cause-specific hazard</u> vs <u>subdistribution hazard</u> is that the competing risk events are treated differently. The former considers competing risk events as non-informative censoring, whereas the latter takes into account the informative censoring nature of the competing risk events <span id="id5">[<a class="reference internal" href="#id11">Zhang, 2017</a>]</span></p>
+<ul class="simple">
+<li><p>Proportional subdistribution hazards (PSH) model is a commonly used method for regression analysis of time-to-event data in the presence of competing risks.</p></li>
+</ul>
+</li>
+<li><p>Latouche et al. (2013) argue that a proper competing-risks analysis should report results on all the cause-specific hazards and cumulative incidence functions.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="software-for-psh-model">
+<h2>Software for PSH model<a class="headerlink" href="#software-for-psh-model" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>SAS: <a class="reference external" href="https://cemsiis.meduniwien.ac.at/en/kb/science-research/software/statistical-software/pshreg/">PSHREG</a>; PROC LIFETEST can also conduct hypothesis tests account for competing risks</p></li>
+<li><p>R: <a class="reference external" href="https://cran.r-project.org/web/packages/cmprsk/cmprsk.pdf">Package ‘cmprsk’</a></p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="id6"><dl class="citation">
+<dt class="label" id="id12"><span class="brackets">AK12</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Per Kragh Andersen and Niels Keiding. Interpretability and importance of functionals in competing risks and multistate models. <em>Statistics in medicine</em>, 31(11-12):1074–1088, 2012.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id4">AF17</a></span></dt>
+<dd><p>Peter C Austin and Jason P Fine. Practical recommendations for reporting f ine-g ray model analyses for competing risk data. <em>Statistics in medicine</em>, 36(27):4391–4400, 2017.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id5">Zha17</a></span></dt>
+<dd><p>Zhongheng Zhang. Survival analysis in the presence of competing risks. <em>Annals of translational medicine</em>, 2017.</p>
+</dd>
+</dl>
+</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://academic.oup.com/ndt/article/28/11/2670/1823847">When do we need competing risks methods for survival analysis in nephrology? | Nephrology Dialysis Transplantation | Oxford Academic</a></p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2811964/">Patient Death as a Censoring Event or Competing Risk Event in Models of Nursing Home Placement</a></p></li>
+<li><p><a class="reference external" href="https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2018/2159-2018.pdf">Cause-Specific Analysis of Competing Risks Using the PHREG Procedure</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Note-Cox_PH_model.html" title="previous page">​Cox PH model</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
