@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survival Analysis &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="​Cox PH model" href="Note-Cox_PH_model.html" />
+    <link rel="prev" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study notes index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Survival Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Survival_Analysis.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Survival_Analysis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#survival-analysis-general">
+   Survival analysis general
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-process-representation">
+     Counting process representation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#censoring">
+     Censoring
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-intensity">
+     The intensity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hazrd-models">
+     Hazrd models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cox-ph-model">
+     <span class="xref myst">
+      Cox PH model
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-dependent-covariates-and-immortal-time-bias">
+     Time-dependent covariates and immortal time bias
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competing-risk-model">
+     <span class="xref myst">
+      Competing risk model
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prediction-using-hazard-models">
+     Prediction using hazard models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prediction-in-the-absence-competing-risks">
+       Prediction in the absence competing risks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prediction-with-competing-risks">
+       Prediction with competing risks
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-size-calculation-wassmer2016group">
+   Sample size calculation
+   <span class="xref cite cite-p">
+    wassmer2016group
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-rank-test">
+     Log-rank test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-number-of-events-rightarrow-total-sample-size">
+     Total number of events
+     <span class="math notranslate nohighlight">
+      \(\rightarrow\)
+     </span>
+     total sample size
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="survival-analysis">
+<h1>Survival Analysis<a class="headerlink" href="#survival-analysis" title="Permalink to this headline">¶</a></h1>
+<hr>
+<div class="section" id="survival-analysis-general">
+<h2>Survival analysis general<a class="headerlink" href="#survival-analysis-general" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="counting-process-representation">
+<h3>Counting process representation<a class="headerlink" href="#counting-process-representation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The process <span class="math notranslate nohighlight">\(Y_i(t)\)</span> is equal to 1 while a person is known to be at risk and 0 otherwise (<span class="math notranslate nohighlight">\(Y_i(t) = I(V_i &lt; t \le T_i)\)</span>, where <span class="math notranslate nohighlight">\(V_i\)</span> is the time of entering the study) and the process <span class="math notranslate nohighlight">\(N_i(t)\)</span> denotes the number of observed events by time <span class="math notranslate nohighlight">\(t\)</span>, here simply given by <span class="math notranslate nohighlight">\(N_i(t) = I(V_i &lt; t \le T_i, \delta_i=1)\)</span></p></li>
+<li><p>Defining <span class="math notranslate nohighlight">\(dN_i(t) = N_i(t) - N_i(t-)\)</span>, observation of the event at time <span class="math notranslate nohighlight">\(t\)</span> can then be represented by <span class="math notranslate nohighlight">\(dN_i(t)= 1\)</span>, that is, the counting process for individual <span class="math notranslate nohighlight">\(i\)</span> increments by 1 at that time.</p></li>
+</ul>
+</div>
+<div class="section" id="censoring">
+<h3>Censoring<a class="headerlink" href="#censoring" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Independent censoring</strong>: A basic assumption that the information that a patient has <em>not been censored</em> at a certain time point does not carry any information about his/her prognosis beyond that time point.</p>
+<ul>
+<li><p>The assumption can be weakened to <em><strong>conditionally independent censoring</strong></em>, i.e. independent censoring within a group of patients with a certain set of characteristics, defined by the covariates available in the study data base.</p></li>
+<li><p><em><strong>Administrative censoring</strong></em>: censoring at a certain calendar time due to the end of study, is a common example of independent censoring, as the censoring mechanism is not related to individual patient prognosis.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-intensity">
+<h3>The intensity<a class="headerlink" href="#the-intensity" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Definition</p></li>
+</ul>
+<p>\begin{array}
+&amp; \lambda_i(t) &amp; \approx P(\text{event in} (t, t+dt)|\text{past at time } t-)/dt\
+&amp; = P(dN_i(t) = 1|H_i(t-))/dt
+\end{array}</p>
+<ul>
+<li><p>where <span class="math notranslate nohighlight">\(H_i(t-) = (N_i(s), Y_i(s), Z_i(s), s&lt;t)\)</span> summarizes the past information for the subject <span class="math notranslate nohighlight">\(i\)</span> that is available just before time <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>More formally, <span class="math notranslate nohighlight">\(\lambda_i(t) = \lim_{\Delta\rightarrow 0} P(dN_i(t) = 1 | H_i(t-)/\Delta t)\)</span></p></li>
+<li><p>Hazard function</p>
+<div class="math notranslate nohighlight">
+\[
+  \lambda(t) = -\frac{d\log S(t)}{dt}
+  \]</div>
+</li>
+<li><p>When no time-dependent covariates are considered in <span class="math notranslate nohighlight">\(H_i(t)\)</span>, the intensity simply equals to the hazard.</p></li>
+<li><p>When there is only one type of event, there is an one-to-one correspondce between hazard function <span class="math notranslate nohighlight">\(\lambda(t)\)</span> and <span class="math notranslate nohighlight">\(S(t)\)</span>, and thereby with the cumulative risk <span class="math notranslate nohighlight">\(F(t) = 1-S(t)\)</span>.</p>
+<ul class="simple">
+<li><p>While, if there are other events competing with the event of interest, <span class="math notranslate nohighlight">\(\lambda(t)\)</span> is a <em>transition hazard</em> (or <em>cause-specific hazard</em>) from state 0 to state 1. In this case, a one-to-one correspondence between the single cause-specific hazard and the absolute probabilities no longer exists.</p></li>
+</ul>
+</li>
+<li><p><strong>Interpretation of the intentisty</strong></p>
+<ul class="simple">
+<li><p>Given the information that is available so far for the subject (i.e. the subject is still observed to be at risk at time <span class="math notranslate nohighlight">\(t\)</span>), what is the probability per time unit that the subject experiences the event in the next little time interval from <span class="math notranslate nohighlight">\(t\)</span> to <span class="math notranslate nohighlight">\(t + dt\)</span>?</p></li>
+<li><p>The intensity gives a <em>dynamical description</em> of how events occur over time and, in this description, all aspects of the past observed for the subject up to time t may be taken into account, such as (time-dependent) covariates and, possibly, previous events.</p></li>
+</ul>
+</li>
+<li><p>Other notes</p>
+<ul class="simple">
+<li><p>the hazard function (in contrast to the survival function) can still be studies under censoring mechanism since it relies exclusively on the information on the individuals still at risk (assuming the independent censoring assumption to hold)</p></li>
+<li><p>One of the greatest strengths of intensity-basedmodels is that one can examine the effects of both baseline covariates (ie, information available at time of entry into the study) and time-dependent covariates that are updated during follow-up.</p></li>
+<li><p>Using a hazard regression model is that it “corrects for non-independent censoring” in the sense that regression coefficients are estimated consistently even if censoring depends on covariates, as long as these covariates are included as predictors in the hazard model (==how to understand this?==)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="hazrd-models">
+<h3>Hazrd models<a class="headerlink" href="#hazrd-models" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Estimating the hazard <em>non-parametrically</em> requires some sort of smoothing. What may be estimated non-parametrically is the <em>cumulative hazard</em> <span class="math notranslate nohighlight">\(\Lambda(t) = \int_0^t\lambda(u)du\)</span>. This may be done with the <em>Nelson-Aalen estimator</em>
+$<span class="math notranslate nohighlight">\(
+\hat{\Lambda}(t) = \int_0^t \frac{dN(u)}{Y(u)} du= \sum_{i: T_i\le t} \frac{\delta_i}{Y(T_i)},
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>Y(t) = \sum_i Y_i(t)<span class="math notranslate nohighlight">\( and \)</span>N(t) = \sum_i N_i(t)$.</p>
+<ul>
+<li><p>This is an increasing step function with steps at each observed event time, the step size at <span class="math notranslate nohighlight">\(t\)</span> being inversely proportional to the number <span class="math notranslate nohighlight">\(Y(t)\)</span> at risk.</p></li>
+<li><p>The approximate “local slope” of <span class="math notranslate nohighlight">\(\hat{\Lambda}\)</span> at <span class="math notranslate nohighlight">\(t\)</span> reflects the hazard at that time.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="cox-ph-model">
+<h3><a class="reference internal" href="Note-Cox_PH_model.html"><span class="doc std std-doc">Cox PH model</span></a><a class="headerlink" href="#cox-ph-model" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="time-dependent-covariates-and-immortal-time-bias">
+<h3>Time-dependent covariates and immortal time bias<a class="headerlink" href="#time-dependent-covariates-and-immortal-time-bias" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Immortal time bias</strong>: including in the model the value of time-dependent covarite(s) collected after the time of event outcome.</p>
+<ul>
+<li><p>It is crucial that only information reflecting covariate values observed before time t (ie, from the “past” at t) is used to define the value of a variable <span class="math notranslate nohighlight">\(Z(t)\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>A common example is to group patients at time t = 0 according to the use of drugs or treatments at any time during the follow-up even if many might have started their use only at some time after time <span class="math notranslate nohighlight">\(t = 0\)</span> (“ever treated” vs “never treated”)</p></li>
+<li><p>Another example can be the study of total number doses recevied and survial outcome. A patient generally receive more treatment doses when he/she lives longer.</p></li>
+<li><p>In all of the above cases, creation of a well-defined time-dependent covariate where <span class="math notranslate nohighlight">\(Z(t)\)</span> does not depend on any of <span class="math notranslate nohighlight">\(Z(s), N(s)\)</span>, or <span class="math notranslate nohighlight">\(Y(s)\)</span> for any <span class="math notranslate nohighlight">\(s &gt; t\)</span> repairs the bias.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="competing-risk-model">
+<h3><a class="reference internal" href="Note-Competing_Risk_Regression.html"><span class="doc std std-doc">Competing risk model</span></a><a class="headerlink" href="#competing-risk-model" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="prediction-using-hazard-models">
+<h3>Prediction using hazard models<a class="headerlink" href="#prediction-using-hazard-models" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Communication is usually easier in terms of the absolute risk, that is, the probability of the event occurring in some interval or, more generally, the probability of being in a certain state by time t.</p></li>
+</ul>
+<div class="section" id="prediction-in-the-absence-competing-risks">
+<h4>Prediction in the absence competing risks<a class="headerlink" href="#prediction-in-the-absence-competing-risks" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Without time-dependent covarites
+$<span class="math notranslate nohighlight">\(
+F(t|Z) = 1 - S(t|Z) = 1 - \exp(-\Lambda(t|Z))
+\)</span>$</p></li>
+<li><p>From <span class="math notranslate nohighlight">\(t=0\)</span> onwards</p>
+<ul>
+<li><p>Using the Cox model</p>
+<ul>
+<li><p>If the focus is on one particular value ts (eg, the 5-year survival in cancer), a surprisingly robust estimator of <span class="math notranslate nohighlight">\(S(t_s|Z)\)</span> can often be obtained by applying administrative censoring at <span class="math notranslate nohighlight">\(t_s\)</span> and using a simple Cox model with the effects <span class="math notranslate nohighlight">\(\beta\)</span>  fixed in time provided <span class="math notranslate nohighlight">\(t_s\)</span> is not too large.</p></li>
+</ul>
+</li>
+<li><p>Direct modeling</p>
+<ul>
+<li><p>If there were no censoring before ts, the survival probability <span class="math notranslate nohighlight">\(S(t_s|Z)\)</span> could be directly estimated by models for the binary outcome <span class="math notranslate nohighlight">\(I(T^* &gt; t_s)\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Dynamic prediction</p>
+<ul>
+<li><p>Prediction at a later time <span class="math notranslate nohighlight">\(t_{\text{pred}} + t_s\)</span> built on some intermediate time <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span></p>
+<ul>
+<li><p>the prediction is based on a new model using the data of the individuals still alive at <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span> is known as <em>dynamic prediction</em></p></li>
+<li><p>the approach of building new models using the individuals at risk at <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span> is known as <em>landmarking</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Prediction exploiting time-dependent covariates</p>
+<ul>
+<li><p>Using the landmarking method, where the history of a time-dependent covariate up to <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span> is summarized in to a single statistic (e.g. the last observation) and used as a time-fixed covariate in the prediction model. Such model can only be used as a working model.</p></li>
+<li><p>Using joint models of longitudinal and survial outcomes and estimate survival prob. by conditioning on the history of <span class="math notranslate nohighlight">\(Z(t)\)</span> at <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span> and <span class="math notranslate nohighlight">\(T^*\ge t_{\text{pred}}\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="prediction-with-competing-risks">
+<h4>Prediction with competing risks<a class="headerlink" href="#prediction-with-competing-risks" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Ignoring competing risk(s) will produce an upwards biased estimate of the absolute risk (cumulative incidence) because by treating competing events as censorings, one pretends that the target population is one where the competing events are not operating and therefore neglects the fact that subjects who have died from competing causes can no longer experience the event of interest.</p></li>
+<li><p>In such a situation it is necessary to estimate the <em>absolute risk</em>. This is the probability of experiencing event 1 at a certain time point and it depends not only on the hazard of this event but also on the probability of having survived up to this time point. And as this survival probability depends on the hazards of all events, this implies it is necessary also to estimate the intensity of the competing events.
+$<span class="math notranslate nohighlight">\(
+F_1(t|Z) = \int_0^t S(u|Z)d\Lambda_{01}(u|Z) = \int_0^t\exp(-\Lambda_{02}(u|Z) - \Lambda_{01}(u|Z))d\Lambda_{01}(u|Z)\label{pred_comp}
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\Lambda_{02}(t|Z)$ is the cumulative hazard for competing events.</p>
+<ul>
+<li><p>Without covariates, the estimator obtained by plugging-in Nelson-Aalen estimates for the cumulative hazard in <span class="math notranslate nohighlight">\(\ref{pred_comp}\)</span> is known as the <em>Aalen-Johansen estimator</em>.</p></li>
+<li><p>The intuition behind the middle term of <span class="math notranslate nohighlight">\(\ref{pred_comp}\)</span> is that the integrand, <u>the survival probability</u>, <span class="math notranslate nohighlight">\(S(u|Z)\)</span> of surviving to time <span class="math notranslate nohighlight">\(u\)</span>, times <u>the conditional probability</u>, <span class="math notranslate nohighlight">\(dΛ_{01}(u|Z)\)</span> of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span> given survival till <span class="math notranslate nohighlight">\(u\)</span>, is the (unconditional) probability of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span>; <span class="math notranslate nohighlight">\(F_1(t | Z)\)</span>, the probability of dying from cause 1 by time <span class="math notranslate nohighlight">\(t\)</span> is then obtained as the sum (integral)</p></li>
+</ul>
+</li>
+<li><p>It’s also possible to directly model <span class="math notranslate nohighlight">\(F(t|Z)\)</span>, e.g., using the ==Fine and Gray regression model==.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>For constant hazard <span class="math notranslate nohighlight">\(\lambda\)</span>, thus exponentially distributed survival times,</p>
+<ul>
+<li><p>the MLE of <span class="math notranslate nohighlight">\(\lambda\)</span> is given by
+$<span class="math notranslate nohighlight">\(
+\hat{\lambda} = \frac{d}{\sum_{i=1}^dx_i}
+\)</span>$</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(d\)</span>: total number of events</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span>: event time for <span class="math notranslate nohighlight">\(i\)</span>th event</p></li>
+</ul>
+</li>
+<li><p>If an estimate <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> of the event rate in a period of length <span class="math notranslate nohighlight">\(l\)</span> is given, <span class="math notranslate nohighlight">\(\lambda\)</span> is estimated by
+$<span class="math notranslate nohighlight">\(
+\hat{\lambda} = \frac{-\log(1-\hat{\pi})}{l}
+\)</span>$</p></li>
+</ul>
+</li>
+<li><p>with the median survival time estimate of <span class="math notranslate nohighlight">\(\hat{m}\)</span>, the estimated hazard can be estimated as
+$<span class="math notranslate nohighlight">\(
+  \hat{\lambda} = \frac{log(2)}{\hat{m}}
+  \)</span>$</p>
+<ul>
+<li><p>Thus, the estimate of hazard ratio is the reciprocal of the ratio of median survival time between two groups:</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\omega = \frac{\lambda_1}{\lambda_2} = \frac{m_2}{m_1}
+\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="sample-size-calculation-wassmer2016group">
+<h2>Sample size calculation <span id="id1">[<a class="reference internal" href="#id6">Wassmer and Brannath, 2016</a>]</span><a class="headerlink" href="#sample-size-calculation-wassmer2016group" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="log-rank-test">
+<h3>Log-rank test<a class="headerlink" href="#log-rank-test" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Test statistic for LR test
+$<span class="math notranslate nohighlight">\(
+LR = \frac{\sum_{i=1}^d\left(I_{2i} - \frac{n_{2i}}{n_{1i} + n_{2i}}\right)}{\sqrt{\sum_{i=1}^d\frac{n_{1i}n_{2i}}{(n_{1i} + n_{2i})^2}}}
+\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d\)</span> is the total number of events</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_{1i}\)</span> and <span class="math notranslate nohighlight">\(n_{2i}\)</span> are number of patients at risk in group 1 and 2, respectively, when the <span class="math notranslate nohighlight">\(i\)</span>th event occurred.</p></li>
+<li><p><span class="math notranslate nohighlight">\(I_{2i}\)</span> = 1 if the <span class="math notranslate nohighlight">\(i\)</span>th event was in group 2 and = 0 otherwise</p></li>
+</ul>
+</li>
+<li><p>Non-parametric test as it doesn’t depend on the observed survival times but only depends on the number of patients who were at risk at the <span class="math notranslate nohighlight">\(i\)</span>th event</p></li>
+<li><p>For fixed <span class="math notranslate nohighlight">\(d\)</span> and let the patients be recruited until <span class="math notranslate nohighlight">\(d\)</span> events were observed. Then the LR test statistic is approximately normally distributed
+$<span class="math notranslate nohighlight">\(
+LR \sim N(\sqrt{d}\frac{\sqrt{r}}{1 + r}\log(\omega), 1)
+\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the true hazard ratio</p></li>
+<li><p><span class="math notranslate nohighlight">\(r = n_2/n_1\)</span></p></li>
+</ul>
+<p>​	<img src="https://raw.githubusercontent.com/askming/picgo/master/Logrank_test.png" alt="Logrank_test" style="zoom:150%;" /></p>
+</li>
+</ul>
+</div>
+<div class="section" id="total-number-of-events-rightarrow-total-sample-size">
+<h3>Total number of events <span class="math notranslate nohighlight">\(\rightarrow\)</span> total sample size<a class="headerlink" href="#total-number-of-events-rightarrow-total-sample-size" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>:star: <em>Power calculation is based on total number of events not number of patients</em></p></li>
+</ul>
+<img src="https://raw.githubusercontent.com/askming/picgo/master/image-20201104210152614.png" alt="image-20201104210152614" style="zoom: 67%;" />
+<ul class="simple">
+<li><p>The first step is to determine the <strong>required number of events</strong>
+$<span class="math notranslate nohighlight">\(
+d_f = \frac{\left(\Phi^{-1}(1-\alpha/2)+ \Phi^{-1}(1-\beta)\right)^2}{r/(1+r)^2(\log(\omega_1))^2}
+\)</span>$</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(H_1: \omega = \omega_1\)</span></p></li>
+<li><p>Two-sided <span class="math notranslate nohighlight">\(\alpha\)</span>, power = <span class="math notranslate nohighlight">\(1-\beta\)</span></p></li>
+</ul>
+</li>
+<li><p>From total number of events to  total sample size
+$<span class="math notranslate nohighlight">\(
+n = n_{f_1}+n_{f_2} = n_{f_1}(1+r) = d_f/\phi \Rightarrow n_{f_1} = \frac{d_f}{\phi*(1+r)}
+\)</span>$</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> is the <strong>combined probability of an event</strong> in the two treatment groups:
+$<span class="math notranslate nohighlight">\(
+\phi = (\phi_{\lambda_1} + r\phi_{\lambda_2})/(1 + r)
+\)</span>$</p>
+<ul>
+<li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong>
+$<span class="math notranslate nohighlight">\(
+\begin{array}
+&amp; \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
+&amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
+&amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
+\end{array}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span>\Rightarrow<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\phi_{\lambda_j(s)} = \left\{
+\begin{array}{ll}
+\frac{s}{a} - \frac{1-\exp(-\lambda_js)}{\lambda_ja} &amp;&amp;\text{if } s\le a\\
+1 - \exp(-\lambda_js)\frac{\exp(\lambda_ja) - 1}{\lambda_ja} &amp;&amp;\text{if } s&gt;a
+\end{array}
+\right.
+\)</span>$</p></li>
+<li><p>Thus, by the end of trial (i.e. <span class="math notranslate nohighlight">\(s = a+f &gt; a\)</span>)
+$<span class="math notranslate nohighlight">\(
+\phi_{\lambda_j}(a + f) =1-\exp(-\lambda_j(a+f))\frac{\exp(\lambda_ja)-1}{\lambda_ja}
+\)</span>$</p></li>
+</ul>
+</li>
+<li><p>with increasing length <span class="math notranslate nohighlight">\(a + f\)</span> of the study, the required total sample size decreases and, given any <span class="math notranslate nohighlight">\(a\)</span>, it converges to <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">WB16</a></span></dt>
+<dd><p>Gernot Wassmer and Werner Brannath. <em>Group sequential and confirmatory adaptive designs in clinical trials</em>. Volume 301. Springer, 2016.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Book-Regression%20Modeling%20Strategies.html" title="previous page">[book] Regression Modeling Strategies</a>
+    <a class='right-next' id="next-link" href="Note-Cox_PH_model.html" title="next page">​Cox PH model</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

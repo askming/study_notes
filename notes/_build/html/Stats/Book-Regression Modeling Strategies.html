@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[book] Regression Modeling Strategies &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
+    <link rel="prev" title="Study notes index" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study notes index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Book-Regression Modeling Strategies.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Regression Modeling Strategies.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-9-overview-of-maximum-likelihood-estimation">
+   Chapter 9 Overview of Maximum Likelihood Estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypothesis-testing">
+     2. Hypothesis testing
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#likelihood-ratio-test">
+       2.1 Likelihood ratio test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wald-test">
+       2.2 Wald test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#score-test">
+       2.3 Score test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#which-test-to-use-when">
+       Which test to use when
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-case">
+     3. General case
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confidence-intervals">
+     6. Confidence intervals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-use-of-the-log-likelihood">
+     8. Further use of the log likelihood
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weighted-maximum-likelihood-estimation">
+     9. Weighted maximum likelihood estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#penalized-maximum-likelihood-estimation">
+     10. Penalized maximum likelihood estimation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-13-ordinal-logistic-regression">
+   Chapter 13 Ordinal Logistic Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background">
+     1. Background
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ordinality-assumption">
+     2. Ordinality assumption
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proportional-odds-model">
+     3. Proportional odds model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model">
+       3.1 Model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#assumptions-and-interpretation-of-parameters">
+       3.2 Assumptions and interpretation of parameters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#estimation">
+       3.3 Estimation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#residuals">
+       3.4 Residuals
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#assessment-of-model-fit">
+       3.5 Assessment of model fit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quantifying-predictive-ability">
+       3.6 Quantifying predictive ability
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#describing-the-fitted-model">
+       3.7 Describing the fitted model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#validating-the-fitted-model">
+       3.8 Validating the fitted model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#r-function">
+       3.9
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         R
+        </span>
+       </code>
+       function
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuation-ratio-model">
+     4. Continuation ratio model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       4.1 Model
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-20-cox-proportional-hazards-regression-model">
+   Chapter 20 Cox Proportional Hazards Regression Model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1. Model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#extending-the-ph-cox-model-by-stratification">
+       1.7 Extending the (PH Cox) model by stratification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-size-considerations">
+     3. Sample size considerations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-statistics">
+     4. Test statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     5. Residuals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     6. Assessment of model fit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-to-do-when-ph-fails">
+     7. What to do when PH fails
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="book-regression-modeling-strategies">
+<h1>[book] Regression Modeling Strategies<a class="headerlink" href="#book-regression-modeling-strategies" title="Permalink to this headline">¶</a></h1>
+<hr>
+<p><em>A reading note of <span id="id1">Harrell [<a class="reference internal" href="#id7">2017</a>]</span></em></p>
+<div class="section" id="chapter-9-overview-of-maximum-likelihood-estimation">
+<h2>Chapter 9 Overview of Maximum Likelihood Estimation<a class="headerlink" href="#chapter-9-overview-of-maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em>How to understand Fisher information and what info it provides</em>: The degree of peakedness of a function at a given point is the speed with which the slope is changing at that point, that is, the slope of the slope or second derivative of the funciton at that point.</p>
+<ul>
+<li><p>i.e. at the peak of a function, the speed of slope change is the <em>slowest</em></p></li>
+</ul>
+</li>
+<li><p>An estimate of variance is given by the inverse of the information at the point estimate (e.g. the MLE)</p></li>
+</ul>
+<div class="section" id="hypothesis-testing">
+<h3>2. Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="likelihood-ratio-test">
+<h4>2.1 Likelihood ratio test<a class="headerlink" href="#likelihood-ratio-test" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>This test statistic is the ratio of the likelihood at the hypothesized parameter values to the likelihood of the data at the maximum (i.e., at parameter values = MLEs).</p>
+<ul class="simple">
+<li><p>−2× the log of this likelihood ratio has desirable statistical properties.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[LR = -2\log(L \text{ at } H_0/L \text{ at  MLEs}) \sim \chi^2_p\]</div>
+<p>for large enough sample size, where <span class="math notranslate nohighlight">\(p\)</span> is the number parameters to be tested</p>
+</li>
+</ul>
+</div>
+<div class="section" id="wald-test">
+<h4>2.2 Wald test<a class="headerlink" href="#wald-test" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>The Wald test statistic is a generalization of a <em>t-</em> or <em>z-</em> statistic. It is a function of the difference in the MLE and its hypothesized value, normalized by an estimate of the standard deviation of the MLE.  For large enough <span class="math notranslate nohighlight">\(n\)</span>,
+​$<span class="math notranslate nohighlight">\(W = \frac{(\hat{\theta} - \theta_0)^2}{var(\hat{\theta})}\sim \chi^2_p\)</span>$</p>
+<ul>
+<li><p>Variance of MLE is the inverse of the oberved Fisher information <span class="math notranslate nohighlight">\(1/I(\hat{\theta})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sqrt{W}\)</span> can follow either <span class="math notranslate nohighlight">\(t\)</span> or normal distribution, depending on if the variance of the estimate is an estimated (like in the normal data) or not (like in the binary data)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="score-test">
+<h4>2.3 Score test<a class="headerlink" href="#score-test" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Rao’s score statistic measures how far from zero the score function is when evaluated at the null hypothesis.</p>
+<ul>
+<li><p>If the MLE happens to equal the hypothesized value <span class="math notranslate nohighlight">\(\theta_0\)</span>, <span class="math notranslate nohighlight">\(\theta_0\)</span> maximizes the likelihood and so <span class="math notranslate nohighlight">\(U(\theta_0) = 0\)</span>.</p></li>
+<li><p>The variance of the score function is the Fisher information <span class="math notranslate nohighlight">\(I(\theta_0)\)</span></p></li>
+<li><p>Test statistic for score test is defined as <span class="math notranslate nohighlight">\(\frac{U(\theta_0)^2}{I(\theta_0)} \sim \chi^2_p\)</span></p></li>
+<li><p>Thus the score test doesn’t invole estimating the MLE</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="which-test-to-use-when">
+<h4>Which test to use when<a class="headerlink" href="#which-test-to-use-when" title="Permalink to this headline">¶</a></h4>
+<p><img alt="image-20200729230109310" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200729230109310.png?token=ABLIWWZARHQGPM46JKSEN2C7EJRGK" /></p>
+</div>
+</div>
+<div class="section" id="general-case">
+<h3>3. General case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Estimating a vector of parameters</p>
+<ul>
+<li><p><em>Score vector</em>: first derivative of the log likelihood function w.r.t. all the parameters</p>
+<p><span class="math notranslate nohighlight">\(U(B) = (\partial/\partial B)\log L(B)\)</span></p>
+</li>
+<li><p>Fisher <em>information matrix</em>: a <span class="math notranslate nohighlight">\(p\times p\)</span> matrix whose elements are the negative of the expectation of all second partial derivatives of <span class="math notranslate nohighlight">\(\log L(B)\)</span></p>
+<p><span class="math notranslate nohighlight">\(I^*(B) = -E(\partial^2/\partial B\partial B')\log L(B)\)</span></p>
+</li>
+<li><p>Observed information matrix: is the information matrix without taking expectation</p>
+<p><span class="math notranslate nohighlight">\(I(B) = -(\partial^2/\partial B\partial B')\log L(B)\)</span></p>
+</li>
+</ul>
+</li>
+<li><p>Global test statistics</p>
+<ul class="simple">
+<li><p>The extention from one dimentional test to <span class="math notranslate nohighlight">\(p-\)</span>dimensional test</p></li>
+</ul>
+</li>
+<li><p>Testing a subset of the parameters</p></li>
+<li><p>Tests based on contrasts</p></li>
+</ul>
+</div>
+<div class="section" id="confidence-intervals">
+<h3>6. Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="further-use-of-the-log-likelihood">
+<h3>8. Further use of the log likelihood<a class="headerlink" href="#further-use-of-the-log-likelihood" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="weighted-maximum-likelihood-estimation">
+<h3>9. Weighted maximum likelihood estimation<a class="headerlink" href="#weighted-maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="penalized-maximum-likelihood-estimation">
+<h3>10. Penalized maximum likelihood estimation<a class="headerlink" href="#penalized-maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="chapter-13-ordinal-logistic-regression">
+<h2>Chapter 13 Ordinal Logistic Regression<a class="headerlink" href="#chapter-13-ordinal-logistic-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="background">
+<h3>1. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ordinality-assumption">
+<h3>2. Ordinality assumption<a class="headerlink" href="#ordinality-assumption" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="proportional-odds-model">
+<h3>3. Proportional odds model<a class="headerlink" href="#proportional-odds-model" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="model">
+<h4>3.1 Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="assumptions-and-interpretation-of-parameters">
+<h4>3.2 Assumptions and interpretation of parameters<a class="headerlink" href="#assumptions-and-interpretation-of-parameters" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="estimation">
+<h4>3.3 Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="residuals">
+<h4>3.4 Residuals<a class="headerlink" href="#residuals" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>In binary logistic regression, <em>partial residuals</em> are very useful as they allow the analyst to fit linear effect for all the predictors but then to nonparametrically estimate the true transformation that each predictor requires.</p>
+<div class="math notranslate nohighlight">
+\[
+  r_{im} = \hat{\beta}_mX_{im} + \frac{Y_i - \hat{P}_i}{\hat{P}_i(1-\hat{P}_i)}
+  \]</div>
+<p>​	where
+$<span class="math notranslate nohighlight">\(
+\hat{P}_i= \frac{1}{1 +\exp[-(\alpha + X_i\hat{\beta})]}
+\)</span>$</p>
+<ul class="simple">
+<li><p>A smoothed plot (e.g., using the moving linear regression algorithm in
+<code class="docutils literal notranslate"><span class="pre">loess</span></code>) of <span class="math notranslate nohighlight">\(X_{im}\)</span> against <span class="math notranslate nohighlight">\(r_{im}\)</span> provides a nonparametric estimation of how <span class="math notranslate nohighlight">\(X_m\)</span> relates to the log relative odds that <span class="math notranslate nohighlight">\(Y = 1 | X_{m}\)</span>.</p></li>
+<li><p>Since partial residuals allow examination of predictor transformations (linearity) while simultaneously allowing examination of PO (parallelism), partial residual plots are generally preferred over score residual plots for ordinal models.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="assessment-of-model-fit">
+<h4>3.5 Assessment of model fit<a class="headerlink" href="#assessment-of-model-fit" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Score test in <code class="docutils literal notranslate"><span class="pre">PROC</span> <span class="pre">LOGISTIC</span></code>: extreme anti-conservatism in many cases</p></li>
+<li><p>Compare means of <span class="math notranslate nohighlight">\(X|Y\)</span> with and without assuming PO</p></li>
+<li><p>Stratifying one each predictor and computing the logits of all proportions of the form <span class="math notranslate nohighlight">\(Y\ge j, j = \text{1, 2, }\cdots, k\)</span>. When proportional odds holds, the difference in logits between different values of <span class="math notranslate nohighlight">\(j\)</span> should be the same at all levels of <span class="math notranslate nohighlight">\(X\)</span>, because the model dictates that <span class="math notranslate nohighlight">\(logit(Y\ge j| X) - logit(Y\ge i|X) = \alpha_j - \alpha_i\)</span>, for any constant <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<ul>
+<li><p>We check both the consistency of <span class="math notranslate nohighlight">\(logit(Y\ge j| X) - logit(Y\ge i|X)\)</span> at different <span class="math notranslate nohighlight">\(X\)</span> levels</p></li>
+<li><p>Or we can check the parallelism of <span class="math notranslate nohighlight">\(logit(Y\ge j| X) - logit(Y\ge j|X+k)\)</span> for <span class="math notranslate nohighlight">\(Y = 1, \cdots, J\)</span> (right below)</p>
+<p><img alt="image-20200828135732415" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200828135732415.png" /></p>
+</li>
+</ul>
+</li>
+<li><p>Regarding assessment of linearity and additivity assumptions, splines, partial residual plots, and interaction tests are among the best tools.</p></li>
+</ul>
+</div>
+<div class="section" id="quantifying-predictive-ability">
+<h4>3.6 Quantifying predictive ability<a class="headerlink" href="#quantifying-predictive-ability" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_N^2\)</span> coefficient: model LR <span class="math notranslate nohighlight">\(\chi^2\)</span> (<span class="math notranslate nohighlight">\(\chi^2\)</span> added to a model containing only the <span class="math notranslate nohighlight">\(k\)</span> intercept parameter)</p></li>
+<li><p>Somers’ <span class="math notranslate nohighlight">\(D_{xy}\)</span> rank correlation between <span class="math notranslate nohighlight">\(X\hat{\beta}\)</span> and <span class="math notranslate nohighlight">\(Y\)</span></p></li>
+<li><p>Probability of concordance <span class="math notranslate nohighlight">\(c\)</span> (a generalized ROC area): the fraction of pairs for which the values of <span class="math notranslate nohighlight">\(X\hat{\beta}\)</span> are in the same direction among all possible pairs of subjects having different <span class="math notranslate nohighlight">\(Y\)</span> values</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(D_{xy} = 2(c - 0.5)\)</span></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="describing-the-fitted-model">
+<h4>3.7 Describing the fitted model<a class="headerlink" href="#describing-the-fitted-model" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(logit(Y\ge j|X)\)</span>, the linear predictor</p></li>
+<li><p><span class="math notranslate nohighlight">\(Prob(Y\ge j| X)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Prob(Y=j|X)\)</span></p></li>
+<li><p>Quantiles of <span class="math notranslate nohighlight">\(Y|X\)</span>, e.g. the median</p></li>
+<li><p><span class="math notranslate nohighlight">\(E(Y|X)\)</span> if <span class="math notranslate nohighlight">\(Y\)</span> is interval scaled</p></li>
+</ul>
+</div>
+<div class="section" id="validating-the-fitted-model">
+<h4>3.8 Validating the fitted model<a class="headerlink" href="#validating-the-fitted-model" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>The PO model is validated much the same way as the binary logistic model</p></li>
+<li><p>For estimating an overfitting-corrected calibration curve one estimates <span class="math notranslate nohighlight">\(Pr(Y ≥ j|X)\)</span> using one <span class="math notranslate nohighlight">\(j\)</span> at a time.</p></li>
+</ul>
+</div>
+<div class="section" id="r-function">
+<h4>3.9 <code class="docutils literal notranslate"><span class="pre">R</span></code> function<a class="headerlink" href="#r-function" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{rms}</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">rms::lrm</span></code> : intended to be used for the cases where the number of unique values of <span class="math notranslate nohighlight">\(Y\)</span> are less than a few doze</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rms::orm</span></code>: handles the continuous Y case efficiently and allows for links other than the logit</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{Hmisc}</span></code>: <code class="docutils literal notranslate"><span class="pre">popower</span></code> and <code class="docutils literal notranslate"><span class="pre">posamsize</span></code> compute power and sample size estimates for ordinal responses using the proportional odds model.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="continuation-ratio-model">
+<h3>4. Continuation ratio model<a class="headerlink" href="#continuation-ratio-model" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>4.1 Model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>The continuation ratio (CR) model is based on conditional probabilities. The (forward) CR model is defined as follows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e1b5e71a-4e22-411c-864a-7047c03ffe18">
+<span class="eqno">(1)<a class="headerlink" href="#equation-e1b5e71a-4e22-411c-864a-7047c03ffe18" title="Permalink to this equation">¶</a></span>\[\begin{align}
+   P(Y=j|Y\ge j,  X) &amp; = \frac{1}{1+\exp[-(\theta_j + X\gamma)]}\\
+   logit(Y=0|Y\ge0, X) &amp; = logit(Y=0|X)\\
+   &amp;=\theta_0 + X\gamma\\
+   
+   logit(Y = k-1|Y \ge k-1, X) &amp; = \theta_{k-1} + X\gamma
+  \end{align}\]</div>
+<ul class="simple">
+<li><p>the CR model has been said to be likely to fit ordinal responses when subjects have to “pass through” one category to get to the next.</p></li>
+<li><p>It is a <strong>discrete version of the Cox PH model</strong>, the discrete hazard function is defined as <span class="math notranslate nohighlight">\(P(Y=j|Y\ge j)\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="chapter-20-cox-proportional-hazards-regression-model">
+<h2>Chapter 20 Cox Proportional Hazards Regression Model<a class="headerlink" href="#chapter-20-cox-proportional-hazards-regression-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>1. Model<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="extending-the-ph-cox-model-by-stratification">
+<h4>1.7 Extending the (PH Cox) model by stratification<a class="headerlink" href="#extending-the-ph-cox-model-by-stratification" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>The model assumes different baseline hazard but common regression coefficient among stratified models</p>
+<p><span class="math notranslate nohighlight">\(\lambda(t | C =j) = \lambda_j(t)\exp(X\beta)\)</span></p>
+<ul class="simple">
+<li><p>The idea is to allow the form of the underlying hazard function to vary across levels of the stratification factors</p></li>
+</ul>
+</li>
+<li><p>In most cases the loss of efficiency by stratification is small as long as the number of strata is not too large with regard to the total number of events.</p>
+<ul class="simple">
+<li><p>A stratum that contains no events contributes no information to the analysis, so such a situation should be avoided if possible.</p></li>
+</ul>
+</li>
+<li><p>If different strata are made up of independent subjects, the strata are independent and the likelihood functions are multiplied together to form a joint likelihood over strata. Log likelihood functions are thus added over strata.</p>
+<ul class="simple">
+<li><p>No inference can be made about the stratification factors. They are merely “adjusted
+for.”</p></li>
+</ul>
+</li>
+<li><p>Stratification is useful for checking the <strong>PH</strong> and <strong>linearity</strong> assumptions for one or more predictors.</p>
+<ul class="simple">
+<li><p>Predicted Cox survival curves can be derived by modeling the predictors in the usual way, and then stratified survival curves can be estimated by using those predictors as stratification factors.</p></li>
+<li><p>Other factors for which PH is assumed can be modeled in both instances.</p></li>
+<li><p>By comparing the modeled versus stratified survival estimates, a graphical check of the assumptions can be made.</p></li>
+</ul>
+</li>
+<li><p>Besides allowing a factor to be adjusted for without modeling its effect a stratified Cox PH model can also allow a modeled factor to interact with strata:</p>
+<p><span class="math notranslate nohighlight">\(\lambda(t|X_1, C=j) = \lambda_j(t)\exp(\beta_1X_1 + \beta_2X_2)\)</span> for <span class="math notranslate nohighlight">\(j = 1, 2\)</span> (example)</p>
+<p>where <span class="math notranslate nohighlight">\(X_2 = 0\)</span> for <span class="math notranslate nohighlight">\(j = 1\)</span> and <span class="math notranslate nohighlight">\(X_1\)</span> for <span class="math notranslate nohighlight">\(j=2\)</span></p>
+</li>
+<li><p>The stratified Cox model turns out to be a generalization of the <strong>conditional logistic model</strong> for analyzing matched set (e.g., case-control) data. (??)</p>
+<ul class="simple">
+<li><p>Each stratum represents a set, and the number of “failures” in the set is the number of “cases” in that set.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(r : 1\)</span> matching (<span class="math notranslate nohighlight">\(r\)</span> may vary across sets), the Breslow likelihood may be used to fit the conditional logistic model exactly. For <span class="math notranslate nohighlight">\(r : m\)</span> matching, an exact Cox likelihood must be computed.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="sample-size-considerations">
+<h3>3. Sample size considerations<a class="headerlink" href="#sample-size-considerations" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Then the Kaplan-Meier estimate (<em>one-sample</em>) is just one minus the empirical cumulative distribution function, assuming there is no censoring. By the <em>Dvoretzky-Kiefer-Wolfowitz inequality</em>, the maximum absolute error in an empirical distribution function estimate of the true continuous distribution function is less than or equal to <span class="math notranslate nohighlight">\(\epsilon\)</span> with probability of at least <span class="math notranslate nohighlight">\(1 − 2e^{−2n\epsilon^2}\)</span>.</p></li>
+<li><p>To estimate the subject-specific survival curves <span class="math notranslate nohighlight">\((S(t|X))\)</span> will require greater sample sizes, as will having censored data.</p></li>
+<li><p>To estimate hazard ratio:</p>
+<ul>
+<li><p>if the total sample size is <span class="math notranslate nohighlight">\(n\)</span> and the number of events in the two categories are respectively <span class="math notranslate nohighlight">\(e_0\)</span> and <span class="math notranslate nohighlight">\(e_1\)</span>, the variance of the log hazard ratio is approximately <span class="math notranslate nohighlight">\(v = \frac{1}{e_0} + \frac{1}{e_1}\)</span></p></li>
+<li><p>Letting <span class="math notranslate nohighlight">\(z\)</span> denote the <span class="math notranslate nohighlight">\(1 − \alpha/2\)</span> standard normal critical value, the multiplicative margin</p>
+<p>of error (MMOE) with confidence <span class="math notranslate nohighlight">\(1 − \alpha\)</span> is given by <span class="math notranslate nohighlight">\(\exp(z\sqrt{v})\)</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="test-statistics">
+<h3>4. Test statistics<a class="headerlink" href="#test-statistics" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Wald, score, and likelihood ratio statistics are useful and valid for drawing inferences about β in the Cox model.</p>
+<ul>
+<li><p>If there is a single binary predictor in the model that describes two groups, the score test for assessing the importance of the binary predictor is virtually identical to the Mantel–Haenszel log-rank test for comparing the two groups.</p></li>
+<li><p>If the analysis is stratified for other (<strong>nonmodeled</strong>) factors, the score test from a stratified Cox model is equivalent to the corresponding stratified log-rank test.</p></li>
+</ul>
+</li>
+<li><p>The likelihood ratio or Wald tests could also be used in this situation, and in fact the likelihood ratio test may be better than the score test (i.e., type I errors by treating the likelihood ratio test statistic as having a <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution may be more accurate than using the log-rank statistic).</p></li>
+<li><p>The Cox model can be thought of as a generalization of the log-rank procedure since it allows one to test continuous predictors, perform simultaneous tests of various predictors, and adjust for other continuous factors without grouping them. Although a stratified log-rank test does not make assumptions regarding the effect of the adjustment (stratifying) factors, it makes the same assumption (i.e., PH) as the Cox model regarding the treatment effect for the statistical test of no difference in survival between groups.</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>5. Residuals<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><em>Therneau et al.</em> discussed four types of residuals from the Cox model**: martingale, score, Schoenfeld**, and <strong>deviance</strong>.</p>
+<p><img alt="image-20200807104402567" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200807104402567.png" /></p>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>6. Assessment of model fit<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="what-to-do-when-ph-fails">
+<h3>7. What to do when PH fails<a class="headerlink" href="#what-to-do-when-ph-fails" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Also check note on <a class="reference internal" href="Note-Cox_PH_model.html"><span class="doc std std-doc">Cox PH Model</span></a></p></li>
+</ul>
+<p id="id6"><dl class="citation">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">Har17</a></span></dt>
+<dd><p>Frank E Harrell. Regression modeling strategies. <em>Bios</em>, 330(2018):14, 2017.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Study notes index</a>
+    <a class='right-next' id="next-link" href="Note-Survival_Analysis.html" title="next page">Survival Analysis</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

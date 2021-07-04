@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>​Cox PH model &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Competing risk models" href="Note-Competing_Risk_Regression.html" />
+    <link rel="prev" title="Survival Analysis" href="Note-Survival_Analysis.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study notes index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Cox_PH_model.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Cox_PH_model.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assumptions">
+   Assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-model">
+   The model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checklist-when-fitting-the-cox-model-kragh2021analysis">
+   Checklist when fitting the Cox model
+   <span class="xref cite cite-p">
+    kragh2021analysis
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#before-fitting-the-model">
+     Before fitting the model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#after-fitting-the-model">
+     After fitting the model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternatives-modifications-to-cox-ph-model">
+   Alternatives/modifications to Cox PH model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-hr-uno2014moving">
+   Alternative HR
+   <span class="xref cite cite-p">
+    uno2014moving
+   </span>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cox-ph-model">
+<h1>​Cox PH model<a class="headerlink" href="#cox-ph-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="assumptions">
+<h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h2>
+<p>Though the Cox model is non-parametric to the extent that no assumptions are made about form of the baseline hazard, there are still a number of important issues which need be assessed before the model results can be safely applied.</p>
+<ol>
+<li><p><strong>Non-informative censoring</strong>: the mechanisms giving rise to censoring of individual subjects are not related to the probability of an event occurring.</p></li>
+<li><p><strong>Proportional hazards</strong>. In a regression type of setting this means that the survival curves for two strata (determined by the particular choices of values for the <span class="math notranslate nohighlight">\(x\)</span>-variables or if <span class="math notranslate nohighlight">\(x\)</span> is time-dependent denoted as <span class="math notranslate nohighlight">\(x(t)\)</span>) must have hazard functions that are proportional over time (i.e. constant relative hazard).</p>
+<ul class="simple">
+<li><p><strong><em>How to test the proportional hazards assumption</em>?</strong> (reference?)</p>
+<ul>
+<li><p><em>graphic</em></p></li>
+<li><p>We may plot expected versus observed estimates of <span class="math notranslate nohighlight">\(S(t)\)</span> to check if they are close.</p></li>
+<li><p>check parallelism of stratified log-log function, <span class="math notranslate nohighlight">\(\log[-\log S(t)]\)</span>, plots as <span class="math notranslate nohighlight">\(t \uparrow\)</span></p></li>
+<li><p>We may use suitably defined residuals to test the goodness-of-fit.</p>
+<ul>
+<li><p>Consider eponymous residuals due to <em>Schoenfeld (1982)</em> that are centered on zero and should be independent of time if the PHA is true. Deviations from this, i.e. residuals that exhibit some trend in time, indicate that the PHA is violated. I.e., test of no correlation between the Schoenfeld residuals and (possibly rank) survival time.</p></li>
+</ul>
+</li>
+<li><p>And we may generalize the model to be non-proportional and then assess whether the generalized model fits better than the proportional one.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="image-20200805111934663" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200805111934663.png" /></p>
+<p><img alt="image-20200805115220905" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200805115220905.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="the-model">
+<h2>The model<a class="headerlink" href="#the-model" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Model specification</p>
+<ul>
+<li><p>baseline hazard is unspecified</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\lambda_i(t) = \lambda(t|Z_i(t)) = \lambda_0(t)\exp(Z_i(t)^T\beta)
+\]</div>
+<ul>
+<li><p>Inference with partial likelihood</p>
+<ul class="simple">
+<li><p>Regression coefficients</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  pl(\beta) = \sum_{i=1}^n\int_0^{\infty}\log\left(\frac{\exp(Z_i(t)^T\beta)}{\sum_jY_j(t)\exp(Z_j(u)^T\beta)}\right)dN_i(t)
+  \]</div>
+<ul>
+<li><p>Breslow estimator of the cumulative baseline hazard
+$<span class="math notranslate nohighlight">\(
+\hat{\Lambda}_0(t|\hat{\beta}) = \int_0^t\frac{dN(u)}{\sum_iY_i(u)\exp(Z_i(u)^T\hat{\beta})}
+\)</span>$</p>
+<ul class="simple">
+<li><p>with no covariates (<span class="math notranslate nohighlight">\(\beta=0\)</span>) the Breslow estimator is simply the Nelson-Alen estimator.</p></li>
+</ul>
+</li>
+<li><p>The partial likelihood may be seen as a profile likelihood resulting from eliminating the baseline hazard from a joint likelihood including both <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\lambda_0(t)\)</span>.</p></li>
+<li><p>It is important to notice that this joint likelihood is valid both for all-cause survival data (left panel of Figure 1) and for the more general situation depicted in the right panel of that figure. This is because the likelihood for the whole system <em>factorizes</em> into a number of factors, each depending on a separate transition in the model.</p>
+<p><img alt="image-20201221160718376" src="https://raw.githubusercontent.com/askming/picgo/master/image-20201221160718376.png" /></p>
+</li>
+</ul>
+</li>
+<li><p>Internal vs external time-dependent covariates</p>
+<ul class="simple">
+<li><p><em>External (exogenous)</em>: time-dependent variables: can be calculated or they “exist” regardless the subject is still under observation or not. E.g. age</p></li>
+<li><p>Internal (endogenous): those can only be ascertained for subjects still under observation, e.g. current blood pressure</p></li>
+</ul>
+</li>
+<li><p>A limitation of this non-parametric model component is that it only allows direct estimation of the <em>cumulative</em> baseline hazard <span class="math notranslate nohighlight">\(Λ_0(t)\)</span>, but fails to produce an estimate of the hazard <span class="math notranslate nohighlight">\(𝜆_0(t)\)</span> itself. To obtain an estimate of <span class="math notranslate nohighlight">\(𝜆_0(t)\)</span> some smoothing would be required.</p></li>
+<li><p>To allow greater flexibility and obtain a smooth baseline hazard one may use flexible parametric models for <span class="math notranslate nohighlight">\(𝜆_0(t)\)</span>, for example, via splines in combination with penalized likelihood.</p></li>
+</ul>
+</div>
+<div class="section" id="checklist-when-fitting-the-cox-model-kragh2021analysis">
+<h2>Checklist when fitting the Cox model <span id="id1">[<a class="reference internal" href="#id5">Kragh Andersen <em>et al.</em>, 2021</a>]</span><a class="headerlink" href="#checklist-when-fitting-the-cox-model-kragh2021analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="before-fitting-the-model">
+<h3>Before fitting the model<a class="headerlink" href="#before-fitting-the-model" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Checks on the covariates to be included in the model</strong></p></li>
+<li><p><strong>Check dates</strong></p></li>
+<li><p><strong>Investigate censoring</strong></p>
+<ul>
+<li><p>plotting a “survival curve” estimating <span class="math notranslate nohighlight">\(C(t) =P(\text{no censoring before } t)\)</span>  (or its complement <span class="math notranslate nohighlight">\(1 − C(t))\)</span> could be done to give an impression of the proportion censored in time. Here, censoring is the “event” and a failure is a “censoring event” that prevents observation of the “event of interest.’</p></li>
+<li><p>a Cox regression model with “censoring” as event can help to check whether the censoring depends on any of the covariates under consideration.</p>
+<ul>
+<li><p>If there are some variables that one may or may not include in the model (maybe they are not crucial for the question asked) then they should be included if they affect the censoring, since in this way the independent censoring assumption is relaxed to conditional independence,</p></li>
+</ul>
+</li>
+<li><p>An important feature of hazard models is that they can be used exactly by <em>formally censoring for the competing events (including all-cause death)</em>.</p>
+<ul>
+<li><p>This is not a violation of the independent censoring assumption, the point being, as mentioned above, that the joint likelihood function for both the event of interest and the competing events <em>factorizes</em> and the factor corresponding to the intensity for the event of interest has the same form as it would have had if competing events were regarded as censoring events.</p></li>
+<li><p>In such situations one should carefully consider if the (cause-specific) hazard for the event of interest properly answers the scientific question or whether one needs to go beyond this hazard model.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Time-dependent covariates</strong></p>
+<ul>
+<li><p>A feature of the partial likelihood estimation method for the Cox model is that the values of time-dependent covariates are needed for everyone at risk at all the event times.</p>
+<ul>
+<li><p>In practice, most recently observed values of <span class="math notranslate nohighlight">\(Z(t)\)</span> are typically carried forward until the next value is observed. Such last-value-carried-forward approach can induce some bias toward the null if the current hazard depends truly on the current (unknown) covariate value.</p></li>
+<li><p>A more advanced approach for internal time-dependent covari- ates which are not measured at all times uses <em><strong>joint longitudinal-survival models</strong></em> to obtain estimates of <span class="math notranslate nohighlight">\(\beta\)</span>, and also allows the possibility that the observed <span class="math notranslate nohighlight">\(Z(t)\)</span> is measured with error.</p></li>
+</ul>
+</li>
+<li><p>If the value of a time-dependent covariate at <em>t</em> captures the past history (<em>Z</em>(<em>s</em>), <em>s</em> &lt; <em>t</em>) then issues of incomplete data may arise with delayed entry if (<em>Z</em>(<em>s</em>), <em>s</em> &lt; <em>V</em> ) is not observed.</p></li>
+<li><p>Covariates that change shortly before the endpoint should be viewed with particular suspicion. e.g. change in medication in the last 1 or 2 weeks before death</p>
+<ul>
+<li><p>The most serious examples of such “anticipation” involve <em>reverse causality bias</em> where a change in <em>Z</em>(<em>t</em>) occurs <em>because of</em> early symptoms of the event of interest.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="after-fitting-the-model">
+<h3>After fitting the model<a class="headerlink" href="#after-fitting-the-model" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Check PH and the functional form</strong></p>
+<ul>
+<li><p>Chekcing PH assumption</p>
+<ul>
+<li><p>Schoenfeld and martingale residuals</p></li>
+<li><p>Plots of the cumulative hazard</p></li>
+<li><p>through estimates of <span class="math notranslate nohighlight">\(\beta(t)\)</span> in a time-varying coefficient Cox model</p></li>
+</ul>
+</li>
+<li><p>For continuous covariates, functional form (ie, nonlinear effects) should ideally be investigated jointly with assessing possible violation of the PH hypothesis (ie, their “time-varying effects”)</p></li>
+<li><p>Note that violation of the PH assumption may be some times induced by a failure to include in the Cox model a strong predictor of the outcome.</p></li>
+</ul>
+</li>
+<li><p><strong>Reporting</strong></p>
+<ul>
+<li><p>the regression parameters figuring in the partial likelihood only give information about the hazard ratios and the relevance and importance of the hazard ratios at any follow-up time depends on the concurrent values of the baseline hazard.</p></li>
+</ul>
+</li>
+<li><p><strong>Interpretation</strong> (hazard ratio)</p>
+<ul>
+<li><p><strong>Noncollapsibility</strong></p>
+<ul>
+<li><p>It is frequently seen that the effects, 𝛽, in a Cox model gradually decay with time toward 0.</p>
+<ul>
+<li><p>If the correct model is <span class="math notranslate nohighlight">\(\lambda(t) = \lambda_0(t)\exp(\beta_1Z_1+\beta_2Z_2)\)</span> then a reduced model <span class="math notranslate nohighlight">\(\lambda(t)=\tilde{\lambda}_0\exp(\tilde{\beta}Z_1)\)</span> cannot hold even if <span class="math notranslate nohighlight">\(Z_1\)</span> and <span class="math notranslate nohighlight">\(Z_2\)</span> are independent, so that <span class="math notranslate nohighlight">\(Z_2\)</span> isn’t considered a confounder for <span class="math notranslate nohighlight">\(Z_1\)</span>.</p></li>
+</ul>
+</li>
+<li><p>The noncollapsibility suggests that PH can only be seen as a working hypothesis allowing a simple structure.</p></li>
+<li><p>It can be noted that the logistic regression model for a binary response variable suffers from the same problem, while the additive hazards model does not.</p></li>
+</ul>
+</li>
+<li><p><strong>Competing risk</strong></p>
+<ul>
+<li><p>if individuals may die from causes other than the one of primary interest,no such direct interpretation in terms of probability of the event is possible. Directly using the conventional survial formula will over-estimate the probability of the event of interest.</p></li>
+<li><p>Instead, one should fit the Cox models for all transitions (cause-specific hazards) and interpret the collective results through study of the absolute risk (cumulative incidence function)</p></li>
+<li><p>Hazard ratios from cause-specific Cox models do no longer necessarily reflect the absolute risk ratio.</p></li>
+</ul>
+</li>
+<li><p><strong>Lack of causal interpretation</strong></p>
+<ul>
+<li><p>the hazard does not provide a “causal contrast”</p>
+<ul>
+<li><p>The contrasts based on the hazard functions for the counterfactual outcomes <span class="math notranslate nohighlight">\(T^*(0), T^*(1)\)</span>, e.g. the hazard ratio at time <span class="math notranslate nohighlight">\(t\)</span>, are not directly causally interpretable since they contrast different subpopulations: those who survive past <span class="math notranslate nohighlight">\(t\)</span> under treatment (<span class="math notranslate nohighlight">\(T^*(1)&gt;t\)</span>) and those who survive past time <span class="math notranslate nohighlight">\(t\)</span> under no treatment (<span class="math notranslate nohighlight">\(T^*(0)&gt;t\)</span>).</p></li>
+<li><p>For this reason, a statement saying that“treatment only works until time 𝜏 but not beyond” in a situation with 𝛽(t) &lt; 0 for t &lt; 𝜏 and 𝛽(t) = 0 for t &gt; 𝜏 is not justified.</p></li>
+</ul>
+</li>
+<li><p>A special problem with causal inference for survival data is <em>time-depending confounding/mediation</em> where a time-dependent covariate both affects future treatment and survival outcome and is affected by past treatment. For this situation, special techniques are needed to draw causal conclusions concerning the treatment effect.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="alternatives-modifications-to-cox-ph-model">
+<h2>Alternatives/modifications to Cox PH model<a class="headerlink" href="#alternatives-modifications-to-cox-ph-model" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p><strong>Extended Cox model</strong> (with time-dependent coefficients when PH assumption doesn’t hold)</p>
+<p>​											$<span class="math notranslate nohighlight">\(\lambda(t, x) = \lambda_0(t)\exp(\beta_1X_1 + \sigma_1X_2g(t))\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(g(t)\)</span> is a function of time, e.g. <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(log(t)\)</span></p>
+<ul>
+<li><p>The simplest example is to split time into two intervals (splitting at time <em>𝜏</em>, say) and assume PH within each.</p></li>
+<li><p>Alternatives include the use of splines. Some care is needed here since the number of parameters in such models with time-varying effects can become quite large and there is a danger of overfitting.</p></li>
+<li><p>In the situation where the PH assumption needs to be relaxed for a single categorical covariate, the <strong><u><em>stratified Cox model</em></u></strong> is useful.</p></li>
+<li><p>An alternative to the multiplicative PH models is an <em>additive hazards model</em>. The Aalen model</p>
+<ul class="simple">
+<li><p>both the baseline hazard <span class="math notranslate nohighlight">\(𝜆_0(t)\)</span> and the regression functions <span class="math notranslate nohighlight">\(𝛽(t)\)</span> are completely unspecified (like the baseline hazard for the Cox model) and their cumulatives <span class="math notranslate nohighlight">\(\int_0^t\lambda_0(u)du\)</span>, <span class="math notranslate nohighlight">\(\int_0^t\beta(u)du\)</span> can be estimated using a least squares technique.</p></li>
+<li><p>A drawback of the <strong>Aalen</strong> model is that the estimated hazard can become negative while an advantage is that it is very flexible.</p></li>
+</ul>
+</li>
+<li><p>A completely different approach is given by the <strong>accelerated failure time (AFT) model</strong> where the covariates are assumed to extend or shorten the survival time by a constant time ratio <span class="math notranslate nohighlight">\(\exp(\beta)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+     S(t|Z) = S_0(\exp(-Z^T\beta)t)
+     \]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[
+     \ln(T^*)= Z^T\beta + \epsilon
+     \]</div>
+<ul class="simple">
+<li><p>The model is a viable alternative to the PH model and although one could derive the hazard function for this model, it does not naturally fall under the heading of “hazard models.”</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Ristricted mean survival time (RMST)</strong> model</p></li>
+</ol>
+</div>
+<div class="section" id="alternative-hr-uno2014moving">
+<h2>Alternative HR <span id="id2">[<a class="reference internal" href="#id6">Uno <em>et al.</em>, 2014</a>]</span><a class="headerlink" href="#alternative-hr-uno2014moving" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image-20210618135446172" src="https://raw.githubusercontent.com/askming/picgo/master/image-20210618135446172.png" /></p>
+<ul class="simple">
+<li><p>Hazard ratio (HR) may not always be a good summary statistic in quantifying the between-group difference in survival analysis for the following reasons</p>
+<ol class="simple">
+<li><p>Proportional hazard (PH) assumption may be violated (see above): then HR is not meaningful since it’s just the average of true HR over time</p></li>
+<li><p>HR only <em>partially</em> captures the relative difference b/t two survival curves due to its lacking of background info of the absolute hazard rates under comparison (?).</p></li>
+<li><p>The precision of HR is dependent of <strong>NO. of events</strong> not the sample size or <strong>length of follow-up time</strong>: when the CI is wide since the event rate is low, we may misleadingly conclude that there is not enough info in the data although we have large sample and long follow-up time</p></li>
+<li><p>Since the estimation of HR is also dependent on FU time, stuides with different FUs may produce different HR estimate and they can’t be directly compared</p></li>
+<li><p>Potential misspecification of model <span class="math notranslate nohighlight">\(\rightarrow\)</span> HR can’t effectively detect the true difference under comparison</p></li>
+</ol>
+</li>
+<li><p>Alternative to HR: consider non-parametric methods</p>
+<ol class="simple">
+<li><p>K-M estimate and log-rank test(?) It’s closely related with PH assumption <span class="math notranslate nohighlight">\(\rightarrow\)</span> lack of power when PH assumption is not true</p></li>
+<li><p>Ratio (or difference) of <strong>t-year survival rate</strong>: t-year survival rate is the survival probability at time <span class="math notranslate nohighlight">\(t\)</span>, which is a specific time point during the FU</p></li>
+<li><p>Ratio (or difference) of percentiles of survival function: e.g. median survival or 25% percentile of survival when median is not available</p></li>
+<li><p><strong>Ristricted mean survival time (RMST) or restricted mean time lost</strong></p>
+<ul>
+<li><p>Calculated as the area under/above the K-M curve</p></li>
+<li><p>time of overall FU is crucial in comparison and needs to be prespecified</p></li>
+<li><p>it provides more context of comparison than HR</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p id="id3"><dl class="citation">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">KAPPvH+21</a></span></dt>
+<dd><p>Per Kragh Andersen, Maja Pohar Perme, Hans C van Houwelingen, Richard J Cook, Pierre Joly, Torben Martinussen, Jeremy MG Taylor, Michal Abrahamowicz, and Terry M Therneau. Analysis of time-to-event for observational studies: guidance to the use of intensity models. <em>Statistics in Medicine</em>, 40(1):185–211, 2021.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">UCT+14</a></span></dt>
+<dd><p>Hajime Uno, Brian Claggett, Lu Tian, Eisuke Inoue, Paul Gallo, Toshio Miyata, Deborah Schrag, Masahiro Takeuchi, Yoshiaki Uyama, Lihui Zhao, and others. Moving beyond the hazard ratio in quantifying the between-group difference in survival analysis. <em>Journal of clinical Oncology</em>, 32(22):2380, 2014.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Note-Survival_Analysis.html" title="previous page">Survival Analysis</a>
+    <a class='right-next' id="next-link" href="Note-Competing_Risk_Regression.html" title="next page">Competing risk models</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

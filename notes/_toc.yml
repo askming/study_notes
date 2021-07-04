@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+parts:
+  - caption: Statistics
+    chapters:
+    - file: "Stats/Book-Regression Modeling Strategies"
+    - file: "Stats/Note-Survival_Analysis"
+    - file: "Stats/Note-Cox_PH_model"
+    - file: "Stats/Note-Competing_Risk_Regression"
