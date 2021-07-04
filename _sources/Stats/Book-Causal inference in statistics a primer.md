@@ -94,6 +94,7 @@ we looked at the same numbers from our first example of drug taking and recovery
 ![输入图片描述](https://raw.githubusercontent.com/askming/picgo/master/1dbc495f_20200421111147.png)      
       
       - Under such conditions, the intervention graph is equal to the original graph—no arrow need be removed—and the adjustment formula reduces to
+  
           $$P(Y = y|do(X = x)) = P(Y = y|X = x)$$
 
 #### 3.2.1 To Adjust or not to Adjust
