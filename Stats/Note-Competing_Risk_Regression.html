@@ -321,16 +321,19 @@ F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
 <h2>Competing risk models<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cause-specific-hazard-modeling">
 <h3>1. Cause-specific hazard modeling<a class="headerlink" href="#cause-specific-hazard-modeling" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>This model assumes competing events other than the primary event of interest as consoring. For cause <span class="math notranslate nohighlight">\(k\)</span>, a separate proportional hazards model can be assumed:
-$<span class="math notranslate nohighlight">\(
-h_k(t)={h}_{k0}(t)\exp(\beta_k'Z)
-\)</span><span class="math notranslate nohighlight">\(
-and the partial likelihood function for \)</span>k<span class="math notranslate nohighlight">\(th event is given as
-\)</span><span class="math notranslate nohighlight">\(
-{L}(\beta_k) = \prod_i\left(\exp(\beta'_kZ_i)\over\sum_{j\in\tilde{\mathcal{R}_i}}\exp(\beta'_kZ_j)\right)^{\delta_i \equiv k}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\mathcal{R}_i<span class="math notranslate nohighlight">\( denotes the risk set at \)</span>X_i<span class="math notranslate nohighlight">\( and contains individuals who don't fail from any cause or are not censored before \)</span>X_i$.</p></li>
+<ul>
+<li><p>This model assumes competing events other than the primary event of interest as consoring. For cause <span class="math notranslate nohighlight">\(k\)</span>, a separate proportional hazards model can be assumed:</p>
+<div class="math notranslate nohighlight">
+\[
+  h_k(t)={h}_{k0}(t)\exp(\beta_k'Z)
+  \]</div>
+<p>and the partial likelihood function for <span class="math notranslate nohighlight">\(k\)</span>th event is given as</p>
+<div class="math notranslate nohighlight">
+\[
+  {L}(\beta_k) = \prod_i\left(\exp(\beta'_kZ_i)\over\sum_{j\in\tilde{\mathcal{R}_i}}\exp(\beta'_kZ_j)\right)^{\delta_i \equiv k}
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{R}_i\)</span> denotes the risk set at <span class="math notranslate nohighlight">\(X_i\)</span> and contains individuals who don’t fail from any cause or are not censored before <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
+</li>
 <li><p>Because competing risks are present, it is no longer appropriate to interpret the cause-specific hazard ratios in terms of a relative risk type of measure as regular hazard ratios. As <span id="id2">[<a class="reference internal" href="#id12">Andersen and Keiding, 2012</a>]</span> point out, this is a direct consequence of the loss of the one-to-one relationship between the cause-specific hazard function and the cumulative incidence function.</p></li>
 </ul>
 </div>
