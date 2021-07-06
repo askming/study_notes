@@ -22,11 +22,13 @@ tags: survival analysis
 ## Basic concepts
 
 - **Cause-specific hazard function**, $h_k(t)$: the instantaneous rate of failure due to cause $k$ conditional on survival until time t or later
+- 
   $$
   h_k(t) = \lim_{\Delta t\rightarrow0}\frac{P(t<T<t+\Delta t, \delta=k|T>t)} {\Delta t}, k=1, \cdots, K
   $$
 
 - **Cumulative incidence function** (CIF or **subdistribution function**), is the prob. of failure due to cause $k$ prior to time $t$
+  
   $$
   F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
   $$

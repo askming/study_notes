@@ -293,14 +293,17 @@
 <div class="section" id="basic-concepts">
 <h2>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p><strong>Cause-specific hazard function</strong>, <span class="math notranslate nohighlight">\(h_k(t)\)</span>: the instantaneous rate of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> conditional on survival until time t or later
-$<span class="math notranslate nohighlight">\(
-h_k(t) = \lim_{\Delta t\rightarrow0}\frac{P(t&lt;T&lt;t+\Delta t, \delta=k|T&gt;t)} {\Delta t}, k=1, \cdots, K
-\)</span>$</p></li>
-<li><p><strong>Cumulative incidence function</strong> (CIF or <strong>subdistribution function</strong>), is the prob. of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> prior to time <span class="math notranslate nohighlight">\(t\)</span>
-$<span class="math notranslate nohighlight">\(
-F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
-\)</span>$</p>
+<li><p><strong>Cause-specific hazard function</strong>, <span class="math notranslate nohighlight">\(h_k(t)\)</span>: the instantaneous rate of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> conditional on survival until time t or later</p></li>
+<li><div class="math notranslate nohighlight">
+\[
+  h_k(t) = \lim_{\Delta t\rightarrow0}\frac{P(t&lt;T&lt;t+\Delta t, \delta=k|T&gt;t)} {\Delta t}, k=1, \cdots, K
+  \]</div>
+</li>
+<li><p><strong>Cumulative incidence function</strong> (CIF or <strong>subdistribution function</strong>), is the prob. of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> prior to time <span class="math notranslate nohighlight">\(t\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+  F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
+  \]</div>
 <ul>
 <li><p>it’s not a true probability distribution</p></li>
 <li><div class="math notranslate nohighlight">
