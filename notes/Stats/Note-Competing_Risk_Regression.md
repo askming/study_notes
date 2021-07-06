@@ -47,10 +47,13 @@ tags: survival analysis
 ### 1. Cause-specific hazard modeling
 
 - This model assumes competing events other than the primary event of interest as consoring. For cause $k$, a separate proportional hazards model can be assumed:
+  
   $$
   h_k(t)={h}_{k0}(t)\exp(\beta_k'Z)
   $$
+
   and the partial likelihood function for $k$th event is given as
+  
   $$
   {L}(\beta_k) = \prod_i\left(\exp(\beta'_kZ_i)\over\sum_{j\in\tilde{\mathcal{R}_i}}\exp(\beta'_kZ_j)\right)^{\delta_i \equiv k}
   $$
