@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
-    <link rel="prev" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
+    <link rel="next" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
+    <link rel="prev" title="Study Notes Index" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,9 +97,9 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
-   [book] Regression Modeling Strategies
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
@@ -110,14 +110,14 @@
    </em>
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   [book] Analysis of Observational Health Care Data Using SAS
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Survival_Analysis.html">
-   Survival Analysis
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
@@ -126,8 +126,20 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   Competing risk models
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   (How R searches and finds stuff)[https://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/]
   </a>
  </li>
 </ul>
@@ -350,8 +362,8 @@ Bang and Robins, 2005).</p></li>
 <h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d310e4c0-45ad-4714-b971-37bb286dfd53">
-<span class="eqno">(6)<a class="headerlink" href="#equation-d310e4c0-45ad-4714-b971-37bb286dfd53" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-26d9a340-8ab7-495d-becd-6e497d8cf4ec">
+<span class="eqno">(1)<a class="headerlink" href="#equation-26d9a340-8ab7-495d-becd-6e497d8cf4ec" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{\Delta}_{DR} \\
    &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
    &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
@@ -364,8 +376,8 @@ Bang and Robins, 2005).</p></li>
   SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d8534c30-f3df-460e-9224-7fecc1266413">
-<span class="eqno">(7)<a class="headerlink" href="#equation-d8534c30-f3df-460e-9224-7fecc1266413" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e990429a-0e64-4469-bb0a-6fce47cb2a98">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e990429a-0e64-4469-bb0a-6fce47cb2a98" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{I}_i \\
   &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
   &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}
@@ -407,8 +419,8 @@ Bang and Robins, 2005).</p></li>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="previous page">[book] Causal inference in statistics <em>a primer</em></a>
-    <a class='right-next' id="next-link" href="Note-Survival_Analysis.html" title="next page">Survival Analysis</a>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Study Notes Index</a>
+    <a class='right-next' id="next-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="next page">[book] Causal inference in statistics <em>a primer</em></a>
 
         </div>
         

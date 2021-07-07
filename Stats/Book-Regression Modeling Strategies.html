@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
-    <link rel="prev" title="Study Notes Index" href="../intro.html" />
+    <link rel="next" title="Competing risk models" href="Note-Competing_Risk_Regression.html" />
+    <link rel="prev" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,9 +97,9 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   [book] Regression Modeling Strategies
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
@@ -110,14 +110,14 @@
    </em>
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   [book] Analysis of Observational Health Care Data Using SAS
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   [book] Regression Modeling Strategies
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Survival_Analysis.html">
-   Survival Analysis
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
@@ -126,8 +126,20 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   Competing risk models
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   (How R searches and finds stuff)[https://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/]
   </a>
  </li>
 </ul>
@@ -618,8 +630,8 @@ $<span class="math notranslate nohighlight">\(
 <h4>4.1 Model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>The continuation ratio (CR) model is based on conditional probabilities. The (forward) CR model is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-893b77b0-ed13-4195-a680-f2cd5fa7065f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-893b77b0-ed13-4195-a680-f2cd5fa7065f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-58b52f0e-7cc1-49a8-8abf-d912de70469d">
+<span class="eqno">(7)<a class="headerlink" href="#equation-58b52f0e-7cc1-49a8-8abf-d912de70469d" title="Permalink to this equation">¶</a></span>\[\begin{align}
    P(Y=j|Y\ge j,  X) &amp; = \frac{1}{1+\exp[-(\theta_j + X\gamma)]}\\
    logit(Y=0|Y\ge0, X) &amp; = logit(Y=0|X)\\
    &amp;=\theta_0 + X\gamma\\
@@ -758,8 +770,8 @@ for.”</p></li>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Study Notes Index</a>
-    <a class='right-next' id="next-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="next page">[book] Causal inference in statistics <em>a primer</em></a>
+    <a class='left-prev' id="prev-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="previous page">[book] Causal inference in statistics <em>a primer</em></a>
+    <a class='right-next' id="next-link" href="Note-Competing_Risk_Regression.html" title="next page">Competing risk models</a>
 
         </div>
         
