@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>(How R searches and finds stuff)[https://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/] &#8212; Study Notes</title>
+    <title>How R searches and finds stuff &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -136,7 +136,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   (How R searches and finds stuff)[https://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/]
+   How R searches and finds stuff
   </a>
  </li>
 </ul>
@@ -256,6 +256,46 @@
    Package v. Namespace v. Imports Environments
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports-v-depends">
+   Imports v Depends
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#namespace-base">
+   namespace:base
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-curveball-the-dotted-purple-lines">
+   The Curveball (the dotted purple lines)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#passing-functions">
+   Passing Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#that-creepy-caller">
+   That Creepy Caller
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finally-how-r-searches-and-finds-stuff">
+   Finally, How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qualitative-comments">
+   Qualitative Comments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skip-the-search-and-find">
+   Skip the search-and-find
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -267,8 +307,8 @@
         
               <div>
                 
-  <div class="section" id="how-r-searches-and-finds-stuff-https-blog-obeautifulcode-com-r-how-r-searches-and-finds-stuff">
-<h1>(How R searches and finds stuff)[https://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/]<a class="headerlink" href="#how-r-searches-and-finds-stuff-https-blog-obeautifulcode-com-r-how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="how-r-searches-and-finds-stuff">
+<h1><a class="reference external" href="https://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/">How R searches and finds stuff</a><a class="headerlink" href="#how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h1>
 <p>by <em>Suraj Gupta</em></p>
 <hr>
 <ul>
@@ -418,11 +458,183 @@
 <p class="sidebar-title"></p>
 </div>
 <ul class="simple">
-<li><p>This is where <em>all</em> objects in a package go. This includes objects the package author wants you see. It also includes objects that are not meant to be accessed by the end-user.<a class="footnote-reference brackets" href="#id2" id="id1">1</a></p></li>
+<li><p>This is where <em>all</em> objects in a package go. This includes objects the package author wants you see. It also includes objects that are not meant to be accessed by the end-user<a class="footnote-reference brackets" href="#id2" id="id1">1</a>. In OOP this is analogous to a “private” or “internal” class or method.</p></li>
+<li><p>You might be thinking “wait, so objects the author wants me to see are in BOTH the package environment and the namespace environment?” Yes and No. Yes, both environments have a frame that lists objects of the same name, but no there is not two copies. Both environments have <a class="reference external" href="http://stackoverflow.com/questions/9278715/value-reference-equality-for-same-named-function-in-package-namespace-environmen">pointers to the same function</a>.</p></li>
 </ul>
 </li>
-<li><p><strong>imports environment</strong></p></li>
+<li><p><strong>imports environment</strong></p>
+<ul class="simple">
+<li><p>This environment contains objects from other packages that are explicitly stated requirements for a package to work properly. Most packages published on CRAN are not islands; they build on functionality provided in other packages. The <code class="docutils literal notranslate"><span class="pre">imports:package</span></code> environment contains all objects in the imported packages.</p></li>
+</ul>
+</li>
 </ol>
+</div>
+<div class="section" id="imports-v-depends">
+<h2>Imports v Depends<a class="headerlink" href="#imports-v-depends" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Depends</span></code> section <em>also</em> lists packages that a package requires.The difference between <code class="docutils literal notranslate"><span class="pre">Imports</span></code> and <code class="docutils literal notranslate"><span class="pre">Depends</span></code> is where the requirement is placed on our map of the world. Because our map specifies the path R takes to find objects, there are consequences to specifying a requirement in <code class="docutils literal notranslate"><span class="pre">Imports</span></code> versus <code class="docutils literal notranslate"><span class="pre">Depends</span></code> in terms of how R finds the dependency.</p></li>
+<li><p>If the package is specified in <code class="docutils literal notranslate"><span class="pre">Imports</span></code>, then the package contents will go into the “imports” environment.</p>
+<ul>
+<li><p>For example, In the case of ggplot2, the objects in the <code class="docutils literal notranslate"><span class="pre">plyr</span></code> package will appear in the <code class="docutils literal notranslate"><span class="pre">imports:ggplot2</span></code> environment. Notice also that <code class="docutils literal notranslate"><span class="pre">plyr</span></code> does not have a package environment. Its nicely tucked away inside the environment <code class="docutils literal notranslate"><span class="pre">imports:ggplot2</span></code>.</p>
+<p><img alt="imports-depends-plyr" src="https://raw.githubusercontent.com/askming/picgo/master/imports-depends-plyr.png" /></p>
+</li>
+</ul>
+</li>
+<li><p>If a package is specified in <code class="docutils literal notranslate"><span class="pre">Depends</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">reshape</span></code> package), then the package is loaded as it would be if you called <code class="docutils literal notranslate"><span class="pre">library()</span></code> or <code class="docutils literal notranslate"><span class="pre">require()</span></code> from the R prompt. That is, the package, namespace, and imports environments are created for the dependency and placed on our map. The reshape package is attached <em>before</em> <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> and the <code class="docutils literal notranslate"><span class="pre">package:reshape</span></code> environment becomes <code class="docutils literal notranslate"><span class="pre">package:ggplot2</span></code>’s enclosing environment.</p>
+<p><img alt="imports-depends-reshape" src="https://raw.githubusercontent.com/askming/picgo/master/imports-depends-reshape.png" /></p>
+</li>
+<li><p>Is the choice between Depends and Imports arbitrary? Its not. The <code class="docutils literal notranslate"><span class="pre">library()</span></code> command (or generally attaching a library) places the package environment under <code class="docutils literal notranslate"><span class="pre">R_Global</span></code>. More precisely, the package environment becomes <code class="docutils literal notranslate"><span class="pre">R_Global</span></code>’s enclosing environment. <code class="docutils literal notranslate"><span class="pre">R_Global</span></code>’s old enclosure now encloses the package environment.</p>
+<p><img alt="reshape-reshape2-cast-conflict" src="https://raw.githubusercontent.com/askming/picgo/master/reshape-reshape2-cast-conflict.png" /></p>
+<ul class="simple">
+<li><p>Both <code class="docutils literal notranslate"><span class="pre">reshape</span></code> and <code class="docutils literal notranslate"><span class="pre">reshape2</span></code> contain the function <code class="docutils literal notranslate"><span class="pre">cast</span></code>. Lets say (I’m making this up) that <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> has a function called <code class="docutils literal notranslate"><span class="pre">FunctionThatCallsCast()</span></code>. As you can guess, this function calls the <code class="docutils literal notranslate"><span class="pre">cast()</span></code> function. Without knowing any details of how R finds stuff, lets just follow the “purple line road”. We travel from to 1 and 2 and find <code class="docutils literal notranslate"><span class="pre">FunctionThatCallsCast()</span></code>. Remember, the package and namespace environments both reference a package’s public-facing functions. We execute that function and now we need to find <code class="docutils literal notranslate"><span class="pre">cast</span></code>. We travel from 3 to 5 searching for <code class="docutils literal notranslate"><span class="pre">cast</span></code>. We find <code class="docutils literal notranslate"><span class="pre">cast</span></code> at 6 and stop. But this is the <em>wrong</em> <code class="docutils literal notranslate"><span class="pre">cast</span></code>. This is <code class="docutils literal notranslate"><span class="pre">cast</span></code> in package <code class="docutils literal notranslate"><span class="pre">reshape2</span></code>, but <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> depends on the <code class="docutils literal notranslate"><span class="pre">cast</span></code> in <code class="docutils literal notranslate"><span class="pre">reshape</span></code>. This could have dire consequences depending on the differences between <code class="docutils literal notranslate"><span class="pre">cast</span></code> in <code class="docutils literal notranslate"><span class="pre">reshape</span></code> and <code class="docutils literal notranslate"><span class="pre">reshape2</span></code>.</p></li>
+<li><p>The better solution would have been to stuff <code class="docutils literal notranslate"><span class="pre">reshape</span></code>’s <code class="docutils literal notranslate"><span class="pre">cast()</span></code> function into <code class="docutils literal notranslate"><span class="pre">imports:ggplot2</span></code> using the <code class="docutils literal notranslate"><span class="pre">Imports</span></code> feature. In that case, we would have travelled from 2 to 3 and stopped. Now you can see why the choice between <code class="docutils literal notranslate"><span class="pre">Imports</span></code> and <code class="docutils literal notranslate"><span class="pre">Depends</span></code> is not arbitrary. With so many packages on CRAN and so many of us working in related disciplines its no surprise that same-named functions appear in multiple packages. <code class="docutils literal notranslate"><span class="pre">Depends</span></code> is less safe. <code class="docutils literal notranslate"><span class="pre">Depends</span></code> makes a package vulnerable to whatever other packages are loaded by the user.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="namespace-base">
+<h2>namespace:base<a class="headerlink" href="#namespace-base" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>All <code class="docutils literal notranslate"><span class="pre">imports:&lt;name&gt;</span></code> environments have <code class="docutils literal notranslate"><span class="pre">namespace:base</span></code> as their enclosure. Think of this a freebie for creating a package. Since the base functions are used frequently, they are most likely a dependency for any package (or a package’s imports). Without <code class="docutils literal notranslate"><span class="pre">namespace:base</span></code> where it is, R would have to go hunting quite far to find <code class="docutils literal notranslate"><span class="pre">package:base</span></code>. There’s a big risk that another package has a function of the same name as a base function.</p></li>
+<li><p>A package author cannot know a-prior when you intend to attach her package nor that you have decided to write your own version of a base function. So do as you like, a package author can expect that R will find the base functions immediately after <code class="docutils literal notranslate"><span class="pre">Imports</span></code>. There’s no chance of corruption.</p></li>
+</ul>
+</div>
+<div class="section" id="the-curveball-the-dotted-purple-lines">
+<h2>The Curveball (the dotted purple lines)<a class="headerlink" href="#the-curveball-the-dotted-purple-lines" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Functions, like all objects, are housed inside environments. However, functions themselves have a property which is a pointer to the environment in which they should run. When you create a function, that property is automatically set to the environment in which the function was created. So the environment that houses a function and the environment that the function will run in is one and the same.</p>
+<p><img alt="environment-property" src="https://raw.githubusercontent.com/askming/picgo/master/environment-property.png" /></p>
+</li>
+<li><p><em>“The environment that a function will run in”</em>: executing a function creates a new environment specifically for that function and the enclosing environment function’s new environment is what is specified by the function’s environment property. This is “the environment that a function will run in.” We can get a function object’s environment property using the <code class="docutils literal notranslate"><span class="pre">environment()</span></code> function.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">MyFunction</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="p">{}</span> 
+<span class="o">&gt;</span> <span class="nf">environment</span><span class="p">(</span> <span class="n">MyFunction</span> <span class="p">)</span> 
+<span class="o">&lt;</span><span class="n">environment</span><span class="o">:</span> <span class="n">R_GlobalEnv</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>And when we run <code class="docutils literal notranslate"><span class="pre">MyFunction()</span></code> and R is executing lines of codes inside that function, the environments look like this:</p>
+<p><img alt="environment-execution" src="https://raw.githubusercontent.com/askming/picgo/master/environment-execution.png" /></p>
+</li>
+<li><p>By default, R sets a function’s environment property equal to the environment where the function was created (the environment that owns the function). However, its not necessary that a function’s executing environment and the environment that owns the function are one and the same. In fact, we can change the environment to our liking:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice how environment(MyFunction) no longer returns R_GlobalEnv</span>
+<span class="o">&gt;</span> <span class="n">MyFunction</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span> 
+<span class="o">&gt;</span> <span class="n">newEnvironment</span> <span class="o">=</span> <span class="nf">new.env</span><span class="p">()</span> 
+<span class="o">&gt;</span> <span class="nf">environment</span><span class="p">(</span> <span class="n">MyFunction</span> <span class="p">)</span> <span class="o">=</span> <span class="n">newEnvironment</span> 
+<span class="o">&gt;</span> <span class="nf">environment</span><span class="p">(</span> <span class="n">MyFunction</span> <span class="p">)</span> 
+<span class="o">&lt;</span><span class="n">environment</span><span class="o">:</span> <span class="mh">0x000000000e895628</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Another way to see a function’s environment property is to just print the function. The environment will appear at the bottom of the printed function.</p></li>
+<li><p>How R searches for variables in a function call: find the “cloest” one to use first if not otherwise specifically specified for its enclosing environment</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="m">32</span> 
+<span class="o">&gt;</span> <span class="n">MyFunction</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> 
+<span class="o">+</span> <span class="p">{</span> 
+<span class="o">+</span>     <span class="n">age</span> <span class="o">=</span> <span class="m">22</span> 
+<span class="o">+</span>     <span class="n">FromLocal</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span> <span class="n">age</span> <span class="o">+</span> <span class="m">1</span> <span class="p">)</span> <span class="p">}</span> 
+<span class="o">+</span>     <span class="n">FromGlobal</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span> <span class="n">age</span> <span class="o">+</span> <span class="m">1</span> <span class="p">)</span> <span class="p">}</span> 
+<span class="o">+</span>     <span class="n">NoSearch</span> <span class="o">=</span>  <span class="nf">function</span><span class="p">()</span> <span class="p">{</span> <span class="n">age</span> <span class="o">=</span> <span class="m">11</span><span class="p">;</span> <span class="nf">print</span><span class="p">(</span> <span class="n">age</span> <span class="o">+</span> <span class="m">1</span> <span class="p">)</span> <span class="p">}</span> 
+<span class="o">+</span>     <span class="nf">environment</span><span class="p">(</span> <span class="n">FromGlobal</span> <span class="p">)</span> <span class="o">=</span> <span class="n">.GlobalEnv</span> 
+<span class="o">+</span>     <span class="nf">FromLocal</span><span class="p">()</span> 
+<span class="o">+</span>     <span class="nf">FromGlobal</span><span class="p">()</span> 
+<span class="o">+</span>     <span class="nf">NoSearch</span><span class="p">()</span> 
+<span class="o">+</span> <span class="p">}</span> 
+<span class="o">&gt;</span> <span class="nf">MyFunction</span><span class="p">()</span> 
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">23</span> 
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">33</span> 
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">12</span>
+</pre></div>
+</div>
+</li>
+<li><p>This explains the dotted purple lines in our map. If you inspect the environment property of the functions within the <code class="docutils literal notranslate"><span class="pre">package:&lt;name&gt;</span></code> environments you’ll see that they all point to the <code class="docutils literal notranslate"><span class="pre">namespace:&lt;name&gt;</span> <span class="pre">environment</span></code>. So in essence, the package environment is just a pass-thru to the namespace environment.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">statsPackageEnv</span> <span class="o">=</span> <span class="nf">as.environment</span><span class="p">(</span> <span class="s">&quot;package:stats&quot;</span> <span class="p">)</span> 
+<span class="o">&gt;</span> <span class="n">sdFunc</span> <span class="o">=</span> <span class="nf">get</span><span class="p">(</span> <span class="s">&quot;sd&quot;</span> <span class="p">,</span> <span class="n">envir</span> <span class="o">=</span> <span class="n">statsPackageEnv</span> <span class="p">)</span> 
+<span class="o">&gt;</span> <span class="nf">environment</span><span class="p">(</span> <span class="n">sdFunc</span> <span class="p">)</span> 
+<span class="o">&lt;</span><span class="n">environment</span><span class="o">:</span> <span class="n">namespace</span><span class="o">:</span><span class="n">stats</span><span class="o">&gt;</span> 
+<span class="o">&gt;</span> <span class="n">statsNamespaceEnv</span> <span class="o">=</span> <span class="nf">environment</span><span class="p">(</span> <span class="n">sdFunc</span> <span class="p">)</span> 
+<span class="o">&gt;</span> <span class="n">sdFunc2</span> <span class="o">=</span> <span class="nf">get</span><span class="p">(</span> <span class="s">&quot;sd&quot;</span> <span class="p">,</span> <span class="n">envir</span> <span class="o">=</span> <span class="n">statsNamespaceEnv</span> <span class="p">)</span> 
+<span class="o">&gt;</span> <span class="nf">environment</span><span class="p">(</span> <span class="n">sdFunc2</span> <span class="p">)</span> 
+<span class="o">&lt;</span><span class="n">environment</span><span class="o">:</span> <span class="n">namespace</span><span class="o">:</span><span class="n">stats</span><span class="o">&gt;</span>
+
+<span class="c1"># An easier way to get a namespace environment</span>
+<span class="o">&gt;</span> <span class="n">statsNamespaceEnv</span> <span class="o">=</span> <span class="nf">asNamespace</span><span class="p">(</span> <span class="s">&quot;stats&quot;</span> <span class="p">)</span> 
+<span class="o">&gt;</span> <span class="n">statsNamespaceEnv</span> 
+<span class="o">&lt;</span><span class="n">environment</span><span class="o">:</span> <span class="n">namespace</span><span class="o">:</span><span class="n">stats</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>The package environment says “I don’t know what to do, ask my functions”. And when we ask the functions they all say “when you execute us create a new environment whose enclosure is the namespace environment.” More precisely, the functions are just offering up their environment property . We might as well make those dotted lines solid:</p>
+<p><img alt="map-of-the-world-complete" src="https://raw.githubusercontent.com/askming/picgo/master/JP2bBA_2021_07_07.jpg" /></p>
+</li>
+<li><p>Incidentally, this is another explanation for why there’s no easy way to query an object for the environment that owns it. When we are executing in an environment, we are interested in the objects it owns because we might be looking for one of them. When we find a function we need to know which environment to execute it within. But its not important in our workflow to identify an arbitrary object’s owning environment.</p></li>
+</ul>
+</div>
+<div class="section" id="passing-functions">
+<h2>Passing Functions<a class="headerlink" href="#passing-functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If a function <code class="docutils literal notranslate"><span class="pre">FunctionA(</span> <span class="pre">someOtherFunction</span> <span class="pre">)</span></code> takes another function <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> as a parameter then <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code> must have some variability in the way it runs. That variability is governed by the implementation of <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code>. When we construct <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code>, we expect it to run in a particular way. <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> should have access to the objects in the environment in which it was constructed. That expectation doesn’t change when the function is handed-off to <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code> . But R creates a new environment for <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code>. Thankfully that’s not a problem. When <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> is finally run R looks to the function’s environment property and executes within <em>that</em> environment, not within <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code>’s environment. So the integrity of our expectation is upheld. In fact, <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code> can pass <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> to <code class="docutils literal notranslate"><span class="pre">FunctionB</span></code> which in turn can pass the function to <code class="docutils literal notranslate"><span class="pre">FunctionC</span></code> and it has no consequence on how <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> will run. That’s the magic of a function’s environment property.</p></li>
+</ul>
+</div>
+<div class="section" id="that-creepy-caller">
+<h2>That Creepy Caller<a class="headerlink" href="#that-creepy-caller" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The call stack is the sequence of function calls that has gotten you to wherever you currently are in the calculation. For example, <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code> calls <code class="docutils literal notranslate"><span class="pre">FunctionB</span></code> which in turn calls <code class="docutils literal notranslate"><span class="pre">FunctionC</span></code>. The call stack just places each of those functions on top of one another in the order in which they were called. Lets say <code class="docutils literal notranslate"><span class="pre">FunctionC</span></code> needs to execute <code class="docutils literal notranslate"><span class="pre">FunctionD</span></code>. The <em>wrong</em> way to think about the search mechanism is to follow the callers.</p></li>
+<li><p>Unfortunately, the call stack is more intuitive than the chain of enclosing environments. Just remember, whenever R is evaluating a statement the system is simultaneously at the top (or bottom if it’s easier to visualize that way) of <em>two</em> important chains of environments.</p>
+<ul>
+<li><p>One is the <strong>chain of enclosing environments</strong> which is involved in the task of scoping (i.e. where to look next for variable names not found in the frame of the current environment). <em>This is the chain we care about.</em></p></li>
+<li><p>The other <strong>chain is the call stack</strong>, which is produced by the sequence of function calls. <em>You can ignore this chain</em>.</p></li>
+<li><p>There <em>are</em> scenarios where it’s necessary to look for a variable via the call stack, but to accomplish that you have to use some special functions in R.</p></li>
+</ul>
+</li>
+<li><p><strong>A word of caution:</strong> R (and some R literature) uses the term “parent” in context of both chains. There’s the function <code class="docutils literal notranslate"><span class="pre">parent.env()</span></code> which we already know and <code class="docutils literal notranslate"><span class="pre">parent.frame()</span></code> which is used to interrogate the call stack. This is certainly confusing and its a historic slip-up. The term “parent” should <em>not</em> be used as a substitute for enclosing environments. It should only be used with the call stack.</p></li>
+</ul>
+</div>
+<div class="section" id="finally-how-r-searches-and-finds-stuff">
+<h2>Finally, How R searches and finds stuff<a class="headerlink" href="#finally-how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>R just follows the purple line road</strong> in our map above.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> is not in the global environment, then it must be in a package. So R travels down the search list looking for <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>. This is simply the chain of enclosing environments starting with <code class="docutils literal notranslate"><span class="pre">R_Global</span></code>. R ultimately find the function in one of the package environments. Although <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> is found within the <code class="docutils literal notranslate"><span class="pre">package</span></code> environment, R executes <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> within the <code class="docutils literal notranslate"><span class="pre">namespace</span></code> environment as described in the prior section. In this case, we’ve found <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> in <code class="docutils literal notranslate"><span class="pre">package:ggplot2</span></code> and we execute the function within <code class="docutils literal notranslate"><span class="pre">namespace:ggplot2</span></code>.</p></li>
+<li><p>Lets say <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> calls another function <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code>. A few things can happen:</p>
+<ol class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> is defined within <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>, then we find it immediately since R checks the local environment first. In this case the local environment is the environment created to run <code class="docutils literal notranslate"><span class="pre">ggplot</span></code></p></li>
+<li><p>If not found, then R looks to the enclosing environment of <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code>’s executing environment which is <code class="docutils literal notranslate"><span class="pre">namespace:ggplot2</span></code>. If we find <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> here, then it’s a case of a package function calling another function in the same package.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> is not in the <code class="docutils literal notranslate"><span class="pre">namespace:ggplot2</span></code>, then R checks the enclosing environment of the namespace environment which is the <strong>imports environment</strong>. This gives <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> an opportunity to find <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> within a set of explicitly defined package dependencies. This is like ggplot finding a plyr function in our example above.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> is not in the imports environment, then we check the enclosing environment of the imports environment which is <code class="docutils literal notranslate"><span class="pre">namespace:base</span></code>. A base function (i.e. sd() for standard deviation) would be found here and the search would be complete.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> is not found in <code class="docutils literal notranslate"><span class="pre">namespace:base</span></code>, then we are back to the search list. We start by checking <code class="docutils literal notranslate"><span class="pre">R_GlobalEnv</span></code>. Its unlikely that <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> is in <code class="docutils literal notranslate"><span class="pre">R_GlobalEnv</span></code>. It would be poor practice for a package to expect the user to define some function in the global environment. However, the user could take this as an opportunity to intercept the search by defining her own version of <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> in the global environment.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code> is within a package that’s a dependency of <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> and that dependency is specified in<code class="docutils literal notranslate"> <span class="pre">Depends</span></code> rather than <code class="docutils literal notranslate"><span class="pre">Imports</span></code>, then the search list is where we would find <code class="docutils literal notranslate"><span class="pre">MyFunction</span></code>.</p></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="qualitative-comments">
+<h2>Qualitative Comments<a class="headerlink" href="#qualitative-comments" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If we are executing outside of a package (as in <code class="docutils literal notranslate"><span class="pre">R_GlobalEnv</span></code>) it enables us to find functions inside packages. If we are inside a package it allows the package functions to find the specified dependencies. If we are inside a package or a package’s imports (dependencies), then we have a buffer of base functions before we plunging into the search list. Also, the design ensures that we terminate at <code class="docutils literal notranslate"><span class="pre">R_EmptyEnv</span></code> if a named object cannot be found, no matter where on the map we are.</p></li>
+</ul>
+</div>
+<div class="section" id="skip-the-search-and-find">
+<h2>Skip the search-and-find<a class="headerlink" href="#skip-the-search-and-find" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>f you know exactly which package contains the object desired then you can reference it directly using the <code class="docutils literal notranslate"><span class="pre">::</span></code> operator. Simply place the package name before the operator and the name of the object after the operator to retrieve it.</p></li>
+<li><p>If the object is not exported or you are unsure, then you can use the <code class="docutils literal notranslate"><span class="pre">:::</span></code> operator (notice the extra colon).</p>
+<ul>
+<li><p>This operator searches the namespace environment for the given object (as we discussed, non-exported objects do not appear in the package environment, only in the namespace environment).</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># view the ::: operator function</span>
+<span class="o">&gt;</span> <span class="n">`:::`</span> 
+<span class="nf">function </span><span class="p">(</span><span class="n">pkg</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> 
+<span class="p">{</span> 
+    <span class="n">pkg</span> <span class="o">&lt;-</span> <span class="nf">as.character</span><span class="p">(</span><span class="nf">substitute</span><span class="p">(</span><span class="n">pkg</span><span class="p">))</span> 
+    <span class="n">name</span> <span class="o">&lt;-</span> <span class="nf">as.character</span><span class="p">(</span><span class="nf">substitute</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> 
+    <span class="nf">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">envir</span> <span class="o">=</span> <span class="nf">asNamespace</span><span class="p">(</span><span class="n">pkg</span><span class="p">),</span> <span class="n">inherits</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> 
+<span class="p">}</span> 
+<span class="o">&lt;</span><span class="n">bytecode</span><span class="o">:</span> <span class="m">00000000073</span><span class="n">BAEA8</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">environment</span><span class="o">:</span> <span class="n">namespace</span><span class="o">:</span><span class="n">base</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
