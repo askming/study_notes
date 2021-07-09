@@ -529,8 +529,8 @@
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3252afd-608e-4388-ac07-ad484929333b">
-<span class="eqno">(7)<a class="headerlink" href="#equation-b3252afd-608e-4388-ac07-ad484929333b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bd8c7b54-09db-4839-91ea-417944abffad">
+<span class="eqno">(7)<a class="headerlink" href="#equation-bd8c7b54-09db-4839-91ea-417944abffad" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -563,27 +563,29 @@
 </div>
 <div class="section" id="randomized-experiments">
 <h3>9.3 Randomized experiments<a class="headerlink" href="#randomized-experiments" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Random sampling and random treatment assignment allow us to estimate the average causal effect of the treatment in the population
-$<span class="math notranslate nohighlight">\(\text{average treatment effect} = \text{avg}(y_i^1 - y_i^0)\)</span>$</p></li>
+<ul>
+<li><p>Random sampling and random treatment assignment allow us to estimate the average causal effect of the treatment in the population</p>
+<div class="math notranslate nohighlight">
+\[\text{average treatment effect} = \text{avg}(y_i^1 - y_i^0)\]</div>
+</li>
 <li><p>Randomized experiment is the cleanest way to estimate the population average, in which each unit has a positive chance of receiving each of the possible treatments.</p></li>
 <li><p>If randomized experiments are conducted within certain group of participants, the causal inference no longer generalize to the entire population.</p></li>
 <li><p>When the causal inferences are merited for a specific sample or population, it’s said to have <em>internal validity</em>; when those inferences can be generalized to a broader population of interest the study is said to have <em>external validity</em></p></li>
 <li><p>We avoid the term confounding covariates when describing adjustment in the context of a randomized experiment. Predictors are included in this context to <strong>increase precision</strong>. We expect them to be related to the outcome but not to the treatment assignment due to the randomiza- tion. Therefore they are not confounding covariates.</p></li>
 <li><p>Modeling change from baseline (gain score) in response variable:</p>
-<ul>
+<ul class="simple">
 <li><p>In some cases the gain score can be more easily interpreted than the original outcome variable <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
 <li><p>Using gain scores is most effective if the pre-treatment score is comparable to the post-treatment measure.</p></li>
 <li><p>Modeling the gain score without adjusting for baseline score (unnecessarily) assumes <span class="math notranslate nohighlight">\(\beta_2\)</span> = 1 in model <span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1T_i +  \beta_2x_i + \epsilon_i\)</span>; to aovid this assumption, we can adjust for baseline score, in which the estimate for treatment effect is equivalent to the estimated coefficient from the original model.</p></li>
 </ul>
 </li>
 <li><p>More than two treatment levels:</p>
-<ul>
+<ul class="simple">
 <li><p>With several discrete treatments that are unordered (such as in a comparison of three different sorts of psychotherapy), we can move to multilevel modeling, with the group index indicating the treatment assigned to each unit, and a second-level model on the group coefficients, or treatment effects.</p></li>
 </ul>
 </li>
 <li><p>No interference between units</p>
-<ul>
+<ul class="simple">
 <li><p>In above RCT analysis, we must assume also that the treatment assignment for one individual (unit) in the experiment does not affect the outcome for another. This has been incorporated into the “stable unit treat- ment value assumption” (SUTVA).</p></li>
 </ul>
 </li>
@@ -668,22 +670,25 @@ of receiving the supplemental version of the treatment.</p></li>
 <h2>Chapter 10 Causal inference using more advanced models<a class="headerlink" href="#chapter-10-causal-inference-using-more-advanced-models" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="imbalance-and-lack-of-complete-overlap">
 <h3>10.1 Imbalance and lack of complete overlap<a class="headerlink" href="#imbalance-and-lack-of-complete-overlap" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
+<ul>
 <li><p><strong>Imbalance</strong>: Imbalance occurs if the distributions of relevant pre-treatment variables differ for the treatment and control groups.</p>
 <ul>
 <li><p>When treatment and control groups are unbalanced, the simple comparison of group averages, <span class="math notranslate nohighlight">\(\bar{y}_1−\bar{y}_0\)</span>, is not, in general, a good estimate of the average treatment effect. Instead, some analysis must be performed to adjust for pre-treatment differences between the groups.</p></li>
 <li><p>Imbalance creates problems primarily because it forces us to rely more on the correctness of our model than we would have to if the samples were balanced.
 <img alt="Screen Shot 2019-09-21 at 11.30.14.png" src="https://raw.githubusercontent.com/askming/picgo/master/eae93ee9_20200625130506.png" /></p></li>
-<li><p>In linear regression, assume a quadratic relationship between outcome <span class="math notranslate nohighlight">\(y\)</span> and pre-treatment covariate <span class="math notranslate nohighlight">\(x\)</span>:
-$<span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1x_i + \beta_2x_i^2 + \theta T_i + \epsilon_i\)</span>$</p>
+<li><p>In linear regression, assume a quadratic relationship between outcome <span class="math notranslate nohighlight">\(y\)</span> and pre-treatment covariate <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y_i = \beta_0 + \beta_1x_i + \beta_2x_i^2 + \theta T_i + \epsilon_i\]</div>
 <ul>
-<li><p>Treatment effect <span class="math notranslate nohighlight">\(\theta\)</span> can be derived as
-$<span class="math notranslate nohighlight">\(\theta =  \hat{y}_1 - \hat{y}_0 - \beta_1(\bar{x}_1 - \bar{x}_0) - \beta_2(\bar{x_1^2} - \bar{x_2^2})\)</span>$</p></li>
+<li><p>Treatment effect <span class="math notranslate nohighlight">\(\theta\)</span> can be derived as</p>
+<div class="math notranslate nohighlight">
+\[\theta =  \hat{y}_1 - \hat{y}_0 - \beta_1(\bar{x}_1 - \bar{x}_0) - \beta_2(\bar{x_1^2} - \bar{x_2^2})\]</div>
+</li>
 <li><p><span class="math notranslate nohighlight">\(x\)</span> are included since we can’t assume they are exactly the same between treatment groups. And it can be seen that esitmate of <span class="math notranslate nohighlight">\(\theta\)</span> depends on the difference in distrbution of <span class="math notranslate nohighlight">\(x\)</span> between each arm. Unless, <span class="math notranslate nohighlight">\(x\)</span>’s are comparable (in distribution), the estimate will be biased for different level of quantities  (depending on the true model parameterization).</p></li>
 </ul>
 </li>
 <li><p>To examine the imbalance between groups</p>
-<ul>
+<ul class="simple">
 <li><p>Compare difference in mean values divided by pooled within-group standard deviations for the groups under comparion</p></li>
 </ul>
 </li>
@@ -691,14 +696,14 @@ $<span class="math notranslate nohighlight">\(\theta =  \hat{y}_1 - \hat{y}_0 - 
 </li>
 <li><p><strong>Lack of overlap</strong>: occurs if there are regions in the space of relevant pre-treatment variables where there are treated units but no controls, or controls but no treated units.
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/db2e6d90_20200421111351.png" /></p>
-<ul>
+<ul class="simple">
 <li><p>There is complete overlap if this <strong>range</strong> is the same in the two groups.</p></li>
 <li><p>When treatment and control groups do not completely overlap, the data are inherently limited in what they can tell us about treatment effects in the regions of nonoverlap, i.e. there are treatment observations for which we have no counterfactuals and vice versa</p></li>
 <li><p>No amount of adjustment can create direct treatment/control comparisons, and one must either restrict inferences to the region of overlap, or rely on a model to extrapolate outside this region.</p></li>
 </ul>
 </li>
 <li><p>Imbalance is not the same as lack of overlap</p>
-<ul>
+<ul class="simple">
 <li><p>Imbalance does not necessarily imply lack of complete overlap</p></li>
 <li><p>Conversely, lack of complete overlap does not necessarily necessarily result in imbalance in <em>the sense of different average values</em> in the two groups.</p></li>
 </ul>
@@ -878,19 +883,20 @@ $<span class="math notranslate nohighlight">\(\theta =  \hat{y}_1 - \hat{y}_0 - 
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e0659454-a39a-49f0-91f2-412fa2ab40fc">
-<span class="eqno">(8)<a class="headerlink" href="#equation-e0659454-a39a-49f0-91f2-412fa2ab40fc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ae2d377-7f6a-476b-ab30-5d271b913a4a">
+<span class="eqno">(8)<a class="headerlink" href="#equation-4ae2d377-7f6a-476b-ab30-5d271b913a4a" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
-  \end{array}
-  
-  where $z$ is the instrumental variable, $T$ is the treatment.
-  - The first assumption is that $z_i$ is uncorrelated with both $\epsilon_i$ and $ν_i$, which translates informally into the *ignorability* assumption and *exclusion restriction* (here often expressed informally as “the instrument only affects the outcome through its effect on the treatment”).
-  - The correlation between $z_i$ and $t_i$ must be nonzero (parallel to the *monotonicity* assumption from the previous section). 
-  
-- Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:
-    
-    \begin{align}
+  \end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(z\)</span> is the instrumental variable, <span class="math notranslate nohighlight">\(T\)</span> is the treatment.</p>
+<ul class="simple">
+<li><p>The first assumption is that <span class="math notranslate nohighlight">\(z_i\)</span> is uncorrelated with both <span class="math notranslate nohighlight">\(\epsilon_i\)</span> and <span class="math notranslate nohighlight">\(ν_i\)</span>, which translates informally into the <em>ignorability</em> assumption and <em>exclusion restriction</em> (here often expressed informally as “the instrument only affects the outcome through its effect on the treatment”).</p></li>
+<li><p>The correlation between <span class="math notranslate nohighlight">\(z_i\)</span> and <span class="math notranslate nohighlight">\(t_i\)</span> must be nonzero (parallel to the <em>monotonicity</em> assumption from the previous section).</p></li>
+</ul>
+</li>
+<li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-10572fc7-8b36-4dd6-9651-4ab2ba087e4f">
+<span class="eqno">(9)<a class="headerlink" href="#equation-10572fc7-8b36-4dd6-9651-4ab2ba087e4f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>
