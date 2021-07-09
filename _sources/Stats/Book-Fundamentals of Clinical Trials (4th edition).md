@@ -121,9 +121,9 @@ tags: clinical trial
 	- Second, the studies that demonstrated benefit of the control against either placebo or no treatment must be sufficiently recent such that no important medical advances or other changes have occurred, and in populations similar to those planned for the new trial.
 	- Third, the evidence that demonstrated the benefits of the control must be available so that a control group event rate can be estimated. 
 	- Fourth, the response variable used in the new trial must be sensitive to the postulated effects of the control and intervention.
-  ![输入图片描述](Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29_md_files/66ccb3f4_20200421112014.png?v=1&type=image&token=V1:4sLA07wFyJ8B10pxv3rK9J2G9DL6XbBX_bjAIe3ik18)
+  ![Table 5.2](https://raw.githubusercontent.com/askming/picgo/master/66ccb3f4_20200421112014.png)
 
-  ![输入图片描述](Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29_md_files/72b7e08c_20200421112040.png?v=1&type=image&token=V1:7pukAx1nUELwlAXeGJw4e6bMWHIKsTTGH1M3_-0cBHQ)
+  ![Fig 5.5](https://raw.githubusercontent.com/askming/picgo/master/72b7e08c_20200421112040.png)
   
 - Selecting the margin of indifference or noninferiority, $d$, is a challenge. Ideally, the relative risk of the new intervention compared to the control should be as close to 1 as possible. For practical reasons, the relative risk is often set in the range of 1.2–1.4. This means that in the worst case, the new intervention may be 20–40% inferior to standard treatment and yet be considered equivalent or noninferior.
 - The investigator must consider several issues when designing an equivalence or noninferiority trial.
@@ -339,3 +339,6 @@ To select the best control $\rightarrow$ decide the margin of noninferiority $\r
 
 
   
+```{bibliography}
+:filter: docname in docnames
+```

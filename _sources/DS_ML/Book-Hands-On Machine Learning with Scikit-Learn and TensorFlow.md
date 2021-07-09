@@ -73,3 +73,8 @@
 
 
 - ROC curve vs. precision/recall: As a rule of thumb, you should prefer the PR curve whenever the positive class is rare or when you care more about the false (predicted) positives than the false negatives, and the ROC curve otherwise.
+
+
+```{bibliography}
+:filter: docname in docnames
+```
