@@ -153,6 +153,18 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -486,8 +498,8 @@ $<span class="math notranslate nohighlight">\(P_m(Y=y|Z=z,X=x)=P(Y=y|Z=z,X=x) \t
 <ul>
 <li><p><strong>The Causal Effect Rule</strong>: Given a graph G in which a set of variables PA are designated
 as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3b092656-aae9-4240-a443-fbb95864fa11">
-<span class="eqno">(3)<a class="headerlink" href="#equation-3b092656-aae9-4240-a443-fbb95864fa11" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1f736782-458e-4df7-9cf5-960707faa536">
+<span class="eqno">(3)<a class="headerlink" href="#equation-1f736782-458e-4df7-9cf5-960707faa536" title="Permalink to this equation">¶</a></span>\[\begin{align}
   P(Y = y| do(X = x)) &amp; = \sum_z P(Y = y | X = x, PA = z) P(PA = z)\\
   &amp; = \sum_z \frac{P(Y = y | X = x, PA = z) P(PA = z) * P(X=x|PA = z)}{P(X=x|PA = z)}\\
   &amp; = \sum_z \frac{P(Y = y, X = x, PA = z)}{P(X=x|PA = z)}
@@ -498,8 +510,8 @@ as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the c
 </div>
 <div class="section" id="multiple-interventions-and-the-truncated-product-rule">
 <h4>3.2.2 Multiple Interventions and the Truncated Product Rule<a class="headerlink" href="#multiple-interventions-and-the-truncated-product-rule" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-7a1bb77a-14c9-4107-a4b6-306adc8efc30">
-<span class="eqno">(4)<a class="headerlink" href="#equation-7a1bb77a-14c9-4107-a4b6-306adc8efc30" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c9132ad6-4cf7-40c3-8a81-1b2e20a8b873">
+<span class="eqno">(4)<a class="headerlink" href="#equation-c9132ad6-4cf7-40c3-8a81-1b2e20a8b873" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(x, y, z) &amp; = P(z)P(x|z)P(y|x, z)\\
 P(z, y|do(x)) &amp; = P_m(z)P_m(y|x, z) = P(z)P(y|x, z)\\
 \Rightarrow
@@ -527,8 +539,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p>When trying to find the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>, we want the nodes we condition on to block any “backdoor” path in which one end has an arrow into <span class="math notranslate nohighlight">\(X\)</span>, because such paths may make <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> dependent, but are obviously not transmitting causal influences from <span class="math notranslate nohighlight">\(X\)</span>, and if we do not block them, they will confound the effect that <span class="math notranslate nohighlight">\(X\)</span> has on <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
 <li><p>Consider the fact that <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is an empirical fact of nature, not a byproduct of our analysis. That means that any suitable variable or set of variables that we adjust on—whether it be <span class="math notranslate nohighlight">\(PA(X)\)</span> or any other set that conforms to the backdoor criterion—must return the same result for <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span>. In the case we looked at in Figure 3.6 (<span class="math notranslate nohighlight">\(Y \leftarrow X \leftarrow Z \rightarrow W \rightarrow Y\)</span>), this means that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b41dc6aa-f05c-4a7a-b003-54cbe083430f">
-<span class="eqno">(5)<a class="headerlink" href="#equation-b41dc6aa-f05c-4a7a-b003-54cbe083430f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cd2df020-03e1-45eb-b626-070dcfe583a9">
+<span class="eqno">(5)<a class="headerlink" href="#equation-cd2df020-03e1-45eb-b626-070dcfe583a9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;&amp; \sum_w P(Y = y|X = x,W = w)P(W = w) \\
     &amp;&amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
     \end{align}\]</div>
@@ -546,8 +558,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p><em>Problem</em>: The backdoor criterion provides us with a simple method of identifying sets of covariates that should be adjusted for when we seek to estimate causal effects from nonexperimental data. It does not, however, exhaust all ways of estimating such effects. The <span class="math notranslate nohighlight">\(do\)</span>-operator can be applied to graphical patterns that do not satisfy the backdoor criterion to identify effects that on first sight seem to be beyond one’s reach.</p></li>
 <li><p>The <strong>front-door</strong> formula</p>
-<div class="amsmath math notranslate nohighlight" id="equation-493fce8c-d31d-4c39-9035-53e9122094dd">
-<span class="eqno">(6)<a class="headerlink" href="#equation-493fce8c-d31d-4c39-9035-53e9122094dd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-85bfec21-0d1e-427f-8698-b5238eaf00e9">
+<span class="eqno">(6)<a class="headerlink" href="#equation-85bfec21-0d1e-427f-8698-b5238eaf00e9" title="Permalink to this equation">¶</a></span>\[\begin{align}
   P(Y =y | do(X = x)) = \\
   \sum_z\sum_x' P(Y = y | Z = z, X = x') P(X = x') P(Z = z|X = x) 
   \end{align}\]</div>
