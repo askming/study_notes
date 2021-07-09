@@ -142,7 +142,7 @@ This graphic shows the state of all environments when you first startup R. Each 
 2. **namespace environment**
 
    ```{margin}
-   [^1]: The latter, the “hidden” objects (they are not really hidden, you can access them if you’d like) facilitate the “visible” ones. 
+   The latter, the “hidden” objects (they are not really hidden, you can access them if you’d like) facilitate the “visible” ones. 
    ```
    - This is where *all* objects in a package go. This includes objects the package author wants you see. It also includes objects that are not meant to be accessed by the end-user[^1]. In OOP this is analogous to a “private” or “internal” class or method.
    - You might be thinking “wait, so objects the author wants me to see are in BOTH the package environment and the namespace environment?” Yes and No. Yes, both environments have a frame that lists objects of the same name, but no there is not two copies. Both environments have [pointers to the same function](http://stackoverflow.com/questions/9278715/value-reference-equality-for-same-named-function-in-package-namespace-environmen).
