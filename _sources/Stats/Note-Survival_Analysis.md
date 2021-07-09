@@ -127,14 +127,12 @@ tags: survival analysis
   - Without covariates, the estimator obtained by plugging-in Nelson-Aalen estimates for the cumulative hazard in {eq}`pred_comp` is known as the *Aalen-Johansen estimator*.
   - The intuition behind the middle term of {eq}`pred_comp` is that the integrand, <u>the survival probability</u>, $S(u|Z)$ of surviving to time $u$, times <u>the conditional probability</u>, $dΛ_{01}(u|Z)$ of dying from cause 1 at time $u$ given survival till $u$, is the (unconditional) probability of dying from cause 1 at time $u$; $F_1(t | Z)$, the probability of dying from cause 1 by time $t$ is then obtained as the sum (integral)
 
-- It's also possible to directly model $F(t|Z)$, e.g., using the ==Fine and Gray regression model==. 
-
-----
+- It's also possible to directly model $F(t|Z)$, e.g., using the Fine and Gray regression model. 
 
 - For constant hazard $\lambda$, thus exponentially distributed survival times, 
 
   - the MLE of $\lambda$ is given by 
-- 
+  
     $$
     \hat{\lambda} = \frac{d}{\sum_{i=1}^dx_i}
     $$
@@ -192,7 +190,7 @@ $$
 
 ### Total number of events $\rightarrow$ total sample size
 
-- :star: *Power calculation is based on total number of events not number of patients*
+- *Power calculation is based on total number of events not number of patients*
 
 <img src="https://raw.githubusercontent.com/askming/picgo/master/image-20201104210152614.png" alt="image-20201104210152614" style="zoom: 67%;" />
 

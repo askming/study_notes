@@ -461,10 +461,10 @@
 </div>
 <div class="section" id="wald-test">
 <h4>2.2 Wald test<a class="headerlink" href="#wald-test" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>The Wald test statistic is a generalization of a <em>t-</em> or <em>z-</em> statistic. It is a function of the difference in the MLE and its hypothesized value, normalized by an estimate of the standard deviation of the MLE.  For large enough <span class="math notranslate nohighlight">\(n\)</span>,
-​$<span class="math notranslate nohighlight">\(W = \frac{(\hat{\theta} - \theta_0)^2}{var(\hat{\theta})}\sim \chi^2_p\)</span>$</p>
 <ul>
+<li><p>The Wald test statistic is a generalization of a <em>t-</em> or <em>z-</em> statistic. It is a function of the difference in the MLE and its hypothesized value, normalized by an estimate of the standard deviation of the MLE.  For large enough <span class="math notranslate nohighlight">\(n\)</span>,</p>
+<p>​$<span class="math notranslate nohighlight">\(W = \frac{(\hat{\theta} - \theta_0)^2}{var(\hat{\theta})}\sim \chi^2_p\)</span>$</p>
+<ul class="simple">
 <li><p>Variance of MLE is the inverse of the oberved Fisher information <span class="math notranslate nohighlight">\(1/I(\hat{\theta})\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\sqrt{W}\)</span> can follow either <span class="math notranslate nohighlight">\(t\)</span> or normal distribution, depending on if the variance of the estimate is an estimated (like in the normal data) or not (like in the binary data)</p></li>
 </ul>
@@ -554,10 +554,11 @@
 \[
   r_{im} = \hat{\beta}_mX_{im} + \frac{Y_i - \hat{P}_i}{\hat{P}_i(1-\hat{P}_i)}
   \]</div>
-<p>​	where
-$<span class="math notranslate nohighlight">\(
-\hat{P}_i= \frac{1}{1 +\exp[-(\alpha + X_i\hat{\beta})]}
-\)</span>$</p>
+<p>​	where</p>
+<div class="math notranslate nohighlight">
+\[
+  \hat{P}_i= \frac{1}{1 +\exp[-(\alpha + X_i\hat{\beta})]}
+  \]</div>
 <ul class="simple">
 <li><p>A smoothed plot (e.g., using the moving linear regression algorithm in
 <code class="docutils literal notranslate"><span class="pre">loess</span></code>) of <span class="math notranslate nohighlight">\(X_{im}\)</span> against <span class="math notranslate nohighlight">\(r_{im}\)</span> provides a nonparametric estimation of how <span class="math notranslate nohighlight">\(X_m\)</span> relates to the log relative odds that <span class="math notranslate nohighlight">\(Y = 1 | X_{m}\)</span>.</p></li>
@@ -630,8 +631,8 @@ $<span class="math notranslate nohighlight">\(
 <h4>4.1 Model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>The continuation ratio (CR) model is based on conditional probabilities. The (forward) CR model is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2c6d0f94-f4f1-4414-8ab7-dc99ae41705b">
-<span class="eqno">(7)<a class="headerlink" href="#equation-2c6d0f94-f4f1-4414-8ab7-dc99ae41705b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-75a3ca26-aa76-4ebc-bb69-43bce9b092e6">
+<span class="eqno">(7)<a class="headerlink" href="#equation-75a3ca26-aa76-4ebc-bb69-43bce9b092e6" title="Permalink to this equation">¶</a></span>\[\begin{align}
    P(Y=j|Y\ge j,  X) &amp; = \frac{1}{1+\exp[-(\theta_j + X\gamma)]}\\
    logit(Y=0|Y\ge0, X) &amp; = logit(Y=0|X)\\
    &amp;=\theta_0 + X\gamma\\
