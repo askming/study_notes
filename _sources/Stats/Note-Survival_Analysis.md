@@ -218,7 +218,7 @@ $$
     - **Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period $a$**
       
       \begin{align}
-      & \phi_{\lambda_j(s)} &=& P_{\lambda_j}(X < C)\\
+      \phi_{\lambda_j(s)} &=& P_{\lambda_j}(X < C)\\
       &=& \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X<c|C=c)g(c)dc\\
       &=& \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
       \end{align}
