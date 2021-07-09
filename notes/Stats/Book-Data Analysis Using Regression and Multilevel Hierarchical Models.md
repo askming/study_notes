@@ -50,7 +50,9 @@ tags: causal inference, regression
 
 ### 9.3 Randomized experiments
 - Random sampling and random treatment assignment allow us to estimate the average causal effect of the treatment in the population
+  
   $$\text{average treatment effect} = \text{avg}(y_i^1 - y_i^0)$$
+  
 - Randomized experiment is the cleanest way to estimate the population average, in which each unit has a positive chance of receiving each of the possible treatments.
 - If randomized experiments are conducted within certain group of participants, the causal inference no longer generalize to the entire population. 
 - When the causal inferences are merited for a specific sample or population, it's said to have *internal validity*; when those inferences can be generalized to a broader population of interest the study is said to have *external validity*  
@@ -136,9 +138,13 @@ of receiving the supplemental version of the treatment.
     ![Screen Shot 2019-09-21 at 11.30.14.png](https://raw.githubusercontent.com/askming/picgo/master/eae93ee9_20200625130506.png)
     
   - In linear regression, assume a quadratic relationship between outcome $y$ and pre-treatment covariate $x$:
-      $$y_i = \beta_0 + \beta_1x_i + \beta_2x_i^2 + \theta T_i + \epsilon_i$$    
+      
+      $$y_i = \beta_0 + \beta_1x_i + \beta_2x_i^2 + \theta T_i + \epsilon_i$$  
+
     - Treatment effect $\theta$ can be derived as 
+      
       $$\theta =  \hat{y}_1 - \hat{y}_0 - \beta_1(\bar{x}_1 - \bar{x}_0) - \beta_2(\bar{x_1^2} - \bar{x_2^2})$$
+
     - $x$ are included since we can't assume they are exactly the same between treatment groups. And it can be seen that esitmate of $\theta$ depends on the difference in distrbution of $x$ between each arm. Unless, $x$'s are comparable (in distribution), the estimate will be biased for different level of quantities  (depending on the true model parameterization).
 
   - To examine the imbalance between groups
@@ -273,7 +279,7 @@ of receiving the supplemental version of the treatment.
   \begin{align}
   y_i & = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i & = \gamma_0 + \gamma_1 z_i + v_i
-  \end{array}
+  \end{align}
   
   where $z$ is the instrumental variable, $T$ is the treatment.
   - The first assumption is that $z_i$ is uncorrelated with both $\epsilon_i$ and $ν_i$, which translates informally into the *ignorability* assumption and *exclusion restriction* (here often expressed informally as “the instrument only affects the outcome through its effect on the treatment”).
