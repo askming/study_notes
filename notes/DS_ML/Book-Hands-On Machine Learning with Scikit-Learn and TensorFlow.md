@@ -46,7 +46,7 @@
   >>>  f1_score(y_train, y_pred)
    ```
 - You can’t have it both ways: increasing precision reduces recall, and vice versa. This is called the *precision/recall tradeoff*.
-  ![输入图片描述](Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow_md_files/Screen%20Shot%202019-09-23%20at%2011.46.19_20200608052410.png?v=1&type=image&token=V1:fvJjoJ5ad8P9PdZ71EtunC4gNQv5gJ-djBN0xbQ-dys)
+  ![Fig 3-3](https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202019-09-23%20at%2011.46.19_20200608052410.png)
   - Scikit-Learn does not let you set the threshold directly, but it does give you access to the decision scores that it uses to make predictions. Instead of calling the classifier’s `predict()` method, you can call its `decision_function()` method, which returns a score for each instance, and then make predictions based on those scores using any threshold you want
   - To find the "optimal" threshold, we can calculate the scores for all instances in the training set using `cross_val_predict()` with specifying `method = "decision_function"` instead of acutal predictions
     - with these scores, plot the `precision_recall_curve()` for all possible threshold
@@ -54,7 +54,7 @@
       >>> from sklearn.metrics import precision_recall_curve 
       >>> precisions, recalls, thresholds = precision_recall_curve(y_train, y_scores)
       ```
-      ![输入图片描述](Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow_md_files/Screen%20Shot%202019-09-23%20at%2011.58.01_20200608052521.png?v=1&type=image&token=V1:KW_Md6byCvf8NlMrBMX88TXtFIhuH0hU3sd9QmjK7wU)
+      ![Fig 3-4](https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202019-09-23%20at%2011.58.01_20200608052521.png)
     
   - Another way to select a good precision/recall tradeoff is to plot precision directly against recall    
   - Precision may sometimes go down when you raise the threshold (although in general it will go up); recall can only go down when the threshold is increased, which explains why its curve looks smooth.
