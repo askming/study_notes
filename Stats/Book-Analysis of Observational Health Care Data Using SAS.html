@@ -362,8 +362,8 @@ Bang and Robins, 2005).</p></li>
 <h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f15095b-6836-4c03-a60f-92b33fcb40c1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8f15095b-6836-4c03-a60f-92b33fcb40c1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aa1a354e-4163-4fc5-8157-4dab2f3858b2">
+<span class="eqno">(1)<a class="headerlink" href="#equation-aa1a354e-4163-4fc5-8157-4dab2f3858b2" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{\Delta}_{DR} \\
    &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
    &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
@@ -376,8 +376,8 @@ Bang and Robins, 2005).</p></li>
   SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0cc3ea8a-21b0-4234-a83f-7921e52b431a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-0cc3ea8a-21b0-4234-a83f-7921e52b431a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1898acb6-1025-42bd-b2c6-d06850b4ddca">
+<span class="eqno">(2)<a class="headerlink" href="#equation-1898acb6-1025-42bd-b2c6-d06850b4ddca" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{I}_i \\
   &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
   &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}
