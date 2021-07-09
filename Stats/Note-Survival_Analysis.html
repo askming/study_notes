@@ -111,6 +111,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
    [book] Regression Modeling Strategies
   </a>
@@ -477,13 +482,13 @@
 <li><p>Ignoring competing risk(s) will produce an upwards biased estimate of the absolute risk (cumulative incidence) because by treating competing events as censorings, one pretends that the target population is one where the competing events are not operating and therefore neglects the fact that subjects who have died from competing causes can no longer experience the event of interest.</p></li>
 <li><p>In such a situation it is necessary to estimate the <em>absolute risk</em>. This is the probability of experiencing event 1 at a certain time point and it depends not only on the hazard of this event but also on the probability of having survived up to this time point. And as this survival probability depends on the hazards of all events, this implies it is necessary also to estimate the intensity of the competing events.</p>
 <div class="math notranslate nohighlight" id="equation-pred-comp">
-<span class="eqno">(8)<a class="headerlink" href="#equation-pred-comp" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(10)<a class="headerlink" href="#equation-pred-comp" title="Permalink to this equation">¶</a></span>\[
   F_1(t|Z) = \int_0^t S(u|Z)d\Lambda_{01}(u|Z) = \int_0^t\exp(-\Lambda_{02}(u|Z) - \Lambda_{01}(u|Z))d\Lambda_{01}(u|Z)\label{pred_comp}
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\Lambda_{02}(t|Z)\)</span> is the cumulative hazard for competing events.</p>
 <ul class="simple">
-<li><p>Without covariates, the estimator obtained by plugging-in Nelson-Aalen estimates for the cumulative hazard in <a class="reference internal" href="#equation-pred-comp">(8)</a> is known as the <em>Aalen-Johansen estimator</em>.</p></li>
-<li><p>The intuition behind the middle term of <a class="reference internal" href="#equation-pred-comp">(8)</a> is that the integrand, <u>the survival probability</u>, <span class="math notranslate nohighlight">\(S(u|Z)\)</span> of surviving to time <span class="math notranslate nohighlight">\(u\)</span>, times <u>the conditional probability</u>, <span class="math notranslate nohighlight">\(dΛ_{01}(u|Z)\)</span> of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span> given survival till <span class="math notranslate nohighlight">\(u\)</span>, is the (unconditional) probability of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span>; <span class="math notranslate nohighlight">\(F_1(t | Z)\)</span>, the probability of dying from cause 1 by time <span class="math notranslate nohighlight">\(t\)</span> is then obtained as the sum (integral)</p></li>
+<li><p>Without covariates, the estimator obtained by plugging-in Nelson-Aalen estimates for the cumulative hazard in <a class="reference internal" href="#equation-pred-comp">(10)</a> is known as the <em>Aalen-Johansen estimator</em>.</p></li>
+<li><p>The intuition behind the middle term of <a class="reference internal" href="#equation-pred-comp">(10)</a> is that the integrand, <u>the survival probability</u>, <span class="math notranslate nohighlight">\(S(u|Z)\)</span> of surviving to time <span class="math notranslate nohighlight">\(u\)</span>, times <u>the conditional probability</u>, <span class="math notranslate nohighlight">\(dΛ_{01}(u|Z)\)</span> of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span> given survival till <span class="math notranslate nohighlight">\(u\)</span>, is the (unconditional) probability of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span>; <span class="math notranslate nohighlight">\(F_1(t | Z)\)</span>, the probability of dying from cause 1 by time <span class="math notranslate nohighlight">\(t\)</span> is then obtained as the sum (integral)</p></li>
 </ul>
 </li>
 <li><p>It’s also possible to directly model <span class="math notranslate nohighlight">\(F(t|Z)\)</span>, e.g., using the Fine and Gray regression model.</p></li>
@@ -584,8 +589,8 @@
     \]</div>
 <ul>
 <li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-297aa460-46e5-4afb-aa49-eb7f38cfcde6">
-<span class="eqno">(9)<a class="headerlink" href="#equation-297aa460-46e5-4afb-aa49-eb7f38cfcde6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cbfbc0dd-e505-4b69-85d3-a5516c3e1935">
+<span class="eqno">(11)<a class="headerlink" href="#equation-cbfbc0dd-e505-4b69-85d3-a5516c3e1935" title="Permalink to this equation">¶</a></span>\[\begin{align}
       \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
