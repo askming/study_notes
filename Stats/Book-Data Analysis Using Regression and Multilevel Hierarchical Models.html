@@ -53,7 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
+    <link rel="next" title="[book] Fundamentals of Clinical Trials (4th edition)" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" />
     <link rel="prev" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -113,6 +113,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
  <li class="toctree-l1">
@@ -500,7 +505,7 @@
                 
   <div class="section" id="book-data-analysis-using-regression-and-multilevel-hierarchical-models">
 <h1>[book] Data Analysis Using Regression and Multilevel/Hierarchical Models<a class="headerlink" href="#book-data-analysis-using-regression-and-multilevel-hierarchical-models" title="Permalink to this headline">¶</a></h1>
-<br>
+<hr>
 <p><em>A study note of <span id="id1">[<a class="reference internal" href="#id15">Gelman and Hill, 2006</a>]</span></em></p>
 <div class="section" id="chapter-9-causal-inference-using-regression-on-the-treatment-variable">
 <h2>Chapter 9 Causal inference using regression on the treatment variable<a class="headerlink" href="#chapter-9-causal-inference-using-regression-on-the-treatment-variable" title="Permalink to this headline">¶</a></h2>
@@ -529,8 +534,8 @@
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a0fb8c45-cb2f-46a5-bb24-20f2757826b9">
-<span class="eqno">(7)<a class="headerlink" href="#equation-a0fb8c45-cb2f-46a5-bb24-20f2757826b9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-374dc950-23d1-467a-a80a-640b05cf53e7">
+<span class="eqno">(7)<a class="headerlink" href="#equation-374dc950-23d1-467a-a80a-640b05cf53e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -883,8 +888,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c66ae7cb-208e-4693-94b8-b12d5bc81349">
-<span class="eqno">(8)<a class="headerlink" href="#equation-c66ae7cb-208e-4693-94b8-b12d5bc81349" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2cad69fb-ab03-405b-9884-071e42c53e33">
+<span class="eqno">(8)<a class="headerlink" href="#equation-2cad69fb-ab03-405b-9884-071e42c53e33" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -895,8 +900,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5dcef448-aa30-4fbb-9bb2-1d978169a365">
-<span class="eqno">(9)<a class="headerlink" href="#equation-5dcef448-aa30-4fbb-9bb2-1d978169a365" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-59964952-8924-42a8-81a9-04082e9f9676">
+<span class="eqno">(9)<a class="headerlink" href="#equation-59964952-8924-42a8-81a9-04082e9f9676" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>
@@ -1383,7 +1388,7 @@ this strategy can be <em>anticonservative</em>.</p></li>
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="previous page">[book] Causal inference in statistics <em>a primer</em></a>
-    <a class='right-next' id="next-link" href="Book-Regression%20Modeling%20Strategies.html" title="next page">[book] Regression Modeling Strategies</a>
+    <a class='right-next' id="next-link" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" title="next page">[book] Fundamentals of Clinical Trials (4th edition)</a>
 
         </div>
         

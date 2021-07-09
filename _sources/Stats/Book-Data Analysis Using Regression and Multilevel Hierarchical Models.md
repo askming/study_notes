@@ -4,7 +4,7 @@ tags: causal inference, regression
 
 # [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
 
-<br>
+<hr>
 
 *A study note of {cite:p}`gelman2006data`*
 
