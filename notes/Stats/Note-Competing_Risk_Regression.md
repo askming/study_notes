@@ -35,7 +35,7 @@ tags: survival analysis
 
   - it's not a true probability distribution
 
-  - $$
+    $$
     F_k(t) = \int_0^tS(u)h_k(u)du = \int_0^t S(u)dH_k(u), k = 1, \cdots, K
     $$
 
