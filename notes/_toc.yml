@@ -13,4 +13,6 @@ parts:
     chapters:
     - glob: "Stats_Comp/*"
 
-
+  - caption: DS/ML
+    chapters:
+    - glob: "DS_ML/*"
