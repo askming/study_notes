@@ -2,7 +2,8 @@
 tags: causal inference, regression
 ---
 
-# Data Analysis Using Regression and Multilevel/Hierarchical Models
+# [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+
 <br>
 
 *A study note of {cite:p}`gelman2006data`*
@@ -52,7 +53,7 @@ tags: causal inference, regression
 - Random sampling and random treatment assignment allow us to estimate the average causal effect of the treatment in the population
   
   $$\text{average treatment effect} = \text{avg}(y_i^1 - y_i^0)$$
-  
+
 - Randomized experiment is the cleanest way to estimate the population average, in which each unit has a positive chance of receiving each of the possible treatments.
 - If randomized experiments are conducted within certain group of participants, the causal inference no longer generalize to the entire population. 
 - When the causal inferences are merited for a specific sample or population, it's said to have *internal validity*; when those inferences can be generalized to a broader population of interest the study is said to have *external validity*  
