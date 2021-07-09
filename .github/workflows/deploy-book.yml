@@ -35,7 +35,7 @@ jobs:
 
       - name: Build the book
         run: |
-          jupyter-book build --all ./notes/
+          jupyter-book build ./notes/
 
       - name: Deploy htmls to gh-pages branch 
         uses: peaceiris/actions-gh-pages@v3.6.1
