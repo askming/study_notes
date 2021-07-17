@@ -16,3 +16,7 @@ parts:
   - caption: DS/ML
     chapters:
     - glob: "DS_ML/*"
+
+  - caption: Miscellaneous
+    chapters:
+    - glob: "Miscellaneous/*"
