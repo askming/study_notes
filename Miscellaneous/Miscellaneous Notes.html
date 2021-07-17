@@ -331,7 +331,8 @@ d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{
 </li>
 <li><p>Normalizing constant in Bayesian posterior distribution (<em>Why can we ignore the normalizing constant in the posterior distribution?</em>)</p>
 <p>According to your notation, Bayes’s formula is actually</p>
-<p>$<span class="math notranslate nohighlight">\(Pr(\theta∣\text{data})=Pr(\text{data}∣\theta)Pr(\theta)/Pr(\text{data})\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[Pr(\theta∣\text{data})=Pr(\text{data}∣\theta)Pr(\theta)/Pr(\text{data})\]</div>
 <p>The denominator, <span class="math notranslate nohighlight">\(Pr(data)\)</span>, is obtained by integrating out the parameters from the join probability, <span class="math notranslate nohighlight">\(Pr(data,\theta)\)</span>. This is the marginal probability of the data and, of course, it does not depend on the parameters since these have been integrated out.</p>
 <p>Now, since:</p>
 <p><span class="math notranslate nohighlight">\(Pr(data)\)</span> does not depend on the parameters for which one wants to make inference;<span class="math notranslate nohighlight">\(Pr(data)\)</span> is generally difficult to calculate in a closed-form; one often uses the following adaptation of Baye’s formula:</p>
