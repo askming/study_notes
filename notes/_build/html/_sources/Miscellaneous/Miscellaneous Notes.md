@@ -47,31 +47,19 @@
 
 5. Normalizing constant in Bayesian posterior distribution (*Why can we ignore the normalizing constant in the posterior distribution?*)
    
-   According to your notation, Bayes's formula is actually
+    According to your notation, Bayes's formula is actually
 
+    $$Pr(\theta∣\text{data})=Pr(\text{data}∣\theta)Pr(\theta)/Pr(\text{data})$$
    
+    The denominator, $Pr(data)$, is obtained by integrating out the parameters from the join probability, $Pr(data,\theta)$. This is the marginal probability of the data and, of course, it does not depend on the parameters since these have been integrated out.
    
-    $$Pr(\theta∣\text{data})=Pr(\text{data}∣\theta)Pr(\theta)/Pr(\text{data})$$
+    Now, since: 
    
+    $Pr(data)$ does not depend on the parameters for which one wants to make inference;$Pr(data)$ is generally difficult to calculate in a closed-form; one often uses the following adaptation of Baye's formula:
    
+    $$Pr(\theta∣\text{data})\propto Pr(\text{data}∣\theta)Pr(\theta)$$
    
-   The denominator, $Pr(data)$, is obtained by integrating out the parameters from the join probability, $Pr(data,\theta)$. This is the marginal probability of the data and, of course, it does not depend on the parameters since these have been integrated out.
-   
-      
-   
-   Now, since: 
-   
-   
-   
-   $Pr(data)$ does not depend on the parameters for which one wants to make inference;$Pr(data)$ is generally difficult to calculate in a closed-form; one often uses the following adaptation of Baye's formula:
-   
-   
-   
-   $$Pr(\theta∣\text{data})\propto Pr(\text{data}∣\theta)Pr(\theta)$$
-   
-      
-   
-   Basically, $Pr(data)$ is nothing but a normalising constant, i.e., a constant that makes the posterior density integrate to *one*.
+    Basically, $Pr(data)$ is nothing but a normalising constant, i.e., a constant that makes the posterior density integrate to *one*.
    
 6. The subject which deals with maximizing or minimizing integrals of functions is the **calculus of variations** and one of its basic tricks is to write the integrand as a function of $x$, the function, and its derivatives. This sets us up to use a general theorem to the effect that any function $\\hat{m}$ that minimizes L must also solve **Euler-Lagrange equation**.
 
@@ -171,7 +159,7 @@
         - The interpretation of the coefficient should then be adjusted appropriately based on the actual value of the corresponding main effects combination (the coefficients in the interaction terms are the difference between one level vs the reference level for that variable not included in the main effect conditional on the variable(s) included as main effect(s))
     - With the interaction term, the interpretation of one main effect is always dependent  on the value of the other main effect, i.e. it’s conditional (on the other main effect) comparison or subgroup comparison 
 
-![image-20200812144625147](https://raw.githubusercontent.com/askming/picgo/master/image-20200812144625147.png)
+      ![image-20200812144625147](https://raw.githubusercontent.com/askming/picgo/master/image-20200812144625147.png)
 
 13. Types of **regression** sum of squares in regression analysis
 

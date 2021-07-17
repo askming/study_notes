@@ -331,7 +331,8 @@ d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{
 </li>
 <li><p>Normalizing constant in Bayesian posterior distribution (<em>Why can we ignore the normalizing constant in the posterior distribution?</em>)</p>
 <p>According to your notation, Bayes’s formula is actually</p>
-<p>$<span class="math notranslate nohighlight">\(Pr(\theta∣\text{data})=Pr(\text{data}∣\theta)Pr(\theta)/Pr(\text{data})\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[Pr(\theta∣\text{data})=Pr(\text{data}∣\theta)Pr(\theta)/Pr(\text{data})\]</div>
 <p>The denominator, <span class="math notranslate nohighlight">\(Pr(data)\)</span>, is obtained by integrating out the parameters from the join probability, <span class="math notranslate nohighlight">\(Pr(data,\theta)\)</span>. This is the marginal probability of the data and, of course, it does not depend on the parameters since these have been integrated out.</p>
 <p>Now, since:</p>
 <p><span class="math notranslate nohighlight">\(Pr(data)\)</span> does not depend on the parameters for which one wants to make inference;<span class="math notranslate nohighlight">\(Pr(data)\)</span> is generally difficult to calculate in a closed-form; one often uses the following adaptation of Baye’s formula:</p>
@@ -400,27 +401,27 @@ d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{
 </ul>
 </li>
 <li><p>Understanding interaction term in regression</p>
-<ul class="simple">
+<ul>
 <li><p>Adding interaction term in the model is to examine if the main effect of interest varies by another (pre-treatment) factor</p></li>
 <li><p>If the interaction is significant, it means there is no overall “unique” treatment effect and the magnitude of the (overall) main treatment effect is not estimable</p>
-<ul>
+<ul class="simple">
 <li><p>The effect is estimable in a stratified analysis</p></li>
 </ul>
 </li>
 <li><p>In general, for a linear regression model, the estimate obtained by including the interaction, and then averaging over the data, reduces to the estimate with no interaction. (<em>Gelman</em>)</p>
-<ul>
+<ul class="simple">
 <li><p>Modeling interactions is important when we care about differences in the treatment effect for different groups, and post-stratification then arises naturally if a population average estimate is of interest.</p></li>
 </ul>
 </li>
 <li><p>How is regression adjustment differs from stratified analysis? Is regression model with interaction term equivalent to subgroup analysis?</p>
-<ul>
+<ul class="simple">
 <li><p>:star: Adjusted analysis with interaction term is usually preferred over subgroup analysis in general</p></li>
 <li><p>The real advantage of interaction effects is that it is more flexible when you have multiple explanatory variables. By estimating seperate regressions you force an interaction between the covariate you are interested in and all other explanatory variables, while with interaction effects you can choose which effect can change over and which remains constant. <strong>This is often very desirable as interaction effects tend to eat large amounts of statistical power</strong>.</p></li>
 <li><p>On a more mechanical level, with interaction effects (if you used the factor variable notation) you have all the power of <strong>margins</strong>, <strong>contrast</strong>, and <strong>marginsplot</strong> at your disposal.</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X1201200111">A good illustrative example</a> about how to understand the regression coefficients with interaction terms</p>
-<ul>
+<ul class="simple">
 <li><p>including only interaction term without main effect is basically grouping the samples into the categories defined by the unique combinations from the interaction and the estimate is the “average” of the samples within that category</p></li>
 <li><p>When one or both of the main effects are included in the model, the main effect(s) “takes away” part of the effect associated with it.</p>
 <ul>
@@ -430,12 +431,11 @@ d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{
 </li>
 </ul>
 </li>
-<li><p>With the interaction term, the interpretation of one main effect is always dependent  on the value of the other main effect, i.e. it’s conditional (on the other main effect) comparison or subgroup comparison</p></li>
+<li><p>With the interaction term, the interpretation of one main effect is always dependent  on the value of the other main effect, i.e. it’s conditional (on the other main effect) comparison or subgroup comparison</p>
+<p><img alt="image-20200812144625147" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200812144625147.png" /></p>
+</li>
 </ul>
 </li>
-</ol>
-<p><img alt="image-20200812144625147" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200812144625147.png" /></p>
-<ol>
 <li><p>Types of <strong>regression</strong> sum of squares in regression analysis</p>
 <ul>
 <li><p>Type I: <em>sequential</em>. the order when a variable is added into a model matters, i.e. the SS is dependent on the order when the variable is added to the model.</p></li>
