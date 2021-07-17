@@ -1,0 +1,1446 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[book] Data Analysis Using Regression and Multilevel/Hierarchical Models &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="[book] Fundamentals of Clinical Trials (4th edition)" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" />
+    <link rel="prev" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Book-Data Analysis Using Regression and Multilevel Hierarchical Models.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Data Analysis Using Regression and Multilevel Hierarchical Models.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-9-causal-inference-using-regression-on-the-treatment-variable">
+   Chapter 9 Causal inference using regression on the treatment variable
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-inference-and-predictive-comparisons">
+     9.1 Causal inference and predictive comparisons
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-fundamental-problem-of-causal-inference">
+     9.2 The fundamental problem of causal inference
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomized-experiments">
+     9.3 Randomized experiments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#treatment-interactions-and-poststratification">
+     9.4 Treatment interactions and poststratification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observational-studies">
+     9.5 Observational studies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#understanding-causal-inference-in-observational-studies">
+     9.6 Understanding causal inference in observational studies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-not-control-for-post-treatment-variables">
+     9.7 Do not control for post-treatment variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intermediate-outcomes-and-causal-paths">
+     9.8 Intermediate outcomes and causal paths
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-10-causal-inference-using-more-advanced-models">
+   Chapter 10 Causal inference using more advanced models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imbalance-and-lack-of-complete-overlap">
+     10.1 Imbalance and lack of complete overlap
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subclassification-effects-and-estimates-for-different-subpopulations">
+     10.2 Subclassification: effects and estimates for different subpopulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matching-subsetting-the-data-to-get-overlapping-and-balanced-treatment-and-control-groups">
+     10.3 Matching: subsetting the data to get overlapping and balanced treatment and control groups
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lack-of-overlap-when-the-assignment-mechanism-is-known-regression-discontinuity">
+     10.4 Lack of overlap when the assignment mechanism is known: regression discontinuity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-causal-effects-indirectly-using-instrumental-variables">
+     10.5 Estimating causal effects indirectly using instrumental variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instrumental-variables-in-a-regression-framework">
+     10.6 Instrumental variables in a regression framework
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identification-strategies-that-make-use-of-variation-within-or-between-groups">
+     10.7 Identification strategies that make use of variation within or between groups
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-23-causal-inference-using-multilevel-models">
+   Chapter 23 Causal inference using multilevel models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multilevel-aspects-of-data-collection">
+     23.1 Multilevel aspects of data collection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-treatment-effects-in-a-multilevel-observational-study">
+     23.2 Estimating treatment effects in a multilevel observational study
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#treatments-applied-at-different-levels">
+     23.3 Treatments applied at different levels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instrumental-variables-and-multilevel-modeling">
+     23.4 Instrumental variables and multilevel modeling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-25-missing-data-imputation">
+   Chapter 25 Missing data imputation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#missing-data-in-r-and-bugs">
+     Missing data in R and Bugs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#missing-data-mechanisms">
+     25.1 Missing-data mechanisms
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#missingness-completely-at-random-mcar">
+       Missingness completely at random (MCAR)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#missingness-at-random-mar">
+       Missingness at random (MAR)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#missingness-not-at-random">
+       Missingness not at random
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#missingness-that-depends-on-unobserved-predictors">
+         Missingness that depends on unobserved predictors
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#missingness-that-depends-on-the-missing-value-itself">
+         Missingness that depends on the missing value itself
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#general-impossibility-of-proving-that-data-are-missing-at-random">
+       General impossibility of proving that data are missing at random
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#missing-data-methods-that-discard-data">
+     25.2 Missing-data methods that discard data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-missing-data-approaches-that-retain-all-the-data">
+     25.3 Simple missing-data approaches that retain all the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-imputation-of-a-single-variable">
+     25.4 Random imputation of a single variable
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#simple-random-imputation">
+       Simple random imputation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-regression-predictions-to-perform-deterministic-imputation">
+       Using regression predictions to perform deterministic imputation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#random-regression-imputation">
+       Random regression imputation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#predictors-used-in-the-imputation-model">
+       Predictors used in the imputation model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-stage-modeling-to-impute-a-variable-that-can-be-positive-or-zero">
+       Two-stage modeling to impute a variable that can be positive or zero
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matching-and-hot-deck-imputation">
+       Matching and hot-deck imputation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imputation-of-several-missing-variables">
+     25.5 Imputation of several missing variables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#routine-multivariate-imputation">
+       Routine multivariate imputation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iterative-regression-imputation">
+       Iterative regression imputation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-based-imputation">
+     25.6 Model-based imputation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nonignorable-missing-data-models">
+       Nonignorable missing-data models
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#imputation-in-multilevel-data-structures">
+       Imputation in multilevel data structures
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combining-inferences-from-multiple-imputations">
+     25.7 Combining inferences from multiple imputations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="book-data-analysis-using-regression-and-multilevel-hierarchical-models">
+<h1>[book] Data Analysis Using Regression and Multilevel/Hierarchical Models<a class="headerlink" href="#book-data-analysis-using-regression-and-multilevel-hierarchical-models" title="Permalink to this headline">¶</a></h1>
+<hr>
+<p><em>A study note of <span id="id1">[<a class="reference internal" href="#id15">Gelman and Hill, 2006</a>]</span></em></p>
+<div class="section" id="chapter-9-causal-inference-using-regression-on-the-treatment-variable">
+<h2>Chapter 9 Causal inference using regression on the treatment variable<a class="headerlink" href="#chapter-9-causal-inference-using-regression-on-the-treatment-variable" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="causal-inference-and-predictive-comparisons">
+<h3>9.1 Causal inference and predictive comparisons<a class="headerlink" href="#causal-inference-and-predictive-comparisons" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>In the usual regression context, predictive inference relates to comparisons <em>between units</em>, whereas causal inference addresses comparisons of different treatments if applied to the <em>same units</em>.</p></li>
+<li><p>More generally, causal inference can be viewed as a special case of prediction in which the goal is to predict what <em>would have happened</em> under different treatment options.</p></li>
+<li><p>It’s possible for a data to show zero causal effect but positive predictive comparison or vice versa</p>
+<ul class="simple">
+<li><p>The scenario illustrated in Figure 9.1 is called selection bias, because participatns are slecting themselves into different treatments</p></li>
+<li><p>To overcome this bias, we can either compare the averages across treatment groups within each group of the biased variable (previous health status here) OR, adjust for previous health status in the regression model
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/fa260aec_20200421111305.png" /></p></li>
+</ul>
+</li>
+<li><p>In general, causal effects can be estimated using regression if the model includes all confounding covariates (predictors that can affect treatment assignment or the outcome) and if the model is correct.</p></li>
+<li><p>Omitting the confounder in regression model leads to biased estimate of causal effect:</p>
+<ul>
+<li><p>True/correct model, where <span class="math notranslate nohighlight">\(x_i\)</span> reprents the confounder</p>
+<div class="math notranslate nohighlight">
+\[y_i = \beta_0 + \beta_1T_i +  \beta_2x_i + \epsilon_i\]</div>
+</li>
+<li><p>If the confounder is ignored</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
+<ul>
+<li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f6d15a52-8dcc-4121-a9d7-636b4f67dc42">
+<span class="eqno">(7)<a class="headerlink" href="#equation-f6d15a52-8dcc-4121-a9d7-636b4f67dc42" title="Permalink to this equation">¶</a></span>\[\begin{align}
+      y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
+      &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
+      \end{align}\]</div>
+</li>
+<li><p>That is <span class="math notranslate nohighlight">\(\beta_1^* = \beta_1 + \beta_2\gamma_1\)</span>. It’s unbiased only when <span class="math notranslate nohighlight">\(\beta_2 = 0\)</span> or <span class="math notranslate nohighlight">\(\gamma_1 = 0\)</span>, that is <span class="math notranslate nohighlight">\(x_i\)</span> isn’t a confoundering factor.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-fundamental-problem-of-causal-inference">
+<h3>9.2 The fundamental problem of causal inference<a class="headerlink" href="#the-fundamental-problem-of-causal-inference" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The <em>causal effect</em> of a treatment <span class="math notranslate nohighlight">\(T\)</span> on an outcome <span class="math notranslate nohighlight">\(y\)</span> for an observational or experimental unit <span class="math notranslate nohighlight">\(i\)</span> can be defined by comparisons between the outcomes that would have occurred under each of the different treatment possibilities.</p></li>
+<li><p><em>Counterfactual</em>: it represents what <em>would have</em> happend to the individual if assigned to control instead of treatment</p></li>
+<li><p>The so-called <em>fundamental problem of causal inference</em> is that at most one of these two potential outcomes, <span class="math notranslate nohighlight">\(y_i^0\)</span> and <span class="math notranslate nohighlight">\(y_i^1\)</span>, can be observed for each unit <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>How to get around the problem</p>
+<ul>
+<li><p>To make it clear, we can never measure a causal effect directly</p></li>
+<li><p>Instead we can think of causal inference as a prediction of what would happen to unit <span class="math notranslate nohighlight">\(i\)</span> if <span class="math notranslate nohighlight">\(T_i = 0\)</span> or <span class="math notranslate nohighlight">\(T_i = 1\)</span>. It’s thus predictive inference in the potential-outcome framework.</p></li>
+<li><p>Estimating calsual effects requires one or more combination of the following</p>
+<ul>
+<li><p>Close substitutes for the potential outcomes</p></li>
+<li><p>Randomization</p></li>
+<li><p>Statistical adjustment</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="randomized-experiments">
+<h3>9.3 Randomized experiments<a class="headerlink" href="#randomized-experiments" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Random sampling and random treatment assignment allow us to estimate the average causal effect of the treatment in the population</p>
+<div class="math notranslate nohighlight">
+\[\text{average treatment effect} = \text{avg}(y_i^1 - y_i^0)\]</div>
+</li>
+<li><p>Randomized experiment is the cleanest way to estimate the population average, in which each unit has a positive chance of receiving each of the possible treatments.</p></li>
+<li><p>If randomized experiments are conducted within certain group of participants, the causal inference no longer generalize to the entire population.</p></li>
+<li><p>When the causal inferences are merited for a specific sample or population, it’s said to have <em>internal validity</em>; when those inferences can be generalized to a broader population of interest the study is said to have <em>external validity</em></p></li>
+<li><p>We avoid the term confounding covariates when describing adjustment in the context of a randomized experiment. Predictors are included in this context to <strong>increase precision</strong>. We expect them to be related to the outcome but not to the treatment assignment due to the randomiza- tion. Therefore they are not confounding covariates.</p></li>
+<li><p>Modeling change from baseline (gain score) in response variable:</p>
+<ul class="simple">
+<li><p>In some cases the gain score can be more easily interpreted than the original outcome variable <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p>Using gain scores is most effective if the pre-treatment score is comparable to the post-treatment measure.</p></li>
+<li><p>Modeling the gain score without adjusting for baseline score (unnecessarily) assumes <span class="math notranslate nohighlight">\(\beta_2\)</span> = 1 in model <span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1T_i +  \beta_2x_i + \epsilon_i\)</span>; to aovid this assumption, we can adjust for baseline score, in which the estimate for treatment effect is equivalent to the estimated coefficient from the original model.</p></li>
+</ul>
+</li>
+<li><p>More than two treatment levels:</p>
+<ul class="simple">
+<li><p>With several discrete treatments that are unordered (such as in a comparison of three different sorts of psychotherapy), we can move to multilevel modeling, with the group index indicating the treatment assigned to each unit, and a second-level model on the group coefficients, or treatment effects.</p></li>
+</ul>
+</li>
+<li><p>No interference between units</p>
+<ul class="simple">
+<li><p>In above RCT analysis, we must assume also that the treatment assignment for one individual (unit) in the experiment does not affect the outcome for another. This has been incorporated into the “stable unit treat- ment value assumption” (SUTVA).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="treatment-interactions-and-poststratification">
+<h3>9.4 Treatment interactions and poststratification<a class="headerlink" href="#treatment-interactions-and-poststratification" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When including interaction between treatment and pre-treatment inputs, we get a range of estimates of treatment effects (as a function of pre-treatment input value). This range represents the <em>variantion</em> in estimated treatment effects as a function of pre-test score, <em>not</em> uncertainty in the estimated treatment effect.</p></li>
+<li><p>In general, for a linear regression model, the estimate obtained by including the interaction, and then averaging over the data, reduces to the estimate with no interaction.</p></li>
+<li><p>The motivation for including the interaction is thus to get a better idea of how the treatment effect varies with pre-treatment predictors, not simply to estimate an average effect.</p></li>
+<li><p>To estimate an average treatment effect, we can post-stratify—that is, average over the population. <a class="footnote-reference brackets" href="#poststratification" id="id2">1</a></p></li>
+<li><p>Modeling interactions is important when we care about differences in the treatment effect for different groups, and post-stratification then arises naturally if a population average estimate is of interest.</p></li>
+</ul>
+</div>
+<div class="section" id="observational-studies">
+<h3>9.5 Observational studies<a class="headerlink" href="#observational-studies" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>In observational studies treatments are observed rather than assigned, study, there can be systematic differences between groups of units that receive different treatments—differences that are outside the control of the experimenter—and they can affect the outcome, <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p>As opposed to making the same assumption as the completely randomized experiment, the key assumption underlying the estimate is that, <em>conditional</em> on the confounding covariates used in the analysis (here as inputs in the regression analysis), the distribution of units across treatment conditions is, in essence, “random” (in this case, pre-test score) with respect to the potential outcomes.</p>
+<div class="math notranslate nohighlight">
+\[y^0, y^1 \perp T | X\]</div>
+<ul class="simple">
+<li><p>This assumption is referred to as <em>ignorability</em> of the reatment assignment in the statistics literature and <em>selection on observables</em> in econometrics.</p></li>
+<li><p>we expect any two classes at the same levels of the confounding covariates (that is, pre-treatment variables; in our example, average pre-test score) to have had the same probability
+of receiving the supplemental version of the treatment.</p></li>
+<li><p>the ignorability assumption is that it requires that we control for all confounding covariates, the pre-treatment variables that are associated with both the treatment and the outcome.</p></li>
+</ul>
+</li>
+<li><p><strong>Completely randomized experiments</strong> need not condition on any pre-treatment variables—this is why we can use a simple difference in means to estimate causal effects.</p></li>
+<li><p>Randomized experiments that block or match satisfy ignorability conditional on the design variables used to block or match, and therefore <strong>these variables need to be included</strong> when estimating causal effects.</p></li>
+<li><p>For ignorability to hold, it is not necessary that the two treatments be equally likely to be picked, but rather that the probability that a given treatment is picked should be equal, conditional on our confounding covariates. <a class="footnote-reference brackets" href="#ignorability" id="id3">2</a></p></li>
+<li><p>In general, one can never prove that the treatment assignment process in an observational study is ignorable—it is always possible that the choice of treatment depends on relevant information that has not been recorded.</p></li>
+<li><p>Even ignorability is justified, model adjustment with confounding variables in regression analysis doesn’t guarantee it’s the best modeling approach for estimating treatment effect, as there are two primary concerns related to the distributions of the confounding covariates across the treatment groups: <em>lack of complete overlap</em> and <em>lack of balance</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="understanding-causal-inference-in-observational-studies">
+<h3>9.6 Understanding causal inference in observational studies<a class="headerlink" href="#understanding-causal-inference-in-observational-studies" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>“infinite regress of causation”: looking for the most important cause of an outcome is a confusing framing for a research question because one can always find an earlier cause that affected the “cause” you determine to be the strongest from your data.</p></li>
+<li><p>If you find yourself confused about what can be estimated and how the various aspects of your study should be defined, a simple strategy is to try to formalize the randomized experiment you would have liked to have done to answer your causal question. A perfect mapping rarely exists between this experimental ideal and your data so often you will be forced instead to figure out, given the data you have, what randomized experiment could be thought to have generated such data.</p></li>
+<li><p>Finally, thinking about hypothetical randomized experiments can help with problems of trying to establish a causal link between two variables when neither has temporal priority and when they may have been simultaneously determined.</p></li>
+</ul>
+</div>
+<div class="section" id="do-not-control-for-post-treatment-variables">
+<h3>9.7 Do not control for post-treatment variables<a class="headerlink" href="#do-not-control-for-post-treatment-variables" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The problem of controlling post-treatment variables is that post-treatment variables is the intermediate result from treatment, when they are at the same level in the middle of study, it doesn’t mean they are comparable at baseline (and highly likely they are not).</p>
+<ul>
+<li><p>Then controlling for post-treatment variables leads to imbalance in the baseline values of these varibales between treatment groups, which further leads to biased estimate of treatment effect</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="intermediate-outcomes-and-causal-paths">
+<h3>9.8 Intermediate outcomes and causal paths<a class="headerlink" href="#intermediate-outcomes-and-causal-paths" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A question addressed by simply running a regression of the outcome on the randomized treatment variable along with a predictor representing (post-treatment) “parenting” added to the equation; recall that this is often called a mediating variable or mediator.</p>
+<ul>
+<li><p>Implicitly, the coefficient on the treatment variable then creates a comparison between those randomly assigned to treatment and control, within subgroups defined by post-treatment variable</p></li>
+</ul>
+</li>
+<li><p>Regression controlling for intermediate outcomes cannot, in general, estimate “mediating” effects</p></li>
+<li><p>The regression controlling for the intermediate outcome thus implicitly compares unlike groups of people and underestimates the treatment effect, because the treatment group in this comparison is made up of lower-performing children, on average.</p></li>
+<li><p>randomization allows us to calculate causal effects of the variable randomized, but not other variables unless a whole new set of assumptions is made.</p></li>
+<li><p>The key theoretical step here is to divide the population into categories based on their potential outcomes for the mediating variable—what would happen under each of the two treatment conditions. In statistical parlance, these categorizations are sometimes called <strong>principal strata</strong>.</p>
+<ul>
+<li><p>The problem is that the principal stratum labels are generally unobserved.</p></li>
+<li><p>It is theoretically possible to statistically infer principal-stratum categories based on covariates, especially if the treatment was randomized—because then at least we know that the distribution of principal strata is the same across the randomized groups.</p></li>
+<li><p>Principal strata are important because they can define, even if only theoretically, the categories of people for whom the treatment effect can be estimated from available data.</p></li>
+</ul>
+</li>
+<li><p>It should come as no surprise that it generally is <em>also problematic for observational studies</em>. The concern is nonignorability—systematic differences between groups defined conditional on the post-treatment intermediate outcome.</p>
+<ul>
+<li><p>Studying intermediate outcomes in an observational study involves two ignorability problems to deal with rather than just one, making it all the more challenging to obtain trustworthy results.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-10-causal-inference-using-more-advanced-models">
+<h2>Chapter 10 Causal inference using more advanced models<a class="headerlink" href="#chapter-10-causal-inference-using-more-advanced-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="imbalance-and-lack-of-complete-overlap">
+<h3>10.1 Imbalance and lack of complete overlap<a class="headerlink" href="#imbalance-and-lack-of-complete-overlap" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>Imbalance</strong>: Imbalance occurs if the distributions of relevant pre-treatment variables differ for the treatment and control groups.</p>
+<ul>
+<li><p>When treatment and control groups are unbalanced, the simple comparison of group averages, <span class="math notranslate nohighlight">\(\bar{y}_1−\bar{y}_0\)</span>, is not, in general, a good estimate of the average treatment effect. Instead, some analysis must be performed to adjust for pre-treatment differences between the groups.</p></li>
+<li><p>Imbalance creates problems primarily because it forces us to rely more on the correctness of our model than we would have to if the samples were balanced.
+<img alt="Screen Shot 2019-09-21 at 11.30.14.png" src="https://raw.githubusercontent.com/askming/picgo/master/eae93ee9_20200625130506.png" /></p></li>
+<li><p>In linear regression, assume a quadratic relationship between outcome <span class="math notranslate nohighlight">\(y\)</span> and pre-treatment covariate <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y_i = \beta_0 + \beta_1x_i + \beta_2x_i^2 + \theta T_i + \epsilon_i\]</div>
+<ul>
+<li><p>Treatment effect <span class="math notranslate nohighlight">\(\theta\)</span> can be derived as</p>
+<div class="math notranslate nohighlight">
+\[\theta =  \hat{y}_1 - \hat{y}_0 - \beta_1(\bar{x}_1 - \bar{x}_0) - \beta_2(\bar{x_1^2} - \bar{x_2^2})\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> are included since we can’t assume they are exactly the same between treatment groups. And it can be seen that esitmate of <span class="math notranslate nohighlight">\(\theta\)</span> depends on the difference in distrbution of <span class="math notranslate nohighlight">\(x\)</span> between each arm. Unless, <span class="math notranslate nohighlight">\(x\)</span>’s are comparable (in distribution), the estimate will be biased for different level of quantities  (depending on the true model parameterization).</p></li>
+</ul>
+</li>
+<li><p>To examine the imbalance between groups</p>
+<ul class="simple">
+<li><p>Compare difference in mean values divided by pooled within-group standard deviations for the groups under comparion</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Lack of overlap</strong>: occurs if there are regions in the space of relevant pre-treatment variables where there are treated units but no controls, or controls but no treated units.
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/db2e6d90_20200421111351.png" /></p>
+<ul class="simple">
+<li><p>There is complete overlap if this <strong>range</strong> is the same in the two groups.</p></li>
+<li><p>When treatment and control groups do not completely overlap, the data are inherently limited in what they can tell us about treatment effects in the regions of nonoverlap, i.e. there are treatment observations for which we have no counterfactuals and vice versa</p></li>
+<li><p>No amount of adjustment can create direct treatment/control comparisons, and one must either restrict inferences to the region of overlap, or rely on a model to extrapolate outside this region.</p></li>
+</ul>
+</li>
+<li><p>Imbalance is not the same as lack of overlap</p>
+<ul class="simple">
+<li><p>Imbalance does not necessarily imply lack of complete overlap</p></li>
+<li><p>Conversely, lack of complete overlap does not necessarily necessarily result in imbalance in <em>the sense of different average values</em> in the two groups.</p></li>
+</ul>
+</li>
+<li><p>Lack of complete overlap is a more serious problem than imbalance. But similar statistical methods are used in both scenarios</p></li>
+<li><p>Broadly speaking, any differences across groups can be referred to as lack of balance across groups. The terms “imbalance” and “lack of balance” are commonly used as a shorthand for differences in averages, but more broadly they can refer to more general <em>differences in distributions</em> across groups.</p></li>
+</ul>
+</div>
+<div class="section" id="subclassification-effects-and-estimates-for-different-subpopulations">
+<h3>10.2 Subclassification: effects and estimates for different subpopulations<a class="headerlink" href="#subclassification-effects-and-estimates-for-different-subpopulations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Subclassification</p>
+<ul>
+<li><p>This analysis is similar to a regression with <strong>interaction</strong> between the treatment and the stratification variable</p></li>
+<li><p>To calculate the average treatment effect for treated, we would have to <strong>poststratify</strong>—that is, estimate the treatment effect separately for each category of statification factor, and then average these effects based on the distribution of the stratification factor in the population.</p></li>
+<li><p>This strategy has the advantage of imposing overlap and, moreover, forcing the control sample to have roughly the same covariate distribution as the treated sample.</p></li>
+<li><p>One drawback of subclassifying, however, is that when controlling for a continuous variable, some information may be lost when discretizing the variable. A more substantial drawback is that it is difficult to control for many variables at once.</p></li>
+</ul>
+</li>
+<li><p>Average treatment effects: whom do we average over?</p>
+<ul>
+<li><p>Depends on which part of the population we are interested in the effect of intervention acts, we will need to apply different weighting strategy:</p>
+<ul>
+<li><p><strong>Effect of the treatment on the treated</strong>: weighting using the number of treatment participants</p></li>
+<li><p><strong>Effect of the treatment on the controls</strong>: weighted by the number of control subjects in each subclass</p></li>
+</ul>
+</li>
+<li><p>Deriving which effect depends on the original quesiton of interest and also if there are no/limited counterfactual the data for the other group, these data are likely inappropriate for drawing inferences from this group.</p></li>
+<li><p>We can think of the estimate of the effect of the treatment on the treated as a poststratified version of the estimate of the average causal effect.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="matching-subsetting-the-data-to-get-overlapping-and-balanced-treatment-and-control-groups">
+<h3>10.3 Matching: subsetting the data to get overlapping and balanced treatment and control groups<a class="headerlink" href="#matching-subsetting-the-data-to-get-overlapping-and-balanced-treatment-and-control-groups" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Matching refers to a variety of procedures that restrict and reorganize the original sample in preparation for a statistical analysis.</p></li>
+<li><p>Once the matched units have been selected out of the larger dataset, they can be analyzed by estimating a simple difference in average outcomes across treatment groups or by using regression methods to estimate the effect of the treatment in the area of overlap.</p></li>
+<li><p><strong>Matching and subclassification</strong></p>
+<ul>
+<li><p>Matching on one variable is similar to subclassification except that it handles con- tinuous variables more precisely.</p></li>
+<li><p>Exact matching is difficult with many confounders, but <em>“nearest- neighbor”</em> matching is often still possible. This strategy matches treatment units to control units that are “similar” in terms of their confounders where the metric for similarity can be defined in any variety of ways, one of the most popular being the <em>Mahalanobis distance</em>, which is defined in matrix notation as <span class="math notranslate nohighlight">\(d(x^{(1)},x^{(2)}) = (x^{(1)} −x^{(2)})^t\Sigma^{−1}(x^{(1)} −x^{(2)})\)</span>, where <span class="math notranslate nohighlight">\(x^{(1)}\)</span> and <span class="math notranslate nohighlight">\(x^{(2)}\)</span> represent the vectors of predictors for points 1 and 2, and <span class="math notranslate nohighlight">\(\Sigma\)</span> is the covariance of the predictors in the dataset.</p></li>
+</ul>
+</li>
+<li><p><strong>Propensity score matching</strong></p>
+<ul>
+<li><p>The propensity score for the <span class="math notranslate nohighlight">\(i\)</span>th individual is defined as the probability that he or she receives the treatment given everything we observe before the treatment (that is, all the confounding covariates for which we want to control).</p></li>
+<li><p>From its application mechanism (e.g. one-to-one matching or one-to-many matching), matching can be thought of as a way of discarding observations so that the remaining data show good balance and overlap.</p></li>
+<li><p>The goal of propensity score matching is not to ensure that each pair of <em>matched observations</em> is similar in terms of all their covariate values, but rather that the matched groups are similar <em>on average</em> across all their covariate values.</p>
+<ul>
+<li><p>The adequacy of the model used to estimate the propensity score can be evaluated by examining the balance that results on average across the matched groups.</p></li>
+</ul>
+</li>
+<li><p>Insufficient overlap problem</p>
+<ul>
+<li><p>One option is to accept some lack of comparability (and corresponding level of imbalance in covariates).</p></li>
+<li><p>Another option is to eliminate the problematic treated observations.</p></li>
+</ul>
+</li>
+<li><p>Matched pairs and correlation concern in analysis</p>
+<ul>
+<li><p>Although matching often results in pairs of treated and control units, we typically <strong>ignore the pairing</strong> in the analysis of the matched data.</p></li>
+<li><p>Propensity score matching works well (in appropriate settings) to create matched groups, but it does not necessarily created closely matched pairs.</p></li>
+<li><p>Because the pairing in the matching is performed in the analysis, not the data collection, it is not generally appropriate to add the complication of including the pairing in the model</p></li>
+<li><p>However, pairing in this way does affect variance calculations</p></li>
+</ul>
+</li>
+<li><p>A quick way of assessing whether matching has achieved increased balance and overlap is to plot histograms of propensity scores across treated and control groups.</p></li>
+</ul>
+</li>
+<li><p>Different ways of using propensity score</p>
+<ul>
+<li><p><strong>Matching</strong></p>
+<ul>
+<li><p><em>without replacement</em>: any given control observation can only be used once as a match for the treatment observation (when have large data with enough controls)</p></li>
+<li><p><em>with replacement</em>: one control is used multiple times to match with different treatment observation; a term which commonly refers to with one-to-one matching but could generalize to multiple control matches for each control. This approach create better balance and should yield estimates that are closer to the truth on average. Once such data are incorporated into a regression, however, the multiple matches reduce to single data points, which suggests that matching with replacement has limitations as a general strategy.</p></li>
+<li><p><em>Subclassification</em> based on propensity score: The estimated treatment effects from each of the subclasses then can either be reported separately or combined in a weighted average with different weights used for different estimands.</p></li>
+<li><p><em>full matching</em>: can be conceptualized as a fine stratification of the units where each statum has either (1) one treated unit and one control unit, (2) one treated unit and multiple control units, or (3) multiple treated units and one control unit.</p></li>
+</ul>
+</li>
+<li><p><strong>Inverse of estimated propensity scores</strong>: to create a weight for <em>each point in the data</em>, with the goal that weighted averages of the data should look, in effect, like what would be obtained from a randomized experiment. (also called <strong>inverse probability of treatment weighting [IPTW]</strong>)</p>
+<ul>
+<li><p>To obtain an estimate of an <strong>average treatment effect</strong>: <span class="math notranslate nohighlight">\(1/p_i\)</span> weights for treated and <span class="math notranslate nohighlight">\(1/(1-p_i)\)</span> for controls, where <span class="math notranslate nohighlight">\(p_i\)</span> is the propensity score</p></li>
+<li><p>To obtain an estimate of <strong>the effect of the treatment on the treated</strong>: weight 1 for treated and <span class="math notranslate nohighlight">\(p_i/(1-p_i)\)</span> for controls</p></li>
+<li><p>These strategies have the advantage (in terms of precision) of retaining the full sample.</p></li>
+<li><p>However, the weights may have wide variability and may be sensitive to model specification, which could lead to instability.</p>
+<ul>
+<li><p>Need to create stable weights and to use robust or nonparametric models to estimate the weights.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Used as the <strong>regression covariate</strong>: However, if observations that lie in areas where there is no overlap across treatment groups are not removed, the same problems regarding model extrapolation will persist.</p></li>
+<li><p>Standard errors</p>
+<ul>
+<li><p>matching induces correlation among the matched observations.</p></li>
+<li><p>our uncertainty about the true propensity score is not reflected in our calculations.</p></li>
+<li><p>more complicated matching methods (for example, matching with replacement and many-to-one matching methods) generally require more sophisticated approaches to variance estimation. (<em>exactly how</em>?)</p></li>
+<li><p>Ultimately, one good solution may be a multilevel model that includes treatment interactions so that inferences explicitly recognize the decreased precision that can be obtained outside the region of overlap.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="lack-of-overlap-when-the-assignment-mechanism-is-known-regression-discontinuity">
+<h3>10.4 Lack of overlap when the assignment mechanism is known: regression discontinuity<a class="headerlink" href="#lack-of-overlap-when-the-assignment-mechanism-is-known-regression-discontinuity" title="Permalink to this headline">¶</a></h3>
+<p>​	<img src="https://raw.githubusercontent.com/askming/picgo/master/excalidraw-rdd.png" alt="img" style="zoom:50%;" /></p>
+<ul>
+<li><p>If the treated and control groups are very different from each other, it can be more appropriate to identify the subset of the population with overlapping values of the predictor variables for both treatment and control conditions, and to estimate the causal effect (and the regression model) in this region only. Propensity score matching is one approach to lack of overlap.</p></li>
+<li><p>Sometimes a clean lack of overlap arises from a covariate that itself was used to assign units to treatment conditions. <strong>Regression discontinuity analysis</strong> is an approach for dealing with this extreme case of lack of overlap in which the assignment mechanism is clearly defined.</p></li>
+<li><p>In a setting where one treatment occurs only for<span class="math notranslate nohighlight">\( x &lt; C\)</span> and the other only for <span class="math notranslate nohighlight">\(x &gt; C\)</span>, it is still possible to estimate the treatment effect for units with <span class="math notranslate nohighlight">\(x\)</span> in the neighborhood of <span class="math notranslate nohighlight">\(C\)</span>, if we assume that the regression function—the average value of the outcome <span class="math notranslate nohighlight">\(y\)</span>, given <span class="math notranslate nohighlight">\(x\)</span> and the treatment—is a continuous function of <span class="math notranslate nohighlight">\(x\)</span> near the cutoff value <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<ul class="simple">
+<li><p>All we need to do is control for the input(s) used to determine treatment assignment—these are our confounding covariates. The disadvantage is that, by design, there is no overlap on this covariate across treatment groups.</p></li>
+<li><p>Therefore, to “control for” this variable we must make stronger modeling assumptions because we will be forced to extrapolate our model out of the range of our data. To mitigate such extrapolations, one can limit analyses to observations that fall just above and below the threshold for assignment.</p></li>
+<li><p>In general, the model fit just to the area of overlap may be considered more trustworthy.</p></li>
+</ul>
+</li>
+<li><p>“Fuzzy” discontinuity (as opposed to the “sharp” discontinuity): when the discontinuity is not so starkly defined.</p>
+<ul class="simple">
+<li><p>this overlap arises from deviations from the stated assignment mechanism. If the reasons for these deviations are well defined (and measurable), then ignorability can be maintained by controlling for the appropriate characteristics.</p></li>
+<li><p>Similarly, if the reasons for these deviations are independent of the potential outcomes of interest, there is no need for concern.</p></li>
+<li><p>If not, inferences could be compromised by failure to control for important omitted confounders.</p></li>
+</ul>
+</li>
+<li><blockquote>
+<div><p>A <em>counter-example</em> that violates the assumption would be advertising “Free Shipping and Returns over $50” and attempting to measure the effect of offering free shipping on future customer loyalty. Why? This cut-off is <em>known</em> to individuals ahead of time and can be gamed. For example, perhaps less loyal are more skeptical of a company’s products and more likely to return, so they might intentionally spend more than $50 to change their classification and gain entrance to the treatment group</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="estimating-causal-effects-indirectly-using-instrumental-variables">
+<h3>10.5 Estimating causal effects indirectly using instrumental variables<a class="headerlink" href="#estimating-causal-effects-indirectly-using-instrumental-variables" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When ignorability is in doubt (because the dataset does not appear to capture all inputs that predict both the treatment and the outcomes), the method of instrumental variables (IV) can sometimes help.</p></li>
+<li><p>In some situation, what we want to compare/estimate is not ready to be compared/estimated directly or can be truly compared/estimated due to the nature of the intervention or limitation in randomization. An example can be the intent-to-treat (ITT) analysis, where subjects may not comply with the original assignment of randomization but are still treated as randomized assignment instead of acutal recieved intervention. ITT effect is not the estimate of true causal effect of intervention of interest, instead it is the estimate of the effect from the “process of treatment randomization”. In order to estimate the true treatment effect of interest, instrument variable come play its role.</p>
+<ul>
+<li><p>An instrument is a variable thought to randomly induce variation in the treatment variable of interest.</p></li>
+</ul>
+</li>
+<li><p>Assumptions for instrumental variables estimation</p>
+<ul>
+<li><p>Ignorability of the instrument: w.r.t the potential outcomes (both for the primary outcome of interest and the treat- ment variable)</p>
+<ul>
+<li><p>This is trivially satisfied in a randomized experiment (assuming the randomization was pristine). In the absence of a randomized experiment (or natural experiment) this property may be more difficult to satisfy and often requires conditioning on other predictors.</p></li>
+</ul>
+</li>
+<li><p>Nonzero association between instrument and treatment variable</p>
+<ul>
+<li><p>Although a nonzero association between the instrument and the treatment is an assumption of the model, fortunately this assumption is empirically verifiable.</p></li>
+</ul>
+</li>
+<li><p>Monotonicity: participant’s behavior won’t be affect by the true randomized intervention.  Formally this is called the monotonicity assumption, and it need not hold in practice, though there are many situations in which it is defensible. <a class="footnote-reference brackets" href="#monotonicity" id="id4">3</a></p></li>
+<li><p>Exclusion restriction: This assumption says for those children whose behavior would not have been changed by the encouragement (never-watchers and always-watchers) there is no effect of encouragement on outcomes.</p>
+<ul>
+<li><p>The exclusion restriction forces the potential outcomes to be the same for those whose viewing would not be affected by the encouragement.</p></li>
+<li><p>The effect of watching for the “induced watchers” is equivalent to the intent-to-treat effect (encouragement effect over the whole sample) divided by the proportion induced to view</p></li>
+</ul>
+</li>
+<li><p>In addition, the model assumes no interference between units (the stable unit treat- ment value assumption) as with most other causal analyses</p></li>
+</ul>
+</li>
+<li><p><strong>Wald estimate</strong>: ITT estimate / ratio of participants to whom the intervention has effect</p>
+<ul>
+<li><p>This causal estimates apply only to the “induced watchers”, i.e. it only applies to those the invention would have effect</p></li>
+<li><p>We are estimating (a special case of) what has been called a <strong>local average treatment effect (LATE)</strong>.</p></li>
+</ul>
+</li>
+<li><p>The ITT effect may be of more interest in real-world. However, the intent- to-treat effect only parallels a true policy effect if in the subsequent policy implementation the compliance rate remains unchanged.</p>
+<ul>
+<li><p>It is recommended to estimate both the intent-to-treat effect and the local average treatment effect to maximize what we can learn about the intervention.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="instrumental-variables-in-a-regression-framework">
+<h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Model setting</p>
+<div class="amsmath math notranslate nohighlight" id="equation-18fdef3a-a001-4249-8bbe-21d2cad37080">
+<span class="eqno">(8)<a class="headerlink" href="#equation-18fdef3a-a001-4249-8bbe-21d2cad37080" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
+  T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
+  \end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(z\)</span> is the instrumental variable, <span class="math notranslate nohighlight">\(T\)</span> is the treatment.</p>
+<ul class="simple">
+<li><p>The first assumption is that <span class="math notranslate nohighlight">\(z_i\)</span> is uncorrelated with both <span class="math notranslate nohighlight">\(\epsilon_i\)</span> and <span class="math notranslate nohighlight">\(ν_i\)</span>, which translates informally into the <em>ignorability</em> assumption and <em>exclusion restriction</em> (here often expressed informally as “the instrument only affects the outcome through its effect on the treatment”).</p></li>
+<li><p>The correlation between <span class="math notranslate nohighlight">\(z_i\)</span> and <span class="math notranslate nohighlight">\(t_i\)</span> must be nonzero (parallel to the <em>monotonicity</em> assumption from the previous section).</p></li>
+</ul>
+</li>
+<li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f9750eba-9cb0-47c5-be1a-b68a798bb9c2">
+<span class="eqno">(9)<a class="headerlink" href="#equation-f9750eba-9cb0-47c5-be1a-b68a798bb9c2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
+    T&amp; = \gamma_0 + \gamma_1 z + error
+    \end{align}\]</div>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> is observational instead of being randomly assigned (<span class="math notranslate nohighlight">\(z\)</span> is randomly assigned)<a class="footnote-reference brackets" href="#instrument-var" id="id5">4</a>, in general it can be correlated with the erorr in the first equation; thus we can’t simply estimate <span class="math notranslate nohighlight">\(\beta_1\)</span> by fitting a regression of <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(z\)</span></p></li>
+<li><p>By replacing <span class="math notranslate nohighlight">\(T\)</span> in the first equation with second equation, we get</p>
+<div class="math notranslate nohighlight">
+\[y = (\beta_0 + \beta_1\gamma_0) + (\beta_1\gamma_1 + \beta_2)z + error\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(\delta_0 = \beta_0 + \beta_1\gamma_0\)</span> and <span class="math notranslate nohighlight">\(\delta_1 = \beta_1\gamma_1 + \beta_2\)</span>, which are the regression coefficient from regressing <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(z\)</span>, we then get <span class="math notranslate nohighlight">\(\beta_1 = (\delta_1 - \beta_2)/\gamma_2\)</span></p></li>
+<li><p>It can be seen that without knowing <span class="math notranslate nohighlight">\(\beta_2\)</span>, <span class="math notranslate nohighlight">\(\beta_1\)</span> isn’t identifiable. And only under the exclusion restricion assumption, <span class="math notranslate nohighlight">\(\beta_2 = 0\)</span> and <span class="math notranslate nohighlight">\(\beta_1 = \delta_1/\gamma_1\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Two-sage least squares</p>
+<ul class="simple">
+<li><p>The Wald estimate can be used but this method is more general; the difference from the Wald estimate is that, in the second <code class="docutils literal notranslate"><span class="pre">lm</span></code>, predicted treatment is used as the predictor instead of the instrumental variable.</p></li>
+<li><p>The first step is to regress the “treatment” variable on the randomized instrument</p></li>
+<li><p>Then make predicted values of the treatment and plug them into the equaiton of predicting the outcome of <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p>the coefficient on the predicted treatment variable is the estimate of the causal effect of treatment of interest</p></li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.2a</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">watched</span> <span class="o">~</span> <span class="n">encouraged</span><span class="p">)</span> 
+<span class="n">watched.hat</span> <span class="o">&lt;-</span> <span class="n">fit.2a</span><span class="o">$</span><span class="n">fitted</span>
+<span class="n">fit.2b</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">watched.hat</span><span class="p">)</span>
+
+                <span class="n">coef.est</span>  <span class="nf">coef.se </span>
+<span class="p">(</span><span class="n">Intercept</span><span class="p">)</span>     <span class="m">20.6</span>        <span class="m">3.9</span>
+<span class="n">watched.hat</span>     <span class="m">7.9</span>           <span class="m">4.9</span>
+<span class="n">n</span> <span class="o">=</span> <span class="m">240</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="m">2</span>
+<span class="n">residual</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">13.3</span><span class="p">,</span> <span class="n">R</span><span class="o">-</span><span class="n">Squared</span> <span class="o">=</span> <span class="m">0.01</span>
+</pre></div>
+</div>
+</li>
+<li><p>Addjusting for covariates and standard error estimate</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># put same set of adjustment variable in two stages</span>
+<span class="n">fit.3a</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">watched</span> <span class="o">~</span> <span class="n">encouraged</span> <span class="o">+</span> <span class="n">pretest</span> <span class="o">+</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span> <span class="o">+</span> <span class="n">setting</span><span class="p">)</span>
+<span class="n">watched.hat</span> <span class="o">&lt;-</span> <span class="n">fit.3a</span><span class="o">$</span><span class="n">fitted</span>
+<span class="n">fit.3b</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">watched.hat</span> <span class="o">+</span> <span class="n">pretest</span> <span class="o">+</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span> <span class="o">+</span> <span class="n">setting</span><span class="p">)</span> 
+<span class="nf">display </span><span class="p">(</span><span class="n">fit.3b</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>the standard-error calculation is complicated because we cannot simply look at the second regression in isolation.</p></li>
+<li><p>To adjust the standard error to account for the uncertainty in both stages of the model. The adjusted standard errors are calculated as the square roots of the diag- onal elements of <span class="math notranslate nohighlight">\((X^tX)^{-1}\hat{\sigma}^2_{TSLS}\)</span>, where <span class="math notranslate nohighlight">\(\hat{\sigma}^2_{TSLS}\)</span> is calculated using the residuals from an equation predicting the outcome from original design matrix using the two-stage least squares estimate of the coefficient, not the coefficient that would have been obtained in a least squares regression of the outcome on watched.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.3b</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">watched.hat</span><span class="o">+</span><span class="n">pretest</span><span class="o">+</span><span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span><span class="o">+</span><span class="n">setting</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">X.adj</span> <span class="o">&lt;-</span> <span class="n">fit.2</span><span class="o">$</span><span class="n">x</span>
+<span class="n">X.adj</span><span class="p">[,</span><span class="s">&quot;watched.hat&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">watched</span>
+<span class="n">residual.sd.adj</span> <span class="o">&lt;-</span> <span class="nf">sd </span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">X.adj</span> <span class="o">%*%</span> <span class="nf">coef</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">))</span>
+<span class="n">se.adj</span> <span class="o">&lt;-</span><span class="nf">se.coef</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">)[</span><span class="s">&quot;watched.hat&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">residual.sd.adj</span><span class="o">/</span><span class="nf">sigma.hat</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Performing two-stage least squares automatically using the <code class="docutils literal notranslate"><span class="pre">tsls</span></code> function</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">iv1</span> <span class="o">&lt;-</span> <span class="nf">tsls </span><span class="p">(</span><span class="n">postlet</span> <span class="o">~</span> <span class="n">regular</span><span class="p">,</span> <span class="o">~</span> <span class="n">encour</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sesame</span><span class="p">)</span> 
+<span class="nf">display </span><span class="p">(</span><span class="n">iv1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>where in the second equation it is assumed that the “treatment” (in econometric parlance, the endogenous variable) for which encour is an instrument is whatever predictor from the first equation that is not specified as a predictor in the second.</p></li>
+</ul>
+</li>
+<li><p>A single instrument cannot be used to identify more than one treatment variable. As a general rule, we need to use at least as many instruments as treatment variables in order for all the causal estimates to be identifiable.</p></li>
+<li><p>A binary instrument cannot in general identify a continuous treatment or “dosage” effect (without further assumptions).</p>
+<ul class="simple">
+<li><p>In essence this is equivalent to a setting with many different treatments (one at each dosage level) but only one instrument— therefore causal effects for all these treatments are not identifiable (without further assumptions).</p></li>
+</ul>
+</li>
+<li><p>In practice an instrumental variables strategy potentially is more useful in the context of a natural experiment, that is, an observational study context in which a “randomized” variable (instrument) appears to have occurred naturally. E.g.</p>
+<ul class="simple">
+<li><p>The draft lottery in the Vietnam War as an instrument for estimating the effect of military service on civilian health and earnings,</p></li>
+<li><p>The weather in New York as an instrument for estimating the effect of supply of fish on their price,</p></li>
+<li><p>The sex of a second child (in an analysis of people who have at least two children) as an instrument when estimating the effect of number of children on labor supply.</p></li>
+</ul>
+</li>
+<li><p>Assessing the plausibility of the instrumental variables assumptions</p>
+<ul class="simple">
+<li><p>As a first step, the “first stage” model (the model that predicts the treatment using the instrument) should be examined closely to ensure both that the instrument is <em>strong enough</em> and that <em>the sign of the coefficient makes sense</em>.</p>
+<ul>
+<li><p>If the association between the instrument and the treatment is weak, instrumental variables can yield incorrect estimates of the treatment effect even if all the other assumptions are satisfied.</p></li>
+<li><p>Another consequence of a weak instrument is that it exacerbates the bias that can result from failure to satisfy the monotonicity and exclusion restrictions.</p></li>
+</ul>
+</li>
+<li><p>The two primary assumptions of instrumental variables (ignorability, exclusion) are not directly verifiable, but in some examples we can work to make them more plausible.</p></li>
+</ul>
+</li>
+<li><p><em>Structural equation</em> modeling is a family of methods of multivariate data analysis that are sometimes used for causal inference.</p>
+<ul class="simple">
+<li><p>Instrumental variables can be considered to be a special case of a structural equation model.</p></li>
+</ul>
+</li>
+<li><p>A structural equation model that tries to estimate many causal effects at once multiplies the number of assumptions required with each desired effect so that it quickly becomes difficult to justify all of them.</p></li>
+<li><p>Other online blog post on this topic:</p>
+<ul>
+<li><p><a class="reference external" href="https://chris-said.io/2021/03/13/instrumental-variables/?utm_campaign=Data_Elixir&amp;utm_source=Data_Elixir_327">Instrumental variables analysis for non-economists</a></p>
+<p><img alt="img" src="https://raw.githubusercontent.com/askming/picgo/master/fig_wrap_up.png" /></p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="identification-strategies-that-make-use-of-variation-within-or-between-groups">
+<h3>10.7 Identification strategies that make use of variation within or between groups<a class="headerlink" href="#identification-strategies-that-make-use-of-variation-within-or-between-groups" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Sometimes repeated observations within groups or within individuals over time can provide a means for controlling for unobserved characteristics of these groups or individuals.</p></li>
+<li><p><em>Difference-in-difference</em> strategies additionally make use of another source of variation in outcomes, typically time, to help control for potential (observed and unobserved) differences across these groups.</p>
+<ul>
+<li><p>An important advantage of this strategy is that the units of observation (in this case, houses) need not be the same across the two time periods.</p></li>
+<li><p>The assumption needed with this strategy is a weaker than the (unconditional) ignorability assumption because rather than assuming that potential outcomes are the same across treatment groups, one only has to assume that the potential gains in potential outcomes over time are the same across groups (for example, exposed and unexposed neighborhoods).</p></li>
+<li><p><em>Panel data</em> is a special case of difference-in-differences estimation occurs when the same set of units are observed at both time points. This is also a special case of the so-called fixed effects model that includes indicators for treatment groups and for time periods.</p>
+<ul>
+<li><p>A simple way to fit this model is with a regression of the outcome on an indicator for the groups, an indicator for the time period, and the interaction between the two.</p></li>
+<li><p>The coefficient on the interaction is the estimated treatment effect.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="chapter-23-causal-inference-using-multilevel-models">
+<h2>Chapter 23 Causal inference using multilevel models<a class="headerlink" href="#chapter-23-causal-inference-using-multilevel-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="multilevel-aspects-of-data-collection">
+<h3>23.1 Multilevel aspects of data collection<a class="headerlink" href="#multilevel-aspects-of-data-collection" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="estimating-treatment-effects-in-a-multilevel-observational-study">
+<h3>23.2 Estimating treatment effects in a multilevel observational study<a class="headerlink" href="#estimating-treatment-effects-in-a-multilevel-observational-study" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="treatments-applied-at-different-levels">
+<h3>23.3 Treatments applied at different levels<a class="headerlink" href="#treatments-applied-at-different-levels" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="instrumental-variables-and-multilevel-modeling">
+<h3>23.4 Instrumental variables and multilevel modeling<a class="headerlink" href="#instrumental-variables-and-multilevel-modeling" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="chapter-25-missing-data-imputation">
+<h2>Chapter 25 Missing data imputation<a class="headerlink" href="#chapter-25-missing-data-imputation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="missing-data-in-r-and-bugs">
+<h3>Missing data in R and Bugs<a class="headerlink" href="#missing-data-in-r-and-bugs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="missing-data-mechanisms">
+<h3>25.1 Missing-data mechanisms<a class="headerlink" href="#missing-data-mechanisms" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="missingness-completely-at-random-mcar">
+<h4>Missingness completely at random (MCAR)<a class="headerlink" href="#missingness-completely-at-random-mcar" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>A variable is missing completely at random if the probability of missingness is the same for all units</p></li>
+<li><p>If data are missing completely at random, then throwing out cases with missing data does not bias your inferences.</p></li>
+</ul>
+</div>
+<div class="section" id="missingness-at-random-mar">
+<h4>Missingness at random (MAR)<a class="headerlink" href="#missingness-at-random-mar" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Amore general assumption, missing at random, is that the probability a variable is missing depends only on available (fully recorded variables) information.</p></li>
+<li><p>When an outcome variable is missing at random, it is acceptable to exclude the missing cases (that is, to treat them as NA’s), as long as the regression controls for all the variables that affect the probability of missingness.</p></li>
+<li><p>This missing-at-random assumption (a more formal version of which is sometimes called the <strong>ignorability assumption</strong>) in the missing-data framework is the <em>basically same sort of assumption as ignorability in the causal framework</em>.</p>
+<ul>
+<li><p>Both require that sufficient information has been collected that we can “ignore” the assignment mechanism (assignment to treatment, assignment to nonresponse).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="missingness-not-at-random">
+<h4>Missingness not at random<a class="headerlink" href="#missingness-not-at-random" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="missingness-that-depends-on-unobserved-predictors">
+<h5>Missingness that depends on unobserved predictors<a class="headerlink" href="#missingness-that-depends-on-unobserved-predictors" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Missingness is no longer “at random” if it depends on information that has not been recorded and this information also predicts the missing values.</p></li>
+<li><p>If missingness is not at random, it must be explicitly modeled, or else you must accept some bias in your inferences.</p></li>
+</ul>
+</div>
+<div class="section" id="missingness-that-depends-on-the-missing-value-itself">
+<h5>Missingness that depends on the missing value itself<a class="headerlink" href="#missingness-that-depends-on-the-missing-value-itself" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>The probability of missingness depends on the (potentially missing) variable itself.</p></li>
+<li><p>Censoring and related missing-data mechanisms can be modeled (as discussed in Section 18.5) or else mitigated by including more predictors in the missing-data model and thus bringing it closer to missing at random.</p>
+<ul>
+<li><p>Controlling for variables that may be predictive of missingness will probably somewhat correct the bias due to missing</p></li>
+<li><p>while it can be possible to predict missing values based on the other variables just as with other missing-data mechanisms, this situation can be more complicated in that the nature of the missing-data mechanism may force these predictive models to extrapolate beyond the range of the observed data.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="general-impossibility-of-proving-that-data-are-missing-at-random">
+<h4>General impossibility of proving that data are missing at random<a class="headerlink" href="#general-impossibility-of-proving-that-data-are-missing-at-random" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>we generally cannot be sure whether data really are missing at random, or whether the missingness depends on unobserved predictors or the missing data themselves.</p>
+<ul>
+<li><p>The fundamental difficulty is that these potential “lurking variables” are unobserved—by definition—and so we can never rule them out.</p></li>
+</ul>
+</li>
+<li><p>In practice, we typically try to include as many predictors as possible in a model so that the “missing at random” assumption is reasonable.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="missing-data-methods-that-discard-data">
+<h3>25.2 Missing-data methods that discard data<a class="headerlink" href="#missing-data-methods-that-discard-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Complete-case analysis</strong></p>
+<ul>
+<li><p>In the regression context, this usually means complete-case analysis: excluding all units for which the outcome or any of the inputs are missing.</p></li>
+<li><p>Problems with complete-case analysis</p>
+<ul>
+<li><p>If the units with missing values differ systematically from the completely observed cases, this could bias the complete-case analysis.</p></li>
+<li><p>If many variables are included in a model, there may be very few complete cases, so that most of the data would be discarded for the sake of a simple analysis.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Available-case analysis</strong></p>
+<ul>
+<li><p>different aspects of a problem are studied with different subsets of the data.</p></li>
+<li><p>Problems with the approach</p>
+<ul>
+<li><p>different analyses will be based on different subsets of the data and thus will not necessarily be consistent with each other.</p></li>
+<li><p>if the nonrespondents differ systematically from the respondents, this will bias the available-case summaries.</p></li>
+</ul>
+</li>
+<li><p>Available-case analysis also arises when a researcher simply excludes a variable or set of variables from the analysis because of their missing-data rates (sometimes called “complete-variables analyses”). In a causal inference context (as with many prediction contexts), this may lead to omission of a variable that is necessary to satisfy the assumptions necessary for desired (causal) interpretations.</p></li>
+</ul>
+</li>
+<li><p><strong>Nonresponse weighting</strong></p>
+<ul>
+<li><p>For instance, that only one variable has missing data. We could build a model to predict the nonresponse in that variable using all the other variables.</p></li>
+<li><p>The inverse of predicted probabilities of response from this model could then be used as survey weights to make the complete-case sample representative (along the dimensions measured by the other predictors) of the full sample.</p></li>
+<li><p>Limitations</p>
+<ul>
+<li><p>This method becomes more complicated when there is more than one variable with missing data.</p></li>
+<li><p>Moreover, as with any weighting scheme, there is the potential that standard errors will become erratic if predicted probabilities are close to 0 or 1.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="simple-missing-data-approaches-that-retain-all-the-data">
+<h3>25.3 Simple missing-data approaches that retain all the data<a class="headerlink" href="#simple-missing-data-approaches-that-retain-all-the-data" title="Permalink to this headline">¶</a></h3>
+<p>Simple <em>deterministic</em> imputation methods</p>
+<ul class="simple">
+<li><p>Whenever a single imputation strategy is used, the standard errors of estimates tend to be too low.</p>
+<ul>
+<li><p>Why: We have substantial uncertainty about the missing values, but by choosing a single imputation we in essence pretend that we know the true value with certainty.</p></li>
+</ul>
+</li>
+<li><p><strong>Mean imputation</strong></p>
+<ul>
+<li><p>This strategy can severely distort the distribution for this variable, leading to complications with summary measures including, notably, underestimates of the standard deviation</p></li>
+<li><p>Moreover, mean imputation distorts relationships between variables by “pulling” estimates of the correlation toward zero.</p></li>
+</ul>
+</li>
+<li><p><strong>Last value carried forward</strong></p>
+<ul>
+<li><p>This is often thought to be a conservative approach (that is, one that would lead to underestimates of the true treatment effect). However, there are situations in which
+this strategy can be <em>anticonservative</em>.</p></li>
+</ul>
+</li>
+<li><p><strong>Using information from related observations</strong></p>
+<ul>
+<li><p>E.g. imput mother’s income with father’s</p>
+<ul>
+<li><p>This is a plausible strategy, although these imputations may propagate measurement error.</p></li>
+<li><p>we must consider whether there is any incentive for the reporting person to misrepresent the measurement for the person about whom he or she is providing information.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Indicator variables for missingness of categorical predictors</strong></p>
+<ul>
+<li><p>For unordered categorical predictors, a simple and often useful approach</p></li>
+</ul>
+</li>
+<li><p><strong>Indicator variables for missingness of continuous predictors</strong></p>
+<ul>
+<li><p>to include for each continuous predictor variable with missingness an extra indicator identifying which observations on that variable have missing data.</p>
+<ul>
+<li><p>Then the missing values in the partially observed predictor are replaced by zeroes or by the mean (this choice is essentially irrelevant).</p></li>
+<li><p>This strategy is prone to yield biased coefficient estimates for the other predictors included in the model because it forces the slope to be the same across both missing-data groups.</p></li>
+<li><p>Adding interactions between an indicator for response and these predictors can help to alleviate this bias (this leads to estimates similar to complete-case estimates).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Imputation based on logical rules</strong></p>
+<ul>
+<li><p>This type of imputation strategy does not rely on particularly strong assumptions since, in effect, the missing-data mechanism is known.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="random-imputation-of-a-single-variable">
+<h3>25.4 Random imputation of a single variable<a class="headerlink" href="#random-imputation-of-a-single-variable" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="simple-random-imputation">
+<h4>Simple random imputation<a class="headerlink" href="#simple-random-imputation" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">random.imp</span> <span class="o">&lt;-</span> <span class="nf">function </span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+  <span class="n">missing</span> <span class="o">&lt;-</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="n">n.missing</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span>
+  <span class="n">a.obs</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="o">!</span><span class="n">missing</span><span class="p">]</span>
+  <span class="n">imputed</span> <span class="o">&lt;-</span> <span class="n">a</span>
+  <span class="n">imputed</span><span class="p">[</span><span class="n">missing</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="nf">sample </span><span class="p">(</span><span class="n">a.obs</span><span class="p">,</span> <span class="n">n.missing</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+  <span class="nf">return </span><span class="p">(</span><span class="n">imputed</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">earnings.imp</span> <span class="o">&lt;-</span> <span class="nf">random.imp </span><span class="p">(</span><span class="n">earnings</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This approach does not make much sense (compared with using regression model)—it ignores the useful information from all the other questions asked of these survey responses—but these simple random imputations can be a convenient starting point.</p></li>
+<li><p><strong>Zero coding and topcoding</strong></p>
+<ul>
+<li><p>Topcoding: truncate large value and set it to an up limit value, it reduces the sensitivity of the results to the highest values</p>
+<ul>
+<li><p>By topcoding we lose information, but if the variable is to be catgoriezed later on, it won’t affect the result</p></li>
+<li><p>The purpose of topcoding was not to correct the data—we have no particular reason to disbelieve the high responses—but rather to perform a simple transformation to improve the predictive power of the regression model.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="using-regression-predictions-to-perform-deterministic-imputation">
+<h4>Using regression predictions to perform deterministic imputation<a class="headerlink" href="#using-regression-predictions-to-perform-deterministic-imputation" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>A simple and general imputation procedure that uses individual-level information uses a regression to the nonzero values of earnings.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">lm.imp.1</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">earnings</span> <span class="o">~</span> <span class="n">male</span> <span class="o">+</span> <span class="n">over65</span> <span class="o">+</span> <span class="n">white</span> <span class="o">+</span> <span class="n">immig</span> <span class="o">+</span> <span class="n">educ_r</span> <span class="o">+</span> <span class="n">workmos</span> <span class="o">+</span> 
+<span class="n">workhrs.top</span> <span class="o">+</span> <span class="n">any.ssi</span> <span class="o">+</span> <span class="n">any.welfare</span> <span class="o">+</span> <span class="n">any.charity</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">SIS</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="n">earnings</span><span class="o">&gt;</span><span class="m">0</span><span class="p">)</span>
+<span class="n">pred.1</span> <span class="o">&lt;-</span> <span class="nf">predict </span><span class="p">(</span><span class="n">lm.imp.1</span><span class="p">,</span> <span class="n">SIS</span><span class="p">)</span>
+
+<span class="n">impute</span> <span class="o">&lt;-</span> <span class="nf">function </span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a.impute</span><span class="p">){</span> 
+  <span class="nf">ifelse </span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">a.impute</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">earnings.imp.1</span> <span class="o">&lt;-</span> <span class="nf">impute </span><span class="p">(</span><span class="n">earnings</span><span class="p">,</span> <span class="n">pred.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>the predicted values from the regression will tend to be less variable than the original data</p></li>
+</ul>
+</div>
+<div class="section" id="random-regression-imputation">
+<h4>Random regression imputation<a class="headerlink" href="#random-regression-imputation" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Put the uncertainty back into the imputations by adding the prediction error into the regression</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pred.4.sqrt</span> <span class="o">&lt;-</span> <span class="nf">rnorm </span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nf">predict </span><span class="p">(</span><span class="n">lm.imp.2.sqrt</span><span class="p">,</span> <span class="n">SIS</span><span class="p">),</span> <span class="nf">sigma.hat </span><span class="p">(</span><span class="n">lm.imp.2.sqrt</span><span class="p">))</span>
+<span class="n">pred.4</span> <span class="o">&lt;-</span> <span class="nf">topcode </span><span class="p">(</span><span class="n">pred.4.sqrt</span><span class="o">^</span><span class="m">2</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+<span class="n">earnings.imp.4</span> <span class="o">&lt;-</span> <span class="nf">impute </span><span class="p">(</span><span class="n">earnings.top</span><span class="p">,</span> <span class="n">pred.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="predictors-used-in-the-imputation-model">
+<h4>Predictors used in the imputation model<a class="headerlink" href="#predictors-used-in-the-imputation-model" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>For imputation The goal here is not causal inference but simply accurate prediction, and it is acceptable to use any inputs (e.g. intermediate variable for the variable under imputation) in the imputation model to achieve this goal.</p></li>
+</ul>
+</div>
+<div class="section" id="two-stage-modeling-to-impute-a-variable-that-can-be-positive-or-zero">
+<h4>Two-stage modeling to impute a variable that can be positive or zero<a class="headerlink" href="#two-stage-modeling-to-impute-a-variable-that-can-be-positive-or-zero" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="matching-and-hot-deck-imputation">
+<h4>Matching and hot-deck imputation<a class="headerlink" href="#matching-and-hot-deck-imputation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>for each unit with a missing <span class="math notranslate nohighlight">\(y\)</span>, find a unit with similar values of <span class="math notranslate nohighlight">\(X\)</span> in the observed data and take its y value.</p>
+<ul>
+<li><p>This approach is also sometimes called “<strong>hot-deck</strong>” imputation (in contrast to “cold deck” methods, where the imputations come from a previously collected data source).</p></li>
+<li><p>Matching can be viewed as a nonparametric or local version of regression and can also be useful in some settings where setting up a regression model can be challenging.</p></li>
+</ul>
+</li>
+<li><p>More generally, one could estimate a propensity score that predicts the missingness of a variable conditional on several other variables that are fully observed, and then match on this propensity score to impute missing values.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="imputation-of-several-missing-variables">
+<h3>25.5 Imputation of several missing variables<a class="headerlink" href="#imputation-of-several-missing-variables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="routine-multivariate-imputation">
+<h4>Routine multivariate imputation<a class="headerlink" href="#routine-multivariate-imputation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>The direct approach to imputing missing data in several variables is to fit a multivariate model to all the variables that have missingness, thus generalizing the approach of Section 25.4 to allow the outcome <span class="math notranslate nohighlight">\(Y\)</span> as well as the predictors <span class="math notranslate nohighlight">\(X\)</span> to be vectors.</p>
+<ul>
+<li><p>The difficulty of this approach is that it requires a lot of effort to set up a reasonable multivariate regression model</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="iterative-regression-imputation">
+<h4>Iterative regression imputation<a class="headerlink" href="#iterative-regression-imputation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>A different way to generalize the univariate methods of the previous section is to apply them iteratively to the variables with missingness in the data.</p></li>
+<li><p>If the variables with missingness are a matrix <span class="math notranslate nohighlight">\(Y\)</span> with columns <span class="math notranslate nohighlight">\(Y_{(1)}, . . . , Y_{(K)}\)</span> and the fully observed predictors are <span class="math notranslate nohighlight">\(X\)</span>, this entails first imputing all the missing <span class="math notranslate nohighlight">\(Y\)</span> values using some crude approach (for example, choosing imputed values for each variable by randomly selecting from the observed outcomes of that variable); and then imputing <span class="math notranslate nohighlight">\(Y_{(1)}\)</span> given <span class="math notranslate nohighlight">\(Y_{(2)}, . . . , Y_{(K)}\)</span> and <span class="math notranslate nohighlight">\(X\)</span>; imputing <span class="math notranslate nohighlight">\(Y_{(2)}\)</span> given <span class="math notranslate nohighlight">\(Y_{(1)}, Y_{(3)}, . . . , Y_{(K)}\)</span> and <span class="math notranslate nohighlight">\(X\)</span> (using the newly imputed values for <span class="math notranslate nohighlight">\(Y_{(1)}\)</span>), and so forth, randomly imputing each variable and looping through until approximate convergence.</p></li>
+<li><p>Iterative regression imputation has the advantage that, compared to the full multivariate model, the set of separate regression models (one for each variable, <span class="math notranslate nohighlight">\(Y_{(k)}\)</span>) is easier to understand, thus allowing the imputer to potentially fit a  reasonable model at each step.</p></li>
+<li><p>it is easier in this setting to allow for interactions (difficult to do using most joint model specifications)</p></li>
+<li><p>The disadvantage of the iterative approach is that the researcher has to be more careful in this setting to ensure that the separate regression models are consistent with each other.</p>
+<ul>
+<li><p>Even if such inconsistencies are avoided, the resulting specification will not in general correspond to any joint probability model for all of the variables being imputed.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="model-based-imputation">
+<h3>25.6 Model-based imputation<a class="headerlink" href="#model-based-imputation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="nonignorable-missing-data-models">
+<h4>Nonignorable missing-data models<a class="headerlink" href="#nonignorable-missing-data-models" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="imputation-in-multilevel-data-structures">
+<h4>Imputation in multilevel data structures<a class="headerlink" href="#imputation-in-multilevel-data-structures" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>general advice in this situation is to create two datasets, one with only individual-level data, and one with group-level data and do separate imputations within each dataset while using results from one in the other (perhaps iterating back and forth).</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="combining-inferences-from-multiple-imputations">
+<h3>25.7 Combining inferences from multiple imputations<a class="headerlink" href="#combining-inferences-from-multiple-imputations" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Rather than replacing each missing value in a dataset with one randomly imputed value, it may make sense to replace each with several imputed values that reflect our uncertainty about our imputation model</p></li>
+<li><p><strong>Multiple imputation</strong> does this by creating several (say, five) imputed values for each missing value, each of which is predicted from a slightly different model and each of which also reflects sampling variability.</p></li>
+<li><p>After MI, analyze each imputed complete dataset and combine the individual inference results into one</p>
+<ul>
+<li><p>For instance, suppose we want to make inferences about a regression coefficient, <span class="math notranslate nohighlight">\(β\)</span>. We obtain estimates <span class="math notranslate nohighlight">\(\hat{\beta}_m\)</span> in each of the <span class="math notranslate nohighlight">\(M\)</span> datasets as well as standard errors, <span class="math notranslate nohighlight">\(s_1, . . . , s_M\)</span>.</p></li>
+<li><p>To obtain an overall point estimate, we take the average over the <span class="math notranslate nohighlight">\(M\)</span> estimates</p>
+<div class="math notranslate nohighlight">
+\[\hat{\beta} = \frac{1}{M}\sum_{i=1}^M \hat{\beta}_m\]</div>
+</li>
+<li><p>A final variance estimate is a combination of variaion within and between imputations</p>
+<div class="math notranslate nohighlight">
+\[V_{\beta} = W + \left(1 + \frac{1}{M}\right)B,\]</div>
+<p>where <span class="math notranslate nohighlight">\(W = \frac{1}{M}\sum_{m=1}^M s^2_m\)</span> and <span class="math notranslate nohighlight">\(B = \frac{1}{M-1}\sum_{m=1}^M(\hat{\beta}_m - \hat{\beta})^2\)</span>.</p>
+</li>
+</ul>
+</li>
+<li><p>If missing data have been included in the main data analysis (as when variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are given distributions in a Bugs model), the uncertainty about the missing data imputations is automatically included in the Bayesian inference, and the above steps are not needed.</p></li>
+</ul>
+<p id="id6"><dl class="citation">
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id1">GH06</a></span></dt>
+<dd><p>Andrew Gelman and Jennifer Hill. <em>Data analysis using regression and multilevel/hierarchical models</em>. Cambridge university press, 2006.</p>
+</dd>
+</dl>
+</p>
+<p><a class="reference external" href="https://emilyriederer.netlify.app/post/causal-design-patterns/?utm_medium=email&amp;utm_source=topic+optin&amp;utm_campaign=awareness&amp;utm_content=20210301+data+ai+nl&amp;mkt_tok=MTA3LUZNUy0wNzAAAAF7jiS0jM80eBtc7ego_dtS0kCF1mHaWuSAtWI5trEuMx-y7xdFgBkgSO_IAy5UFHmp0nCsahq7M95aBR9-JVYsUbsTmpZ8eo0xzrrTn_g5wWtGTng">Causal design patterns for data analysts</a></p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="poststratification"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>In survey sampling, stratification refers to the procedure of dividing the population into disjoint subsets (strata), sampling separately within each stratum, and then combining the stratum samples to get a population estimate. Poststratification is the analysis of an unstratified sample, breaking the data into strata and reweighting as would have been done had the survey actually been stratified. Stratification can adjust for potential differences between sample and population using the survey design; poststratification makes such adjustments in the data analysis.</p>
+</dd>
+<dt class="label" id="ignorability"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>As further clarification, consider two participants of a study for which ignorability holds. If we define the probability of treatment participation as <span class="math notranslate nohighlight">\(Pr(T = 1|X)\)</span>, then this probability must be equal for these two individuals. However, suppose there exists another variable, <span class="math notranslate nohighlight">\(w\)</span>, that is associated with treatment participation (conditional on <span class="math notranslate nohighlight">\(X)\)</span> but not with the outcome (conditionalon <span class="math notranslate nohighlight">\(X\)</span>). We do not require that <span class="math notranslate nohighlight">\(Pr(T = 1| X,W)\)</span> be the same for these two participants.</p>
+</dd>
+<dt class="label" id="monotonicity"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p>In defining never-watchers and always-watchers, we assumed that there were no children who would watch if they were not encouraged but who would not watch if they were encouraged.</p>
+</dd>
+<dt class="label" id="instrument-var"><span class="brackets"><a class="fn-backref" href="#id5">4</a></span></dt>
+<dd><p>which can be most of the cases where instrumental variables are used: the intervention of interest is not randomized or is only observed during the trial; while there was some truly randomized treatment which affects the observed intervention of interest. When the truly randomized treatment statisify the instrumental variable assumption, we can use it as IV to estimate the effect from the observed (intermediate) variable on the outcome.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="previous page">[book] Causal inference in statistics <em>a primer</em></a>
+    <a class='right-next' id="next-link" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" title="next page">[book] Fundamentals of Clinical Trials (4th edition)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

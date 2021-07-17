@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="[book] Analysis of Observational Health Care Data Using SAS" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" />
-    <link rel="prev" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
+    <link rel="next" title="[book] Data Analysis Using Regression and Multilevel/Hierarchical Models" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html" />
+    <link rel="prev" title="[book] Analysis of Observational Health Care Data Using SAS" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,7 +87,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Table of contents
+   Study Notes Index
   </a>
  </li>
 </ul>
@@ -98,8 +98,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
-   [book] Regression Modeling Strategies
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -111,13 +111,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   [book] Analysis of Observational Health Care Data Using SAS
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Survival_Analysis.html">
-   Survival Analysis
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
@@ -126,8 +136,49 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   Competing risk models
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
   </a>
  </li>
 </ul>
@@ -431,26 +482,30 @@ which is known as the “<strong>causal effect difference</strong>,” or “<st
 <li><p>the marginal probability <span class="math notranslate nohighlight">\(P(Z = z)\)</span> is invariant under the intervention, because the process determining <span class="math notranslate nohighlight">\(Z\)</span> is not affected by removing the arrow from <span class="math notranslate nohighlight">\(Z\)</span> to <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
 <li><p>the conditional probability <span class="math notranslate nohighlight">\(P(Y = y|Z = z, X = x)\)</span> is invariant, because the process by which <span class="math notranslate nohighlight">\(Y\)</span> responds to <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Z, Y = f (x, z, u_Y )\)</span>, remains the same, regardless of whether <span class="math notranslate nohighlight">\(X\)</span> changes spontaneously or by deliberate manipulation. We can therefore write two equations of invariance:
 $<span class="math notranslate nohighlight">\(P_m(Y=y|Z=z,X=x)=P(Y=y|Z=z,X=x) \text{ and } P_m(Z=z)=P(Z=z)\)</span>$</p></li>
-<li><p>using the invariance relations, we obtain a formula for the causal effect, in terms of preintervention probabilities:
-$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-740f5ac0-280d-4dc7-b99c-35aaa3f3ca6f">
-<span class="eqno">(2)<a class="headerlink" href="#equation-740f5ac0-280d-4dc7-b99c-35aaa3f3ca6f" title="Permalink to this equation">¶</a></span>\[\begin{align}{ll}
+<li><p>using the invariance relations, we obtain a formula for the causal effect, in terms of preintervention probabilities:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+        \begin{align}
         P(Y = y|do(X = x)) &amp; = P_m(Y = y|X = x)\\
         &amp; = \sum_z P_m(Y = y|X = x,Z = z)P_m(Z = z|X = x)\\
         &amp; = \sum_z P_m(Y = y|X = x,Z = z)P_m(Z = z)\\
         &amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
-        \end{align}\]</div>
+        \end{align}
+        \end{split}\]</div>
+<ul class="simple">
+<li><p>This is called the <em>adjustment formula</em>, it computes the association between X and <span class="math notranslate nohighlight">\(Y\)</span> for each value <span class="math notranslate nohighlight">\(z\)</span> of <span class="math notranslate nohighlight">\(Z\)</span>, then averages over those values. This procedure is referred to as “<strong>adjusting for <span class="math notranslate nohighlight">\(Z\)</span></strong>” or “<strong>controlling for <span class="math notranslate nohighlight">\(Z\)</span></strong>”.</p></li>
+<li><p>No adjustment is needed in a randomized controlled experiment since, in such a setting, the data are generated by a model which already possesses the structure of Figure 3.4, hence, <span class="math notranslate nohighlight">\(P_m = P\)</span> regardless of any factors <span class="math notranslate nohighlight">\(Z\)</span> that affect <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
+<li><p>In practice, investigators use adjustments in randomized experiments as well, for the purpose of <em>minimizing sampling variations</em> (Cox 1958)</p></li>
+</ul>
+</li>
+<li><p>The graph of Figure 3.5 shows no arrow entering X, since X has no parents. This means that no surgery is required; the conditions under which data were obtained were such that treatment was assigned “as if randomized.” If there was a factor that would make subjects prefer or reject treatment, such a factor should show up in the model; the absence of such a factor gives us the license to treat X as a randomized treatment.
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/1dbc495f_20200421111147.png" /></p>
+<ul>
+<li><p>Under such conditions, the intervention graph is equal to the original graph—no arrow need be removed—and the adjustment formula reduces to</p>
 <div class="math notranslate nohighlight">
-\[
-        - This is called the *adjustment formula*, it computes the association between X and $Y$ for each value $z$ of $Z$, then averages over those values. This procedure is referred to as “**adjusting for $Z$**” or “**controlling for $Z$**&quot;.
-        - No adjustment is needed in a randomized controlled experiment since, in such a setting, the data are generated by a model which already possesses the structure of Figure 3.4, hence, $P_m = P$ regardless of any factors $Z$ that affect $Y$.  
-      - In practice, investigators use adjustments in randomized experiments as well, for the purpose of *minimizing sampling variations* (Cox 1958)
-  
-    - The graph of Figure 3.5 shows no arrow entering X, since X has no parents. This means that no surgery is required; the conditions under which data were obtained were such that treatment was assigned “as if randomized.” If there was a factor that would make subjects prefer or reject treatment, such a factor should show up in the model; the absence of such a factor gives us the license to treat X as a randomized treatment.
-![输入图片描述](https://raw.githubusercontent.com/askming/picgo/master/1dbc495f_20200421111147.png)      
-      
-      - Under such conditions, the intervention graph is equal to the original graph—no arrow need be removed—and the adjustment formula reduces to
-          $$P(Y = y|do(X = x)) = P(Y = y|X = x)\]</div>
+\[P(Y = y|do(X = x)) = P(Y = y|X = x)\]</div>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -460,8 +515,8 @@ $$</p>
 <ul>
 <li><p><strong>The Causal Effect Rule</strong>: Given a graph G in which a set of variables PA are designated
 as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dbcfe258-e60b-479e-ab28-bb4f4d4fde04">
-<span class="eqno">(3)<a class="headerlink" href="#equation-dbcfe258-e60b-479e-ab28-bb4f4d4fde04" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f6007240-f717-4771-a186-7e1c5f74f973">
+<span class="eqno">(3)<a class="headerlink" href="#equation-f6007240-f717-4771-a186-7e1c5f74f973" title="Permalink to this equation">¶</a></span>\[\begin{align}
   P(Y = y| do(X = x)) &amp; = \sum_z P(Y = y | X = x, PA = z) P(PA = z)\\
   &amp; = \sum_z \frac{P(Y = y | X = x, PA = z) P(PA = z) * P(X=x|PA = z)}{P(X=x|PA = z)}\\
   &amp; = \sum_z \frac{P(Y = y, X = x, PA = z)}{P(X=x|PA = z)}
@@ -472,8 +527,8 @@ as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the c
 </div>
 <div class="section" id="multiple-interventions-and-the-truncated-product-rule">
 <h4>3.2.2 Multiple Interventions and the Truncated Product Rule<a class="headerlink" href="#multiple-interventions-and-the-truncated-product-rule" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-31afc466-0ead-469c-8901-069f63b81900">
-<span class="eqno">(4)<a class="headerlink" href="#equation-31afc466-0ead-469c-8901-069f63b81900" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-af79a526-94f2-49d7-88ea-25dabb59a2ab">
+<span class="eqno">(4)<a class="headerlink" href="#equation-af79a526-94f2-49d7-88ea-25dabb59a2ab" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(x, y, z) &amp; = P(z)P(x|z)P(y|x, z)\\
 P(z, y|do(x)) &amp; = P_m(z)P_m(y|x, z) = P(z)P(y|x, z)\\
 \Rightarrow
@@ -501,8 +556,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p>When trying to find the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>, we want the nodes we condition on to block any “backdoor” path in which one end has an arrow into <span class="math notranslate nohighlight">\(X\)</span>, because such paths may make <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> dependent, but are obviously not transmitting causal influences from <span class="math notranslate nohighlight">\(X\)</span>, and if we do not block them, they will confound the effect that <span class="math notranslate nohighlight">\(X\)</span> has on <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
 <li><p>Consider the fact that <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is an empirical fact of nature, not a byproduct of our analysis. That means that any suitable variable or set of variables that we adjust on—whether it be <span class="math notranslate nohighlight">\(PA(X)\)</span> or any other set that conforms to the backdoor criterion—must return the same result for <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span>. In the case we looked at in Figure 3.6 (<span class="math notranslate nohighlight">\(Y \leftarrow X \leftarrow Z \rightarrow W \rightarrow Y\)</span>), this means that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08c4d968-8ecc-41cf-9dcc-d714dcf1b916">
-<span class="eqno">(5)<a class="headerlink" href="#equation-08c4d968-8ecc-41cf-9dcc-d714dcf1b916" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f66fe4b8-8ba8-42b5-a57a-ad8b1cf993c6">
+<span class="eqno">(5)<a class="headerlink" href="#equation-f66fe4b8-8ba8-42b5-a57a-ad8b1cf993c6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;&amp; \sum_w P(Y = y|X = x,W = w)P(W = w) \\
     &amp;&amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
     \end{align}\]</div>
@@ -520,8 +575,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p><em>Problem</em>: The backdoor criterion provides us with a simple method of identifying sets of covariates that should be adjusted for when we seek to estimate causal effects from nonexperimental data. It does not, however, exhaust all ways of estimating such effects. The <span class="math notranslate nohighlight">\(do\)</span>-operator can be applied to graphical patterns that do not satisfy the backdoor criterion to identify effects that on first sight seem to be beyond one’s reach.</p></li>
 <li><p>The <strong>front-door</strong> formula</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18286e95-7803-464b-9681-194e38ff8e1a">
-<span class="eqno">(6)<a class="headerlink" href="#equation-18286e95-7803-464b-9681-194e38ff8e1a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-69162596-b814-4da2-84a9-881525e51508">
+<span class="eqno">(6)<a class="headerlink" href="#equation-69162596-b814-4da2-84a9-881525e51508" title="Permalink to this equation">¶</a></span>\[\begin{align}
   P(Y =y | do(X = x)) = \\
   \sum_z\sum_x' P(Y = y | Z = z, X = x') P(X = x') P(Z = z|X = x) 
   \end{align}\]</div>
@@ -597,8 +652,8 @@ $<span class="math notranslate nohighlight">\(P(y|do(x)) = \sum_z P(z|x) \sum_{x
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Book-Regression%20Modeling%20Strategies.html" title="previous page">[book] Regression Modeling Strategies</a>
-    <a class='right-next' id="next-link" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="next page">[book] Analysis of Observational Health Care Data Using SAS</a>
+    <a class='left-prev' id="prev-link" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="previous page">[book] Analysis of Observational Health Care Data Using SAS</a>
+    <a class='right-next' id="next-link" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html" title="next page">[book] Data Analysis Using Regression and Multilevel/Hierarchical Models</a>
 
         </div>
         

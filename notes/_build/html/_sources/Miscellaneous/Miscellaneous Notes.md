@@ -171,7 +171,7 @@
         - The interpretation of the coefficient should then be adjusted appropriately based on the actual value of the corresponding main effects combination (the coefficients in the interaction terms are the difference between one level vs the reference level for that variable not included in the main effect conditional on the variable(s) included as main effect(s))
     - With the interaction term, the interpretation of one main effect is always dependent  on the value of the other main effect, i.e. it’s conditional (on the other main effect) comparison or subgroup comparison 
 
-      ![image-20200812144625147](https://raw.githubusercontent.com/askming/picgo/master/image-20200812144625147.png)
+![image-20200812144625147](https://raw.githubusercontent.com/askming/picgo/master/image-20200812144625147.png)
 
 13. Types of **regression** sum of squares in regression analysis
 

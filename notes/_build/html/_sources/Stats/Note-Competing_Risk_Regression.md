@@ -22,18 +22,20 @@ tags: survival analysis
 ## Basic concepts
 
 - **Cause-specific hazard function**, $h_k(t)$: the instantaneous rate of failure due to cause $k$ conditional on survival until time t or later
+  
   $$
   h_k(t) = \lim_{\Delta t\rightarrow0}\frac{P(t<T<t+\Delta t, \delta=k|T>t)} {\Delta t}, k=1, \cdots, K
   $$
 
 - **Cumulative incidence function** (CIF or **subdistribution function**), is the prob. of failure due to cause $k$ prior to time $t$
+  
   $$
   F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
   $$
 
   - it's not a true probability distribution
 
-  - $$
+    $$
     F_k(t) = \int_0^tS(u)h_k(u)du = \int_0^t S(u)dH_k(u), k = 1, \cdots, K
     $$
 
@@ -47,10 +49,13 @@ tags: survival analysis
 ### 1. Cause-specific hazard modeling
 
 - This model assumes competing events other than the primary event of interest as consoring. For cause $k$, a separate proportional hazards model can be assumed:
+  
   $$
   h_k(t)={h}_{k0}(t)\exp(\beta_k'Z)
   $$
+
   and the partial likelihood function for $k$th event is given as
+  
   $$
   {L}(\beta_k) = \prod_i\left(\exp(\beta'_kZ_i)\over\sum_{j\in\tilde{\mathcal{R}_i}}\exp(\beta'_kZ_j)\right)^{\delta_i \equiv k}
   $$

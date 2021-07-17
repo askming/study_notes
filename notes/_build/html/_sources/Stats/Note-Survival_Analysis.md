@@ -58,9 +58,11 @@ tags: survival analysis
 ### Hazrd models
 
 - Estimating the hazard *non-parametrically* requires some sort of smoothing. What may be estimated non-parametrically is the *cumulative hazard* $\Lambda(t) = \int_0^t\lambda(u)du$. This may be done with the *Nelson-Aalen estimator*
+
   $$
   \hat{\Lambda}(t) = \int_0^t \frac{dN(u)}{Y(u)} du= \sum_{i: T_i\le t} \frac{\delta_i}{Y(T_i)},
   $$
+
   where $Y(t) = \sum_i Y_i(t)$ and $N(t) = \sum_i N_i(t)$.
 
   - This is an increasing step function with steps at each observed event time, the step size at $t$ being inversely proportional to the number $Y(t)$ at risk.
@@ -87,6 +89,7 @@ tags: survival analysis
 #### Prediction in the absence competing risks
 
 - Without time-dependent covarites
+  
   $$
   F(t|Z) = 1 - S(t|Z) = 1 - \exp(-\Lambda(t|Z))
   $$
@@ -114,21 +117,22 @@ tags: survival analysis
 - Ignoring competing risk(s) will produce an upwards biased estimate of the absolute risk (cumulative incidence) because by treating competing events as censorings, one pretends that the target population is one where the competing events are not operating and therefore neglects the fact that subjects who have died from competing causes can no longer experience the event of interest. 
 
 - In such a situation it is necessary to estimate the *absolute risk*. This is the probability of experiencing event 1 at a certain time point and it depends not only on the hazard of this event but also on the probability of having survived up to this time point. And as this survival probability depends on the hazards of all events, this implies it is necessary also to estimate the intensity of the competing events. 
+  
   $$
   F_1(t|Z) = \int_0^t S(u|Z)d\Lambda_{01}(u|Z) = \int_0^t\exp(-\Lambda_{02}(u|Z) - \Lambda_{01}(u|Z))d\Lambda_{01}(u|Z)\label{pred_comp}
-  $$
+  $$(pred_comp)
+
   where $\Lambda_{02}(t|Z)$ is the cumulative hazard for competing events.
 
-  - Without covariates, the estimator obtained by plugging-in Nelson-Aalen estimates for the cumulative hazard in $\ref{pred_comp}$ is known as the *Aalen-Johansen estimator*.
-  - The intuition behind the middle term of $\ref{pred_comp}$ is that the integrand, <u>the survival probability</u>, $S(u|Z)$ of surviving to time $u$, times <u>the conditional probability</u>, $dΛ_{01}(u|Z)$ of dying from cause 1 at time $u$ given survival till $u$, is the (unconditional) probability of dying from cause 1 at time $u$; $F_1(t | Z)$, the probability of dying from cause 1 by time $t$ is then obtained as the sum (integral)
+  - Without covariates, the estimator obtained by plugging-in Nelson-Aalen estimates for the cumulative hazard in {eq}`pred_comp` is known as the *Aalen-Johansen estimator*.
+  - The intuition behind the middle term of {eq}`pred_comp` is that the integrand, <u>the survival probability</u>, $S(u|Z)$ of surviving to time $u$, times <u>the conditional probability</u>, $dΛ_{01}(u|Z)$ of dying from cause 1 at time $u$ given survival till $u$, is the (unconditional) probability of dying from cause 1 at time $u$; $F_1(t | Z)$, the probability of dying from cause 1 by time $t$ is then obtained as the sum (integral)
 
-- It's also possible to directly model $F(t|Z)$, e.g., using the ==Fine and Gray regression model==. 
-
-----
+- It's also possible to directly model $F(t|Z)$, e.g., using the Fine and Gray regression model. 
 
 - For constant hazard $\lambda$, thus exponentially distributed survival times, 
 
   - the MLE of $\lambda$ is given by 
+  
     $$
     \hat{\lambda} = \frac{d}{\sum_{i=1}^dx_i}
     $$
@@ -137,11 +141,13 @@ tags: survival analysis
     - $x_i$: event time for $i$th event
 
   - If an estimate $\hat{\pi}$ of the event rate in a period of length $l$ is given, $\lambda$ is estimated by 
+    
     $$
     \hat{\lambda} = \frac{-\log(1-\hat{\pi})}{l}
     $$
   
 - with the median survival time estimate of $\hat{m}$, the estimated hazard can be estimated as 
+    
     $$
     \hat{\lambda} = \frac{log(2)}{\hat{m}}
     $$
@@ -157,6 +163,7 @@ $$
 ### Log-rank test
 
 - Test statistic for LR test
+  
   $$
   LR = \frac{\sum_{i=1}^d\left(I_{2i} - \frac{n_{2i}}{n_{1i} + n_{2i}}\right)}{\sqrt{\sum_{i=1}^d\frac{n_{1i}n_{2i}}{(n_{1i} + n_{2i})^2}}}
   $$
@@ -168,6 +175,7 @@ $$
 - Non-parametric test as it doesn’t depend on the observed survival times but only depends on the number of patients who were at risk at the $i$th event
 
 - For fixed $d$ and let the patients be recruited until $d$ events were observed. Then the LR test statistic is approximately normally distributed
+  
   $$
   LR \sim N(\sqrt{d}\frac{\sqrt{r}}{1 + r}\log(\omega), 1)
   $$
@@ -182,11 +190,12 @@ $$
 
 ### Total number of events $\rightarrow$ total sample size
 
-- :star: *Power calculation is based on total number of events not number of patients*
+- *Power calculation is based on total number of events not number of patients*
 
 <img src="https://raw.githubusercontent.com/askming/picgo/master/image-20201104210152614.png" alt="image-20201104210152614" style="zoom: 67%;" />
 
 - The first step is to determine the **required number of events**
+  
   $$
   d_f = \frac{\left(\Phi^{-1}(1-\alpha/2)+ \Phi^{-1}(1-\beta)\right)^2}{r/(1+r)^2(\log(\omega_1))^2}
   $$
@@ -195,24 +204,27 @@ $$
   - Two-sided $\alpha$, power = $1-\beta$
 
 - From total number of events to  total sample size
+  
   $$
   n = n_{f_1}+n_{f_2} = n_{f_1}(1+r) = d_f/\phi \Rightarrow n_{f_1} = \frac{d_f}{\phi*(1+r)}
   $$
 
   - $\phi$ is the **combined probability of an event** in the two treatment groups:
+    
     $$
     \phi = (\phi_{\lambda_1} + r\phi_{\lambda_2})/(1 + r)
     $$
 
     - **Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period $a$**
-      $$
-      \begin{array}
-      & \phi_{\lambda_j(s)} &=& P_{\lambda_j}(X < C)\\
+      
+      \begin{align}
+      \phi_{\lambda_j(s)} &=& P_{\lambda_j}(X < C)\\
       &=& \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X<c|C=c)g(c)dc\\
       &=& \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
-      \end{array}
-      $$
+      \end{align}
+
       $\Rightarrow$
+      
       $$
       \phi_{\lambda_j(s)} = \left\{
       \begin{array}{ll}
@@ -223,6 +235,7 @@ $$
       $$
 
     - Thus, by the end of trial (i.e. $s = a+f > a$)
+      
       $$
       \phi_{\lambda_j}(a + f) =1-\exp(-\lambda_j(a+f))\frac{\exp(\lambda_ja)-1}{\lambda_ja}
       $$

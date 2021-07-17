@@ -20,11 +20,13 @@
   - −2× the log of this likelihood ratio has desirable statistical properties. 
 
    $$LR = -2\log(L \text{ at } H_0/L \text{ at  MLEs}) \sim \chi^2_p$$ 
+
    for large enough sample size, where $p$ is the number parameters to be tested
 
 #### 2.2 Wald test
 
 - The Wald test statistic is a generalization of a *t-* or *z-* statistic. It is a function of the difference in the MLE and its hypothesized value, normalized by an estimate of the standard deviation of the MLE.  For large enough $n$,
+  
   ​$$W = \frac{(\hat{\theta} - \theta_0)^2}{var(\hat{\theta})}\sim \chi^2_p$$
 
   - Variance of MLE is the inverse of the oberved Fisher information $1/I(\hat{\theta})$
@@ -101,7 +103,9 @@
   $$
   r_{im} = \hat{\beta}_mX_{im} + \frac{Y_i - \hat{P}_i}{\hat{P}_i(1-\hat{P}_i)}
   $$
+
   ​	where 
+  
   $$
   \hat{P}_i= \frac{1}{1 +\exp[-(\alpha + X_i\hat{\beta})]}
   $$

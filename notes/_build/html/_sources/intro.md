@@ -1,10 +1,10 @@
-# Table of contents
+# Study Notes Index
 <hr>
 
 ======= UNDER CONSTRUCTION =======
 
 ## 1 Statistics
-### 1.1 General/miscellaneaous Topics
+### 1.1 General topics
 
 ### 1.2 Survival analysis
 - [Survial analysis general](./Stats/Note-Survival_Analysis.md)
@@ -89,3 +89,5 @@
 ### 4.6 Web Development
 
 ### 4.7 D3
+
+<br>

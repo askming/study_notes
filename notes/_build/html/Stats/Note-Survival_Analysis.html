@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="​Cox PH model" href="Note-Cox_PH_model.html" />
-    <link rel="prev" title="[book] Analysis of Observational Health Care Data Using SAS" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" />
+    <link rel="next" title="How R searches and finds stuff" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html" />
+    <link rel="prev" title="​Cox PH model" href="Note-Cox_PH_model.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,7 +87,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Table of contents
+   Study Notes Index
   </a>
  </li>
 </ul>
@@ -98,8 +98,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
-   [book] Regression Modeling Strategies
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
@@ -111,13 +111,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   [book] Analysis of Observational Health Care Data Using SAS
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Survival Analysis
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
@@ -125,9 +135,50 @@
    ​Cox PH model
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   Competing risk models
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
   </a>
  </li>
 </ul>
@@ -379,13 +430,14 @@
 </div>
 <div class="section" id="hazrd-models">
 <h3>Hazrd models<a class="headerlink" href="#hazrd-models" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Estimating the hazard <em>non-parametrically</em> requires some sort of smoothing. What may be estimated non-parametrically is the <em>cumulative hazard</em> <span class="math notranslate nohighlight">\(\Lambda(t) = \int_0^t\lambda(u)du\)</span>. This may be done with the <em>Nelson-Aalen estimator</em>
-$<span class="math notranslate nohighlight">\(
-\hat{\Lambda}(t) = \int_0^t \frac{dN(u)}{Y(u)} du= \sum_{i: T_i\le t} \frac{\delta_i}{Y(T_i)},
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>Y(t) = \sum_i Y_i(t)<span class="math notranslate nohighlight">\( and \)</span>N(t) = \sum_i N_i(t)$.</p>
 <ul>
+<li><p>Estimating the hazard <em>non-parametrically</em> requires some sort of smoothing. What may be estimated non-parametrically is the <em>cumulative hazard</em> <span class="math notranslate nohighlight">\(\Lambda(t) = \int_0^t\lambda(u)du\)</span>. This may be done with the <em>Nelson-Aalen estimator</em></p>
+<div class="math notranslate nohighlight">
+\[
+  \hat{\Lambda}(t) = \int_0^t \frac{dN(u)}{Y(u)} du= \sum_{i: T_i\le t} \frac{\delta_i}{Y(T_i)},
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(Y(t) = \sum_i Y_i(t)\)</span> and <span class="math notranslate nohighlight">\(N(t) = \sum_i N_i(t)\)</span>.</p>
+<ul class="simple">
 <li><p>This is an increasing step function with steps at each observed event time, the step size at <span class="math notranslate nohighlight">\(t\)</span> being inversely proportional to the number <span class="math notranslate nohighlight">\(Y(t)\)</span> at risk.</p></li>
 <li><p>The approximate “local slope” of <span class="math notranslate nohighlight">\(\hat{\Lambda}\)</span> at <span class="math notranslate nohighlight">\(t\)</span> reflects the hazard at that time.</p></li>
 </ul>
@@ -419,13 +471,15 @@ where \)</span>Y(t) = \sum_i Y_i(t)<span class="math notranslate nohighlight">\(
 </ul>
 <div class="section" id="prediction-in-the-absence-competing-risks">
 <h4>Prediction in the absence competing risks<a class="headerlink" href="#prediction-in-the-absence-competing-risks" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>Without time-dependent covarites
-$<span class="math notranslate nohighlight">\(
-F(t|Z) = 1 - S(t|Z) = 1 - \exp(-\Lambda(t|Z))
-\)</span>$</p></li>
-<li><p>From <span class="math notranslate nohighlight">\(t=0\)</span> onwards</p>
 <ul>
+<li><p>Without time-dependent covarites</p>
+<div class="math notranslate nohighlight">
+\[
+  F(t|Z) = 1 - S(t|Z) = 1 - \exp(-\Lambda(t|Z))
+  \]</div>
+</li>
+<li><p>From <span class="math notranslate nohighlight">\(t=0\)</span> onwards</p>
+<ul class="simple">
 <li><p>Using the Cox model</p>
 <ul>
 <li><p>If the focus is on one particular value ts (eg, the 5-year survival in cancer), a surprisingly robust estimator of <span class="math notranslate nohighlight">\(S(t_s|Z)\)</span> can often be obtained by applying administrative censoring at <span class="math notranslate nohighlight">\(t_s\)</span> and using a simple Cox model with the effects <span class="math notranslate nohighlight">\(\beta\)</span>  fixed in time provided <span class="math notranslate nohighlight">\(t_s\)</span> is not too large.</p></li>
@@ -439,7 +493,7 @@ F(t|Z) = 1 - S(t|Z) = 1 - \exp(-\Lambda(t|Z))
 </ul>
 </li>
 <li><p>Dynamic prediction</p>
-<ul>
+<ul class="simple">
 <li><p>Prediction at a later time <span class="math notranslate nohighlight">\(t_{\text{pred}} + t_s\)</span> built on some intermediate time <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span></p>
 <ul>
 <li><p>the prediction is based on a new model using the data of the individuals still alive at <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span> is known as <em>dynamic prediction</em></p></li>
@@ -449,7 +503,7 @@ F(t|Z) = 1 - S(t|Z) = 1 - \exp(-\Lambda(t|Z))
 </ul>
 </li>
 <li><p>Prediction exploiting time-dependent covariates</p>
-<ul>
+<ul class="simple">
 <li><p>Using the landmarking method, where the history of a time-dependent covariate up to <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span> is summarized in to a single statistic (e.g. the last observation) and used as a time-fixed covariate in the prediction model. Such model can only be used as a working model.</p></li>
 <li><p>Using joint models of longitudinal and survial outcomes and estimate survival prob. by conditioning on the history of <span class="math notranslate nohighlight">\(Z(t)\)</span> at <span class="math notranslate nohighlight">\(t_{\text{pred}}\)</span> and <span class="math notranslate nohighlight">\(T^*\ge t_{\text{pred}}\)</span>.</p></li>
 </ul>
@@ -458,44 +512,46 @@ F(t|Z) = 1 - S(t|Z) = 1 - \exp(-\Lambda(t|Z))
 </div>
 <div class="section" id="prediction-with-competing-risks">
 <h4>Prediction with competing risks<a class="headerlink" href="#prediction-with-competing-risks" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>Ignoring competing risk(s) will produce an upwards biased estimate of the absolute risk (cumulative incidence) because by treating competing events as censorings, one pretends that the target population is one where the competing events are not operating and therefore neglects the fact that subjects who have died from competing causes can no longer experience the event of interest.</p></li>
-<li><p>In such a situation it is necessary to estimate the <em>absolute risk</em>. This is the probability of experiencing event 1 at a certain time point and it depends not only on the hazard of this event but also on the probability of having survived up to this time point. And as this survival probability depends on the hazards of all events, this implies it is necessary also to estimate the intensity of the competing events.
-$<span class="math notranslate nohighlight">\(
-F_1(t|Z) = \int_0^t S(u|Z)d\Lambda_{01}(u|Z) = \int_0^t\exp(-\Lambda_{02}(u|Z) - \Lambda_{01}(u|Z))d\Lambda_{01}(u|Z)\label{pred_comp}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\Lambda_{02}(t|Z)$ is the cumulative hazard for competing events.</p>
 <ul>
-<li><p>Without covariates, the estimator obtained by plugging-in Nelson-Aalen estimates for the cumulative hazard in <span class="math notranslate nohighlight">\(\ref{pred_comp}\)</span> is known as the <em>Aalen-Johansen estimator</em>.</p></li>
-<li><p>The intuition behind the middle term of <span class="math notranslate nohighlight">\(\ref{pred_comp}\)</span> is that the integrand, <u>the survival probability</u>, <span class="math notranslate nohighlight">\(S(u|Z)\)</span> of surviving to time <span class="math notranslate nohighlight">\(u\)</span>, times <u>the conditional probability</u>, <span class="math notranslate nohighlight">\(dΛ_{01}(u|Z)\)</span> of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span> given survival till <span class="math notranslate nohighlight">\(u\)</span>, is the (unconditional) probability of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span>; <span class="math notranslate nohighlight">\(F_1(t | Z)\)</span>, the probability of dying from cause 1 by time <span class="math notranslate nohighlight">\(t\)</span> is then obtained as the sum (integral)</p></li>
+<li><p>Ignoring competing risk(s) will produce an upwards biased estimate of the absolute risk (cumulative incidence) because by treating competing events as censorings, one pretends that the target population is one where the competing events are not operating and therefore neglects the fact that subjects who have died from competing causes can no longer experience the event of interest.</p></li>
+<li><p>In such a situation it is necessary to estimate the <em>absolute risk</em>. This is the probability of experiencing event 1 at a certain time point and it depends not only on the hazard of this event but also on the probability of having survived up to this time point. And as this survival probability depends on the hazards of all events, this implies it is necessary also to estimate the intensity of the competing events.</p>
+<div class="math notranslate nohighlight" id="equation-pred-comp">
+<span class="eqno">(11)<a class="headerlink" href="#equation-pred-comp" title="Permalink to this equation">¶</a></span>\[
+  F_1(t|Z) = \int_0^t S(u|Z)d\Lambda_{01}(u|Z) = \int_0^t\exp(-\Lambda_{02}(u|Z) - \Lambda_{01}(u|Z))d\Lambda_{01}(u|Z)\label{pred_comp}
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Lambda_{02}(t|Z)\)</span> is the cumulative hazard for competing events.</p>
+<ul class="simple">
+<li><p>Without covariates, the estimator obtained by plugging-in Nelson-Aalen estimates for the cumulative hazard in <a class="reference internal" href="#equation-pred-comp">(11)</a> is known as the <em>Aalen-Johansen estimator</em>.</p></li>
+<li><p>The intuition behind the middle term of <a class="reference internal" href="#equation-pred-comp">(11)</a> is that the integrand, <u>the survival probability</u>, <span class="math notranslate nohighlight">\(S(u|Z)\)</span> of surviving to time <span class="math notranslate nohighlight">\(u\)</span>, times <u>the conditional probability</u>, <span class="math notranslate nohighlight">\(dΛ_{01}(u|Z)\)</span> of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span> given survival till <span class="math notranslate nohighlight">\(u\)</span>, is the (unconditional) probability of dying from cause 1 at time <span class="math notranslate nohighlight">\(u\)</span>; <span class="math notranslate nohighlight">\(F_1(t | Z)\)</span>, the probability of dying from cause 1 by time <span class="math notranslate nohighlight">\(t\)</span> is then obtained as the sum (integral)</p></li>
 </ul>
 </li>
-<li><p>It’s also possible to directly model <span class="math notranslate nohighlight">\(F(t|Z)\)</span>, e.g., using the ==Fine and Gray regression model==.</p></li>
-</ul>
-<hr class="docutils" />
-<ul class="simple">
+<li><p>It’s also possible to directly model <span class="math notranslate nohighlight">\(F(t|Z)\)</span>, e.g., using the Fine and Gray regression model.</p></li>
 <li><p>For constant hazard <span class="math notranslate nohighlight">\(\lambda\)</span>, thus exponentially distributed survival times,</p>
 <ul>
-<li><p>the MLE of <span class="math notranslate nohighlight">\(\lambda\)</span> is given by
-$<span class="math notranslate nohighlight">\(
-\hat{\lambda} = \frac{d}{\sum_{i=1}^dx_i}
-\)</span>$</p>
-<ul>
+<li><p>the MLE of <span class="math notranslate nohighlight">\(\lambda\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+    \hat{\lambda} = \frac{d}{\sum_{i=1}^dx_i}
+    \]</div>
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(d\)</span>: total number of events</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_i\)</span>: event time for <span class="math notranslate nohighlight">\(i\)</span>th event</p></li>
 </ul>
 </li>
-<li><p>If an estimate <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> of the event rate in a period of length <span class="math notranslate nohighlight">\(l\)</span> is given, <span class="math notranslate nohighlight">\(\lambda\)</span> is estimated by
-$<span class="math notranslate nohighlight">\(
-\hat{\lambda} = \frac{-\log(1-\hat{\pi})}{l}
-\)</span>$</p></li>
+<li><p>If an estimate <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> of the event rate in a period of length <span class="math notranslate nohighlight">\(l\)</span> is given, <span class="math notranslate nohighlight">\(\lambda\)</span> is estimated by</p>
+<div class="math notranslate nohighlight">
+\[
+    \hat{\lambda} = \frac{-\log(1-\hat{\pi})}{l}
+    \]</div>
+</li>
 </ul>
 </li>
-<li><p>with the median survival time estimate of <span class="math notranslate nohighlight">\(\hat{m}\)</span>, the estimated hazard can be estimated as
-$<span class="math notranslate nohighlight">\(
-  \hat{\lambda} = \frac{log(2)}{\hat{m}}
-  \)</span>$</p>
-<ul>
+<li><p>with the median survival time estimate of <span class="math notranslate nohighlight">\(\hat{m}\)</span>, the estimated hazard can be estimated as</p>
+<div class="math notranslate nohighlight">
+\[
+    \hat{\lambda} = \frac{log(2)}{\hat{m}}
+    \]</div>
+<ul class="simple">
 <li><p>Thus, the estimate of hazard ratio is the reciprocal of the ratio of median survival time between two groups:</p></li>
 </ul>
 </li>
@@ -512,10 +568,11 @@ $<span class="math notranslate nohighlight">\(
 <div class="section" id="log-rank-test">
 <h3>Log-rank test<a class="headerlink" href="#log-rank-test" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Test statistic for LR test
-$<span class="math notranslate nohighlight">\(
-LR = \frac{\sum_{i=1}^d\left(I_{2i} - \frac{n_{2i}}{n_{1i} + n_{2i}}\right)}{\sqrt{\sum_{i=1}^d\frac{n_{1i}n_{2i}}{(n_{1i} + n_{2i})^2}}}
-\)</span>$</p>
+<li><p>Test statistic for LR test</p>
+<div class="math notranslate nohighlight">
+\[
+  LR = \frac{\sum_{i=1}^d\left(I_{2i} - \frac{n_{2i}}{n_{1i} + n_{2i}}\right)}{\sqrt{\sum_{i=1}^d\frac{n_{1i}n_{2i}}{(n_{1i} + n_{2i})^2}}}
+  \]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(d\)</span> is the total number of events</p></li>
 <li><p><span class="math notranslate nohighlight">\(n_{1i}\)</span> and <span class="math notranslate nohighlight">\(n_{2i}\)</span> are number of patients at risk in group 1 and 2, respectively, when the <span class="math notranslate nohighlight">\(i\)</span>th event occurred.</p></li>
@@ -523,10 +580,11 @@ LR = \frac{\sum_{i=1}^d\left(I_{2i} - \frac{n_{2i}}{n_{1i} + n_{2i}}\right)}{\sq
 </ul>
 </li>
 <li><p>Non-parametric test as it doesn’t depend on the observed survival times but only depends on the number of patients who were at risk at the <span class="math notranslate nohighlight">\(i\)</span>th event</p></li>
-<li><p>For fixed <span class="math notranslate nohighlight">\(d\)</span> and let the patients be recruited until <span class="math notranslate nohighlight">\(d\)</span> events were observed. Then the LR test statistic is approximately normally distributed
-$<span class="math notranslate nohighlight">\(
-LR \sim N(\sqrt{d}\frac{\sqrt{r}}{1 + r}\log(\omega), 1)
-\)</span>$</p>
+<li><p>For fixed <span class="math notranslate nohighlight">\(d\)</span> and let the patients be recruited until <span class="math notranslate nohighlight">\(d\)</span> events were observed. Then the LR test statistic is approximately normally distributed</p>
+<div class="math notranslate nohighlight">
+\[
+  LR \sim N(\sqrt{d}\frac{\sqrt{r}}{1 + r}\log(\omega), 1)
+  \]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\omega\)</span> is the true hazard ratio</p></li>
 <li><p><span class="math notranslate nohighlight">\(r = n_2/n_1\)</span></p></li>
@@ -538,50 +596,56 @@ LR \sim N(\sqrt{d}\frac{\sqrt{r}}{1 + r}\log(\omega), 1)
 <div class="section" id="total-number-of-events-rightarrow-total-sample-size">
 <h3>Total number of events <span class="math notranslate nohighlight">\(\rightarrow\)</span> total sample size<a class="headerlink" href="#total-number-of-events-rightarrow-total-sample-size" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>:star: <em>Power calculation is based on total number of events not number of patients</em></p></li>
+<li><p><em>Power calculation is based on total number of events not number of patients</em></p></li>
 </ul>
 <img src="https://raw.githubusercontent.com/askming/picgo/master/image-20201104210152614.png" alt="image-20201104210152614" style="zoom: 67%;" />
-<ul class="simple">
-<li><p>The first step is to determine the <strong>required number of events</strong>
-$<span class="math notranslate nohighlight">\(
-d_f = \frac{\left(\Phi^{-1}(1-\alpha/2)+ \Phi^{-1}(1-\beta)\right)^2}{r/(1+r)^2(\log(\omega_1))^2}
-\)</span>$</p>
 <ul>
+<li><p>The first step is to determine the <strong>required number of events</strong></p>
+<div class="math notranslate nohighlight">
+\[
+  d_f = \frac{\left(\Phi^{-1}(1-\alpha/2)+ \Phi^{-1}(1-\beta)\right)^2}{r/(1+r)^2(\log(\omega_1))^2}
+  \]</div>
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(H_1: \omega = \omega_1\)</span></p></li>
 <li><p>Two-sided <span class="math notranslate nohighlight">\(\alpha\)</span>, power = <span class="math notranslate nohighlight">\(1-\beta\)</span></p></li>
 </ul>
 </li>
-<li><p>From total number of events to  total sample size
-$<span class="math notranslate nohighlight">\(
-n = n_{f_1}+n_{f_2} = n_{f_1}(1+r) = d_f/\phi \Rightarrow n_{f_1} = \frac{d_f}{\phi*(1+r)}
-\)</span>$</p>
+<li><p>From total number of events to  total sample size</p>
+<div class="math notranslate nohighlight">
+\[
+  n = n_{f_1}+n_{f_2} = n_{f_1}(1+r) = d_f/\phi \Rightarrow n_{f_1} = \frac{d_f}{\phi*(1+r)}
+  \]</div>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\phi\)</span> is the <strong>combined probability of an event</strong> in the two treatment groups:
-$<span class="math notranslate nohighlight">\(
-\phi = (\phi_{\lambda_1} + r\phi_{\lambda_2})/(1 + r)
-\)</span>$</p>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> is the <strong>combined probability of an event</strong> in the two treatment groups:</p>
+<div class="math notranslate nohighlight">
+\[
+    \phi = (\phi_{\lambda_1} + r\phi_{\lambda_2})/(1 + r)
+    \]</div>
 <ul>
-<li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong>
-$<span class="math notranslate nohighlight">\(
-\begin{array}
-&amp; \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
-&amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
-&amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
-\end{array}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span>\Rightarrow<span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\phi_{\lambda_j(s)} = \left\{
-\begin{array}{ll}
-\frac{s}{a} - \frac{1-\exp(-\lambda_js)}{\lambda_ja} &amp;&amp;\text{if } s\le a\\
-1 - \exp(-\lambda_js)\frac{\exp(\lambda_ja) - 1}{\lambda_ja} &amp;&amp;\text{if } s&gt;a
-\end{array}
-\right.
-\)</span>$</p></li>
-<li><p>Thus, by the end of trial (i.e. <span class="math notranslate nohighlight">\(s = a+f &gt; a\)</span>)
-$<span class="math notranslate nohighlight">\(
-\phi_{\lambda_j}(a + f) =1-\exp(-\lambda_j(a+f))\frac{\exp(\lambda_ja)-1}{\lambda_ja}
-\)</span>$</p></li>
+<li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-d1f7c9a2-5052-47f7-bcaf-bb2e9b19beeb">
+<span class="eqno">(12)<a class="headerlink" href="#equation-d1f7c9a2-5052-47f7-bcaf-bb2e9b19beeb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+      \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
+      &amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
+      &amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
+      \end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      \phi_{\lambda_j(s)} = \left\{
+      \begin{array}{ll}
+      \frac{s}{a} - \frac{1-\exp(-\lambda_js)}{\lambda_ja} &amp;&amp;\text{if } s\le a\\
+      1 - \exp(-\lambda_js)\frac{\exp(\lambda_ja) - 1}{\lambda_ja} &amp;&amp;\text{if } s&gt;a
+      \end{array}
+      \right.
+      \end{split}\]</div>
+</li>
+<li><p>Thus, by the end of trial (i.e. <span class="math notranslate nohighlight">\(s = a+f &gt; a\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+      \phi_{\lambda_j}(a + f) =1-\exp(-\lambda_j(a+f))\frac{\exp(\lambda_ja)-1}{\lambda_ja}
+      \]</div>
+</li>
 </ul>
 </li>
 <li><p>with increasing length <span class="math notranslate nohighlight">\(a + f\)</span> of the study, the required total sample size decreases and, given any <span class="math notranslate nohighlight">\(a\)</span>, it converges to <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
@@ -623,8 +687,8 @@ $<span class="math notranslate nohighlight">\(
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="previous page">[book] Analysis of Observational Health Care Data Using SAS</a>
-    <a class='right-next' id="next-link" href="Note-Cox_PH_model.html" title="next page">​Cox PH model</a>
+    <a class='left-prev' id="prev-link" href="Note-Cox_PH_model.html" title="previous page">​Cox PH model</a>
+    <a class='right-next' id="next-link" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html" title="next page">How R searches and finds stuff</a>
 
         </div>
         

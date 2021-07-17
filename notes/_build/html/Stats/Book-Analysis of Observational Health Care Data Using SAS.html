@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
-    <link rel="prev" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
+    <link rel="next" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
+    <link rel="prev" title="Study Notes Index" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,7 +87,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Table of contents
+   Study Notes Index
   </a>
  </li>
 </ul>
@@ -97,9 +97,9 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
-   [book] Regression Modeling Strategies
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
@@ -110,14 +110,24 @@
    </em>
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   [book] Analysis of Observational Health Care Data Using SAS
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Survival_Analysis.html">
-   Survival Analysis
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
@@ -126,8 +136,49 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   Competing risk models
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
   </a>
  </li>
 </ul>
@@ -350,8 +401,8 @@ Bang and Robins, 2005).</p></li>
 <h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5d38955-bf80-4f92-b006-36fd98fbf977">
-<span class="eqno">(7)<a class="headerlink" href="#equation-b5d38955-bf80-4f92-b006-36fd98fbf977" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5e8617a0-7acd-4a3d-bf82-f96aa78400f3">
+<span class="eqno">(1)<a class="headerlink" href="#equation-5e8617a0-7acd-4a3d-bf82-f96aa78400f3" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{\Delta}_{DR} \\
    &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
    &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
@@ -364,8 +415,8 @@ Bang and Robins, 2005).</p></li>
   SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-588add0e-bc5c-47dd-a3e6-50b304582f40">
-<span class="eqno">(8)<a class="headerlink" href="#equation-588add0e-bc5c-47dd-a3e6-50b304582f40" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dc53b9b4-96bf-49b0-b96c-f588d672f79e">
+<span class="eqno">(2)<a class="headerlink" href="#equation-dc53b9b4-96bf-49b0-b96c-f588d672f79e" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{I}_i \\
   &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
   &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}
@@ -407,8 +458,8 @@ Bang and Robins, 2005).</p></li>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="previous page">[book] Causal inference in statistics <em>a primer</em></a>
-    <a class='right-next' id="next-link" href="Note-Survival_Analysis.html" title="next page">Survival Analysis</a>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Study Notes Index</a>
+    <a class='right-next' id="next-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="next page">[book] Causal inference in statistics <em>a primer</em></a>
 
         </div>
         

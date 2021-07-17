@@ -1,0 +1,1027 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[book] Fundamentals of Clinical Trials (4th edition) &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
+    <link rel="prev" title="[book] Data Analysis Using Regression and Multilevel/Hierarchical Models" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Book-Fundamentals of Clinical Trials (4th edition).md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Fundamentals of Clinical Trials (4th edition).html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-5-basic-study-design">
+   Chapter 5 Basic Study Design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomized-control-trials">
+     5.1 Randomized control trials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-randomized-concurrent-control-study">
+     5.2 Non-randomized concurrent control study
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#historical-controls-and-databases">
+     5.3 Historical controls and databases
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-over-designs">
+     5.4 Cross-over designs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#withdrawal-studies">
+     5.5 Withdrawal studies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factorial-design">
+     5.6 Factorial design
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-allocation-designs">
+     5.7 Group allocation designs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hibrid-designs">
+     5.8 Hibrid designs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#large-simple-and-paragmatic-clinical-trials">
+     5.9 Large, simple and paragmatic clinical trials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#studies-of-equivalency-and-non-inferiority">
+     5.10 Studies of equivalency and non-inferiority
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adaptive-designs">
+     5.11 Adaptive designs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-6-the-randomization-process">
+   Chapter 6 The Randomization Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomization-methods">
+     6.1 Randomization methods
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fixed-allocation-randomization">
+       Fixed allocation randomization
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adaptive-randomization-procedure">
+       Adaptive randomization procedure
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ixrs-related">
+     6.2 IxRS related
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-notes">
+     Final notes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-7-blindness">
+   Chapter 7 Blindness
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types-of-trials-in-terms-of-blindness">
+     Types of trials (in terms of blindness)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#protecting-the-double-blind-design">
+     Protecting the double-blind design
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assessing-and-reporting-of-blindness">
+     Assessing and reporting of blindness
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-8-sample-size-power-calculation">
+   Chapter 8 Sample size/power calculation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-11-data-collection-and-quality-control">
+   Chapter 11 Data collection and quality control
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-12-assessing-and-reporting-adverse-events">
+   Chapter 12 Assessing and reporting adverse events
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-16-monitoring-response-variables">
+   Chapter 16 Monitoring response variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monitoring-committee">
+     16.1 Monitoring committee
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistical-methods-used-in-monitoring-interim-analysis">
+     16.2 Statistical methods used in monitoring (interim analysis)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#classical-sequential-methods">
+       Classical sequential methods
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#group-sequential-methods">
+       Group sequential methods
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#flexible-group-sequential-procedures-alpha-spending-functions">
+       Flexible group sequential procedures: alpha spending functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#asymmetric-boundaries">
+       Asymmetric boundaries
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#curtailed-sampling-and-conditional-power-procedures">
+       Curtailed sampling and conditional power procedures
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#other-approaches">
+       Other approaches
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-17-issues-in-data-analysis">
+   Chapter 17 Issues in data analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-populations">
+     Analysis populations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#missing-data-or-poor-quality-data">
+     Missing data or poor quality data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competing-events">
+     Competing events
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#composite-outcomes">
+     Composite outcomes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#covariate-adjustment">
+     Covariate adjustment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subgroup-analyses">
+     Subgroup analyses
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison-of-multiple-variables">
+     Comparison of multiple variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-of-cutpoints">
+     Use of cutpoints
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-of-non-inferiority-trial">
+     Analysis of non-inferiority trial
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-following-trend-adaptive-designs">
+     Analysis following trend adaptive designs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meta-analysis-of-multiple-studies">
+     Meta-analysis of multiple studies
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-18-closeout">
+   Chapter 18 Closeout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-19-reporting-and-interpreting-of-results">
+   Chapter 19 Reporting and interpreting of results
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="book-fundamentals-of-clinical-trials-4th-edition">
+<h1>[book] Fundamentals of Clinical Trials (4th edition)<a class="headerlink" href="#book-fundamentals-of-clinical-trials-4th-edition" title="Permalink to this headline">¶</a></h1>
+<hr>
+<p><em>A study note of <span id="id1">[<a class="reference internal" href="#id12">Friedman <em>et al.</em>, 2015</a>]</span></em></p>
+<hr class="docutils" />
+<div class="section" id="chapter-5-basic-study-design">
+<h2>Chapter 5 Basic Study Design<a class="headerlink" href="#chapter-5-basic-study-design" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Sound scientific clinical investigation almost always demands that a control group be used against which the new intervention can be compared. Randomization is the preferred way of assigning participants to control and intervention groups.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Most trials use the so-called <strong>parallel design</strong>. That is, the intervention and control groups are followed simultaneously from the time of allocation to one or the other.</p></li>
+<li><p>Exceptions to the simultaneous follow-up are <strong>historical control studies</strong>. These compare a group of participants on a new intervention with a previous group of participants on standard or control therapy.</p></li>
+<li><p>A modification of the parallel design is the <strong>cross-over trial</strong>, which uses each participant at least twice, at least once as a member of the control group and at least once as a member of one or more intervention groups.</p></li>
+<li><p>Another modification is a <strong>withdrawal study</strong>, which starts with all participants on the active intervention and then, usually randomly, assigns a portion to be followed on the active intervention and the remainder to be followed off the intervention.</p></li>
+<li><p><strong>Factorial design</strong> trials employ two or more independent assignments to intervention or control.</p></li>
+<li><p>Controls may be on placebo, no treatment, usual or standard care, or a specified treatment.</p></li>
+<li><p>Randomized control and nonrandomized concurrent control studies both assign participants to either the intervention or the control group, but only the former makes the assignment by using a random procedure.</p></li>
+<li><p>there are superiority trials and equivalence or noninferiority trials. A <strong>superiority trial</strong>, which for many years was the typical kind of trial, assesses whether the new intervention is better or worse than the control. An <strong>equivalence trial</strong> would assess if the new intervention is more or less equal to the control. A noninferiority trial evaluates whether the new intervention is no worse than the control by some margin, delta (d).</p></li>
+<li><p>In both of these latter cases, the control group would be on a treatment that had previously been shown to be effective, i.e., have an active control.</p></li>
+</ul>
+<div class="section" id="randomized-control-trials">
+<h3>5.1 Randomized control trials<a class="headerlink" href="#randomized-control-trials" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>There are three advantages of the randomized design over other methods for selecting controls:
+i. First, randomization removes the potential of bias in the allocation of participants to the intervention group or to the control group.
+ii. The second advantage, somewhat related to the first, is that randomization tends to produce comparable groups; that is, measured as well as unknown or unmeasured prognostic factors and other characteristics of the participants at the time of randomization will be, on the average, evenly balanced between the intervention and control groups.
+iii. The third advantage of randomization is that the validity of statistical tests of significance is guaranteed.</p></li>
+<li><p>The process of randomization makes it possible to ascribe a probability distribution to the difference in outcome between treatment groups receiving equally effective treatments and thus to assign significance levels to observed differences.</p></li>
+<li><p>Not all clinical studies can use randomized controls, e.g. for rare diseases. In such an instance, only case–control studies might be possible.</p></li>
+</ul>
+</div>
+<div class="section" id="non-randomized-concurrent-control-study">
+<h3>5.2 Non-randomized concurrent control study<a class="headerlink" href="#non-randomized-concurrent-control-study" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The major weakness of the nonrandomized concurrent control study is the potential that the intervention group and control group are not strictly comparable.</p></li>
+<li><p>Even for large studies that could detect most differences of real clinical importance, the uncertainty about the unknown or unmeasured factors is still of concern.</p></li>
+</ul>
+</div>
+<div class="section" id="historical-controls-and-databases">
+<h3>5.3 Historical controls and databases<a class="headerlink" href="#historical-controls-and-databases" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>If an investigator is already of the opinion that the new intervention is beneficial, then she would most likely consider any restriction on its use unethical.</p></li>
+<li><p>In addition, participants may be more willing to enroll in a study if they can be assured of receiving a particular therapy or intervention.</p></li>
+<li><p>Finally, since all new participants will be on the new intervention, the time required to complete recruitment of participants for the trial will be cut approximately in half.</p></li>
+<li><p>Typically, historical control data can be obtained from two sources.
+i. First, control group data may be available in the literature. These data are often undesirable because it is difficult, and perhaps impossible, to establish whether the control and intervention groups are comparable in key characteristics at the onset.
+ii. Second, data may not have been published but may be available on computer files or in medical charts.</p></li>
+<li><p><strong>Limitations of historical control studies</strong></p>
+<ul>
+<li><p>They are particularly vulnerable to bias.</p></li>
+<li><p>An improvement in outcome for a given disease may be attributed to a new intervention when, in fact, the improvement may stem from a change in the patient population or patient management.</p></li>
+<li><p>Time trend of disease rate may not be separable from the true treatment effect when using historical control.</p></li>
+<li><p>Shifts in diagnostic criteria for a given disease due to improved technology can cause major changes in the recorded frequency of the disease and in the perceived prognosis of the subjects with the disease.</p></li>
+<li><p>common concern about historical control designs is the accuracy and completenes swith which control group data are collected.</p></li>
+</ul>
+</li>
+<li><p><strong>The role of historical control studies</strong></p>
+<ul>
+<li><p>In some special cases where the diagnosis of a disease is clearly established and the prognosis is well known or the disease highly fatal, a historical control study may be the only reasonable design.</p></li>
+<li><p>The primary reasons have been the speed and lesser cost of such analyses, compared with clinical trials.</p></li>
+<li><p>In addition, databases likely represent a much broader population than the typical clinical trial and can therefore complement clinical trial findings.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="cross-over-designs">
+<h3>5.4 Cross-over designs<a class="headerlink" href="#cross-over-designs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The cross-over design allows each participant to serve as his own control. In the simplest case, namely the two period cross-over design, each participant will receive either intervention or control (A or B) in the first period and the alternative in the succeeding period. The order in which A and B are given to each participant is randomized.</p></li>
+<li><p>Depending on the duration of expected action of the intervention (for example, drug half-life), a wash-out period may be used between the periods.</p></li>
+<li><p>The appeal of the cross-over design to investigators is that it allows assessment of how each participant does on both A and B. Since each participant is used twice, variability is reduced because the measured effect of the intervention is the difference in an individual participant’s response to intervention and control (smaller sample size needed).</p></li>
+<li><p>To use the cross-over design, however, a fairly strict assumption must be made; the effects of the intervention during the first period must not carry over into the second period.</p></li>
+<li><p>This assumption should be independent of which intervention was assigned during the first period and of the participant response. In many clinical trials, such an assumption is clearly inappropriate, even if a wash-out is incorporated.</p></li>
+<li><p>Obviously, a fatal event cannot serve as the primary response variable in a crossover trial. Cross-over trials should be limited</p></li>
+<li><p>to those situations with few losses of study participants.</p></li>
+<li><p>The basic appeal of the cross-over design is to avoid between-participant variation in estimating the intervention effect, thereby requiring a smaller sample size.</p></li>
+<li><p>Only if there is substantial evidence that the therapy has no carryover effects, and the scientific community is convinced by that evidence, should a crossover design be considered.</p></li>
+</ul>
+</div>
+<div class="section" id="withdrawal-studies">
+<h3>5.5 Withdrawal studies<a class="headerlink" href="#withdrawal-studies" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A number of studies have been conducted in which the participants on a particular treatment for a chronic disease are taken off therapy or have the dosage reduced. The objective is to assess response to discontinuation or reduction. This design may be validly used to evaluate the duration of benefit of an intervention already known to be useful.</p></li>
+<li><p>Withdrawal studies have also been used to assess the efficacy of an intervention that had not conclusively been shown to be beneficial in the long term.</p></li>
+<li><p>One serious limitation of this type of study is that a highly selected sample is evaluated. Only those participants who physicians thought were benefiting from the intervention were likely to have been on it for several months or years. Anyone who had major adverse effects from the drug would have been taken off and, therefore, not been eligible for the withdrawal study. Thus, this design can overestimate benefit and underestimate toxicity.</p></li>
+<li><p>Another drawback is that both participants and disease states change over time.</p></li>
+</ul>
+</div>
+<div class="section" id="factorial-design">
+<h3>5.6 Factorial design<a class="headerlink" href="#factorial-design" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In the simple case, the factorial design attempts to evaluate two interventions compared to control in a single experiment.</p></li>
+<li><p>A concern with the factorial design is the possibility of the existence of interaction and its impact on the sample size. Interaction means that the effect of intervention X differs depending upon the presence or absence of intervention Y, or vice versa. It is more likely to occur when the two drugs are expected to have related mechanisms of action.</p></li>
+<li><p>The larger the interaction, the smaller the increase in sample size needed to detect it.</p></li>
+<li><p>If an interaction is detected, or perhaps only suggested, the comparison of intervention <span class="math notranslate nohighlight">\(X\)</span> would have to be done individually for intervention <span class="math notranslate nohighlight">\(Y\)</span> and its control. However, the power of the comparisons is less than the mariginal total comparisons.</p></li>
+<li><p>The factorial design has some distinct advantages. If the interaction of two interventions is important to determine, or if there is little chance of interaction, then such a design with appropriate sample size can be very informative and efficient.</p></li>
+<li><p>However, the added complexity, impact on recruitment and adherence, and potential adverse effects of “polypharmacy” must be considered.</p></li>
+</ul>
+</div>
+<div class="section" id="group-allocation-designs">
+<h3>5.7 Group allocation designs<a class="headerlink" href="#group-allocation-designs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In group or cluster allocation designs, a group of individuals, a clinic or a community are randomized to a particular intervention or control.</p></li>
+<li><p>The rationale is that the intervention is most appropriately or more feasibly administered to an entire group. This design may also be better if there is concern about contamination. That is, when what one individual does might readily influence what other participants do.</p></li>
+<li><p>In group or cluster allocation designs, a group of individuals, a clinic or a community are randomized to a particular intervention or control.</p></li>
+<li><p>The rationale is that the intervention is most appropriately or more feasibly administered to an entire group. This design may also be better if there is concern about contamination. That is, when what one individual does might readily influence what other participants do.</p></li>
+</ul>
+</div>
+<div class="section" id="hibrid-designs">
+<h3>5.8 Hibrid designs<a class="headerlink" href="#hibrid-designs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Combining historical and randomized controls in a single study.</p></li>
+<li><p>A number of criteria must be met in order to combine the historical and randomized controls. These include the same entry criteria and evaluation factors and participant recruitment by the same clinic or investigator. The data from the historical</p></li>
+<li><p>control participants must also be fairly recent.</p></li>
+<li><p>This approach, if feasible, requires fewer participants to be entered into a trial.</p></li>
+<li><p>cautions that if biases introduced from the nonrandomized participants (historical controls) are substantial, more participants might have to be randomized to compensate than would be the case in a corresponding fully randomized trial</p></li>
+</ul>
+</div>
+<div class="section" id="large-simple-and-paragmatic-clinical-trials">
+<h3>5.9 Large, simple and paragmatic clinical trials<a class="headerlink" href="#large-simple-and-paragmatic-clinical-trials" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The arguments for Large, simple and pragmatic clinical trials:</p></li>
+<li><p>Advocates of large, simple trials maintain that for common pathological conditions, it is important to uncover even modest benefits of intervention, particularly short term interventions that are easily implemented in a large population.</p></li>
+<li><p>Sufficiently large number of participants are more important than modest improvements in quality of data. Thus careful characterization of people at entry, or of interim response variables, is unnecessary. And the most important criteria for a valid study are unbiased (i.e. randomized) allocation of participants to intervention or control and unbiased assessment of outcome.</p></li>
+<li><p>The simplification of the study design and management allows for sufficiently large trials at reasonable cost.</p></li>
+<li><p>Because of the broad involvement of many practitioners, the results of the trial may be more widely applied than the results of a trial done in just major medical settings.</p></li>
+</ul>
+</div>
+<div class="section" id="studies-of-equivalency-and-non-inferiority">
+<h3>5.10 Studies of equivalency and non-inferiority<a class="headerlink" href="#studies-of-equivalency-and-non-inferiority" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>New interventions may have little or no superiority to existing therapies, but, as long as they are not materially worse, may be of interest because they are less toxic, less invasive, less costly, require fewer doses, improve quality of life, or have some other value to patients.</p></li>
+<li><p>In <strong>studies of equivalency</strong>, the objective is to test whether a new intervention is equivalent to an established one. <strong>Noninferiority trials</strong> test whether the new intervention is no worse than, or at least as good as, some established intervention.</p></li>
+<li><p>The control or standard treatment must have been shown conclusively to be effective; that is, truly better than placebo or no therapy.</p>
+<ul class="simple">
+<li><p>First, the active control that is selected must be one that is an established standard for the indication being studied and not a therapy that is inferior to other known ones.</p></li>
+<li><p>Second, the studies that demonstrated benefit of the control against either placebo or no treatment must be sufficiently recent such that no important medical advances or other changes have occurred, and in populations similar to those planned for the new trial.</p></li>
+<li><p>Third, the evidence that demonstrated the benefits of the control must be available so that a control group event rate can be estimated.</p></li>
+<li><p>Fourth, the response variable used in the new trial must be sensitive to the postulated effects of the control and intervention.
+<img alt="Table 5.2" src="https://raw.githubusercontent.com/askming/picgo/master/66ccb3f4_20200421112014.png" /></p></li>
+</ul>
+<p><img alt="Fig 5.5" src="https://raw.githubusercontent.com/askming/picgo/master/72b7e08c_20200421112040.png" /></p>
+</li>
+<li><p>Selecting the margin of indifference or noninferiority, <span class="math notranslate nohighlight">\(d\)</span>, is a challenge. Ideally, the relative risk of the new intervention compared to the control should be as close to 1 as possible. For practical reasons, the relative risk is often set in the range of 1.2–1.4. This means that in the worst case, the new intervention may be 20–40% inferior to standard treatment and yet be considered equivalent or noninferior.</p></li>
+<li><p>The investigator must consider several issues when designing an equivalence or noninferiority trial.</p>
+<ul class="simple">
+<li><p>First, the constancy assumption that the control vs. placebo effect has not changed over time is often not correct.</p></li>
+<li><p>In addition, as background therapy changes, the effect of the control or placebo may also change.</p></li>
+</ul>
+</li>
+<li><p>For noninferiority trials, the margin of indifference, <span class="math notranslate nohighlight">\(d\)</span>, is specified, where <span class="math notranslate nohighlight">\(I − C &lt; d\)</span>.
+To select the best control <span class="math notranslate nohighlight">\(\rightarrow\)</span> decide the margin of noninferiority <span class="math notranslate nohighlight">\(\rightarrow\)</span> conduct the best trial</p></li>
+</ul>
+</div>
+<div class="section" id="adaptive-designs">
+<h3>5.11 Adaptive designs<a class="headerlink" href="#adaptive-designs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Early phase studies have designs that allow for modifications as the data accrue. Many late phase trials are adaptive in the sense that the protocol allows for modification of the intervention to achieve a certain goal, typically using an interim variable.</p></li>
+<li><p>Some trials, by design, will adjust the sample size to retain a desired power if the overall event rate is lower than expected, the variability is higher than planned, or adherence is worse than expected. In such cases, the sample size can be recalculated using the updated information</p></li>
+<li><p>Traditionally, if the effect of the intervention was less than expected, or other factors led to a less than desirable conditional power, the study either continued to the end without providing a clear answer or was stopped early for futility.</p></li>
+<li><p>A criticism of these designs is that they can introduce bias during the implementation of the adjustment. They may also provide sufficient information to allow people not privy to the accumulating data to make reasonable guesses as to the trend.</p></li>
+<li><p>Group sequential designs, in common use for many years, are also considered to be response adaptive in that they facilitate early termination of the trial when there is convincing evidence of benefit or harm.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-6-the-randomization-process">
+<h2>Chapter 6 The Randomization Process<a class="headerlink" href="#chapter-6-the-randomization-process" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Randomization tends to produce study groups comparable with respect to known as well as unknown risk factors, removes investigator bias in the allocation of participants, and guarantees that statistical tests will have valid false positive error rates.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Two forms of <strong>experimental bias</strong> are of concern:</p>
+<ul>
+<li><p><strong>Selection bias</strong>, occurs if the allocation process is predictable (i.e. what treatment a participant will get)</p></li>
+<li><p><strong>Accidental bias</strong>, arises when the randomization procedure doesn’t achieve balance on risk factors or prognostic covariates. This is crucial for small studies but for large studies, the chance of accidental bias is negligible.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="randomization-methods">
+<h3>6.1 Randomization methods<a class="headerlink" href="#randomization-methods" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fixed-allocation-randomization">
+<h4>Fixed allocation randomization<a class="headerlink" href="#fixed-allocation-randomization" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Fixed allocation</strong> procedures assign the interventions to participants with a prespecified probability, usually equal, and that allocation probability is not altered as the study progresses.</p></li>
+<li><p><strong>Equal or unequal allocation</strong>?</p>
+<ul>
+<li><p>An <strong>unequal</strong> allocation ratio, such as 2:1, of intervention to control. The rationale for such an allocation is that the study may slightly lose sensitivity but may gain more information about participant responses to the new intervention, such as toxicity and side effects.</p></li>
+<li><p>The rationale for such an allocation is that the study may slightly lose sensitivity but may gain more information about participant responses to the new intervention, such as toxicity and side effects. In some instances, less information may be needed about the control group and, therefore, fewer control participants are required.</p></li>
+<li><p>Although the loss of sensitivity or power may be less than 5% for allocation ratios approximately between 1/2 and 2/3, equal allocation is the most powerful design and therefore generally recommended.</p></li>
+</ul>
+</li>
+<li><p><strong>Simple or complete randomization</strong></p>
+<ul>
+<li><p>A  convenient method for producing a randomization schedule is to use a random number producing algorithm, available on most computer systems. A simple randomization procedure might assign participants to group A with probability p and participants to group B with probability 1−p. This procedure can be adapted easily to more than two groups by dividing the interval 0–1 into more than two pieces of length.</p></li>
+<li><p>The <strong>advantage</strong> of this simple randomization procedure is that it is easy to implement.</p></li>
+<li><p>The major <strong>disadvantage</strong> is that, although in the long run the number of participants in each group will be in the proportion anticipated, at any point in the randomization, including the end, there could be a substantial imbalance (especially when sample size is small). While such imbalances do not cause the statistical tests to be invalid, they do reduce ability to detect true differences between the two groups. In addition, interim analysis of accumulating data might be difficult to interpret with major imbalances in number of participants per arm, especially for smaller trials.</p></li>
+<li><p>Alternating assignment of participants to the intervention and the control groups (e.g., ABABAB…) is not a form of randomization (except for the first assignment). It’s more vulnerable to unblindness and should be totally avoided.</p></li>
+</ul>
+</li>
+<li><p><strong>(Permuted) block randomization</strong></p>
+<ul>
+<li><p>It is used in order to avoid serious imbalance in the number of participants assigned to each group – an imbalance that could occur in the simple randomization procedure.</p></li>
+<li><p>It guarantees that at no time during randomization will the imbalance be large and that at certain points the number of participants in each group will be equal</p></li>
+<li><p>If participants are randomly assigned with equal probability to groups A or B, then for each block of even size (e.g., 4, 6, or 8), one half of the participants will be assigned to A and the other half to B. The order in which the interventions are assigned in each block is randomized, and this process is repeated for consecutive blocks of participants until all participants are randomized.</p></li>
+<li><p>Another method of blocked randomization may also be used. In this method for randomizing the order of assignments within a block of size b, a random number between 0 and 1 for each of the b assignments (half of which are A and the other half B) is obtained.</p></li>
+<li><p>The <strong>advantage</strong> of blocking is that balance between the number of participants in each group is guaranteed during the course of randomization. The number in each group will never differ by more than b/2 when b is the length of the block.  A second advantage of blocking is that if the trial should be terminated before enrollment is completed, balance will exist in terms of number of participants randomized to each group.</p></li>
+<li><p>A potential, but <strong>solvable problem</strong> with basic blocked randomization is that if the blocking factor b is known by the study staff and the study is not double-blind, the assignment for the last person entered in each block is known before entry of that person. This could, of course, permit a bias in the selection of every fourth participant to be entered.</p></li>
+<li><p>To avoid this problem in the trial that is not double-blind, the blocking factor can be varied as the recruitment continues. In fact, after each block has been completed, the size of the next block could be determined in a random fashion from a few possibilities such as 2, 4, 6, and 8.</p></li>
+<li><p>A <strong>disadvantage</strong> of blocked randomization is that, from a strictly theoretical point of view, analysis of the data is more complicated than if simple randomization were used. The data analysis performed at the end of the study should reflect the randomization process actually performed.</p></li>
+<li><p>Since blocking guarantees balance between the two groups and, therefore, increases the power of a study, blocked randomization with the appropriate analysis is more powerful than not blocking at all or blocking and then ignoring it in the analysis.</p></li>
+</ul>
+</li>
+<li><p><strong>Stratified randomization</strong></p>
+<ul>
+<li><p>Investigators may become concerned when prognostic factors are not evenly distributed between intervention and control groups. As indicated previously, randomization tends to produce groups which are, on the average, similar in their entry characteristics, both known and unknown. For any single study, especially a small study, there is no guarantee that all baseline characteristics will be similar in the two groups.</p></li>
+<li><p>Imbalances in prognostic factors can be dealt with either after the fact by using stratification in the analysis or can be prevented by using stratification in the randomization.</p></li>
+<li><p>Stratified randomization is a method that helps achieve comparability between the study groups for those factors considered.</p></li>
+<li><p>Stratified randomization requires that the prognostic factors be measured either before or at the time of randomization. If a single factor is used, it is divided into two or more subgroups or strata (e.g., age 30–34 years, 35–39 years, 40–44 years).</p></li>
+<li><p>If several factors are used, a stratum is formed by selecting one subgroup from each of them.</p></li>
+<li><p>The stratified randomization process involves measuring the level of the selected factors for a participant, determining to which stratum she belongs and performing the randomization within that stratum. Within each stratum, the randomization process itself could be simple randomization, but in practice most clinical trials use some blocked randomization strategy.</p></li>
+<li><p>Blocked randomization is, as described previously, a special kind of stratification.</p></li>
+<li><p>Small studies are the ones most likely to require stratified randomization, because in large studies, the magnitude of the numbers increases the chance of comparability of the groups.</p></li>
+<li><p>Increased stratification in small studies can be self-defeating because of the sparseness of data within each stratum. Thus, <strong>only important variables should be chosen and the number of strata kept to a minimum</strong>.</p></li>
+<li><p>In addition to making the two study groups appear comparable with regard to specified factors, the power of the study can be increased by taking the stratification into account in the analysis.</p></li>
+<li><p>Participants in each of the “smaller trials” belong to the same stratum. This reduces variability in group comparisons if the stratification is used in the analysis. Reduction in variability allows a study of a given size to detect smaller group differences in response variables or to detect a specified difference with fewer participants.</p></li>
+<li><p>It has been argued that there usually does not exist a need to stratify at randomization because stratification at the time of analysis will achieve nearly the same expected power. It appears for a large study that stratification after randomization provides nearly equal efficiency to stratification before randomization. However, for studies of 100 participants or fewer, stratifying the randomization using two or three prognostic factors may achieve greater power although the increase may not be large.</p></li>
+<li><p>In multicenter trials, centers vary with respect to the type of participants randomized as well as the quality and type of care given to participants during follow-up. Thus, the center may be an important factor related to participant outcome, and the randomization process should be stratified accordingly. Each center then represents, in a sense, a replication of the trial, though the number of participants within a center is not adequate to answer the primary question. Another reason for stratification by center is that <strong>if a center should have to leave the study, the balance in prognostic factors in other centers would not be affected</strong>.</p></li>
+<li><p>If in the stratified randomization, a specific proportion or quota is intended for each stratum, the recruitment of eligible participants might not be at the same rate. That is, one stratum might meet the target before the others. If a target proportion is intended, then plans need to be in place to close down recruitment for that stratum, allowing the others to be completed.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="adaptive-randomization-procedure">
+<h4>Adaptive randomization procedure<a class="headerlink" href="#adaptive-randomization-procedure" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Adaptive procedures change the allocation probabilities as the study progresses</p></li>
+<li><p><strong>Baseline adpative procedure</strong></p>
+<ul>
+<li><p>The Biased Coin Randomization procedure, originally discussed by Efron, attempts to balance the number of participants in each treatment group based on the previous assignments but does not take participant responses into consideration.</p></li>
+<li><p>The purpose of the algorithm is basically to randomize the allocation of participants to groups A and B with equal probability as long as the number of participants in each group is equal or nearly equal. If an imbalance occurs and the difference in the number of participants is greater than some prespecified value, the allocation probability (p) is adjusted so that the probability is higher for the group with fewer participants. Efron suggests an allocation probability of p = 2/3 when a correction is indicated.</p></li>
+<li><p>This approach, from a strictly theoretical point of view, demands a cumbersome data analysis process. The correct analysis requires that the significance level for the test statistic be determined by considering all possible sequences of assignments, which could have been made in repeated experiments using the same biased coin allocation rule where no group differences are assumed to exist.</p></li>
+<li><p>One possible advantage of the biased coin approach over the blocked randomization scheme is that the investigator cannot determine the next assignment by discovering the blocking factor. However, the biased coin method does not appear to be as widely used as the blocked randomization scheme because of its complexity.</p></li>
+<li><p>Another similar adaptive randomization method is referred to as the Urn Design, based on the work of Wei and colleagues. From a theoretical point of view, this method, like the biased coin design, would require the analyses to account for the randomization. It seems likely, as for the biased coin design, that if this randomization method is used, but ignored in the analyses, the p-value will be slightly conservative, that is, slightly larger than if the strictly correct analysis were done.</p></li>
+<li><p>Other stratification methods are adaptive in the sense that intervention assignment probabilities for a participant are a function of the distribution of the prognostic factors for participants already randomized. In general, adaptive stratification methods incorporate several prognostic factors in making an “overall assessment” of the group balance or lack of balance. This method is sometimes called minimization because imbalances in the distribution of prognostic factors are minimized.</p></li>
+<li><p>Adaptive methods do not have empty or near empty strata because randomization does not take place within a stratum although prognostic factors are used. Minimization gives unbiased estimates of treatment effect and slightly increased power relative to stratified randomization.</p></li>
+<li><p>The major advantage of this procedure is that it protects against a severe baseline imbalance for important prognostic factors. Overall marginal balance is maintained in the intervention groups with respect to a large number of prognostic factors.</p></li>
+<li><p>One disadvantage is that adaptive stratification is operationally more difficult to carry out, especially if a large number of factors are considered.</p></li>
+<li><p>In addition, the population recruited needs to be stable over time, just as for other adaptive methods.</p></li>
+<li><p>Another disadvantage of adaptive randomization is that the data analysis is complicated, from a strict viewpoint, by the randomization process.</p></li>
+<li><p>if minimization adaptive stratification is used, an analysis of covariance should be employed.</p></li>
+<li><p>To obtain the proper significance level, the analysis should incorporate the same prognostic factors used in the randomization.</p></li>
+<li><p>Minimization and stratification on the same prognostic factors produce similar levels of power, but minimization may add slightly more power if stratification does not include all of the covariates.</p></li>
+</ul>
+</li>
+<li><p><strong>Response adaptive procedure</strong></p>
+<ul>
+<li><p>Response adaptive randomization uses information on participant response to intervention during the course of the trial to determine the allocation of the next participant.</p></li>
+<li><p>Examples of response adaptive randomization models are the Play the Winner and the two-armed bandits models.These models assume that the investigator is randomizing participants to one of two interventions and that the primary response variable can be determined quickly relative to the total length of the study. Both of these response adaptive randomization methods have the intended purpose of maximizing the number of participants on the “superior” intervention. Although these methods do maximize the number of participants on the “superior” intervention, the possible imbalance will almost certainly result in some loss of power and require more participants to be enrolled into the study than would a fixed allocation with equal assignment probability.</p></li>
+<li><p>A major limitation is that many clinical trials do not have an immediately occurring response variable.</p></li>
+<li><p>They also may have several response variables of interest with no single outcome easily identified as being the one upon which randomization should be based.</p></li>
+<li><p>Furthermore, these methods assume that the population from which the participants are drawn is stable over time. If the nature of the study population should change and this is not accounted for in the analysis, the reported significance levels could be biased, perhaps severely. For response adaptive methods, that analysis will be more complicated than it would be with simple randomization. Because of these disadvantages, response adaptive procedures are not commonly used.</p></li>
+<li><p>Examples of response adaptive randomization models are the Play the Winner and the two-armed bandits models.These models assume that the investigator is randomizing participants to one of two interventions and that the primary response variable can be determined quickly relative to the total length of the study. Both of these response adaptive randomization methods have the intended purpose of maximizing the number of participants on the “superior” intervention. Although these methods do maximize the number of participants on the “superior” intervention, the possible imbalance will almost certainly result in some loss of power and require more participants to be enrolled into the study than would a fixed allocation with equal assignment probability.</p></li>
+<li><p>A major limitation is that many clinical trials do not have an immediately occurring response variable.</p></li>
+<li><p>They also may have several response variables of interest with no single outcome easily identified as being the one upon which randomization should be based.</p></li>
+<li><p>Furthermore, these methods assume that the population from which the participants are drawn is stable over time. If the nature of the study population should change and this is not accounted for in the analysis, the reported significance levels could be biased, perhaps severely. For response adaptive methods, that analysis will be more complicated than it would be with simple randomization. Because of these disadvantages, response adaptive procedures are not commonly used.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ixrs-related">
+<h3>6.2 IxRS related<a class="headerlink" href="#ixrs-related" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="final-notes">
+<h3>Final notes<a class="headerlink" href="#final-notes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The manner in which the chosen randomization method is actually implemented is very important. If this aspect of randomization does not receive careful attention, the entire randomization process can easily be compromised, thus voiding any of the advantages for using it.</p></li>
+<li><p>In some cases, the clinic may register a participant by dialing into a central computer and entering data via touchtone, with a voice response. These systems, referred to as Interactive Voice Response Systems or IVRS, or Interactive Web Response Systems, IWRS, are effective and can be used to not only assign intervention but can also capture basic eligibility data.</p></li>
+<li><p>For large studies involving more than several hundred participants, the randomization should be blocked.</p></li>
+<li><p>If a large multicenter trial is being conducted, randomization should be stratified by center.</p></li>
+<li><p>Randomization stratified on the basis of other factors in large studies is usually not necessary, because randomization tends to make the study groups quite comparable for all risk factors.</p></li>
+<li><p>For small studies, the randomization should also be blocked and stratified by center if more than one center is involved.</p></li>
+<li><p>Since the sample size is small, a few strata for important risk factors may be defined to assure that balance will be</p></li>
+<li><p>achieved for at least those factors.</p></li>
+<li><p>For a larger number of prognostic factors, the adaptive stratification techniques should be considered and the appropriate analyses performed. As in large studies, stratified analysis can be performed even if stratified randomization was not done.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-7-blindness">
+<h2>Chapter 7 Blindness<a class="headerlink" href="#chapter-7-blindness" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Bias may be defined as systematic error, or “difference between the true value and that actually obtained due to all causes other than sampling variability”</p></li>
+<li><p>Large sample size does not reduce bias although it generally improves precision and thus power.</p></li>
+</ul>
+<blockquote>
+<div><p>A clinical trial should, ideally, have a double-blind design in order to avoid potential problems of bias during data collection and assessment. In studies where such a design is impossible, other measures to reduce potential bias are advocated.</p>
+</div></blockquote>
+<div class="section" id="types-of-trials-in-terms-of-blindness">
+<h3>Types of trials (in terms of blindness)<a class="headerlink" href="#types-of-trials-in-terms-of-blindness" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>An <strong>unblinded study</strong> is appealing for two reasons. First, all other things being equal, it is simpler to execute than other studies.</p>
+<ul>
+<li><p>Second, investigators are likely to be more comfortable making decisions, such as whether or not to continue a participant on his assigned study medication if they know its identity.</p></li>
+<li><p>The main disadvantage of an unblinded trial is the possibility of bias.</p></li>
+</ul>
+</li>
+<li><p>In a <strong>single-blind</strong> study, only the investigator is aware of which intervention each par- ticipant is receiving.</p>
+<ul>
+<li><p>Both unblinded and single-blind trials are vulnerable to another source of potential bias introduced by the investigators. This relates to group differences in compensatory and concomitant treatment. (This may be in the form of advice or therapy.)</p></li>
+</ul>
+</li>
+<li><p>In a <strong>double-blind</strong> study, neither the participants nor the investigators responsible for following the participants, collecting data, and assessing outcomes should know the identity of the intervention assignment.</p>
+<ul>
+<li><p>The main advantage of a truly double-blind study is that the risk of bias is reduced.</p></li>
+<li><p>The double-blind design is no protection against imbalances in use of concomi- tant medications.</p></li>
+</ul>
+</li>
+<li><p>A <strong>triple-blind</strong> study is an extension of the double-blind design; the committee monitoring response variables is not told the identity of the groups.</p>
+<ul>
+<li><p>However, in a trial where the monitoring committee has an ethical responsibility to ensure participant safety, such a design may be counterproductive.</p></li>
+<li><p>A triple-blind study can be conducted ethically if the monitoring committee asks itself at each meeting whether the direction of observed trends matters. If it does not matter, then the triple-blind can be maintained, at least for the time being.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="protecting-the-double-blind-design">
+<h3>Protecting the double-blind design<a class="headerlink" href="#protecting-the-double-blind-design" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>One of the surest ways to unblind a drug study is to have dissimilar appearing medications.</p></li>
+<li><p>When the treatment identity of one participant becomes known to the investigator, the whole trial is unblinded. Thus, matching of drugs is essential.</p></li>
+<li><p>Cross-over studies, where each subject sees both medications, require the most care in matching.</p></li>
+<li><p>Drug preparations should be pretested if it is possible. One method is to have a panel of observers unconnected with the study compare samples of the medica- tions.</p></li>
+<li><p>It is usually prudent to avoid using extra substances unless absolutely essential to prevent unblinding of the study.</p></li>
+<li><p>In addition, enclosing tablets in capsules may change the rate of absorption and the time to treatment response.</p></li>
+<li><p>As long as each active agent is not being compared against another, but only against placebo, one option is to create a placebo for each active drug or a so-called “<strong>double-dummy</strong>.”</p></li>
+<li><p>By drug coding is meant the labeling of individual drug bottles or vials so that the identity of the drug is not disclosed.</p></li>
+<li><p>One side effect in one participant may not be attributable to the drug, but a constellation of several side effects in several participants with the same drug code may easily unblind the whole study.</p></li>
+<li><p>This type of coding has no operational limits on the number of unique codes; it simplifies keeping an accurate and current inventory of all study medications and helps assure that each participant is dispensed his assigned study medication.</p></li>
+<li><p>A procedure should be developed to break the blind quickly for any individual participant at any time should it be in his best interest.</p></li>
+<li><p>Known pharmaceutical effects of the study medication may lead to unblinding.</p></li>
+<li><p>Another way of estimating the success of a double-blind design is to monitor specific intermediate effects of the study medication.</p></li>
+</ul>
+</div>
+<div class="section" id="assessing-and-reporting-of-blindness">
+<h3>Assessing and reporting of blindness<a class="headerlink" href="#assessing-and-reporting-of-blindness" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Randomized trials with inadequate blinding, on average, show larger treatment effects than properly blinded trials</p></li>
+<li><p>In assessing the success of blindness, decisions have to be made when to conduct the assessment and what questions to ask.</p></li>
+<li><p>We believe that monitoring and reporting of the success of blindness are important for two reasons. First, knowing that the level of this success is one of the measures of trial quality may keep the investigators’ attention on blindness during trial conduct. Second, it helps readers of the trial report determine how much confidence they can place on the trial results.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-8-sample-size-power-calculation">
+<h2>Chapter 8 Sample size/power calculation<a class="headerlink" href="#chapter-8-sample-size-power-calculation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="chapter-11-data-collection-and-quality-control">
+<h2>Chapter 11 Data collection and quality control<a class="headerlink" href="#chapter-11-data-collection-and-quality-control" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="chapter-12-assessing-and-reporting-adverse-events">
+<h2>Chapter 12 Assessing and reporting adverse events<a class="headerlink" href="#chapter-12-assessing-and-reporting-adverse-events" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="chapter-16-monitoring-response-variables">
+<h2>Chapter 16 Monitoring response variables<a class="headerlink" href="#chapter-16-monitoring-response-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="monitoring-committee">
+<h3>16.1 Monitoring committee<a class="headerlink" href="#monitoring-committee" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="statistical-methods-used-in-monitoring-interim-analysis">
+<h3>16.2 Statistical methods used in monitoring (interim analysis)<a class="headerlink" href="#statistical-methods-used-in-monitoring-interim-analysis" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="classical-sequential-methods">
+<h4>Classical sequential methods<a class="headerlink" href="#classical-sequential-methods" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="group-sequential-methods">
+<h4>Group sequential methods<a class="headerlink" href="#group-sequential-methods" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="flexible-group-sequential-procedures-alpha-spending-functions">
+<h4>Flexible group sequential procedures: alpha spending functions<a class="headerlink" href="#flexible-group-sequential-procedures-alpha-spending-functions" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="asymmetric-boundaries">
+<h4>Asymmetric boundaries<a class="headerlink" href="#asymmetric-boundaries" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="curtailed-sampling-and-conditional-power-procedures">
+<h4>Curtailed sampling and conditional power procedures<a class="headerlink" href="#curtailed-sampling-and-conditional-power-procedures" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="other-approaches">
+<h4>Other approaches<a class="headerlink" href="#other-approaches" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="chapter-17-issues-in-data-analysis">
+<h2>Chapter 17 Issues in data analysis<a class="headerlink" href="#chapter-17-issues-in-data-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="analysis-populations">
+<h3>Analysis populations<a class="headerlink" href="#analysis-populations" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="missing-data-or-poor-quality-data">
+<h3>Missing data or poor quality data<a class="headerlink" href="#missing-data-or-poor-quality-data" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="competing-events">
+<h3>Competing events<a class="headerlink" href="#competing-events" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="composite-outcomes">
+<h3>Composite outcomes<a class="headerlink" href="#composite-outcomes" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="covariate-adjustment">
+<h3>Covariate adjustment<a class="headerlink" href="#covariate-adjustment" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="subgroup-analyses">
+<h3>Subgroup analyses<a class="headerlink" href="#subgroup-analyses" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="comparison-of-multiple-variables">
+<h3>Comparison of multiple variables<a class="headerlink" href="#comparison-of-multiple-variables" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="use-of-cutpoints">
+<h3>Use of cutpoints<a class="headerlink" href="#use-of-cutpoints" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="analysis-of-non-inferiority-trial">
+<h3>Analysis of non-inferiority trial<a class="headerlink" href="#analysis-of-non-inferiority-trial" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="analysis-following-trend-adaptive-designs">
+<h3>Analysis following trend adaptive designs<a class="headerlink" href="#analysis-following-trend-adaptive-designs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="meta-analysis-of-multiple-studies">
+<h3>Meta-analysis of multiple studies<a class="headerlink" href="#meta-analysis-of-multiple-studies" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="chapter-18-closeout">
+<h2>Chapter 18 Closeout<a class="headerlink" href="#chapter-18-closeout" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="chapter-19-reporting-and-interpreting-of-results">
+<h2>Chapter 19 Reporting and interpreting of results<a class="headerlink" href="#chapter-19-reporting-and-interpreting-of-results" title="Permalink to this headline">¶</a></h2>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id1">FFD+15</a></span></dt>
+<dd><p>Lawrence M Friedman, Curt D Furberg, David L DeMets, David M Reboussin, and Christopher B Granger. <em>Fundamentals of clinical trials</em>. Springer, 2015.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html" title="previous page">[book] Data Analysis Using Regression and Multilevel/Hierarchical Models</a>
+    <a class='right-next' id="next-link" href="Book-Regression%20Modeling%20Strategies.html" title="next page">[book] Regression Modeling Strategies</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

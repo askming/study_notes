@@ -53,7 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="​Cox PH model" href="Note-Cox_PH_model.html" />
+    <link rel="next" title="​Cox PH model" href="Note-Cox_PH_model.html" />
+    <link rel="prev" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -86,7 +87,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Table of contents
+   Study Notes Index
   </a>
  </li>
 </ul>
@@ -97,8 +98,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
-   [book] Regression Modeling Strategies
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
@@ -110,13 +111,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   [book] Analysis of Observational Health Care Data Using SAS
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Survival_Analysis.html">
-   Survival Analysis
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
@@ -124,9 +135,50 @@
    ​Cox PH model
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Competing risk models
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
   </a>
  </li>
 </ul>
@@ -293,17 +345,20 @@
 <div class="section" id="basic-concepts">
 <h2>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p><strong>Cause-specific hazard function</strong>, <span class="math notranslate nohighlight">\(h_k(t)\)</span>: the instantaneous rate of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> conditional on survival until time t or later
-$<span class="math notranslate nohighlight">\(
-h_k(t) = \lim_{\Delta t\rightarrow0}\frac{P(t&lt;T&lt;t+\Delta t, \delta=k|T&gt;t)} {\Delta t}, k=1, \cdots, K
-\)</span>$</p></li>
-<li><p><strong>Cumulative incidence function</strong> (CIF or <strong>subdistribution function</strong>), is the prob. of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> prior to time <span class="math notranslate nohighlight">\(t\)</span>
-$<span class="math notranslate nohighlight">\(
-F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
-\)</span>$</p>
+<li><p><strong>Cause-specific hazard function</strong>, <span class="math notranslate nohighlight">\(h_k(t)\)</span>: the instantaneous rate of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> conditional on survival until time t or later</p>
+<div class="math notranslate nohighlight">
+\[
+  h_k(t) = \lim_{\Delta t\rightarrow0}\frac{P(t&lt;T&lt;t+\Delta t, \delta=k|T&gt;t)} {\Delta t}, k=1, \cdots, K
+  \]</div>
+</li>
+<li><p><strong>Cumulative incidence function</strong> (CIF or <strong>subdistribution function</strong>), is the prob. of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> prior to time <span class="math notranslate nohighlight">\(t\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+  F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
+  \]</div>
 <ul>
-<li><p>it’s not a true probability distribution</p></li>
-<li><div class="math notranslate nohighlight">
+<li><p>it’s not a true probability distribution</p>
+<div class="math notranslate nohighlight">
 \[
     F_k(t) = \int_0^tS(u)h_k(u)du = \int_0^t S(u)dH_k(u), k = 1, \cdots, K
     \]</div>
@@ -321,16 +376,19 @@ F_k(t)=P(T\le t, \delta = k), k = 1, \cdots, K
 <h2>Competing risk models<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cause-specific-hazard-modeling">
 <h3>1. Cause-specific hazard modeling<a class="headerlink" href="#cause-specific-hazard-modeling" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>This model assumes competing events other than the primary event of interest as consoring. For cause <span class="math notranslate nohighlight">\(k\)</span>, a separate proportional hazards model can be assumed:
-$<span class="math notranslate nohighlight">\(
-h_k(t)={h}_{k0}(t)\exp(\beta_k'Z)
-\)</span><span class="math notranslate nohighlight">\(
-and the partial likelihood function for \)</span>k<span class="math notranslate nohighlight">\(th event is given as
-\)</span><span class="math notranslate nohighlight">\(
-{L}(\beta_k) = \prod_i\left(\exp(\beta'_kZ_i)\over\sum_{j\in\tilde{\mathcal{R}_i}}\exp(\beta'_kZ_j)\right)^{\delta_i \equiv k}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\mathcal{R}_i<span class="math notranslate nohighlight">\( denotes the risk set at \)</span>X_i<span class="math notranslate nohighlight">\( and contains individuals who don't fail from any cause or are not censored before \)</span>X_i$.</p></li>
+<ul>
+<li><p>This model assumes competing events other than the primary event of interest as consoring. For cause <span class="math notranslate nohighlight">\(k\)</span>, a separate proportional hazards model can be assumed:</p>
+<div class="math notranslate nohighlight">
+\[
+  h_k(t)={h}_{k0}(t)\exp(\beta_k'Z)
+  \]</div>
+<p>and the partial likelihood function for <span class="math notranslate nohighlight">\(k\)</span>th event is given as</p>
+<div class="math notranslate nohighlight">
+\[
+  {L}(\beta_k) = \prod_i\left(\exp(\beta'_kZ_i)\over\sum_{j\in\tilde{\mathcal{R}_i}}\exp(\beta'_kZ_j)\right)^{\delta_i \equiv k}
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{R}_i\)</span> denotes the risk set at <span class="math notranslate nohighlight">\(X_i\)</span> and contains individuals who don’t fail from any cause or are not censored before <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
+</li>
 <li><p>Because competing risks are present, it is no longer appropriate to interpret the cause-specific hazard ratios in terms of a relative risk type of measure as regular hazard ratios. As <span id="id2">[<a class="reference internal" href="#id12">Andersen and Keiding, 2012</a>]</span> point out, this is a direct consequence of the loss of the one-to-one relationship between the cause-specific hazard function and the cumulative incidence function.</p></li>
 </ul>
 </div>
@@ -428,7 +486,8 @@ where \)</span>\mathcal{R}_i<span class="math notranslate nohighlight">\( denote
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Note-Cox_PH_model.html" title="previous page">​Cox PH model</a>
+    <a class='left-prev' id="prev-link" href="Book-Regression%20Modeling%20Strategies.html" title="previous page">[book] Regression Modeling Strategies</a>
+    <a class='right-next' id="next-link" href="Note-Cox_PH_model.html" title="next page">​Cox PH model</a>
 
         </div>
         
