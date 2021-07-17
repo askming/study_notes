@@ -170,6 +170,18 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -551,8 +563,8 @@
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e11c9c3-f8d4-4004-a663-b9d23b29ad41">
-<span class="eqno">(7)<a class="headerlink" href="#equation-7e11c9c3-f8d4-4004-a663-b9d23b29ad41" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ebef8827-cd36-4bd8-aab8-abb75808f014">
+<span class="eqno">(7)<a class="headerlink" href="#equation-ebef8827-cd36-4bd8-aab8-abb75808f014" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -905,8 +917,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a507cd3b-c253-42f4-b5b8-c19349370e99">
-<span class="eqno">(8)<a class="headerlink" href="#equation-a507cd3b-c253-42f4-b5b8-c19349370e99" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-db9624ad-3512-414c-ba59-e63ab3e387b0">
+<span class="eqno">(8)<a class="headerlink" href="#equation-db9624ad-3512-414c-ba59-e63ab3e387b0" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -917,8 +929,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-10ccb849-5bf6-4bc4-a896-75916fc5c4e7">
-<span class="eqno">(9)<a class="headerlink" href="#equation-10ccb849-5bf6-4bc4-a896-75916fc5c4e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1aa16fe8-0b59-4e3d-93cc-97ec9b3e0dd6">
+<span class="eqno">(9)<a class="headerlink" href="#equation-1aa16fe8-0b59-4e3d-93cc-97ec9b3e0dd6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>

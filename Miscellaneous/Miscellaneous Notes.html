@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miscellaneous Study Notes &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="[book] Python Data Science Handbook" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Miscellaneous/Miscellaneous Notes.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FMiscellaneous/Miscellaneous Notes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="miscellaneous-study-notes">
+<h1>Miscellaneous Study Notes<a class="headerlink" href="#miscellaneous-study-notes" title="Permalink to this headline">¶</a></h1>
+<hr>
+<p><em>Note: pieces of knowledge (to be organized) from online (or other) readings, thoughts, etc.</em></p>
+<ol>
+<li><p>The <em>Spearman correlation</em> is just the Pearson correlation using the ranks (order statistics) instead of the actual numeric values. The answer to your question is that they’re not measuring the same thing. Pearson: linear trend, Spearman: monotonic trend. That the Pearson correlation is higher just means the linear correlation is larger than the rank correlation. This is probably due to influential observations in the tails of the distribution that have large influence relative to their ranked values. Tests of association using the Pearson correlation are of higher power when the linearity holds in the data.</p></li>
+<li><p><span class="math notranslate nohighlight">\(&lt;X,Y&gt;\)</span> means the <em><strong>inner product</strong></em> (item by item) of vector <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> or <span class="math notranslate nohighlight">\(X^TY\)</span>,</p>
+<ul class="simple">
+<li><p>it’s equivalent to <em>dot product</em> in Euclidean space.</p></li>
+<li><p><span class="math notranslate nohighlight">\(&lt;X, X&gt; = ||X||^2\)</span>: inner product equals to the square of the norm</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(X\otimes X\)</span>: <strong>outer product</strong>, is doing ALL POSSIBLE multiplications of one set of numbers or functions with another.</p>
+<ul class="simple">
+<li><p>it is also called as <strong>tensor product</strong>,</p></li>
+<li><p>it’s equivalent to a matrix multiplication and the result of an outer product is a matrix.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(X\times Y\)</span>: cross product; <span class="math notranslate nohighlight">\(X \times Y = ||X||\ ||Y||\sin\theta\ \mathbf{n}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>; <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> is the unit vector perpendicular to the plan containing <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, in the direction given by the right-hand rule.</p>
+<p><img alt="img" src="https://raw.githubusercontent.com/askming/picgo/master/220px-Right_hand_rule_cross_product.svg.png" /></p>
+</li>
+</ul>
+<p><a class="reference external" href="https://mathvault.ca/hub/higher-math/math-symbols/algebra-symbols/">Algebra Symbols</a></p>
+</li>
+<li><p><a class="reference external" href="http://fourier.eng.hmc.edu/e161/lectures/algebra/node11.html">Norm and distance</a></p>
+<ul>
+<li><p><strong><u>Norm</u></strong>: <span class="math notranslate nohighlight">\(||X|| = \sqrt{X\cdot X} = \sqrt{&lt;X, X&gt;}\)</span>, non-negative value representing intuitively the length, size, or magnitude of the vector.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L_p\)</span>: <span class="math notranslate nohighlight">\(||X||_p = \left(\sum_{i=1}^n |x_i|^p\right)^{1/p}, 1\le p\le \infty\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_1\)</span>: <span class="math notranslate nohighlight">\(||X||_1 = \sum_{i=1}^n|x_i|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_2\)</span> or <strong>Euclidean norm</strong>: <span class="math notranslate nohighlight">\(||X||_2 = (\sum_{i=1}^n|x_i|^2)^{1/2} = \sqrt{X^TX}\)</span>.</p>
+<ul>
+<li><p>It is the most commonly encountered vector norm (often simply called “the norm” of a vector, or sometimes the magnitude of a vector)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong><u>Distance</u></strong>: the <em>distance</em> between two points <span class="math notranslate nohighlight">\(\mathbf{x, y} \in V\)</span> in a vector space is defined as the norm of the difference <span class="math notranslate nohighlight">\(\mathbf{x-y}\)</span>
+$<span class="math notranslate nohighlight">\(
+d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infin
+\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p=1\)</span>, city block or Mahattan distance: <span class="math notranslate nohighlight">\(d_1(\mathbf{x,y})=||\mathbf{x-y}||_1 = \sum_{i=1}^n|x_i-y_i|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p=1\)</span>, Euclidean distance: <span class="math notranslate nohighlight">\(d_2(\mathbf{x,y})=||\mathbf{x-y}||_2 = \sqrt{\sum_{i=1}^n|x_i-y_i|^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p=\infin\)</span>, Chebyshev distance: <span class="math notranslate nohighlight">\(d_{\infin}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infin} = \max_i|x_i - y_i|\)</span></p></li>
+</ul>
+<p>The three unit circles or spheres, are formed by all points <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> of unity norm <span class="math notranslate nohighlight">\(||\mathbf{x}||_p = 1\)</span> with unity distance to the origin (blue, black, and red for <span class="math notranslate nohighlight">\(d_{\infin}\)</span>, <span class="math notranslate nohighlight">\(d_2\)</span>, and <span class="math notranslate nohighlight">\(d_1\)</span>, respectively).</p>
+<p><img alt="pdist" src="https://raw.githubusercontent.com/askming/picgo/master/pdist.png" /></p>
+</li>
+</ul>
+</li>
+<li><p>Inference for <span class="math notranslate nohighlight">\(\theta\)</span> or inference for <span class="math notranslate nohighlight">\(E(\theta)\)</span></p>
+<ul class="simple">
+<li><p>When the goal is to estimate <span class="math notranslate nohighlight">\(\theta\)</span>, then all you really need is to estimate <span class="math notranslate nohighlight">\(\theta\)</span> to more accuracy than its standard error (in Bayesian terms, its posterior standard deviation). For example, if a parameter is estimated at <span class="math notranslate nohighlight">\(3.5 \pm 1.2\)</span>, that’s fine. There’s no point in knowing that the posterior mean is 3.538. To put it another way, as we draw more simulations, we can estimate that “3.538” more precisely–our standard error on <span class="math notranslate nohighlight">\(E(\theta|y)\)</span> will approach zero–but that 1.2 ain’t going down much. The standard error on <span class="math notranslate nohighlight">\(\theta\)</span> (that is, <span class="math notranslate nohighlight">\(sd(\theta|y)\)</span>) is what it is.</p></li>
+<li><p>This is a general issue in simulation (not just using Markov chains), and we discuss it on page 277 of <em>Bayesian Data Analysis (second edition)</em>: if the goal is inference about <span class="math notranslate nohighlight">\(\theta\)</span>, and you have 100 or more independent simulation draws, then the Monte Carlo error adds almost nothing to the uncertainty coming from the actual posterior variance.</p></li>
+<li><p>On the other hand, if your goal is to estimate <span class="math notranslate nohighlight">\(E(\theta|y)\)</span> to some precision, then you might want lots and lots of simulation draws. This would be the example where you actually want to know that it’s 3.538, rather than simply 3.5. In my applications, I want inference about <span class="math notranslate nohighlight">\(\theta\)</span> and have no particular desire to pinpoint the mean (or other summary) of the distribution; however, in other settings such as simulating models in physics, these expectations can be of interest in their own right.</p></li>
+<li><p>For Bayesian inference, I don’t think it’s generally necessary or appropriate to report Monte Carlo standard errors of posterior means and quantiles, but it is helpful to know that the chains have mixed and to have a sense that further simulation will not change inferences appreciably. Diagnostics are far from perfect, and so it’s good that people are doing research on these things.</p></li>
+</ul>
+</li>
+<li><p>Normalizing constant in Bayesian posterior distribution (<em>Why can we ignore the normalizing constant in the posterior distribution?</em>)</p>
+<p>According to your notation, Bayes’s formula is actually</p>
+<p>$<span class="math notranslate nohighlight">\(Pr(\theta∣\text{data})=Pr(\text{data}∣\theta)Pr(\theta)/Pr(\text{data})\)</span>$</p>
+<p>The denominator, <span class="math notranslate nohighlight">\(Pr(data)\)</span>, is obtained by integrating out the parameters from the join probability, <span class="math notranslate nohighlight">\(Pr(data,\theta)\)</span>. This is the marginal probability of the data and, of course, it does not depend on the parameters since these have been integrated out.</p>
+<p>Now, since:</p>
+<p><span class="math notranslate nohighlight">\(Pr(data)\)</span> does not depend on the parameters for which one wants to make inference;<span class="math notranslate nohighlight">\(Pr(data)\)</span> is generally difficult to calculate in a closed-form; one often uses the following adaptation of Baye’s formula:</p>
+<div class="math notranslate nohighlight">
+\[Pr(\theta∣\text{data})\propto Pr(\text{data}∣\theta)Pr(\theta)\]</div>
+<p>Basically, <span class="math notranslate nohighlight">\(Pr(data)\)</span> is nothing but a normalising constant, i.e., a constant that makes the posterior density integrate to <em>one</em>.</p>
+</li>
+<li><p>The subject which deals with maximizing or minimizing integrals of functions is the <strong>calculus of variations</strong> and one of its basic tricks is to write the integrand as a function of <span class="math notranslate nohighlight">\(x\)</span>, the function, and its derivatives. This sets us up to use a general theorem to the effect that any function <span class="math notranslate nohighlight">\(\\hat{m}\)</span> that minimizes L must also solve <strong>Euler-Lagrange equation</strong>.</p></li>
+<li><p>In survival analysis the Cox model is preferred to a logistic model, since the latter one ignores survival times and censoring information.</p></li>
+<li><p>The basic conclusion of the article is that thinning of chains is not usually appropriate when the goal is precision of estimates from an MCMC sample. (Thinning can be useful for other reasons, such as memory or time constraints in post-chain processing, but those are very different motivations than precision of estimation of the posterior distribution.)</p></li>
+<li><p>Why it <strong>doesn’t</strong> make sense in general to form confidence intervals by inverting hypothesis tests</p>
+<blockquote>
+<div><p>The standard analysis that Imbens proposes includes (1) a Fisher-type permutation test of the sharp null hypothesis–what Imbens referred to as”testing”–along with a (2) Neyman-type point estimate of the sample average treatment effect and confidence interval–what Imbens referred to as “estimation.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>Imbens claimed that testing and estimation are separate enterprises with separate goals and that the two should not be confused. I [Cyrus] took it as a warning against proposals that use “inverted” tests in order to produce point estimates and confidence intervals. There is no reason that such confidence intervals will have accurate coverage except under rather dire assumptions, meaning that they are not “confidence intervals” in the way that we usually think of them.</p>
+</div></blockquote>
+<blockquote>
+<div><p>The idea is that you’re fitting a family of distributions indexed by some parameter <span class="math notranslate nohighlight">\(\theta\)</span>, and your test is a function <span class="math notranslate nohighlight">\(T(\theta,y)\)</span> of parameter <span class="math notranslate nohighlight">\(\theta\)</span> and data <span class="math notranslate nohighlight">\(y\)</span> such that, if the model is true, <span class="math notranslate nohighlight">\(Pr(T(\theta,y)=\text{reject}|\theta) = 0.05\)</span> for all <span class="math notranslate nohighlight">\(\theta\)</span>. The probability here comes from the distribution <span class="math notranslate nohighlight">\(p(y|\theta)\)</span> in the model.</p>
+<p>In addition, the test can be used to reject the entire family of distributions, given data <span class="math notranslate nohighlight">\(y\)</span>: if <span class="math notranslate nohighlight">\(T(\theta,y)=\text{reject}\)</span> for all <span class="math notranslate nohighlight">\(\theta\)</span>, then we can say that the test rejects the model.</p>
+<p>This is all classical frequentist statistics.</p>
+<p>Now, to get back to the graph above, the confidence interval given data <span class="math notranslate nohighlight">\(y\)</span> is defined as the set of values <span class="math notranslate nohighlight">\(\theta\)</span> for which <span class="math notranslate nohighlight">\(T(y,\theta)!=\text{reject}\)</span>. As noted above, when you can reject the model, the confidence interval is empty. That’s ok since the model doesn’t fit the data anyway. The bad news is that when you’re close to being able to reject the model, the confidence interval is very small, hence implying precise inferences in the very situation where you’d really rather have less confidence!</p>
+</div></blockquote>
+<p><img alt="" src="https://raw.githubusercontent.com/askming/picgo/master/invert.png?token=ABLIWW5DMGWPJ7CCHP37LDK7D67SY" /></p>
+<blockquote>
+<div><p>Sometimes you can get a reasonable confidence interval by inverting a hypothesis test. For example, the <span class="math notranslate nohighlight">\(z-\)</span> or <span class="math notranslate nohighlight">\(t-\)</span>test or, more generally, inference for a location parameter. But if your hypothesis test can ever reject the model entirely, then you’re in the situation shown above. Once you hit rejection, you suddenly go from a very tiny precise confidence interval to no interval at all. To put it another way, as your fit gets gradually worse, the inference from your confidence interval becomes more and more precise and then suddenly, discontinuously has no precision at all. (With an empty interval, you’d say that the model rejects and thus you can say nothing based on the model. You wouldn’t just say your interval is, say, [3.184, 3.184] so that your parameter is known exactly.</p>
+</div></blockquote>
+</li>
+<li><p>Methods to compare <span class="math notranslate nohighlight">\(q\)</span>th percentile (e.g. median) of a variable between two groups: point estimate &amp; confidence interval</p>
+<p><em>Note: this is different from estimating median of difference using Hodges-Lehmann method</em></p>
+<ul>
+<li><p>Bootstrap</p></li>
+<li><p>Quantile regression</p></li>
+<li><p>Binomial based probability model (<em>this is for one sample estimate</em>)</p>
+<ul>
+<li><p>Every percentile <span class="math notranslate nohighlight">\(p\)</span> of a random variable <span class="math notranslate nohighlight">\(X\)</span> dichotomizes that variable into a binary random variable, say <span class="math notranslate nohighlight">\(Y = \mathcal{I}(X\le p)\)</span>, where <span class="math notranslate nohighlight">\(Pr (Y = 1) = p\)</span>. That is, in a sample of size <span class="math notranslate nohighlight">\(n\)</span>, the total number of observations with <span class="math notranslate nohighlight">\(X\le \text{it’s }p\)</span>th percentile <span class="math notranslate nohighlight">\(\sim \text{Binomial}(n, p)\)</span></p></li>
+<li><p>To construct the <span class="math notranslate nohighlight">\((1-\alpha)\%\)</span> confidence interval for the <span class="math notranslate nohighlight">\(p\)</span>th percentile of variable <span class="math notranslate nohighlight">\(X\)</span> based on a sample with size of <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<ol>
+<li><p>Find the lower and upper limits of number of cases, <span class="math notranslate nohighlight">\(l\)</span> and <span class="math notranslate nohighlight">\(u\)</span>, which are <em>symmetrical</em> or <em>almost symmetrical</em> about  <span class="math notranslate nohighlight">\(n*p\)</span>,  such that <span class="math notranslate nohighlight">\(\sum_{k=0}^{u-1} Binom(n, k, p) - \sum_{k=0}^{l-1} Binom(n, k, p) \ge 1 - \alpha\)</span></p>
+<p><em>This is call the coverage probability</em>.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># let p be the pth quantile </span>
+<span class="n">l</span> <span class="o">&lt;-</span> <span class="nf">qbinom</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">p</span><span class="p">,</span> <span class="n">lower.tail</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">&lt;-</span> <span class="n">n</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="m">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <em>percentile confidence interval</em> is then calculated as <span class="math notranslate nohighlight">\([l/n, u/n]\)</span></p></li>
+<li><p>In the data, sort variable <span class="math notranslate nohighlight">\(X\)</span> and find values correspond to its <span class="math notranslate nohighlight">\(l/n\)</span>th and <span class="math notranslate nohighlight">\(u/n\)</span>th percentiles. The resulting values are the <span class="math notranslate nohighlight">\((1-\alpha)\%\)</span> CI for the <span class="math notranslate nohighlight">\(p\)</span>th percentile of <span class="math notranslate nohighlight">\(X\)</span></p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>Note:</p>
+<ul class="simple">
+<li><p>The above CI is conservative as the coverage probability is <span class="math notranslate nohighlight">\(\ge 1-\alpha\)</span></p></li>
+<li><p>The above CI is called the exact CI, in some cases it is not symmetrical about the point estimate</p></li>
+<li><p>See Meeker et. al. (2017) for an approximate method that give a symmetrical CI around the point estimate</p></li>
+</ul>
+</li>
+<li><p>CMH test vs McNemar’s test vs conditional logistic regression</p>
+<p>Check Highlights on Hypothesis.io</p>
+<ul class="simple">
+<li><p>CMH is a generalization of McNemar’s test when each pair is treated as a stratum</p></li>
+<li><p>The null hypothesis for CMH test is the discordant probability is 0.5 (?check)</p></li>
+</ul>
+</li>
+<li><p>Understanding interaction term in regression</p>
+<ul>
+<li><p>Adding interaction term in the model is to examine if the main effect of interest varies by another (pre-treatment) factor</p></li>
+<li><p>If the interaction is significant, it means there is no overall “unique” treatment effect and the magnitude of the (overall) main treatment effect is not estimable</p>
+<ul class="simple">
+<li><p>The effect is estimable in a stratified analysis</p></li>
+</ul>
+</li>
+<li><p>In general, for a linear regression model, the estimate obtained by including the interaction, and then averaging over the data, reduces to the estimate with no interaction. (<em>Gelman</em>)</p>
+<ul class="simple">
+<li><p>Modeling interactions is important when we care about differences in the treatment effect for different groups, and post-stratification then arises naturally if a population average estimate is of interest.</p></li>
+</ul>
+</li>
+<li><p>How is regression adjustment differs from stratified analysis? Is regression model with interaction term equivalent to subgroup analysis?</p>
+<ul class="simple">
+<li><p>:star: Adjusted analysis with interaction term is usually preferred over subgroup analysis in general</p></li>
+<li><p>The real advantage of interaction effects is that it is more flexible when you have multiple explanatory variables. By estimating seperate regressions you force an interaction between the covariate you are interested in and all other explanatory variables, while with interaction effects you can choose which effect can change over and which remains constant. <strong>This is often very desirable as interaction effects tend to eat large amounts of statistical power</strong>.</p></li>
+<li><p>On a more mechanical level, with interaction effects (if you used the factor variable notation) you have all the power of <strong>margins</strong>, <strong>contrast</strong>, and <strong>marginsplot</strong> at your disposal.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X1201200111">A good illustrative example</a> about how to understand the regression coefficients with interaction terms</p>
+<ul class="simple">
+<li><p>including only interaction term without main effect is basically grouping the samples into the categories defined by the unique combinations from the interaction and the estimate is the “average” of the samples within that category</p></li>
+<li><p>When one or both of the main effects are included in the model, the main effect(s) “takes away” part of the effect associated with it.</p>
+<ul>
+<li><p>The main effect included in the model would have all “average” values at its levels (i.e. no reference level created)</p></li>
+<li><p>The interpretation of the coefficient should then be adjusted appropriately based on the actual value of the corresponding main effects combination (the coefficients in the interaction terms are the difference between one level vs the reference level for that variable not included in the main effect conditional on the variable(s) included as main effect(s))</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>With the interaction term, the interpretation of one main effect is always dependent  on the value of the other main effect, i.e. it’s conditional (on the other main effect) comparison or subgroup comparison</p>
+<p><img alt="image-20200812144625147" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200812144625147.png" /></p>
+</li>
+</ul>
+</li>
+<li><p>Types of <strong>regression</strong> sum of squares in regression analysis</p>
+<ul>
+<li><p>Type I: <em>sequential</em>. the order when a variable is added into a model matters, i.e. the SS is dependent on the order when the variable is added to the model.</p></li>
+<li><p>Type II: <em>hierarchical or partially sequential</em>. Accout for other indpendent variables when calculating SS for one specific covariate; won’t take an interaction effect</p></li>
+<li><p>Type III: <em>marginal or orthogonal</em>. Accout for other indpendent variables when calculating SS for one specific covariate; will take an interaction effect when calculating SS for a covariate</p></li>
+<li><p>Type IV: <em>Goodnight or balanced.</em>??</p>
+<img src="https://raw.githubusercontent.com/askming/picgo/master/1*wnwRJ4dG6Sin5PsdgUr9IQ.png" alt="Image for post" style="zoom:80%;" />
+</li>
+<li><p>Total SS = Regression SS + Error (residual) SS</p>
+<ul class="simple">
+<li><p>Total SS = sum of squares of differences between observed <span class="math notranslate nohighlight">\(Y\)</span> and the overall average <span class="math notranslate nohighlight">\(\bar{Y}\)</span>;</p></li>
+<li><p>Regression SS = SS of differences between predicted <span class="math notranslate nohighlight">\(\hat{Y}\)</span> to the overall average <span class="math notranslate nohighlight">\(\bar{Y}\)</span>;</p></li>
+<li><p>Error sum of SS = SS of differences between observed <span class="math notranslate nohighlight">\(Y\)</span> and predicted <span class="math notranslate nohighlight">\(\hat{Y}\)</span></p></li>
+</ul>
+</li>
+<li><p>When there is no interaction, Type II == Type III. Type I is seldomly used.</p></li>
+</ul>
+</li>
+<li><p><strong>Hodges-Lehmann estimator</strong> (of location shift)</p>
+<ul class="simple">
+<li><p>It is the median of the “differences”</p></li>
+<li><p>It is NOT the difference b/t two medians</p></li>
+</ul>
+</li>
+<li><p><strong>Homoscedasticity</strong> (in linear regression diagnosis) means that the conditional variance of the error term is constant and does not vary as a function of the explanatory variable. To check this assumption, we can</p>
+<ul class="simple">
+<li><p>plotting residuals vs. individual x variables</p></li>
+<li><p>plotting residuals vs. fitted outcome variable (y fitted values is a function of all explanatory variables)</p></li>
+</ul>
+</li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Miscellaneous"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html" title="previous page">[book] Python Data Science Handbook</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
