@@ -1,7 +1,9 @@
 # [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
 
 <hr>
-* A study note of {cite:p}`geron2019hands` *
+
+*A study note of {cite:p}`geron2019hands`*
+
 *Highlights on iPad to be organized*
 
 ## Classification
@@ -25,8 +27,11 @@
 
 #### Precision and Recall
 - **Precision**: accuracy of the positive predictions (a.k.a. pisitive predicted values)
+    
     $$\text{Precision} = \frac{\text{TP}}{\text{TP + FP}}$$
+
 - **Recall**: sensitivity or true positive rate (TPR)
+  
   $$\text{Recall} = \frac{\text{TP}}{\text{TP + FN}}$$
   
   ```python
@@ -36,7 +41,9 @@
   ```
 
 - It is often convenient to combine precision and recall into a single metric called the **F1 score**
+    
     $$F_1 = \frac{1}{\frac{1}{\text{precision}} + \frac{1}{\text{recall}}} = \frac{\text{TP}}{\text{TP} + \frac{\text{FN + FP}}{2}}$$
+    
   - It is the harmonic mean gives much more weight to low values. As a result, the classifier will only get a high F1 score if both recall and precision are high.
   - Can be used to compare two classifiers
   - The F1 score favors classifiers that have similar precision and recall.
