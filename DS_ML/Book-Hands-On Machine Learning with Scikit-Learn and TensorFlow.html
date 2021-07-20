@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -316,8 +316,8 @@
   <div class="section" id="book-hands-on-machine-learning-with-scikit-learn-and-tensorflow">
 <h1>[book] Hands-On Machine Learning with Scikit-Learn and TensorFlow<a class="headerlink" href="#book-hands-on-machine-learning-with-scikit-learn-and-tensorflow" title="Permalink to this headline">¶</a></h1>
 <hr>
-* A study note of {cite:p}`geron2019hands` *
-*Highlights on iPad to be organized*
+<p><em>A study note of <span id="id1">[<a class="reference internal" href="#id13">Géron, 2019</a>]</span></em></p>
+<p><em>Highlights on iPad to be organized</em></p>
 <div class="section" id="classification">
 <h2>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="performance-measures">
@@ -365,18 +365,22 @@
 <div class="section" id="precision-and-recall">
 <h4>Precision and Recall<a class="headerlink" href="#precision-and-recall" title="Permalink to this headline">¶</a></h4>
 <ul>
-<li><p><strong>Precision</strong>: accuracy of the positive predictions (a.k.a. pisitive predicted values)
-$<span class="math notranslate nohighlight">\(\text{Precision} = \frac{\text{TP}}{\text{TP + FP}}\)</span>$</p></li>
-<li><p><strong>Recall</strong>: sensitivity or true positive rate (TPR)
-$<span class="math notranslate nohighlight">\(\text{Recall} = \frac{\text{TP}}{\text{TP + FN}}\)</span>$</p>
+<li><p><strong>Precision</strong>: accuracy of the positive predictions (a.k.a. pisitive predicted values)</p>
+<div class="math notranslate nohighlight">
+\[\text{Precision} = \frac{\text{TP}}{\text{TP + FP}}\]</div>
+</li>
+<li><p><strong>Recall</strong>: sensitivity or true positive rate (TPR)</p>
+<div class="math notranslate nohighlight">
+\[\text{Recall} = \frac{\text{TP}}{\text{TP + FN}}\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span>
 <span class="n">precision_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
 <span class="n">recall_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p>It is often convenient to combine precision and recall into a single metric called the <strong>F1 score</strong>
-$<span class="math notranslate nohighlight">\(F_1 = \frac{1}{\frac{1}{\text{precision}} + \frac{1}{\text{recall}}} = \frac{\text{TP}}{\text{TP} + \frac{\text{FN + FP}}{2}}\)</span>$</p>
+<li><p>It is often convenient to combine precision and recall into a single metric called the <strong>F1 score</strong></p>
+<div class="math notranslate nohighlight">
+\[F_1 = \frac{1}{\frac{1}{\text{precision}} + \frac{1}{\text{recall}}} = \frac{\text{TP}}{\text{TP} + \frac{\text{FN + FP}}{2}}\]</div>
 <ul class="simple">
 <li><p>It is the harmonic mean gives much more weight to low values. As a result, the classifier will only get a high F1 score if both recall and precision are high.</p></li>
 <li><p>Can be used to compare two classifiers</p></li>
@@ -428,7 +432,13 @@ $<span class="math notranslate nohighlight">\(F_1 = \frac{1}{\frac{1}{\text{prec
 </li>
 <li><p>ROC curve vs. precision/recall: As a rule of thumb, you should prefer the PR curve whenever the positive class is rare or when you care more about the false (predicted) positives than the false negatives, and the ROC curve otherwise.</p></li>
 </ul>
-<span class="target" id="id1"></span></div>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id1">Geron19</a></span></dt>
+<dd><p>Aurélien Géron. <em>Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow: Concepts, tools, and techniques to build intelligent systems</em>. O'Reilly Media, 2019.</p>
+</dd>
+</dl>
+</p>
+</div>
 </div>
 </div>
 </div>
