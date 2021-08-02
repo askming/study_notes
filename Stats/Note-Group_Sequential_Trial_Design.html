@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes on Group Sequential Trial Design​ &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
+    <link rel="prev" title="​Cox PH model" href="Note-Cox_PH_model.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Group_Sequential_Trial_Design.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Group_Sequential_Trial_Design.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stopping-boundaries-alpha-spending-functions-for-ia">
+   Stopping boundaries &amp; alpha spending functions for IA
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-sequential-boundaries">
+     Group sequential boundaries
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#equally-sized-stages">
+       Equally sized stages
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unequally-sized-stages">
+       Unequally sized stages
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sample-sizes-fixed-in-advance">
+         Sample sizes fixed in advance
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lan-demets-alpha-spending-function-approximates-the-group-sequential-boundaries-above-other-than-the-pocock-one">
+       Lan-DeMets
+       <span class="math notranslate nohighlight">
+        \(\alpha-\)
+       </span>
+       spending function (approximates the group sequential boundaries above, other than the Pocock one)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="notes-on-group-sequential-trial-design">
+<h1>Notes on Group Sequential Trial Design​<a class="headerlink" href="#notes-on-group-sequential-trial-design" title="Permalink to this headline">¶</a></h1>
+<hr>
+<div class="section" id="stopping-boundaries-alpha-spending-functions-for-ia">
+<h2>Stopping boundaries &amp; alpha spending functions for IA<a class="headerlink" href="#stopping-boundaries-alpha-spending-functions-for-ia" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="group-sequential-boundaries">
+<h3>Group sequential boundaries<a class="headerlink" href="#group-sequential-boundaries" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="equally-sized-stages">
+<h4>Equally sized stages<a class="headerlink" href="#equally-sized-stages" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>The basic strategy of the GS boundary is to define a critical value at each interim analysis (<span class="math notranslate nohighlight">\(Z_c(k), k = 1, 2, \cdots, K\)</span>) such that the overall type I error rate will be maintained at a pre-specified level. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+  P_{H_0}(|Z_1^*|\ge u_1 \text{ or } \cdots |Z_K^*|\ge u_K) = \alpha
+  \]</div>
+<p>is fulfilled.</p>
+</li>
+<li><p>Symmetric two-sided boundary is often used but an asymmetric GS procedure can also be implemented</p></li>
+<li><p>For symmetric cases, we reject the null hypothesis if at any of the interim analyses</p>
+<div class="math notranslate nohighlight">
+\[
+  |Z(K)|\ge Z_c(K), k = 1, \cdots, K
+  \]</div>
+<ul class="simple">
+<li><p>the test statistic <span class="math notranslate nohighlight">\(Z(k)\)</span> uses the cumulative data up to analysis <span class="math notranslate nohighlight">\(k\)</span>:</p></li>
+</ul>
+</li>
+<li><div class="math notranslate nohighlight">
+\[
+    Z(k) = \{Z^*(1) + \cdots+Z^*(k)\}/\sqrt{k}
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(Z^*(k)\)</span> is the test statistic constructed from the <span class="math notranslate nohighlight">\(k^{\text{th}}\)</span> group data.</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(Z^*(k)\sim N(\Delta, 1)\)</span>, then <span class="math notranslate nohighlight">\(Z(k)\sim N(\Delta/\sqrt{k}, 1)\)</span>. The distribution of <span class="math notranslate nohighlight">\(Z(k)/\sqrt{k}\)</span> can be written as a recursive density function, evaluated by numerical integration (<em>Armitage et al</em> and <em>Pocock</em>).</p>
+<ul>
+<li><p>Using this density function, we can compute the probability of exceeding the critical values at each interim.</p>
+<ul>
+<li><p>For Pocock method, <span class="math notranslate nohighlight">\(Z_c(k) = Z_p\)</span>, a constant, for all <span class="math notranslate nohighlight">\(k = 1, 2, \cdots, K\)</span></p></li>
+<li><p>For O’Brien—Fleming method, <span class="math notranslate nohighlight">\(Z_c(k) = Z_{OBF}/\sqrt{k}\)</span>, where <span class="math notranslate nohighlight">\(Z_{OBF}\)</span> is a constant calculated using the recursive density function and iterative interpolation such that the desired type I error rate is achieved under null (same for <span class="math notranslate nohighlight">\(Z_p\)</span> above).</p></li>
+<li><p>For Wang and Tsiatis power family, <span class="math notranslate nohighlight">\(Z_c(k) = Z_{WT}k^{\Delta-0.5}\)</span>, and Pocock and OBF are just special cases of this family of (<span class="math notranslate nohighlight">\(\Delta-\)</span>class) boundaries.</p></li>
+<li><p>For Peto method, a large critical value such as 3.5 is proposed for each IA and for the last analysis, the usual critical value (e.g. 1.96) is to be used. Since the IA critical values are so conservative, the overall type I error rate will be approximately the same as the last one.</p>
+<p><img alt="image-20200911141904103" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200911141904103.png" /></p>
+</li>
+</ul>
+</li>
+<li><p>Under null, the sum of these probabilities is the alpha level of the sequential test procedure. Under the alternative, we can calculate the power of the procedure.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="unequally-sized-stages">
+<h4>Unequally sized stages<a class="headerlink" href="#unequally-sized-stages" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Theoretically, the stopping boundaries derived from the equally sized sequential design do not match exactly with those for unequally sized study design although for small number of interim analyses, the difference is minimal and ignorable</p></li>
+<li><p>To come up with the “theoretically correct” boudaries for unequally sized stages, the <em>worst case scenario adjusted critical values</em> can be used.</p></li>
+<li><p>A better, and more complex/sophiscated, procedure to accommodate the irregularity in the timing of IA is to use the alpha-spending function (see below)</p></li>
+</ul>
+<div class="section" id="sample-sizes-fixed-in-advance">
+<h5>Sample sizes fixed in advance<a class="headerlink" href="#sample-sizes-fixed-in-advance" title="Permalink to this headline">¶</a></h5>
+<ul>
+<li><p>Two modes of calculation of the continuation regions based on Wang and Tsiatis <span class="math notranslate nohighlight">\(\Delta-\)</span>class for unequally planned stage sizes</p>
+<div class="math notranslate nohighlight">
+\[
+    u_k = c(K, \alpha, \Delta, V)k^{\Delta-0.5}, k = 1, \cdots, K
+    \]</div>
+<div class="math notranslate nohighlight">
+\[
+    u_k = c(K, \alpha, \Delta, V){\left(t_k\over t_1\right)}^{\Delta-0.5}, k = 1, \cdots, K
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(V = (t_1, \cdots, t_K)\)</span> is a vector of preplanned information rates; <span class="math notranslate nohighlight">\(c(K, \alpha, \Delta, V)\)</span> is a constant resulting from the chosen design that depends on the max number <span class="math notranslate nohighlight">\(K\)</span> of stages, <span class="math notranslate nohighlight">\(\alpha\)</span>, shape parameter <span class="math notranslate nohighlight">\(\Delta\)</span>, and the vector <span class="math notranslate nohighlight">\(V\)</span>.</p>
+</li>
+<li><p>An important characteristic of the O’Brien and Fleming design with critical
+values defined by the second mode/version is that they are nearly identical to the respective stage-wise critical values of the five-stage design with equally sized stages.</p></li>
+<li><p>The other way round: Inserting an interim analysis has nearly no effect if one uses the critical values according to the second mode/version. This is particularly true for conservative bounds for the first few stages, which is the case for O’Brien and Fleming’s design.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="lan-demets-alpha-spending-function-approximates-the-group-sequential-boundaries-above-other-than-the-pocock-one">
+<h4>Lan-DeMets  <span class="math notranslate nohighlight">\(\alpha-\)</span>spending function (approximates the group sequential boundaries above, other than the Pocock one)<a class="headerlink" href="#lan-demets-alpha-spending-function-approximates-the-group-sequential-boundaries-above-other-than-the-pocock-one" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Why</p>
+<ul class="simple">
+<li><p>To be more flexible than the fixed sample size method, i.e. the exact (calendar) time when IAs should be done doesn’t need to be pre-specified.</p></li>
+<li><p>It provide a test procedure that enables interim analyses at arbitrary time points of analyses. Specifically, this approach can be used if the interim analyses are not scheduled at the observation of a specific number of observations but at fixed calendar times.</p></li>
+</ul>
+</li>
+<li><p>How</p>
+<ul>
+<li><p>The <span class="math notranslate nohighlight">\(\alpha-\)</span>spending function is a way of describing the rate at which the total <span class="math notranslate nohighlight">\(\alpha\)</span> is spent as a continuous function of information fraction and thus induces a corresponding boundary</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(t\)</span> be the fraction of information that have been observed at the IA. For comparison of means, <span class="math notranslate nohighlight">\(t=n/N\)</span> (number of patients at IA divided by the total target sample size); for survival analysis <span class="math notranslate nohighlight">\(t = d/D\)</span> (number of observed events divided by the expected number of events).</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(\alpha(t_k) - \alpha(t_{k-1})\)</span> be the <span class="math notranslate nohighlight">\(\alpha\)</span> (or Type I error) that is spent/allocated to the <span class="math notranslate nohighlight">\(k\)</span>th IA and</p></li>
+</ul>
+</li>
+<li><div class="math notranslate nohighlight">
+\[
+      P_k = P_{H_0}\left(\bigcap_{\tilde{k}=1}^{k-1}\left\{|Z_{\tilde{k}}|&lt;u_{\tilde{k}}\right\}, |Z_k|\ge u_{k}\right) =\alpha(t_k) - \alpha(t_{k-1}), \text{ for } k = 1, \cdots, K
+      \]</div>
+<p>and <span class="math notranslate nohighlight">\(P_1 + \cdots + P_K = \alpha\)</span></p>
+</li>
+<li><p>Lan DeMets <span class="math notranslate nohighlight">\(\alpha-\)</span>spending functions that approximate specific group sequential boundaries:</p>
+<ul class="simple">
+<li><p><strong>O’Brien—Fleming type</strong>: <span class="math notranslate nohighlight">\(\alpha(t) = 2 - 2\Phi(Z_{\alpha/2}/\sqrt{t})\)</span></p></li>
+<li><p>Pocock type: <span class="math notranslate nohighlight">\(\alpha(t) = \alpha\ln(1+(e-1)t)\)</span></p></li>
+<li><p>Others:</p>
+<ul>
+<li><p>Kim and DeMets: <span class="math notranslate nohighlight">\(\alpha(t) = \alpha t^{\theta}\)</span> for <span class="math notranslate nohighlight">\(\theta&gt;0\)</span>;</p></li>
+<li><p>Hwang et al.: $<span class="math notranslate nohighlight">\(\begin{equation} \alpha(t) = \begin{cases}  \alpha[(1-e^{-\gamma t})/(1-e^{\gamma})] \text{ for } \gamma \ne 0\\ \alpha t_k \text{ for } \gamma =0 \end{cases} \end{equation}\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+<img src="https://raw.githubusercontent.com/askming/picgo/master/image-20200911110442997.png" alt="image-20200911110442997" style="zoom:50%;" />
+<ul class="simple">
+<li><p>Note: <em>Pocock type of <span class="math notranslate nohighlight">\(\alpha-\)</span>spending function is not linear in <span class="math notranslate nohighlight">\(t\)</span>, which means that constant boundaries do not correspond with a linear shape of the <span class="math notranslate nohighlight">\(\alpha-\)</span>spending function.</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approximates the classical OBF group sequential boundaries also for the case of unequally spaced stages. Thus, it is reasonable to use this function to produce boundaries very similar to O’Brien and Fleming’s test. It is also worth mentioning that using the one-sided version of <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function for the one-sided cases improves this approximation.</p></li>
+<li><p>The approximation of the constant boundaries for Pocock’s design when using the <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function is somewhat worse if unequally spaced information rates are considered. It doesn’t always provide constant critical values, especially for <span class="math notranslate nohighlight">\(t_k&gt;k/K\)</span>, the function even produces slightly increasing boundaries, which are difficult to justify.</p>
+<ul class="simple">
+<li><p>Indeed, for unequal stage sizes, certain values of <span class="math notranslate nohighlight">\(\theta\)</span>, for example, <span class="math notranslate nohighlight">\(\theta\)</span> = 0.80, for the Kim and DeMets (1987b) <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function provides a better approximation to Pocock’s constant boundaries. Nevertheless, the approximation for equally sized stages behaves quite well.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>:page_with_curl: DeMets &amp; Lan, <em>Interim analysis: the alpha spending function approach</em></p></li>
+<li><p>:book: <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html"><span class="doc std std-doc">Wassmer, G., &amp; Brannath, W. (2016)</span></a>. <em>Group Sequential and Confirmatory Adaptive Designs in Clinical Trials</em>. Springer.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Note-Cox_PH_model.html" title="previous page">​Cox PH model</a>
+    <a class='right-next' id="next-link" href="Note-Survival_Analysis.html" title="next page">Survival Analysis</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

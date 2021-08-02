@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[book] Analysis of Observational Health Care Data Using SAS &#8212; Study Notes</title>
+    <title>[book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
-    <link rel="prev" title="Study Notes Index" href="../intro.html" />
+    <link rel="next" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
+    <link rel="prev" title="[book] Fundamentals of Clinical Trials (4th edition)" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,8 +97,8 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
    [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
@@ -120,8 +120,8 @@
    [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
   </a>
  </li>
@@ -232,7 +232,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Book-Analysis of Observational Health Care Data Using SAS.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats/Book-Group Sequential and Confirmatory Adaptive Designs in Clinical Trials.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -252,7 +252,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Analysis of Observational Health Care Data Using SAS.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Group Sequential and Confirmatory Adaptive Designs in Clinical Trials.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -279,52 +279,49 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects">
-   Chapter 2-3 Propensity Score Stratification and Regression / Propensity Score Matching for Estimating  Treatment Effects
+  <a class="reference internal nav-link" href="#chapter-2-procedures-with-equally-sized-stages">
+   Chapter 2 Procedures with equally sized stages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-3-procedures-with-unequally-sized-stages">
+   Chapter 3 Procedures with unequally sized stages
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-propensity-score-ps">
-     1. Estimating propensity score (PS)
+    <a class="reference internal nav-link" href="#the-alpha-spending-function-approach">
+     3.3 The
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+     -spending function approach
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-ps">
-   2. Using PS
+  <a class="reference internal nav-link" href="#chapter-4-confidence-intervals-p-values-and-point-estimation">
+   Chapter 4 Confidence intervals, p-values, and point estimation
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assess-the-balance-after-applying-ps-method">
-     3. Assess the balance after applying PS method
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-treatment-effect">
-     4. Estimating treatment effect
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sensitivity-analysis-for-ps">
-     5. Sensitivity analysis for PS
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-4-doubly-robust-estimation-of-treatment-effects">
-   Chapter 4 Doubly Robust Estimation of Treatment Effects
+  <a class="reference internal nav-link" href="#chapter-5-applications">
+   Chapter 5 Applications
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conceptual-overview">
-     Conceptual overview
+    <a class="reference internal nav-link" href="#normal-responses">
+     5.1 Normal responses
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#statistical-model">
-     Statistical model
+    <a class="reference internal nav-link" href="#binary-responses">
+     5.2 Binary responses
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#survival-data">
+     5.3 Survival data
     </a>
    </li>
   </ul>
@@ -340,105 +337,51 @@
         
               <div>
                 
-  <div class="section" id="book-analysis-of-observational-health-care-data-using-sas">
-<h1>[book] Analysis of Observational Health Care Data Using SAS<a class="headerlink" href="#book-analysis-of-observational-health-care-data-using-sas" title="Permalink to this headline">¶</a></h1>
-<hr>
-<div class="section" id="chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects">
-<h2>Chapter 2-3 Propensity Score Stratification and Regression / Propensity Score Matching for Estimating  Treatment Effects<a class="headerlink" href="#chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="estimating-propensity-score-ps">
-<h3>1. Estimating propensity score (PS)<a class="headerlink" href="#estimating-propensity-score-ps" title="Permalink to this headline">¶</a></h3>
+  <div class="section" id="book-group-sequential-and-confirmatory-adaptive-designs-in-clinical-trials">
+<h1>[book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials<a class="headerlink" href="#book-group-sequential-and-confirmatory-adaptive-designs-in-clinical-trials" title="Permalink to this headline">¶</a></h1>
+<p><em>A study note of <span id="id1">[<a class="reference internal" href="Note-Survival_Analysis.html#id6">Wassmer and Brannath, 2016</a>]</span></em></p>
+<p><img alt="Group_sequential_adaptive_design_updated" src="https://raw.githubusercontent.com/askming/picgo/master/Group_sequential_adaptive_design_updated.png" /></p>
+<div class="section" id="chapter-2-procedures-with-equally-sized-stages">
+<h2>Chapter 2 Procedures with equally sized stages<a class="headerlink" href="#chapter-2-procedures-with-equally-sized-stages" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Logistic regression</p></li>
-<li><p>Probit regression: <span class="math notranslate nohighlight">\(P(Y=1|X) = \Phi(X^T\beta)\)</span>, where <span class="math notranslate nohighlight">\(\Phi(\cdot)\)</span> is the CDF of standard normal distribution</p></li>
-<li><p>discriminant analysis</p></li>
-<li><p>CART</p></li>
-<li><p>Neural nets</p></li>
-<li><p>GAM(?)</p></li>
+<li><p>General notes for this chapter (and from other materials) and Chapter 3 can be found <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html"><span class="doc std std-doc">here</span></a>.</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="using-ps">
-<h2>2. Using PS<a class="headerlink" href="#using-ps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="chapter-3-procedures-with-unequally-sized-stages">
+<h2>Chapter 3 Procedures with unequally sized stages<a class="headerlink" href="#chapter-3-procedures-with-unequally-sized-stages" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Stratification</p></li>
-<li><p>Matching: with caliper (0.2 SD of logit of PS <a class="footnote-reference brackets" href="#rot" id="id1">1</a>)</p></li>
-<li><p>Regression covariate</p></li>
-<li><p>IPW (Chapter 5): <span class="math notranslate nohighlight">\(\frac{1}{p_i}\)</span> for treatment arm, <span class="math notranslate nohighlight">\(\frac{1}{1-p_i}\)</span> for control arm, where <span class="math notranslate nohighlight">\(p_i\)</span> is the PS for subject <span class="math notranslate nohighlight">\(i\)</span></p></li>
-</ul>
-<div class="section" id="assess-the-balance-after-applying-ps-method">
-<h3>3. Assess the balance after applying PS method<a class="headerlink" href="#assess-the-balance-after-applying-ps-method" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>standardized difference of each covariate</p></li>
-<li><p>PS distribution</p></li>
-<li><p>distribution of the covariates</p></li>
-<li><p>goodness of fit statistics</p></li>
-</ul>
-</div>
-<div class="section" id="estimating-treatment-effect">
-<h3>4. Estimating treatment effect<a class="headerlink" href="#estimating-treatment-effect" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>treatment effect estimate</p></li>
-<li><p>S.E. of treatment effect</p></li>
-</ul>
-</div>
-<div class="section" id="sensitivity-analysis-for-ps">
-<h3>5. Sensitivity analysis for PS<a class="headerlink" href="#sensitivity-analysis-for-ps" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="chapter-4-doubly-robust-estimation-of-treatment-effects">
-<h2>Chapter 4 Doubly Robust Estimation of Treatment Effects<a class="headerlink" href="#chapter-4-doubly-robust-estimation-of-treatment-effects" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="conceptual-overview">
-<h3>Conceptual overview<a class="headerlink" href="#conceptual-overview" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Doubly robust (DR) estimation builds on the propensity score approach of Rosenbaum and Rubin (1983) and the inverse probability of weighting (IPW) approach of Robins and colleagues (Robins, 1998; Robins, 1999a; Robins, 1999b; Robins et al., 2000).</p></li>
-<li><p>DR estimation combines inverse probability weighting by a propensity score with regression modeling of the relationship between covariates and outcome for each treatment.</p>
+<li><p>Critical values when the interims are performed at different sizes of smaples can be different than that is done at equal sizes</p>
 <ul>
-<li><p>It combines it in such a way that, as long as <em>either</em> the propensity score model <em>or</em> the outcome regression models are correctly specified, the effect of the exposure on the outcome will be correctly estimated, assuming that there are no unmeasured confounders (Robins et al., 1994; Robins, 2000; van der Laan and Robins, 2003;
-Bang and Robins, 2005).</p></li>
+<li><p>Boundaries originally developed from equally sized IAs are not accurate anymore thus adjustment is needed</p></li>
 </ul>
 </li>
-<li><p>Procedure</p>
-<ul>
-<li><p>one builds and fits a (binary) regression model for the probability that a particular patient received a given treatment as a function of that individual’s covariates (the propensity score).</p></li>
-<li><p>Maximum likelihood regression is conducted separately within the exposed and unexposed populations to predict the mean response (outcome) as a function of confounders and risk factors.</p></li>
-<li><p>each individual observation is given a weight equal to the inverse of the probability of the treatment he/she received based on baseline covariates (as in IPW analysis) to create two pseudopopulations of subjects that represent the expected response in the entire population under those two treatment conditions.</p></li>
+<li><p>The study protocol might contain a schedule of inspection times for the interim analyses during the course of the trial. In this case, the group sizes are unpredictable and the test procedure that is based on the worst case adjusted critical values can be used. An alternative, more sophisticated procedure that is based on the specification of an <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function.</p></li>
 </ul>
-</li>
-<li><p>one trades a possible loss of precision in using the DR estimator for this additional protection.</p></li>
+<div class="section" id="the-alpha-spending-function-approach">
+<h3>3.3 The <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approach<a class="headerlink" href="#the-alpha-spending-function-approach" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The conceptual design of the <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approach is to provide a test procedure that enables interim analyses at arbitrary time points of analyses. Specifically, this approach can be used if the interim analyses are not scheduled at the observation of a specific number of observations but at fixed calendar times.</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approximates the classical group sequential boundaries also for the case of unequally spaced stages.</p></li>
 </ul>
 </div>
-<div class="section" id="statistical-model">
-<h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fac2b656-eb3c-4c1d-84dc-21a40f4a5987">
-<span class="eqno">(1)<a class="headerlink" href="#equation-fac2b656-eb3c-4c1d-84dc-21a40f4a5987" title="Permalink to this equation">¶</a></span>\[\begin{align}
-  \hat{\Delta}_{DR} \\
-   &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
-   &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
-  &amp; = \hat{\mu_{1, Dr}} - \hat{\mu}_{0, DR}
-  \end{align}\]</div>
-</li>
-<li><p>The standard error for the DR estimator is estimated using the delta method</p>
-<div class="math notranslate nohighlight">
-\[
-  SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
-  \]</div>
-<p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9bd38245-8ea4-4180-9344-86018e6b18f4">
-<span class="eqno">(2)<a class="headerlink" href="#equation-9bd38245-8ea4-4180-9344-86018e6b18f4" title="Permalink to this equation">¶</a></span>\[\begin{align}
-  \hat{I}_i \\
-  &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
-  &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}
-  \end{align}\]</div>
-</li>
+</div>
+<div class="section" id="chapter-4-confidence-intervals-p-values-and-point-estimation">
+<h2>Chapter 4 Confidence intervals, p-values, and point estimation<a class="headerlink" href="#chapter-4-confidence-intervals-p-values-and-point-estimation" title="Permalink to this headline">¶</a></h2>
+<p>What problem this chapter tries to solve? Didn’t quite get it.</p>
+</div>
+<div class="section" id="chapter-5-applications">
+<h2>Chapter 5 Applications<a class="headerlink" href="#chapter-5-applications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="normal-responses">
+<h3>5.1 Normal responses<a class="headerlink" href="#normal-responses" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="binary-responses">
+<h3>5.2 Binary responses<a class="headerlink" href="#binary-responses" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="survival-data">
+<h3>5.3 Survival data<a class="headerlink" href="#survival-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Sample size calcuation for survival outcome can be found <span class="xref myst">here</span>.</p></li>
 </ul>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="rot"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>rule of thumb</p>
-</dd>
-</dl>
 </div>
 </div>
 </div>
@@ -468,8 +411,8 @@ Bang and Robins, 2005).</p></li>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Study Notes Index</a>
-    <a class='right-next' id="next-link" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="next page">[book] Causal inference in statistics <em>a primer</em></a>
+    <a class='left-prev' id="prev-link" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" title="previous page">[book] Fundamentals of Clinical Trials (4th edition)</a>
+    <a class='right-next' id="next-link" href="Book-Regression%20Modeling%20Strategies.html" title="next page">[book] Regression Modeling Strategies</a>
 
         </div>
         
