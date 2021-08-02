@@ -110,9 +110,15 @@ tags: clinical trial, trial design
     
       - Kim and DeMets: $\alpha(t) = \alpha t^{\theta}$ for $\theta>0$; 
     
-      - Hwang et al.: $$\begin{equation} \alpha(t) = \begin{cases}  \alpha[(1-e^{-\gamma t})/(1-e^{\gamma})] \text{ for } \gamma \ne 0\\ \alpha t_k \text{ for } \gamma =0 \end{cases} \end{equation}$$
-    
-        
+      - Hwang et al.: 
+       
+       $$ \alpha(t) = \left\{
+         \begin{array}{ll}  
+         \alpha[(1-e^{-\gamma t})/(1-e^{\gamma})] \text{ for } \gamma \ne 0\\ 
+         \alpha t_k \text{ for } \gamma =0 
+         \end{array}
+         \right.
+       $$
     
     <img src="https://raw.githubusercontent.com/askming/picgo/master/image-20200911110442997.png" alt="image-20200911110442997" style="zoom:50%;" />
     
