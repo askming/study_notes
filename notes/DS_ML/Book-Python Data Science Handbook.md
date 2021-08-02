@@ -1,7 +1,8 @@
 # [book] Python Data Science Handbook
 
 <hr>
-* A study note of {cite:p}`vanderplas2016python` *
+
+  *A study note of {cite:p}`vanderplas2016python`*
 
 ### 1. Numpy
 #### Data types in Python :snake:
