@@ -6,7 +6,7 @@ tags: clinical trials, study design
 
 *A study note of {cite:p}`wassmer2016group`*
 
-![Group_sequential_adaptive_design_updated](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/Book-Group Sequential and Confirmatory Adaptive Designs in Clinical Trials_2021_08_01.png)
+![Group_sequential_adaptive_design_updated](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/Book-wassmer2016_2021_08_01.png)
 
 ## Chapter 2 Procedures with equally sized stages
 
@@ -39,6 +39,4 @@ What problem this chapter tries to solve? Didn't quite get it.
 
 ### 5.3 Survival data
 
-- Sample size calcuation for survival outcome can be found [here](./Note-Survial_Analysis.md).
-
-https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/Book-Group Sequential and Confirmatory Adaptive Designs in Clinical Trials_2021_08_01.png
+- Sample size calcuation for survival outcome can be found [here](./Note-Survival_Analysis.md).
