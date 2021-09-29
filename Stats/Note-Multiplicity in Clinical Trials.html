@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplicity in Clinical Trials &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
+    <link rel="prev" title="Notes on Group Sequential Trial Design​" href="Note-Group_Sequential_Trial_Design.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Multiplicity in Clinical Trials.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Multiplicity in Clinical Trials.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-multiple-test-procedures">
+   Common multiple test procedures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-concepts">
+     Basic concepts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods">
+     Methods
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bonferroni">
+       Bonferroni
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#holm">
+       Holm
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#simes">
+       Simes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hochberg-stepwise-version-of-simes-method-stepup-simes">
+       Hochberg (stepwise version of Simes method/stepup Simes)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dunnett">
+       Dunnett
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stepwise-dunnett">
+       Stepwise Dunnett
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#summary">
+       Summary
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-test-procedure">
+   Hierarchical test procedure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background">
+     Background
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixed-sequence-procedure">
+     Fixed sequence procedure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fallback-procedure">
+     Fallback procedure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closed-test-procedure-ctp">
+   Closed test procedure (CTP)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ctp-using-bonferroni-holm-procedure">
+     CTP using Bonferroni ( == Holm procedure)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ctp-usign-simes">
+     CTP usign Simes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ctp-using-dunnett">
+     CTP using Dunnett
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ctp-using-weighted-bonferroni">
+     CTP using weighted Bonferroni
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-if-more-than-two-hypotheses">
+     What if more than two hypotheses?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-and-conclusions">
+     Summary and Conclusions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphical-approach-bretz2009graphical-bretz2011graphical">
+   Graphical approach
+   <span class="xref cite cite-p">
+    bretz2009graphical
+   </span>
+   <span class="xref cite cite-p">
+    bretz2011graphical
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conventions">
+     Conventions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-multiple-test-procedues">
+     Common multiple test procedues
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formal-description">
+     Formal description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="multiplicity-in-clinical-trials">
+<h1>Multiplicity in Clinical Trials<a class="headerlink" href="#multiplicity-in-clinical-trials" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Type I error rate inflated when conducting multiple hypothesis tests <span class="math notranslate nohighlight">\((m)\)</span> each with the nominal 0.05 significance level <span class="math notranslate nohighlight">\((\alpha)\)</span> –&gt; the multiplicity problem</p></li>
+<li><p>Source of multiplicity in clinical trials</p>
+<ul>
+<li><p>multiple arms</p></li>
+<li><p>control for more than one endpoint</p></li>
+<li><p>control for more than one population</p></li>
+<li><p>control repeatedly in time</p></li>
+<li><p>etc.</p></li>
+</ul>
+</li>
+<li><p>Dealing with multiplicity</p>
+<ul>
+<li><p>Reducing the degree of multiplicity</p>
+<ul>
+<li><p>limit the number of questions</p></li>
+<li><p>minimize the number of variables by using e.g. composite endpoints, summary statistic, etc.</p></li>
+<li><p>Prioritizing questions</p></li>
+</ul>
+</li>
+<li><p>If multiplicity still persists</p>
+<ul>
+<li><p>multiplicity adjustment (refer to regulatory guidance)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="common-multiple-test-procedures">
+<h2>Common multiple test procedures<a class="headerlink" href="#common-multiple-test-procedures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-concepts">
+<h3>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><u>Family-wise error rate (FWER)</u>: overall type I error rate when testing a family of null hypotheses</p>
+<ul>
+<li><p>aim: <span class="math notranslate nohighlight">\(Pr(\text{reject at least one true null}) \le \alpha\)</span></p></li>
+</ul>
+</li>
+<li><p><u>Ajusted p-values</u>: extend ordinary (i.e. unadjusted) p-values by adjusting them for a given multiple test procedure, which can be compared directly with the significance level 𝛼, while controlling the FWER</p>
+<ul>
+<li><p>Formally, the adjusted p-value is the <strong>smallest significance level</strong> at which a given hypothesis is significant as part of the multiple test procedure. e.g.
+<img alt="Bonferroni method" src="https://raw.githubusercontent.com/askming/picgo/master/15883e9a_20200421113659.png" /></p></li>
+</ul>
+</li>
+<li><p><strong>Single step</strong> methods</p>
+<ul>
+<li><p>The rejection or non-rejection of a single hypothesis does not depend on the decision on any other hypothesis.</p></li>
+<li><p>e.g. <em>Bonferroni, Simes, Dunnett</em>, etc.</p></li>
+</ul>
+</li>
+<li><p><strong>Stepwise</strong> methods</p>
+<ul>
+<li><p>The rejection or non-rejection of a particular hypothesis <u>may depend on</u> the decision on other hypotheses.</p></li>
+<li><p>e.g. <em>Holm, Hochberg, stepdown Dunnett</em>, …</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="bonferroni">
+<h4>Bonferroni<a class="headerlink" href="#bonferroni" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Use 𝛼/𝑚 for all inferences; for 𝑖=1,…,𝑚:
+$<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i \le \alpha/m\)</span><span class="math notranslate nohighlight">\(
+  or with adjusted p-values \)</span>q_i = \min(mp_i, 1)<span class="math notranslate nohighlight">\(, 
+  \)</span><span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } q_i \le \alpha\)</span>$</p></li>
+<li><p>This method follows the idea of Boole’s inequality: <span class="math notranslate nohighlight">\(Pr(\cup A_i)\le \sum_i Pr(A_i)\)</span>, where <span class="math notranslate nohighlight">\(A_i = \{p_i\le \alpha/m\}\)</span> denotes the event of rejecting <span class="math notranslate nohighlight">\(H_i\)</span></p></li>
+<li><p>Properties</p>
+<ul>
+<li><p>Conservative if the number of hypotheses is large or the test statistics are strongly positively correlated</p></li>
+<li><p>Can be improved by using stepwise methods (e.g. Holm procedure) and accounting for correlations (e.g. Dunnett test)</p></li>
+<li><p>Rarely used in practice but is the basis for commonly used advanced procedures</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="holm">
+<h4>Holm<a class="headerlink" href="#holm" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Overview</p>
+<ul>
+<li><p>Using ordinary p-values
+<img alt="Holm method-ordinary p-value" src="https://raw.githubusercontent.com/askming/picgo/master/079fa3cb_20200421113724.png" /></p></li>
+<li><p>Using ajusted p-values
+<img alt="Holm method-adjusted p-value" src="https://raw.githubusercontent.com/askming/picgo/master/73c91b07_20200421113748.png" /></p></li>
+</ul>
+</li>
+<li><p>Properties</p>
+<ul>
+<li><p>A stepwise procedure and more powerful than Bonferroni method</p></li>
+<li><p>Sometimes called <em>“stepdown Bonferroni”</em> procedure</p></li>
+<li><p>Can be improved by accounting for correlations (e.g. stepdown Dunnett test)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="simes">
+<h4>Simes<a class="headerlink" href="#simes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Overview
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/ac53937c_20200421113808.png" /></p></li>
+<li><p>Comparison with Bonferroni
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/db7f7875_20200421113829.png" /></p>
+<ul>
+<li><p>Simes is more powerful than a global test based on Bonferroni</p></li>
+<li><p>Simes assumes non-negative correlations between p-values, Bonferroni doesn’t</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="hochberg-stepwise-version-of-simes-method-stepup-simes">
+<h4>Hochberg (stepwise version of Simes method/stepup Simes)<a class="headerlink" href="#hochberg-stepwise-version-of-simes-method-stepup-simes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Overview
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/e7935100_20200421113847.png" /></p></li>
+<li><p>Properties</p>
+<ul>
+<li><p>Stepup Simes</p></li>
+<li><p>More powerful than Holm procedure</p>
+<ul>
+<li><p>Both use same thresholds, but Hochberg starts with the largest p-value, whereas Holm starts with the smallest</p></li>
+</ul>
+</li>
+<li><p>It makes same assumption as the Simes test, i.e. independence or positive dependence of p-values</p></li>
+<li><p>Can be improved, e.g. Hommel procedure based on the closed test procedure.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="dunnett">
+<h4>Dunnett<a class="headerlink" href="#dunnett" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>When comparing several treatments with a control</p></li>
+<li><p>Other methods mentioned above can also be used but <u>only Dunnett test exploits the correlation between the p-values</u></p></li>
+<li><p>Overview</p>
+<ul>
+<li><p>linear model and hypotheses
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/ee3168b8_20200421113905.png" /></p></li>
+<li><p>individual test statistics
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/3861bee9_20200421113928.png" /></p></li>
+<li><p>rejection rule
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/592e3110_20200421113948.png" /></p></li>
+</ul>
+</li>
+<li><p>Properties</p>
+<ul>
+<li><p>Single step test, which is better than Bonferroni as it exploits the known correlations between test statistics</p></li>
+<li><p>Adjusted p-values can be calculated numerically based on the multivariate t-distribution</p></li>
+<li><p>The Dunnett test shown here can be extended to any linear and generalized linear model</p></li>
+<li><p>It can be improved by extending it to a stepwise procedure, similar to the Holm procedure</p></li>
+<li><p>Other well-known parametric tests follow the same principle. For example, the <em>Tukey test</em> compares all treatment groups against each other, also using a multivariate 􀝐-distribution</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="stepwise-dunnett">
+<h4>Stepwise Dunnett<a class="headerlink" href="#stepwise-dunnett" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Overview
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/8c404b11_20200421114008.png" /></p></li>
+<li><p>Properties</p>
+<ul>
+<li><p>the quantiles change as hypotheses are rejected; e.g. if <span class="math notranslate nohighlight">\(H_{(1)}\)</span> is rejected, then the quantile <span class="math notranslate nohighlight">\(c_{m-1, 1-\alpha}\)</span> is computed from a <em>(m-1)</em>-variate <em>t</em>-distribution</p></li>
+<li><p>the stepwise Dunnett test is better than the single step Dunnett test</p>
+<ul>
+<li><p>it can be shown that <span class="math notranslate nohighlight">\(c_{m, 1-\alpha} \ge c_{m-1, 1-\alpha}\le \cdots \le c_{1, 1-\alpha}\)</span>, where <span class="math notranslate nohighlight">\(c_{1, 1-\alpha} = t_{v, 1-\alpha}\)</span> is the quantile from the univariate t-distribution with <span class="math notranslate nohighlight">\(v\)</span> degrees of freedom</p></li>
+<li><p>The Dunnett test uses <span class="math notranslate nohighlight">\(c_{m, 1-\alpha}\)</span> for all comparisons</p></li>
+</ul>
+</li>
+<li><p>the stepwise Dunnet test is better than the Holm procedure as it exploits the known correlations between test statistics</p>
+<ul>
+<li><p>The stepwise version shown here is sometimes called “stepdown Dunnett” test</p></li>
+<li><p>A “stepup Dunnett” test also exist, similar to Hochberg</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h4>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h4>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/96d0eedb_20200421114029.png" /></p>
+<ul class="simple">
+<li><p>Stepwise methods are preferred over single step methods, which are less powerful and less used in practice</p></li>
+<li><p>Accounting for correlations leads to more powerful procedures, but correlations are not always known</p></li>
+<li><p>Simes-based methods are more powerful than Bonferroni-based methods, but control the FWER only under certain dependence structure</p></li>
+<li><p>In practice, we select the procedure that is not only powerful from a statistical perspective, but also appropriate from clinical perspective</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="hierarchical-test-procedure">
+<h2>Hierarchical test procedure<a class="headerlink" href="#hierarchical-test-procedure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="background">
+<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Previous multiple tests methods do not reflect the relative importance of the two endpoints, which is usually the case in RCT, where we have primary/secondary/exploratory endpoints with ordered importance</p></li>
+<li><p>Previous stepwise procedures use a data-driven order of hypotheses, whereas in the RCT setting we need a multiple test procedure that specifies the <strong>order of the hypothesis based on clinical importance</strong></p></li>
+<li><p><strong>Hierarchical test procedure</strong>: the hierarchy of hypotheses is specified before data is observed</p></li>
+</ul>
+</div>
+<div class="section" id="fixed-sequence-procedure">
+<h3>Fixed sequence procedure<a class="headerlink" href="#fixed-sequence-procedure" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Overview
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/a635f801_20200421114050.png" />
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/1a2e9b42_20200421114110.png" /></p></li>
+<li><p>Properties</p>
+<ul>
+<li><p>Adjusted p-values are given by <span class="math notranslate nohighlight">\(q_i = \max\{p_1, \cdots, p_i\}, i = 1, \cdots, m\)</span></p></li>
+<li><p>Advantages</p>
+<ul>
+<li><p>Simple</p></li>
+<li><p>Optimal when hypotheses early in the sequence are associated with large effects and performs poorly otherwise</p></li>
+</ul>
+</li>
+<li><p>Disadvantages</p>
+<ul>
+<li><p>Once a hypothesis is not rejected, no further testing is permitted</p></li>
+</ul>
+</li>
+<li><p>Great care is advised when specifying the sequence of hypotheses</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="fallback-procedure">
+<h3>Fallback procedure<a class="headerlink" href="#fallback-procedure" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Overview
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/514110bc_20200421114133.png" /></p></li>
+<li><p>Properties</p>
+<ul>
+<li><p>The fixed sequence procedure is obtained as a special case from the fallback procedure by setting <span class="math notranslate nohighlight">\(\alpha_1=\alpha\)</span> and <span class="math notranslate nohighlight">\(\alpha_i=0\)</span> for <span class="math notranslate nohighlight">\(i&gt;1\)</span></p></li>
+<li><p>In contrast to the fixed sequence procedure, fallback procedure tests all hypotheses in the pre-specified sequence even if the intitial hypotheses are not rejected</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="closed-test-procedure-ctp">
+<h2>Closed test procedure (CTP)<a class="headerlink" href="#closed-test-procedure-ctp" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Overview/formal definition
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/a0355c89_20200421114152.png" /></p>
+<ul>
+<li><p>Test the iteraction hypotheses using Bonferroni, Simes, Dunnett, etc. at level <span class="math notranslate nohighlight">\(\alpha\)</span></p></li>
+<li><p>Test each individual hypothesis at level <span class="math notranslate nohighlight">\(\alpha\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="ctp-using-bonferroni-holm-procedure">
+<h3>CTP using Bonferroni ( == Holm procedure)<a class="headerlink" href="#ctp-using-bonferroni-holm-procedure" title="Permalink to this headline">¶</a></h3>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/2f1a24b8_20200421114217.png" /></p>
+</div>
+<div class="section" id="ctp-usign-simes">
+<h3>CTP usign Simes<a class="headerlink" href="#ctp-usign-simes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When <em>m</em>=2, it’s equivalent to Hochberg procedure</p></li>
+<li><p>When <em>m</em>&gt;2, it’s less powerful
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/aa34ea2b_20200421114236.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="ctp-using-dunnett">
+<h3>CTP using Dunnett<a class="headerlink" href="#ctp-using-dunnett" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>This is equivalent to stepdown Dunnett procedure
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/85a5085b_20200421114257.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="ctp-using-weighted-bonferroni">
+<h3>CTP using weighted Bonferroni<a class="headerlink" href="#ctp-using-weighted-bonferroni" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The first is equivalent to the the <strong>fixed sequence procedure</strong>
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/48fd9af8_20200421114316.png" /></p></li>
+<li><p>The second version is equivalent to the <strong>fallback procedure</strong>
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/476695e4_20200421114335.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="what-if-more-than-two-hypotheses">
+<h3>What if more than two hypotheses?<a class="headerlink" href="#what-if-more-than-two-hypotheses" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Do CTP for pairwise combinations
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/229c844b_20200421114353.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/41aedf7a_20200421114415.png" /></p>
+</div>
+<div class="section" id="summary-and-conclusions">
+<h3>Summary and Conclusions<a class="headerlink" href="#summary-and-conclusions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Closed test procedure</strong> is a general principle to construct powerful multiple test procedures; many common procedures are CTPs</p></li>
+<li><p>For <u>structured hypotheses</u>, one can apply the graphical approach, which is based on CTPs</p></li>
+<li><p>It is critical to choose the suitable method for a particular problem</p></li>
+<li><p>There are different types of multiplicity problems that need other methods than those described here, such as:</p>
+<ul>
+<li><p><u>Safety data</u> analyses</p></li>
+<li><p><u>Large-scale testing</u> in genetics, proteomics etc.</p></li>
+<li><p><u>Post-hoc analyses</u> / data snooping</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="graphical-approach-bretz2009graphical-bretz2011graphical">
+<h2>Graphical approach <span id="id2">[]</span> <span id="id3">[]</span><a class="headerlink" href="#graphical-approach-bretz2009graphical-bretz2011graphical" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Initial allocation of the significance level to <span class="math notranslate nohighlight">\(m\)</span> hypothesis: <span class="math notranslate nohighlight">\(\alpha_1 + \cdots + \alpha_m = \alpha\)</span></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\alpha\)</span>-propagation</strong>: if a hypothesis <span class="math notranslate nohighlight">\(H_i\)</span> is rejected at level <span class="math notranslate nohighlight">\(\alpha_i\)</span>, propagate its level <span class="math notranslate nohighlight">\(\alpha_i\)</span> to the remaining, not yet rejected hypotheses (according to aprefixed rule) and continue testing with the updated <span class="math notranslate nohighlight">\(\alpha\)</span> levels</p></li>
+</ul>
+<div class="section" id="conventions">
+<h3>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h3>
+<p>Weighted Holm procedure: i.e. <span class="math notranslate nohighlight">\(\alpha\)</span> is no longer evenly splited among hypotheses</p>
+<p><img alt="graphical method - conventions" src="https://raw.githubusercontent.com/askming/picgo/master/image-20201211120002657.png" /></p>
+</div>
+<div class="section" id="common-multiple-test-procedues">
+<h3>Common multiple test procedues<a class="headerlink" href="#common-multiple-test-procedues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed sequence procedure</p></li>
+<li><p>Fallback procedure</p></li>
+</ul>
+</div>
+<div class="section" id="formal-description">
+<h3>Formal description<a class="headerlink" href="#formal-description" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Initial levels <span class="math notranslate nohighlight">\(\alpha = (\alpha_1, \cdots, \alpha_m)\)</span> with <span class="math notranslate nohighlight">\(\sum_{i=1}^m\alpha_i = \alpha \in (0, 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m \times m\)</span> Transition matrix <span class="math notranslate nohighlight">\(\bf{G}=(g_{ij})\)</span>, Where <span class="math notranslate nohighlight">\(g_{ij}\)</span> is the fraction of the level of <span class="math notranslate nohighlight">\(H_i\)</span> that is propagated to <span class="math notranslate nohighlight">\(H_j\)</span> with <span class="math notranslate nohighlight">\(0\le g_{ij} \le 1, g_{ii} = 0\)</span> and <span class="math notranslate nohighlight">\(\sum_{j=1}^mg_{ij}\le1, \forall i=1, \cdots, m\)</span></p>
+<p>(<span class="math notranslate nohighlight">\(G, a\)</span>) determine a graph with an associated multiple test</p>
+</li>
+<li><p>Update algorithm</p>
+<p><img alt="graphical approach - update" src="https://raw.githubusercontent.com/askming/picgo/master/image-20201211134039795.png" /></p>
+</li>
+<li><p>The initial levels <span class="math notranslate nohighlight">\(\alpha\)</span>, the transition matrix 𝑮, and the algorithm define a unique sequentially rejective test procedure that controls the FWER at level <span class="math notranslate nohighlight">\(\alpha\)</span></p></li>
+<li><p>Any multiple test procedure derived and visualized by a graph (<span class="math notranslate nohighlight">\(G, \alpha\)</span>) is based on the closed test principle</p></li>
+<li><p>The graph (<span class="math notranslate nohighlight">\(G, \alpha\)</span>) and the algorithm define weighted Bonferroni tests for each intersection hypothsis in a CTP</p></li>
+<li><p>The algorithm defines a shortcut for the resulting CTP, which does not depend on the rejection sequence</p></li>
+<li><p>Tools: <code class="docutils literal notranslate"><span class="pre">R</span></code> {gMPA} package</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>Summary<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Tailor advanced multiple test procedures to structured families of hypotheses</p></li>
+<li><p>Visualize complex decision strategies in an efficient and easily communicable way</p></li>
+<li><p>Ensure strong FWER control</p></li>
+<li><p>It covers many common multiple test procedures as specifal cases: Holm, fixed sequence, fallback, gatekeeping, etc.</p></li>
+</ul>
+<p>[^Bretz et al. 2008]: A graphical approach to sequentially rejective multiple test procedures
+[^Bretz et al. 2011]: Graphical approaches for multiple comparison procedures using weighted Bonferroni, Simes, or parametric tests</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Note-Group_Sequential_Trial_Design.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Notes on Group Sequential Trial Design​</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Note-Survival_Analysis.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Survival Analysis</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
