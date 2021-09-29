@@ -194,7 +194,7 @@
   - <u>Post-hoc analyses</u> / data snooping
 
 ## Graphical approach 
-{cite:p}`bretz2009graphical`{cite:p}`bretz2011graphical`
+{cite:p}`bretz2009graphical` {cite:p}`bretz2011graphical`
 
 - Initial allocation of the significance level to $m$ hypothesis: $\alpha_1 + \cdots + \alpha_m = \alpha$
 - **$\alpha$-propagation**: if a hypothesis $H_i$ is rejected at level $\alpha_i$, propagate its level $\alpha_i$ to the remaining, not yet rejected hypotheses (according to aprefixed rule) and continue testing with the updated $\alpha$ levels
