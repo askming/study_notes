@@ -193,8 +193,7 @@
   - <u>Large-scale testing</u> in genetics, proteomics etc.
   - <u>Post-hoc analyses</u> / data snooping
 
-## Graphical approach 
-{cite:p}`bretz2009graphical` {cite:p}`bretz2011graphical`
+## Graphical approach{cite:p}`bretz2009graphical`{cite:p}`bretz2011graphical`
 
 - Initial allocation of the significance level to $m$ hypothesis: $\alpha_1 + \cdots + \alpha_m = \alpha$
 - **$\alpha$-propagation**: if a hypothesis $H_i$ is rejected at level $\alpha_i$, propagate its level $\alpha_i$ to the remaining, not yet rejected hypotheses (according to aprefixed rule) and continue testing with the updated $\alpha$ levels
@@ -234,3 +233,8 @@ Weighted Holm procedure: i.e. $\alpha$ is no longer evenly splited among hypothe
 - Visualize complex decision strategies in an efficient and easily communicable way
 - Ensure strong FWER control
 - It covers many common multiple test procedures as specifal cases: Holm, fixed sequence, fallback, gatekeeping, etc.
+
+
+```{bibliography}
+:filter: docname in docnames
+```
