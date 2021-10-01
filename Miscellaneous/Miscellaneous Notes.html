@@ -333,14 +333,14 @@
 </li>
 <li><p><strong><u>Distance</u></strong>: the <em>distance</em> between two points <span class="math notranslate nohighlight">\(\mathbf{x, y} \in V\)</span> in a vector space is defined as the norm of the difference <span class="math notranslate nohighlight">\(\mathbf{x-y}\)</span>
 $<span class="math notranslate nohighlight">\(
-d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infin
+d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infinity
 \)</span>$</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(p=1\)</span>, city block or Mahattan distance: <span class="math notranslate nohighlight">\(d_1(\mathbf{x,y})=||\mathbf{x-y}||_1 = \sum_{i=1}^n|x_i-y_i|\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(p=1\)</span>, Euclidean distance: <span class="math notranslate nohighlight">\(d_2(\mathbf{x,y})=||\mathbf{x-y}||_2 = \sqrt{\sum_{i=1}^n|x_i-y_i|^2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(p=\infin\)</span>, Chebyshev distance: <span class="math notranslate nohighlight">\(d_{\infin}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infin} = \max_i|x_i - y_i|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p=\infinity\)</span>, Chebyshev distance: <span class="math notranslate nohighlight">\(d_{\infinity}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infinity} = \max_i|x_i - y_i|\)</span></p></li>
 </ul>
-<p>The three unit circles or spheres, are formed by all points <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> of unity norm <span class="math notranslate nohighlight">\(||\mathbf{x}||_p = 1\)</span> with unity distance to the origin (blue, black, and red for <span class="math notranslate nohighlight">\(d_{\infin}\)</span>, <span class="math notranslate nohighlight">\(d_2\)</span>, and <span class="math notranslate nohighlight">\(d_1\)</span>, respectively).</p>
+<p>The three unit circles or spheres, are formed by all points <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> of unity norm <span class="math notranslate nohighlight">\(||\mathbf{x}||_p = 1\)</span> with unity distance to the origin (blue, black, and red for <span class="math notranslate nohighlight">\(d_{\infinity}\)</span>, <span class="math notranslate nohighlight">\(d_2\)</span>, and <span class="math notranslate nohighlight">\(d_1\)</span>, respectively).</p>
 <p><img alt="pdist" src="https://raw.githubusercontent.com/askming/picgo/master/pdist.png" /></p>
 </li>
 </ul>
@@ -364,7 +364,7 @@ d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{
 \[Pr(\theta∣\text{data})\propto Pr(\text{data}∣\theta)Pr(\theta)\]</div>
 <p>Basically, <span class="math notranslate nohighlight">\(Pr(data)\)</span> is nothing but a normalising constant, i.e., a constant that makes the posterior density integrate to <em>one</em>.</p>
 </li>
-<li><p>The subject which deals with maximizing or minimizing integrals of functions is the <strong>calculus of variations</strong> and one of its basic tricks is to write the integrand as a function of <span class="math notranslate nohighlight">\(x\)</span>, the function, and its derivatives. This sets us up to use a general theorem to the effect that any function <span class="math notranslate nohighlight">\(\\hat{m}\)</span> that minimizes L must also solve <strong>Euler-Lagrange equation</strong>.</p></li>
+<li><p>The subject which deals with maximizing or minimizing integrals of functions is the <strong>calculus of variations</strong> and one of its basic tricks is to write the integrand as a function of <span class="math notranslate nohighlight">\(x\)</span>, the function, and its derivatives. This sets us up to use a general theorem to the effect that any function <span class="math notranslate nohighlight">\(\hat{m}\)</span> that minimizes L must also solve <strong>Euler-Lagrange equation</strong>.</p></li>
 <li><p>In survival analysis the Cox model is preferred to a logistic model, since the latter one ignores survival times and censoring information.</p></li>
 <li><p>The basic conclusion of the article is that thinning of chains is not usually appropriate when the goal is precision of estimates from an MCMC sample. (Thinning can be useful for other reasons, such as memory or time constraints in post-chain processing, but those are very different motivations than precision of estimation of the posterior distribution.)</p></li>
 <li><p>Why it <strong>doesn’t</strong> make sense in general to form confidence intervals by inverting hypothesis tests</p>
