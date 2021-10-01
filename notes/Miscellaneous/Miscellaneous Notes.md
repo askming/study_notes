@@ -28,14 +28,16 @@
      - $L_2$ or **Euclidean norm**: $||X||_2 = (\sum_{i=1}^n|x_i|^2)^{1/2} = \sqrt{X^TX}$. 
        - It is the most commonly encountered vector norm (often simply called "the norm" of a vector, or sometimes the magnitude of a vector)
    - **<u>Distance</u>**: the *distance* between two points $\mathbf{x, y} \in V$ in a vector space is defined as the norm of the difference $\mathbf{x-y}$
+  
      $$
-     d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infinity
+     d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infty
      $$
+
      - $p=1$, city block or Mahattan distance: $d_1(\mathbf{x,y})=||\mathbf{x-y}||_1 = \sum_{i=1}^n|x_i-y_i|$
      - $p=1$, Euclidean distance: $d_2(\mathbf{x,y})=||\mathbf{x-y}||_2 = \sqrt{\sum_{i=1}^n|x_i-y_i|^2}$
-     - $p=\infinity$, Chebyshev distance: $d_{\infinity}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infinity} = \max_i|x_i - y_i|$
+     - $p=\infty$, Chebyshev distance: $d_{\infty}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infty} = \max_i|x_i - y_i|$
 
-     The three unit circles or spheres, are formed by all points $\mathbf{x}$ of unity norm $||\mathbf{x}||_p = 1$ with unity distance to the origin (blue, black, and red for $d_{\infinity}$, $d_2$, and $d_1$, respectively).
+     The three unit circles or spheres, are formed by all points $\mathbf{x}$ of unity norm $||\mathbf{x}||_p = 1$ with unity distance to the origin (blue, black, and red for $d_{\infty}$, $d_2$, and $d_1$, respectively).
 
      ![pdist](https://raw.githubusercontent.com/askming/picgo/master/pdist.png)   
     
