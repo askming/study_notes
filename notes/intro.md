@@ -33,11 +33,11 @@
 ### 1.8 Clinical trials related
 - [ICH guidelines](Stats/Note-ICH%20guidelines.md)
 - [FDA guidances](Stats/Note-FDA%20guidances%20for%20industry.md)
+- [Multiplicity in Clinical Trials](./Stats/Note-Multiplicity%20in%20Clinical%20Trials.md)
 
 ### 1.9 Correlated/longitudinal data analysis
 
 ### 1.10 Other topics
-- [Multiplicity in Clinical Trials](./Stats/Note-Multiplicity%20in%20Clinical%20Trials.md)
 - [Analysis of Observational Health Care Data Using SAS](Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.md)
 
 <hr>
