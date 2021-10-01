@@ -331,16 +331,17 @@
 </li>
 </ul>
 </li>
-<li><p><strong><u>Distance</u></strong>: the <em>distance</em> between two points <span class="math notranslate nohighlight">\(\mathbf{x, y} \in V\)</span> in a vector space is defined as the norm of the difference <span class="math notranslate nohighlight">\(\mathbf{x-y}\)</span>
-$<span class="math notranslate nohighlight">\(
-d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infinity
-\)</span>$</p>
+<li><p><strong><u>Distance</u></strong>: the <em>distance</em> between two points <span class="math notranslate nohighlight">\(\mathbf{x, y} \in V\)</span> in a vector space is defined as the norm of the difference <span class="math notranslate nohighlight">\(\mathbf{x-y}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+     d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infty
+     \]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(p=1\)</span>, city block or Mahattan distance: <span class="math notranslate nohighlight">\(d_1(\mathbf{x,y})=||\mathbf{x-y}||_1 = \sum_{i=1}^n|x_i-y_i|\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(p=1\)</span>, Euclidean distance: <span class="math notranslate nohighlight">\(d_2(\mathbf{x,y})=||\mathbf{x-y}||_2 = \sqrt{\sum_{i=1}^n|x_i-y_i|^2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(p=\infinity\)</span>, Chebyshev distance: <span class="math notranslate nohighlight">\(d_{\infinity}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infinity} = \max_i|x_i - y_i|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p=\infty\)</span>, Chebyshev distance: <span class="math notranslate nohighlight">\(d_{\infty}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infty} = \max_i|x_i - y_i|\)</span></p></li>
 </ul>
-<p>The three unit circles or spheres, are formed by all points <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> of unity norm <span class="math notranslate nohighlight">\(||\mathbf{x}||_p = 1\)</span> with unity distance to the origin (blue, black, and red for <span class="math notranslate nohighlight">\(d_{\infinity}\)</span>, <span class="math notranslate nohighlight">\(d_2\)</span>, and <span class="math notranslate nohighlight">\(d_1\)</span>, respectively).</p>
+<p>The three unit circles or spheres, are formed by all points <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> of unity norm <span class="math notranslate nohighlight">\(||\mathbf{x}||_p = 1\)</span> with unity distance to the origin (blue, black, and red for <span class="math notranslate nohighlight">\(d_{\infty}\)</span>, <span class="math notranslate nohighlight">\(d_2\)</span>, and <span class="math notranslate nohighlight">\(d_1\)</span>, respectively).</p>
 <p><img alt="pdist" src="https://raw.githubusercontent.com/askming/picgo/master/pdist.png" /></p>
 </li>
 </ul>
