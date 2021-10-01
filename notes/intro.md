@@ -5,6 +5,7 @@
 
 ## 1 Statistics
 ### 1.1 General topics
+- [Monte Carlo method](Stats/Note-Monte%20Carlo%20method.md)
 
 ### 1.2 Survival analysis
 - [Survial analysis general](./Stats/Note-Survival_Analysis.md)
@@ -30,7 +31,8 @@
 
 
 ### 1.8 Clinical trials related
-
+- [ICH guidelines](Stats/Note-ICH%20guidelines.md)
+- [FDA guidances](Stats/Note-FDA%20guidances%20for%20industry.md)
 
 ### 1.9 Correlated/longitudinal data analysis
 
