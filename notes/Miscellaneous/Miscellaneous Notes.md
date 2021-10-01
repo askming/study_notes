@@ -29,13 +29,13 @@
        - It is the most commonly encountered vector norm (often simply called "the norm" of a vector, or sometimes the magnitude of a vector)
    - **<u>Distance</u>**: the *distance* between two points $\mathbf{x, y} \in V$ in a vector space is defined as the norm of the difference $\mathbf{x-y}$
      $$
-     d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infin
+     d_p(\mathbf{x, y}) = ||\mathbf{x-y}||_p = \left(\sum_{i=1}^n|x_i-y_i|^p\right)^{1/p}, 1\le p\le \infinity
      $$
      - $p=1$, city block or Mahattan distance: $d_1(\mathbf{x,y})=||\mathbf{x-y}||_1 = \sum_{i=1}^n|x_i-y_i|$
      - $p=1$, Euclidean distance: $d_2(\mathbf{x,y})=||\mathbf{x-y}||_2 = \sqrt{\sum_{i=1}^n|x_i-y_i|^2}$
-     - $p=\infin$, Chebyshev distance: $d_{\infin}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infin} = \max_i|x_i - y_i|$
+     - $p=\infinity$, Chebyshev distance: $d_{\infinity}(\mathbf{x, y}) = ||\mathbf{x -y}||_{\infinity} = \max_i|x_i - y_i|$
 
-     The three unit circles or spheres, are formed by all points $\mathbf{x}$ of unity norm $||\mathbf{x}||_p = 1$ with unity distance to the origin (blue, black, and red for $d_{\infin}$, $d_2$, and $d_1$, respectively).
+     The three unit circles or spheres, are formed by all points $\mathbf{x}$ of unity norm $||\mathbf{x}||_p = 1$ with unity distance to the origin (blue, black, and red for $d_{\infinity}$, $d_2$, and $d_1$, respectively).
 
      ![pdist](https://raw.githubusercontent.com/askming/picgo/master/pdist.png)   
     
@@ -61,7 +61,7 @@
    
     Basically, $Pr(data)$ is nothing but a normalising constant, i.e., a constant that makes the posterior density integrate to *one*.
    
-6. The subject which deals with maximizing or minimizing integrals of functions is the **calculus of variations** and one of its basic tricks is to write the integrand as a function of $x$, the function, and its derivatives. This sets us up to use a general theorem to the effect that any function $\\hat{m}$ that minimizes L must also solve **Euler-Lagrange equation**.
+6. The subject which deals with maximizing or minimizing integrals of functions is the **calculus of variations** and one of its basic tricks is to write the integrand as a function of $x$, the function, and its derivatives. This sets us up to use a general theorem to the effect that any function $\hat{m}$ that minimizes L must also solve **Euler-Lagrange equation**.
 
 7. In survival analysis the Cox model is preferred to a logistic model, since the latter one ignores survival times and censoring information.
 
