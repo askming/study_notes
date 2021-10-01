@@ -73,3 +73,18 @@ tags: clinical trial, stats method
 [^prognostic]: *prognostic baseline factors* used in this guidance refers to baseline covariates that are likely to be associated with the primary endpoint 
 
 [Related commentary](https://thestatsgeek.com/2021/06/11/comments-on-fda-guidance-adjusting-for-covariates-in-randomized-clinical-trials-for-drugs-and-biological-products/)
+
+
+<hr>
+
+## Non-Inferiority Clinical Trials to Establish Effectiveness
+
+### 1. Intro and background
+
+### 2. General considerations for Non-inferiority studies
+
+
+### 3. Choosing the non-inferiority margin and testing the non-inferiority hypothesis
+
+
+### 4. FAQ & examples

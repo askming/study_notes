@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes on ICH guidelines​ &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Monte Carlo Method" href="Note-Monte%20Carlo%20method.html" />
+    <link rel="prev" title="Notes on Group Sequential Trial Design​" href="Note-Group_Sequential_Trial_Design.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Notes on ICH guidelines​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
+   Monte Carlo Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-ICH guidelines.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-ICH guidelines.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ich-e9-r1-addendum-on-estimands-and-sensitivity-analysis-in-clinical-trials-to-the-guideline-on-statistical-principles-for-clinical-trials">
+   ICH E9 (R1) - Addendum On
+   <strong>
+    Estimands
+   </strong>
+   And Sensitivity Analysis In Clinical Trials To The Guideline On Statistical Principles For Clinical Trials
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose-and-scope">
+     1. Purpose and scope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-framework-to-align-planning-design-conduct-analysis-and-interpretation">
+     2. A Framework to Align Planning, Design, Conduct, Analysis And Interpretation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimand">
+     3. Estimand
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#intercurrent-events">
+       3.1 Intercurrent events
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#strategies-for-addressing-intercurrent-events-when-defining-the-clinical-question-of-interest">
+       3.2 Strategies for addressing intercurrent events when defining the clinical question of interest
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#estimand-attributes">
+       3.3. Estimand attributes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#considerations-for-constructing-an-estimand">
+       3.4 Considerations for constructing an estimand
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#impact-on-trial-design-and-conduct">
+     4. Impact on trial design and conduct
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#impact-on-trial-analysis">
+     5. Impact on trial analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#main-estimation">
+       5. 1 Main estimation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sensitivity-analysis">
+       5. 2 Sensitivity analysis
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#role-of-sensitivity-analysis">
+         5.2.1 Role of sensitivity analysis
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#choice-of-sensitivity-analysis">
+         5.2.2 Choice of sensitivity analysis
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#supplementary-analysis">
+       5.3 Supplementary analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#documenting-estimand-and-sensitivity-analysis">
+     6. Documenting estimand and sensitivity analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="notes-on-ich-guidelines">
+<h1>Notes on ICH guidelines​<a class="headerlink" href="#notes-on-ich-guidelines" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ich-e9-r1-addendum-on-estimands-and-sensitivity-analysis-in-clinical-trials-to-the-guideline-on-statistical-principles-for-clinical-trials">
+<h2>ICH E9 (R1) - Addendum On <strong>Estimands</strong> And Sensitivity Analysis In Clinical Trials To The Guideline On Statistical Principles For Clinical Trials<a class="headerlink" href="#ich-e9-r1-addendum-on-estimands-and-sensitivity-analysis-in-clinical-trials-to-the-guideline-on-statistical-principles-for-clinical-trials" title="Permalink to this headline">¶</a></h2>
+<p><em>(Adopted on 20 November 2019)</em></p>
+<div class="section" id="purpose-and-scope">
+<h3>1. Purpose and scope<a class="headerlink" href="#purpose-and-scope" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>With the concept of <strong>Intention-To-Treat (ITT)</strong> introduced by ICH E9, the question remains
+whether estimating an effect in accordance with the ITT principle always represents the
+treatment effect of greatest relevance to regulatory and clinical decision making.</p></li>
+<li><p>Secondly, issues considered generally under data handling and “<strong>missing data</strong>” (see Glossary) are re-visited. Two important distinctions are made.</p>
+<ul>
+<li><p>Firstly, the addendum distinguishes discontinuation of randomised treatment from study withdrawal. The former represents an intercurrent event, to be addressed in the precise specification of the trial objective through the estimand. The latter gives rise to missing data to be addressed in the statistical analysis.</p></li>
+<li><p>Secondly, the addendum highlights the distinct consequences of different intercurrent events.</p></li>
+</ul>
+</li>
+<li><p>Thirdly, issues related to the concept of analysis sets are considered in the framework.</p>
+<ul>
+<li><p>(ICH E9) Section 5.2. strongly recommends that analysis of superiority trials be based on the full analysis set, defined to be as close as possible to including all randomised subjects.</p></li>
+<li><p>The meaning and role of an analysis of the <strong>per protocol set</strong> is also re-visited in this addendum; in particular whether the need to explore the impact of protocol violations and deviations can be addressed in a way that is less biased and more interpretable than naïve analysis of the per protocol set.</p></li>
+</ul>
+</li>
+<li><p>Finally, the concept of <strong>robustness</strong> (see 1.2.) is given expanded discussion under the heading of sensitivity analysis.</p></li>
+<li><p>While the main focus is on randomised clinical trials, the principles are also applicable for
+single arm trials and observational studies.</p></li>
+</ul>
+</div>
+<div class="section" id="a-framework-to-align-planning-design-conduct-analysis-and-interpretation">
+<h3>2. A Framework to Align Planning, Design, Conduct, Analysis And Interpretation<a class="headerlink" href="#a-framework-to-align-planning-design-conduct-analysis-and-interpretation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Estimand</strong>: trial objective, target of estimation</p></li>
+<li><p><strong>Estimator</strong>: the method of estimation</p></li>
+<li><p><strong>Estimate</strong>: the numerical result</p></li>
+<li><p>Steps:</p>
+<ul>
+<li><p>Clear trial objectives should be translated into key clinical questions of interest by defining suitable estimands.</p></li>
+<li><p>A suitable method of estimation can then be selected and the main estimator will be underpinned by certain assumptions.</p></li>
+<li><p>To explore the robustness of inferences from the main estimator to deviations from its underlying assumptions, a sensitivity analysis should be conducted, in the form of one or more analyses, targeting the same estimand</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="image-20201029172037481" src="https://raw.githubusercontent.com/askming/picgo/master/image-20201029172037481.png" /></p>
+</div>
+<div class="section" id="estimand">
+<h3>3. Estimand<a class="headerlink" href="#estimand" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>An estimand is a precise description of the treatment effect reflecting the clinical question posed by a given clinical trial objective.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>The description of an estimand involves precise specifications of certain attributes, which should be developed based not only on clinical considerations but also on how <em>intercurrent events</em> are reflected in the clinical question of interest.</p></li>
+</ul>
+<div class="section" id="intercurrent-events">
+<h4>3.1 Intercurrent events<a class="headerlink" href="#intercurrent-events" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Intercurrent events</strong> are events occurring after treatment initiation that affect either the interpretation or the existence of the measurements associated with the clinical question of interest.</p></li>
+<li><p>Unlike missing data, intercurrent events are not to be thought of as a drawback to be avoided in clinical trials.</p>
+<ul>
+<li><p>Examples of intercurrent events that can affect interpretation of the measurements include
+discontinuation of assigned treatment and use of an additional or alternative therapy.</p></li>
+</ul>
+</li>
+<li><p>Because the estimand is to be defined in advance of trial design, neither study
+withdrawal nor other reasons for missing data (e.g. administrative censoring in trials with
+survival outcomes) are in themselves intercurrent events.</p></li>
+</ul>
+</div>
+<div class="section" id="strategies-for-addressing-intercurrent-events-when-defining-the-clinical-question-of-interest">
+<h4>3.2 Strategies for addressing intercurrent events when defining the clinical question of interest<a class="headerlink" href="#strategies-for-addressing-intercurrent-events-when-defining-the-clinical-question-of-interest" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Treatment policy strategy</strong></p>
+<ul>
+<li><p>The occurrence of the intercurrent event is considered irrelevant in defining the treatment effect of interest: the value for the variable of interest is used regardless of whether or not the intercurrent event occurs.</p></li>
+<li><p>In general, the treatment policy strategy <strong>cannot</strong> be implemented for <strong>intercurrent events that are terminal events</strong>, since values for the variable after the intercurrent event do not exist.</p></li>
+</ul>
+</li>
+<li><p><strong>Hypothetical strategies</strong></p>
+<ul>
+<li><p>A scenario is envisaged in which the intercurrent event would not occur: the value of the variable to reflect the clinical question of interest is the value which the variable would have taken in the hypothetical scenario defined.</p></li>
+</ul>
+</li>
+<li><p><strong>Composite variable strategies</strong></p>
+<ul>
+<li><p>This relates to the variable of interest. An intercurrent event is considered in itself to be informative about the patient’s outcome and is therefore incorporated into the definition of the variable.</p></li>
+<li><p>Composite variable strategies can be viewed as implementing the intention-to-treat principle in some cases where the original measurement of the variable might not exist or might not be meaningful, but where the intercurrent event itself meaningfully describes the patient’s outcome, such as when the patient dies.</p></li>
+</ul>
+</li>
+<li><p><strong>While on treatment strategies</strong></p>
+<ul>
+<li><p>For this strategy, response to treatment prior to the occurrence of the intercurrent event is of interest.</p></li>
+<li><p>Like the composite variable strategy, the while on treatment strategy can hence be thought of as impacting the definition of the variable, in this case by restricting the observation time of interest to the time before the intercurrent event.</p></li>
+<li><p>Particular care is required if the occurrence of the intercurrent event differs between the treatments being compared</p></li>
+</ul>
+</li>
+<li><p><strong>Principal Stratum strategies</strong></p>
+<ul>
+<li><p>This relates to the population of interest. The target population might be taken to be the “principal stratum” in which an intercurrent event would/would not occur.</p></li>
+<li><p>The clinical question of interest relates to the treatment effect only within the principal stratum.</p></li>
+<li><p>It is important to distinguish “<strong>principal stratification</strong>”, which is based on potential intercurrent events (for example, subjects who would discontinue therapy if assigned to the test product), from subsetting based on actual intercurrent events (subjects who discontinue therapy on their assigned treatment).</p></li>
+<li><p>Treatment effects defined by comparing outcomes in these subsets confound the effects of the different treatments with the differences in outcomes possibly due to the differing characteristics of the subjects.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="estimand-attributes">
+<h4>3.3. Estimand attributes<a class="headerlink" href="#estimand-attributes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>The treatment and the alternative treatment condition to which comparison will be made</p></li>
+<li><p>The population of patients targeted by the clinical question</p></li>
+<li><p>The variable (or endpoint) to be obtained for each patient that is required to address the clinical question.</p></li>
+<li><p>Intercurrent events</p></li>
+<li><p>A population-level summary for the variable should be specified, providing a basis for comparison between treatment conditions.</p></li>
+</ul>
+</div>
+<div class="section" id="considerations-for-constructing-an-estimand">
+<h4>3.4 Considerations for constructing an estimand<a class="headerlink" href="#considerations-for-constructing-an-estimand" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>The construction of an estimand should consider what is of clinical relevance for the particular
+treatment in the particular therapeutic setting.</p>
+<ul>
+<li><p>Considerations include the disease under study, the clinical context (e.g. the availability of alternative treatments), the administration of treatment (e.g. one-off dosing, short-term treatment or chronic dosing) and the goal of treatment (e.g. prevention, disease modification, symptom control).</p></li>
+</ul>
+</li>
+<li><p>When constructing the estimand it is necessary to have a clear understanding of the treatment
+to which the clinical question of interest pertains.</p></li>
+<li><p>Discussions should also consider whether specifications for the population and variable
+attributes should be used to reflect the clinical question of interest in respect of any intercurrent
+events.</p></li>
+<li><p>Where significant issues exist to develop an appropriate trial design or to derive an adequately reliable estimate for a particular estimand, an alternative estimand, trial design and method of analysis would need to be considered.</p>
+<ul>
+<li><p>Where significant issues exist to develop an appropriate trial design or to derive an adequately reliable estimate for a particular estimand, an alternative estimand, trial design and method of analysis would need to be considered.</p></li>
+</ul>
+</li>
+<li><p>Whilst an inability to derive a reliable estimate might preclude certain choices of strategy, it is important to proceed sequentially from the trial objective and an understanding of the clinical question of interest, and not for the choice of data collection and method of analysis to determine the estimand.</p></li>
+<li><p>Characterising beneficial effects using estimands based on the <em>treatment policy strategy</em> might also be more generally acceptable to support regulatory decision making, specifically in settings where estimands based on alternative strategies might be considered of greater clinical interest, but main and sensitivity estimators cannot be identified that are agreed to support a reliable estimate or robust inference.</p>
+<ul>
+<li><p>An estimand based on the treatment policy strategy might offer the possibility to obtain a reliable estimate of a treatment effect that is still relevant. In this situation, it is recommended to also include those estimands that are considered to be of greater clinical relevance and to present the resulting estimates along with a discussion of the limitations, in terms of trial design or statistical analysis, for that specific approach.</p></li>
+</ul>
+</li>
+<li><p>When constructing estimands based on the treatment policy strategy, inference can be complemented by defining an additional estimand and analysis pertaining to each intercurrent event for which the strategy is used</p></li>
+<li><p>An estimand using a <em>while on treatment strategy</em> should usually be accompanied by the additional information on the time to intercurrent event distributions</p></li>
+<li><p>An estimand based on a <em>principal stratum</em> would usefully be accompanied by information on the proportion of patients in that stratum, if available.</p></li>
+<li><p>Estimands that are constructed with one or more intercurrent events accounted for using the treatment policy strategy present similar issues for non-inferiority and equivalence trials as those related to analysis of the FAS under the ITT principle.</p></li>
+<li><p>When selecting strategies, it might be important to distinguish between trials designed to detect whether differences exist between treatments containing the same or similar active substance (e.g. comparison of a biosimilar to a reference treatment) and trials where a non-inferiority or equivalence hypothesis is used in order to establish and quantify evidence of efficacy.</p></li>
+<li><p>An estimand can be constructed to target a treatment effect that prioritises sensitivity to detect differences between treatments, if appropriate for regulatory decision making.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="impact-on-trial-design-and-conduct">
+<h3>4. Impact on trial design and conduct<a class="headerlink" href="#impact-on-trial-design-and-conduct" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Certainly, subjects cannot be retained in a trial against their will, and in some trials missing data for some subjects is inevitable by design, such as administrative censoring in trials with survival outcomes.  On the contrary, the occurrence of intercurrent events such as discontinuation of treatment, treatment switching, or use of additional medication, does not imply that the variable cannot be measured thereafter, though the measures may not be relevant.</p></li>
+<li><p>A prospective plan to collect informative reasons for why data intended for collection are missing may help to distinguish the occurrence of intercurrent events from missing data.</p></li>
+<li><p>Where all subjects contribute information to the analysis, and where the impact of the strategy to reflect intercurrent events is included in the effect size that is targeted and the expected variance, it is not usually necessary to additionally inflate the calculated sample size by the expected proportion of subject withdrawals from the trial.</p></li>
+</ul>
+</div>
+<div class="section" id="impact-on-trial-analysis">
+<h3>5. Impact on trial analysis<a class="headerlink" href="#impact-on-trial-analysis" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="main-estimation">
+<h4>5. 1 Main estimation<a class="headerlink" href="#main-estimation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>All methods of analysis rely on assumptions, and different methods may rely on different
+assumptions even when aligned to the same estimand.</p></li>
+<li><p>A composite variable strategy can avoid statistical assumptions about data after an intercurrent
+event by considering occurrence of the intercurrent event as a component of the outcome. The
+potential concern relates less to assumptions for estimation, and more to the interpretation of
+the estimated treatment effect.</p></li>
+<li><p>Failure to collect relevant data should not be confused with the choice not to collect, or to collect and not to use, data made irrelevant by an intercurrent event.</p></li>
+</ul>
+</div>
+<div class="section" id="sensitivity-analysis">
+<h4>5. 2 Sensitivity analysis<a class="headerlink" href="#sensitivity-analysis" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="role-of-sensitivity-analysis">
+<h5>5.2.1 Role of sensitivity analysis<a class="headerlink" href="#role-of-sensitivity-analysis" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>Sensitivity analysis should be planned for the main estimators of all estimands that will be important for regulatory decision making and labelling in the product information.</p></li>
+<li><p>This might be characterised as the extent of departures from assumptions that change the interpretation of the results in terms of their statistical or clinical significance (e.g. tipping point analysis).</p></li>
+<li><p>Distinct from sensitivity analysis, where investigations are conducted with the intent of exploring robustness of departures from assumptions, other analyses that are conducted in order to more fully investigate and understand the trial data can be termed “supplementary analysis”</p></li>
+</ul>
+</div>
+<div class="section" id="choice-of-sensitivity-analysis">
+<h5>5.2.2 Choice of sensitivity analysis<a class="headerlink" href="#choice-of-sensitivity-analysis" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>It is therefore desirable to adopt a structured approach, specifying the changes in assumptions that underlie the alternative analyses, rather than simply comparing the results of different analyses based on different sets of assumptions.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="supplementary-analysis">
+<h4>5.3 Supplementary analysis<a class="headerlink" href="#supplementary-analysis" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>(ICH E9) Section 5.2.3. indicates that it is usually appropriate to plan for analyses based on both the FAS and the Per Protocol Set (PPS) so that differences between them can be the subject of explicit discussion and interpretation.</p></li>
+<li><p>It is also described in Section 5.2.2. that results based on a PPS might be subject to severe bias.</p></li>
+<li><p>Notwithstanding the differences between violations and deviations from the protocol and intercurrent events, events likely to affect the interpretation or existence of measurements are considered in the description of the estimand.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="documenting-estimand-and-sensitivity-analysis">
+<h3>6. Documenting estimand and sensitivity analysis<a class="headerlink" href="#documenting-estimand-and-sensitivity-analysis" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Summaries of the number and timings of each intercurrent event in each treatment group should be reported.</p></li>
+<li><p>Changes to the estimand during the trial can be problematic and can reduce the credibility of
+the trial.</p></li>
+<li><p>A change to the estimand should usually be reflected through amendment to the protocol.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Note-Group_Sequential_Trial_Design.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Notes on Group Sequential Trial Design​</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Note-Monte%20Carlo%20method.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Monte Carlo Method</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

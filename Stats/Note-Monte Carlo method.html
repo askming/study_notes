@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[book] Analysis of Observational Health Care Data Using SAS &#8212; Study Notes</title>
+    <title>Monte Carlo Method &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="[book] Causal inference in statistics a primer" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" />
-    <link rel="prev" title="Study Notes Index" href="../intro.html" />
+    <link rel="next" title="Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
+    <link rel="prev" title="Notes on ICH guidelines​" href="Note-ICH%20guidelines.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -101,8 +101,8 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
    [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
@@ -159,8 +159,8 @@
    Notes on ICH guidelines​
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Monte Carlo Method
   </a>
  </li>
@@ -256,7 +256,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Book-Analysis of Observational Health Care Data Using SAS.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Monte Carlo method.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -276,7 +276,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Analysis of Observational Health Care Data Using SAS.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Monte Carlo method.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -303,55 +303,9 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects">
-   Chapter 2-3 Propensity Score Stratification and Regression / Propensity Score Matching for Estimating  Treatment Effects
+  <a class="reference internal nav-link" href="#markov-chain-monte-carlo">
+   Markov Chain Monte Carlo
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-propensity-score-ps">
-     1. Estimating propensity score (PS)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-ps">
-   2. Using PS
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assess-the-balance-after-applying-ps-method">
-     3. Assess the balance after applying PS method
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-treatment-effect">
-     4. Estimating treatment effect
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sensitivity-analysis-for-ps">
-     5. Sensitivity analysis for PS
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-4-doubly-robust-estimation-of-treatment-effects">
-   Chapter 4 Doubly Robust Estimation of Treatment Effects
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conceptual-overview">
-     Conceptual overview
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#statistical-model">
-     Statistical model
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -364,106 +318,61 @@
         
               <div>
                 
-  <div class="section" id="book-analysis-of-observational-health-care-data-using-sas">
-<h1>[book] Analysis of Observational Health Care Data Using SAS<a class="headerlink" href="#book-analysis-of-observational-health-care-data-using-sas" title="Permalink to this headline">¶</a></h1>
-<hr>
-<div class="section" id="chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects">
-<h2>Chapter 2-3 Propensity Score Stratification and Regression / Propensity Score Matching for Estimating  Treatment Effects<a class="headerlink" href="#chapter-2-3-propensity-score-stratification-and-regression-propensity-score-matching-for-estimating-treatment-effects" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="estimating-propensity-score-ps">
-<h3>1. Estimating propensity score (PS)<a class="headerlink" href="#estimating-propensity-score-ps" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Logistic regression</p></li>
-<li><p>Probit regression: <span class="math notranslate nohighlight">\(P(Y=1|X) = \Phi(X^T\beta)\)</span>, where <span class="math notranslate nohighlight">\(\Phi(\cdot)\)</span> is the CDF of standard normal distribution</p></li>
-<li><p>discriminant analysis</p></li>
-<li><p>CART</p></li>
-<li><p>Neural nets</p></li>
-<li><p>GAM(?)</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="using-ps">
-<h2>2. Using PS<a class="headerlink" href="#using-ps" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Stratification</p></li>
-<li><p>Matching: with caliper (0.2 SD of logit of PS <a class="footnote-reference brackets" href="#rot" id="id1">1</a>)</p></li>
-<li><p>Regression covariate</p></li>
-<li><p>IPW (Chapter 5): <span class="math notranslate nohighlight">\(\frac{1}{p_i}\)</span> for treatment arm, <span class="math notranslate nohighlight">\(\frac{1}{1-p_i}\)</span> for control arm, where <span class="math notranslate nohighlight">\(p_i\)</span> is the PS for subject <span class="math notranslate nohighlight">\(i\)</span></p></li>
-</ul>
-<div class="section" id="assess-the-balance-after-applying-ps-method">
-<h3>3. Assess the balance after applying PS method<a class="headerlink" href="#assess-the-balance-after-applying-ps-method" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>standardized difference of each covariate</p></li>
-<li><p>PS distribution</p></li>
-<li><p>distribution of the covariates</p></li>
-<li><p>goodness of fit statistics</p></li>
-</ul>
-</div>
-<div class="section" id="estimating-treatment-effect">
-<h3>4. Estimating treatment effect<a class="headerlink" href="#estimating-treatment-effect" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>treatment effect estimate</p></li>
-<li><p>S.E. of treatment effect</p></li>
-</ul>
-</div>
-<div class="section" id="sensitivity-analysis-for-ps">
-<h3>5. Sensitivity analysis for PS<a class="headerlink" href="#sensitivity-analysis-for-ps" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="chapter-4-doubly-robust-estimation-of-treatment-effects">
-<h2>Chapter 4 Doubly Robust Estimation of Treatment Effects<a class="headerlink" href="#chapter-4-doubly-robust-estimation-of-treatment-effects" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="conceptual-overview">
-<h3>Conceptual overview<a class="headerlink" href="#conceptual-overview" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Doubly robust (DR) estimation builds on the propensity score approach of Rosenbaum and Rubin (1983) and the inverse probability of weighting (IPW) approach of Robins and colleagues (Robins, 1998; Robins, 1999a; Robins, 1999b; Robins et al., 2000).</p></li>
-<li><p>DR estimation combines inverse probability weighting by a propensity score with regression modeling of the relationship between covariates and outcome for each treatment.</p>
+  <div class="section" id="monte-carlo-method">
+<h1>Monte Carlo Method<a class="headerlink" href="#monte-carlo-method" title="Permalink to this headline">¶</a></h1>
 <ul>
-<li><p>It combines it in such a way that, as long as <em>either</em> the propensity score model <em>or</em> the outcome regression models are correctly specified, the effect of the exposure on the outcome will be correctly estimated, assuming that there are no unmeasured confounders (Robins et al., 1994; Robins, 2000; van der Laan and Robins, 2003;
-Bang and Robins, 2005).</p></li>
-</ul>
-</li>
-<li><p>Procedure</p>
-<ul>
-<li><p>one builds and fits a (binary) regression model for the probability that a particular patient received a given treatment as a function of that individual’s covariates (the propensity score).</p></li>
-<li><p>Maximum likelihood regression is conducted separately within the exposed and unexposed populations to predict the mean response (outcome) as a function of confounders and risk factors.</p></li>
-<li><p>each individual observation is given a weight equal to the inverse of the probability of the treatment he/she received based on baseline covariates (as in IPW analysis) to create two pseudopopulations of subjects that represent the expected response in the entire population under those two treatment conditions.</p></li>
-</ul>
-</li>
-<li><p>one trades a possible loss of precision in using the DR estimator for this additional protection.</p></li>
-</ul>
-</div>
-<div class="section" id="statistical-model">
-<h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29a50c7a-01ae-4182-a926-4bd4762a6796">
-<span class="eqno">(1)<a class="headerlink" href="#equation-29a50c7a-01ae-4182-a926-4bd4762a6796" title="Permalink to this equation">¶</a></span>\[\begin{align}
-  \hat{\Delta}_{DR} \\
-   &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
-   &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
-  &amp; = \hat{\mu_{1, Dr}} - \hat{\mu}_{0, DR}
-  \end{align}\]</div>
-</li>
-<li><p>The standard error for the DR estimator is estimated using the delta method</p>
+<li><p><strong>Monte Carlo</strong> method is the art of approximating an expectation by the sample mean of a function of simulated random variables. Its essence in very familiar terms: Monte Carlo is about invoking laws of large numbers to approximate expectations.<a class="footnote-reference brackets" href="#id2" id="id1">1</a></p></li>
+<li><p><em><strong>In more mathematical terms</strong></em>: Consider a (possibly multidimensional) random variable X having probability mass function or probability density function <span class="math notranslate nohighlight">\(f_X(x)\)</span> that is greater than zero on a set of values <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>. Then the expected value of a function <span class="math notranslate nohighlight">\(g\)</span> of <span class="math notranslate nohighlight">\(X\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
-  SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
+  \mathbb{E}(g(X)) = \sum_{x\in \mathcal{X}}g(x)f_X(x)
   \]</div>
-<p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-027a94a8-8dbf-40e2-9ea8-91552b371295">
-<span class="eqno">(2)<a class="headerlink" href="#equation-027a94a8-8dbf-40e2-9ea8-91552b371295" title="Permalink to this equation">¶</a></span>\[\begin{align}
-  \hat{I}_i \\
-  &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
-  &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}
-  \end{align}\]</div>
+<p>if <span class="math notranslate nohighlight">\(X\)</span> is discrete, and</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathbb{E}(g(X)) = \int_{x\in \mathcal{X}}g(x)f_X(x)
+  \]</div>
+<p>if <span class="math notranslate nohighlight">\(X\)</span> is continuous.</p>
+<ul>
+<li><p>Now if we were to take an n-sample of <span class="math notranslate nohighlight">\(X\)</span>’s, <span class="math notranslate nohighlight">\((x_1, \cdots, x_n)\)</span>, and we compute the mean of <span class="math notranslate nohighlight">\(g(x)\)</span> over the sample, then we would have the Monte Carlo estimate</p>
+<div class="math notranslate nohighlight">
+\[
+    \tilde{g}_n(x) = {{1}\over{n}}\sum_{i=1}^n g(x_i)
+    \]</div>
+<p>of <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>. We could, alternatively, speak of the random variable</p>
+<div class="math notranslate nohighlight">
+\[
+    \tilde{g}_n(X) = {{1}\over{n}}\sum_{i=1}^n g(X_i),
+    \]</div>
+<p>which we call the Monte Carlo estimator of <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>.</p>
 </li>
+</ul>
+</li>
+<li><p>If <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>, exists, then <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_large_numbers"><em>the weak law of large numbers</em></a> tellsus that for any arbitrarily small <span class="math notranslate nohighlight">\(\epsilon\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+  \lim_{n\rightarrow\infty}P(|\tilde{g}_n(X) - \mathbb{E}(g(X))|\ge \epsilon) = 0
+  \]</div>
+<p>This tells us that as <span class="math notranslate nohighlight">\(n\)</span> gets large, there is small probability that <span class="math notranslate nohighlight">\(\tilde{g}_n(x)\)</span> deviates much from <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>.</p>
+</li>
+<li><p>One other thing to note. at this point is that <span class="math notranslate nohighlight">\(\tilde{g}_n(x)\)</span> is unbiased for <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathbb{E}(\tilde{g}_n(X)) = \mathbb{E} \left( {1\over n}\sum_{i=1}^ng(X_i)\right) = {1\over n}\sum_{i=1}^n\mathbb{E}(g(X_i)) = \mathbb{E}(g(X)).
+  \]</div>
+</li>
+</ul>
+<div class="section" id="markov-chain-monte-carlo">
+<h2>Markov Chain Monte Carlo<a class="headerlink" href="#markov-chain-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>In statistics, <strong>Markov chain Monte Carlo (MCMC)</strong> methods (which include random walk Monte Carlo methods) are a class of algorithms for sampling from probability distributions based on constructing a Markov chain that has the desired distribution as its equilibrium distribution. The state of the chain after a large number of steps is then used as a sample of the desired distribution. The quality of the sample improves as a function of the number of steps.</p></li>
 </ul>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="rot"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>rule of thumb</p>
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This applies when the simulated variables are independent of one another, and might apply when they are correlated with one another (for example if they are states visited by an ergodic Markov chain), all of this extends to samples from Markov chains via the weak law of large numbers for the number of passages through a recurrent state in an ergodic Markov chain (see Feller 1957).</p>
 </dd>
 </dl>
-</div>
 </div>
 </div>
 
@@ -497,19 +406,19 @@ Bang and Robins, 2005).</p></li>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../intro.html" title="previous page">
+        <a class="left-prev" href="Note-ICH%20guidelines.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Study Notes Index</p>
+                <p class="prevnext-title">Notes on ICH guidelines​</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html" title="next page">
+        <a class="right-next" href="Note-Multiplicity%20in%20Clinical%20Trials.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">[book] Causal inference in statistics <em>a primer</em></p>
+                <p class="prevnext-title">Multiplicity in Clinical Trials</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
