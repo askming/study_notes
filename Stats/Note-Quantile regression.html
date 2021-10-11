@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantile regression &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
+    <link rel="prev" title="Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-ICH%20guidelines.html">
+   Notes on ICH guidelines​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
+   Monte Carlo Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
+   Naive Bayes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Quantile regression.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Quantile regression.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advantages-and-applications">
+   1. Advantages and applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantiles">
+   2. Quantiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intuition">
+   3. Intuition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-quantile-and-quantile-regression">
+   4. Conditional quantile and quantile regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-quantile-regression">
+   5. Bayesian quantile regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#censored-quantile-regression">
+   6. Censored quantile regression
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="quantile-regression">
+<h1>Quantile regression<a class="headerlink" href="#quantile-regression" title="Permalink to this headline">¶</a></h1>
+<p><strong>Quantile regression</strong> is a type of regression analysis aims at estimating either the conditional median or other quantiles of the response variable, whereas the method of least squares results in estimates that approximate the conditional mean of the response variable given certain values of the predictor variables.</p>
+<div class="section" id="advantages-and-applications">
+<h2>1. Advantages and applications<a class="headerlink" href="#advantages-and-applications" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Quantile regression is desired if conditional quantile functions are of interest.</p></li>
+<li><p>One advantage of quantile regression, relative to the ordinary least squares regression, is that the quantile regression estimates are more robust against outliers in the response measurements.</p></li>
+<li><p>In practice we often prefer using different measures of central tendency and statistical dispersion to obtain a more comprehensive analysis of the relationship between variables.</p></li>
+<li><p>The need for and success of quantile regression in ecology has been attributed to the complexity of interactions between different factors leading to data with unequal variation of one variable for different ranges of another variable.</p></li>
+<li><p>The method of least squares leads to a consideration of problems in an inner product space, involving projection onto subspaces, and thus the problem of minimizing the squared errors can be reduced to a problem in numerical linear algebra. Quantile regression does not have this structure,  and instead leads to problems in <em>linear programming</em> that can be solved by the simplex method.</p></li>
+</ul>
+</div>
+<div class="section" id="quantiles">
+<h2>2. Quantiles<a class="headerlink" href="#quantiles" title="Permalink to this headline">¶</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(Y\)</span> be real valued random variable with cumulative distribution function <span class="math notranslate nohighlight">\(F_Y(y) = P(Y\le y)\)</span>. The <span class="math notranslate nohighlight">\(\tau\)</span>th quantile of <span class="math notranslate nohighlight">\(Y\)</span> is given by
+$<span class="math notranslate nohighlight">\(
+Q_Y(\tau) = F^{-1}_Y(\tau) = \inf\{y: F_Y(y)\ge \tau\}
+\)</span><span class="math notranslate nohighlight">\(
+Where \)</span>\tau \in [0, 1]$.</p>
+<ul>
+<li><p><strong>Loss function</strong></p>
+<p>Define the loss function as <span class="math notranslate nohighlight">\(\rho_{\tau}(y) = |y(\tau - \mathbb{I}_{y&lt;0})|\)</span>, where <span class="math notranslate nohighlight">\(\mathbb{I}\)</span> is an indicator variable. A specific quantile can be found by minimizing the expected loss of <span class="math notranslate nohighlight">\(Y − u\)</span> with respect to <span class="math notranslate nohighlight">\(u\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \min_{u}E(\rho_{\tau}(Y-u)) = \min_{u}(\tau - 1)\int_{-\infty}^u(y-u)dF_Y(y) + \tau\int_u^{\infty}(y-u)dF_Y(y).
+  \]</div>
+<p>This can be shown by setting the derivative of the expected loss function to 0 and letting <span class="math notranslate nohighlight">\(q_{\tau}\)</span> be the solution of</p>
+<div class="math notranslate nohighlight">
+\[
+  0 = (1-\tau)\int_{-\infty}^{q_{\tau}}dF_Y(y) - \tau\int_{q_{\tau}}^{\infty}dF_Y(y).
+  \]</div>
+<p>This equation reduces to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  0 = F_Y(q_{\tau}) - \tau,\\
+  F_Y(q_{\tau}) = \tau.
+  \end{split}\]</div>
+</li>
+</ul>
+</div>
+<div class="section" id="intuition">
+<h2>3. Intuition<a class="headerlink" href="#intuition" title="Permalink to this headline">¶</a></h2>
+<p>Consider <span class="math notranslate nohighlight">\(\tau = 0.5\)</span> and let <span class="math notranslate nohighlight">\(q\)</span> be an initial guess for <span class="math notranslate nohighlight">\(q_{\tau}\)</span>. The expected loss evaluated at <span class="math notranslate nohighlight">\(q\)</span> is
+$<span class="math notranslate nohighlight">\(
+-0.5\int_{-\infty}^q(y-q)dF_Y(y) + 0.5\int_q^{\infty}(y-q)dF_Y(y).
+\)</span><span class="math notranslate nohighlight">\(
+In order to minimize the expected loss, we move the value of \)</span>q$ a little bit to see whether the expect loss will rise or fall.</p>
+<p>Suppose we increase <span class="math notranslate nohighlight">\(q\)</span> by 1 unit. Then the change of expected loss would be
+$<span class="math notranslate nohighlight">\(
+\int_{-\infty}^q1dF_Y(y) + 0.5\int_q^{\infty}1dF_Y(y).
+\)</span><span class="math notranslate nohighlight">\(
+The first term of the equation is \)</span>F_Y (q)<span class="math notranslate nohighlight">\( and second term of the equation is \)</span>1-F_Y(q)<span class="math notranslate nohighlight">\(. Therefore the change of expected loss function is negative if and only if \)</span>F_Y (q)&lt;0.5<span class="math notranslate nohighlight">\(, that is if and only if \)</span>q<span class="math notranslate nohighlight">\( is smaller than the median. Similarly, if we reduce \)</span>q<span class="math notranslate nohighlight">\( by 1 unit, the change of expected loss function is negative if and only if \)</span>q$ is larger than the median.</p>
+<ul class="simple">
+<li><p>In order to minimize the expected loss function, we would increase (decrease) <span class="math notranslate nohighlight">\(L(q)\)</span> if q is smaller (larger) than the median, until q reaches the median. The idea behind the minimization is to count the number of points (weighted with the density) that are larger or smaller than <span class="math notranslate nohighlight">\(q\)</span> and then move <span class="math notranslate nohighlight">\(q\)</span> to a point where <span class="math notranslate nohighlight">\(q\)</span> is larger than <span class="math notranslate nohighlight">\(\tau\)</span>% of the points.</p></li>
+</ul>
+</div>
+<div class="section" id="conditional-quantile-and-quantile-regression">
+<h2>4. Conditional quantile and quantile regression<a class="headerlink" href="#conditional-quantile-and-quantile-regression" title="Permalink to this headline">¶</a></h2>
+<p>Suppose the <span class="math notranslate nohighlight">\(\tau\)</span>th conditional quantile function is <span class="math notranslate nohighlight">\(Q_{Y|X}(\tau)=X\beta_{\tau}\)</span>, given tghe distribution function of <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(\beta_{\tau}\)</span>can be obtained by solving
+$<span class="math notranslate nohighlight">\(
+\beta_{\tau} = \arg\min_{\beta\in R^{k}}E(\rho_{\tau}(Y-X\beta)).
+\)</span><span class="math notranslate nohighlight">\(
+Solving the sample analog gives the estimator of \)</span>\beta<span class="math notranslate nohighlight">\(:
+\)</span><span class="math notranslate nohighlight">\(
+\hat{\beta}_{\tau} = \arg\min_{\beta\in R^k}\sum_{i=1}^n(\rho_{\tau}(Y_i-X_i\beta)).
+\)</span>$</p>
+<ul>
+<li><p><strong>Computation</strong></p>
+<ul>
+<li><p>The minimization problem can be reformulated as a <em>linear programming</em> problem</p>
+<div class="math notranslate nohighlight">
+\[
+    \min_{\beta^+, \beta^-, u^-\in R^{2k}\times R_+^{2n}}\left\{\tau I'_nu^+ + (1-\tau)I'_n u^-|X(\beta^+-\beta^-)+u^+-u^- = Y \right\},
+    \]</div>
+<p>where
+$<span class="math notranslate nohighlight">\(
+\beta_j^+ =\max(\beta_j, 0), \beta^-_j = -\min(\beta_j, 0), u_j^+=\max(u_j, 0), u_j^- = -\min(u_j, 0).
+\)</span>$</p>
+</li>
+<li><p><em>Simplex methods or interior point methods</em> can be applied to solve the linear programming problem.</p></li>
+</ul>
+</li>
+<li><p><strong>Asymptotic properties</strong></p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(\tau\in(0, 1)\)</span>, under some regularity conditions, <span class="math notranslate nohighlight">\(\hat{\beta}_{\tau}\)</span> is asymptotically normal:
+$<span class="math notranslate nohighlight">\(
+\sqrt{n}(\hat{\beta}_{\tau}-\beta_{\tau}) \overset{d}{\rightarrow} N(0, \tau(1-\tau)D^{-1}\Omega_xD^{-1})
+\)</span>$</p></li>
+<li><p>Direct estimation of the asymptotic variance-covariance matrix is not always satisfactory. Inference for quantile regression parameters can be made with the <em>regression rank-score tests</em> or with the <em>bootstrap</em> methods.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="bayesian-quantile-regression">
+<h2>5. Bayesian quantile regression<a class="headerlink" href="#bayesian-quantile-regression" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Because the quantile regression does not normally assume a parametric likelihood for the conditional distributions of <span class="math notranslate nohighlight">\(Y|X\)</span>, the Bayesian methods work with a working likelihood.</p></li>
+<li><p>A convenient choice is the <em><strong>asymmetric Laplacian distribution</strong></em>, because the mode of the resulting posterior under a flat prior is the usual quantile regression estimates.<span id="id1">[<a class="reference internal" href="#id25">Koenker and Bassett Jr, 1978</a>]</span></p>
+<ul>
+<li><p><strong>Asymmetric Laplace distribution (ALD)</strong>, density function is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+    f_p(u)=p(1-p)\exp\{-\rho_p(u)\},
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(0 &lt; p &lt; 1\)</span> and <span class="math notranslate nohighlight">\(\rho_p(u)=u(p-I(u&lt;0))\)</span>.</p>
+<ul>
+<li><p>When <span class="math notranslate nohighlight">\(p=1/2\)</span>, the density reduces to</p>
+<div class="math notranslate nohighlight">
+\[
+       f(u)=\frac{1}{4}\exp(-|u|/2),
+       \]</div>
+<p>which is the density of a <strong>standard symmetric Laplace distribuiton.</strong></p>
+</li>
+<li><p>For all other values of <span class="math notranslate nohighlight">\(p\)</span>, the density is asymmetic.</p></li>
+</ul>
+</li>
+<li><p>Including location and scale parameters, <span class="math notranslate nohighlight">\(\mu, \sigma\)</span>, in the ALD we obtain
+$<span class="math notranslate nohighlight">\(
+f_p(u;\mu,\sigma)=\frac{p(1-p)}{\sigma}\exp\left\{-\rho_p\left(\frac{u-\mu}{\sigma}\right)\right\}.
+\)</span>$</p></li>
+</ul>
+</li>
+<li><p><em><strong>Bayesian quantile regression inference</strong></em></p>
+<p>When we are interested in the conditional quantile, <span class="math notranslate nohighlight">\(q_p(y_i|{\bf x_i})\)</span>, rather than the conditonal mean, <span class="math notranslate nohighlight">\(E[Y_i|x_i]\)</span>, we could still cast the problem in the framework of the generalized linear model, no matter what the original distribution of the data is, by assuming that</p>
+<p>​	(i) <span class="math notranslate nohighlight">\(f(y;\mu_i)\)</span> is ALD and</p>
+<p>​	(ii) <span class="math notranslate nohighlight">\(g(\mu_i)={\bf x_i}'\boldsymbol{\beta}(p)=q_p(y_i|{\bf x_i})\)</span>, for any <span class="math notranslate nohighlight">\(0 &lt; p &lt; 1\)</span>.</p>
+<ul>
+<li><p>Given the observations, <span class="math notranslate nohighlight">\({\bf y}=(y_1,\cdots,y_n)\)</span>, the posterior distribution of <span class="math notranslate nohighlight">\(\boldsymbol{\beta}, \pi(\boldsymbol{\beta}|{\bf y})\)</span> is given by
+$<span class="math notranslate nohighlight">\(
+\pi(\boldsymbol{\beta}|{\bf y})\propto L({\bf y}|\boldsymbol{\beta})p(\boldsymbol{\beta})
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>p(\boldsymbol{\beta})<span class="math notranslate nohighlight">\( is the prior distribution of \)</span>\boldsymbol{\beta}<span class="math notranslate nohighlight">\( and \)</span>L({\bf y}|\boldsymbol{\beta})<span class="math notranslate nohighlight">\( is the likelihood function written as 
+\)</span><span class="math notranslate nohighlight">\(
+L({\bf y}|\boldsymbol{\beta})=p^n(1-p)^n\exp\left\{-\sum_{i}\rho_p(y_i-{\bf x_i}'\boldsymbol{\beta})\right\},
+\)</span>$</p>
+<p>with a location parameter <span class="math notranslate nohighlight">\(\mu_i={\bf x_i}'\boldsymbol{\beta}.\)</span></p>
+</li>
+<li><p>In theory, we can use any prior for <span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span>, but in the absence of any realistic information one could use improper uniform prior distribution for all the components of <span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span>.</p></li>
+</ul>
+</li>
+<li><p>The posterior inference, however, must be interpreted with care. <span id="id2">[<a class="reference internal" href="#id24">Yang and He, 2012</a>]</span> showed that one can have asymptotically valid posterior inference if the working likelihood is chosen to be the empirical likelihood.</p></li>
+</ul>
+</div>
+<div class="section" id="censored-quantile-regression">
+<h2>6. Censored quantile regression<a class="headerlink" href="#censored-quantile-regression" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If the response variable is subject to censoring, the conditional mean is not identifiable without additional distributional assumptions, but the conditional quantile is often identifiable.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(Y^c = \max(0, Y)\)</span> and <span class="math notranslate nohighlight">\(Q_{Y|X}= X\beta_{\tau}\)</span>, then <span class="math notranslate nohighlight">\(Q_{Y^c}=\max(0, X\beta_{\tau})\)</span>. This is the censored quantile regression model: estimated values can be obtained without making any distributional assumptions, but at the cost of computational difficulty, some of which can be avoided by using a simple three step censored quantile regression procedure as an approximation.</p></li>
+</ul>
+<p>A number of papers that are on the early application of quantile regression:</p>
+<ol class="simple">
+<li><p>Cole and Green, 1992</p></li>
+<li><p>Royston and Altman, 1994</p></li>
+<li><p><span id="id3">[<a class="reference internal" href="#id26">Buchinsky, 1998</a>]</span></p></li>
+<li><p><span id="id4">[<a class="reference internal" href="#id27">Yu and Jones, 1998</a>]</span></p></li>
+<li><p><span id="id5">[<a class="reference internal" href="#id28">He <em>et al.</em>, 1998</a>]</span></p></li>
+<li><p><span id="id6">[<a class="reference internal" href="#id30">Koenker and Machado, 1999</a>]</span></p></li>
+<li><p><span id="id7">[<a class="reference internal" href="#id29">Yu and Moyeed, 2001</a>]</span></p></li>
+</ol>
+<p id="id8"><dl class="citation">
+<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id3">Buc98</a></span></dt>
+<dd><p>Moshe Buchinsky. Recent advances in quantile regression models: a practical guideline for empirical research. <em>Journal of human resources</em>, pages 88–126, 1998.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets"><a class="fn-backref" href="#id5">HNP98</a></span></dt>
+<dd><p>Xuming He, Pin Ng, and Stephen Portnoy. Bivariate quantile smoothing splines. <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em>, 60(3):537–550, 1998.</p>
+</dd>
+<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id1">KBJ78</a></span></dt>
+<dd><p>Roger Koenker and Gilbert Bassett Jr. Regression quantiles. <em>Econometrica: journal of the Econometric Society</em>, pages 33–50, 1978.</p>
+</dd>
+<dt class="label" id="id30"><span class="brackets"><a class="fn-backref" href="#id6">KM99</a></span></dt>
+<dd><p>Roger Koenker and Jose AF Machado. Goodness of fit and related inference processes for quantile regression. <em>Journal of the american statistical association</em>, 94(448):1296–1310, 1999.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id2">YH12</a></span></dt>
+<dd><p>Yunwen Yang and Xuming He. Bayesian empirical likelihood for quantile regression. <em>The Annals of Statistics</em>, 40(2):1102–1131, 2012.</p>
+</dd>
+<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id4">YJ98</a></span></dt>
+<dd><p>Keming Yu and MC1614628 Jones. Local linear quantile regression. <em>Journal of the American statistical Association</em>, 93(441):228–237, 1998.</p>
+</dd>
+<dt class="label" id="id29"><span class="brackets"><a class="fn-backref" href="#id7">YM01</a></span></dt>
+<dd><p>Keming Yu and Rana A Moyeed. Bayesian quantile regression. <em>Statistics &amp; Probability Letters</em>, 54(4):437–447, 2001.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Note-Multiplicity%20in%20Clinical%20Trials.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Multiplicity in Clinical Trials</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Note-Survival_Analysis.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Survival Analysis</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

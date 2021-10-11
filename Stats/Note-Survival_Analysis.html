@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="How R searches and finds stuff" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html" />
-    <link rel="prev" title="Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
+    <link rel="prev" title="Quantile regression" href="Note-Quantile%20regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -167,6 +167,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
    Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Quantile%20regression.html">
+   Quantile regression
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -662,8 +667,8 @@
     \]</div>
 <ul>
 <li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-eaa97292-46ed-40e6-bdba-0f94a91dcad1">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eaa97292-46ed-40e6-bdba-0f94a91dcad1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc5d4249-2083-4ee8-9349-690dcdd28091">
+<span class="eqno">(12)<a class="headerlink" href="#equation-cc5d4249-2083-4ee8-9349-690dcdd28091" title="Permalink to this equation">¶</a></span>\[\begin{align}
       \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
@@ -731,11 +736,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Note-Multiplicity%20in%20Clinical%20Trials.html" title="previous page">
+        <a class="left-prev" href="Note-Quantile%20regression.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Multiplicity in Clinical Trials</p>
+                <p class="prevnext-title">Quantile regression</p>
             </div>
         </a>
     </div>
