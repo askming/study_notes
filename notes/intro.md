@@ -28,7 +28,7 @@
 
 
 ### 1.7 Various regression methods
-
+- [Quantile regression](Stats/Note-Quantile%20regression.md)
 
 ### 1.8 Clinical trials related
 - [ICH guidelines](Stats/Note-ICH%20guidelines.md)
