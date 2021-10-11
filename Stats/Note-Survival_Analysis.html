@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="How R searches and finds stuff" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html" />
-    <link rel="prev" title="Naive Bayes" href="Note-Naive%20Bayes.html" />
+    <link rel="prev" title="Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -169,11 +169,6 @@
    Multiplicity in Clinical Trials
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Naive%20Bayes.html">
-   Naive Bayes
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Survival Analysis
@@ -206,6 +201,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
    [book] Python Data Science Handbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
+   Naive Bayes
   </a>
  </li>
 </ul>
@@ -662,8 +662,8 @@
     \]</div>
 <ul>
 <li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-572b9725-2090-4d7d-942b-825b39c5119b">
-<span class="eqno">(12)<a class="headerlink" href="#equation-572b9725-2090-4d7d-942b-825b39c5119b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-16b9ebb9-74a6-4347-8a9b-97b6ef78715a">
+<span class="eqno">(12)<a class="headerlink" href="#equation-16b9ebb9-74a6-4347-8a9b-97b6ef78715a" title="Permalink to this equation">¶</a></span>\[\begin{align}
       \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
@@ -731,11 +731,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Note-Naive%20Bayes.html" title="previous page">
+        <a class="left-prev" href="Note-Multiplicity%20in%20Clinical%20Trials.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Naive Bayes</p>
+                <p class="prevnext-title">Multiplicity in Clinical Trials</p>
             </div>
         </a>
     </div>
