@@ -44,15 +44,19 @@ Where $\tau \in [0, 1]$.
 ## 3. Intuition
 
 Consider $\tau = 0.5$ and let $q$ be an initial guess for $q_{\tau}$. The expected loss evaluated at $q$ is
+
 $$
 -0.5\int_{-\infty}^q(y-q)dF_Y(y) + 0.5\int_q^{\infty}(y-q)dF_Y(y).
 $$
+
 In order to minimize the expected loss, we move the value of $q$ a little bit to see whether the expect loss will rise or fall.
 
 Suppose we increase $q$ by 1 unit. Then the change of expected loss would be
+
 $$
 \int_{-\infty}^q1dF_Y(y) + 0.5\int_q^{\infty}1dF_Y(y).
 $$
+
 The first term of the equation is $F_Y (q)$ and second term of the equation is $1-F_Y(q)$. Therefore the change of expected loss function is negative if and only if $F_Y (q)<0.5$, that is if and only if $q$ is smaller than the median. Similarly, if we reduce $q$ by 1 unit, the change of expected loss function is negative if and only if $q$ is larger than the median.
 
 - In order to minimize the expected loss function, we would increase (decrease) $L(q)$ if q is smaller (larger) than the median, until q reaches the median. The idea behind the minimization is to count the number of points (weighted with the density) that are larger or smaller than $q$ and then move $q$ to a point where $q$ is larger than $\tau$% of the points.
@@ -60,10 +64,13 @@ The first term of the equation is $F_Y (q)$ and second term of the equation is $
 ## 4. Conditional quantile and quantile regression
 
 Suppose the $\tau$th conditional quantile function is $Q_{Y|X}(\tau)=X\beta_{\tau}$, given tghe distribution function of $Y$, $\beta_{\tau}$can be obtained by solving
+
 $$
 \beta_{\tau} = \arg\min_{\beta\in R^{k}}E(\rho_{\tau}(Y-X\beta)).
 $$
+
 Solving the sample analog gives the estimator of $\beta$:
+
 $$
 \hat{\beta}_{\tau} = \arg\min_{\beta\in R^k}\sum_{i=1}^n(\rho_{\tau}(Y_i-X_i\beta)).
 $$
@@ -76,7 +83,9 @@ $$
     $$
     \min_{\beta^+, \beta^-, u^-\in R^{2k}\times R_+^{2n}}\left\{\tau I'_nu^+ + (1-\tau)I'_n u^-|X(\beta^+-\beta^-)+u^+-u^- = Y \right\},
     $$
+
     where
+
     $$
     \beta_j^+ =\max(\beta_j, 0), \beta^-_j = -\min(\beta_j, 0), u_j^+=\max(u_j, 0), u_j^- = -\min(u_j, 0).
     $$
@@ -106,23 +115,23 @@ $$
     $$
     f_p(u)=p(1-p)\exp\{-\rho_p(u)\},
     $$
+
     where $0 < p < 1$ and $\rho_p(u)=u(p-I(u<0))$.
 
      - When $p=1/2$, the density reduces to 
-
        
        $$
        f(u)=\frac{1}{4}\exp(-|u|/2),
        $$
+
        which is the density of a **standard symmetric Laplace distribuiton.**
 
        
 
      - For all other values of $p$, the density is asymmetic.
 
-       
-
   - Including location and scale parameters, $\mu, \sigma$, in the ALD we obtain 
+  
     $$
     f_p(u;\mu,\sigma)=\frac{p(1-p)}{\sigma}\exp\left\{-\rho_p\left(\frac{u-\mu}{\sigma}\right)\right\}.
     $$
@@ -138,10 +147,13 @@ $$
   
 
   - Given the observations, ${\bf y}=(y_1,\cdots,y_n)$, the posterior distribution of $\boldsymbol{\beta}, \pi(\boldsymbol{\beta}|{\bf y})$ is given by 
+  
     $$
     \pi(\boldsymbol{\beta}|{\bf y})\propto L({\bf y}|\boldsymbol{\beta})p(\boldsymbol{\beta})
     $$
+
     where $p(\boldsymbol{\beta})$ is the prior distribution of $\boldsymbol{\beta}$ and $L({\bf y}|\boldsymbol{\beta})$ is the likelihood function written as 
+
     $$
     L({\bf y}|\boldsymbol{\beta})=p^n(1-p)^n\exp\left\{-\sum_{i}\rho_p(y_i-{\bf x_i}'\boldsymbol{\beta})\right\},
     $$
@@ -164,13 +176,11 @@ $$
 
 A number of papers that are on the early application of quantile regression:
 
-1. Cole and Green, 1992
-2. Royston and Altman, 1994
-3. {cite:p}`buchinsky1998recent`
-4. {cite:p}`yu1998local`
-5. {cite:p}`he1998bivariate`
-6. {cite:p}`koenker1999goodness`
-7. {cite:p}`yu2001bayesian`
+1. {cite:p}`buchinsky1998recent`
+2. {cite:p}`yu1998local`
+3. {cite:p}`he1998bivariate`
+4. {cite:p}`koenker1999goodness`
+5. {cite:p}`yu2001bayesian`
 
 ```{bibliography}
 :filter: docname in docnames
