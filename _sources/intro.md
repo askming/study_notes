@@ -49,6 +49,7 @@
 ### 2.2 ML methods
 
 #### 2.2.1 Surpervised learning
+- [Naive Bayes](Stats/Note-Naive%20Bayes.md)
 
 #### 2.2.2 Unsupervised learning
 
