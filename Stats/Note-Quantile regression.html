@@ -396,30 +396,34 @@ Where \)</span>\tau \in [0, 1]$.</p>
 </div>
 <div class="section" id="intuition">
 <h2>3. Intuition<a class="headerlink" href="#intuition" title="Permalink to this headline">¶</a></h2>
-<p>Consider <span class="math notranslate nohighlight">\(\tau = 0.5\)</span> and let <span class="math notranslate nohighlight">\(q\)</span> be an initial guess for <span class="math notranslate nohighlight">\(q_{\tau}\)</span>. The expected loss evaluated at <span class="math notranslate nohighlight">\(q\)</span> is
-$<span class="math notranslate nohighlight">\(
+<p>Consider <span class="math notranslate nohighlight">\(\tau = 0.5\)</span> and let <span class="math notranslate nohighlight">\(q\)</span> be an initial guess for <span class="math notranslate nohighlight">\(q_{\tau}\)</span>. The expected loss evaluated at <span class="math notranslate nohighlight">\(q\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
 -0.5\int_{-\infty}^q(y-q)dF_Y(y) + 0.5\int_q^{\infty}(y-q)dF_Y(y).
-\)</span><span class="math notranslate nohighlight">\(
-In order to minimize the expected loss, we move the value of \)</span>q$ a little bit to see whether the expect loss will rise or fall.</p>
-<p>Suppose we increase <span class="math notranslate nohighlight">\(q\)</span> by 1 unit. Then the change of expected loss would be
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>In order to minimize the expected loss, we move the value of <span class="math notranslate nohighlight">\(q\)</span> a little bit to see whether the expect loss will rise or fall.</p>
+<p>Suppose we increase <span class="math notranslate nohighlight">\(q\)</span> by 1 unit. Then the change of expected loss would be</p>
+<div class="math notranslate nohighlight">
+\[
 \int_{-\infty}^q1dF_Y(y) + 0.5\int_q^{\infty}1dF_Y(y).
-\)</span><span class="math notranslate nohighlight">\(
-The first term of the equation is \)</span>F_Y (q)<span class="math notranslate nohighlight">\( and second term of the equation is \)</span>1-F_Y(q)<span class="math notranslate nohighlight">\(. Therefore the change of expected loss function is negative if and only if \)</span>F_Y (q)&lt;0.5<span class="math notranslate nohighlight">\(, that is if and only if \)</span>q<span class="math notranslate nohighlight">\( is smaller than the median. Similarly, if we reduce \)</span>q<span class="math notranslate nohighlight">\( by 1 unit, the change of expected loss function is negative if and only if \)</span>q$ is larger than the median.</p>
+\]</div>
+<p>The first term of the equation is <span class="math notranslate nohighlight">\(F_Y (q)\)</span> and second term of the equation is <span class="math notranslate nohighlight">\(1-F_Y(q)\)</span>. Therefore the change of expected loss function is negative if and only if <span class="math notranslate nohighlight">\(F_Y (q)&lt;0.5\)</span>, that is if and only if <span class="math notranslate nohighlight">\(q\)</span> is smaller than the median. Similarly, if we reduce <span class="math notranslate nohighlight">\(q\)</span> by 1 unit, the change of expected loss function is negative if and only if <span class="math notranslate nohighlight">\(q\)</span> is larger than the median.</p>
 <ul class="simple">
 <li><p>In order to minimize the expected loss function, we would increase (decrease) <span class="math notranslate nohighlight">\(L(q)\)</span> if q is smaller (larger) than the median, until q reaches the median. The idea behind the minimization is to count the number of points (weighted with the density) that are larger or smaller than <span class="math notranslate nohighlight">\(q\)</span> and then move <span class="math notranslate nohighlight">\(q\)</span> to a point where <span class="math notranslate nohighlight">\(q\)</span> is larger than <span class="math notranslate nohighlight">\(\tau\)</span>% of the points.</p></li>
 </ul>
 </div>
 <div class="section" id="conditional-quantile-and-quantile-regression">
 <h2>4. Conditional quantile and quantile regression<a class="headerlink" href="#conditional-quantile-and-quantile-regression" title="Permalink to this headline">¶</a></h2>
-<p>Suppose the <span class="math notranslate nohighlight">\(\tau\)</span>th conditional quantile function is <span class="math notranslate nohighlight">\(Q_{Y|X}(\tau)=X\beta_{\tau}\)</span>, given tghe distribution function of <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(\beta_{\tau}\)</span>can be obtained by solving
-$<span class="math notranslate nohighlight">\(
+<p>Suppose the <span class="math notranslate nohighlight">\(\tau\)</span>th conditional quantile function is <span class="math notranslate nohighlight">\(Q_{Y|X}(\tau)=X\beta_{\tau}\)</span>, given tghe distribution function of <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(\beta_{\tau}\)</span>can be obtained by solving</p>
+<div class="math notranslate nohighlight">
+\[
 \beta_{\tau} = \arg\min_{\beta\in R^{k}}E(\rho_{\tau}(Y-X\beta)).
-\)</span><span class="math notranslate nohighlight">\(
-Solving the sample analog gives the estimator of \)</span>\beta<span class="math notranslate nohighlight">\(:
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Solving the sample analog gives the estimator of <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 \hat{\beta}_{\tau} = \arg\min_{\beta\in R^k}\sum_{i=1}^n(\rho_{\tau}(Y_i-X_i\beta)).
-\)</span>$</p>
+\]</div>
 <ul>
 <li><p><strong>Computation</strong></p>
 <ul>
@@ -428,10 +432,11 @@ Solving the sample analog gives the estimator of \)</span>\beta<span class="math
 \[
     \min_{\beta^+, \beta^-, u^-\in R^{2k}\times R_+^{2n}}\left\{\tau I'_nu^+ + (1-\tau)I'_n u^-|X(\beta^+-\beta^-)+u^+-u^- = Y \right\},
     \]</div>
-<p>where
-$<span class="math notranslate nohighlight">\(
-\beta_j^+ =\max(\beta_j, 0), \beta^-_j = -\min(\beta_j, 0), u_j^+=\max(u_j, 0), u_j^- = -\min(u_j, 0).
-\)</span>$</p>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+    \beta_j^+ =\max(\beta_j, 0), \beta^-_j = -\min(\beta_j, 0), u_j^+=\max(u_j, 0), u_j^- = -\min(u_j, 0).
+    \]</div>
 </li>
 <li><p><em>Simplex methods or interior point methods</em> can be applied to solve the linear programming problem.</p></li>
 </ul>
@@ -470,10 +475,12 @@ $<span class="math notranslate nohighlight">\(
 <li><p>For all other values of <span class="math notranslate nohighlight">\(p\)</span>, the density is asymmetic.</p></li>
 </ul>
 </li>
-<li><p>Including location and scale parameters, <span class="math notranslate nohighlight">\(\mu, \sigma\)</span>, in the ALD we obtain
-$<span class="math notranslate nohighlight">\(
-f_p(u;\mu,\sigma)=\frac{p(1-p)}{\sigma}\exp\left\{-\rho_p\left(\frac{u-\mu}{\sigma}\right)\right\}.
-\)</span>$</p></li>
+<li><p>Including location and scale parameters, <span class="math notranslate nohighlight">\(\mu, \sigma\)</span>, in the ALD we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+    f_p(u;\mu,\sigma)=\frac{p(1-p)}{\sigma}\exp\left\{-\rho_p\left(\frac{u-\mu}{\sigma}\right)\right\}.
+    \]</div>
+</li>
 </ul>
 </li>
 <li><p><em><strong>Bayesian quantile regression inference</strong></em></p>
@@ -481,14 +488,16 @@ f_p(u;\mu,\sigma)=\frac{p(1-p)}{\sigma}\exp\left\{-\rho_p\left(\frac{u-\mu}{\sig
 <p>​	(i) <span class="math notranslate nohighlight">\(f(y;\mu_i)\)</span> is ALD and</p>
 <p>​	(ii) <span class="math notranslate nohighlight">\(g(\mu_i)={\bf x_i}'\boldsymbol{\beta}(p)=q_p(y_i|{\bf x_i})\)</span>, for any <span class="math notranslate nohighlight">\(0 &lt; p &lt; 1\)</span>.</p>
 <ul>
-<li><p>Given the observations, <span class="math notranslate nohighlight">\({\bf y}=(y_1,\cdots,y_n)\)</span>, the posterior distribution of <span class="math notranslate nohighlight">\(\boldsymbol{\beta}, \pi(\boldsymbol{\beta}|{\bf y})\)</span> is given by
-$<span class="math notranslate nohighlight">\(
-\pi(\boldsymbol{\beta}|{\bf y})\propto L({\bf y}|\boldsymbol{\beta})p(\boldsymbol{\beta})
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>p(\boldsymbol{\beta})<span class="math notranslate nohighlight">\( is the prior distribution of \)</span>\boldsymbol{\beta}<span class="math notranslate nohighlight">\( and \)</span>L({\bf y}|\boldsymbol{\beta})<span class="math notranslate nohighlight">\( is the likelihood function written as 
-\)</span><span class="math notranslate nohighlight">\(
-L({\bf y}|\boldsymbol{\beta})=p^n(1-p)^n\exp\left\{-\sum_{i}\rho_p(y_i-{\bf x_i}'\boldsymbol{\beta})\right\},
-\)</span>$</p>
+<li><p>Given the observations, <span class="math notranslate nohighlight">\({\bf y}=(y_1,\cdots,y_n)\)</span>, the posterior distribution of <span class="math notranslate nohighlight">\(\boldsymbol{\beta}, \pi(\boldsymbol{\beta}|{\bf y})\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+    \pi(\boldsymbol{\beta}|{\bf y})\propto L({\bf y}|\boldsymbol{\beta})p(\boldsymbol{\beta})
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(p(\boldsymbol{\beta})\)</span> is the prior distribution of <span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span> and <span class="math notranslate nohighlight">\(L({\bf y}|\boldsymbol{\beta})\)</span> is the likelihood function written as</p>
+<div class="math notranslate nohighlight">
+\[
+    L({\bf y}|\boldsymbol{\beta})=p^n(1-p)^n\exp\left\{-\sum_{i}\rho_p(y_i-{\bf x_i}'\boldsymbol{\beta})\right\},
+    \]</div>
 <p>with a location parameter <span class="math notranslate nohighlight">\(\mu_i={\bf x_i}'\boldsymbol{\beta}.\)</span></p>
 </li>
 <li><p>In theory, we can use any prior for <span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span>, but in the absence of any realistic information one could use improper uniform prior distribution for all the components of <span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span>.</p></li>
@@ -505,8 +514,6 @@ L({\bf y}|\boldsymbol{\beta})=p^n(1-p)^n\exp\left\{-\sum_{i}\rho_p(y_i-{\bf x_i}
 </ul>
 <p>A number of papers that are on the early application of quantile regression:</p>
 <ol class="simple">
-<li><p>Cole and Green, 1992</p></li>
-<li><p>Royston and Altman, 1994</p></li>
 <li><p><span id="id3">[<a class="reference internal" href="#id26">Buchinsky, 1998</a>]</span></p></li>
 <li><p><span id="id4">[<a class="reference internal" href="#id27">Yu and Jones, 1998</a>]</span></p></li>
 <li><p><span id="id5">[<a class="reference internal" href="#id28">He <em>et al.</em>, 1998</a>]</span></p></li>
