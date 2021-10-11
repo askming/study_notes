@@ -326,16 +326,16 @@
   <div class="section" id="naive-bayes">
 <h1>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p><em>Naive Bayes</em> is an algorithm used in classication, it’s one of the most ecient and eective inductive learning algorithm for machine learning.</p></li>
+<li><p><em><strong>Naive Bayes</strong></em> is an algorithm used in classication, it’s one of the most ecient and eective inductive learning algorithm for machine learning.</p></li>
 <li><p>In classication, the goal of a learning algorithm is to construct a classier given a set of training examples with class labels, where an <em>example E</em> is represented by a tuple of <em>attribute</em> values <span class="math notranslate nohighlight">\((x_1, x_2,\cdots, x_n)\)</span> and <span class="math notranslate nohighlight">\(C\)</span> represents the <em>classication variable</em>.</p></li>
 <li><p>It has been observed that, however, its classication accuracy does not depend on the dependencies; i.e., naive Bayes may still have high accuracy on the datasets in which strong dependencies exist among attributes.</p></li>
-<li><p>It is the distribution of de- pendencies among all attributes over classes that aects the classication of naive Bayes, not merely the dependencies themselves <span id="id1">[]</span></p></li>
+<li><p>It is the distribution of de- pendencies among all attributes over classes that aects the classication of naive Bayes, not merely the dependencies themselves <span id="id1">[<a class="reference internal" href="#id17">Zhang, 2004</a>]</span></p></li>
 </ul>
 <div class="section" id="naive-bayes-and-augmented-naive-bayes">
 <h2>Naive Bayes and augmented naive Bayes<a class="headerlink" href="#naive-bayes-and-augmented-naive-bayes" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p><em>Classier</em>: a function that assigns a class label to an example.</p></li>
-<li><p><em>Bayesian classier</em></p>
+<li><p><em><strong>Classier</strong></em>: a function that assigns a class label to an example.</p></li>
+<li><p><em><strong>Bayesian classier</strong></em></p>
 <p>The the probability of an example <span class="math notranslate nohighlight">\(E = (x_1, x_2, \cdots, x_n)\)</span> being class <span class="math notranslate nohighlight">\(c\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -348,7 +348,7 @@
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(f_b(E)\)</span> is called Bayesian classifier.</p>
 </li>
-<li><p><em>Naive Bayesian (NB) Classier</em></p>
+<li><p><em><strong>Naive Bayesian (NB) Classier</strong></em></p>
 <p>By assuming that all attributes are independent given the value of the class variable; that is,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -362,7 +362,7 @@
 <p>Naive Bayes is the simplest form of Bayesian network, in which all attributes are independent given the value of the class variable.</p>
 <p><img alt="image-20211010204136545" src="https://raw.githubusercontent.com/askming/picgo/master/image-20211010204136545.png" /></p>
 </li>
-<li><p><em>Augmented naive Bayes (ANB)</em> is an extended naive Bayes, in which the class node directly points to all attribute nodes, and there exist links among attribute nodes. From the view of probability, an ANB <span class="math notranslate nohighlight">\(G\)</span> represents a joint probability distribution represented below.</p>
+<li><p><em><strong>Augmented naive Bayes (ANB)</strong></em> is an extended naive Bayes, in which the class node directly points to all attribute nodes, and there exist links among attribute nodes. From the view of probability, an ANB <span class="math notranslate nohighlight">\(G\)</span> represents a joint probability distribution represented below.</p>
 <div class="math notranslate nohighlight">
 \[
   p_G(x_1, x_2, \cdots, x_n, G) = p(c)\prod_{i=1}^np(x_i|pa(x_i), c)
@@ -370,10 +370,10 @@
 <p>where <span class="math notranslate nohighlight">\(pa(x_i)\)</span> denotes an assignment to values of the parents of <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
 <p><img alt="image-20211010204424235" src="https://raw.githubusercontent.com/askming/picgo/master/image-20211010204424235.png" /></p>
 </li>
-<li><p><em>Local independence</em></p>
+<li><p><em><strong>Local independence</strong></em></p>
 <p>For each node, the inuence of its parents is quantied by the correspondent conditional probabilities. We call the dependence between a node and its parents local dependence of this node.</p>
 </li>
-<li><p><em>Local dependence derivative</em></p>
+<li><p><em><strong>Local dependence derivative</strong></em></p>
 <p>For a node <span class="math notranslate nohighlight">\(X\)</span> on ANB <span class="math notranslate nohighlight">\(G\)</span>,the local dependence derivative of <span class="math notranslate nohighlight">\(X\)</span> in classes <span class="math notranslate nohighlight">\(+\)</span> and <span class="math notranslate nohighlight">\(-\)</span> are dened as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -383,7 +383,7 @@
   \end{split}\]</div>
 <p>For example, <span class="math notranslate nohighlight">\(dd_G^+(x|pa(x))\)</span> reflects the strength of the local dependence of node <span class="math notranslate nohighlight">\(X\)</span> in class <span class="math notranslate nohighlight">\(+\)</span>, which measures the influence of <span class="math notranslate nohighlight">\(X's\)</span> local dependence on the classification in class <span class="math notranslate nohighlight">\(+\)</span>.</p>
 </li>
-<li><p><em>Local dependence derivative ratio</em> at node <span class="math notranslate nohighlight">\(X\)</span></p>
+<li><p><em><strong>Local dependence derivative ratio</strong></em> at node <span class="math notranslate nohighlight">\(X\)</span></p>
 <p>For a node <span class="math notranslate nohighlight">\(X\)</span> on ANB <span class="math notranslate nohighlight">\(G\)</span>,the local dependence derivative ratio at node <span class="math notranslate nohighlight">\(X\)</span>, denoted by <span class="math notranslate nohighlight">\(ddrG(x)\)</span> is dened as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -391,16 +391,19 @@
   \]</div>
 <p><span class="math notranslate nohighlight">\(ddrG(x)\)</span> Quantifies the influence of <span class="math notranslate nohighlight">\(X's\)</span> local dependence on the classification.</p>
 </li>
-<li><p><em>Dependence distribution factor</em></p>
+<li><p><em><strong>Dependence distribution factor</strong></em></p>
 <div class="math notranslate nohighlight">
 \[
   DF_G(E) = \prod_{i=1}^n ddrG(x_i)
   \]</div>
 </li>
 </ul>
-<p>```{bibliography}
-:filter: docname in docnames
-```</p>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id1">Zha04</a></span></dt>
+<dd><p>Harry Zhang. The optimality of naive bayes. <em>AA</em>, 1(2):3, 2004.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 
