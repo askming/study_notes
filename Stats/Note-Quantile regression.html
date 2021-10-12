@@ -209,6 +209,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
+   ​Machine Learning (General)
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
    Naive Bayes
   </a>
@@ -368,11 +373,12 @@
 </div>
 <div class="section" id="quantiles">
 <h2>2. Quantiles<a class="headerlink" href="#quantiles" title="Permalink to this headline">¶</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(Y\)</span> be real valued random variable with cumulative distribution function <span class="math notranslate nohighlight">\(F_Y(y) = P(Y\le y)\)</span>. The <span class="math notranslate nohighlight">\(\tau\)</span>th quantile of <span class="math notranslate nohighlight">\(Y\)</span> is given by
-$<span class="math notranslate nohighlight">\(
+<p>Let <span class="math notranslate nohighlight">\(Y\)</span> be real valued random variable with cumulative distribution function <span class="math notranslate nohighlight">\(F_Y(y) = P(Y\le y)\)</span>. The <span class="math notranslate nohighlight">\(\tau\)</span>th quantile of <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
 Q_Y(\tau) = F^{-1}_Y(\tau) = \inf\{y: F_Y(y)\ge \tau\}
-\)</span><span class="math notranslate nohighlight">\(
-Where \)</span>\tau \in [0, 1]$.</p>
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\tau \in [0, 1]\)</span>.</p>
 <ul>
 <li><p><strong>Loss function</strong></p>
 <p>Define the loss function as <span class="math notranslate nohighlight">\(\rho_{\tau}(y) = |y(\tau - \mathbb{I}_{y&lt;0})|\)</span>, where <span class="math notranslate nohighlight">\(\mathbb{I}\)</span> is an indicator variable. A specific quantile can be found by minimizing the expected loss of <span class="math notranslate nohighlight">\(Y − u\)</span> with respect to <span class="math notranslate nohighlight">\(u\)</span>:</p>

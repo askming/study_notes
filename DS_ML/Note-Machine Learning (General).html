@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naive Bayes &#8212; Study Notes</title>
+    <title>​Machine Learning (General) &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Miscellaneous Study Notes" href="../Miscellaneous/Miscellaneous%20Notes.html" />
-    <link rel="prev" title="​Machine Learning (General)" href="Note-Machine%20Learning%20%28General%29.html" />
+    <link rel="next" title="Naive Bayes" href="Note-Naive%20Bayes.html" />
+    <link rel="prev" title="[book] Python Data Science Handbook" href="Book-Python%20Data%20Science%20Handbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -208,13 +208,13 @@
    [book] Python Data Science Handbook
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Machine%20Learning%20%28General%29.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    ​Machine Learning (General)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Naive%20Bayes.html">
    Naive Bayes
   </a>
  </li>
@@ -271,7 +271,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/DS_ML/Note-Naive Bayes.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/DS_ML/Note-Machine Learning (General).md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -291,7 +291,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FDS_ML/Note-Naive Bayes.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FDS_ML/Note-Machine Learning (General).html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -318,8 +318,69 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#naive-bayes-and-augmented-naive-bayes">
-   Naive Bayes and augmented naive Bayes
+  <a class="reference internal nav-link" href="#machine-learning-project-check-list">
+   Machine learning project check list
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frame-the-problem-look-at-the-big-picture">
+     1. Frame the problem &amp; look at the big picture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eda">
+     2. EDA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preparation">
+     3. Data preparation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#select-train-a-model">
+     4. Select &amp; train a model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fine-tune-the-model">
+     5. Fine tune the model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-performance-metrics-vs-model-s-cost-function">
+   Model performance metrics vs model’s cost function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-performance-metrics-classification">
+     Model performance metrics: classification
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#log-loss-vs-auc-vs-f1-score">
+       log-loss vs. AUC vs. F1 score
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiclass-vs-multilabel-vs-mutioutcome-classification">
+   Multiclass vs. multilabel vs. mutioutcome classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gini-impurity-vs-entropy">
+   Gini impurity vs. entropy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-leakage-in-ml">
+   Data leakage in ML
   </a>
  </li>
 </ul>
@@ -333,87 +394,150 @@
         
               <div>
                 
-  <div class="section" id="naive-bayes">
-<h1>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="machine-learning-general">
+<h1>​Machine Learning (General)<a class="headerlink" href="#machine-learning-general" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="machine-learning-project-check-list">
+<h2>Machine learning project check list<a class="headerlink" href="#machine-learning-project-check-list" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="frame-the-problem-look-at-the-big-picture">
+<h3>1. Frame the problem &amp; look at the big picture<a class="headerlink" href="#frame-the-problem-look-at-the-big-picture" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><em><strong>Naive Bayes</strong></em> is an algorithm used in classication, it’s one of the most ecient and eective inductive learning algorithm for machine learning.</p></li>
-<li><p>In classication, the goal of a learning algorithm is to construct a classier given a set of training examples with class labels, where an <em>example E</em> is represented by a tuple of <em>attribute</em> values <span class="math notranslate nohighlight">\((x_1, x_2,\cdots, x_n)\)</span> and <span class="math notranslate nohighlight">\(C\)</span> represents the <em>classication variable</em>.</p></li>
-<li><p>It has been observed that, however, its classication accuracy does not depend on the dependencies; i.e., naive Bayes may still have high accuracy on the datasets in which strong dependencies exist among attributes.</p></li>
-<li><p>It is the distribution of de- pendencies among all attributes over classes that aects the classication of naive Bayes, not merely the dependencies themselves <span id="id1">[<a class="reference internal" href="#id17">Zhang, 2004</a>]</span></p></li>
-</ul>
-<div class="section" id="naive-bayes-and-augmented-naive-bayes">
-<h2>Naive Bayes and augmented naive Bayes<a class="headerlink" href="#naive-bayes-and-augmented-naive-bayes" title="Permalink to this headline">¶</a></h2>
+<li><p>Supervised/unsupervised/reinforcement problem?</p></li>
+<li><p>Regression/classification/clustering etc.?</p></li>
+<li><p>Select a performance measure</p>
 <ul>
-<li><p><em><strong>Classier</strong></em>: a function that assigns a class label to an example.</p></li>
-<li><p><em><strong>Bayesian classier</strong></em></p>
-<p>The the probability of an example <span class="math notranslate nohighlight">\(E = (x_1, x_2, \cdots, x_n)\)</span> being class <span class="math notranslate nohighlight">\(c\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[
-  p(c|E) = {{p(E|c)p(c)}\over{p(E)}}
-  \]</div>
-<p><span class="math notranslate nohighlight">\(E\)</span> is classified as the class <span class="math notranslate nohighlight">\(C=+\)</span> iff</p>
-<div class="math notranslate nohighlight">
-\[
-  f_b(E)= {{p(C=+|E)}\over p(C=-|E)} \ge 1
-  \]</div>
-<p>where <span class="math notranslate nohighlight">\(f_b(E)\)</span> is called Bayesian classifier.</p>
-</li>
-<li><p><em><strong>Naive Bayesian (NB) Classier</strong></em></p>
-<p>By assuming that all attributes are independent given the value of the class variable; that is,</p>
-<div class="math notranslate nohighlight">
-\[
-  p(E|c) = p(x_1, x_2, \cdots, x_n) = \prod_{i=1}^n p(x_i|c)
-  \]</div>
-<p>the resulting classifier is then</p>
-<div class="math notranslate nohighlight">
-\[
-  f_{nb}(E) = \frac{p(C = +)}{p(C = -)}\prod_{i=1}^n\frac{p(x_i|C=+)}{p(x_i|C=-)}
-  \]</div>
-<p>Naive Bayes is the simplest form of Bayesian network, in which all attributes are independent given the value of the class variable.</p>
-<p><img alt="image-20211010204136545" src="https://raw.githubusercontent.com/askming/picgo/master/image-20211010204136545.png" /></p>
-</li>
-<li><p><em><strong>Augmented naive Bayes (ANB)</strong></em> is an extended naive Bayes, in which the class node directly points to all attribute nodes, and there exist links among attribute nodes. From the view of probability, an ANB <span class="math notranslate nohighlight">\(G\)</span> represents a joint probability distribution represented below.</p>
-<div class="math notranslate nohighlight">
-\[
-  p_G(x_1, x_2, \cdots, x_n, G) = p(c)\prod_{i=1}^np(x_i|pa(x_i), c)
-  \]</div>
-<p>where <span class="math notranslate nohighlight">\(pa(x_i)\)</span> denotes an assignment to values of the parents of <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
-<p><img alt="image-20211010204424235" src="https://raw.githubusercontent.com/askming/picgo/master/image-20211010204424235.png" /></p>
-</li>
-<li><p><em><strong>Local independence</strong></em></p>
-<p>For each node, the inuence of its parents is quantied by the correspondent conditional probabilities. We call the dependence between a node and its parents local dependence of this node.</p>
-</li>
-<li><p><em><strong>Local dependence derivative</strong></em></p>
-<p>For a node <span class="math notranslate nohighlight">\(X\)</span> on ANB <span class="math notranslate nohighlight">\(G\)</span>,the local dependence derivative of <span class="math notranslate nohighlight">\(X\)</span> in classes <span class="math notranslate nohighlight">\(+\)</span> and <span class="math notranslate nohighlight">\(-\)</span> are dened as</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  dd_G^+(x|pa(x)) = \frac{p(x|pa(x), +)}{p(x|+)} \\
-  
-  dd_G^-(x|pa(x)) = \frac{p(x|pa(x), -)}{p(x|-)}
-  \end{split}\]</div>
-<p>For example, <span class="math notranslate nohighlight">\(dd_G^+(x|pa(x))\)</span> reflects the strength of the local dependence of node <span class="math notranslate nohighlight">\(X\)</span> in class <span class="math notranslate nohighlight">\(+\)</span>, which measures the influence of <span class="math notranslate nohighlight">\(X's\)</span> local dependence on the classification in class <span class="math notranslate nohighlight">\(+\)</span>.</p>
-</li>
-<li><p><em><strong>Local dependence derivative ratio</strong></em> at node <span class="math notranslate nohighlight">\(X\)</span></p>
-<p>For a node <span class="math notranslate nohighlight">\(X\)</span> on ANB <span class="math notranslate nohighlight">\(G\)</span>,the local dependence derivative ratio at node <span class="math notranslate nohighlight">\(X\)</span>, denoted by <span class="math notranslate nohighlight">\(ddrG(x)\)</span> is dened as</p>
-<div class="math notranslate nohighlight">
-\[
-  ddrG(x) = \frac{dd_G^+(x|pa(x))}{dd_G^-(x|pa(x))}
-  \]</div>
-<p><span class="math notranslate nohighlight">\(ddrG(x)\)</span> Quantifies the influence of <span class="math notranslate nohighlight">\(X's\)</span> local dependence on the classification.</p>
-</li>
-<li><p><em><strong>Dependence distribution factor</strong></em></p>
-<div class="math notranslate nohighlight">
-\[
-  DF_G(E) = \prod_{i=1}^n ddrG(x_i)
-  \]</div>
+<li><p>Regression: RMSE/MAE</p></li>
+<li><p>Classification: Precision/recall; sensitivity/specificity; log-loss; Gini; entropy</p></li>
+</ul>
 </li>
 </ul>
-<p id="id2"><dl class="citation">
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id1">Zha04</a></span></dt>
-<dd><p>Harry Zhang. The optimality of naive bayes. <em>AA</em>, 1(2):3, 2004.</p>
-</dd>
-</dl>
-</p>
+</div>
+<div class="section" id="eda">
+<h3>2. EDA<a class="headerlink" href="#eda" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Visualizing the data</p>
+<ul>
+<li><p>distribution</p></li>
+<li><p>correlation</p></li>
+<li><p>feature engineering (can also be a step in next process)</p></li>
+</ul>
+</li>
+<li><p>Missing data</p></li>
+</ul>
+</div>
+<div class="section" id="data-preparation">
+<h3>3. Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Cleaning: missing data, label encoding</p></li>
+<li><p>Handling categorical data: one-hot encoding</p></li>
+<li><p>Feature scaling</p></li>
+<li><p>Feature engineering: create new features</p></li>
+</ul>
+</div>
+<div class="section" id="select-train-a-model">
+<h3>4. Select &amp; train a model<a class="headerlink" href="#select-train-a-model" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Use cross-validation as the mean to evaluate the overall performance of a model</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model</span><span class="o">-</span><span class="n">selection</span> <span class="kn">import</span> <span class="nn">cross</span><span class="o">-</span><span class="n">val</span><span class="o">-</span><span class="n">score</span>
+</pre></div>
+</div>
+</li>
+<li><p>Recommend to save both the hyperparameters &amp; the trained parameters as well as the CV scores, and the predictions using <code class="docutils literal notranslate"><span class="pre">joblib</span></code> from external module</p></li>
+</ul>
+</div>
+<div class="section" id="fine-tune-the-model">
+<h3>5. Fine tune the model<a class="headerlink" href="#fine-tune-the-model" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Grid search: <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> in <code class="docutils literal notranslate"><span class="pre">model-selection</span></code> module</p></li>
+<li><p>Random search: <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code></p></li>
+<li><p>Ensemble methods: combine the models that perform best</p></li>
+<li><p>Analyze the best model and their error</p></li>
+<li><p>Evaluate the system on the test data</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="model-performance-metrics-vs-model-s-cost-function">
+<h2>Model performance metrics vs model’s cost function<a class="headerlink" href="#model-performance-metrics-vs-model-s-cost-function" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Cost function: used in estimating the model parameters, the process of minimizing the cost/loss function leads to the optimized model specification given the data; e.g. MSE, gini impurity measure</p></li>
+<li><p>Performance measures: used in evaluating the predictions performance from a model identified from the data; e.g. AUC, log-loss, F1 score.</p></li>
+<li><p>Different ML models use different cost/loss function for parameter estimation, it’s the “built-in” feature of a specific ML algorithm. When models are trained, their predictive capabilities are compared under the same performance measure/metric.</p></li>
+</ul>
+<div class="section" id="model-performance-metrics-classification">
+<h3>Model performance metrics: classification<a class="headerlink" href="#model-performance-metrics-classification" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="log-loss-vs-auc-vs-f1-score">
+<h4>log-loss vs. AUC vs. F1 score<a class="headerlink" href="#log-loss-vs-auc-vs-f1-score" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>AUC computed w.r.t. binary classification with a varying decision threshold</p></li>
+<li><p>Log-loss takes “certainty” of classification into account’ it conceptually goes beyond AUC and is especially relevant in imbalanced data or unequally distributed error cost</p>
+<div class="math notranslate nohighlight">
+\[-(y\log(p) + (1-y)\log(1-p)) \leftarrow \text{ well calibrated}\]</div>
+<ul class="simple">
+<li><p>a measure of accuracy that incorporates the idea of probabilistic confidence</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[F_1 = \left.( \frac{2}{\text{recall}^{-1} + \text{precision}^{-1}}\right.),\]</div>
+<p>where recall = sensitivity (true positive rate, TPR) and precision = positive predicted value(PPV, i.e. true positive/predicted positive)</p>
+</li>
+<li><p>If care about absolute probabilistic difference, go with log-loss</p></li>
+<li><p>If only care about final class prediction, and don’t want to tune threshold, go with AUC</p></li>
+<li><p>F1 is sensitive to threshold</p></li>
+<li><p>If data is imbalanced</p>
+<ul class="simple">
+<li><p>Go with F1 if have less positive cases, e.g. fraud detection</p></li>
+<li><p>Go with AUC if don’t care about the actual class</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="multiclass-vs-multilabel-vs-mutioutcome-classification">
+<h2>Multiclass vs. multilabel vs. mutioutcome classification<a class="headerlink" href="#multiclass-vs-multilabel-vs-mutioutcome-classification" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Multiclass</p>
+<ul class="simple">
+<li><p>OVA (one vs all): <span class="math notranslate nohighlight">\(K\)</span> model if there are <span class="math notranslate nohighlight">\(K\)</span> classes; preferred for most binary classifier</p></li>
+<li><p>OVO (one vs one): <span class="math notranslate nohighlight">\(\frac{K(K-1)}{2}\)</span> models if there are total <span class="math notranslate nohighlight">\(K\)</span> classes; faster to train, leads to many small sets</p></li>
+</ul>
+<p>Random forest can directly classify instances into multiple classes</p>
+</li>
+<li><p>Multilabel: each instance have more than one outcome to predict, e.g. a photo with multiple people in it</p></li>
+<li><p>Multioutcome: multiclass + multilabel, i.e. each outcome, among multiple outcomes, is a multiclass perdition task</p></li>
+</ul>
+</div>
+<div class="section" id="gini-impurity-vs-entropy">
+<h2>Gini impurity vs. entropy<a class="headerlink" href="#gini-impurity-vs-entropy" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Gini impurity for node <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[G_i = 1 - \sum_{k=1}^K p_{i, k}^2,\]</div>
+<p><span class="math notranslate nohighlight">\(k\)</span> is the class index</p>
+</li>
+<li><p>Entropy for node <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[H_i = -\sum_{k=1, p_{i,k}\ne0}^K p_{i, k}\log(p_{i, k})\]</div>
+</li>
+<li><p>Most of the times, <span class="math notranslate nohighlight">\(G_i\)</span> or <span class="math notranslate nohighlight">\(H_i\)</span> don’t make big difference, while <span class="math notranslate nohighlight">\(G_i\)</span> is slightly faster to compute</p></li>
+<li><p>Gini trends to isolate the most frequent class in its own branch, while entropy trends to be more balanced</p></li>
+</ul>
+</div>
+<div class="section" id="data-leakage-in-ml">
+<h2>Data leakage in ML<a class="headerlink" href="#data-leakage-in-ml" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em><strong>Data leakage</strong></em>: training data contains info about the target, but similar data won’t be available when the model is used for prediction.</p>
+<ul>
+<li><p><strong>Target leakage</strong>: timing or chronological order of x and y</p></li>
+<li><p><strong>Train-test leakage</strong></p></li>
+</ul>
+</li>
+<li><p>Target leakage: some “predictor” or x may actually be collected/updated after y(outcome) is observed in the training data, such variables should be used in model training</p></li>
+<li><p>Train-test contamination: when validation data affects the preprocessing behavior</p>
+<ul>
+<li><p>e.g. run a preprocessing (like fitting an imputer for missing values) before calling <code class="docutils literal notranslate"><span class="pre">train_test_split()</span></code></p></li>
+<li><p>If the validation is based on a simple train-test split, exclude the validation data from any type of fitting, including the fitting of preprocessing steps. When using CV, it’s even more critical that you do your preprocessing inside then pipeline!</p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
@@ -447,19 +571,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Note-Machine%20Learning%20%28General%29.html" title="previous page">
+        <a class="left-prev" href="Book-Python%20Data%20Science%20Handbook.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">​Machine Learning (General)</p>
+                <p class="prevnext-title">[book] Python Data Science Handbook</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../Miscellaneous/Miscellaneous%20Notes.html" title="next page">
+        <a class="right-next" href="Note-Naive%20Bayes.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Miscellaneous Study Notes</p>
+                <p class="prevnext-title">Naive Bayes</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

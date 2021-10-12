@@ -14,9 +14,11 @@ Quantile regression
 ## 2. Quantiles
 
 Let $Y$ be real valued random variable with cumulative distribution function $F_Y(y) = P(Y\le y)$. The $\tau$th quantile of $Y$ is given by
+
 $$
 Q_Y(\tau) = F^{-1}_Y(\tau) = \inf\{y: F_Y(y)\ge \tau\}
 $$
+
 Where $\tau \in [0, 1]$.
 
 - **Loss function**
