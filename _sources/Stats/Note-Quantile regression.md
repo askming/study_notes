@@ -1,5 +1,4 @@
-Quantile regression
-========================================================
+# Quantile regression
 
 **Quantile regression** is a type of regression analysis aims at estimating either the conditional median or other quantiles of the response variable, whereas the method of least squares results in estimates that approximate the conditional mean of the response variable given certain values of the predictor variables.
 
