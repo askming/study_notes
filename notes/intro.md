@@ -47,6 +47,7 @@
 ### 2.1 Data preprocessing pipeline
 
 ### 2.2 ML methods
+- [ML General](DS_ML/Note-Machine%20Learning%20(General).md)
 
 #### 2.2.1 Surpervised learning
 - [Naive Bayes](DS_ML/Note-Naive%20Bayes.md)
