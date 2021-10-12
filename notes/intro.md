@@ -72,7 +72,7 @@
 #### 2.4.2 Python
 
 ### 2.5 Other topics
-
+- [SQL](Miscellaneous/Note-SQL%20Study%20Notes.md)
 <hr>
 
 ## 3 Math
