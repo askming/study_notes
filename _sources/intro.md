@@ -51,6 +51,7 @@
 - [Stochastic gradient descent](DS_ML/Note-Stochasitic%20Gradient%20Descent.md)
 
 #### 2.2.1 Surpervised learning
+- [Tree & Random Forest (Bagging)](DS_ML/Note-Tree,%20Random%20Forest%20(Bagging).md)
 - [Boosting](DS_ML/Note-Boosting.md)
 - [Naive Bayes](DS_ML/Note-Naive%20Bayes.md)
 
@@ -62,6 +63,7 @@
 #### 2.2.4 Reinforcement learning
 
 ### 2.3 Data visualization 
+- [matplotlib](Stats_Comp/Note-matplotlib.md)
 
 ### 2.4 Analytical tools
 

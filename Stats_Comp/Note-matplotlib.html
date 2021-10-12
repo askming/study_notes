@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>​Machine Learning (General) &#8212; Study Notes</title>
+    <title>Notes on matplotlib &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -53,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Naive Bayes" href="Note-Naive%20Bayes.html" />
-    <link rel="prev" title="Cluster analysis" href="Note-Cluster%20analysis.html" />
+    <link rel="next" title="[book] Hands-On Machine Learning with Scikit-Learn and TensorFlow" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html" />
+    <link rel="prev" title="How R searches and finds stuff" href="How%20R%20searches%20and%20finds%20stuff.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -185,14 +183,14 @@
   Statistical computing
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+  <a class="reference internal" href="How%20R%20searches%20and%20finds%20stuff.html">
    How R searches and finds stuff
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -207,44 +205,44 @@
   DS/ML
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
    [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Book-Python%20Data%20Science%20Handbook.html">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
    [book] Python Data Science Handbook
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Boosting.html">
+  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
    Boosting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Cluster%20analysis.html">
+  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
    Cluster analysis
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
    ​Machine Learning (General)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Naive%20Bayes.html">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
    Naive Bayes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Stochasitic%20Gradient%20Descent.html">
+  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
    Stochastic Gradient Decent (SGD)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
+  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
    Tree/Random Forest (Bagging)
   </a>
  </li>
@@ -301,7 +299,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/DS_ML/Note-Machine Learning (General).md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats_Comp/Note-matplotlib.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -321,7 +319,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FDS_ML/Note-Machine Learning (General).html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats_Comp/Note-matplotlib.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -348,70 +346,60 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#machine-learning-project-check-list">
-   Machine learning project check list
+  <a class="reference internal nav-link" href="#challenges-to-new-users">
+   Challenges to new users
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#frame-the-problem-look-at-the-big-picture">
-     1. Frame the problem &amp; look at the big picture
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#eda">
-     2. EDA
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-preparation">
-     3. Data preparation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#select-train-a-model">
-     4. Select &amp; train a model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fine-tune-the-model">
-     5. Fine tune the model
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#model-performance-metrics-vs-model-s-cost-function">
-   Model performance metrics vs model’s cost function
+  <a class="reference internal nav-link" href="#reasons-to-use-matplotlib">
+   Reasons to use matplotlib
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ways-to-use-matplotlib">
+   Ways to use matplotlib
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#model-performance-metrics-classification">
-     Model performance metrics: classification
+    <a class="reference internal nav-link" href="#basic-premises">
+     Basic Premises
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#log-loss-vs-auc-vs-f1-score">
-       log-loss vs. AUC vs. F1 score
+      <a class="reference internal nav-link" href="#key-steps-for-learning-how-to-use-matplotlib">
+       Key steps for learning how to use matplotlib
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#parts-of-a-figure">
+       Parts of a Figure
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-plots">
+     Making plots
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot-the-data-using-the-standard-pandas-plotting-function">
+       Plot the data using the standard pandas plotting function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#customizing-the-plot">
+       Customizing the plot
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-plots-axes-in-one-figure">
+       Multiple plots (axes) in one figure
       </a>
      </li>
     </ul>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiclass-vs-multilabel-vs-mutioutcome-classification">
-   Multiclass vs. multilabel vs. mutioutcome classification
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gini-impurity-vs-entropy">
-   Gini impurity vs. entropy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-leakage-in-ml">
-   Data leakage in ML
-  </a>
  </li>
 </ul>
 
@@ -424,150 +412,103 @@
         
               <div>
                 
-  <div class="section" id="machine-learning-general">
-<h1>​Machine Learning (General)<a class="headerlink" href="#machine-learning-general" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="machine-learning-project-check-list">
-<h2>Machine learning project check list<a class="headerlink" href="#machine-learning-project-check-list" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="frame-the-problem-look-at-the-big-picture">
-<h3>1. Frame the problem &amp; look at the big picture<a class="headerlink" href="#frame-the-problem-look-at-the-big-picture" title="Permalink to this headline">¶</a></h3>
+  <div class="section" id="notes-on-matplotlib">
+<h1>Notes on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#notes-on-matplotlib" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="challenges-to-new-users">
+<h2>Challenges to new users<a class="headerlink" href="#challenges-to-new-users" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Supervised/unsupervised/reinforcement problem?</p></li>
-<li><p>Regression/classification/clustering etc.?</p></li>
-<li><p>Select a performance measure</p>
+<li><p>Matplotlib has two interfaces. The first is based on MATLAB and uses a <strong>state-based interface</strong>. The second option is an an <strong>object-oriented interface</strong>.</p>
 <ul>
-<li><p>Regression: RMSE/MAE</p></li>
-<li><p>Classification: Precision/recall; sensitivity/specificity; log-loss; Gini; entropy</p></li>
+<li><p>The reason two interfaces cause confusion is that in the world of stack overflow and tons of information available via google searches, new users will stumble across multiple solutions to problems that look somewhat similar but are not the same.</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="eda">
-<h3>2. EDA<a class="headerlink" href="#eda" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>New matplotlib users should learn and use the object oriented interface.</strong></p>
+</div></blockquote>
 <ul class="simple">
-<li><p>Visualizing the data</p>
+<li><p>Another historic challenge with matplotlib is that some of the default style choices were rather unattractive.</p>
 <ul>
-<li><p>distribution</p></li>
-<li><p>correlation</p></li>
-<li><p>feature engineering (can also be a step in next process)</p></li>
+<li><p>Matplotlib 2.0 has much nicer styling capabilities and ability to theme your visualizations with minimal effort.</p></li>
 </ul>
 </li>
-<li><p>Missing data</p></li>
+<li><p>There is confusion as to when you should use pure matplotlib to plot something vs. a tool like pandas or seaborn that is built on top of matplotlib.</p></li>
 </ul>
 </div>
-<div class="section" id="data-preparation">
-<h3>3. Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="reasons-to-use-matplotlib">
+<h2>Reasons to use matplotlib<a class="headerlink" href="#reasons-to-use-matplotlib" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Cleaning: missing data, label encoding</p></li>
-<li><p>Handling categorical data: one-hot encoding</p></li>
-<li><p>Feature scaling</p></li>
-<li><p>Feature engineering: create new features</p></li>
+<li><p>The library allows you to create almost any visualization you could imagine</p></li>
+<li><p>There is a rich ecosystem of python tools built around it and many of the more advanced visualization tools use matplotlib as the base library.</p></li>
 </ul>
 </div>
-<div class="section" id="select-train-a-model">
-<h3>4. Select &amp; train a model<a class="headerlink" href="#select-train-a-model" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ways-to-use-matplotlib">
+<h2>Ways to use matplotlib<a class="headerlink" href="#ways-to-use-matplotlib" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-premises">
+<h3>Basic Premises<a class="headerlink" href="#basic-premises" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="key-steps-for-learning-how-to-use-matplotlib">
+<h4>Key steps for learning how to use matplotlib <a class="footnote-reference brackets" href="#effective-matplotlib" id="id1">1</a><a class="headerlink" href="#key-steps-for-learning-how-to-use-matplotlib" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Learn the basic matplotlib terminology, specifically what is a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and an <code class="docutils literal notranslate"><span class="pre">Axes</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Figure</span></code> is the final image that may contain 1 or more axes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Axes</span></code> represent an individual plot</p></li>
+</ul>
+</li>
+<li><p>Always use the object-oriented interface. Get in the habit of using it from the start of your analysis.</p></li>
+<li><p>Start your visualizations with basic pandas plotting.</p></li>
+<li><p>Use seaborn for the more complex statistical visualizations.</p></li>
+<li><p>Use matplotlib to customize the pandas or seaborn visualization.</p></li>
+</ol>
+</div>
+<div class="section" id="parts-of-a-figure">
+<h4>Parts of a Figure <a class="footnote-reference brackets" href="#matplotlib-faq" id="id2">2</a><a class="headerlink" href="#parts-of-a-figure" title="Permalink to this headline">¶</a></h4>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/ef2873fb_20200606075422.png?token=ABLIWWYVSPPPYEUHXVWDN7K7EBU6C" /></p>
+</div>
+</div>
+<div class="section" id="making-plots">
+<h3>Making plots<a class="headerlink" href="#making-plots" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
 <ul>
-<li><p>Use cross-validation as the mean to evaluate the overall performance of a model</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model</span><span class="o">-</span><span class="n">selection</span> <span class="kn">import</span> <span class="nn">cross</span><span class="o">-</span><span class="n">val</span><span class="o">-</span><span class="n">score</span>
+<li><p>Matplotlib has many different styles available for rendering plots. You can see which ones are available on your system using <code class="docutils literal notranslate"><span class="pre">plt.style.available</span></code>.</p>
+<ul>
+<li><p>Using a styple is as simple as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p>Recommend to save both the hyperparameters &amp; the trained parameters as well as the CV scores, and the predictions using <code class="docutils literal notranslate"><span class="pre">joblib</span></code> from external module</p></li>
 </ul>
-</div>
-<div class="section" id="fine-tune-the-model">
-<h3>5. Fine tune the model<a class="headerlink" href="#fine-tune-the-model" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Grid search: <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> in <code class="docutils literal notranslate"><span class="pre">model-selection</span></code> module</p></li>
-<li><p>Random search: <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code></p></li>
-<li><p>Ensemble methods: combine the models that perform best</p></li>
-<li><p>Analyze the best model and their error</p></li>
-<li><p>Evaluate the system on the test data</p></li>
+</li>
 </ul>
-</div>
-</div>
-<div class="section" id="model-performance-metrics-vs-model-s-cost-function">
-<h2>Model performance metrics vs model’s cost function<a class="headerlink" href="#model-performance-metrics-vs-model-s-cost-function" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Cost function: used in estimating the model parameters, the process of minimizing the cost/loss function leads to the optimized model specification given the data; e.g. MSE, gini impurity measure</p></li>
-<li><p>Performance measures: used in evaluating the predictions performance from a model identified from the data; e.g. AUC, log-loss, F1 score.</p></li>
-<li><p>Different ML models use different cost/loss function for parameter estimation, it’s the “built-in” feature of a specific ML algorithm. When models are trained, their predictive capabilities are compared under the same performance measure/metric.</p></li>
-</ul>
-<div class="section" id="model-performance-metrics-classification">
-<h3>Model performance metrics: classification<a class="headerlink" href="#model-performance-metrics-classification" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="log-loss-vs-auc-vs-f1-score">
-<h4>log-loss vs. AUC vs. F1 score<a class="headerlink" href="#log-loss-vs-auc-vs-f1-score" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="plot-the-data-using-the-standard-pandas-plotting-function">
+<h4>Plot the data using the standard pandas plotting function<a class="headerlink" href="#plot-the-data-using-the-standard-pandas-plotting-function" title="Permalink to this headline">¶</a></h4>
 <ul>
-<li><p>AUC computed w.r.t. binary classification with a varying decision threshold</p></li>
-<li><p>Log-loss takes “certainty” of classification into account’ it conceptually goes beyond AUC and is especially relevant in imbalanced data or unequally distributed error cost</p>
-<div class="math notranslate nohighlight">
-\[-(y\log(p) + (1-y)\log(1-p)) \leftarrow \text{ well calibrated}\]</div>
-<ul class="simple">
-<li><p>a measure of accuracy that incorporates the idea of probabilistic confidence</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[F_1 = \left.( \frac{2}{\text{recall}^{-1} + \text{precision}^{-1}}\right.),\]</div>
-<p>where recall = sensitivity (true positive rate, TPR) and precision = positive predicted value(PPV, i.e. true positive/predicted positive)</p>
-</li>
-<li><p>If care about absolute probabilistic difference, go with log-loss</p></li>
-<li><p>If only care about final class prediction, and don’t want to tune threshold, go with AUC</p></li>
-<li><p>F1 is sensitive to threshold</p></li>
-<li><p>If data is imbalanced</p>
-<ul class="simple">
-<li><p>Go with F1 if have less positive cases, e.g. fraud detection</p></li>
-<li><p>Go with AUC if don’t care about the actual class</p></li>
-</ul>
+<li><p>It is a quick and easy way to prototype your visualization. Since most people are probably already doing some level of data manipulation/analysis in pandas as a first step, go ahead and use the basic plots to get started.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_10</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Sales&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </li>
 </ul>
 </div>
+<div class="section" id="customizing-the-plot">
+<h4>Customizing the plot<a class="headerlink" href="#customizing-the-plot" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="multiple-plots-axes-in-one-figure">
+<h4>Multiple plots (axes) in one figure<a class="headerlink" href="#multiple-plots-axes-in-one-figure" title="Permalink to this headline">¶</a></h4>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/44af9eec_20200606075451.png?token=ABLIWW26O3BNLFT77UGWQVK7EBU72" /></p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="effective-matplotlib"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://pbpython.com/effective-matplotlib.html">Effectively Using Matplotlib - Practical Business Python</a></p>
+</dd>
+<dt class="label" id="matplotlib-faq"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a class="reference external" href="https://matplotlib.org/faq/usage_faq.html">Usage — Matplotlib 2.0.2 documentation</a></p>
+</dd>
+</dl>
 </div>
 </div>
-<div class="section" id="multiclass-vs-multilabel-vs-mutioutcome-classification">
-<h2>Multiclass vs. multilabel vs. mutioutcome classification<a class="headerlink" href="#multiclass-vs-multilabel-vs-mutioutcome-classification" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Multiclass</p>
-<ul class="simple">
-<li><p>OVA (one vs all): <span class="math notranslate nohighlight">\(K\)</span> model if there are <span class="math notranslate nohighlight">\(K\)</span> classes; preferred for most binary classifier</p></li>
-<li><p>OVO (one vs one): <span class="math notranslate nohighlight">\(\frac{K(K-1)}{2}\)</span> models if there are total <span class="math notranslate nohighlight">\(K\)</span> classes; faster to train, leads to many small sets</p></li>
-</ul>
-<p>Random forest can directly classify instances into multiple classes</p>
-</li>
-<li><p>Multilabel: each instance have more than one outcome to predict, e.g. a photo with multiple people in it</p></li>
-<li><p>Multioutcome: multiclass + multilabel, i.e. each outcome, among multiple outcomes, is a multiclass perdition task</p></li>
-</ul>
-</div>
-<div class="section" id="gini-impurity-vs-entropy">
-<h2>Gini impurity vs. entropy<a class="headerlink" href="#gini-impurity-vs-entropy" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Gini impurity for node <span class="math notranslate nohighlight">\(i\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[G_i = 1 - \sum_{k=1}^K p_{i, k}^2,\]</div>
-<p><span class="math notranslate nohighlight">\(k\)</span> is the class index</p>
-</li>
-<li><p>Entropy for node <span class="math notranslate nohighlight">\(i\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[H_i = -\sum_{k=1, p_{i,k}\ne0}^K p_{i, k}\log(p_{i, k})\]</div>
-</li>
-<li><p>Most of the times, <span class="math notranslate nohighlight">\(G_i\)</span> or <span class="math notranslate nohighlight">\(H_i\)</span> don’t make big difference, while <span class="math notranslate nohighlight">\(G_i\)</span> is slightly faster to compute</p></li>
-<li><p>Gini trends to isolate the most frequent class in its own branch, while entropy trends to be more balanced</p></li>
-</ul>
-</div>
-<div class="section" id="data-leakage-in-ml">
-<h2>Data leakage in ML<a class="headerlink" href="#data-leakage-in-ml" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><em><strong>Data leakage</strong></em>: training data contains info about the target, but similar data won’t be available when the model is used for prediction.</p>
-<ul>
-<li><p><strong>Target leakage</strong>: timing or chronological order of x and y</p></li>
-<li><p><strong>Train-test leakage</strong></p></li>
-</ul>
-</li>
-<li><p>Target leakage: some “predictor” or x may actually be collected/updated after y(outcome) is observed in the training data, such variables should be used in model training</p></li>
-<li><p>Train-test contamination: when validation data affects the preprocessing behavior</p>
-<ul>
-<li><p>e.g. run a preprocessing (like fitting an imputer for missing values) before calling <code class="docutils literal notranslate"><span class="pre">train_test_split()</span></code></p></li>
-<li><p>If the validation is based on a simple train-test split, exclude the validation data from any type of fitting, including the fitting of preprocessing steps. When using CV, it’s even more critical that you do your preprocessing inside then pipeline!</p></li>
-</ul>
-</li>
-</ul>
 </div>
 </div>
 
@@ -584,7 +525,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./DS_ML"
+            path: "./Stats_Comp"
         },
         predefinedOutput: true
     }
@@ -601,19 +542,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Note-Cluster%20analysis.html" title="previous page">
+        <a class="left-prev" href="How%20R%20searches%20and%20finds%20stuff.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Cluster analysis</p>
+                <p class="prevnext-title">How R searches and finds stuff</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Note-Naive%20Bayes.html" title="next page">
+        <a class="right-next" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Naive Bayes</p>
+                <p class="prevnext-title">[book] Hands-On Machine Learning with Scikit-Learn and TensorFlow</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
