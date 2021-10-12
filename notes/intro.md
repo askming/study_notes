@@ -50,10 +50,11 @@
 - [ML General](DS_ML/Note-Machine%20Learning%20(General).md)
 
 #### 2.2.1 Surpervised learning
+- [Boosting](DS_ML/Note-Boosting.md)
 - [Naive Bayes](DS_ML/Note-Naive%20Bayes.md)
 
 #### 2.2.2 Unsupervised learning
-
+- [Cluster analysis](DS_ML/Note-Cluster%20analysis.md)
 
 #### 2.2.3 Deep learning
 
