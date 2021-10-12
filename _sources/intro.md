@@ -48,6 +48,7 @@
 
 ### 2.2 ML methods
 - [ML General](DS_ML/Note-Machine%20Learning%20(General).md)
+- [Stochastic gradient descent](DS_ML/Note-Stochasitic%20Gradient%20Descent.md)
 
 #### 2.2.1 Surpervised learning
 - [Boosting](DS_ML/Note-Boosting.md)
