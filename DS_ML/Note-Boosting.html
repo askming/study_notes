@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cluster analysis &#8212; Study Notes</title>
+    <title>Boosting &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="​Machine Learning (General)" href="Note-Machine%20Learning%20%28General%29.html" />
-    <link rel="prev" title="Boosting" href="Note-Boosting.html" />
+    <link rel="next" title="Cluster analysis" href="Note-Cluster%20analysis.html" />
+    <link rel="prev" title="[book] Python Data Science Handbook" href="Book-Python%20Data%20Science%20Handbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -208,13 +208,13 @@
    [book] Python Data Science Handbook
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Boosting.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Boosting
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cluster%20analysis.html">
    Cluster analysis
   </a>
  </li>
@@ -281,7 +281,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/DS_ML/Note-Cluster analysis.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/DS_ML/Note-Boosting.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -301,7 +301,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FDS_ML/Note-Cluster analysis.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FDS_ML/Note-Boosting.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -328,9 +328,53 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gaussian-mixture-models">
-   Gaussian mixture models
+  <a class="reference internal nav-link" href="#the-idea-of-additive-training">
+   The Idea of Additive Training
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-boosting">
+   Gradient Boosting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-gradient-boosting">
+     Tree gradient boosting
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loss-function-for-xgboost">
+       Loss function for XGBoost
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model-complexity-in-xgboost">
+       Model Complexity in XGBoost
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#final-loss-function-for-xgboosted-trees">
+       Final loss function for XGBoosted trees
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#learn-the-tree-structure">
+       Learn the tree structure
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#some-notes-on-xgboost">
+       Some notes on XGBoost
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reference">
+     Reference
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -343,47 +387,192 @@
         
               <div>
                 
-  <div class="section" id="cluster-analysis">
-<h1>Cluster analysis<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="boosting">
+<h1>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-idea-of-additive-training">
+<h2>The Idea of Additive Training<a class="headerlink" href="#the-idea-of-additive-training" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Two types of unsupervised cluster analysis: <strong>partitioning</strong> and <strong>hierarchical</strong>.</p>
+<li><p>In boosting, we use an additive strategy: fix what we have learned, and add one new tree at a time. Let the prediction at step <span class="math notranslate nohighlight">\(t\)</span> as <span class="math notranslate nohighlight">\(\hat{y}_i^{(t)}\)</span>, then</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+\hat{y}_i^{(0)} &amp;= 0\\
+\hat{y}_i^{(1)} &amp;= f_1(x_i) = \hat{y}_i^{(0)} + f_1(x_i)\\
+\hat{y}_i^{(2)} &amp;= f_1(x_i) + f_2(x_i)= \hat{y}_i^{(1)} + f_2(x_i)\\
+&amp;\dots\\
+\hat{y}_i^{(t)} &amp;= \sum_{k=1}^t f_k(x_i)= \hat{y}_i^{(t-1)} + f_t(x_i)
+\end{array}
+\end{split}\]</div>
 <ul>
-<li><p><strong>Partitioning</strong> algorithms separate objects(features) into a finite set of disjoint subsets, each of which has a center based on the average feature values within the cluster.</p></li>
-<li><p><strong>Hierarchical</strong> algorithms order objects(features) into a hierarchically nested sequence, or tree structure, for which the result is a dendogram that contains a root, branches, and leaves.</p></li>
+<li><p>Or more generally, Forward stagewise additive modeling (FSAM)</p>
+<div class="math notranslate nohighlight">
+\[
+  f_{t} = \sum_{i=1}^{t}v_ih_i = f_{t-1} + v_ih_t
+  \]</div>
+</li>
+<li><p>Depending of the format of the loss function, it leads to different boosting methods</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(L^2\)</span> Boosting: squared loss</p></li>
+<li><div class="math notranslate nohighlight">
+\[l(y, \hat{y}) = \sum_i\left[y_i - (f_{t-1}(x_i) + vh_t(x_i))\right]^2\]</div>
+<ul>
+<li><p>AdaBoost: exponential loss</p>
+<div class="math notranslate nohighlight">
+\[l(y, f(x)) = \exp(-yf(x))\]</div>
+</li>
+<li><p>BinomialBoost: logistic loss</p>
+<div class="math notranslate nohighlight">
+\[l(y, f(x)) = \log(1 + e^{-yf(x)})\]</div>
+</li>
 </ul>
 </li>
-<li><p>Resemblance coefficients or distance metrics, which form a matrix of all pairwise comparisons of similarity or dissimilarity between objects.</p></li>
-<li><p>Correlation is a similarity coefficient.</p></li>
-<li><p>Computationally efficient variant of correlation is <em>Pitman correlation</em></p></li>
-<li><p>Other names for <em>Euclidean</em> and <em>Manhattan distance</em> are the <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> distance, respectively (see <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html"><span class="doc std std-doc">here</span></a>)</p>
-<ul>
-<li><p>Dot production: <span class="math notranslate nohighlight">\(x_l'x_m\)</span></p></li>
-<li><p>Norm of a vector: <span class="math notranslate nohighlight">\(||\mathbf{x}|| = \sqrt{x_1^2 + \cdots + x_p^2}\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>Cluster validity</strong>:</p>
-<ul>
-<li><p>Ideal cluster structure will reveal clusters whose centers are far apart and whose assigned objects are all close in proximity.</p></li>
-<li><p>The more disjoint the clusters are and the less overlap, the greater the chance that the specified number of clusters is the optimal choice.</p></li>
-<li><p><strong>Silhouette index</strong> measures the degree of membership of objects within their assigned clusters.</p>
-<ul>
-<li><p>if all of the objects in a cluster have the same feature values, then the average intra-cluster distance <span class="math notranslate nohighlight">\(a(i) = 0\)</span>, resulting in a numerator of <span class="math notranslate nohighlight">\(b(i) - 0 = b(i)\)</span>, denominator of <span class="math notranslate nohighlight">\(\max{0,b(i)} = b(i)\)</span> and ratio <span class="math notranslate nohighlight">\(s(i)\)</span> of unity.</p></li>
-<li><p>if <span class="math notranslate nohighlight">\(a(i) &gt; b(i)\)</span>, the numerator <span class="math notranslate nohighlight">\(b(i) − a(i)\)</span> and <span class="math notranslate nohighlight">\(s(i)\)</span> become negative, indicating that <span class="math notranslate nohighlight">\(x_i\)</span> is misclassified.</p></li>
-<li><p>if there is no real cluster structure present, both <span class="math notranslate nohighlight">\(a(i)\)</span> and <span class="math notranslate nohighlight">\(b(i)\)</span> will be similar causing s(i) to approach zero.</p></li>
-<li><p>singly, <span class="math notranslate nohighlight">\(s(i)\)</span> by itself only reflects the cluster support for <span class="math notranslate nohighlight">\(x_i\)</span> , so the average silhouette index is used to measure the overall clustering validity</p></li>
-<li><p>Strong evidence of cluster structure occurs if <span class="math notranslate nohighlight">\(0.7&lt;  s\le 1\)</span>, reasonable evidence when <span class="math notranslate nohighlight">\(0.5&lt;s\le 0.7\)</span>, weak evidence for <span class="math notranslate nohighlight">\(0.25 &lt; s \le 0.5\)</span>, and no support for structure if <span class="math notranslate nohighlight">\(s\le 0.25\)</span>.</p></li>
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="gradient-boosting">
+<h2>Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Gradient boosting isn’t about the format of the loss function, instead, it refers to using the gradient method to find the optimal solution in boosting models. It can be used in “any” loss function</p></li>
+<li><p>To choose the next model, we optimize the following objective function at step <span class="math notranslate nohighlight">\(t\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{ll}
+  \text{obj}^{(t)} &amp; = \sum_{i=1}^n l(y_i, \hat{y}_i^{(t)})  \\
+            &amp; = \sum_{i=1}^n l(y_i, \hat{y}_i^{(t-1)} + f_t(x_i)) 
+  \end{array}
+  \end{split}\]</div>
+<ul>
+<li><p>In general, we take the <em>Taylor expansion</em> of the loss function up to the second order:</p>
+<div class="math notranslate nohighlight">
+\[\text{obj}^{(t)} = \sum_{i=1}^n [l(y_i, \hat{y}_i^{(t-1)}) + g_i f_t(x_i) + \frac{1}{2} h_i f_t^2(x_i)] \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{array}{ll}
+    g_i &amp;= \partial_{\hat{y}_i^{(t-1)}} l(y_i, \hat{y}_i^{(t-1)})\\
+    h_i &amp;= \partial_{\hat{y}_i^{(t-1)}}^2 l(y_i, \hat{y}_i^{(t-1)})
+    \end{array}    
+    \end{split}\]</div>
 </li>
-</ul>
-<div class="section" id="gaussian-mixture-models">
-<h2>Gaussian mixture models<a class="headerlink" href="#gaussian-mixture-models" title="Permalink to this headline">¶</a></h2>
+<li><p>After removing all the constants, the specific objective function at step <span class="math notranslate nohighlight">\(t\)</span> becoms</p>
+<div class="math notranslate nohighlight">
+\[
+    \sum_{i=1}^n [g_i f_t(x_i) + \frac{1}{2} h_i f_t^2(x_i)]
+    \]</div>
 <ul class="simple">
-<li><p>Model-based clustering makes the assumption that a finite mixture of probability distributions is responsible for generating the data under consideration.</p></li>
-<li><p>Model-based cluster analysis is an extension of K-means cluster analysis in which maximum likelihood estimation is used.</p></li>
-<li><p>It is the evaluation and comparison of how a selected mixture of probability density functions can best describe the cluster structure.</p></li>
+<li><p>the value of the objective function only depends on <span class="math notranslate nohighlight">\(g_i\)</span> and <span class="math notranslate nohighlight">\(h_i\)</span>. This is how gradient Boost supports custom loss functions. We can optimize every loss function, including logistic regression and pairwise ranking, using exactly the same solver that takes <span class="math notranslate nohighlight">\(g_i\)</span> and <span class="math notranslate nohighlight">\(h_i\)</span> as input!</p></li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="tree-gradient-boosting">
+<h3>Tree gradient boosting<a class="headerlink" href="#tree-gradient-boosting" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Learning tree structure is much harder than traditional optimization problem where you can simply take the gradient. It is intractable to learn all the trees at once.</p></li>
+<li><p>To apply gradient boosting algorithm to decision tree model, first we need to mathematically defined a tree</p>
+<div class="math notranslate nohighlight">
+\[
+  f_t(x) = w_{q(x)}, w \in R^T, q:R^d\rightarrow \{1,2,\cdots,T\}.
+  \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(w\)</span> is the vector of scores on leaves</p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> is a function assigning each data point to the corresponding leaf, i.e. the actual splitting of leaves</p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> is the number of leaves</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="loss-function-for-xgboost">
+<h4>Loss function for XGBoost<a class="headerlink" href="#loss-function-for-xgboost" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>This is how XGBoost different from other boosting models: in addition to minimize the loss, XGBoost also penalizes the model complexity</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{obj}^{(t)} = \sum_{i=1}^n l(y_i, \hat{y}_i^{(t)}) + \sum_{i=1}^t\Omega(f_i)\]</div>
+</div>
+<div class="section" id="model-complexity-in-xgboost">
+<h4>Model Complexity in XGBoost<a class="headerlink" href="#model-complexity-in-xgboost" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>In XGBoost, the complexity of a tree <span class="math notranslate nohighlight">\(f_t(x)\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+  \Omega(f) = \gamma T + \frac{1}{2}\lambda \sum_{j=1}^T w_j^2
+  \]</div>
+</li>
+</ul>
+</div>
+<div class="section" id="final-loss-function-for-xgboosted-trees">
+<h4>Final loss function for XGBoosted trees<a class="headerlink" href="#final-loss-function-for-xgboosted-trees" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>By plugging in the model complexity term, the loss function for XGBoosted tree becomes</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+\text{obj}^{(t)} &amp;\approx \sum_{i=1}^n [g_i w_{q(x_i)} + \frac{1}{2} h_i w_{q(x_i)}^2] + \gamma T + \frac{1}{2}\lambda \sum_{j=1}^T w_j^2\\
+&amp;= \sum^T_{j=1} [(\sum_{i\in I_j} g_i) w_j + \frac{1}{2} (\sum_{i\in I_j} h_i + \lambda) w_j^2 ] + \gamma T
+\end{array}
+\end{split}\]</div>
+<ul>
+<li><p>With futher simiplification:</p>
+<div class="math notranslate nohighlight">
+\[
+  \text{obj}^{(t)} = \sum^T_{j=1} [G_jw_j + \frac{1}{2} (H_j+\lambda) w_j^2] +\gamma T
+  \]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G_j = \sum_{i\in I_j} g_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_j = \sum_{i\in I_j} h_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(I_j = \{i|q(x_i)=j\}\)</span> is the set of indices of data points assigned to the <span class="math notranslate nohighlight">\(j\)</span>-th leaf.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(w_j\)</span> are independent with respect to each other and since the above loss function is a quadratic function of <span class="math notranslate nohighlight">\(w_j\)</span>, it can be solved for the “best” <span class="math notranslate nohighlight">\(w_j\)</span> for a given structure <span class="math notranslate nohighlight">\(q(x)\)</span> can be solved as</p>
+<div class="math notranslate nohighlight">
+\[ w_j^\ast = -\frac{G_j}{H_j+\lambda} \]</div>
+</li>
+<li><p>And the objective reduction we can get is</p>
+<div class="math notranslate nohighlight">
+\[
+  \text{obj}^\ast = -\frac{1}{2} \sum_{j=1}^T \frac{G_j^2}{H_j+\lambda} + \gamma T
+  \]</div>
+</li>
+</ul>
+</div>
+<div class="section" id="learn-the-tree-structure">
+<h4>Learn the tree structure<a class="headerlink" href="#learn-the-tree-structure" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Exploring all possible next tree is intractble, in practice we try to optimize one level of the tree at a time. Specifically we try to split a leaf into two leaves, and the score it gains is</p>
+<div class="math notranslate nohighlight">
+\[
+  Gain = \frac{1}{2} \left[\frac{G_L^2}{H_L+\lambda}+\frac{G_R^2}{H_R+\lambda}-\frac{(G_L+G_R)^2}{H_L+H_R+\lambda}\right] - \gamma
+  \]</div>
+<ul class="simple">
+<li><p>the score on the new left leaf</p></li>
+<li><p>the score on the new right leaf</p></li>
+<li><p>the score on the original leaf</p></li>
+<li><p>regularization on the additional leaf</p></li>
+</ul>
+</li>
+<li><p>If the gain is smaller than <span class="math notranslate nohighlight">\(\gamma\)</span>, we would do better not to add that branch.This is exactly the <strong>pruning</strong> techniques in tree based models! By using the principles of supervised learning, we can naturally come up with the reason these techniques work</p></li>
+<li><p>For real valued data, we usually want to search for an optimal split. To efficiently do so, we place all the instances in sorted order and search for the best split</p></li>
+</ul>
+</div>
+<div class="section" id="some-notes-on-xgboost">
+<h4>Some notes on XGBoost<a class="headerlink" href="#some-notes-on-xgboost" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>The name <code class="docutils literal notranslate"><span class="pre">xgboost</span></code> actually refers to the engineering goal to push the limit of computation resources for boosted tree algorithms. Which is the reason why many people use xgboost. For model, it might be more suitable to be called it as regularized gradient boosting.</p></li>
+<li><p>Both <code class="docutils literal notranslate"><span class="pre">xgboost</span></code> and <code class="docutils literal notranslate"><span class="pre">gbm</span></code>(gradient boosting machines) follows the principle of gradient boosting.  There are however, the difference in modeling details. Specifically, <code class="docutils literal notranslate"><span class="pre">xgboost</span></code> used a more regularized model formalization to control over-fitting, which gives it better performance.</p></li>
+<li><p>XGBoost is normally used to train gradient-boosted decision trees and other gradient boosted models. Random forests use the same model representation and inference, as gradient-boosted decision trees, but a different training algorithm.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="reference">
+<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://xgboost.readthedocs.io/en/latest/tutorials/model.html">Introduction to Boosted Trees — xgboost 1.0.0</a>
+<a class="reference external" href="http://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf">Introduction to Boosted Trees by Tianqi Chen</a></p>
+</div>
 </div>
 </div>
 
@@ -417,19 +606,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Note-Boosting.html" title="previous page">
+        <a class="left-prev" href="Book-Python%20Data%20Science%20Handbook.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Boosting</p>
+                <p class="prevnext-title">[book] Python Data Science Handbook</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Note-Machine%20Learning%20%28General%29.html" title="next page">
+        <a class="right-next" href="Note-Cluster%20analysis.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">​Machine Learning (General)</p>
+                <p class="prevnext-title">Cluster analysis</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
