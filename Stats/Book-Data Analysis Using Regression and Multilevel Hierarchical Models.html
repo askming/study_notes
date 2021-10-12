@@ -251,6 +251,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Computer science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
+   SQL study notes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Miscellaneous
  </span>
 </p>
@@ -258,11 +270,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
    Miscellaneous Study Notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Note-SQL%20Study%20Notes.html">
-   SQL study notes
   </a>
  </li>
 </ul>
@@ -647,8 +654,8 @@
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94ec4a97-d2eb-4ac0-b184-c48da8fe535b">
-<span class="eqno">(7)<a class="headerlink" href="#equation-94ec4a97-d2eb-4ac0-b184-c48da8fe535b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b0b304f0-9363-485f-bc75-c6c456b685d1">
+<span class="eqno">(7)<a class="headerlink" href="#equation-b0b304f0-9363-485f-bc75-c6c456b685d1" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -1001,8 +1008,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-45e502e1-e5a2-4167-b9b4-1d1a7d47594e">
-<span class="eqno">(8)<a class="headerlink" href="#equation-45e502e1-e5a2-4167-b9b4-1d1a7d47594e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ad3db50c-ac42-43a5-bb76-49b59ed9bc46">
+<span class="eqno">(8)<a class="headerlink" href="#equation-ad3db50c-ac42-43a5-bb76-49b59ed9bc46" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -1013,8 +1020,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d96f216-1356-4195-bb4c-8b4404c5b705">
-<span class="eqno">(9)<a class="headerlink" href="#equation-8d96f216-1356-4195-bb4c-8b4404c5b705" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bd9d2bda-9581-4d94-8440-b439a386ec23">
+<span class="eqno">(9)<a class="headerlink" href="#equation-bd9d2bda-9581-4d94-8440-b439a386ec23" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>
