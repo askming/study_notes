@@ -72,7 +72,7 @@
 #### 2.4.2 Python
 
 ### 2.5 Other topics
-- [SQL](Miscellaneous/Note-SQL%20Study%20Notes.md)
+
 <hr>
 
 ## 3 Math
@@ -88,6 +88,7 @@
 ### 4.1 Python
 
 ### 4.2 SQL
+- [SQL study notes](CS/Note-SQL%20Study%20Notes.md)
 
 ### 4.3 Algorithm & Data Structure
 

@@ -17,6 +17,10 @@ parts:
     chapters:
     - glob: "DS_ML/*"
 
+  - caption: Computer science
+    chapters:
+    - glob: "CS/*"
+
   - caption: Miscellaneous
     chapters:
     - glob: "Miscellaneous/*"
