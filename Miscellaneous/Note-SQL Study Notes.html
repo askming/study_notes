@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL study notes &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Miscellaneous Study Notes" href="Miscellaneous%20Notes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Causal%20inference%20in%20statistics%20a%20primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-ICH%20guidelines.html">
+   Notes on ICH guidelines​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Monte%20Carlo%20method.html">
+   Monte Carlo Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Multiplicity%20in%20Clinical%20Trials.html">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Quantile%20regression.html">
+   Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
+   Notes on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
+   Boosting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
+   ​Machine Learning (General)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
+   Naive Bayes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
+   Stochastic Gradient Decent (SGD)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
+   Tree/Random Forest (Bagging)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   SQL study notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Miscellaneous/Note-SQL Study Notes.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FMiscellaneous/Note-SQL Study Notes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-data-manipulation-with-sql">
+   Basic data manipulation with SQL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advanced-sql-tips">
+   Advanced SQL tips
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miscellaneous-tips">
+   Miscellaneous tips
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="sql-study-notes">
+<h1>SQL study notes<a class="headerlink" href="#sql-study-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-data-manipulation-with-sql">
+<h2>Basic data manipulation with SQL<a class="headerlink" href="#basic-data-manipulation-with-sql" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>SQL clause order: <strong>SELECT –&gt; FROM –&gt; WHERE –&gt; GROUP BY –&gt; HAVING –&gt; ORDER BY</strong></p></li>
+<li><p>SQL evaluates these clauses in the order: FROM, WHERE, GROUP BY, HAVING, and finally, SELECT. Therefore, each clause receives the filtered results of the previous filter. It would look like this: <code class="docutils literal notranslate"><span class="pre">SELECT(HAVING(GROUP</span> <span class="pre">BY(WHERE(FROM...))))</span></code></p></li>
+<li><p>Create new/modify existing variables</p>
+<ul>
+<li><p>String functions</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">UPPER()</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">LOWER()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REPLACE(var,</span> <span class="pre">pattern,</span> <span class="pre">replacement)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONCAT(var1,</span> <span class="pre">connection</span> <span class="pre">symbol,</span> <span class="pre">var2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBSTR(var,</span> <span class="pre">start_index,</span> <span class="pre">length)</span></code>: Oracle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBSTRING(var,</span> <span class="pre">start_index,</span> <span class="pre">length)</span></code>: MySql</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEN()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LTRIM()</span></code>, <code class="docutils literal notranslate"><span class="pre">RTRIM()</span></code>, &amp; <code class="docutils literal notranslate"><span class="pre">TRIM()</span></code>: removing empty space in leading, trailing or both</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIM(leading/trailing/both,</span> <span class="pre">char</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">trimed</span> <span class="pre">FROM</span> <span class="pre">var)</span></code>: to remove specific char from a variable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEFT(str,</span> <span class="pre">length)</span></code>, <code class="docutils literal notranslate"><span class="pre">RIGHT()</span></code>: selecte certain length of string from left/right</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POSITION(substring</span> <span class="pre">IN</span> <span class="pre">string)</span></code>: return a numeric value, which is the index counted from left where the substring appears first in the string</p></li>
+<li><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CASE</span> <span class="k">WHEN</span> <span class="p">...</span> <span class="k">THEN</span> <span class="p">...</span> 
+<span class="k">ELSE</span> <span class="p">...</span> 
+<span class="k">END</span> <span class="k">AS</span> <span class="n">new_var_name</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Date functions</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEDD</span></code>: add one year to an existing date</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TO_DATE</span></code>: convertrs a string into date</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEDIFF</span></code>: find the difference b/t two given dates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEPART</span></code>: get year, month, or date from the date variable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DAY</span></code>: get day of the month for the given date</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CURRENT_TIMESTAMP</span></code>: get the date and time (time stamp)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Using aggregate functions (COUNT, AVG, SUM, MIN, MAX)</p>
+<ul class="simple">
+<li><p>usually used with <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code></p></li>
+<li><p>NULL value is elimiated in all thse functions, except for <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code> (<code class="docutils literal notranslate"><span class="pre">COUNT(var)</span></code> still excludes NULL records)</p></li>
+</ul>
+</li>
+<li><p>Apply conditions with <code class="docutils literal notranslate"><span class="pre">WHERE</span></code></p>
+<ul class="simple">
+<li><p>use <code class="docutils literal notranslate"><span class="pre">BETWEEN</span> <span class="pre">...</span> <span class="pre">AND...</span> </code> to select obs with value with a range of a variable (inclusive)</p></li>
+<li><p>Using regrular expression with <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></p>
+<ul>
+<li></li>
+<li><p>_(under score): any single character;</p></li>
+<li><p>[]: any single character with the specificed range e.g. [a-f] &lt;=&gt; [abcdef]</p></li>
+<li><p>[^]: any single character not within the specified range</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Apply conditions using aggregated varaible/value with <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></p></li>
+<li><p>Converting data types</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CAST(column_name</span> <span class="pre">AS</span> <span class="pre">integer)</span></code> or <code class="docutils literal notranslate"><span class="pre">column_name::integer</span></code>: convert to integer</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="advanced-sql-tips">
+<h2>Advanced SQL tips<a class="headerlink" href="#advanced-sql-tips" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Joining tables
+<img alt="c5831be5.png" src="https://raw.githubusercontent.com/askming/picgo/master/c5831be5_20200625134008.png" /></p>
+<ul class="simple">
+<li><p>Filtering with “join” operations:</p>
+<ul>
+<li><p>using “AND” after “ON” clause: filtering happens <strong>before</strong> joining</p></li>
+<li><p>using “WHERE” after “ON” caluse: filtering happens <strong>after</strong> joining</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>UNION operator: to stack one dataset on top of the other</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="n">var3</span> <span class="k">as</span> <span class="n">var3_new</span>
+<span class="k">FROM</span> <span class="n">table1</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="n">var4</span> <span class="k">as</span> <span class="n">var3_new</span>
+<span class="k">FROM</span> <span class="n">table2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If there are same rows from two tables, only one unique row will be shown; or to use <code class="docutils literal notranslate"><span class="pre">UNION</span> <span class="pre">ALL</span></code> to keep duplicates; The opposite is <code class="docutils literal notranslate"><span class="pre">UNION</span> <span class="pre">DISTINCT</span></code></p></li>
+<li><p>Two tables must have same # of cols</p></li>
+<li><p>Columns must have same data types in the same order</p></li>
+</ul>
+</li>
+<li><p>“Cross join”: performs cross product b/t 2 tables. connects each row in the left table with each row in the right table</p></li>
+<li><p>Create a <strong>view</strong> of the data table<a class="footnote-reference brackets" href="#socratica" id="id1">1</a>: security of the data, giving access to only the variables included in the view table</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="k">table_name</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="n">var3</span>
+<span class="k">FROM</span> <span class="k">table</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Subquery</strong>: innter query/nested query: to perform operation in several steps</p>
+<ul class="simple">
+<li><p>subquery need to have an alias</p></li>
+<li><p>EXAMPLE CODE NEEDED</p></li>
+</ul>
+</li>
+<li><p><strong>Window functions</strong>: performs a calculation across a set of table rows that are somehow related to the current row</p>
+<ul>
+<li><p>Examples</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Aggregate_fun</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="n">OVER</span>
+  <span class="p">(</span><span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">var1</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">var2</span>
+   <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">var3</span>
+   <span class="k">ROWS</span> <span class="k">BETWEEN</span> <span class="mi">1</span> <span class="n">PRECEDING</span> <span class="k">AND</span> <span class="k">CURRENT</span> <span class="k">ROW</span><span class="p">)</span> <span class="k">AS</span> <span class="n">new_Var</span>
+</pre></div>
+</div>
+</li>
+<li><p>This doesn’t cause rows to be grouped into a single output row as done in the aggreated functions</p></li>
+<li><p>Three (optional) <strong>components</strong>:</p>
+<ul class="simple">
+<li><p>PARTITION BY: divides the rows of the table into different groups</p></li>
+<li><p>ORDER BY: defines an ordering with each partition.</p></li>
+<li><p>The final (window) clause: defining the <strong>window frame</strong>: defines the set of rows used in each calculation. e.g.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROWS</span> <span class="pre">BETWEEN</span> <span class="pre">1</span> <span class="pre">PRECEDING</span> <span class="pre">AND</span> <span class="pre">CURRENT</span> <span class="pre">ROW</span></code> - the previous row and the current row.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROWS</span> <span class="pre">BETWEEN</span> <span class="pre">3</span> <span class="pre">PRECEDING</span> <span class="pre">AND</span> <span class="pre">1</span> <span class="pre">FOLLOWING</span></code> - the 3 previous rows, the current row, and the following row.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROWS</span> <span class="pre">BETWEEN</span> <span class="pre">UNBOUNDED</span> <span class="pre">PRECEDING</span> <span class="pre">AND</span> <span class="pre">UNBOUNDED</span> <span class="pre">FOLLOWING</span></code> - all rows in the partition.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Three types of <strong>analytic functions</strong><a class="footnote-reference brackets" href="#kaggle" id="id2">2</a></p>
+<ol class="simple">
+<li><p>Analytic aggretate functions</p></li>
+<li><p>Analytic navigation functions</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FIRST_VALUE()</span></code>/<code class="docutils literal notranslate"><span class="pre">LAST_VALUE()</span></code>: returns the first/last value in the input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NTILE()</span></code>: determine the percentiles of a give value in a variable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAG()</span> <span class="pre">&amp;</span> <span class="pre">LEAD()</span></code>: <code class="docutils literal notranslate"><span class="pre">LAG</span></code> pulls record(s) from previous and <code class="docutils literal notranslate"><span class="pre">LEAD</span></code> pulls from following rows</p></li>
+</ul>
+</li>
+<li><p>Analytic numbering functions</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ROW_NUMBER()</span></code>: show row # across the OVER &amp; ORDER BY var</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RANK()</span></code>: similar to <code class="docutils literal notranslate"><span class="pre">ROW_NUMBER()</span></code> but will give same rank if value for ORDER BY variable is the same</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DENSE_RANK()</span></code>: differently from <code class="docutils literal notranslate"><span class="pre">RANK()</span></code>, it won’t skip rank number if there are more than one obs. share the same rank</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Defining a window alias: a convenient way to use several window functions that use the same window:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">WINDOW</span> <span class="n">window_name</span> <span class="k">AS</span>
+  <span class="p">(</span><span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">var1</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">var2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>this should come after <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause</p>
+</li>
+<li><p>Can’t include a window function in a GROUP BY clause</p></li>
+</ul>
+</li>
+<li><p>Nested data</p>
+<ul class="simple">
+<li><p>SQL data can also include a column with multiple fields in it; those fields are nested inside of this column and the nested column has type <code class="docutils literal notranslate"><span class="pre">STRUCT</span></code> (or type <code class="docutils literal notranslate"><span class="pre">RECORD</span></code>)</p></li>
+<li><p>To query a column with nested data, we need to identify each field in the context of the column that contains it:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">C.Name</span></code>: referes to the <code class="docutils literal notranslate"><span class="pre">Name</span></code> field in the <code class="docutils literal notranslate"><span class="pre">C</span></code> column.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Repeated data</p>
+<ul class="simple">
+<li><p>When an ID contains multiple records in another table, and we want to put the multiple records into one column and we say this conlumn contains repeated data.</p></li>
+<li><p>Each entry in a repeated field is an ARRAY, or an ordered list of (zero or more) values with the same datatype.</p></li>
+<li><p>When querying repeated data, we need to put the name of the column containing the repeated data inside an <code class="docutils literal notranslate"><span class="pre">UNNEST()</span></code> function. <code class="docutils literal notranslate"><span class="pre">UNNEST(Column)</span> <span class="pre">AS</span> <span class="pre">var_name</span></code>; This essentially flattens the repeated data (which is then appended to the right side of the table) so that we have one element on each row.</p></li>
+</ul>
+</li>
+<li><p>Nested and repeated data</p>
+<ul class="simple">
+<li><p>A combination of nest and repeat in a column</p></li>
+<li><p>When reading the values, we need UNNEST and use <code class="docutils literal notranslate"><span class="pre">C.Name</span></code> to read individual field</p></li>
+</ul>
+</li>
+<li><p>Pivoting data in SQL (TBD)</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="miscellaneous-tips">
+<h2>Miscellaneous tips<a class="headerlink" href="#miscellaneous-tips" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code>: check if it’s missing value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JOIN</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">INNTER</span> <span class="pre">JOIN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COALESCE()</span></code>: select teh first non NULL value in a list</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span></code> at the beginning of the program, which will roughly show the complex of the program</p></li>
+<li><p>Performance tuning SQL queries</p>
+<ul>
+<li><p>Table size: try to use <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">XX</span></code> to limit the lines to show</p></li>
+<li><p>Joins: make joins less complicated</p></li>
+</ul>
+</li>
+<li><p>We refer to the structure of a table as its schema (something like <code class="docutils literal notranslate"><span class="pre">str()</span></code> in R).</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="socratica"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>from <a class="reference external" href="https://www.youtube.com/channel/UCW6TXMZ5Pq6yL6_k5NZ2e0Q">Socratica|YouTube</a></p>
+</dd>
+<dt class="label" id="kaggle"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>from <a class="reference external" href="https://www.kaggle.com/learn/advanced-sql">Advanced SQL | Kaggle</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Miscellaneous"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Miscellaneous%20Notes.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Miscellaneous Study Notes</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By askming<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
