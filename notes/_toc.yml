@@ -6,6 +6,7 @@ root: intro
 
 parts:
   - caption: Statistics
+    numbered: true
     chapters:
     - glob: "Stats/*"
 
