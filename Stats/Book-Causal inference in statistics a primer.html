@@ -614,8 +614,8 @@ $<span class="math notranslate nohighlight">\(P_m(Y=y|Z=z,X=x)=P(Y=y|Z=z,X=x) \t
 <ul>
 <li><p><strong>The Causal Effect Rule</strong>: Given a graph G in which a set of variables PA are designated
 as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96c3646d-cdc8-421e-b35e-42cb92d4f4d9">
-<span class="eqno">(3)<a class="headerlink" href="#equation-96c3646d-cdc8-421e-b35e-42cb92d4f4d9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-199fad2c-ce64-4336-a2cc-9adfae1ce4af">
+<span class="eqno">(3)<a class="headerlink" href="#equation-199fad2c-ce64-4336-a2cc-9adfae1ce4af" title="Permalink to this equation">¶</a></span>\[\begin{align}
   P(Y = y| do(X = x)) &amp; = \sum_z P(Y = y | X = x, PA = z) P(PA = z)\\
   &amp; = \sum_z \frac{P(Y = y | X = x, PA = z) P(PA = z) * P(X=x|PA = z)}{P(X=x|PA = z)}\\
   &amp; = \sum_z \frac{P(Y = y, X = x, PA = z)}{P(X=x|PA = z)}
@@ -626,8 +626,8 @@ as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the c
 </div>
 <div class="section" id="multiple-interventions-and-the-truncated-product-rule">
 <h4>3.2.2 Multiple Interventions and the Truncated Product Rule<a class="headerlink" href="#multiple-interventions-and-the-truncated-product-rule" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-d62790b6-600d-4738-b20c-8898453b8c80">
-<span class="eqno">(4)<a class="headerlink" href="#equation-d62790b6-600d-4738-b20c-8898453b8c80" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-69d02760-1fd7-4c4c-8b3c-c539d9e6cbe0">
+<span class="eqno">(4)<a class="headerlink" href="#equation-69d02760-1fd7-4c4c-8b3c-c539d9e6cbe0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(x, y, z) &amp; = P(z)P(x|z)P(y|x, z)\\
 P(z, y|do(x)) &amp; = P_m(z)P_m(y|x, z) = P(z)P(y|x, z)\\
 \Rightarrow
@@ -655,8 +655,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p>When trying to find the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>, we want the nodes we condition on to block any “backdoor” path in which one end has an arrow into <span class="math notranslate nohighlight">\(X\)</span>, because such paths may make <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> dependent, but are obviously not transmitting causal influences from <span class="math notranslate nohighlight">\(X\)</span>, and if we do not block them, they will confound the effect that <span class="math notranslate nohighlight">\(X\)</span> has on <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
 <li><p>Consider the fact that <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is an empirical fact of nature, not a byproduct of our analysis. That means that any suitable variable or set of variables that we adjust on—whether it be <span class="math notranslate nohighlight">\(PA(X)\)</span> or any other set that conforms to the backdoor criterion—must return the same result for <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span>. In the case we looked at in Figure 3.6 (<span class="math notranslate nohighlight">\(Y \leftarrow X \leftarrow Z \rightarrow W \rightarrow Y\)</span>), this means that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cef7c71c-5b52-47d4-88d1-b8e476bd7f15">
-<span class="eqno">(5)<a class="headerlink" href="#equation-cef7c71c-5b52-47d4-88d1-b8e476bd7f15" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5b5ba742-eccb-4a13-a15e-4119877a0f0d">
+<span class="eqno">(5)<a class="headerlink" href="#equation-5b5ba742-eccb-4a13-a15e-4119877a0f0d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;&amp; \sum_w P(Y = y|X = x,W = w)P(W = w) \\
     &amp;&amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
     \end{align}\]</div>
@@ -674,8 +674,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p><em>Problem</em>: The backdoor criterion provides us with a simple method of identifying sets of covariates that should be adjusted for when we seek to estimate causal effects from nonexperimental data. It does not, however, exhaust all ways of estimating such effects. The <span class="math notranslate nohighlight">\(do\)</span>-operator can be applied to graphical patterns that do not satisfy the backdoor criterion to identify effects that on first sight seem to be beyond one’s reach.</p></li>
 <li><p>The <strong>front-door</strong> formula</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ecddb7dd-4601-4a7a-8c58-2cf695ed595a">
-<span class="eqno">(6)<a class="headerlink" href="#equation-ecddb7dd-4601-4a7a-8c58-2cf695ed595a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-263c3c77-65a5-4ca6-9140-40e4e741b000">
+<span class="eqno">(6)<a class="headerlink" href="#equation-263c3c77-65a5-4ca6-9140-40e4e741b000" title="Permalink to this equation">¶</a></span>\[\begin{align}
   P(Y =y | do(X = x)) = \\
   \sum_z\sum_x' P(Y = y | Z = z, X = x') P(X = x') P(Z = z|X = x) 
   \end{align}\]</div>

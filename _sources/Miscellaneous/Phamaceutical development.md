@@ -2,9 +2,11 @@
 
 *Gaining the bigger picture.*
 
+```{tableofcontents}
+```
 
-## Drugs/biologics development and patent
-### Stage of a patent for a pharmaceutical product
+## 1.Drugs/biologics development and patent
+### 1.1 Stage of a patent for a pharmaceutical product
 
 ```{margin} [Patents - An Important Tool for Pharmaceutical Industry.](https://www.rroij.com/open-access/patents--an-important-tool-for-pharmaceutical-industry-.php?aid=34351)
 This article re-views the rationale for intellectual property protection in the development of new products useful for pharmaceuticals.
@@ -12,10 +14,10 @@ This article re-views the rationale for intellectual property protection in the 
 
 ![](https://www.rroij.com/articles-images/pharmaceutics-nanotechnology-2-2-12-g001.png)
 
-### Patenting process
+### 1.2 Patenting process
 TO-DO
 
-## Global ophthamology market landscape
+## 2.Global ophthamology market landscape
 
 ```{margin} [Evaluate Pharma World Review](https://www.evaluate.com/)
 Google search for EvaluateMedTech® World Preview annual report. [Example](https://info.evaluategroup.com/rs/607-YGS-364/images/WPMT2018.pdf)
