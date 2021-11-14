@@ -11,17 +11,21 @@ parts:
     - glob: "Stats/*"
 
   - caption: Statistical computing
+    numbered: true
     chapters:
     - glob: "Stats_Comp/*"
 
   - caption: DS/ML
+    numbered: true
     chapters:
     - glob: "DS_ML/*"
 
   - caption: Computer science
+    numbered: true
     chapters:
     - glob: "CS/*"
 
   - caption: Miscellaneous
+    numbered: true
     chapters:
     - glob: "Miscellaneous/*"
