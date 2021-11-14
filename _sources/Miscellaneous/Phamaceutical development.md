@@ -20,7 +20,7 @@ TO-DO
 ## 2.Global ophthamology market landscape
 
 ```{margin} [Evaluate Pharma World Review](https://www.evaluate.com/)
-Google search for EvaluateMedTech® World Preview annual report. [Example](https://info.evaluategroup.com/rs/607-YGS-364/images/WPMT2018.pdf)
+Google search for EvaluateMedTech® World Preview annual report. [Example](https://info.evaluategroup.com/rs/607-YGS-364/images/WPMT2018.pdf).
 ```
 
 ![ophtha_market_landscape_2021_11_14](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/ophtha_market_landscape_2021_11_14.png)
