@@ -30,6 +30,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  use_multitoc_numbering: false # To restart chapter numbering between parts
 
 sphinx:
     config:
@@ -40,6 +41,3 @@ parse:
   myst_enable_extensions:
     - amsmath
     - dollarmath
-
-# To restart chapter numbering between parts
-use_multitoc_numbering: false
