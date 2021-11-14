@@ -40,3 +40,6 @@ parse:
   myst_enable_extensions:
     - amsmath
     - dollarmath
+
+# To restart chapter numbering between parts
+use_multitoc_numbering: false
