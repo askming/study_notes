@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How R searches and finds stuff &#8212; Study Notes</title>
+    <title>16. How R searches and finds stuff &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Notes on matplotlib" href="Note-matplotlib.html" />
+    <link rel="next" title="17. Notes on matplotlib" href="Note-matplotlib.html" />
     <link rel="prev" title="15. Survival Analysis" href="../Stats/Note-Survival_Analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -189,12 +189,12 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   How R searches and finds stuff
+   16. How R searches and finds stuff
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-matplotlib.html">
-   Notes on
+   17. Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
      matplotlib
@@ -211,42 +211,42 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+   18. [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
-   [book] Python Data Science Handbook
+   19. [book] Python Data Science Handbook
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Boosting.html">
-   Boosting
+   20. Boosting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
-   Cluster analysis
+   21. Cluster analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
-   ​Machine Learning (General)
+   22. ​Machine Learning (General)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
-   Naive Bayes
+   23. Naive Bayes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
-   Stochastic Gradient Decent (SGD)
+   24. Stochastic Gradient Decent (SGD)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   Tree/Random Forest (Bagging)
+   25. Tree/Random Forest (Bagging)
   </a>
  </li>
 </ul>
@@ -258,7 +258,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
-   SQL study notes
+   26. SQL study notes
   </a>
  </li>
 </ul>
@@ -270,12 +270,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   Miscellaneous Study Notes
+   27. Miscellaneous Study Notes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   Pharmacedutical development
+   28. Pharmacedutical development
   </a>
  </li>
 </ul>
@@ -367,72 +367,72 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#play-time-with-environemnts">
-   Play time with Environemnts
+   16.1. Play time with Environemnts
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#short-answer-how-r-searches-and-finds-stuff">
-   Short Answer: How R Searches and Finds stuff
+   16.2. Short Answer: How R Searches and Finds stuff
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#map-of-the-world-follow-the-purple-line-road">
-   Map of the World (follow the purple line road)
+   16.3. Map of the World (follow the purple line road)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-global-environment">
-   The Global Environment
+   16.4. The Global Environment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-search-list">
-   The Search List
+   16.5. The Search List
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#package-v-namespace-v-imports-environments">
-   Package v. Namespace v. Imports Environments
+   16.6. Package v. Namespace v. Imports Environments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#imports-v-depends">
-   Imports v Depends
+   16.7. Imports v Depends
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#namespace-base">
-   namespace:base
+   16.8. namespace:base
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-curveball-the-dotted-purple-lines">
-   The Curveball (the dotted purple lines)
+   16.9. The Curveball (the dotted purple lines)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#passing-functions">
-   Passing Functions
+   16.10. Passing Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#that-creepy-caller">
-   That Creepy Caller
+   16.11. That Creepy Caller
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finally-how-r-searches-and-finds-stuff">
-   Finally, How R searches and finds stuff
+   16.12. Finally, How R searches and finds stuff
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#qualitative-comments">
-   Qualitative Comments
+   16.13. Qualitative Comments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#skip-the-search-and-find">
-   Skip the search-and-find
+   16.14. Skip the search-and-find
   </a>
  </li>
 </ul>
@@ -447,7 +447,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="how-r-searches-and-finds-stuff">
-<h1><a class="reference external" href="https://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/">How R searches and finds stuff</a><a class="headerlink" href="#how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">16. </span><a class="reference external" href="https://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/">How R searches and finds stuff</a><a class="headerlink" href="#how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h1>
 <p>by <em>Suraj Gupta</em></p>
 <hr>
 <ul>
@@ -473,7 +473,7 @@
 </li>
 </ul>
 <div class="section" id="play-time-with-environemnts">
-<h2>Play time with Environemnts<a class="headerlink" href="#play-time-with-environemnts" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.1. </span>Play time with Environemnts<a class="headerlink" href="#play-time-with-environemnts" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Create a new environment</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">myEnvironment</span> <span class="o">=</span> <span class="nf">new.env</span><span class="p">()</span> 
@@ -557,32 +557,32 @@
 </ul>
 </div>
 <div class="section" id="short-answer-how-r-searches-and-finds-stuff">
-<h2>Short Answer: How R Searches and Finds stuff<a class="headerlink" href="#short-answer-how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.2. </span>Short Answer: How R Searches and Finds stuff<a class="headerlink" href="#short-answer-how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>It seems that environments are not just static repositories of objects. When R executes an expression, there is always one <em>local</em> or <em>current</em> environment. Maybe its easier to think of this as the <em>active</em> environment, in contrast to the other environments which are <em>inactive</em>. Or perhaps its more intuitive to think of an expression executing “within” a particular environment. The point here is that at any moment R can ask “hey, what’s the local environment.” R asks this questions a lot. In fact, it asks this question every time it needs to find a named object. We saw that R creates a new local environments every time it runs a function. So when we run any decently involved piece of code, functions call other function and environments spawn and die.</p></li>
 <li><p>When R goes searching for the names in that expression, it first looks at the objects within the local environment. If the object is not found by name in that environment, then R searches the enclosing environment of the local environment. If the object is not in the enclosure, then R searches the enclosure’s enclosure, and so on. That’s how R searches and finds stuff; it traverses the enclosing environments and stops at the first environment that contains the named object.</p></li>
 </ul>
 </div>
 <div class="section" id="map-of-the-world-follow-the-purple-line-road">
-<h2>Map of the World (follow the purple line road)<a class="headerlink" href="#map-of-the-world-follow-the-purple-line-road" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.3. </span>Map of the World (follow the purple line road)<a class="headerlink" href="#map-of-the-world-follow-the-purple-line-road" title="Permalink to this headline">¶</a></h2>
 <p><img alt="map-of-the-world" src="https://raw.githubusercontent.com/askming/picgo/master/map-of-the-world.png" /></p>
 <p>This graphic shows the state of all environments when you first startup R. Each box represents a unique environment. The solid purple line represents the enclosing environment relationship. I’ll explain the dotted purple line in a bit. For now, consider it a relationship that’s similar to the enclosing environment.</p>
 </div>
 <div class="section" id="the-global-environment">
-<h2>The Global Environment<a class="headerlink" href="#the-global-environment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.4. </span>The Global Environment<a class="headerlink" href="#the-global-environment" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The global environment is precisely the environment that you start at when you launch R. It is your <em>current</em> or <em>local</em> environment when R launches. If you make an assignment at the prompt, the named object is stored in <code class="docutils literal notranslate"><span class="pre">R_GlobalEnv</span></code>.</p></li>
 <li><p>Be careful with the <code class="docutils literal notranslate"><span class="pre">environment()</span></code> function. It might seem wrong that this returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> but if you read the documentation you’ll see that <code class="docutils literal notranslate"><span class="pre">environment()</span></code> takes a function as input. <code class="docutils literal notranslate"><span class="pre">myVariable</span></code> is not a function, its a numeric.  The purpose of <code class="docutils literal notranslate"><span class="pre">environment()</span></code> is not to tell you an object’s owner.</p></li>
 </ul>
 </div>
 <div class="section" id="the-search-list">
-<h2>The Search List<a class="headerlink" href="#the-search-list" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.5. </span>The Search List<a class="headerlink" href="#the-search-list" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>In R, the “search list” is the chain of enclosing environments starting with <code class="docutils literal notranslate"><span class="pre">R_GlobalEnv</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">R_EmptyEnv</span></code>. I like to think of it as the main highway on our map. This is the highway that R drives down when we start in <code class="docutils literal notranslate"><span class="pre">R_GlobalEnv</span></code>. All roads in our world eventually lead to this highway. You can obtain the search list by typing <code class="docutils literal notranslate"><span class="pre">search()</span></code> at the prompt:</p></li>
 </ul>
 </div>
 <div class="section" id="package-v-namespace-v-imports-environments">
-<h2>Package v. Namespace v. Imports Environments<a class="headerlink" href="#package-v-namespace-v-imports-environments" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.6. </span>Package v. Namespace v. Imports Environments<a class="headerlink" href="#package-v-namespace-v-imports-environments" title="Permalink to this headline">¶</a></h2>
 <p><img alt="package-namespace-imports" src="https://raw.githubusercontent.com/askming/picgo/master/package-namespace-imports.png" /></p>
 <ol>
 <li><p><strong>package environment</strong></p>
@@ -610,7 +610,7 @@
 </ol>
 </div>
 <div class="section" id="imports-v-depends">
-<h2>Imports v Depends<a class="headerlink" href="#imports-v-depends" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.7. </span>Imports v Depends<a class="headerlink" href="#imports-v-depends" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">Depends</span></code> section <em>also</em> lists packages that a package requires.The difference between <code class="docutils literal notranslate"><span class="pre">Imports</span></code> and <code class="docutils literal notranslate"><span class="pre">Depends</span></code> is where the requirement is placed on our map of the world. Because our map specifies the path R takes to find objects, there are consequences to specifying a requirement in <code class="docutils literal notranslate"><span class="pre">Imports</span></code> versus <code class="docutils literal notranslate"><span class="pre">Depends</span></code> in terms of how R finds the dependency.</p></li>
 <li><p>If the package is specified in <code class="docutils literal notranslate"><span class="pre">Imports</span></code>, then the package contents will go into the “imports” environment.</p>
@@ -633,14 +633,14 @@
 </ul>
 </div>
 <div class="section" id="namespace-base">
-<h2>namespace:base<a class="headerlink" href="#namespace-base" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.8. </span>namespace:base<a class="headerlink" href="#namespace-base" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>All <code class="docutils literal notranslate"><span class="pre">imports:&lt;name&gt;</span></code> environments have <code class="docutils literal notranslate"><span class="pre">namespace:base</span></code> as their enclosure. Think of this a freebie for creating a package. Since the base functions are used frequently, they are most likely a dependency for any package (or a package’s imports). Without <code class="docutils literal notranslate"><span class="pre">namespace:base</span></code> where it is, R would have to go hunting quite far to find <code class="docutils literal notranslate"><span class="pre">package:base</span></code>. There’s a big risk that another package has a function of the same name as a base function.</p></li>
 <li><p>A package author cannot know a-prior when you intend to attach her package nor that you have decided to write your own version of a base function. So do as you like, a package author can expect that R will find the base functions immediately after <code class="docutils literal notranslate"><span class="pre">Imports</span></code>. There’s no chance of corruption.</p></li>
 </ul>
 </div>
 <div class="section" id="the-curveball-the-dotted-purple-lines">
-<h2>The Curveball (the dotted purple lines)<a class="headerlink" href="#the-curveball-the-dotted-purple-lines" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.9. </span>The Curveball (the dotted purple lines)<a class="headerlink" href="#the-curveball-the-dotted-purple-lines" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Functions, like all objects, are housed inside environments. However, functions themselves have a property which is a pointer to the environment in which they should run. When you create a function, that property is automatically set to the environment in which the function was created. So the environment that houses a function and the environment that the function will run in is one and the same.</p>
 <p><img alt="environment-property" src="https://raw.githubusercontent.com/askming/picgo/master/environment-property.png" /></p>
@@ -710,13 +710,13 @@
 </ul>
 </div>
 <div class="section" id="passing-functions">
-<h2>Passing Functions<a class="headerlink" href="#passing-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.10. </span>Passing Functions<a class="headerlink" href="#passing-functions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>If a function <code class="docutils literal notranslate"><span class="pre">FunctionA(</span> <span class="pre">someOtherFunction</span> <span class="pre">)</span></code> takes another function <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> as a parameter then <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code> must have some variability in the way it runs. That variability is governed by the implementation of <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code>. When we construct <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code>, we expect it to run in a particular way. <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> should have access to the objects in the environment in which it was constructed. That expectation doesn’t change when the function is handed-off to <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code> . But R creates a new environment for <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code>. Thankfully that’s not a problem. When <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> is finally run R looks to the function’s environment property and executes within <em>that</em> environment, not within <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code>’s environment. So the integrity of our expectation is upheld. In fact, <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code> can pass <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> to <code class="docutils literal notranslate"><span class="pre">FunctionB</span></code> which in turn can pass the function to <code class="docutils literal notranslate"><span class="pre">FunctionC</span></code> and it has no consequence on how <code class="docutils literal notranslate"><span class="pre">someOtherFunction</span></code> will run. That’s the magic of a function’s environment property.</p></li>
 </ul>
 </div>
 <div class="section" id="that-creepy-caller">
-<h2>That Creepy Caller<a class="headerlink" href="#that-creepy-caller" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.11. </span>That Creepy Caller<a class="headerlink" href="#that-creepy-caller" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The call stack is the sequence of function calls that has gotten you to wherever you currently are in the calculation. For example, <code class="docutils literal notranslate"><span class="pre">FunctionA</span></code> calls <code class="docutils literal notranslate"><span class="pre">FunctionB</span></code> which in turn calls <code class="docutils literal notranslate"><span class="pre">FunctionC</span></code>. The call stack just places each of those functions on top of one another in the order in which they were called. Lets say <code class="docutils literal notranslate"><span class="pre">FunctionC</span></code> needs to execute <code class="docutils literal notranslate"><span class="pre">FunctionD</span></code>. The <em>wrong</em> way to think about the search mechanism is to follow the callers.</p></li>
 <li><p>Unfortunately, the call stack is more intuitive than the chain of enclosing environments. Just remember, whenever R is evaluating a statement the system is simultaneously at the top (or bottom if it’s easier to visualize that way) of <em>two</em> important chains of environments.</p>
@@ -730,7 +730,7 @@
 </ul>
 </div>
 <div class="section" id="finally-how-r-searches-and-finds-stuff">
-<h2>Finally, How R searches and finds stuff<a class="headerlink" href="#finally-how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.12. </span>Finally, How R searches and finds stuff<a class="headerlink" href="#finally-how-r-searches-and-finds-stuff" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>R just follows the purple line road</strong> in our map above.</p></li>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> is not in the global environment, then it must be in a package. So R travels down the search list looking for <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>. This is simply the chain of enclosing environments starting with <code class="docutils literal notranslate"><span class="pre">R_Global</span></code>. R ultimately find the function in one of the package environments. Although <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> is found within the <code class="docutils literal notranslate"><span class="pre">package</span></code> environment, R executes <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> within the <code class="docutils literal notranslate"><span class="pre">namespace</span></code> environment as described in the prior section. In this case, we’ve found <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> in <code class="docutils literal notranslate"><span class="pre">package:ggplot2</span></code> and we execute the function within <code class="docutils literal notranslate"><span class="pre">namespace:ggplot2</span></code>.</p></li>
@@ -747,13 +747,13 @@
 </ul>
 </div>
 <div class="section" id="qualitative-comments">
-<h2>Qualitative Comments<a class="headerlink" href="#qualitative-comments" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.13. </span>Qualitative Comments<a class="headerlink" href="#qualitative-comments" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>If we are executing outside of a package (as in <code class="docutils literal notranslate"><span class="pre">R_GlobalEnv</span></code>) it enables us to find functions inside packages. If we are inside a package it allows the package functions to find the specified dependencies. If we are inside a package or a package’s imports (dependencies), then we have a buffer of base functions before we plunging into the search list. Also, the design ensures that we terminate at <code class="docutils literal notranslate"><span class="pre">R_EmptyEnv</span></code> if a named object cannot be found, no matter where on the map we are.</p></li>
 </ul>
 </div>
 <div class="section" id="skip-the-search-and-find">
-<h2>Skip the search-and-find<a class="headerlink" href="#skip-the-search-and-find" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.14. </span>Skip the search-and-find<a class="headerlink" href="#skip-the-search-and-find" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>f you know exactly which package contains the object desired then you can reference it directly using the <code class="docutils literal notranslate"><span class="pre">::</span></code> operator. Simply place the package name before the operator and the name of the object after the operator to retrieve it.</p></li>
 <li><p>If the object is not exported or you are unsure, then you can use the <code class="docutils literal notranslate"><span class="pre">:::</span></code> operator (notice the extra colon).</p>
@@ -819,7 +819,7 @@
     <a class='right-next' id="next-link" href="Note-matplotlib.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notes on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Notes on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

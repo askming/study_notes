@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stochastic Gradient Decent (SGD) &#8212; Study Notes</title>
+    <title>24. Stochastic Gradient Decent (SGD) &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tree/Random Forest (Bagging)" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" />
-    <link rel="prev" title="Naive Bayes" href="Note-Naive%20Bayes.html" />
+    <link rel="next" title="25. Tree/Random Forest (Bagging)" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" />
+    <link rel="prev" title="23. Naive Bayes" href="Note-Naive%20Bayes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -189,12 +189,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
-   How R searches and finds stuff
+   16. How R searches and finds stuff
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
-   Notes on
+   17. Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
      matplotlib
@@ -211,42 +211,42 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+   18. [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Python%20Data%20Science%20Handbook.html">
-   [book] Python Data Science Handbook
+   19. [book] Python Data Science Handbook
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Boosting.html">
-   Boosting
+   20. Boosting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Cluster%20analysis.html">
-   Cluster analysis
+   21. Cluster analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Machine%20Learning%20%28General%29.html">
-   ​Machine Learning (General)
+   22. ​Machine Learning (General)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Naive%20Bayes.html">
-   Naive Bayes
+   23. Naive Bayes
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Stochastic Gradient Decent (SGD)
+   24. Stochastic Gradient Decent (SGD)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   Tree/Random Forest (Bagging)
+   25. Tree/Random Forest (Bagging)
   </a>
  </li>
 </ul>
@@ -258,7 +258,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
-   SQL study notes
+   26. SQL study notes
   </a>
  </li>
 </ul>
@@ -270,12 +270,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   Miscellaneous Study Notes
+   27. Miscellaneous Study Notes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   Pharmacedutical development
+   28. Pharmacedutical development
   </a>
  </li>
 </ul>
@@ -369,7 +369,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="stochastic-gradient-decent-sgd">
-<h1>Stochastic Gradient Decent (SGD)<a class="headerlink" href="#stochastic-gradient-decent-sgd" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">24. </span>Stochastic Gradient Decent (SGD)<a class="headerlink" href="#stochastic-gradient-decent-sgd" title="Permalink to this headline">¶</a></h1>
 <p><strong>Stochastic gradient descent</strong> is a gradient descent optimization method for minimizing an objective function that is written as a sum of differentiable functions.</p>
 <p>Evaluating the sum-gradient may require expensive evaluations of the gradients from all summand functions. When the training set is enormous and no simple formulas exist, evaluating the sums of gradients becomes very expensive, because evaluating the gradient requires evaluating all the summand functions’ gradients. To economize on the computational cost at every iteration, stochastic gradient descent samples a <em>subset</em> of summand functions at every step. This is very effective in the case of large-scale machine learning problems.</p>
 <p>In pseudocode, stochastic gradient descent can be presented as follows:</p>
@@ -414,13 +414,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Naive Bayes</p>
+            <p class="prev-next-title"><span class="section-number">23. </span>Naive Bayes</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tree/Random Forest (Bagging)</p>
+        <p class="prev-next-title"><span class="section-number">25. </span>Tree/Random Forest (Bagging)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

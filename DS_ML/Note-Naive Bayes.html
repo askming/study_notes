@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naive Bayes &#8212; Study Notes</title>
+    <title>23. Naive Bayes &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Stochastic Gradient Decent (SGD)" href="Note-Stochasitic%20Gradient%20Descent.html" />
-    <link rel="prev" title="​Machine Learning (General)" href="Note-Machine%20Learning%20%28General%29.html" />
+    <link rel="next" title="24. Stochastic Gradient Decent (SGD)" href="Note-Stochasitic%20Gradient%20Descent.html" />
+    <link rel="prev" title="22. ​Machine Learning (General)" href="Note-Machine%20Learning%20%28General%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -191,12 +191,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
-   How R searches and finds stuff
+   16. How R searches and finds stuff
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
-   Notes on
+   17. Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
      matplotlib
@@ -213,42 +213,42 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+   18. [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Python%20Data%20Science%20Handbook.html">
-   [book] Python Data Science Handbook
+   19. [book] Python Data Science Handbook
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Boosting.html">
-   Boosting
+   20. Boosting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Cluster%20analysis.html">
-   Cluster analysis
+   21. Cluster analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Machine%20Learning%20%28General%29.html">
-   ​Machine Learning (General)
+   22. ​Machine Learning (General)
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Naive Bayes
+   23. Naive Bayes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Stochasitic%20Gradient%20Descent.html">
-   Stochastic Gradient Decent (SGD)
+   24. Stochastic Gradient Decent (SGD)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   Tree/Random Forest (Bagging)
+   25. Tree/Random Forest (Bagging)
   </a>
  </li>
 </ul>
@@ -260,7 +260,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
-   SQL study notes
+   26. SQL study notes
   </a>
  </li>
 </ul>
@@ -272,12 +272,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   Miscellaneous Study Notes
+   27. Miscellaneous Study Notes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   Pharmacedutical development
+   28. Pharmacedutical development
   </a>
  </li>
 </ul>
@@ -369,7 +369,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#naive-bayes-and-augmented-naive-bayes">
-   Naive Bayes and augmented naive Bayes
+   23.1. Naive Bayes and augmented naive Bayes
   </a>
  </li>
 </ul>
@@ -384,7 +384,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="naive-bayes">
-<h1>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">23. </span>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><em><strong>Naive Bayes</strong></em> is an algorithm used in classication, it’s one of the most ecient and eective inductive learning algorithm for machine learning.</p></li>
 <li><p>In classication, the goal of a learning algorithm is to construct a classier given a set of training examples with class labels, where an <em>example E</em> is represented by a tuple of <em>attribute</em> values <span class="math notranslate nohighlight">\((x_1, x_2,\cdots, x_n)\)</span> and <span class="math notranslate nohighlight">\(C\)</span> represents the <em>classication variable</em>.</p></li>
@@ -392,7 +392,7 @@
 <li><p>It is the distribution of de- pendencies among all attributes over classes that aects the classication of naive Bayes, not merely the dependencies themselves <span id="id1">[<a class="reference internal" href="#id17">Zhang, 2004</a>]</span></p></li>
 </ul>
 <div class="section" id="naive-bayes-and-augmented-naive-bayes">
-<h2>Naive Bayes and augmented naive Bayes<a class="headerlink" href="#naive-bayes-and-augmented-naive-bayes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">23.1. </span>Naive Bayes and augmented naive Bayes<a class="headerlink" href="#naive-bayes-and-augmented-naive-bayes" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p><em><strong>Classier</strong></em>: a function that assigns a class label to an example.</p></li>
 <li><p><em><strong>Bayesian classier</strong></em></p>
@@ -496,13 +496,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">​Machine Learning (General)</p>
+            <p class="prev-next-title"><span class="section-number">22. </span>​Machine Learning (General)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Note-Stochasitic%20Gradient%20Descent.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Stochastic Gradient Decent (SGD)</p>
+        <p class="prev-next-title"><span class="section-number">24. </span>Stochastic Gradient Decent (SGD)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
