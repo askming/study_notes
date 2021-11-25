@@ -1,7 +1,7 @@
-# Study Notes Index
+# Study Notes Index (knowledge base structure)
 <hr>
 
-======= UNDER CONSTRUCTION =======
+:construction: ONGOING CONSTRUCTION :construction:
 
 ## 1 Statistics
 ### 1.1 General topics
@@ -45,8 +45,25 @@
 ## 2 Data Science & Machine Learning
 
 ### 2.1 Data preprocessing pipeline
+#### 2.2.1 Data manipulation
+- Numpy
+- Pandas
+- SQL
+- Spreadsheets 
+
 
 ### 2.2 ML methods
+- Fundamental ML concepts
+  - Data importation
+  - Data manipulation (above)
+  - Frame ML problem
+  - EDA (including data visualization)
+  - Implement ML models (below)
+  - Optimize ML model
+    - Feature selection/engineering
+    - Improve model generalization (hyperparameter tuning, model validation, etc.)
+  - ML model interpretation
+
 - [ML General](DS_ML/Note-Machine%20Learning%20(General).md)
 - [Stochastic gradient descent](DS_ML/Note-Stochasitic%20Gradient%20Descent.md)
 
@@ -62,16 +79,31 @@
 
 #### 2.2.4 Reinforcement learning
 
+
+#### 2.2.5 NLP
+
+#### 2.2.6  Recommendation systems
+
 ### 2.3 Data visualization 
 - [matplotlib](Stats_Comp/Note-matplotlib.md)
 
-### 2.4 Analytical tools
+### 2.4 Analytical tools (ML implementation)
 
 #### 2.4.1 R
 
 #### 2.4.2 Python
+- Scikit-learn
+- Tensorflow/Keras
+- PyTorch
+
+#### 2.4.3 Use notebook
+
+#### 2.4.4 Cloud service
 
 ### 2.5 Other topics
+#### 2.5.1 ML real-world application
+#### 2.5.2 Bussiness sense
+#### 2.5.3 Data ethics
 
 <hr>
 
@@ -94,10 +126,24 @@
 
 ### 4.4 Git & Github
 
-### 4.5 Rust
+### 4.5 Use Linux
 
-### 4.6 Web Development
+### 4.6 Rust
 
-### 4.7 D3
+### 4.7 Containers
 
-<br>
+### 4.8 Web Development
+
+### 4.9 D3
+
+
+<hr>
+
+## 5 Soft skills
+
+### 5.1 Communication & collaboration
+
+
+### 5.2 Interview skills
+
+### 5.3 Learning method/philosophy
