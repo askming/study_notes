@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>14. Quantile regression &#8212; Study Notes</title>
+    <title>15. Quantile regression &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15. Survival Analysis" href="Note-Survival_Analysis.html" />
-    <link rel="prev" title="13. Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
+    <link rel="next" title="16. Survival Analysis" href="Note-Survival_Analysis.html" />
+    <link rel="prev" title="14. Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -138,48 +138,53 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
+   7. Adaptive Clinical Trial Design
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   7. Competing risk models
+   8. Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Cox_PH_model.html">
-   8. ​Cox PH model
+   9. ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
-   9. Notes on FDA Guidances for Industry
+   10. Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
-   10. Notes on Group Sequential Trial Design​
+   11. Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-ICH%20guidelines.html">
-   11. Notes on ICH guidelines​
+   12. Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
-   12. Monte Carlo Method
+   13. Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
-   13. Multiplicity in Clinical Trials
+   14. Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   14. Quantile regression
+   15. Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Survival_Analysis.html">
-   15. Survival Analysis
+   16. Survival Analysis
   </a>
  </li>
 </ul>
@@ -369,32 +374,32 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#advantages-and-applications">
-   14.1. 1. Advantages and applications
+   15.1. 1. Advantages and applications
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quantiles">
-   14.2. 2. Quantiles
+   15.2. 2. Quantiles
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#intuition">
-   14.3. 3. Intuition
+   15.3. 3. Intuition
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conditional-quantile-and-quantile-regression">
-   14.4. 4. Conditional quantile and quantile regression
+   15.4. 4. Conditional quantile and quantile regression
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bayesian-quantile-regression">
-   14.5. 5. Bayesian quantile regression
+   15.5. 5. Bayesian quantile regression
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#censored-quantile-regression">
-   14.6. 6. Censored quantile regression
+   15.6. 6. Censored quantile regression
   </a>
  </li>
 </ul>
@@ -409,10 +414,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="quantile-regression">
-<h1><span class="section-number">14. </span>Quantile regression<a class="headerlink" href="#quantile-regression" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">15. </span>Quantile regression<a class="headerlink" href="#quantile-regression" title="Permalink to this headline">¶</a></h1>
 <p><strong>Quantile regression</strong> is a type of regression analysis aims at estimating either the conditional median or other quantiles of the response variable, whereas the method of least squares results in estimates that approximate the conditional mean of the response variable given certain values of the predictor variables.</p>
 <div class="section" id="advantages-and-applications">
-<h2><span class="section-number">14.1. </span>1. Advantages and applications<a class="headerlink" href="#advantages-and-applications" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.1. </span>1. Advantages and applications<a class="headerlink" href="#advantages-and-applications" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Quantile regression is desired if conditional quantile functions are of interest.</p></li>
 <li><p>One advantage of quantile regression, relative to the ordinary least squares regression, is that the quantile regression estimates are more robust against outliers in the response measurements.</p></li>
@@ -422,7 +427,7 @@
 </ul>
 </div>
 <div class="section" id="quantiles">
-<h2><span class="section-number">14.2. </span>2. Quantiles<a class="headerlink" href="#quantiles" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.2. </span>2. Quantiles<a class="headerlink" href="#quantiles" title="Permalink to this headline">¶</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(Y\)</span> be real valued random variable with cumulative distribution function <span class="math notranslate nohighlight">\(F_Y(y) = P(Y\le y)\)</span>. The <span class="math notranslate nohighlight">\(\tau\)</span>th quantile of <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -451,7 +456,7 @@ Q_Y(\tau) = F^{-1}_Y(\tau) = \inf\{y: F_Y(y)\ge \tau\}
 </ul>
 </div>
 <div class="section" id="intuition">
-<h2><span class="section-number">14.3. </span>3. Intuition<a class="headerlink" href="#intuition" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.3. </span>3. Intuition<a class="headerlink" href="#intuition" title="Permalink to this headline">¶</a></h2>
 <p>Consider <span class="math notranslate nohighlight">\(\tau = 0.5\)</span> and let <span class="math notranslate nohighlight">\(q\)</span> be an initial guess for <span class="math notranslate nohighlight">\(q_{\tau}\)</span>. The expected loss evaluated at <span class="math notranslate nohighlight">\(q\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -469,7 +474,7 @@ Q_Y(\tau) = F^{-1}_Y(\tau) = \inf\{y: F_Y(y)\ge \tau\}
 </ul>
 </div>
 <div class="section" id="conditional-quantile-and-quantile-regression">
-<h2><span class="section-number">14.4. </span>4. Conditional quantile and quantile regression<a class="headerlink" href="#conditional-quantile-and-quantile-regression" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.4. </span>4. Conditional quantile and quantile regression<a class="headerlink" href="#conditional-quantile-and-quantile-regression" title="Permalink to this headline">¶</a></h2>
 <p>Suppose the <span class="math notranslate nohighlight">\(\tau\)</span>th conditional quantile function is <span class="math notranslate nohighlight">\(Q_{Y|X}(\tau)=X\beta_{\tau}\)</span>, given tghe distribution function of <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(\beta_{\tau}\)</span>can be obtained by solving</p>
 <div class="math notranslate nohighlight">
 \[
@@ -509,7 +514,7 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </div>
 <div class="section" id="bayesian-quantile-regression">
-<h2><span class="section-number">14.5. </span>5. Bayesian quantile regression<a class="headerlink" href="#bayesian-quantile-regression" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.5. </span>5. Bayesian quantile regression<a class="headerlink" href="#bayesian-quantile-regression" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Because the quantile regression does not normally assume a parametric likelihood for the conditional distributions of <span class="math notranslate nohighlight">\(Y|X\)</span>, the Bayesian methods work with a working likelihood.</p></li>
 <li><p>A convenient choice is the <em><strong>asymmetric Laplacian distribution</strong></em>, because the mode of the resulting posterior under a flat prior is the usual quantile regression estimates.<span id="id1">[<a class="reference internal" href="#id25">Koenker and Bassett Jr, 1978</a>]</span></p>
@@ -563,7 +568,7 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </div>
 <div class="section" id="censored-quantile-regression">
-<h2><span class="section-number">14.6. </span>6. Censored quantile regression<a class="headerlink" href="#censored-quantile-regression" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.6. </span>6. Censored quantile regression<a class="headerlink" href="#censored-quantile-regression" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>If the response variable is subject to censoring, the conditional mean is not identifiable without additional distributional assumptions, but the conditional quantile is often identifiable.</p></li>
 <li><p>Let <span class="math notranslate nohighlight">\(Y^c = \max(0, Y)\)</span> and <span class="math notranslate nohighlight">\(Q_{Y|X}= X\beta_{\tau}\)</span>, then <span class="math notranslate nohighlight">\(Q_{Y^c}=\max(0, X\beta_{\tau})\)</span>. This is the censored quantile regression model: estimated values can be obtained without making any distributional assumptions, but at the cost of computational difficulty, some of which can be avoided by using a simple three step censored quantile regression procedure as an approximation.</p></li>
@@ -632,13 +637,13 @@ $<span class="math notranslate nohighlight">\(
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">13. </span>Multiplicity in Clinical Trials</p>
+            <p class="prev-next-title"><span class="section-number">14. </span>Multiplicity in Clinical Trials</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Note-Survival_Analysis.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Survival Analysis</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Survival Analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7. Competing risk models &#8212; Study Notes</title>
+    <title>8. Competing risk models &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8. ​Cox PH model" href="Note-Cox_PH_model.html" />
-    <link rel="prev" title="6. [book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
+    <link rel="next" title="9. ​Cox PH model" href="Note-Cox_PH_model.html" />
+    <link rel="prev" title="7. Adaptive Clinical Trial Design" href="Note-Adaptive%20Trial%20Design.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -137,49 +137,54 @@
    6. [book] Regression Modeling Strategies
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
+   7. Adaptive Clinical Trial Design
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. Competing risk models
+   8. Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Cox_PH_model.html">
-   8. ​Cox PH model
+   9. ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
-   9. Notes on FDA Guidances for Industry
+   10. Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
-   10. Notes on Group Sequential Trial Design​
+   11. Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-ICH%20guidelines.html">
-   11. Notes on ICH guidelines​
+   12. Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
-   12. Monte Carlo Method
+   13. Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
-   13. Multiplicity in Clinical Trials
+   14. Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Quantile%20regression.html">
-   14. Quantile regression
+   15. Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Survival_Analysis.html">
-   15. Survival Analysis
+   16. Survival Analysis
   </a>
  </li>
 </ul>
@@ -369,39 +374,39 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-doing-competing-risk-model">
-   7.1. Why doing competing risk model
+   8.1. Why doing competing risk model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-concepts">
-   7.2. Basic concepts
+   8.2. Basic concepts
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   7.3. Competing risk models
+   8.3. Competing risk models
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cause-specific-hazard-modeling">
-     7.3.1. 1. Cause-specific hazard modeling
+     8.3.1. 1. Cause-specific hazard modeling
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cumulative-incidence-cif-modeling-or-proportional-subdistribution-hazards-model-psh-or-fine-and-gray-model">
-     7.3.2. 2. Cumulative incidence (CIF) modeling (or proportional subdistribution hazards model (PSH), or Fine and Gray model)
+     8.3.2. 2. Cumulative incidence (CIF) modeling (or proportional subdistribution hazards model (PSH), or Fine and Gray model)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#software-for-psh-model">
-   7.4. Software for PSH model
+   8.4. Software for PSH model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   7.5. References
+   8.5. References
   </a>
  </li>
 </ul>
@@ -416,10 +421,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="competing-risk-models">
-<h1><span class="section-number">7. </span>Competing risk models<a class="headerlink" href="#competing-risk-models" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8. </span>Competing risk models<a class="headerlink" href="#competing-risk-models" title="Permalink to this headline">¶</a></h1>
 <hr>
 <div class="section" id="why-doing-competing-risk-model">
-<h2><span class="section-number">7.1. </span>Why doing competing risk model<a class="headerlink" href="#why-doing-competing-risk-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Why doing competing risk model<a class="headerlink" href="#why-doing-competing-risk-model" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>In competing risk analysis, individuals experiencing the competing risk event have zero probability of experiencing the event of interest.</p></li>
 <li><p>In contrast, the naïve Kaplan-Meier approach assumes that these individuals would experience the same probability of event of interest in pure theory (non-informative censoring).</p>
@@ -442,7 +447,7 @@
 </ul>
 </div>
 <div class="section" id="basic-concepts">
-<h2><span class="section-number">7.2. </span>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p><strong>Cause-specific hazard function</strong>, <span class="math notranslate nohighlight">\(h_k(t)\)</span>: the instantaneous rate of failure due to cause <span class="math notranslate nohighlight">\(k\)</span> conditional on survival until time t or later</p>
 <div class="math notranslate nohighlight">
@@ -472,9 +477,9 @@
 </ul>
 </div>
 <div class="section" id="id1">
-<h2><span class="section-number">7.3. </span>Competing risk models<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.3. </span>Competing risk models<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cause-specific-hazard-modeling">
-<h3><span class="section-number">7.3.1. </span>1. Cause-specific hazard modeling<a class="headerlink" href="#cause-specific-hazard-modeling" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.3.1. </span>1. Cause-specific hazard modeling<a class="headerlink" href="#cause-specific-hazard-modeling" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>This model assumes competing events other than the primary event of interest as consoring. For cause <span class="math notranslate nohighlight">\(k\)</span>, a separate proportional hazards model can be assumed:</p>
 <div class="math notranslate nohighlight">
@@ -492,7 +497,7 @@
 </ul>
 </div>
 <div class="section" id="cumulative-incidence-cif-modeling-or-proportional-subdistribution-hazards-model-psh-or-fine-and-gray-model">
-<h3><span class="section-number">7.3.2. </span>2. Cumulative incidence (CIF) modeling (or proportional subdistribution hazards model (PSH), or Fine and Gray model)<a class="headerlink" href="#cumulative-incidence-cif-modeling-or-proportional-subdistribution-hazards-model-psh-or-fine-and-gray-model" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.3.2. </span>2. Cumulative incidence (CIF) modeling (or proportional subdistribution hazards model (PSH), or Fine and Gray model)<a class="headerlink" href="#cumulative-incidence-cif-modeling-or-proportional-subdistribution-hazards-model-psh-or-fine-and-gray-model" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>This method models the subdistribution hazard, which is defined as</p>
 <div class="math notranslate nohighlight">
@@ -532,14 +537,14 @@
 </div>
 </div>
 <div class="section" id="software-for-psh-model">
-<h2><span class="section-number">7.4. </span>Software for PSH model<a class="headerlink" href="#software-for-psh-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.4. </span>Software for PSH model<a class="headerlink" href="#software-for-psh-model" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>SAS: <a class="reference external" href="https://cemsiis.meduniwien.ac.at/en/kb/science-research/software/statistical-software/pshreg/">PSHREG</a>; PROC LIFETEST can also conduct hypothesis tests account for competing risks</p></li>
 <li><p>R: <a class="reference external" href="https://cran.r-project.org/web/packages/cmprsk/cmprsk.pdf">Package ‘cmprsk’</a></p></li>
 </ul>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">7.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="id6"><dl class="citation">
 <dt class="label" id="id12"><span class="brackets">AK12</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
 <dd><p>Per Kragh Andersen and Niels Keiding. Interpretability and importance of functionals in competing risks and multistate models. <em>Statistics in medicine</em>, 31(11-12):1074–1088, 2012.</p>
@@ -585,17 +590,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Book-Regression%20Modeling%20Strategies.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-Adaptive%20Trial%20Design.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6. </span>[book] Regression Modeling Strategies</p>
+            <p class="prev-next-title"><span class="section-number">7. </span>Adaptive Clinical Trial Design</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Note-Cox_PH_model.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>​Cox PH model</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>​Cox PH model</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

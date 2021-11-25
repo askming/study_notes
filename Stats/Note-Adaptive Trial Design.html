@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. Notes on FDA Guidances for Industry &#8212; Study Notes</title>
+    <title>7. Adaptive Clinical Trial Design &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11. Notes on Group Sequential Trial Design​" href="Note-Group_Sequential_Trial_Design.html" />
-    <link rel="prev" title="9. ​Cox PH model" href="Note-Cox_PH_model.html" />
+    <link rel="next" title="8. Competing risk models" href="Note-Competing_Risk_Regression.html" />
+    <link rel="prev" title="6. [book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -135,8 +137,8 @@
    6. [book] Regression Modeling Strategies
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    7. Adaptive Clinical Trial Design
   </a>
  </li>
@@ -150,8 +152,8 @@
    9. ​Cox PH model
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
    10. Notes on FDA Guidances for Industry
   </a>
  </li>
@@ -324,7 +326,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Note-FDA guidances for industry.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Adaptive Trial Design.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -344,7 +346,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-FDA guidances for industry.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Adaptive Trial Design.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -371,68 +373,46 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adjusting-for-covariates-in-randomized-clinical-trials-for-drugs-and-biological-products">
-   10.1. Adjusting for Covariates in Randomized Clinical Trials for Drugs and Biological Products
+  <a class="reference internal nav-link" href="#adaptive-group-sequential-design-with-sample-size-re-estimation">
+   7.1. Adaptive group sequential design with sample size re-estimation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introduction">
-     10.1.1. 1. Introduction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#background">
-     10.1.2. 2. Background
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#recommendations-for-covariate-adjustment-in-randomized-trials">
-     10.1.3. 3. Recommendations for covariate adjustment in randomized trials
+    <a class="reference internal nav-link" href="#sample-size-re-estimation-ssr">
+     7.1.1. Sample size re-estimation (SSR)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-general-consideration">
-       10.1.3.1. A. General consideration
+      <a class="reference internal nav-link" href="#unblinded-ssr">
+       7.1.1.1. Unblinded SSR
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#b-linear-models">
-       10.1.3.2. B. Linear models
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#c-nonlinear-models">
-       10.1.3.3. C. Nonlinear models
-      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#a-name-promisingzone-summary-of-mehta2011adaptive-paper-so-called-promising-zone-method-a">
+         7.1.1.1.1.
+         <a name="promisingzone">
+          Summary of
+          <strong>
+           <span class="xref cite cite-p">
+            mehta2011adaptive
+           </span>
+          </strong>
+          paper (so-called
+          <em>
+           promising zone
+          </em>
+          method)
+         </a>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#comparison-of-commonly-used-ussr-re-estimation-methods">
+         7.1.1.1.2. Comparison of commonly used uSSR re-estimation methods
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-inferiority-clinical-trials-to-establish-effectiveness">
-   10.2. Non-Inferiority Clinical Trials to Establish Effectiveness
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#intro-and-background">
-     10.2.1. 1. Intro and background
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#general-considerations-for-non-inferiority-studies">
-     10.2.2. 2. General considerations for Non-inferiority studies
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#choosing-the-non-inferiority-margin-and-testing-the-non-inferiority-hypothesis">
-     10.2.3. 3. Choosing the non-inferiority margin and testing the non-inferiority hypothesis
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#faq-examples">
-     10.2.4. 4. FAQ &amp; examples
-    </a>
    </li>
   </ul>
  </li>
@@ -447,140 +427,108 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="notes-on-fda-guidances-for-industry">
-<h1><span class="section-number">10. </span>Notes on FDA Guidances for Industry<a class="headerlink" href="#notes-on-fda-guidances-for-industry" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="adjusting-for-covariates-in-randomized-clinical-trials-for-drugs-and-biological-products">
-<h2><span class="section-number">10.1. </span>Adjusting for Covariates in Randomized Clinical Trials for Drugs and Biological Products<a class="headerlink" href="#adjusting-for-covariates-in-randomized-clinical-trials-for-drugs-and-biological-products" title="Permalink to this headline">¶</a></h2>
-<p><em>(May 2021, Revision 1)</em></p>
-<div class="section" id="introduction">
-<h3><span class="section-number">10.1.1. </span>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+  <div class="tex2jax_ignore mathjax_ignore section" id="adaptive-clinical-trial-design">
+<h1><span class="section-number">7. </span>Adaptive Clinical Trial Design<a class="headerlink" href="#adaptive-clinical-trial-design" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="adaptive-group-sequential-design-with-sample-size-re-estimation">
+<h2><span class="section-number">7.1. </span>Adaptive group sequential design with sample size re-estimation<a class="headerlink" href="#adaptive-group-sequential-design-with-sample-size-re-estimation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sample-size-re-estimation-ssr">
+<h3><span class="section-number">7.1.1. </span>Sample size re-estimation (SSR)<a class="headerlink" href="#sample-size-re-estimation-ssr" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>The main focus of the guidance is on the use of prognostic baseline factors<a class="footnote-reference brackets" href="#prognostic" id="id1">1</a> to improve precision for estimating treatment effects rather than the use of predictive biomarkers to identify groups more likely to benefit from treatment.</p></li>
-<li><p>This guidance does not address use of covariates to control for confounding variables in non-randomized trials or the use of covariate adjustment for analyzing longitudinal repeated measures data.</p></li>
-</ul>
-</div>
-<div class="section" id="background">
-<h3><span class="section-number">10.1.2. </span>2. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Incorporating prognostic baseline factors in the primary statistical analysis of clinical trial data can result in a more efficient use of data to demonstrate and quantify the effects of treatment with minimal impact on bias or the Type I error rate.</p></li>
-<li><p>The ICH guidance for industry <em>E9 Statistical Principles for Clinical Trials (September 1998)</em> addresses these issues briefly.</p></li>
-<li><p>In linear models, adjustment for baseline variables often leads to improved precision by reducing residual variance.</p>
+<li><p>There are mainly two types of SSR</p>
 <ul>
-<li><p>When adjusting for covariates based on fitting <strong>nonlinear regression models</strong>, such as logistic regression models in studies with binary outcomes, there are additional considerations that arise because inclusion of baseline covariates in a regression model can change the treatment effect that is being estimated.</p></li>
+<li><p>Blinded SSR</p></li>
+<li><p>Unblinded SSR</p></li>
 </ul>
 </li>
-</ul>
-</div>
-<div class="section" id="recommendations-for-covariate-adjustment-in-randomized-trials">
-<h3><span class="section-number">10.1.3. </span>3. Recommendations for covariate adjustment in randomized trials<a class="headerlink" href="#recommendations-for-covariate-adjustment-in-randomized-trials" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="a-general-consideration">
-<h4><span class="section-number">10.1.3.1. </span>A. General consideration<a class="headerlink" href="#a-general-consideration" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>Sponsors can adjust for baseline covariates in the analyses of efficacy endpoints in randomized clinical trials.</p></li>
-<li><p>Unadjusted analyses are acceptable but adjustment for baseline covariates will generally reduce the variability of estimation of treatment effects and thus lead to narrow CI and more powerful hypothesis testing</p></li>
-<li><p>Sponsors should prospectively specify the covariates and the mathematical form of the covariate adjusted estimator in the statistical analysis plan before any unblinding of comparative data.</p></li>
-<li><p>Recommend to adjust for covariates that are prognostic for the outcome of interest in the trial.</p></li>
-<li><p>Missing baseline covariate and imputation recommendation: can be singly or multiply imputed, or missingness indicators (Groenwold et al. 2012) can be added to the model for covariate adjustment. Should NOT impute separately by treatment arm.</p></li>
-<li><p>FDA recommends that sponsors estimate standard errors using the Huber-White robust “sandwich” estimator (Rosenblum and van der Laan 2009) or the nonparametric bootstrap method (Efron and Tibshirani 1993) rather than using nominal standard errors.</p></li>
-<li><p>Randomization is often stratified by baseline covariates. In this case, FDA recommends that the standard error computation account for the stratified randomization (Bugni et al. 2018) with or without strata variables in an adjustment model. (How?)</p></li>
-<li><p>Covariate adjustment is acceptable even if baseline covariates are strongly associated with each other (e.g., body weight and body mass index). However, adjusting for less redundant variables generally provides greater efficiency gains.</p></li>
-</ul>
-</div>
-<div class="section" id="b-linear-models">
-<h4><span class="section-number">10.1.3.2. </span>B. Linear models<a class="headerlink" href="#b-linear-models" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p><strong>average treatment effect</strong>, which is the difference in expected outcomes between subjects assigned to treatment and control groups. The average treatment effect is an example of an unconditional treatment effect, which quantifies the effect at the population level of moving a target population from untreated to treated.</p></li>
-<li><p>Covariate adjustment through a linear model (without treatment by covariate interactions) also estimates a conditional treatment effect, which is a treatment effect assumed to be approximately constant across subgroups defined by baseline covariates in the model.</p>
+<li><p>SSR is usually used with group sequential design (GSD), in combination it’s called adaptive-GSD (AGSD)</p></li>
+<li><p>The goal of sample size re-estimation is to increase the power for the final analysis in the event of <em>promising</em> interim data. That is, there is a potential to show clinically meaningful benefit from the treatment, while the study with original sample size is under-powered to demonstrate such benefit. It is usually used when the original sample size estimation is more optimistic than what is needed in the reality due to various reasons, which leads to smaller total sample size needed to achieve the targeted power to show the actual underlying difference.</p></li>
+<li><p>One summary papers on this topic:</p>
 <ul>
-<li><p>they happen to coincide in linear models</p></li>
+<li><p><em>Pritchet et. al., 2015 Stat in Biopham Research</em></p></li>
 </ul>
 </li>
-<li><p>The linear model may include treatment by covariate interaction terms. However, when using this approach, the primary analysis should still be based on an estimate from the model of the average treatment effect. (How?)</p></li>
 </ul>
-</div>
-<div class="section" id="c-nonlinear-models">
-<h4><span class="section-number">10.1.3.3. </span>C. Nonlinear models<a class="headerlink" href="#c-nonlinear-models" title="Permalink to this headline">¶</a></h4>
-<ul>
-<li><p>with some parameters such as odds ratios, even when all subgroup treatment effects are identical this subgroup-specific conditional treatment effect can differ from the unconditional treatment effect (i.e., the effect at the population level from moving the target population from untreated to treated) (Gail et al. 1984).</p>
-<ul>
-<li><p>This is termed <strong>non-collapsibility</strong> (Agresti 2002)</p></li>
-<li><p>example</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="text-align:center head"><p>Percentage of target population</p></th>
-<th class="text-align:center head"><p>Success</p></th>
-<th class="text-align:center head"><p>Rate</p></th>
-<th class="text-align:center head"><p>Odds ratio</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>New drug</p></td>
-<td class="text-align:center"><p>Placebo</p></td>
-<td class="text-align:center"><p>8.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>Males</p></td>
-<td class="text-align:center"><p>50%</p></td>
-<td class="text-align:center"><p>80.0%</p></td>
-<td class="text-align:center"><p>33.3%</p></td>
-<td class="text-align:center"><p>8.0</p></td>
-</tr>
-<tr class="row-even"><td><p>Females</p></td>
-<td class="text-align:center"><p>50%</p></td>
-<td class="text-align:center"><p>25.0%</p></td>
-<td class="text-align:center"><p>4.0%</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>Combined</p></td>
-<td class="text-align:center"><p>100%</p></td>
-<td class="text-align:center"><p>52.5%</p></td>
-<td class="text-align:center"><p>18.7%</p></td>
-<td class="text-align:center"><p>4.8</p></td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li><p>In trials with time-to-event outcomes, the hazard ratio is also generally non-collapsible. Unlike the odds ratio or hazard ratio, the risk difference and 181 relative risk are collapsible.</p></li>
-<li><p>Cochran-Mantel-Haenszel methods (Mantel and Haenszel 1959) are acceptable for the analysis of clinical trial data and attempt to estimate a conditional treatment effect</p></li>
-<li><p>In nonlinear regression models (without treatment by covariate interactions) the treatment effect is assumed to be approximately constant across subgroups defined by baseline covariates in the model and can provide more personalized information than the unconditional treatment
-effect.</p></li>
-<li><p>The FDA recommends Sponsors to perform covariate adjusted estimation and inference for an unconditional treatment effect in the primary analysis of data from a randomized trail. Recommended steps to implement this:</p>
+<div class="section" id="unblinded-ssr">
+<h4><span class="section-number">7.1.1.1. </span>Unblinded SSR<a class="headerlink" href="#unblinded-ssr" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Fit a non-linear model with maximum likelihood with prespecified baseline adjustment. The model should include an intercept term</p></li>
-<li><p>For each subject compute the model-based prediction of the outcome (this will depend on the type of outcome) under treatment and control, respectviely</p></li>
-<li><p>Estimate the average treatment effect by comparing the average outcome from above step</p></li>
-<li><p>Use nonparametric bootstrap or standard error formulas for confidence interval construction and hypothesis testing.</p></li>
+<li><p>The major concern for u-SSR is that inappropriate analysis method followed by adjusted sample size may inflate the overall type 1 error rate. <a class="footnote-reference brackets" href="#type-1-inflation" id="id1">1</a> Different methods have been developed to address this issue:</p>
+<ul>
+<li><p><em>Cui, Hung, and Wang (1999)</em> Biometrics paper proposed a method based on modifying the weights used in the traditional repeated significance test (two-sample mean), where the overall nominal <span class="math notranslate nohighlight">\(\alpha\)</span> level is preserved.</p></li>
+<li><p><em>Chen, DeMets, and Lan (2004)</em> Stats in Med paper discussed the possible scenarios when the type 1 error will not be inflated after u-SRR, where statistical adjustment is not necessary (i.e. using conventional hypothesis test). Those scenarios are referred as <em>promising</em> interims, whose definition is based on the conditional power given the interim data. They proposed the conditional power should be greater than 50% to be considered as promising.</p></li>
+<li><p><em>Gao, Ware, and Mehta (2008)</em> J Biopharm Stat paper extended above idea to a broader range of promising zones.</p></li>
+<li><p><em>Mehta and Pocock (2010)</em> Stats in Med paper made the work of <em>Gao, Ware and Mehta</em> more accessible to practioners by presenting it in the context of two-stage designs and tabulating explicit cut-off values for the promising region under different adaptive rules based on conditional power.</p></li>
 </ul>
 </li>
 </ul>
-<p><a class="reference external" href="https://thestatsgeek.com/2021/06/11/comments-on-fda-guidance-adjusting-for-covariates-in-randomized-clinical-trials-for-drugs-and-biological-products/">Related commentary</a></p>
-<hr>
+<div class="section" id="a-name-promisingzone-summary-of-mehta2011adaptive-paper-so-called-promising-zone-method-a">
+<h5><span class="section-number">7.1.1.1.1. </span><a name="promisingzone"> Summary of <strong><span id="id2">[<a class="reference internal" href="#id26">Mehta and Pocock, 2011</a>]</span></strong> paper (so-called <em>promising zone</em> method)</a><a class="headerlink" href="#a-name-promisingzone-summary-of-mehta2011adaptive-paper-so-called-promising-zone-method-a" title="Permalink to this headline">¶</a></h5>
+<ul>
+<li><p>Notations:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n_1\)</span>: sample size at interim; <span class="math notranslate nohighlight">\(n_2\)</span>: total planned sample size; <span class="math notranslate nohighlight">\(\tilde{n}_2 = n_2 - n_1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{n}_2^*\)</span>: updated <span class="math notranslate nohighlight">\(\tilde{n}_2\)</span> after sample size re-estimation; <span class="math notranslate nohighlight">\(n_2^* = n_1 + \tilde{n}_2^*\)</span>, the updated total sample size after re-estimation</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_{\max}\)</span>: the max acceptable sample size after re-estimation</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span>: true underlying treatment difference; <span class="math notranslate nohighlight">\(\hat{\delta}\)</span> the empirical estimate of <span class="math notranslate nohighlight">\(\delta\)</span> based on observed data</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z_i\)</span>: Wald statistics at stage <span class="math notranslate nohighlight">\(i, \text{e.g.} i = 1, 2\)</span></p></li>
+</ul>
+</li>
+<li><p>Statistical components used in u-SSR:</p>
+<ul class="simple">
+<li><p>conditional power (based on interim results and for the sample size left): <span class="math notranslate nohighlight">\(\text{CP}_{\hat{\delta}}(z_1, \tilde{n}_2) = \text{Pr}(Z_2 &gt; z_{\alpha}|z_1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{CP}_{\min}\)</span>: lower limit of the conditional power defining the promising region; upper limit is the targeted power of the study, i.e. <span class="math notranslate nohighlight">\(1-\beta\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b(z_1, \tilde{n}_2^*(z_1))\)</span>: new critical value threshold under sample size re-estimation</p></li>
+</ul>
+</li>
+<li><p>Practical steps in application</p>
+<ol>
+<li><p>define <span class="math notranslate nohighlight">\(\text{CP}_{\min}\)</span> by finding the region of conditional power that corresponds to <span class="math notranslate nohighlight">\(b(z_1, \tilde{n}_2^*(z_1))\)</span> below <span class="math notranslate nohighlight">\(z_{\alpha}\)</span>: <span class="math notranslate nohighlight">\(\mathcal{P} = \{\text{CP}_{\hat{\delta}_1}(z_1, \tilde{n}_2): b(z_1, \tilde{n}_2^*(z_1)) \le z_{\alpha}\}\)</span></p>
+<ul class="simple">
+<li><p>This requires to compute <span class="math notranslate nohighlight">\(b(z_1, \tilde{n}_2^*(z_1))\)</span> for each <span class="math notranslate nohighlight">\(\text{CP}_{\hat{\delta}_1}(z_1, \tilde{n}_2) \in (0, 1)\)</span>: <span class="math notranslate nohighlight">\(\text{CP} \rightarrow z_1 \rightarrow \tilde{n}_2’ \text{ and } n_2' \rightarrow n_2^* \rightarrow b(z_1, \tilde{n}_2^*(z_1))\)</span></p></li>
+<li><p><strong>This is defined ahead of data are unblinded</strong></p></li>
+</ul>
+</li>
+<li><p>calculate the <span class="math notranslate nohighlight">\(\text{CP}_{\hat{\delta}_1}(z_1, \tilde{n}_2)\)</span> from observed data and check which region (unfavorable, promising, or favorable) it falls into:</p>
+<ul class="simple">
+<li><p>if it falls into unfavorable region, sample size won’t be adjusted; instead, need to check it against the futility boundary</p></li>
+<li><p>if it falls into the favorable regions, no sample size adjustment is needed; continue the study without modification</p></li>
+<li><p>if it falls into the promising region: calculate the sample size such that the conditional power meets the targeted power: i.e., find <span class="math notranslate nohighlight">\(n_2'\)</span> such that <span class="math notranslate nohighlight">\(\text{CP}_{\hat{\delta}_1}(z_1, \tilde{n}'_2) = 1-\beta\)</span></p></li>
+</ul>
+</li>
+<li><p>If sample size needs to be adjusted, i.e. the interim result is promising, update the sample size to</p>
+<p>​																			$<span class="math notranslate nohighlight">\(n_2^* = \min(n_{\max}, n_2')\)</span>$</p>
+</li>
+</ol>
+</li>
+<li><p>Sample size re-estimation (adaptive design) v.s. group sequential design (GSD) vs. adaptive GSD (A-GSD)</p>
+<ul class="simple">
+<li></li>
+</ul>
+</li>
+</ul>
 </div>
-</div>
-</div>
-<div class="section" id="non-inferiority-clinical-trials-to-establish-effectiveness">
-<h2><span class="section-number">10.2. </span>Non-Inferiority Clinical Trials to Establish Effectiveness<a class="headerlink" href="#non-inferiority-clinical-trials-to-establish-effectiveness" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="intro-and-background">
-<h3><span class="section-number">10.2.1. </span>1. Intro and background<a class="headerlink" href="#intro-and-background" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="general-considerations-for-non-inferiority-studies">
-<h3><span class="section-number">10.2.2. </span>2. General considerations for Non-inferiority studies<a class="headerlink" href="#general-considerations-for-non-inferiority-studies" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="choosing-the-non-inferiority-margin-and-testing-the-non-inferiority-hypothesis">
-<h3><span class="section-number">10.2.3. </span>3. Choosing the non-inferiority margin and testing the non-inferiority hypothesis<a class="headerlink" href="#choosing-the-non-inferiority-margin-and-testing-the-non-inferiority-hypothesis" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="faq-examples">
-<h3><span class="section-number">10.2.4. </span>4. FAQ &amp; examples<a class="headerlink" href="#faq-examples" title="Permalink to this headline">¶</a></h3>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="prognostic"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><em>prognostic baseline factors</em> used in this guidance refers to baseline covariates that are likely to be associated with the primary endpoint</p>
+<div class="section" id="comparison-of-commonly-used-ussr-re-estimation-methods">
+<h5><span class="section-number">7.1.1.1.2. </span>Comparison of commonly used uSSR re-estimation methods<a class="headerlink" href="#comparison-of-commonly-used-ussr-re-estimation-methods" title="Permalink to this headline">¶</a></h5>
+<p><em>Based on Herrmann et al (2020): A new conditional performance score for the evaluation of adaptive group sequential designs with sample size recalculation</em></p>
+<ul class="simple">
+<li><p>Observed conditional power approach</p></li>
+<li><p>Restricted observed conditional power approach</p></li>
+<li><p><a href="#promisingzone">Promising zone approach</a></p></li>
+<li><p>Optimization function approach</p></li>
+</ul>
+<p id="id3"><dl class="citation">
+<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id2">MP11</a></span></dt>
+<dd><p>Cyrus R Mehta and Stuart J Pocock. Adaptive increase in sample size when interim results are promising: a practical guide with examples. <em>Statistics in medicine</em>, 30(28):3267–3284, 2011.</p>
 </dd>
 </dl>
+</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="type-1-inflation"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>If the sample size recalculation is based on estimates of nuisance parameters such as within-group variance for normal response or pooled event rate for a binary outcome, the type I error rate will not be materially inated. However, if the sample size recalculation is based on the observed treatment dierence, the type I error rate could be substantially inated and an appropriate statistical adjustment may be needed to control it.</p>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -610,17 +558,17 @@ effect.</p></li>
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Note-Cox_PH_model.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Book-Regression%20Modeling%20Strategies.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9. </span>​Cox PH model</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>[book] Regression Modeling Strategies</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Note-Group_Sequential_Trial_Design.html" title="next page">
+    <a class='right-next' id="next-link" href="Note-Competing_Risk_Regression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Notes on Group Sequential Trial Design​</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Competing risk models</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
