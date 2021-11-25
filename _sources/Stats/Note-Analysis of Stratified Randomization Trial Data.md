@@ -65,8 +65,3 @@ plot(x$m, y$m)
 ```
 
 ![figure](../attachments/stra_rand_data.png)
-
-```python
-from IPython.display import display, Markdown
-display(Markdown('![figure](../attachments/stra_rand_data.png)'))
-```
