@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15. Multiplicity in Clinical Trials &#8212; Study Notes</title>
+    <title>16. Multiplicity in Clinical Trials &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="16. Quantile regression" href="Note-Quantile%20regression.html" />
-    <link rel="prev" title="14. Monte Carlo Method" href="Note-Monte%20Carlo%20method.html" />
+    <link rel="next" title="17. Quantile regression" href="Note-Quantile%20regression.html" />
+    <link rel="prev" title="15. Monte Carlo Method" href="Note-Monte%20Carlo%20method.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -148,48 +148,53 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
+   9. Association vs. Prediction vs. Causation
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   9. Competing risk models
+   10. Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Cox_PH_model.html">
-   10. ​Cox PH model
+   11. ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
-   11. Notes on FDA Guidances for Industry
+   12. Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
-   12. Notes on Group Sequential Trial Design​
+   13. Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-ICH%20guidelines.html">
-   13. Notes on ICH guidelines​
+   14. Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
-   14. Monte Carlo Method
+   15. Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   15. Multiplicity in Clinical Trials
+   16. Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Quantile%20regression.html">
-   16. Quantile regression
+   17. Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Survival_Analysis.html">
-   17. Survival Analysis
+   18. Survival Analysis
   </a>
  </li>
 </ul>
@@ -379,57 +384,57 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   15.1. Introduction
+   16.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#common-multiple-test-procedures">
-   15.2. Common multiple test procedures
+   16.2. Common multiple test procedures
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-concepts">
-     15.2.1. Basic concepts
+     16.2.1. Basic concepts
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#methods">
-     15.2.2. Methods
+     16.2.2. Methods
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#bonferroni">
-       15.2.2.1. Bonferroni
+       16.2.2.1. Bonferroni
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#holm">
-       15.2.2.2. Holm
+       16.2.2.2. Holm
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#simes">
-       15.2.2.3. Simes
+       16.2.2.3. Simes
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#hochberg-stepwise-version-of-simes-method-stepup-simes">
-       15.2.2.4. Hochberg (stepwise version of Simes method/stepup Simes)
+       16.2.2.4. Hochberg (stepwise version of Simes method/stepup Simes)
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#dunnett">
-       15.2.2.5. Dunnett
+       16.2.2.5. Dunnett
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#stepwise-dunnett">
-       15.2.2.6. Stepwise Dunnett
+       16.2.2.6. Stepwise Dunnett
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#summary">
-       15.2.2.7. Summary
+       16.2.2.7. Summary
       </a>
      </li>
     </ul>
@@ -438,71 +443,71 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hierarchical-test-procedure">
-   15.3. Hierarchical test procedure
+   16.3. Hierarchical test procedure
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#background">
-     15.3.1. Background
+     16.3.1. Background
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fixed-sequence-procedure">
-     15.3.2. Fixed sequence procedure
+     16.3.2. Fixed sequence procedure
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fallback-procedure">
-     15.3.3. Fallback procedure
+     16.3.3. Fallback procedure
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#closed-test-procedure-ctp">
-   15.4. Closed test procedure (CTP)
+   16.4. Closed test procedure (CTP)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ctp-using-bonferroni-holm-procedure">
-     15.4.1. CTP using Bonferroni ( == Holm procedure)
+     16.4.1. CTP using Bonferroni ( == Holm procedure)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ctp-usign-simes">
-     15.4.2. CTP usign Simes
+     16.4.2. CTP usign Simes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ctp-using-dunnett">
-     15.4.3. CTP using Dunnett
+     16.4.3. CTP using Dunnett
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ctp-using-weighted-bonferroni">
-     15.4.4. CTP using weighted Bonferroni
+     16.4.4. CTP using weighted Bonferroni
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-if-more-than-two-hypotheses">
-     15.4.5. What if more than two hypotheses?
+     16.4.5. What if more than two hypotheses?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     15.4.6. Summary
+     16.4.6. Summary
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#summary-and-conclusions">
-     15.4.7. Summary and Conclusions
+     16.4.7. Summary and Conclusions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graphical-approachbretz2009graphicalbretz2011graphical">
-   15.5. Graphical approach
+   16.5. Graphical approach
    <span class="xref cite cite-p">
     bretz2009graphical
    </span>
@@ -513,22 +518,22 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conventions">
-     15.5.1. Conventions
+     16.5.1. Conventions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#common-multiple-test-procedues">
-     15.5.2. Common multiple test procedues
+     16.5.2. Common multiple test procedues
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#formal-description">
-     15.5.3. Formal description
+     16.5.3. Formal description
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     15.5.4. Summary
+     16.5.4. Summary
     </a>
    </li>
   </ul>
@@ -545,9 +550,9 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="multiplicity-in-clinical-trials">
-<h1><span class="section-number">15. </span>Multiplicity in Clinical Trials<a class="headerlink" href="#multiplicity-in-clinical-trials" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">16. </span>Multiplicity in Clinical Trials<a class="headerlink" href="#multiplicity-in-clinical-trials" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">15.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Type I error rate inflated when conducting multiple hypothesis tests <span class="math notranslate nohighlight">\((m)\)</span> each with the nominal 0.05 significance level <span class="math notranslate nohighlight">\((\alpha)\)</span> –&gt; the multiplicity problem</p></li>
 <li><p>Source of multiplicity in clinical trials</p>
@@ -578,9 +583,9 @@
 </ul>
 </div>
 <div class="section" id="common-multiple-test-procedures">
-<h2><span class="section-number">15.2. </span>Common multiple test procedures<a class="headerlink" href="#common-multiple-test-procedures" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.2. </span>Common multiple test procedures<a class="headerlink" href="#common-multiple-test-procedures" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-concepts">
-<h3><span class="section-number">15.2.1. </span>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.2.1. </span>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><u>Family-wise error rate (FWER)</u>: overall type I error rate when testing a family of null hypotheses</p>
 <ul>
@@ -608,9 +613,9 @@
 </ul>
 </div>
 <div class="section" id="methods">
-<h3><span class="section-number">15.2.2. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.2.2. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="bonferroni">
-<h4><span class="section-number">15.2.2.1. </span>Bonferroni<a class="headerlink" href="#bonferroni" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.2.1. </span>Bonferroni<a class="headerlink" href="#bonferroni" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Use 𝛼/𝑚 for all inferences; for 𝑖=1,…,𝑚:
 $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i \le \alpha/m\)</span><span class="math notranslate nohighlight">\(
@@ -627,7 +632,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="holm">
-<h4><span class="section-number">15.2.2.2. </span>Holm<a class="headerlink" href="#holm" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.2.2. </span>Holm<a class="headerlink" href="#holm" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Overview</p>
 <ul>
@@ -647,7 +652,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="simes">
-<h4><span class="section-number">15.2.2.3. </span>Simes<a class="headerlink" href="#simes" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.2.3. </span>Simes<a class="headerlink" href="#simes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/ac53937c_20200421113808.png" /></p></li>
@@ -661,7 +666,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="hochberg-stepwise-version-of-simes-method-stepup-simes">
-<h4><span class="section-number">15.2.2.4. </span>Hochberg (stepwise version of Simes method/stepup Simes)<a class="headerlink" href="#hochberg-stepwise-version-of-simes-method-stepup-simes" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.2.4. </span>Hochberg (stepwise version of Simes method/stepup Simes)<a class="headerlink" href="#hochberg-stepwise-version-of-simes-method-stepup-simes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/e7935100_20200421113847.png" /></p></li>
@@ -680,7 +685,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="dunnett">
-<h4><span class="section-number">15.2.2.5. </span>Dunnett<a class="headerlink" href="#dunnett" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.2.5. </span>Dunnett<a class="headerlink" href="#dunnett" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>When comparing several treatments with a control</p></li>
 <li><p>Other methods mentioned above can also be used but <u>only Dunnett test exploits the correlation between the p-values</u></p></li>
@@ -706,7 +711,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="stepwise-dunnett">
-<h4><span class="section-number">15.2.2.6. </span>Stepwise Dunnett<a class="headerlink" href="#stepwise-dunnett" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.2.6. </span>Stepwise Dunnett<a class="headerlink" href="#stepwise-dunnett" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/8c404b11_20200421114008.png" /></p></li>
@@ -730,7 +735,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="summary">
-<h4><span class="section-number">15.2.2.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.2.7. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h4>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/96d0eedb_20200421114029.png" /></p>
 <ul class="simple">
 <li><p>Stepwise methods are preferred over single step methods, which are less powerful and less used in practice</p></li>
@@ -742,9 +747,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </div>
 </div>
 <div class="section" id="hierarchical-test-procedure">
-<h2><span class="section-number">15.3. </span>Hierarchical test procedure<a class="headerlink" href="#hierarchical-test-procedure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.3. </span>Hierarchical test procedure<a class="headerlink" href="#hierarchical-test-procedure" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="background">
-<h3><span class="section-number">15.3.1. </span>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.3.1. </span>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Previous multiple tests methods do not reflect the relative importance of the two endpoints, which is usually the case in RCT, where we have primary/secondary/exploratory endpoints with ordered importance</p></li>
 <li><p>Previous stepwise procedures use a data-driven order of hypotheses, whereas in the RCT setting we need a multiple test procedure that specifies the <strong>order of the hypothesis based on clinical importance</strong></p></li>
@@ -752,7 +757,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="fixed-sequence-procedure">
-<h3><span class="section-number">15.3.2. </span>Fixed sequence procedure<a class="headerlink" href="#fixed-sequence-procedure" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.3.2. </span>Fixed sequence procedure<a class="headerlink" href="#fixed-sequence-procedure" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/a635f801_20200421114050.png" />
@@ -777,7 +782,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="fallback-procedure">
-<h3><span class="section-number">15.3.3. </span>Fallback procedure<a class="headerlink" href="#fallback-procedure" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.3.3. </span>Fallback procedure<a class="headerlink" href="#fallback-procedure" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/514110bc_20200421114133.png" /></p></li>
@@ -791,7 +796,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </div>
 </div>
 <div class="section" id="closed-test-procedure-ctp">
-<h2><span class="section-number">15.4. </span>Closed test procedure (CTP)<a class="headerlink" href="#closed-test-procedure-ctp" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.4. </span>Closed test procedure (CTP)<a class="headerlink" href="#closed-test-procedure-ctp" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Overview/formal definition
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/a0355c89_20200421114152.png" /></p>
@@ -802,11 +807,11 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </li>
 </ul>
 <div class="section" id="ctp-using-bonferroni-holm-procedure">
-<h3><span class="section-number">15.4.1. </span>CTP using Bonferroni ( == Holm procedure)<a class="headerlink" href="#ctp-using-bonferroni-holm-procedure" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.4.1. </span>CTP using Bonferroni ( == Holm procedure)<a class="headerlink" href="#ctp-using-bonferroni-holm-procedure" title="Permalink to this headline">¶</a></h3>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/2f1a24b8_20200421114217.png" /></p>
 </div>
 <div class="section" id="ctp-usign-simes">
-<h3><span class="section-number">15.4.2. </span>CTP usign Simes<a class="headerlink" href="#ctp-usign-simes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.4.2. </span>CTP usign Simes<a class="headerlink" href="#ctp-usign-simes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>When <em>m</em>=2, it’s equivalent to Hochberg procedure</p></li>
 <li><p>When <em>m</em>&gt;2, it’s less powerful
@@ -814,14 +819,14 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="ctp-using-dunnett">
-<h3><span class="section-number">15.4.3. </span>CTP using Dunnett<a class="headerlink" href="#ctp-using-dunnett" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.4.3. </span>CTP using Dunnett<a class="headerlink" href="#ctp-using-dunnett" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>This is equivalent to stepdown Dunnett procedure
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/85a5085b_20200421114257.png" /></p></li>
 </ul>
 </div>
 <div class="section" id="ctp-using-weighted-bonferroni">
-<h3><span class="section-number">15.4.4. </span>CTP using weighted Bonferroni<a class="headerlink" href="#ctp-using-weighted-bonferroni" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.4.4. </span>CTP using weighted Bonferroni<a class="headerlink" href="#ctp-using-weighted-bonferroni" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The first is equivalent to the the <strong>fixed sequence procedure</strong>
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/48fd9af8_20200421114316.png" /></p></li>
@@ -830,18 +835,18 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="what-if-more-than-two-hypotheses">
-<h3><span class="section-number">15.4.5. </span>What if more than two hypotheses?<a class="headerlink" href="#what-if-more-than-two-hypotheses" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.4.5. </span>What if more than two hypotheses?<a class="headerlink" href="#what-if-more-than-two-hypotheses" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Do CTP for pairwise combinations
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/229c844b_20200421114353.png" /></p></li>
 </ul>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">15.4.6. </span>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.4.6. </span>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/41aedf7a_20200421114415.png" /></p>
 </div>
 <div class="section" id="summary-and-conclusions">
-<h3><span class="section-number">15.4.7. </span>Summary and Conclusions<a class="headerlink" href="#summary-and-conclusions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.4.7. </span>Summary and Conclusions<a class="headerlink" href="#summary-and-conclusions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Closed test procedure</strong> is a general principle to construct powerful multiple test procedures; many common procedures are CTPs</p></li>
 <li><p>For <u>structured hypotheses</u>, one can apply the graphical approach, which is based on CTPs</p></li>
@@ -857,25 +862,25 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </div>
 </div>
 <div class="section" id="graphical-approachbretz2009graphicalbretz2011graphical">
-<h2><span class="section-number">15.5. </span>Graphical approach<span id="id2">[<a class="reference internal" href="#id18">Bretz <em>et al.</em>, 2009</a>]</span><span id="id3">[<a class="reference internal" href="#id19">Bretz <em>et al.</em>, 2011</a>]</span><a class="headerlink" href="#graphical-approachbretz2009graphicalbretz2011graphical" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.5. </span>Graphical approach<span id="id2">[<a class="reference internal" href="#id18">Bretz <em>et al.</em>, 2009</a>]</span><span id="id3">[<a class="reference internal" href="#id19">Bretz <em>et al.</em>, 2011</a>]</span><a class="headerlink" href="#graphical-approachbretz2009graphicalbretz2011graphical" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Initial allocation of the significance level to <span class="math notranslate nohighlight">\(m\)</span> hypothesis: <span class="math notranslate nohighlight">\(\alpha_1 + \cdots + \alpha_m = \alpha\)</span></p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(\alpha\)</span>-propagation</strong>: if a hypothesis <span class="math notranslate nohighlight">\(H_i\)</span> is rejected at level <span class="math notranslate nohighlight">\(\alpha_i\)</span>, propagate its level <span class="math notranslate nohighlight">\(\alpha_i\)</span> to the remaining, not yet rejected hypotheses (according to aprefixed rule) and continue testing with the updated <span class="math notranslate nohighlight">\(\alpha\)</span> levels</p></li>
 </ul>
 <div class="section" id="conventions">
-<h3><span class="section-number">15.5.1. </span>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.5.1. </span>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h3>
 <p>Weighted Holm procedure: i.e. <span class="math notranslate nohighlight">\(\alpha\)</span> is no longer evenly splited among hypotheses</p>
 <p><img alt="graphical method - conventions" src="https://raw.githubusercontent.com/askming/picgo/master/image-20201211120002657.png" /></p>
 </div>
 <div class="section" id="common-multiple-test-procedues">
-<h3><span class="section-number">15.5.2. </span>Common multiple test procedues<a class="headerlink" href="#common-multiple-test-procedues" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.5.2. </span>Common multiple test procedues<a class="headerlink" href="#common-multiple-test-procedues" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed sequence procedure</p></li>
 <li><p>Fallback procedure</p></li>
 </ul>
 </div>
 <div class="section" id="formal-description">
-<h3><span class="section-number">15.5.3. </span>Formal description<a class="headerlink" href="#formal-description" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.5.3. </span>Formal description<a class="headerlink" href="#formal-description" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Initial levels <span class="math notranslate nohighlight">\(\alpha = (\alpha_1, \cdots, \alpha_m)\)</span> with <span class="math notranslate nohighlight">\(\sum_{i=1}^m\alpha_i = \alpha \in (0, 1)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m \times m\)</span> Transition matrix <span class="math notranslate nohighlight">\(\bf{G}=(g_{ij})\)</span>, Where <span class="math notranslate nohighlight">\(g_{ij}\)</span> is the fraction of the level of <span class="math notranslate nohighlight">\(H_i\)</span> that is propagated to <span class="math notranslate nohighlight">\(H_j\)</span> with <span class="math notranslate nohighlight">\(0\le g_{ij} \le 1, g_{ii} = 0\)</span> and <span class="math notranslate nohighlight">\(\sum_{j=1}^mg_{ij}\le1, \forall i=1, \cdots, m\)</span></p>
@@ -892,7 +897,7 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </div>
 <div class="section" id="id4">
-<h3><span class="section-number">15.5.4. </span>Summary<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.5.4. </span>Summary<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Tailor advanced multiple test procedures to structured families of hypotheses</p></li>
 <li><p>Visualize complex decision strategies in an efficient and easily communicable way</p></li>
@@ -941,13 +946,13 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">14. </span>Monte Carlo Method</p>
+            <p class="prev-next-title"><span class="section-number">15. </span>Monte Carlo Method</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Note-Quantile%20regression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>Quantile regression</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Quantile regression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15. Monte Carlo Method &#8212; Study Notes</title>
+    <title>9. Association vs. Prediction vs. Causation &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="16. Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
-    <link rel="prev" title="14. Notes on ICH guidelines​" href="Note-ICH%20guidelines.html" />
+    <link rel="next" title="10. Competing risk models" href="Note-Competing_Risk_Regression.html" />
+    <link rel="prev" title="8. Why analysis of stratified randomization trial data need to account for the stratification factors?" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -147,8 +145,8 @@
    8. Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    9. Association vs. Prediction vs. Causation
   </a>
  </li>
@@ -177,8 +175,8 @@
    14. Notes on ICH guidelines​
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
    15. Monte Carlo Method
   </a>
  </li>
@@ -336,7 +334,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Note-Monte Carlo method.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Association vs. Prediction vs. Causation.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -356,7 +354,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Monte Carlo method.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Association vs. Prediction vs. Causation.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -383,8 +381,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#markov-chain-monte-carlo">
-   15.1. Markov Chain Monte Carlo
+  <a class="reference internal nav-link" href="#association">
+   9.1. Association
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prediction">
+   9.2. Prediction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causation">
+   9.3. Causation
   </a>
  </li>
 </ul>
@@ -398,61 +406,31 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="monte-carlo-method">
-<h1><span class="section-number">15. </span>Monte Carlo Method<a class="headerlink" href="#monte-carlo-method" title="Permalink to this headline">¶</a></h1>
-<ul>
-<li><p><strong>Monte Carlo</strong> method is the art of approximating an expectation by the sample mean of a function of simulated random variables. Its essence in very familiar terms: Monte Carlo is about invoking laws of large numbers to approximate expectations.<a class="footnote-reference brackets" href="#id2" id="id1">1</a></p></li>
-<li><p><em><strong>In more mathematical terms</strong></em>: Consider a (possibly multidimensional) random variable X having probability mass function or probability density function <span class="math notranslate nohighlight">\(f_X(x)\)</span> that is greater than zero on a set of values <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>. Then the expected value of a function <span class="math notranslate nohighlight">\(g\)</span> of <span class="math notranslate nohighlight">\(X\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[
-  \mathbb{E}(g(X)) = \sum_{x\in \mathcal{X}}g(x)f_X(x)
-  \]</div>
-<p>if <span class="math notranslate nohighlight">\(X\)</span> is discrete, and</p>
-<div class="math notranslate nohighlight">
-\[
-  \mathbb{E}(g(X)) = \int_{x\in \mathcal{X}}g(x)f_X(x)
-  \]</div>
-<p>if <span class="math notranslate nohighlight">\(X\)</span> is continuous.</p>
-<ul>
-<li><p>Now if we were to take an n-sample of <span class="math notranslate nohighlight">\(X\)</span>’s, <span class="math notranslate nohighlight">\((x_1, \cdots, x_n)\)</span>, and we compute the mean of <span class="math notranslate nohighlight">\(g(x)\)</span> over the sample, then we would have the Monte Carlo estimate</p>
-<div class="math notranslate nohighlight">
-\[
-    \tilde{g}_n(x) = {{1}\over{n}}\sum_{i=1}^n g(x_i)
-    \]</div>
-<p>of <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>. We could, alternatively, speak of the random variable</p>
-<div class="math notranslate nohighlight">
-\[
-    \tilde{g}_n(X) = {{1}\over{n}}\sum_{i=1}^n g(X_i),
-    \]</div>
-<p>which we call the Monte Carlo estimator of <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>.</p>
-</li>
-</ul>
-</li>
-<li><p>If <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>, exists, then <a class="reference external" href="https://en.wikipedia.org/wiki/Law_of_large_numbers"><em>the weak law of large numbers</em></a> tellsus that for any arbitrarily small <span class="math notranslate nohighlight">\(\epsilon\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-  \lim_{n\rightarrow\infty}P(|\tilde{g}_n(X) - \mathbb{E}(g(X))|\ge \epsilon) = 0
-  \]</div>
-<p>This tells us that as <span class="math notranslate nohighlight">\(n\)</span> gets large, there is small probability that <span class="math notranslate nohighlight">\(\tilde{g}_n(x)\)</span> deviates much from <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>.</p>
-</li>
-<li><p>One other thing to note. at this point is that <span class="math notranslate nohighlight">\(\tilde{g}_n(x)\)</span> is unbiased for <span class="math notranslate nohighlight">\(\mathbb{E}(g(X))\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-  \mathbb{E}(\tilde{g}_n(X)) = \mathbb{E} \left( {1\over n}\sum_{i=1}^ng(X_i)\right) = {1\over n}\sum_{i=1}^n\mathbb{E}(g(X_i)) = \mathbb{E}(g(X)).
-  \]</div>
-</li>
-</ul>
-<div class="section" id="markov-chain-monte-carlo">
-<h2><span class="section-number">15.1. </span>Markov Chain Monte Carlo<a class="headerlink" href="#markov-chain-monte-carlo" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="association-vs-prediction-vs-causation">
+<h1><span class="section-number">9. </span>Association vs. Prediction vs. Causation<a class="headerlink" href="#association-vs-prediction-vs-causation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="association">
+<h2><span class="section-number">9.1. </span>Association<a class="headerlink" href="#association" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>In statistics, <strong>Markov chain Monte Carlo (MCMC)</strong> methods (which include random walk Monte Carlo methods) are a class of algorithms for sampling from probability distributions based on constructing a Markov chain that has the desired distribution as its equilibrium distribution. The state of the chain after a large number of steps is then used as a sample of the desired distribution. The quality of the sample improves as a function of the number of steps.</p></li>
+<li><p>Two variables are associated means they are correlated in some way, they are not independent. But we don’t know how exactly they affect each other</p></li>
+<li><p>Simply conducted multiple regression may only contribute to association</p></li>
 </ul>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>This applies when the simulated variables are independent of one another, and might apply when they are correlated with one another (for example if they are states visited by an ergodic Markov chain), all of this extends to samples from Markov chains via the weak law of large numbers for the number of passages through a recurrent state in an ergodic Markov chain (see Feller 1957).</p>
-</dd>
-</dl>
+</div>
+<div class="section" id="prediction">
+<h2><span class="section-number">9.2. </span>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What the outcome will be given the predictor(s). The goal of predictive model is to find the model that minimize the prediction error for future data.</p></li>
+</ul>
+</div>
+<div class="section" id="causation">
+<h2><span class="section-number">9.3. </span>Causation<a class="headerlink" href="#causation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What would happen to the outcome when we change the predictor(s). The goal of causal inference is to find the best unbiased estimator of the model parameter.</p></li>
+<li><p>Causality subsumes prediction and is more than prediction</p></li>
+</ul>
+<p>From <a class="reference external" href="https://statisticalhorizons.com/prediction-vs-causation-in-regression-analysis">Prediction vs. Causation in Regression Analysis | Statistical Horizons</a></p>
+<blockquote>
+<div><p>There are two main uses of multiple regression: prediction and causal analysis. In a prediction study, the goal is to develop a formula for making predictions about the dependent variable, based on the observed values of the independent variables….In a causal analysis, the independent variables are regarded as causes of the dependent variable. The aim of the study is to determine whether a particular independent variable really affects the dependent variable, and to estimate the magnitude of that effect, if any.</p>
+</div></blockquote>
 </div>
 </div>
 
@@ -481,17 +459,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Note-ICH%20guidelines.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">14. </span>Notes on ICH guidelines​</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>Why analysis of stratified randomization trial data need to account for the stratification factors?</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Note-Multiplicity%20in%20Clinical%20Trials.html" title="next page">
+    <a class='right-next' id="next-link" href="Note-Competing_Risk_Regression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>Multiplicity in Clinical Trials</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Competing risk models</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
