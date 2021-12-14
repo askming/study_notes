@@ -54,5 +54,5 @@
   8. Odds ratio
 
 [^MDD]: https://thomasleeper.com/Rcourse/Tutorials/power.html
-[^ES]: https://www.leeds.ac.uk/educol/documents/00002182.htm
+[^ES]: https://f.hubspotusercontent30.net/hubfs/5191137/attachments/ebe/ESguide.pdf
 [^es_type]: https://www.statisticssolutions.com/statistical-analyses-effect-size/
