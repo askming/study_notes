@@ -196,4 +196,8 @@
     
 	- plotting residuals vs. individual x variables
 	- plotting residuals vs. fitted outcome variable (y fitted values is a function of all explanatory variables)
+
+
+16. If two statistics have non-overlapping confidence intervals, they are necessarily significantly different but if they have overlapping confidence intervals, it is not necessarily true that they are not significantly different.
+  ![](https://user-images.githubusercontent.com/5671771/145944091-01a75288-440a-4fe9-ad46-3a445e996935.png)
     
