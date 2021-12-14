@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials &#8212; Study Notes</title>
+    <title>15. Power, MDD/E (minimum detectable difference/effect), and Effect size in clinical trials &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. [book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
-    <link rel="prev" title="4. [book] Fundamentals of Clinical Trials (4th edition)" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" />
+    <link rel="next" title="16. Monte Carlo Method" href="Note-Monte%20Carlo%20method.html" />
+    <link rel="prev" title="14. Notes on ICH guidelines​" href="Note-ICH%20guidelines.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -127,8 +127,8 @@
    4. [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
    5. [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
   </a>
  </li>
@@ -177,8 +177,8 @@
    14. Notes on ICH guidelines​
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    15. Power,
    <strong>
     MDD
@@ -353,7 +353,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Book-Group Sequential and Confirmatory Adaptive Designs in Clinical Trials.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-MDD & Effect size.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -373,7 +373,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Group Sequential and Confirmatory Adaptive Designs in Clinical Trials.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-MDD & Effect size.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -400,52 +400,14 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-2-procedures-with-equally-sized-stages">
-   5.1. Chapter 2 Procedures with equally sized stages
+  <a class="reference internal nav-link" href="#mdd">
+   15.1. MDD
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-3-procedures-with-unequally-sized-stages">
-   5.2. Chapter 3 Procedures with unequally sized stages
+  <a class="reference internal nav-link" href="#effect-size">
+   15.2. Effect size
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-alpha-spending-function-approach">
-     5.2.1. 3.3 The
-     <span class="math notranslate nohighlight">
-      \(\alpha\)
-     </span>
-     -spending function approach
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-4-confidence-intervals-p-values-and-point-estimation">
-   5.3. Chapter 4 Confidence intervals, p-values, and point estimation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-5-applications">
-   5.4. Chapter 5 Applications
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#normal-responses">
-     5.4.1. 5.1 Normal responses
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binary-responses">
-     5.4.2. 5.2 Binary responses
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#survival-data">
-     5.4.3. 5.3 Survival data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -458,52 +420,80 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="book-group-sequential-and-confirmatory-adaptive-designs-in-clinical-trials">
-<h1><span class="section-number">5. </span>[book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials<a class="headerlink" href="#book-group-sequential-and-confirmatory-adaptive-designs-in-clinical-trials" title="Permalink to this headline">¶</a></h1>
-<p><em>A study note of <span id="id1">[<a class="reference internal" href="Note-Survival_Analysis.html#id6">Wassmer and Brannath, 2016</a>]</span></em></p>
-<p><img alt="Group_sequential_adaptive_design_updated" src="https://cdn.jsdelivr.net/gh/askming/upic&#64;master/uPic/Book-wassmer2016_2021_08_01.png" /></p>
-<div class="section" id="chapter-2-procedures-with-equally-sized-stages">
-<h2><span class="section-number">5.1. </span>Chapter 2 Procedures with equally sized stages<a class="headerlink" href="#chapter-2-procedures-with-equally-sized-stages" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="power-mdd-e-minimum-detectable-difference-effect-and-effect-size-in-clinical-trials">
+<h1><span class="section-number">15. </span>Power, <strong>MDD</strong>/<strong>E</strong> (minimum detectable difference/effect), and <strong>Effect size</strong> in clinical trials<a class="headerlink" href="#power-mdd-e-minimum-detectable-difference-effect-and-effect-size-in-clinical-trials" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mdd">
+<h2><span class="section-number">15.1. </span>MDD<a class="footnote-reference brackets" href="#id4" id="id1">1</a><a class="headerlink" href="#mdd" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>General notes for this chapter (and from other materials) and Chapter 3 can be found <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html"><span class="doc std std-doc">here</span></a>.</p></li>
+<li><p>MDD/MDE tell us what is the smallest true effect, <em>in standard deviations of the outcome</em> (not devided by std), that is detectable for a given level of power and statistical significance.</p></li>
+<li><p>Because the standard deviation is influenced by sample size, MDE incorporates all of the information of a power calculation but does so in a way that applies to all experiments. That is to say, as long as we can guess at the variance of our outcome, the same sample size considerations apply every time we conduct any experiment.</p></li>
+<li><p>We can envision the MDE as the threshold where, for power = .8, 80% of the sampling distribution of the observed effect would be larger than observed effect (<u>i.e. if we sort the observed effect, MDE is the cutoff value that splits the distribution into 20/80, it’s the minimum value to declare a postive result</u>)</p></li>
 </ul>
 </div>
-<div class="section" id="chapter-3-procedures-with-unequally-sized-stages">
-<h2><span class="section-number">5.2. </span>Chapter 3 Procedures with unequally sized stages<a class="headerlink" href="#chapter-3-procedures-with-unequally-sized-stages" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Critical values when the interims are performed at different sizes of smaples can be different than that is done at equal sizes</p>
+<div class="section" id="effect-size">
+<h2><span class="section-number">15.2. </span>Effect size<a class="footnote-reference brackets" href="#es" id="id2">2</a><a class="headerlink" href="#effect-size" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p>Boundaries originally developed from equally sized IAs are not accurate anymore thus adjustment is needed</p></li>
+<li><p>The <u>effect size</u> is just the standardised mean difference between the two groups.</p></li>
+<li><p>The ‘<em>standard deviation</em>’ is a measure of the spread of a set of values. Here it refers to the standard deviation of the population from which the different treatment groups were taken. In practice, however, this is almost never known, so it must be estimated either from the standard deviation of the control group, or from a ‘pooled’ value from both groups</p></li>
+<li><p>Relationship with significance</p>
+<ul>
+<li><p>Effect size quantifies the size of the difference between two groups, and may therefore be said to be a true measure of the significance of the difference.</p></li>
+<li><p>statistical significance (referes as <em>p-value</em>) does <em>not</em> tell you the most important thing: <em>the size of the effect</em>. One way to overcome this confusion is to report the effect size, together with an estimate of its likely ‘margin for error’ or ‘confidence interval’.</p></li>
+<li><p>CI of effect size (<span class="math notranslate nohighlight">\(d\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[ d - 1.96*se(d), d + 1.96*se(d), \]</div>
+<p>where <span class="math notranslate nohighlight">\(se(d) = \sqrt{\frac{N_E + N_C}{N_E*N_C} + \frac{d^2}{2(N_E + N_C)}}\)</span></p>
+</li>
 </ul>
 </li>
-<li><p>The study protocol might contain a schedule of inspection times for the interim analyses during the course of the trial. In this case, the group sizes are unpredictable and the test procedure that is based on the worst case adjusted critical values can be used. An alternative, more sophisticated procedure that is based on the specification of an <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function.</p></li>
-</ul>
-<div class="section" id="the-alpha-spending-function-approach">
-<h3><span class="section-number">5.2.1. </span>3.3 The <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approach<a class="headerlink" href="#the-alpha-spending-function-approach" title="Permalink to this headline">¶</a></h3>
+<li><p>Factors that can influence effect size</p>
+<ol class="simple">
+<li><p><em>Standard deviation</em></p></li>
+</ol>
+<ul>
+<li><p>Ideally, the control group will provide the best estimate of standard deviation, since it consists of a representative group of the population who have not been affected by the experimental intervention. However, this may not always be feasible: e.g. control group is too small or there is not true control group</p></li>
+<li><p>In reality, it is often better to use a ‘<em>pooled</em>’ estimate of standard deviation, which is essentially an average of the standard deviations of the experimental and control groups</p>
+<div class="math notranslate nohighlight">
+\[SD_{pooled} = \sqrt{\frac{(N_E-1)SD^2_E + (N_C-1)SD^2_C}{N_E+N_C-2}}\]</div>
 <ul class="simple">
-<li><p>The conceptual design of the <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approach is to provide a test procedure that enables interim analyses at arbitrary time points of analyses. Specifically, this approach can be used if the interim analyses are not scheduled at the observation of a specific number of observations but at fixed calendar times.</p></li>
-<li><p>The <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approximates the classical group sequential boundaries also for the case of unequally spaced stages.</p></li>
+<li><p>The use of a pooled estimate of standard deviation depends on the assumption that the two calculated standard deviations are estimates of <em>the same</em> population value.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="chapter-4-confidence-intervals-p-values-and-point-estimation">
-<h2><span class="section-number">5.3. </span>Chapter 4 Confidence intervals, p-values, and point estimation<a class="headerlink" href="#chapter-4-confidence-intervals-p-values-and-point-estimation" title="Permalink to this headline">¶</a></h2>
-<p>What problem this chapter tries to solve? Didn’t quite get it.</p>
-</div>
-<div class="section" id="chapter-5-applications">
-<h2><span class="section-number">5.4. </span>Chapter 5 Applications<a class="headerlink" href="#chapter-5-applications" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="normal-responses">
-<h3><span class="section-number">5.4.1. </span>5.1 Normal responses<a class="headerlink" href="#normal-responses" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="binary-responses">
-<h3><span class="section-number">5.4.2. </span>5.2 Binary responses<a class="headerlink" href="#binary-responses" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="survival-data">
-<h3><span class="section-number">5.4.3. </span>5.3 Survival data<a class="headerlink" href="#survival-data" title="Permalink to this headline">¶</a></h3>
+</li>
+</ul>
+<ol class="simple">
+<li><p><em>Non-Normal distributions</em></p>
 <ul class="simple">
-<li><p>Sample size calcuation for survival outcome can be found <a class="reference internal" href="Note-Survival_Analysis.html"><span class="doc std std-doc">here</span></a>.</p></li>
+<li><p>If the normality assumption is not true then the interpretation may be altered, and in particular, it may be difficult to make a fair comparison between an effect-size based on Normal distributions and one based on non-Normal distributions.</p></li>
 </ul>
-</div>
+</li>
+<li><p><em>Measurement reliability</em></p></li>
+</ol>
+</li>
+<li><p>Types of effective size <a class="footnote-reference brackets" href="#es-type" id="id3">3</a></p>
+<ol class="simple">
+<li><p>Pearson <em>r</em> correlation</p></li>
+<li><p>Standardized means difference</p></li>
+<li><p>Cohen’s <span class="math notranslate nohighlight">\(d\)</span> effect size:  the difference of two population means and it is divided by the standard deviation from the data <span class="math notranslate nohighlight">\(S = \sqrt{\frac{(N_E-1)SD^2_E + (N_C-1)SD^2_C}{N_E+N_C}} \)</span></p></li>
+<li><p>Glass’s <span class="math notranslate nohighlight">\(\Delta\)</span> method of effect size: the SD used is from the control group</p></li>
+<li><p>Hedges’ g method of effect size: this uses the <em>pooled</em> SD mentioned above</p></li>
+<li><p>Cohen’s <span class="math notranslate nohighlight">\(f^2\)</span> method: measures the effect size when we use methods like ANOVA, multiple regression, etc. $<span class="math notranslate nohighlight">\(f^2 = \frac{R^2}{1-R^2}\)</span><span class="math notranslate nohighlight">\( where \)</span>R^2$ is the squared multiple correlation</p></li>
+<li><p>Cramer’s <span class="math notranslate nohighlight">\(\phi\)</span> or cramer’s <span class="math notranslate nohighlight">\(V\)</span> method: Chi-square is the best statistic to measure the effect size for nominal data. In nominal data, when a variable has two categories, then <em>Cramer’s phi</em> is the best statistic use. When these categories are more than two, then <em>Cramer’s V</em> statistics will give the best result for nominal data.</p></li>
+<li><p>Odds ratio</p></li>
+</ol>
+</li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>https://thomasleeper.com/Rcourse/Tutorials/power.html</p>
+</dd>
+<dt class="label" id="es"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>https://www.leeds.ac.uk/educol/documents/00002182.htm</p>
+</dd>
+<dt class="label" id="es-type"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>https://www.statisticssolutions.com/statistical-analyses-effect-size/</p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -532,17 +522,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-ICH%20guidelines.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>[book] Fundamentals of Clinical Trials (4th edition)</p>
+            <p class="prev-next-title"><span class="section-number">14. </span>Notes on ICH guidelines​</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Book-Regression%20Modeling%20Strategies.html" title="next page">
+    <a class='right-next' id="next-link" href="Note-Monte%20Carlo%20method.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>[book] Regression Modeling Strategies</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Monte Carlo Method</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
