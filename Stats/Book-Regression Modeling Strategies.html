@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -358,7 +358,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -392,7 +392,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -597,7 +597,215 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>[book] Regression Modeling Strategies</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-9-overview-of-maximum-likelihood-estimation">
+   6.1. Chapter 9 Overview of Maximum Likelihood Estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypothesis-testing">
+     6.1.1. 2. Hypothesis testing
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#likelihood-ratio-test">
+       6.1.1.1. 2.1 Likelihood ratio test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wald-test">
+       6.1.1.2. 2.2 Wald test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#score-test">
+       6.1.1.3. 2.3 Score test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#which-test-to-use-when">
+       6.1.1.4. Which test to use when
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-case">
+     6.1.2. 3. General case
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confidence-intervals">
+     6.1.3. 6. Confidence intervals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-use-of-the-log-likelihood">
+     6.1.4. 8. Further use of the log likelihood
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weighted-maximum-likelihood-estimation">
+     6.1.5. 9. Weighted maximum likelihood estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#penalized-maximum-likelihood-estimation">
+     6.1.6. 10. Penalized maximum likelihood estimation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-13-ordinal-logistic-regression">
+   6.2. Chapter 13 Ordinal Logistic Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background">
+     6.2.1. 1. Background
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ordinality-assumption">
+     6.2.2. 2. Ordinality assumption
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proportional-odds-model">
+     6.2.3. 3. Proportional odds model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model">
+       6.2.3.1. 3.1 Model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#assumptions-and-interpretation-of-parameters">
+       6.2.3.2. 3.2 Assumptions and interpretation of parameters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#estimation">
+       6.2.3.3. 3.3 Estimation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#residuals">
+       6.2.3.4. 3.4 Residuals
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#assessment-of-model-fit">
+       6.2.3.5. 3.5 Assessment of model fit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quantifying-predictive-ability">
+       6.2.3.6. 3.6 Quantifying predictive ability
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#describing-the-fitted-model">
+       6.2.3.7. 3.7 Describing the fitted model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#validating-the-fitted-model">
+       6.2.3.8. 3.8 Validating the fitted model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#r-function">
+       6.2.3.9. 3.9
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         R
+        </span>
+       </code>
+       function
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuation-ratio-model">
+     6.2.4. 4. Continuation ratio model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       6.2.4.1. 4.1 Model
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-20-cox-proportional-hazards-regression-model">
+   6.3. Chapter 20 Cox Proportional Hazards Regression Model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     6.3.1. 1. Model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#extending-the-ph-cox-model-by-stratification">
+       6.3.1.1. 1.7 Extending the (PH Cox) model by stratification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-size-considerations">
+     6.3.2. 3. Sample size considerations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-statistics">
+     6.3.3. 4. Test statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     6.3.4. 5. Residuals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     6.3.5. 6. Assessment of model fit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-to-do-when-ph-fails">
+     6.3.6. 7. What to do when PH fails
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="book-regression-modeling-strategies">
@@ -801,8 +1009,8 @@
 <h4><span class="section-number">6.2.4.1. </span>4.1 Model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>The continuation ratio (CR) model is based on conditional probabilities. The (forward) CR model is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9373e1e2-a842-43bd-abc8-f8ca4ecd1e14">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-9373e1e2-a842-43bd-abc8-f8ca4ecd1e14" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-932452c0-0962-4818-95d4-532e86976208">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-932452c0-0962-4818-95d4-532e86976208" title="Permalink to this equation">¶</a></span>\[\begin{align}
    P(Y=j|Y\ge j,  X) &amp; = \frac{1}{1+\exp[-(\theta_j + X\gamma)]}\\
    logit(Y=0|Y\ge0, X) &amp; = logit(Y=0|X)\\
    &amp;=\theta_0 + X\gamma\\
@@ -938,8 +1146,8 @@ for.”</p></li>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -956,19 +1164,17 @@ for.”</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By askming<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By askming<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

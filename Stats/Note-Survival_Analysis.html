@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -358,7 +358,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -392,7 +392,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -496,7 +496,114 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Survival Analysis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#survival-analysis-general">
+   19.1. Survival analysis general
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-process-representation">
+     19.1.1. Counting process representation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#censoring">
+     19.1.2. Censoring
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-intensity">
+     19.1.3. The intensity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hazrd-models">
+     19.1.4. Hazrd models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cox-ph-model">
+     19.1.5.
+     <span class="xref myst">
+      Cox PH model
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-dependent-covariates-and-immortal-time-bias">
+     19.1.6. Time-dependent covariates and immortal time bias
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competing-risk-model">
+     19.1.7.
+     <span class="xref myst">
+      Competing risk model
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prediction-using-hazard-models">
+     19.1.8. Prediction using hazard models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prediction-in-the-absence-competing-risks">
+       19.1.8.1. Prediction in the absence competing risks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prediction-with-competing-risks">
+       19.1.8.2. Prediction with competing risks
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-size-calculation-wassmer2016group">
+   19.2. Sample size calculation
+   <span class="xref cite cite-p">
+    wassmer2016group
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-rank-test">
+     19.2.1. Log-rank test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-number-of-events-rightarrow-total-sample-size">
+     19.2.2. Total number of events
+     <span class="math notranslate nohighlight">
+      \(\rightarrow\)
+     </span>
+     total sample size
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="survival-analysis">
@@ -756,8 +863,8 @@
     \]</div>
 <ul>
 <li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e965f2a-df61-4981-ad80-e5c7b795de52">
-<span class="eqno">(19.2)<a class="headerlink" href="#equation-7e965f2a-df61-4981-ad80-e5c7b795de52" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-be7bf141-39cc-4afd-a62a-269165087fd8">
+<span class="eqno">(19.2)<a class="headerlink" href="#equation-be7bf141-39cc-4afd-a62a-269165087fd8" title="Permalink to this equation">¶</a></span>\[\begin{align}
       \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
@@ -817,8 +924,8 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="Note-Quantile%20regression.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -835,19 +942,17 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By askming<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By askming<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

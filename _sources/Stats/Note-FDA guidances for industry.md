@@ -35,8 +35,8 @@ tags: clinical trial, stats method
 
 #### B. Linear models
 
-- **average treatment effect**, which is the difference in expected outcomes between subjects assigned to treatment and control groups. The average treatment effect is an example of an unconditional treatment effect, which quantifies the effect at the population level of moving a target population from untreated to treated. 
-- Covariate adjustment through a linear model (without treatment by covariate interactions) also estimates a conditional treatment effect, which is a treatment effect assumed to be approximately constant across subgroups defined by baseline covariates in the model. 
+- **average treatment effect**, which is the difference in expected outcomes between subjects assigned to treatment and control groups. The average treatment effect is an example of an *unconditional treatment* effect, which quantifies the effect at the population level of moving a target population from untreated to treated. 
+- Covariate adjustment through a linear model (without treatment by covariate interactions) also estimates a conditional treatment effect, which is a treatment effect assumed to be *approximately constant* across subgroups defined by baseline covariates in the model. 
   - they happen to coincide in linear models 
 - The linear model may include treatment by covariate interaction terms. However, when using this approach, the primary analysis should still be based on an estimate from the model of the average treatment effect. (How?)
 
@@ -49,19 +49,18 @@ tags: clinical trial, stats method
   
     |          | Percentage of target population | Success  |  Rate   | Odds ratio |
     | -------- | :-----------------------------: | :------: | :-----: | :--------: |
-    |          |                                 | New drug | Placebo |    8.0     |
+    |          |                                 | New drug | Placebo |            |
     | Males    |               50%               |  80.0%   |  33.3%  |    8.0     |
-    | Females  |               50%               |  25.0%   |  4.0%   |            |
+    | Females  |               50%               |  25.0%   |  4.0%   |    8.0     |
     | Combined |              100%               |  52.5%   |  18.7%  |    4.8     |
   
     
   
-- In trials with time-to-event outcomes, the hazard ratio is also generally non-collapsible. Unlike the odds ratio or hazard ratio, the risk difference and 181 relative risk are collapsible. 
+- In trials with time-to-event outcomes, the hazard ratio is also generally non-collapsible. Unlike the odds ratio or hazard ratio, the risk difference and relative risk are collapsible. 
 
 - Cochran-Mantel-Haenszel methods (Mantel and Haenszel 1959) are acceptable for the analysis of clinical trial data and attempt to estimate a conditional treatment effect 
 
-- In nonlinear regression models (without treatment by covariate interactions) the treatment effect is assumed to be approximately constant across subgroups defined by baseline covariates in the model and can provide more personalized information than the unconditional treatment
-  effect.
+- In nonlinear regression models (without treatment by covariate interactions) the treatment effect is assumed to be approximately constant across subgroups defined by baseline covariates in the model and can provide more personalized information than the unconditional treatment effect.
   
 - The FDA recommends Sponsors to perform covariate adjusted estimation and inference for an unconditional treatment effect in the primary analysis of data from a randomized trail. Recommended steps to implement this:
   
@@ -72,7 +71,11 @@ tags: clinical trial, stats method
 
 [^prognostic]: *prognostic baseline factors* used in this guidance refers to baseline covariates that are likely to be associated with the primary endpoint 
 
-[Related commentary](https://thestatsgeek.com/2021/06/11/comments-on-fda-guidance-adjusting-for-covariates-in-randomized-clinical-trials-for-drugs-and-biological-products/)
+
+### Other related references
+1. [Commentary to the gudiance](https://thestatsgeek.com/2021/06/11/comments-on-fda-guidance-adjusting-for-covariates-in-randomized-clinical-trials-for-drugs-and-biological-products/)
+2. Benkeser D, Díaz I, Luedtke A, Segal J, Scharfstein D, Rosenblum M. [Improving precision and power in randomized trials for COVID‐19 treatments using covariate adjustment, for binary, ordinal, and time‐to‐event outcomes.](https://onlinelibrary.wiley.com/doi/full/10.1111/biom.13377) *Biometrics*. 2020 Jan 1.
+  - [Commentary](https://onlinelibrary.wiley.com/doi/10.1111/biom.13494?af=R) of above paper by Lisa LaVange
 
 
 <hr>
