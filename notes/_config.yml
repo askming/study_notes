@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Study Notes
-author: [Ming Yang](askming.github.io)
+author: Ming Yang
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
