@@ -21,15 +21,14 @@
 
 - We use `className` instead of `class`. This is our first hint that the code being written here is JavaScript, and not actually HTML.
 
-    ```{admonition} `App.js`
-        ``` 
-        <!-- This time, we are loading the Component as a property of React, so we no longer need to extend React.Component. -->
+    ```java
+     <!-- This time, we are loading the Component as a property of React, so we no longer need to extend React.Component. -->
 
-        import React, {Component} from 'react'
-        import ReactDOM from 'react-dom'
-        import './index.css'
+    import React, {Component} from 'react'
+    import ReactDOM from 'react-dom'
+    import './index.css'
 
-        class App extends Component {
+    class App extends Component {
         render() {
             return (
             <div className="App">
@@ -37,10 +36,9 @@
             </div>
             )
         }
-        }
+    }
 
-        ReactDOM.render(<App />, document.getElementById('root'))
-        ```
+    ReactDOM.render(<App />, document.getElementById('root'))
     ```
 
 
