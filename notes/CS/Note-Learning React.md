@@ -21,8 +21,8 @@
 
 - We use `className` instead of `class`. This is our first hint that the code being written here is JavaScript, and not actually HTML.
 
-    ```Javascript
-    <!-- This time, we are loading the Component as a property of React, so we no longer need to extend React.Component. -->
+    ```{admonition} `App.js`
+    ``` <!-- This time, we are loading the Component as a property of React, so we no longer need to extend React.Component. -->
 
     import React, {Component} from 'react'
     import ReactDOM from 'react-dom'
@@ -39,6 +39,7 @@
     }
 
     ReactDOM.render(<App />, document.getElementById('root'))
+    ```
     ```
 
 
@@ -72,6 +73,9 @@
 
 ## Components
 - Almost everything in React consists of components, which can be **class components** or **simple components**.
+    - 即可以导入到另一个文件的`.js`文件模组
+
+
 
 
 
