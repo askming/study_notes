@@ -519,28 +519,23 @@ $ <span class="nb">cd</span> react-tutorial <span class="o">&amp;&amp;</span> np
 <li><p>The <code class="docutils literal notranslate"><span class="pre">/src</span></code> directory will contain all React code.</p></li>
 <li><p>For <code class="docutils literal notranslate"><span class="pre">index.css</span></code>, if you want, you can use Bootstrap or whatever CSS framework you want, or nothing at all.</p></li>
 <li><p>We use <code class="docutils literal notranslate"><span class="pre">className</span></code> instead of <code class="docutils literal notranslate"><span class="pre">class</span></code>. This is our first hint that the code being written here is JavaScript, and not actually HTML.</p>
-<p><code class="docutils literal notranslate"><span class="pre">{admonition}</span> <span class="pre">`App.js`</span>&#160;&#160;&#160;&#160;&#160;&#160; </code>
-<!-- This time, we are loading the Component as a property of React, so we no longer need to extend React.Component. --></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  import React, {Component} from &#39;react&#39;
-  import ReactDOM from &#39;react-dom&#39;
-  import &#39;./index.css&#39;
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> &lt;!-- This time, we are loading the Component as a property of React, so we no longer need to extend React.Component. --&gt;
 
-  class App extends Component {
-  render() {
-      return (
-      &lt;div className=&quot;App&quot;&gt;
-          &lt;h1&gt;Hello, React!&lt;/h1&gt;
-      &lt;/div&gt;
-      )
-  }
-  }
+import React, {Component} from &#39;react&#39;
+import ReactDOM from &#39;react-dom&#39;
+import &#39;./index.css&#39;
 
-  ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;))
-  ```
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+class App extends Component {
+    render() {
+        return (
+        &lt;div className=&quot;App&quot;&gt;
+            &lt;h1&gt;Hello, React!&lt;/h1&gt;
+        &lt;/div&gt;
+        )
+    }
+}
 
+ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;))
 </pre></div>
 </div>
 </li>
