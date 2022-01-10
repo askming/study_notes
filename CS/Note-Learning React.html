@@ -450,13 +450,35 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-react-router-for-a-spa-single-page-application">
+   1.8. Using React Router for a SPA (single page application)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#browser-router">
+     1.8.1. Browser router
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#route-and-switch">
+     1.8.2. Route and switch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#link">
+     1.8.3. Link
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-questions">
-   1.8. Running questions
+   1.9. Running questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.9. References
+   1.10. References
   </a>
  </li>
 </ul>
@@ -527,13 +549,35 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-react-router-for-a-spa-single-page-application">
+   1.8. Using React Router for a SPA (single page application)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#browser-router">
+     1.8.1. Browser router
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#route-and-switch">
+     1.8.2. Route and switch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#link">
+     1.8.3. Link
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-questions">
-   1.8. Running questions
+   1.9. Running questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.9. References
+   1.10. References
   </a>
  </li>
 </ul>
@@ -784,8 +828,44 @@ state = {
 </li>
 </ul>
 </div>
+<div class="section" id="using-react-router-for-a-spa-single-page-application">
+<h2><span class="section-number">1.8. </span>Using React Router for a SPA (single page application)<a class="headerlink" href="#using-react-router-for-a-spa-single-page-application" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Routing</strong> is how a web applications direct traffic.</p></li>
+<li><p>In Single Page Application (or SPA) - only one page is loaded, and every click to a new page loads some additional JSON data, but does not actually request a new resource like loading index.html and about-me.html would.</p></li>
+<li><p>Two potential dependencies for using routing</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">npm</span> <span class="pre">install</span> <span class="pre">react-router-dom</span> <span class="pre">axios</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="browser-router">
+<h3><span class="section-number">1.8.1. </span>Browser router<a class="headerlink" href="#browser-router" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>To use <code class="docutils literal notranslate"><span class="pre">react-router-dom</span></code>, we need to wrap our entire <code class="docutils literal notranslate"><span class="pre">App</span></code> component in <code class="docutils literal notranslate"><span class="pre">BrowserRouter</span></code>. There are two types of routers:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BrowserRouter</span></code> - makes pretty URLs like <code class="docutils literal notranslate"><span class="pre">example.com/about</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HashRouter</span></code> - makes URLs with the octothorpe (or hashtag, if you will) that would look like <code class="docutils literal notranslate"><span class="pre">example.com/#about</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="route-and-switch">
+<h3><span class="section-number">1.8.2. </span>Route and switch<a class="headerlink" href="#route-and-switch" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Switch</span></code> - Groups all your routes together, and ensures they take precedence from top-to-bottom.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Route</span></code> - Each individual route.</p></li>
+</ul>
+</div>
+<div class="section" id="link">
+<h3><span class="section-number">1.8.3. </span>Link<a class="headerlink" href="#link" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In order to link to a page <strong>within</strong> the SPA, we’ll use <code class="docutils literal notranslate"><span class="pre">Link</span></code>. If we used the traditional <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">href=&quot;/route&quot;&gt;</span></code>, it would make a completely new request and reload the page, so we have <code class="docutils literal notranslate"><span class="pre">Link</span></code> to help us out.</p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="running-questions">
-<h2><span class="section-number">1.8. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.9. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>what is ReactDOM</p></li>
 <li><p>when need to use <code class="docutils literal notranslate"><span class="pre">const</span></code> when creating a new object</p></li>
@@ -795,7 +875,7 @@ state = {
 </ol>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">1.9. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.10. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="https://www.taniarascia.com/getting-started-with-react/">React Tutorial: An Overview and Walkthrough</a></p></li>
 </ol>

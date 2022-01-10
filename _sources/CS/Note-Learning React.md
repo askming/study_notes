@@ -198,6 +198,32 @@
 
 
 
+## Using React Router for a SPA (single page application)
+- **Routing** is how a web applications direct traffic.
+- In Single Page Application (or SPA) - only one page is loaded, and every click to a new page loads some additional JSON data, but does not actually request a new resource like loading index.html and about-me.html would.
+
+- Two potential dependencies for using routing
+    - `$ npm install react-router-dom axios`
+
+### Browser router
+- To use `react-router-dom`, we need to wrap our entire `App` component in `BrowserRouter`. There are two types of routers:
+
+    - `BrowserRouter` - makes pretty URLs like `example.com/about`.
+    - `HashRouter` - makes URLs with the octothorpe (or hashtag, if you will) that would look like `example.com/#about`.
+
+
+### Route and switch
+- `Switch` - Groups all your routes together, and ensures they take precedence from top-to-bottom.
+- `Route` - Each individual route.
+
+### Link
+- In order to link to a page **within** the SPA, we'll use `Link`. If we used the traditional `<a href="/route">`, it would make a completely new request and reload the page, so we have `Link` to help us out.
+
+
+
+
+
+
 ## Running questions
 1. what is ReactDOM
 2. when need to use `const` when creating a new object
