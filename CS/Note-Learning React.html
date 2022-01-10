@@ -426,10 +426,37 @@
   <a class="reference internal nav-link" href="#components">
    1.5. Components
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class-components">
+     1.5.1. Class Components
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-components">
+     1.5.2. Simple Components
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#props">
+   1.6. Props
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#state">
+   1.7. State
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-questions">
+   1.8. Running questions
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.6. References
+   1.9. References
   </a>
  </li>
 </ul>
@@ -476,10 +503,37 @@
   <a class="reference internal nav-link" href="#components">
    1.5. Components
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class-components">
+     1.5.1. Class Components
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-components">
+     1.5.2. Simple Components
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#props">
+   1.6. Props
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#state">
+   1.7. State
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-questions">
+   1.8. Running questions
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.6. References
+   1.9. References
   </a>
  </li>
 </ul>
@@ -539,6 +593,14 @@ ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;))
 </pre></div>
 </div>
 </li>
+<li><p>Syntax for React functions</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!--</span> <span class="k">if</span> <span class="n">not</span> <span class="n">within</span> <span class="n">a</span> <span class="kd">class</span> <span class="nc">need</span> <span class="n">to</span> <span class="n">include</span> <span class="kd">const</span> <span class="o">--&gt;</span>
+<span class="kd">const</span> <span class="n">function_name</span> <span class="o">=</span> <span class="p">(</span><span class="n">paras</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="n">code</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </div>
 <div class="section" id="react-developer-tools">
@@ -556,7 +618,7 @@ ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;))
 </ul>
 </li>
 <li><p>Using JSX is not mandatory for writing React. Under the hood, it’s running <code class="docutils literal notranslate"><span class="pre">createElement</span></code>, which takes the tag, object containing the properties, and children of the component and renders the same information.</p>
-<div class="highlight-JS notranslate"><div class="highlight"><pre><span></span>&lt;!-- JSX --&gt;
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>&lt;!-- JSX --&gt;
 const heading = &lt;h1 className=&quot;site-heading&quot;&gt;Hello, React&lt;/h1&gt;
 
 &lt;!-- No JSX --&gt;
@@ -572,7 +634,7 @@ const heading = React.createElement(&#39;h1&#39;, {className: &#39;site-heading&
 </ol>
 </li>
 <li><p>JavaScript expressions can also be embedded inside JSX using curly braces, including variables, functions, and properties.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>const name = &#39;Tania&#39;
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>const name = &#39;Tania&#39;
 const heading = &lt;h1&gt;Hello, {name}&lt;/h1&gt;
 </pre></div>
 </div>
@@ -584,13 +646,156 @@ const heading = &lt;h1&gt;Hello, {name}&lt;/h1&gt;
 <ul class="simple">
 <li><p>Almost everything in React consists of components, which can be <strong>class components</strong> or <strong>simple components</strong>.</p>
 <ul>
-<li><p>即可以导入到另一个文件的<code class="docutils literal notranslate"><span class="pre">.js</span></code>文件模组</p></li>
+<li><p>component可以直接写在最终文档里或者也可以写成一个单独的文件，即可以导入到另一个文件的<code class="docutils literal notranslate"><span class="pre">.js</span></code>文件模组; 可以在各处重复使用。</p></li>
 </ul>
 </li>
 </ul>
+<div class="section" id="class-components">
+<h3><span class="section-number">1.5.1. </span>Class Components<a class="headerlink" href="#class-components" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>We create a custom class component as we wanted</p>
+<ul class="simple">
+<li><p>We capitalize custom components to differentiate them from regular HTML elements.</p></li>
+</ul>
+</li>
+<li><p>Import the component in the e.g. <code class="docutils literal notranslate"><span class="pre">App.js</span></code> file</p></li>
+<li><p>Then by loading it into the <code class="docutils literal notranslate"><span class="pre">render()</span></code> of <code class="docutils literal notranslate"><span class="pre">App</span></code>, we load the component</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassComponent</span> <span class="n">extends</span> <span class="n">Component</span> <span class="p">{</span>
+    <span class="n">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span><span class="n">Example</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">export</span> <span class="n">default</span> <span class="n">ClassComponent</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="simple-components">
+<h3><span class="section-number">1.5.2. </span>Simple Components<a class="headerlink" href="#simple-components" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Simple component is a function. This component doesn’t use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">SimpleComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span><span class="n">Example</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Simple components can be used withwin class components</p></li>
+<li><p>components can be nested in other components, and simple and class components can be mixed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A class component must include <code class="docutils literal notranslate"><span class="pre">render()</span></code>, and the <code class="docutils literal notranslate"><span class="pre">return</span></code> can only return one parent element.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="props">
+<h2><span class="section-number">1.6. </span>Props<a class="headerlink" href="#props" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>One of the big deals about React is how it handles data, and it does so with properties, referred to as <strong>props</strong>, and with state.</p></li>
+<li><p>we can access all props through <code class="docutils literal notranslate"><span class="pre">this.props</span></code></p></li>
+<li><p>You should always use <strong>keys</strong> when making lists in React, as they help identify each list item.</p></li>
+<li><p>Props are an effective way to pass existing data to a React component, however the component cannot change the props - they’re read-only.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>const TableBody = (props) =&gt; {
+const rows = props.characterData.map((row, index) =&gt; {
+return (
+  &lt;tr key={index}&gt;
+    &lt;td&gt;{row.name}&lt;/td&gt;
+    &lt;td&gt;{row.job}&lt;/td&gt;
+  &lt;/tr&gt;
+)
+})
+
+return &lt;tbody&gt;{rows}&lt;/tbody&gt;
+}
+
+class Table extends Component {
+    render() {
+        const {characterData} = this.props
+
+        return (
+        &lt;table&gt;
+            &lt;TableHeader /&gt;
+            &lt;TableBody characterData={characterData} /&gt;
+        &lt;/table&gt;
+        )
+    }
+}
+
+class App extends Component {
+render() {
+    const characters = [
+    {
+        name: &#39;Charlie&#39;,
+        job: &#39;Janitor&#39;,
+    },
+    {
+        name: &#39;Mac&#39;,
+        job: &#39;Bouncer&#39;,
+    },
+    {
+        name: &#39;Dee&#39;,
+        job: &#39;Aspring actress&#39;,
+    },
+    {
+        name: &#39;Dennis&#39;,
+        job: &#39;Bartender&#39;,
+    },
+    ]
+
+    return (
+        &lt;div className=&quot;container&quot;&gt;
+            &lt;Table /&gt;
+        &lt;/div&gt;
+        )
+    }
+}
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="state">
+<h2><span class="section-number">1.7. </span>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>With props, we have a one way data flow, but with state we can update private data from a component.</p></li>
+<li><p>You can think of state as any data that should be saved and modified without necessarily being added to a database - for example, adding and removing items from a shopping cart before confirming your purchase.</p></li>
+<li><p>The object will contain properties for everything you want to store in the state.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>class App extends Component {
+state = {
+    characters: [
+        {
+            name: &#39;Charlie&#39;,
+            // the rest of the data
+        },
+    ],
+ }   
+}
+</pre></div>
+</div>
+</li>
+<li><p>To retrieve the state, we’ll get <code class="docutils literal notranslate"><span class="pre">this.state.characters</span></code> using the same ES6 method as before. To update the state, we’ll use <code class="docutils literal notranslate"><span class="pre">this.setState()</span></code>, a built-in method for manipulating state. We’ll filter the array based on an <code class="docutils literal notranslate"><span class="pre">index</span></code> that we pass through, and return the new array.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must use this.setState() to modify an array. Simply applying a new value to this.state.property will not work.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="running-questions">
+<h2><span class="section-number">1.8. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>what is ReactDOM</p></li>
+<li><p>when need to use <code class="docutils literal notranslate"><span class="pre">const</span></code> when creating a new object</p></li>
+<li><p>when to use class component vs simple conponent</p></li>
+<li><p>when to use <code class="docutils literal notranslate"><span class="pre">this.xx</span></code></p></li>
+<li><p>what is an <code class="docutils literal notranslate"><span class="pre">event</span></code></p></li>
+</ol>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.9. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="https://www.taniarascia.com/getting-started-with-react/">React Tutorial: An Overview and Walkthrough</a></p></li>
 </ol>

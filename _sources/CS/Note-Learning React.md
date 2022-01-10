@@ -41,6 +41,13 @@
     ReactDOM.render(<App />, document.getElementById('root'))
     ```
 
+- Syntax for React functions
+    ```java
+    <!-- if not within a class need to include const -->
+    const function_name = (paras) => {
+        code
+    }
+    ```
 
 ## React Developer Tools
 - There is an extension called React Developer Tools that will make your life much easier when working with React. Download [React DevTools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi), or whatever browser you prefer to work on.
@@ -51,7 +58,7 @@
     - With JSX, we can write what looks like HTML, and also we can create and use our own XML-like tags.
 
 - Using JSX is not mandatory for writing React. Under the hood, it's running `createElement`, which takes the tag, object containing the properties, and children of the component and renders the same information.
-    ```JS
+    ```java
     <!-- JSX -->
     const heading = <h1 className="site-heading">Hello, React</h1>
 
@@ -65,14 +72,143 @@
     3. Self-closing tags must end in a slash - e.g.` <img />`
 
 - JavaScript expressions can also be embedded inside JSX using curly braces, including variables, functions, and properties.
-    ```js
+    ```java
     const name = 'Tania'
     const heading = <h1>Hello, {name}</h1>
     ```
 
 ## Components
 - Almost everything in React consists of components, which can be **class components** or **simple components**.
-    - 即可以导入到另一个文件的`.js`文件模组
+    - component可以直接写在最终文档里或者也可以写成一个单独的文件，即可以导入到另一个文件的`.js`文件模组; 可以在各处重复使用。
+
+### Class Components
+- We create a custom class component as we wanted
+    - We capitalize custom components to differentiate them from regular HTML elements.
+- Import the component in the e.g. `App.js` file
+- Then by loading it into the `render()` of `App`, we load the component
+    
+    ```
+    class ClassComponent extends Component {
+        render() {
+            return <div>Example</div>
+        }
+    }
+    export default ClassComponent
+    ```
+
+### Simple Components
+- Simple component is a function. This component doesn't use the `class` keyword.
+    ```
+    const SimpleComponent = () => {
+        return <div>Example</div>
+    }
+    ```
+- Simple components can be used withwin class components
+- components can be nested in other components, and simple and class components can be mixed.
+
+    ```{note}
+    A class component must include `render()`, and the `return` can only return one parent element.
+    ```
+
+## Props
+- One of the big deals about React is how it handles data, and it does so with properties, referred to as **props**, and with state.
+-  we can access all props through `this.props`
+- You should always use **keys** when making lists in React, as they help identify each list item.
+- Props are an effective way to pass existing data to a React component, however the component cannot change the props - they're read-only. 
+
+    ```java
+    const TableBody = (props) => {
+    const rows = props.characterData.map((row, index) => {
+    return (
+      <tr key={index}>
+        <td>{row.name}</td>
+        <td>{row.job}</td>
+      </tr>
+    )
+    })
+
+    return <tbody>{rows}</tbody>
+    }
+
+    class Table extends Component {
+        render() {
+            const {characterData} = this.props
+
+            return (
+            <table>
+                <TableHeader />
+                <TableBody characterData={characterData} />
+            </table>
+            )
+        }
+    }
+
+    class App extends Component {
+    render() {
+        const characters = [
+        {
+            name: 'Charlie',
+            job: 'Janitor',
+        },
+        {
+            name: 'Mac',
+            job: 'Bouncer',
+        },
+        {
+            name: 'Dee',
+            job: 'Aspring actress',
+        },
+        {
+            name: 'Dennis',
+            job: 'Bartender',
+        },
+        ]
+
+        return (
+            <div className="container">
+                <Table />
+            </div>
+            )
+        }
+    }
+    ```
+
+## State
+- With props, we have a one way data flow, but with state we can update private data from a component.
+- You can think of state as any data that should be saved and modified without necessarily being added to a database - for example, adding and removing items from a shopping cart before confirming your purchase.
+
+- The object will contain properties for everything you want to store in the state.
+    ```java
+    class App extends Component {
+    state = {
+        characters: [
+            {
+                name: 'Charlie',
+                // the rest of the data
+            },
+        ],
+     }   
+    }
+    ```
+- To retrieve the state, we'll get `this.state.characters` using the same ES6 method as before. To update the state, we'll use `this.setState()`, a built-in method for manipulating state. We'll filter the array based on an `index` that we pass through, and return the new array.
+
+    ```{note}
+    You must use this.setState() to modify an array. Simply applying a new value to this.state.property will not work.
+    ```
+
+
+
+## Running questions
+1. what is ReactDOM
+2. when need to use `const` when creating a new object
+3. when to use class component vs simple conponent
+4. when to use `this.xx`
+5. what is an `event`
+
+
+
+
+
 
 
 
