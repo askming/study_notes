@@ -241,4 +241,5 @@
 
 
 ## References
-1. [React Tutorial: An Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/)
+1. [React Official Docs](https://reactjs.org/docs/getting-started.html)
+2. [React Tutorial: An Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/)
