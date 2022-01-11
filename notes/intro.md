@@ -36,6 +36,7 @@
 - [Multiplicity in Clinical Trials](./Stats/Note-Multiplicity%20in%20Clinical%20Trials.md)
 
 ### 1.9 Correlated/longitudinal data analysis
+- [Correlated Data Analysis](./Stats/Note-Correlated%20Data%20Analysis.md)
 
 ### 1.10 Other topics
 - [Analysis of Observational Health Care Data Using SAS](Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.md)
