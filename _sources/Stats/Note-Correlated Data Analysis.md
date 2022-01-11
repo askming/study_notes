@@ -2,7 +2,7 @@
 
 *Based on course notes and blog posts[^MMRM_blog]*
 
-## 1. Cross-sectional vs longitudinal data
+## Cross-sectional vs longitudinal data
 
 - **Cross-sectional (CS)** study can be reduced from the longitudinal study (LS) if the number of measures per subject is equal to one, ie $n_i=1$.
 
@@ -31,9 +31,9 @@
 
 
 
-## 2. Graphic representation of longitudinal data
+## Graphic representation of longitudinal data
 
-### 2.1 Y against Time
+### Y against Time
 
 - Check the time trend for every individual
 - Check the variability change over time (esp. at beginning vs end)
@@ -62,7 +62,7 @@ $$
   - order units by $g_i$ (min, 10th, 25th, 50th, 75th, 90th, max)
   - add lines for selected quantiles of $g_i$
 
-### 2.2 Y against X​
+### Y against X​
 
 - AV plot
 
@@ -264,7 +264,7 @@ We want to estimate an unknown mean response curve $\mu(t)$ in the model. Nonpar
     \sum_{i=1}^{n_i}v_{ijk}}{n_i}
     $$
 
-## 3. Linear model for correlated data
+## Linear model for correlated data
 
 - To develop a general linear model framework for longitudinal data, in which
 
@@ -273,7 +273,7 @@ We want to estimate an unknown mean response curve $\mu(t)$ in the model. Nonpar
   1. To build explicit parametric models of the covariance struture (e.g. CS/exchangable, AR(1), etc.) -> MMRM
   2. To use methods of inference which are robust to misspecification of the covariance structure[^1][^2]
 
-### 3.1 Random effect model (conditional model)
+### Random effect model (conditional model)
 
 $$
 Y_{ij} = U_i + \beta_0 + \beta_1t_j + \epsilon_{ij}
@@ -333,7 +333,7 @@ $$
 
 - **Heteogeneity**: variation between groups implies (relative) similarity/correlation within groups. If $v^2 >> \tau^2 \Rightarrow \rho \rightarrow 1 \Rightarrow$ significant difference between groups.
 
-### 3.2 Marginal model (population average)
+### Marginal model (population average)
 
 1. With **exchangable (or CS)** variance-covariance structure (balanced data)
 
@@ -384,7 +384,7 @@ $$
 
    - Modelling the correlation in longitudinal data is important to be able to obtain correct inference on $\beta$s. Incorporating correlation into estimation of regression models is achieved via **weighted least squares**.
 
-## 4. Weighted least-squares (WLS) estimation
+## Weighted least-squares (WLS) estimation
 
 *All following etimators are weighted LS etimators, the difference is in the choince of the weight and its impact on the variance (thus the interval) estimation of beta.*
 
@@ -574,7 +574,7 @@ $$
   - The robust estimation also requires to estimate the V matrix using the data, however it always involves more parameters (total $n(n + 1)/2$ in unstructured) than the covariance matrix under parametric assumption.
   - So the robust approach is usually satisfactory when the data consist of short, complete sequence of measurements observed at a common set of times on many experimental units, and care is taken in the choice of the working correlation matrix. In other circumstance, it is worth considering a parametric modeling approach.
 
-## 5. Generalized linear models (GLM) for longitudinal data
+## Generalized linear models (GLM) for longitudinal data
 
 ```{mermaid}
 graph TD
@@ -597,12 +597,12 @@ k --> l
 b --> i1
 ```
 
-### 5.1 Continuous outcome
+### Continuous outcome
 
 - When we don't know the true variance-covariance structure of $\bf{Y}_i$, we mainly have to options: impose paramatric assumption of the covariance structure or leave it unspecied (robust method).
 - Essentially, the estimate of $\beta$ has the form of weighted least squares no matter which method we use, and it's valid. The dierence lies on $\text{var}(\beta)$, depending on the different weights that are assumed.
 
-#### 5.1.1 Parametric method
+#### Parametric method
 
 - Parametric model on $\text{var}(Y_i)$. The model is then fully specied: first two moments and distribution, then we can use ML or REML method to find the MLE of the parameters and make inference on them.
 
@@ -620,7 +620,7 @@ b --> i1
 
 - Note that $V_0$ has effect on $\hat{\beta}$ for its variance but not expectation.
 
-#### 5.1.2 Robust method
+#### Robust method
 
 - Without assuming the parametric form of $\text{var}({\bf Y}_i)$, we may select a "working" covariance matrix as the weight, say $W$. Then the robust estimate of $\beta$ is given by
 
@@ -636,9 +636,9 @@ b --> i1
 
   Where $\hat{V}$ is a consistent estimate of $V$ whatever the true covariance structure is.
 
-### 5.2 Discrete outcome
+### Discrete outcome
 
-#### 5.2.1 Marginal model (using GEE)
+#### Marginal model (using GEE)
 
 ##### **Why GEE**
 
