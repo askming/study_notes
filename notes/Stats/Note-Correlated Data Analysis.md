@@ -651,7 +651,7 @@ b --> i1
 - GEE function: 
 
   $$
-  U(\beta) = \sum_{i}\frac{\part \mu_i'(\beta)}{\part\beta}V_i({\bf y_i - \mu_i(\beta)})
+  U(\beta) = \sum_{i}\frac{\partial \mu_i'(\beta)}{\partial\beta}V_i({\bf y_i - \mu_i(\beta)})
   $$
 
 - Estimate of $\beta$
@@ -660,7 +660,7 @@ b --> i1
   \hat{\beta} = (\sum_iD_i'V_i^{-1}D_i)^{-1}D_i'V_i^{-1}y_i,
   $$
 
-  Where $D_i = \frac{\part \mu_i(\beta)}{\part \beta}$.
+  Where $D_i = \frac{\partial \mu_i(\beta)}{\partial \beta}$.
 
   $$
   \text{Cov}(\hat\beta) = \left(\sum_iD_i'V_i^{-1}D_i\right)^{-1}\left(\sum_iD_i'V_i^{-1}\text{var}(y_i)V_i^{-1}D_i\right)\left(\sum_iD_i'V_i^{-1}D_i\right)^{-1}
