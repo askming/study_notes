@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -51,6 +53,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="12. ​Cox PH model" href="Note-Cox_PH_model.html" />
@@ -1339,7 +1343,8 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 </div>
 <div class="section" id="generalized-linear-models-glm-for-longitudinal-data">
 <h2><span class="section-number">11.5. </span>5. Generalized linear models (GLM) for longitudinal data<a class="headerlink" href="#generalized-linear-models-glm-for-longitudinal-data" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph TD
+<div class="mermaid">
+            graph TD
 
 a[GLM for longitudinal data] --&gt; b[Continuous outcome: identity link]
 a --&gt; c[Discrete outcome: logit/log link]
@@ -1357,9 +1362,7 @@ i --&gt; i1[GEE: quasi-likelihood]
 j --&gt; l[Likelihood based]
 k --&gt; l
 b --&gt; i1
-</pre></div>
-</div>
-<div class="section" id="continuous-outcome">
+        </div><div class="section" id="continuous-outcome">
 <h3><span class="section-number">11.5.1. </span>5.1 Continuous outcome<a class="headerlink" href="#continuous-outcome" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>When we don’t know the true variance-covariance structure of <span class="math notranslate nohighlight">\(\bf{Y}_i\)</span>, we mainly have to options: impose paramatric assumption of the covariance structure or leave it unspecied (robust method).</p></li>
@@ -1494,6 +1497,12 @@ b --&gt; i1
     }
     </script>
     <script>kernelName = 'python3'</script>
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
 
               </div>
               

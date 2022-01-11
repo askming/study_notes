@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -51,6 +53,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Adaptive Clinical Trial Design" href="Note-Adaptive%20Trial%20Design.html" />
@@ -1019,8 +1023,8 @@
 <h4><span class="section-number">6.2.4.1. </span>4.1 Model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>The continuation ratio (CR) model is based on conditional probabilities. The (forward) CR model is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5e0b1ce-2c47-4eac-bc93-4a1d24eab371">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-a5e0b1ce-2c47-4eac-bc93-4a1d24eab371" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a2c7967b-8567-4257-8104-97ab3153cd5e">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-a2c7967b-8567-4257-8104-97ab3153cd5e" title="Permalink to this equation">¶</a></span>\[\begin{align}
    P(Y=j|Y\ge j,  X) &amp; = \frac{1}{1+\exp[-(\theta_j + X\gamma)]}\\
    logit(Y=0|Y\ge0, X) &amp; = logit(Y=0|X)\\
    &amp;=\theta_0 + X\gamma\\
@@ -1153,6 +1157,12 @@ for.”</p></li>
     }
     </script>
     <script>kernelName = 'python3'</script>
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
 
               </div>
               
