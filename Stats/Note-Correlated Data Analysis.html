@@ -1418,7 +1418,7 @@ b --&gt; i1
 <li><p>GEE function:</p>
 <div class="math notranslate nohighlight">
 \[
-  U(\beta) = \sum_{i}\frac{\part \mu_i'(\beta)}{\part\beta}V_i({\bf y_i - \mu_i(\beta)})
+  U(\beta) = \sum_{i}\frac{\partial \mu_i'(\beta)}{\partial\beta}V_i({\bf y_i - \mu_i(\beta)})
   \]</div>
 </li>
 <li><p>Estimate of <span class="math notranslate nohighlight">\(\beta\)</span></p>
@@ -1426,7 +1426,7 @@ b --&gt; i1
 \[
   \hat{\beta} = (\sum_iD_i'V_i^{-1}D_i)^{-1}D_i'V_i^{-1}y_i,
   \]</div>
-<p>Where <span class="math notranslate nohighlight">\(D_i = \frac{\part \mu_i(\beta)}{\part \beta}\)</span>.</p>
+<p>Where <span class="math notranslate nohighlight">\(D_i = \frac{\partial \mu_i(\beta)}{\partial \beta}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
   \text{Cov}(\hat\beta) = \left(\sum_iD_i'V_i^{-1}D_i\right)^{-1}\left(\sum_iD_i'V_i^{-1}\text{var}(y_i)V_i^{-1}D_i\right)\left(\sum_iD_i'V_i^{-1}D_i\right)^{-1}
