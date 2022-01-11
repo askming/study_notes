@@ -280,6 +280,7 @@ Y_{ij} = U_i + \beta_0 + \beta_1t_j + \epsilon_{ij}
 $$
 
 Where 
+
 $$
 U_i \sim N(0, v^2), \text{variantion between units/clusters}
 $$
