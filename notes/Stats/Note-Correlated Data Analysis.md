@@ -576,7 +576,7 @@ $$
 
 ## 5. Generalized linear models (GLM) for longitudinal data
 
-```mermaid
+```{mermaid}
 graph TD
 
 a[GLM for longitudinal data] --> b[Continuous outcome: identity link]
