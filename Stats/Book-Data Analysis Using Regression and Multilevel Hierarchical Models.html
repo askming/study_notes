@@ -158,28 +158,33 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Note-Correlated%20Data%20Analysis.html">
+   11. Correlated/Longitudinal Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Note-Cox_PH_model.html">
-   11. ​Cox PH model
+   12. ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
-   12. Notes on FDA Guidances for Industry
+   13. Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
-   13. Notes on Group Sequential Trial Design​
+   14. Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-ICH%20guidelines.html">
-   14. Notes on ICH guidelines​
+   15. Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
-   15. Power,
+   16. Power,
    <strong>
     MDD
    </strong>
@@ -196,22 +201,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
-   16. Monte Carlo Method
+   17. Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
-   17. Multiplicity in Clinical Trials
+   18. Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Quantile%20regression.html">
-   18. Quantile regression
+   19. Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Survival_Analysis.html">
-   19. Survival Analysis
+   20. Survival Analysis
   </a>
  </li>
 </ul>
@@ -970,8 +975,8 @@
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d17c8d5f-6a78-4bcd-a0b2-9fe2befee792">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-d17c8d5f-6a78-4bcd-a0b2-9fe2befee792" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6db5793d-2b5f-4845-93de-711fd4aa9ea8">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-6db5793d-2b5f-4845-93de-711fd4aa9ea8" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -1324,8 +1329,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3><span class="section-number">3.2.6. </span>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-70e44fd9-8200-4e46-af47-4cbdf7daeb8b">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-70e44fd9-8200-4e46-af47-4cbdf7daeb8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ee04ef1f-6431-478e-93b5-a20602ebc06e">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-ee04ef1f-6431-478e-93b5-a20602ebc06e" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -1336,8 +1341,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-797c1c8a-3019-4b55-82e2-1aba919674a4">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-797c1c8a-3019-4b55-82e2-1aba919674a4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-32094d12-0dfd-4519-a381-092bc6b979ad">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-32094d12-0dfd-4519-a381-092bc6b979ad" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>
