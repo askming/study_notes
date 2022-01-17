@@ -54,7 +54,7 @@
 
 
 ## JSX: JavaScript + XML
-- we've been using what looks like HTML in our React code, but it's not quite HTML. This is JSX, which stands for JavaScript XML.
+- it is what looks like HTML in React code, but it's not quite HTML. This is JSX, which stands for JavaScript XML.
     - With JSX, we can write what looks like HTML, and also we can create and use our own XML-like tags.
 
 - Using JSX is not mandatory for writing React. Under the hood, it's running `createElement`, which takes the tag, object containing the properties, and children of the component and renders the same information.
@@ -80,6 +80,27 @@
 ## Components
 - Almost everything in React consists of components, which can be **class components** or **simple components**.
     - component可以直接写在最终文档里或者也可以写成一个单独的文件，即可以导入到另一个文件的`.js`文件模组; 可以在各处重复使用。
+- React components can be declared either as JS **functions** or ES6 **class**
+- Coverting an function component to a class in five steps:
+    1. Create an ES6 class, with the same name, that extends `React.Component`
+    2. Add a signle empty method to it called `render()`
+    3. Move the body of the function into the `render()` method
+    4. Replace `props` with `this.props` in the `render()` body
+    5. Delete the remaining empty function declaration
+    ```javascript
+    class Clock extends React.Component {
+        render() {
+            return (
+                <div>
+                    <h1>Hello, world!</h1>
+                    <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+                </div>
+            );
+        }
+    }
+    ```
+
+- A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be extracted to a separate component.
 
 ### Class Components
 - We create a custom class component as we wanted
@@ -115,19 +136,21 @@
 -  we can access all props through `this.props`
 - You should always use **keys** when making lists in React, as they help identify each list item.
 - Props are an effective way to pass existing data to a React component, however the component cannot change the props - they're read-only. 
+- We (React offical doc) recommend naming props from the component’s own point of view rather than the context in which it is being used.
+- Props are Read-Only; **All React components must act like pure functions with respect to their props**.
 
-    ```java
+    ```javascript
     const TableBody = (props) => {
-    const rows = props.characterData.map((row, index) => {
-    return (
-      <tr key={index}>
-        <td>{row.name}</td>
-        <td>{row.job}</td>
-      </tr>
-    )
-    })
+        const rows = props.characterData.map((row, index) => {
+            return (
+                <tr key={index}>
+                    <td>{row.name}</td>
+                    <td>{row.job}</td>
+                </tr>
+            )
+        })
 
-    return <tbody>{rows}</tbody>
+        return <tbody>{rows}</tbody>
     }
 
     class Table extends Component {
@@ -144,30 +167,30 @@
     }
 
     class App extends Component {
-    render() {
-        const characters = [
-        {
-            name: 'Charlie',
-            job: 'Janitor',
-        },
-        {
-            name: 'Mac',
-            job: 'Bouncer',
-        },
-        {
-            name: 'Dee',
-            job: 'Aspring actress',
-        },
-        {
-            name: 'Dennis',
-            job: 'Bartender',
-        },
-        ]
+        render() {
+            const characters = [
+                {
+                    name: 'Charlie',
+                    job: 'Janitor',
+                },
+                {
+                    name: 'Mac',
+                    job: 'Bouncer',
+                },
+                {
+                    name: 'Dee',
+                    job: 'Aspring actress',
+                },
+                {
+                    name: 'Dennis',
+                    job: 'Bartender',
+                }
+            ]
 
-        return (
-            <div className="container">
-                <Table />
-            </div>
+            return (
+                <div className="container">
+                    <Table />
+                </div>
             )
         }
     }
@@ -180,14 +203,14 @@
 - The object will contain properties for everything you want to store in the state.
     ```java
     class App extends Component {
-    state = {
-        characters: [
-            {
-                name: 'Charlie',
-                // the rest of the data
-            },
-        ],
-     }   
+        state = {
+            characters: [
+                {
+                    name: 'Charlie',
+                    // the rest of the data
+                },
+            ],
+        }   
     }
     ```
 - To retrieve the state, we'll get `this.state.characters` using the same ES6 method as before. To update the state, we'll use `this.setState()`, a built-in method for manipulating state. We'll filter the array based on an `index` that we pass through, and return the new array.
@@ -195,6 +218,15 @@
     ```{note}
     You must use this.setState() to modify an array. Simply applying a new value to this.state.property will not work.
     ```
+
+- state can't be modified directly, instead, use `setState()`; The only place where you can assign `this.state` is the constructor.
+- when update state, don't use `this.state` or `this.props` as input since they may be updated asynchronously (?)
+- When calling `setState()`, React merges the object you provide into the current state.
+- a state created with multiple variables that can be updated individually and independently with the final state merges the latest updates from all variables
+- Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn’t care whether it is defined as a function or a class.
+    - This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+    - The value of the state in the parent component can be passed to the child component as props, but the child component wouldn't know whether it is state or props from the parent; This is commonly called a “top-down” or “unidirectional” data flow. 
+
 
 
 
@@ -227,9 +259,13 @@
 ## Running questions
 1. what is ReactDOM
 2. when need to use `const` when creating a new object
-3. when to use class component vs simple conponent
+3. when to use class component vs simple component
 4. when to use `this.xx`
+    - when set up/use a prop/state in a class (vs in a function) component
 5. what is an `event`
+6. what is a constructor?
+7. what is mounting/unmounting? --> lifecycle methods?
+8. [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 
 
