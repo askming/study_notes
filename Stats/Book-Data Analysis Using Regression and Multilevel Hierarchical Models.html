@@ -44,8 +44,8 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -979,8 +979,8 @@
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-73aa86a9-def1-437f-a8b2-9c592772d642">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-73aa86a9-def1-437f-a8b2-9c592772d642" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-60aa1b91-3512-4391-9653-ea0b47a3b131">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-60aa1b91-3512-4391-9653-ea0b47a3b131" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -1333,8 +1333,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3><span class="section-number">3.2.6. </span>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cab352df-6f3b-4417-a3e8-d27b0f5f2a72">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-cab352df-6f3b-4417-a3e8-d27b0f5f2a72" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fb88e392-4b19-4d22-87a0-eb191d26ee64">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-fb88e392-4b19-4d22-87a0-eb191d26ee64" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -1345,8 +1345,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3d5a11f1-79fc-44ce-a89e-3da84f061e36">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-3d5a11f1-79fc-44ce-a89e-3da84f061e36" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0a65a11a-b2b9-4a79-bd48-e4e4c3a311d5">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-0a65a11a-b2b9-4a79-bd48-e4e4c3a311d5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>

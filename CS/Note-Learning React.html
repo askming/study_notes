@@ -665,7 +665,7 @@ ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;))
 <div class="section" id="jsx-javascript-xml">
 <h2><span class="section-number">1.4. </span>JSX: JavaScript + XML<a class="headerlink" href="#jsx-javascript-xml" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p>we’ve been using what looks like HTML in our React code, but it’s not quite HTML. This is JSX, which stands for JavaScript XML.</p>
+<li><p>it is what looks like HTML in React code, but it’s not quite HTML. This is JSX, which stands for JavaScript XML.</p>
 <ul class="simple">
 <li><p>With JSX, we can write what looks like HTML, and also we can create and use our own XML-like tags.</p></li>
 </ul>
@@ -696,12 +696,35 @@ const heading = &lt;h1&gt;Hello, {name}&lt;/h1&gt;
 </div>
 <div class="section" id="components">
 <h2><span class="section-number">1.5. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Almost everything in React consists of components, which can be <strong>class components</strong> or <strong>simple components</strong>.</p>
 <ul>
+<li><p>Almost everything in React consists of components, which can be <strong>class components</strong> or <strong>simple components</strong>.</p>
+<ul class="simple">
 <li><p>component可以直接写在最终文档里或者也可以写成一个单独的文件，即可以导入到另一个文件的<code class="docutils literal notranslate"><span class="pre">.js</span></code>文件模组; 可以在各处重复使用。</p></li>
 </ul>
 </li>
+<li><p>React components can be declared either as JS <strong>functions</strong> or ES6 <strong>class</strong></p></li>
+<li><p>Coverting an function component to a class in five steps:</p>
+<ol class="simple">
+<li><p>Create an ES6 class, with the same name, that extends <code class="docutils literal notranslate"><span class="pre">React.Component</span></code></p></li>
+<li><p>Add a signle empty method to it called <code class="docutils literal notranslate"><span class="pre">render()</span></code></p></li>
+<li><p>Move the body of the function into the <code class="docutils literal notranslate"><span class="pre">render()</span></code> method</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">props</span></code> with <code class="docutils literal notranslate"><span class="pre">this.props</span></code> in the <code class="docutils literal notranslate"><span class="pre">render()</span></code> body</p></li>
+<li><p>Delete the remaining empty function declaration</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>class Clock extends React.Component {
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;Hello, world!&lt;/h1&gt;
+                &lt;h2&gt;It is {this.props.date.toLocaleTimeString()}.&lt;/h2&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+</pre></div>
+</div>
+</li>
+<li><p>A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be extracted to a separate component.</p></li>
 </ul>
 <div class="section" id="class-components">
 <h3><span class="section-number">1.5.1. </span>Class Components<a class="headerlink" href="#class-components" title="Permalink to this headline">¶</a></h3>
@@ -750,18 +773,20 @@ const heading = &lt;h1&gt;Hello, {name}&lt;/h1&gt;
 <li><p>One of the big deals about React is how it handles data, and it does so with properties, referred to as <strong>props</strong>, and with state.</p></li>
 <li><p>we can access all props through <code class="docutils literal notranslate"><span class="pre">this.props</span></code></p></li>
 <li><p>You should always use <strong>keys</strong> when making lists in React, as they help identify each list item.</p></li>
-<li><p>Props are an effective way to pass existing data to a React component, however the component cannot change the props - they’re read-only.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>const TableBody = (props) =&gt; {
-const rows = props.characterData.map((row, index) =&gt; {
-return (
-  &lt;tr key={index}&gt;
-    &lt;td&gt;{row.name}&lt;/td&gt;
-    &lt;td&gt;{row.job}&lt;/td&gt;
-  &lt;/tr&gt;
-)
-})
+<li><p>Props are an effective way to pass existing data to a React component, however the component cannot change the props - they’re read-only.</p></li>
+<li><p>We (React offical doc) recommend naming props from the component’s own point of view rather than the context in which it is being used.</p></li>
+<li><p>Props are Read-Only; <strong>All React components must act like pure functions with respect to their props</strong>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>const TableBody = (props) =&gt; {
+    const rows = props.characterData.map((row, index) =&gt; {
+        return (
+            &lt;tr key={index}&gt;
+                &lt;td&gt;{row.name}&lt;/td&gt;
+                &lt;td&gt;{row.job}&lt;/td&gt;
+            &lt;/tr&gt;
+        )
+    })
 
-return &lt;tbody&gt;{rows}&lt;/tbody&gt;
+    return &lt;tbody&gt;{rows}&lt;/tbody&gt;
 }
 
 class Table extends Component {
@@ -778,30 +803,30 @@ class Table extends Component {
 }
 
 class App extends Component {
-render() {
-    const characters = [
-    {
-        name: &#39;Charlie&#39;,
-        job: &#39;Janitor&#39;,
-    },
-    {
-        name: &#39;Mac&#39;,
-        job: &#39;Bouncer&#39;,
-    },
-    {
-        name: &#39;Dee&#39;,
-        job: &#39;Aspring actress&#39;,
-    },
-    {
-        name: &#39;Dennis&#39;,
-        job: &#39;Bartender&#39;,
-    },
-    ]
+    render() {
+        const characters = [
+            {
+                name: &#39;Charlie&#39;,
+                job: &#39;Janitor&#39;,
+            },
+            {
+                name: &#39;Mac&#39;,
+                job: &#39;Bouncer&#39;,
+            },
+            {
+                name: &#39;Dee&#39;,
+                job: &#39;Aspring actress&#39;,
+            },
+            {
+                name: &#39;Dennis&#39;,
+                job: &#39;Bartender&#39;,
+            }
+        ]
 
-    return (
-        &lt;div className=&quot;container&quot;&gt;
-            &lt;Table /&gt;
-        &lt;/div&gt;
+        return (
+            &lt;div className=&quot;container&quot;&gt;
+                &lt;Table /&gt;
+            &lt;/div&gt;
         )
     }
 }
@@ -817,14 +842,14 @@ render() {
 <li><p>You can think of state as any data that should be saved and modified without necessarily being added to a database - for example, adding and removing items from a shopping cart before confirming your purchase.</p></li>
 <li><p>The object will contain properties for everything you want to store in the state.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span>class App extends Component {
-state = {
-    characters: [
-        {
-            name: &#39;Charlie&#39;,
-            // the rest of the data
-        },
-    ],
- }   
+    state = {
+        characters: [
+            {
+                name: &#39;Charlie&#39;,
+                // the rest of the data
+            },
+        ],
+    }   
 }
 </pre></div>
 </div>
@@ -834,6 +859,16 @@ state = {
 <p class="admonition-title">Note</p>
 <p>You must use this.setState() to modify an array. Simply applying a new value to this.state.property will not work.</p>
 </div>
+</li>
+<li><p>state can’t be modified directly, instead, use <code class="docutils literal notranslate"><span class="pre">setState()</span></code>; The only place where you can assign <code class="docutils literal notranslate"><span class="pre">this.state</span></code> is the constructor.</p></li>
+<li><p>when update state, don’t use <code class="docutils literal notranslate"><span class="pre">this.state</span></code> or <code class="docutils literal notranslate"><span class="pre">this.props</span></code> as input since they may be updated asynchronously (?)</p></li>
+<li><p>When calling <code class="docutils literal notranslate"><span class="pre">setState()</span></code>, React merges the object you provide into the current state.</p></li>
+<li><p>a state created with multiple variables that can be updated individually and independently with the final state merges the latest updates from all variables</p></li>
+<li><p>Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn’t care whether it is defined as a function or a class.</p>
+<ul class="simple">
+<li><p>This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.</p></li>
+<li><p>The value of the state in the parent component can be passed to the child component as props, but the child component wouldn’t know whether it is state or props from the parent; This is commonly called a “top-down” or “unidirectional” data flow.</p></li>
+</ul>
 </li>
 </ul>
 </div>
@@ -878,9 +913,16 @@ state = {
 <ol class="simple">
 <li><p>what is ReactDOM</p></li>
 <li><p>when need to use <code class="docutils literal notranslate"><span class="pre">const</span></code> when creating a new object</p></li>
-<li><p>when to use class component vs simple conponent</p></li>
-<li><p>when to use <code class="docutils literal notranslate"><span class="pre">this.xx</span></code></p></li>
+<li><p>when to use class component vs simple component</p></li>
+<li><p>when to use <code class="docutils literal notranslate"><span class="pre">this.xx</span></code></p>
+<ul class="simple">
+<li><p>when set up/use a prop/state in a class (vs in a function) component</p></li>
+</ul>
+</li>
 <li><p>what is an <code class="docutils literal notranslate"><span class="pre">event</span></code></p></li>
+<li><p>what is a constructor?</p></li>
+<li><p>what is mounting/unmounting? –&gt; lifecycle methods?</p></li>
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow function</a></p></li>
 </ol>
 </div>
 <div class="section" id="references">
