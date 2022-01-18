@@ -77,6 +77,10 @@
     const heading = <h1>Hello, {name}</h1>
     ```
 
+## Elements
+TO ADD.
+
+
 ## Components
 - Almost everything in React consists of components, which can be **class components** or **simple components**.
     - component可以直接写在最终文档里或者也可以写成一个单独的文件，即可以导入到另一个文件的`.js`文件模组; 可以在各处重复使用。
@@ -131,7 +135,7 @@
     A class component must include `render()`, and the `return` can only return one parent element.
     ```
 
-## Props
+### Props
 - One of the big deals about React is how it handles data, and it does so with properties, referred to as **props**, and with state.
 -  we can access all props through `this.props`
 - You should always use **keys** when making lists in React, as they help identify each list item.
@@ -252,8 +256,61 @@
 - In order to link to a page **within** the SPA, we'll use `Link`. If we used the traditional `<a href="/route">`, it would make a completely new request and reload the page, so we have `Link` to help us out.
 
 
+## Handling events
+- Difference in handling events b/t React and HTML
+    - Syntax difference
+    - the way to prevent default behavior, i.e. in React, use `preventDefault()`
 
+- Binding in JSX callbacks (?)
+    ```javascript
+    this.handleClick = this.handleClick.bind(this)
+    ```
 
+## Conditional Rendering
+- Use `if` statement to conditionally render a component
+- Use inline condtions in JSX
+    - Inline `if` with logical `&&` operator: It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+    - Inline If-Else with Conditional Operator
+        - avaScript conditional operator `condition ? true : false`.
+
+- Use conditional rendering to prevent component from rendering
+    - essentially return `null` when not wanting the component to be rendered
+    - Returning `null` from a component’s `render` method does not affect the firing of the component’s lifecycle methods. For instance `componentDidUpdate` will still be called.
+
+## Lists and kyes
+
+```{margin}
+Here is an [in-depth explanation about why keys are necessary(https://reactjs.org/docs/reconciliation.html#recursing-on-children)] if you’re interested in learning more.
+```
+- A “key” is a special string attribute you need to include when creating lists of elements.
+- Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity
+- The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. Most often you would use IDs from your data as keys
+    ```javascript
+    const todoItems = todos.map((todo) =>
+        <li key={todo.id}>
+            {todo.text}
+        </li>
+        );
+    ```
+- When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort:
+    ```javascript
+    const todoItems = todos.map((todo, index) =>
+        // Only do this if items have no stable IDs
+        <li key={index}>
+            {todo.text}
+        </li>
+    );
+    ```
+
+    ```{margin}
+    Check out Robin Pokorny’s article for an [in-depth explanation on the negative impacts of using an index as a key](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318). If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
+    ```
+    - don't indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state. 
+
+- Keys only make sense in the context of the surrounding array (what is surrounding array?).
+    - A good rule of thumb is that elements inside the `map()` call need keys.
+
+- Keys must only be unique among siblings; However, they don’t need to be globally unique.
 
 
 ## Running questions
@@ -266,6 +323,7 @@
 6. what is a constructor?
 7. what is mounting/unmounting? --> lifecycle methods?
 8. [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+9. What is W3C synthetic event?
 
 
 
