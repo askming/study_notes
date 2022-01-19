@@ -313,6 +313,15 @@ Here is an [in-depth explanation about why keys are necessary(https://reactjs.or
 - Keys must only be unique among siblings; However, they don’t need to be globally unique.
 
 
+## Forms
+### Controlled components
+- the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a “controlled component”.
+- It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. 
+    - In these situations, you might want to check out [uncontrolled components](https://reactjs.org/docs/uncontrolled-components.html), an alternative technique for implementing input forms.
+
+
+
+
 ## Running questions
 1. what is ReactDOM
 2. when need to use `const` when creating a new object
