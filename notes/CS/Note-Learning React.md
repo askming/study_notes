@@ -319,6 +319,22 @@ Here is an [in-depth explanation about why keys are necessary(https://reactjs.or
 - It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. 
     - In these situations, you might want to check out [uncontrolled components](https://reactjs.org/docs/uncontrolled-components.html), an alternative technique for implementing input forms.
 
+## Lifting state up
+- In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”. 
+    - replace `this.state.xxx` with `this.props.xxx` in the descendant component.
+    - however, props are read-only, we can use `this.setState()` in the local/descendant components to update it
+    - In React, this is usually solved by making a component “controlled”. 
+
+- There should be a single “source of truth” for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, we should rely on the [top-down data flow](https://reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down).
+
+## Composition vs inheritance
+- React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
+
+### Containment
+- Some components don’t know their children ahead of time.  Such components can use the special `children` prop to pass children elements directly into their output
+
+### Specialization
+- Sometimes we think about components as being “special cases” of other components. In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props
 
 
 
