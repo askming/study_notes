@@ -513,13 +513,35 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lifting-state-up">
+   1.13. Lifting state up
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composition-vs-inheritance">
+   1.14. Composition vs inheritance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#containment">
+     1.14.1. Containment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specialization">
+     1.14.2. Specialization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-questions">
-   1.13. Running questions
+   1.15. Running questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.14. References
+   1.16. References
   </a>
  </li>
 </ul>
@@ -644,13 +666,35 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lifting-state-up">
+   1.13. Lifting state up
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composition-vs-inheritance">
+   1.14. Composition vs inheritance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#containment">
+     1.14.1. Containment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specialization">
+     1.14.2. Specialization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-questions">
-   1.13. Running questions
+   1.15. Running questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.14. References
+   1.16. References
   </a>
  </li>
 </ul>
@@ -1071,8 +1115,39 @@ class App extends Component {
 </ul>
 </div>
 </div>
+<div class="section" id="lifting-state-up">
+<h2><span class="section-number">1.13. </span>Lifting state up<a class="headerlink" href="#lifting-state-up" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”.</p>
+<ul>
+<li><p>replace <code class="docutils literal notranslate"><span class="pre">this.state.xxx</span></code> with <code class="docutils literal notranslate"><span class="pre">this.props.xxx</span></code> in the descendant component.</p></li>
+<li><p>however, props are read-only, we can use <code class="docutils literal notranslate"><span class="pre">this.setState()</span></code> in the local/descendant components to update it</p></li>
+<li><p>In React, this is usually solved by making a component “controlled”.</p></li>
+</ul>
+</li>
+<li><p>There should be a single “source of truth” for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, we should rely on the <a class="reference external" href="https://reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down">top-down data flow</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="composition-vs-inheritance">
+<h2><span class="section-number">1.14. </span>Composition vs inheritance<a class="headerlink" href="#composition-vs-inheritance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.</p></li>
+</ul>
+<div class="section" id="containment">
+<h3><span class="section-number">1.14.1. </span>Containment<a class="headerlink" href="#containment" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Some components don’t know their children ahead of time.  Such components can use the special <code class="docutils literal notranslate"><span class="pre">children</span></code> prop to pass children elements directly into their output</p></li>
+</ul>
+</div>
+<div class="section" id="specialization">
+<h3><span class="section-number">1.14.2. </span>Specialization<a class="headerlink" href="#specialization" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Sometimes we think about components as being “special cases” of other components. In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props</p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="running-questions">
-<h2><span class="section-number">1.13. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.15. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>what is ReactDOM</p></li>
 <li><p>when need to use <code class="docutils literal notranslate"><span class="pre">const</span></code> when creating a new object</p></li>
@@ -1090,7 +1165,7 @@ class App extends Component {
 </ol>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">1.14. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.16. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="https://reactjs.org/docs/getting-started.html">React Official Docs</a></p></li>
 <li><p><a class="reference external" href="https://www.taniarascia.com/getting-started-with-react/">React Tutorial: An Overview and Walkthrough</a></p></li>
