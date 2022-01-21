@@ -336,7 +336,32 @@ Here is an [in-depth explanation about why keys are necessary(https://reactjs.or
 ### Specialization
 - Sometimes we think about components as being “special cases” of other components. In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props
 
+## Thinking in React
 
+### Step 1: Break The UI Into A Component Hierarchy
+- But how do you know what should be its own component? Use the same techniques for deciding if you should create a new function or object. 
+    - One such technique is the single [responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
+
+### Step 2: Build A Static Version in React
+- You can build top-down or bottom-up. That is, you can either start with building the components higher up in the hierarchy or with the ones lower in it.
+    - In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up and write tests as you build.
+
+### Step 3: Identify The Minimal (but complete) Representation Of UI State
+- To make your UI interactive, you need to be able to trigger changes to your underlying data model. React achieves this with state.
+
+- To figure out which one is state, ask three questions about each piece of data:
+
+    1. Is it passed in from a parent via props? If so, it probably isn’t state.
+    2. Does it remain unchanged over time? If so, it probably isn’t state.
+    3. Can you compute it based on any other state or props in your component? If so, it isn’t state.
+
+### Step 4: Identify Where Your State Should Live
+- Remember: React is all about one-way data flow down the component hierarchy. It may not be immediately clear which component should own what state. **This is often the most challenging part for newcomers to understand**, so follow these steps to figure it out:
+    - For each piece of state in your application:
+        - Identify every component that renders something based on that state.
+        - Find a common owner component (a single component above all the components that need the state in the hierarchy).
+        - Either the common owner or another component higher up in the hierarchy should own the state.
+        - 
 
 ## Running questions
 1. what is ReactDOM
