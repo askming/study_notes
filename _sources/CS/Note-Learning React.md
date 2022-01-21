@@ -280,7 +280,7 @@ TO ADD.
 ## Lists and kyes
 
 ```{margin}
-Here is an [in-depth explanation about why keys are necessary(https://reactjs.org/docs/reconciliation.html#recursing-on-children)] if you’re interested in learning more.
+Here is an [in-depth explanation about why keys are necessary](https://reactjs.org/docs/reconciliation.html#recursing-on-children) if you’re interested in learning more.
 ```
 - A “key” is a special string attribute you need to include when creating lists of elements.
 - Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity
