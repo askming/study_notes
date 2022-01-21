@@ -361,7 +361,9 @@ Here is an [in-depth explanation about why keys are necessary(https://reactjs.or
         - Identify every component that renders something based on that state.
         - Find a common owner component (a single component above all the components that need the state in the hierarchy).
         - Either the common owner or another component higher up in the hierarchy should own the state.
-        - 
+        - If you can’t find a component where it makes sense to own the state, create a new component solely for holding the state and add it somewhere in the hierarchy above the common owner component.
+
+### Step 5: Add Inverse Data Flow
 
 ## Running questions
 1. what is ReactDOM
