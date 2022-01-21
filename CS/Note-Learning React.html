@@ -535,13 +535,40 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thinking-in-react">
+   1.15. Thinking in React
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-break-the-ui-into-a-component-hierarchy">
+     1.15.1. Step 1: Break The UI Into A Component Hierarchy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-build-a-static-version-in-react">
+     1.15.2. Step 2: Build A Static Version in React
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-identify-the-minimal-but-complete-representation-of-ui-state">
+     1.15.3. Step 3: Identify The Minimal (but complete) Representation Of UI State
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-identify-where-your-state-should-live">
+     1.15.4. Step 4: Identify Where Your State Should Live
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-questions">
-   1.15. Running questions
+   1.16. Running questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.16. References
+   1.17. References
   </a>
  </li>
 </ul>
@@ -688,13 +715,40 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thinking-in-react">
+   1.15. Thinking in React
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-break-the-ui-into-a-component-hierarchy">
+     1.15.1. Step 1: Break The UI Into A Component Hierarchy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-build-a-static-version-in-react">
+     1.15.2. Step 2: Build A Static Version in React
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-identify-the-minimal-but-complete-representation-of-ui-state">
+     1.15.3. Step 3: Identify The Minimal (but complete) Representation Of UI State
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-identify-where-your-state-should-live">
+     1.15.4. Step 4: Identify Where Your State Should Live
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-questions">
-   1.15. Running questions
+   1.16. Running questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.16. References
+   1.17. References
   </a>
  </li>
 </ul>
@@ -1146,8 +1200,61 @@ class App extends Component {
 </ul>
 </div>
 </div>
+<div class="section" id="thinking-in-react">
+<h2><span class="section-number">1.15. </span>Thinking in React<a class="headerlink" href="#thinking-in-react" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-break-the-ui-into-a-component-hierarchy">
+<h3><span class="section-number">1.15.1. </span>Step 1: Break The UI Into A Component Hierarchy<a class="headerlink" href="#step-1-break-the-ui-into-a-component-hierarchy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>But how do you know what should be its own component? Use the same techniques for deciding if you should create a new function or object.</p>
+<ul>
+<li><p>One such technique is the single <a class="reference external" href="https://en.wikipedia.org/wiki/Single_responsibility_principle">responsibility principle</a>, that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="step-2-build-a-static-version-in-react">
+<h3><span class="section-number">1.15.2. </span>Step 2: Build A Static Version in React<a class="headerlink" href="#step-2-build-a-static-version-in-react" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>You can build top-down or bottom-up. That is, you can either start with building the components higher up in the hierarchy or with the ones lower in it.</p>
+<ul>
+<li><p>In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up and write tests as you build.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="step-3-identify-the-minimal-but-complete-representation-of-ui-state">
+<h3><span class="section-number">1.15.3. </span>Step 3: Identify The Minimal (but complete) Representation Of UI State<a class="headerlink" href="#step-3-identify-the-minimal-but-complete-representation-of-ui-state" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>To make your UI interactive, you need to be able to trigger changes to your underlying data model. React achieves this with state.</p></li>
+<li><p>To figure out which one is state, ask three questions about each piece of data:</p>
+<ol class="simple">
+<li><p>Is it passed in from a parent via props? If so, it probably isn’t state.</p></li>
+<li><p>Does it remain unchanged over time? If so, it probably isn’t state.</p></li>
+<li><p>Can you compute it based on any other state or props in your component? If so, it isn’t state.</p></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="step-4-identify-where-your-state-should-live">
+<h3><span class="section-number">1.15.4. </span>Step 4: Identify Where Your State Should Live<a class="headerlink" href="#step-4-identify-where-your-state-should-live" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Remember: React is all about one-way data flow down the component hierarchy. It may not be immediately clear which component should own what state. <strong>This is often the most challenging part for newcomers to understand</strong>, so follow these steps to figure it out:</p>
+<ul>
+<li><p>For each piece of state in your application:</p>
+<ul>
+<li><p>Identify every component that renders something based on that state.</p></li>
+<li><p>Find a common owner component (a single component above all the components that need the state in the hierarchy).</p></li>
+<li><p>Either the common owner or another component higher up in the hierarchy should own the state.</p></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="section" id="running-questions">
-<h2><span class="section-number">1.15. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.16. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>what is ReactDOM</p></li>
 <li><p>when need to use <code class="docutils literal notranslate"><span class="pre">const</span></code> when creating a new object</p></li>
@@ -1165,7 +1272,7 @@ class App extends Component {
 </ol>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">1.16. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.17. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="https://reactjs.org/docs/getting-started.html">React Official Docs</a></p></li>
 <li><p><a class="reference external" href="https://www.taniarascia.com/getting-started-with-react/">React Tutorial: An Overview and Walkthrough</a></p></li>
