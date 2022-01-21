@@ -134,7 +134,7 @@
 ### 4.7 Containers
 
 ### 4.8 Web Development
-- - [Learning React](CS/Note-Learning%20React.md)
+- [Learning React](CS/Note-Learning%20React.md)
 
 ### 4.9 D3
 
