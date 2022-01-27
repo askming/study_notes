@@ -567,13 +567,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes-from-personal-website-building-using-react-static">
+   1.16. Notes from personal website building using React Static
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-questions">
-   1.16. Running questions
+   1.17. Running questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.17. References
+   1.18. References
   </a>
  </li>
 </ul>
@@ -752,13 +757,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes-from-personal-website-building-using-react-static">
+   1.16. Notes from personal website building using React Static
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-questions">
-   1.16. Running questions
+   1.17. Running questions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.17. References
+   1.18. References
   </a>
  </li>
 </ul>
@@ -1266,8 +1276,44 @@ class App extends Component {
 <h3><span class="section-number">1.15.5. </span>Step 5: Add Inverse Data Flow<a class="headerlink" href="#step-5-add-inverse-data-flow" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
+<div class="section" id="notes-from-personal-website-building-using-react-static">
+<h2><span class="section-number">1.16. </span>Notes from personal website building using <a class="reference external" href="https://github.com/react-static/react-static">React Static</a><a class="headerlink" href="#notes-from-personal-website-building-using-react-static" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">static.config.js</span></code> controls the overall site structure and “meta data”</p>
+<ul>
+<li><p>It creates <strong>routes</strong> which is binded with specific pages and provides environmental data to those pages</p></li>
+<li><p>It also control page/sub-page structure by specifying <code class="docutils literal notranslate"><span class="pre">children</span></code> in the route</p></li>
+<li><p>haven’t figure out how to load multiple <code class="docutils literal notranslate"><span class="pre">.md</span></code> files here and attach them to certain route (!!)</p></li>
+</ul>
+</li>
+<li><p>Learned how to use CSS to control the UI of web pages; Html &amp; CSS are tbe basics that need to learn more</p></li>
+<li><p>Installing and using packages for additional needs</p>
+<ul>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">react-pdf</span></code> to render PDF file on webpage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">markdown-yaml-metadata-parser</span></code>: to parse <code class="docutils literal notranslate"><span class="pre">.md</span></code> files into <code class="docutils literal notranslate"><span class="pre">metadata</span></code> and <code class="docutils literal notranslate"><span class="pre">content</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">react-markdown</span></code>” to render <code class="docutils literal notranslate"><span class="pre">.md</span></code> files in React. seems to be the most popular one with ability to add plugin to extend its functionalities</p></li>
+</ul>
+</li>
+<li><p>Basic file structure for the site</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">static.config.js</span></code>: see above</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">package.json</span></code>: dependencies (packages) are listed here</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./src</span></code>: source folder, contains most of the programs</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">./src/pages</span></code>: contains <code class="docutils literal notranslate"><span class="pre">.js</span></code> (other types, e.g. <code class="docutils literal notranslate"><span class="pre">.md</span></code>) files that are rendered into web pages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./src/containers</span></code>: supporting <code class="docutils literal notranslate"><span class="pre">.js</span></code> files, such as templates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./src/assets</span></code>: attachments (files, pics, etc.) for webpages</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">App.js</span></code>: file that references web pages, puts them in one place</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app.css</span></code>: setting up the UI for web page components/elements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index.js</span></code>: file to render <code class="docutils literal notranslate"><span class="pre">App.js</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="running-questions">
-<h2><span class="section-number">1.16. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.17. </span>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>what is ReactDOM</p></li>
 <li><p>when need to use <code class="docutils literal notranslate"><span class="pre">const</span></code> when creating a new object</p></li>
@@ -1275,17 +1321,19 @@ class App extends Component {
 <li><p>when to use <code class="docutils literal notranslate"><span class="pre">this.xx</span></code></p>
 <ul class="simple">
 <li><p>when set up/use a prop/state in a class (vs in a function) component</p></li>
+<li><p>in functions, we use React Hooks to achieve the same purupose</p></li>
 </ul>
 </li>
 <li><p>what is an <code class="docutils literal notranslate"><span class="pre">event</span></code></p></li>
 <li><p>what is a constructor?</p></li>
 <li><p>what is mounting/unmounting? –&gt; lifecycle methods?</p></li>
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow function</a></p></li>
-<li><p>What is W3C synthetic event?</p></li>
+<li><p>What is W3C synthetic event?
+10, what is webpack</p></li>
 </ol>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">1.17. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.18. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="https://reactjs.org/docs/getting-started.html">React Official Docs</a></p></li>
 <li><p><a class="reference external" href="https://www.taniarascia.com/getting-started-with-react/">React Tutorial: An Overview and Walkthrough</a></p></li>

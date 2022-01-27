@@ -365,17 +365,43 @@ Here is an [in-depth explanation about why keys are necessary](https://reactjs.o
 
 ### Step 5: Add Inverse Data Flow
 
+
+## Notes from personal website building using [React Static](https://github.com/react-static/react-static)
+- `static.config.js` controls the overall site structure and "meta data"
+    - It creates **routes** which is binded with specific pages and provides environmental data to those pages
+    - It also control page/sub-page structure by specifying `children` in the route
+    - haven't figure out how to load multiple `.md` files here and attach them to certain route (!!)
+
+- Learned how to use CSS to control the UI of web pages; Html & CSS are tbe basics that need to learn more
+- Installing and using packages for additional needs
+    - Use `react-pdf` to render PDF file on webpage
+    - `markdown-yaml-metadata-parser`: to parse `.md` files into `metadata` and `content`
+    - `react-markdown`" to render `.md` files in React. seems to be the most popular one with ability to add plugin to extend its functionalities
+- Basic file structure for the site
+    - `static.config.js`: see above
+    - `package.json`: dependencies (packages) are listed here
+    - `./src`: source folder, contains most of the programs
+        - `./src/pages`: contains `.js` (other types, e.g. `.md`) files that are rendered into web pages
+        - `./src/containers`: supporting `.js` files, such as templates
+        - `./src/assets`: attachments (files, pics, etc.) for webpages
+    - `App.js`: file that references web pages, puts them in one place 
+    - `app.css`: setting up the UI for web page components/elements
+    - `index.js`: file to render `App.js`
+
+
 ## Running questions
 1. what is ReactDOM
 2. when need to use `const` when creating a new object
 3. when to use class component vs simple component
 4. when to use `this.xx`
     - when set up/use a prop/state in a class (vs in a function) component
+    - in functions, we use React Hooks to achieve the same purupose
 5. what is an `event`
 6. what is a constructor?
 7. what is mounting/unmounting? --> lifecycle methods?
 8. [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 9. What is W3C synthetic event?
+10, what is webpack
 
 
 
