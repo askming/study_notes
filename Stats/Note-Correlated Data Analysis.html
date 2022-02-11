@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Correlated/Longitudinal Data Analysis &#8212; Study Notes</title>
+    <title>Correlated/Longitudinal Data Analysis &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,9 +37,12 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
@@ -57,8 +60,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12. ​Cox PH model" href="Note-Cox_PH_model.html" />
-    <link rel="prev" title="10. Competing risk models" href="Note-Competing_Risk_Regression.html" />
+    <link rel="next" title="​Cox PH model" href="Note-Cox_PH_model.html" />
+    <link rel="prev" title="Competing risk models" href="Note-Competing_Risk_Regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,12 +113,12 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   1. [book] Analysis of Observational Health Care Data Using SAS
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
-   2. [book] Causal inference in statistics
+   [book] Causal inference in statistics
    <em>
     a primer
    </em>
@@ -123,72 +126,72 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
-   3. [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
-   4. [book] Fundamentals of Clinical Trials (4th edition)
+   [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
-   5. [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
-   6. [book] Regression Modeling Strategies
+   [book] Regression Modeling Strategies
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
-   7. Adaptive Clinical Trial Design
+   Adaptive Clinical Trial Design
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
-   8. Why analysis of stratified randomization trial data need to account for the stratification factors?
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
-   9. Association vs. Prediction vs. Causation
+   Association vs. Prediction vs. Causation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   10. Competing risk models
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11. Correlated/Longitudinal Data Analysis
+   Correlated/Longitudinal Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Cox_PH_model.html">
-   12. ​Cox PH model
+   ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
-   13. Notes on FDA Guidances for Industry
+   Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
-   14. Notes on Group Sequential Trial Design​
+   Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-ICH%20guidelines.html">
-   15. Notes on ICH guidelines​
+   Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
-   16. Power,
+   Power,
    <strong>
     MDD
    </strong>
@@ -205,22 +208,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
-   17. Monte Carlo Method
+   Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
-   18. Multiplicity in Clinical Trials
+   Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Quantile%20regression.html">
-   19. Quantile regression
+   Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Survival_Analysis.html">
-   20. Survival Analysis
+   Survival Analysis
   </a>
  </li>
 </ul>
@@ -232,12 +235,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
-   1. How R searches and finds stuff
+   How R searches and finds stuff
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
-   2. Notes on
+   Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
      matplotlib
@@ -254,42 +257,42 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   1. [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
-   2. [book] Python Data Science Handbook
+   [book] Python Data Science Handbook
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Boosting.html">
-   3. Boosting
+   Boosting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
-   4. Cluster analysis
+   Cluster analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
-   5. ​Machine Learning (General)
+   ​Machine Learning (General)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
-   6. Naive Bayes
+   Naive Bayes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
-   7. Stochastic Gradient Decent (SGD)
+   Stochastic Gradient Decent (SGD)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   8. Tree/Random Forest (Bagging)
+   Tree/Random Forest (Bagging)
   </a>
  </li>
 </ul>
@@ -301,12 +304,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-Learning%20React.html">
-   1. Learning React
+   Learning React
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
-   2. SQL study notes
+   SQL study notes
   </a>
  </li>
 </ul>
@@ -318,12 +321,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   1. Miscellaneous Study Notes
+   Miscellaneous Study Notes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   2. Pharmacedutical development
+   Pharmacedutical development
   </a>
  </li>
 </ul>
@@ -415,78 +418,78 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cross-sectional-vs-longitudinal-data">
-   11.1. Cross-sectional vs longitudinal data
+   Cross-sectional vs longitudinal data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graphic-representation-of-longitudinal-data">
-   11.2. Graphic representation of longitudinal data
+   Graphic representation of longitudinal data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#y-against-time">
-     11.2.1. Y against Time
+     Y against Time
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#y-against-x">
-     11.2.2. Y against X​
+     Y against X​
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fitting-smooth-curves">
-     11.2.3. Fitting smooth curves
+     Fitting smooth curves
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#kernel-estimation">
-       11.2.3.1. Kernel estimation
+       Kernel estimation
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#smoothing-spline">
-       11.2.3.2. Smoothing spline
+       Smoothing spline
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loess">
-       11.2.3.3. Loess
+       Loess
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exploring-correlation-structure">
-     11.2.4. Exploring correlation structure
+     Exploring correlation structure
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linear-model-for-correlated-data">
-   11.3. Linear model for correlated data
+   Linear model for correlated data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#random-effect-model-conditional-model">
-     11.3.1. Random effect model (conditional model)
+     Random effect model (conditional model)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#marginal-model-population-average">
-     11.3.2. Marginal model (population average)
+     Marginal model (population average)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#weighted-least-squares-wls-estimation">
-   11.4. Weighted least-squares (WLS) estimation
+   Weighted least-squares (WLS) estimation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-ols-estimator-is-misleading-when-v-ne-i">
-     11.4.1. Using OLS estimator is misleading when V
+     Using OLS estimator is misleading when V
      <span class="math notranslate nohighlight">
       \(\ne\)
      </span>
@@ -495,56 +498,55 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mle-under-gaussian-assumptions">
-     11.4.2. MLE under Gaussian assumptions
+     MLE under Gaussian assumptions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reml">
-     11.4.3. REML
+     REML
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#robust-estimation-unstructured-covarince-matrix">
-     11.4.4. Robust estimation (unstructured covarince matrix)
+     Robust estimation (unstructured covarince matrix)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generalized-linear-models-glm-for-longitudinal-data">
-   11.5. Generalized linear models (GLM) for longitudinal data
+   Generalized linear models (GLM) for longitudinal data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#continuous-outcome">
-     11.5.1. Continuous outcome
+     Continuous outcome
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#parametric-method">
-       11.5.1.1. Parametric method
+       Parametric method
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#robust-method">
-       11.5.1.2. Robust method
+       Robust method
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#discrete-outcome">
-     11.5.2. Discrete outcome
+     Discrete outcome
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#marginal-model-using-gee">
-       11.5.2.1. Marginal model (using GEE)
+       Marginal model (using GEE)
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#why-gee">
-         11.5.2.1.1.
          <strong>
           Why GEE
          </strong>
@@ -552,7 +554,6 @@
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#details-of-gee">
-         11.5.2.1.2.
          <strong>
           Details of GEE
          </strong>
@@ -560,7 +561,6 @@
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#comments-on-gee">
-         11.5.2.1.3.
          <strong>
           Comments on GEE
          </strong>
@@ -574,7 +574,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#appendix-limitation-of-ols-models-in-analyzing-repeated-measures-data">
-   11.6. Appendix: Limitation of OLS models in analyzing repeated measures data
+   Appendix: Limitation of OLS models in analyzing repeated measures data
   </a>
  </li>
 </ul>
@@ -599,78 +599,78 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cross-sectional-vs-longitudinal-data">
-   11.1. Cross-sectional vs longitudinal data
+   Cross-sectional vs longitudinal data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graphic-representation-of-longitudinal-data">
-   11.2. Graphic representation of longitudinal data
+   Graphic representation of longitudinal data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#y-against-time">
-     11.2.1. Y against Time
+     Y against Time
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#y-against-x">
-     11.2.2. Y against X​
+     Y against X​
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fitting-smooth-curves">
-     11.2.3. Fitting smooth curves
+     Fitting smooth curves
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#kernel-estimation">
-       11.2.3.1. Kernel estimation
+       Kernel estimation
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#smoothing-spline">
-       11.2.3.2. Smoothing spline
+       Smoothing spline
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loess">
-       11.2.3.3. Loess
+       Loess
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exploring-correlation-structure">
-     11.2.4. Exploring correlation structure
+     Exploring correlation structure
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linear-model-for-correlated-data">
-   11.3. Linear model for correlated data
+   Linear model for correlated data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#random-effect-model-conditional-model">
-     11.3.1. Random effect model (conditional model)
+     Random effect model (conditional model)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#marginal-model-population-average">
-     11.3.2. Marginal model (population average)
+     Marginal model (population average)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#weighted-least-squares-wls-estimation">
-   11.4. Weighted least-squares (WLS) estimation
+   Weighted least-squares (WLS) estimation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-ols-estimator-is-misleading-when-v-ne-i">
-     11.4.1. Using OLS estimator is misleading when V
+     Using OLS estimator is misleading when V
      <span class="math notranslate nohighlight">
       \(\ne\)
      </span>
@@ -679,56 +679,55 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mle-under-gaussian-assumptions">
-     11.4.2. MLE under Gaussian assumptions
+     MLE under Gaussian assumptions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reml">
-     11.4.3. REML
+     REML
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#robust-estimation-unstructured-covarince-matrix">
-     11.4.4. Robust estimation (unstructured covarince matrix)
+     Robust estimation (unstructured covarince matrix)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generalized-linear-models-glm-for-longitudinal-data">
-   11.5. Generalized linear models (GLM) for longitudinal data
+   Generalized linear models (GLM) for longitudinal data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#continuous-outcome">
-     11.5.1. Continuous outcome
+     Continuous outcome
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#parametric-method">
-       11.5.1.1. Parametric method
+       Parametric method
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#robust-method">
-       11.5.1.2. Robust method
+       Robust method
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#discrete-outcome">
-     11.5.2. Discrete outcome
+     Discrete outcome
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#marginal-model-using-gee">
-       11.5.2.1. Marginal model (using GEE)
+       Marginal model (using GEE)
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#why-gee">
-         11.5.2.1.1.
          <strong>
           Why GEE
          </strong>
@@ -736,7 +735,6 @@
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#details-of-gee">
-         11.5.2.1.2.
          <strong>
           Details of GEE
          </strong>
@@ -744,7 +742,6 @@
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#comments-on-gee">
-         11.5.2.1.3.
          <strong>
           Comments on GEE
          </strong>
@@ -758,7 +755,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#appendix-limitation-of-ols-models-in-analyzing-repeated-measures-data">
-   11.6. Appendix: Limitation of OLS models in analyzing repeated measures data
+   Appendix: Limitation of OLS models in analyzing repeated measures data
   </a>
  </li>
 </ul>
@@ -771,10 +768,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="correlated-longitudinal-data-analysis">
-<h1><span class="section-number">11. </span>Correlated/Longitudinal Data Analysis<a class="headerlink" href="#correlated-longitudinal-data-analysis" title="Permalink to this headline">¶</a></h1>
+<h1>Correlated/Longitudinal Data Analysis<a class="headerlink" href="#correlated-longitudinal-data-analysis" title="Permalink to this headline">¶</a></h1>
 <p><em>Based on course notes and blog posts<a class="footnote-reference brackets" href="#mmrm-blog" id="id1">3</a></em></p>
 <div class="section" id="cross-sectional-vs-longitudinal-data">
-<h2><span class="section-number">11.1. </span>Cross-sectional vs longitudinal data<a class="headerlink" href="#cross-sectional-vs-longitudinal-data" title="Permalink to this headline">¶</a></h2>
+<h2>Cross-sectional vs longitudinal data<a class="headerlink" href="#cross-sectional-vs-longitudinal-data" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p><strong>Cross-sectional (CS)</strong> study can be reduced from the longitudinal study (LS) if the number of measures per subject is equal to one, ie <span class="math notranslate nohighlight">\(n_i=1\)</span>.</p>
 <div class="math notranslate nohighlight">
@@ -802,9 +799,9 @@
 </ul>
 </div>
 <div class="section" id="graphic-representation-of-longitudinal-data">
-<h2><span class="section-number">11.2. </span>Graphic representation of longitudinal data<a class="headerlink" href="#graphic-representation-of-longitudinal-data" title="Permalink to this headline">¶</a></h2>
+<h2>Graphic representation of longitudinal data<a class="headerlink" href="#graphic-representation-of-longitudinal-data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="y-against-time">
-<h3><span class="section-number">11.2.1. </span>Y against Time<a class="headerlink" href="#y-against-time" title="Permalink to this headline">¶</a></h3>
+<h3>Y against Time<a class="headerlink" href="#y-against-time" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Check the time trend for every individual</p></li>
 <li><p>Check the variability change over time (esp. at beginning vs end)</p></li>
@@ -838,7 +835,7 @@ y_{iJ}^*= \frac{y_{iJ}-\bar{y}_{\cdot J}}{s_J}
 </ul>
 </div>
 <div class="section" id="y-against-x">
-<h3><span class="section-number">11.2.2. </span>Y against X​<a class="headerlink" href="#y-against-x" title="Permalink to this headline">¶</a></h3>
+<h3>Y against X​<a class="headerlink" href="#y-against-x" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>AV plot</p></li>
 <li><p>Graphic methods to separate CS information from LS information</p>
@@ -862,7 +859,7 @@ y_{iJ}^*= \frac{y_{iJ}-\bar{y}_{\cdot J}}{s_J}
 </ul>
 </div>
 <div class="section" id="fitting-smooth-curves">
-<h3><span class="section-number">11.2.3. </span>Fitting smooth curves<a class="headerlink" href="#fitting-smooth-curves" title="Permalink to this headline">¶</a></h3>
+<h3>Fitting smooth curves<a class="headerlink" href="#fitting-smooth-curves" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
 Y_i=
@@ -873,7 +870,7 @@ Y_i=
 <p>We want to estimate an unknown mean response curve <span class="math notranslate nohighlight">\(\mu(t)\)</span> in the model. Nonparametric regression models that can be used to estimate the mean response profile as a function of time.</p>
 <p><em>Alawys, the smaller of the window width the less smoothness we get.</em></p>
 <div class="section" id="kernel-estimation">
-<h4><span class="section-number">11.2.3.1. </span>Kernel estimation<a class="headerlink" href="#kernel-estimation" title="Permalink to this headline">¶</a></h4>
+<h4>Kernel estimation<a class="headerlink" href="#kernel-estimation" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>selection of window centered at time <span class="math notranslate nohighlight">\(t\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{\mu}(t)\)</span> is the average of <span class="math notranslate nohighlight">\(Y\)</span> of all points that are visible in that window</p></li>
@@ -895,7 +892,7 @@ Y_i=
 </ul>
 </div>
 <div class="section" id="smoothing-spline">
-<h4><span class="section-number">11.2.3.2. </span>Smoothing spline<a class="headerlink" href="#smoothing-spline" title="Permalink to this headline">¶</a></h4>
+<h4>Smoothing spline<a class="headerlink" href="#smoothing-spline" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>Smoothing spline (cubic): the function <span class="math notranslate nohighlight">\(s(t)\)</span> that minimizes the criterion</p>
 <div class="math notranslate nohighlight">
@@ -915,7 +912,7 @@ Y_i=
 </ul>
 </div>
 <div class="section" id="loess">
-<h4><span class="section-number">11.2.3.3. </span>Loess<a class="headerlink" href="#loess" title="Permalink to this headline">¶</a></h4>
+<h4>Loess<a class="headerlink" href="#loess" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Center a window at time <span class="math notranslate nohighlight">\(t_i\)</span></p></li>
 <li><p>fit weighted least squares</p></li>
@@ -926,7 +923,7 @@ Y_i=
 </div>
 </div>
 <div class="section" id="exploring-correlation-structure">
-<h3><span class="section-number">11.2.4. </span>Exploring correlation structure<a class="headerlink" href="#exploring-correlation-structure" title="Permalink to this headline">¶</a></h3>
+<h3>Exploring correlation structure<a class="headerlink" href="#exploring-correlation-structure" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Let <span class="math notranslate nohighlight">\(y_{ij}=\beta_0+x_{ij}\beta+\varepsilon_{ij}\)</span>, we should be clear that</p>
 <div class="math notranslate nohighlight">
@@ -1031,7 +1028,7 @@ Y_i=
 </div>
 </div>
 <div class="section" id="linear-model-for-correlated-data">
-<h2><span class="section-number">11.3. </span>Linear model for correlated data<a class="headerlink" href="#linear-model-for-correlated-data" title="Permalink to this headline">¶</a></h2>
+<h2>Linear model for correlated data<a class="headerlink" href="#linear-model-for-correlated-data" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>To develop a general linear model framework for longitudinal data, in which</p>
 <p>the inference we make about the parameters of interest (<span class="math notranslate nohighlight">\(\beta\)</span>) <em>recoginze the likely correlation structure of the data</em>. There are two ways to archieve this:</p>
@@ -1042,7 +1039,7 @@ Y_i=
 </li>
 </ul>
 <div class="section" id="random-effect-model-conditional-model">
-<h3><span class="section-number">11.3.1. </span>Random effect model (conditional model)<a class="headerlink" href="#random-effect-model-conditional-model" title="Permalink to this headline">¶</a></h3>
+<h3>Random effect model (conditional model)<a class="headerlink" href="#random-effect-model-conditional-model" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
 Y_{ij} = U_i + \beta_0 + \beta_1t_j + \epsilon_{ij}
@@ -1102,7 +1099,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 </ul>
 </div>
 <div class="section" id="marginal-model-population-average">
-<h3><span class="section-number">11.3.2. </span>Marginal model (population average)<a class="headerlink" href="#marginal-model-population-average" title="Permalink to this headline">¶</a></h3>
+<h3>Marginal model (population average)<a class="headerlink" href="#marginal-model-population-average" title="Permalink to this headline">¶</a></h3>
 <ol>
 <li><p>With <strong>exchangable (or CS)</strong> variance-covariance structure (balanced data)</p>
 <div class="math notranslate nohighlight">
@@ -1160,7 +1157,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 </div>
 </div>
 <div class="section" id="weighted-least-squares-wls-estimation">
-<h2><span class="section-number">11.4. </span>Weighted least-squares (WLS) estimation<a class="headerlink" href="#weighted-least-squares-wls-estimation" title="Permalink to this headline">¶</a></h2>
+<h2>Weighted least-squares (WLS) estimation<a class="headerlink" href="#weighted-least-squares-wls-estimation" title="Permalink to this headline">¶</a></h2>
 <p><em>All following etimators are weighted LS etimators, the difference is in the choince of the weight and its impact on the variance (thus the interval) estimation of beta.</em></p>
 <ul class="simple">
 <li><p>(no distribution assumption on <span class="math notranslate nohighlight">\(y\)</span>) The <strong>weighted least-squares</strong> estimator of <span class="math notranslate nohighlight">\(\beta\)</span>, using a symmetric <em>weight matrix</em>, <span class="math notranslate nohighlight">\(W\)</span>, is the value <span class="math notranslate nohighlight">\(\hat{\beta}_W\)</span>, which minimize the quadratic form</p></li>
@@ -1187,7 +1184,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 <li><p>When we know the correlation structure is CS (uniform/exchangable), the OLS is fully efficient as the WLS estimator; an intuitive explanation is that with a common correlation b/t any two equally spaced measurements on the same unit, there is no reason to weight measurements differently.</p></li>
 </ul>
 <div class="section" id="using-ols-estimator-is-misleading-when-v-ne-i">
-<h3><span class="section-number">11.4.1. </span>Using OLS estimator is misleading when V <span class="math notranslate nohighlight">\(\ne\)</span> I<a class="headerlink" href="#using-ols-estimator-is-misleading-when-v-ne-i" title="Permalink to this headline">¶</a></h3>
+<h3>Using OLS estimator is misleading when V <span class="math notranslate nohighlight">\(\ne\)</span> I<a class="headerlink" href="#using-ols-estimator-is-misleading-when-v-ne-i" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>In many circumstances where there is balanced design, the OLS estimator, <span class="math notranslate nohighlight">\(\tilde{\beta}\)</span>, is perfectly satisfactory for point estimation. But this is not always the case. (Example in book page 63)</p></li>
 <li><p>Even when OLS is reasonably efficient, it is clear from the form of its variance</p>
@@ -1216,7 +1213,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 </ul>
 </div>
 <div class="section" id="mle-under-gaussian-assumptions">
-<h3><span class="section-number">11.4.2. </span>MLE under Gaussian assumptions<a class="headerlink" href="#mle-under-gaussian-assumptions" title="Permalink to this headline">¶</a></h3>
+<h3>MLE under Gaussian assumptions<a class="headerlink" href="#mle-under-gaussian-assumptions" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Simultaneous estimtation of the parameter of interest <span class="math notranslate nohighlight">\(\beta\)</span> and of covariance parameters <span class="math notranslate nohighlight">\(\sigma^2\)</span> and <span class="math notranslate nohighlight">\(V_0\)</span> using the likelihood function (<em>profile likelihood</em> method)</p></li>
 <li><p>The log-likelihood function for observed data <span class="math notranslate nohighlight">\(y\)</span> is</p>
@@ -1245,7 +1242,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 </ul>
 </div>
 <div class="section" id="reml">
-<h3><span class="section-number">11.4.3. </span>REML<a class="headerlink" href="#reml" title="Permalink to this headline">¶</a></h3>
+<h3>REML<a class="headerlink" href="#reml" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>To improve the estimation of the <span class="math notranslate nohighlight">\(\sigma^2\)</span> from MLE, which is biased, to get an unbiased estimator based on the linearly transformed set of data <span class="math notranslate nohighlight">\(\bf{Y}^* = \bf{AY}\)</span> such that the distribution of <span class="math notranslate nohighlight">\(\bf{Y}^*\)</span> doesn’t depend on <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
 <li><p>We call the likelihood for the transformed data <span class="math notranslate nohighlight">\(\bf{Y}^*\)</span> marginal likelihood for <span class="math notranslate nohighlight">\(\sigma^2\)</span> and <span class="math notranslate nohighlight">\(V_0\)</span> since it doesn’t contain <span class="math notranslate nohighlight">\(\beta\)</span> parameters</p></li>
@@ -1259,7 +1256,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 </ul>
 </div>
 <div class="section" id="robust-estimation-unstructured-covarince-matrix">
-<h3><span class="section-number">11.4.4. </span>Robust estimation (unstructured covarince matrix)<a class="headerlink" href="#robust-estimation-unstructured-covarince-matrix" title="Permalink to this headline">¶</a></h3>
+<h3>Robust estimation (unstructured covarince matrix)<a class="headerlink" href="#robust-estimation-unstructured-covarince-matrix" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Not willing to specify a parameteric model for the covariance structure <span class="math notranslate nohighlight">\(V\)</span> for <span class="math notranslate nohighlight">\(\bf{Y}\)</span>, a “robust” estimation of <span class="math notranslate nohighlight">\(\beta\)</span> resembles the form of a WLS estimator by using the <strong>working covariance matrix</strong> (weight) <span class="math notranslate nohighlight">\(W\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1343,7 +1340,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 </div>
 </div>
 <div class="section" id="generalized-linear-models-glm-for-longitudinal-data">
-<h2><span class="section-number">11.5. </span>Generalized linear models (GLM) for longitudinal data<a class="headerlink" href="#generalized-linear-models-glm-for-longitudinal-data" title="Permalink to this headline">¶</a></h2>
+<h2>Generalized linear models (GLM) for longitudinal data<a class="headerlink" href="#generalized-linear-models-glm-for-longitudinal-data" title="Permalink to this headline">¶</a></h2>
 <div class="mermaid">
             graph TD
 
@@ -1363,14 +1360,19 @@ i --&gt; i1[GEE: quasi-likelihood]
 j --&gt; l[Likelihood based]
 k --&gt; l
 b --&gt; i1
-        </div><div class="section" id="continuous-outcome">
-<h3><span class="section-number">11.5.1. </span>Continuous outcome<a class="headerlink" href="#continuous-outcome" title="Permalink to this headline">¶</a></h3>
+        </div><ul class="simple">
+<li><p>G(eneralized) is used for non-normal outcoes</p></li>
+<li><p>GEE is used for correlated data, and for both continuous and discrete outcomes; when used in continuous outcome, it is equivalent to LMM (linear mixed model)</p></li>
+<li><p>GEE and GLMM (generalized linear mixed model) are not equivalent as <span class="math notranslate nohighlight">\(E(g(x))\ne g(E(x))\)</span>, where <span class="math notranslate nohighlight">\(g(\cdot)\)</span> is a non-linear function (or transformation).</p></li>
+</ul>
+<div class="section" id="continuous-outcome">
+<h3>Continuous outcome<a class="headerlink" href="#continuous-outcome" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>When we don’t know the true variance-covariance structure of <span class="math notranslate nohighlight">\(\bf{Y}_i\)</span>, we mainly have to options: impose paramatric assumption of the covariance structure or leave it unspecied (robust method).</p></li>
 <li><p>Essentially, the estimate of <span class="math notranslate nohighlight">\(\beta\)</span> has the form of weighted least squares no matter which method we use, and it’s valid. The dierence lies on <span class="math notranslate nohighlight">\(\text{var}(\beta)\)</span>, depending on the different weights that are assumed.</p></li>
 </ul>
 <div class="section" id="parametric-method">
-<h4><span class="section-number">11.5.1.1. </span>Parametric method<a class="headerlink" href="#parametric-method" title="Permalink to this headline">¶</a></h4>
+<h4>Parametric method<a class="headerlink" href="#parametric-method" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>Parametric model on <span class="math notranslate nohighlight">\(\text{var}(Y_i)\)</span>. The model is then fully specied: first two moments and distribution, then we can use ML or REML method to find the MLE of the parameters and make inference on them.</p></li>
 <li><p>The advantage on of REML over ML is that, the ML estimates of the variance components, <span class="math notranslate nohighlight">\(\sigma^2\)</span> the diagnoal part, is biased. Using REML can avoid this and get unbiased estimates.</p></li>
@@ -1387,7 +1389,7 @@ b --&gt; i1
 </ul>
 </div>
 <div class="section" id="robust-method">
-<h4><span class="section-number">11.5.1.2. </span>Robust method<a class="headerlink" href="#robust-method" title="Permalink to this headline">¶</a></h4>
+<h4>Robust method<a class="headerlink" href="#robust-method" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>Without assuming the parametric form of <span class="math notranslate nohighlight">\(\text{var}({\bf Y}_i)\)</span>, we may select a “working” covariance matrix as the weight, say <span class="math notranslate nohighlight">\(W\)</span>. Then the robust estimate of <span class="math notranslate nohighlight">\(\beta\)</span> is given by</p>
 <div class="math notranslate nohighlight">
@@ -1405,11 +1407,11 @@ b --&gt; i1
 </div>
 </div>
 <div class="section" id="discrete-outcome">
-<h3><span class="section-number">11.5.2. </span>Discrete outcome<a class="headerlink" href="#discrete-outcome" title="Permalink to this headline">¶</a></h3>
+<h3>Discrete outcome<a class="headerlink" href="#discrete-outcome" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="marginal-model-using-gee">
-<h4><span class="section-number">11.5.2.1. </span>Marginal model (using GEE)<a class="headerlink" href="#marginal-model-using-gee" title="Permalink to this headline">¶</a></h4>
+<h4>Marginal model (using GEE)<a class="headerlink" href="#marginal-model-using-gee" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="why-gee">
-<h5><span class="section-number">11.5.2.1.1. </span><strong>Why GEE</strong><a class="headerlink" href="#why-gee" title="Permalink to this headline">¶</a></h5>
+<h5><strong>Why GEE</strong><a class="headerlink" href="#why-gee" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li><p>We can not easily generalize the rules used in continuous type outcome to discrete outcome, since there is no ready to use multivariate version of discrete distributions corresponding to the univariate ones (binomial/Poisson)</p></li>
 <li><p><strong>Simplicity</strong>: formulating quasi-score equation only needs to specify the first two moments of the outcomes; the variance is always a function of the mean of the outcome</p></li>
@@ -1417,7 +1419,7 @@ b --&gt; i1
 </ul>
 </div>
 <div class="section" id="details-of-gee">
-<h5><span class="section-number">11.5.2.1.2. </span><strong>Details of GEE</strong><a class="headerlink" href="#details-of-gee" title="Permalink to this headline">¶</a></h5>
+<h5><strong>Details of GEE</strong><a class="headerlink" href="#details-of-gee" title="Permalink to this headline">¶</a></h5>
 <ul>
 <li><p>GEE function:</p>
 <div class="math notranslate nohighlight">
@@ -1440,7 +1442,7 @@ b --&gt; i1
 </ul>
 </div>
 <div class="section" id="comments-on-gee">
-<h5><span class="section-number">11.5.2.1.3. </span><strong>Comments on GEE</strong><a class="headerlink" href="#comments-on-gee" title="Permalink to this headline">¶</a></h5>
+<h5><strong>Comments on GEE</strong><a class="headerlink" href="#comments-on-gee" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li><p>GEE is the maximum likelihood score equation for multivariate Gaussian data, and for binary data when <span class="math notranslate nohighlight">\(\text{var}(Y_i)\)</span> is correclty specified.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is consistent when sample size goes to infinity even when <span class="math notranslate nohighlight">\(\text{var}(Y_i)\)</span> is incorrectly specified</p></li>
@@ -1450,7 +1452,7 @@ b --&gt; i1
 </div>
 </div>
 <div class="section" id="appendix-limitation-of-ols-models-in-analyzing-repeated-measures-data">
-<h2><span class="section-number">11.6. </span>Appendix: Limitation of OLS models in analyzing repeated measures data<a class="headerlink" href="#appendix-limitation-of-ols-models-in-analyzing-repeated-measures-data" title="Permalink to this headline">¶</a></h2>
+<h2>Appendix: Limitation of OLS models in analyzing repeated measures data<a class="headerlink" href="#appendix-limitation-of-ols-models-in-analyzing-repeated-measures-data" title="Permalink to this headline">¶</a></h2>
 <p><em>Date: Feb 28, 2014</em></p>
 <ul class="simple">
 <li><p>One of the most important assumptions for appropriate F-tests when using OLS in repeated measures data is that there is a constant correlation among multiple measure- ments within a subject.</p></li>
@@ -1514,13 +1516,13 @@ b --&gt; i1
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">10. </span>Competing risk models</p>
+            <p class="prev-next-title">Competing risk models</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Note-Cox_PH_model.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>​Cox PH model</p>
+        <p class="prev-next-title">​Cox PH model</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

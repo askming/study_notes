@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7. Stochastic Gradient Decent (SGD) &#8212; Study Notes</title>
+    <title>Stochastic Gradient Decent (SGD) &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,9 +37,12 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
@@ -55,8 +58,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8. Tree/Random Forest (Bagging)" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" />
-    <link rel="prev" title="6. Naive Bayes" href="Note-Naive%20Bayes.html" />
+    <link rel="next" title="Tree/Random Forest (Bagging)" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" />
+    <link rel="prev" title="Naive Bayes" href="Note-Naive%20Bayes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,12 +111,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   1. [book] Analysis of Observational Health Care Data Using SAS
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Causal%20inference%20in%20statistics%20a%20primer.html">
-   2. [book] Causal inference in statistics
+   [book] Causal inference in statistics
    <em>
     a primer
    </em>
@@ -121,72 +124,72 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
-   3. [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
-   4. [book] Fundamentals of Clinical Trials (4th edition)
+   [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
-   5. [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">
-   6. [book] Regression Modeling Strategies
+   [book] Regression Modeling Strategies
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Adaptive%20Trial%20Design.html">
-   7. Adaptive Clinical Trial Design
+   Adaptive Clinical Trial Design
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
-   8. Why analysis of stratified randomization trial data need to account for the stratification factors?
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
-   9. Association vs. Prediction vs. Causation
+   Association vs. Prediction vs. Causation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">
-   10. Competing risk models
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Correlated%20Data%20Analysis.html">
-   11. Correlated/Longitudinal Data Analysis
+   Correlated/Longitudinal Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Cox_PH_model.html">
-   12. ​Cox PH model
+   ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-FDA%20guidances%20for%20industry.html">
-   13. Notes on FDA Guidances for Industry
+   Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Group_Sequential_Trial_Design.html">
-   14. Notes on Group Sequential Trial Design​
+   Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-ICH%20guidelines.html">
-   15. Notes on ICH guidelines​
+   Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-MDD%20%26%20Effect%20size.html">
-   16. Power,
+   Power,
    <strong>
     MDD
    </strong>
@@ -203,22 +206,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Monte%20Carlo%20method.html">
-   17. Monte Carlo Method
+   Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Multiplicity%20in%20Clinical%20Trials.html">
-   18. Multiplicity in Clinical Trials
+   Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Quantile%20regression.html">
-   19. Quantile regression
+   Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Survival_Analysis.html">
-   20. Survival Analysis
+   Survival Analysis
   </a>
  </li>
 </ul>
@@ -230,12 +233,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
-   1. How R searches and finds stuff
+   How R searches and finds stuff
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
-   2. Notes on
+   Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
      matplotlib
@@ -252,42 +255,42 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   1. [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Python%20Data%20Science%20Handbook.html">
-   2. [book] Python Data Science Handbook
+   [book] Python Data Science Handbook
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Boosting.html">
-   3. Boosting
+   Boosting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Cluster%20analysis.html">
-   4. Cluster analysis
+   Cluster analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Machine%20Learning%20%28General%29.html">
-   5. ​Machine Learning (General)
+   ​Machine Learning (General)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Naive%20Bayes.html">
-   6. Naive Bayes
+   Naive Bayes
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. Stochastic Gradient Decent (SGD)
+   Stochastic Gradient Decent (SGD)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   8. Tree/Random Forest (Bagging)
+   Tree/Random Forest (Bagging)
   </a>
  </li>
 </ul>
@@ -299,12 +302,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-Learning%20React.html">
-   1. Learning React
+   Learning React
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
-   2. SQL study notes
+   SQL study notes
   </a>
  </li>
 </ul>
@@ -316,12 +319,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   1. Miscellaneous Study Notes
+   Miscellaneous Study Notes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   2. Pharmacedutical development
+   Pharmacedutical development
   </a>
  </li>
 </ul>
@@ -425,7 +428,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="stochastic-gradient-decent-sgd">
-<h1><span class="section-number">7. </span>Stochastic Gradient Decent (SGD)<a class="headerlink" href="#stochastic-gradient-decent-sgd" title="Permalink to this headline">¶</a></h1>
+<h1>Stochastic Gradient Decent (SGD)<a class="headerlink" href="#stochastic-gradient-decent-sgd" title="Permalink to this headline">¶</a></h1>
 <p><strong>Stochastic gradient descent</strong> is a gradient descent optimization method for minimizing an objective function that is written as a sum of differentiable functions.</p>
 <p>Evaluating the sum-gradient may require expensive evaluations of the gradients from all summand functions. When the training set is enormous and no simple formulas exist, evaluating the sums of gradients becomes very expensive, because evaluating the gradient requires evaluating all the summand functions’ gradients. To economize on the computational cost at every iteration, stochastic gradient descent samples a <em>subset</em> of summand functions at every step. This is very effective in the case of large-scale machine learning problems.</p>
 <p>In pseudocode, stochastic gradient descent can be presented as follows:</p>
@@ -476,13 +479,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6. </span>Naive Bayes</p>
+            <p class="prev-next-title">Naive Bayes</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Tree/Random Forest (Bagging)</p>
+        <p class="prev-next-title">Tree/Random Forest (Bagging)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -597,6 +597,9 @@ j --> l[Likelihood based]
 k --> l
 b --> i1
 ```
+- G(eneralized) is used for non-normal outcoes
+- GEE is used for correlated data, and for both continuous and discrete outcomes; when used in continuous outcome, it is equivalent to LMM (linear mixed model)
+- GEE and GLMM (generalized linear mixed model) are not equivalent as $E(g(x))\ne g(E(x))$, where $g(\cdot)$ is a non-linear function (or transformation).
 
 ### Continuous outcome
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12. ​Cox PH model &#8212; Study Notes</title>
+    <title>​Cox PH model &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,9 +37,12 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
@@ -57,8 +60,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13. Notes on FDA Guidances for Industry" href="Note-FDA%20guidances%20for%20industry.html" />
-    <link rel="prev" title="11. Correlated/Longitudinal Data Analysis" href="Note-Correlated%20Data%20Analysis.html" />
+    <link rel="next" title="Notes on FDA Guidances for Industry" href="Note-FDA%20guidances%20for%20industry.html" />
+    <link rel="prev" title="Correlated/Longitudinal Data Analysis" href="Note-Correlated%20Data%20Analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,12 +113,12 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   1. [book] Analysis of Observational Health Care Data Using SAS
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Causal%20inference%20in%20statistics%20a%20primer.html">
-   2. [book] Causal inference in statistics
+   [book] Causal inference in statistics
    <em>
     a primer
    </em>
@@ -123,72 +126,72 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
-   3. [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
-   4. [book] Fundamentals of Clinical Trials (4th edition)
+   [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
-   5. [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
-   6. [book] Regression Modeling Strategies
+   [book] Regression Modeling Strategies
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
-   7. Adaptive Clinical Trial Design
+   Adaptive Clinical Trial Design
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
-   8. Why analysis of stratified randomization trial data need to account for the stratification factors?
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
-   9. Association vs. Prediction vs. Causation
+   Association vs. Prediction vs. Causation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   10. Competing risk models
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Correlated%20Data%20Analysis.html">
-   11. Correlated/Longitudinal Data Analysis
+   Correlated/Longitudinal Data Analysis
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   12. ​Cox PH model
+   ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
-   13. Notes on FDA Guidances for Industry
+   Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
-   14. Notes on Group Sequential Trial Design​
+   Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-ICH%20guidelines.html">
-   15. Notes on ICH guidelines​
+   Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
-   16. Power,
+   Power,
    <strong>
     MDD
    </strong>
@@ -205,22 +208,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
-   17. Monte Carlo Method
+   Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
-   18. Multiplicity in Clinical Trials
+   Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Quantile%20regression.html">
-   19. Quantile regression
+   Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Survival_Analysis.html">
-   20. Survival Analysis
+   Survival Analysis
   </a>
  </li>
 </ul>
@@ -232,12 +235,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html">
-   1. How R searches and finds stuff
+   How R searches and finds stuff
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
-   2. Notes on
+   Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
      matplotlib
@@ -254,42 +257,42 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   1. [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
-   2. [book] Python Data Science Handbook
+   [book] Python Data Science Handbook
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Boosting.html">
-   3. Boosting
+   Boosting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
-   4. Cluster analysis
+   Cluster analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
-   5. ​Machine Learning (General)
+   ​Machine Learning (General)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
-   6. Naive Bayes
+   Naive Bayes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
-   7. Stochastic Gradient Decent (SGD)
+   Stochastic Gradient Decent (SGD)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   8. Tree/Random Forest (Bagging)
+   Tree/Random Forest (Bagging)
   </a>
  </li>
 </ul>
@@ -301,12 +304,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-Learning%20React.html">
-   1. Learning React
+   Learning React
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
-   2. SQL study notes
+   SQL study notes
   </a>
  </li>
 </ul>
@@ -318,12 +321,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   1. Miscellaneous Study Notes
+   Miscellaneous Study Notes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   2. Pharmacedutical development
+   Pharmacedutical development
   </a>
  </li>
 </ul>
@@ -415,17 +418,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#assumptions">
-   12.1. Assumptions
+   Assumptions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-model">
-   12.2. The model
+   The model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#checklist-when-fitting-the-cox-model-kragh2021analysis">
-   12.3. Checklist when fitting the Cox model
+   Checklist when fitting the Cox model
    <span class="xref cite cite-p">
     kragh2021analysis
    </span>
@@ -433,24 +436,24 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#before-fitting-the-model">
-     12.3.1. Before fitting the model
+     Before fitting the model
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#after-fitting-the-model">
-     12.3.2. After fitting the model
+     After fitting the model
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#alternatives-modifications-to-cox-ph-model">
-   12.4. Alternatives/modifications to Cox PH model
+   Alternatives/modifications to Cox PH model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#alternative-hr-uno2014moving">
-   12.5. Alternative HR
+   Alternative HR
    <span class="xref cite cite-p">
     uno2014moving
    </span>
@@ -478,17 +481,17 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#assumptions">
-   12.1. Assumptions
+   Assumptions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-model">
-   12.2. The model
+   The model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#checklist-when-fitting-the-cox-model-kragh2021analysis">
-   12.3. Checklist when fitting the Cox model
+   Checklist when fitting the Cox model
    <span class="xref cite cite-p">
     kragh2021analysis
    </span>
@@ -496,24 +499,24 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#before-fitting-the-model">
-     12.3.1. Before fitting the model
+     Before fitting the model
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#after-fitting-the-model">
-     12.3.2. After fitting the model
+     After fitting the model
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#alternatives-modifications-to-cox-ph-model">
-   12.4. Alternatives/modifications to Cox PH model
+   Alternatives/modifications to Cox PH model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#alternative-hr-uno2014moving">
-   12.5. Alternative HR
+   Alternative HR
    <span class="xref cite cite-p">
     uno2014moving
    </span>
@@ -529,10 +532,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="cox-ph-model">
-<h1><span class="section-number">12. </span>​Cox PH model<a class="headerlink" href="#cox-ph-model" title="Permalink to this headline">¶</a></h1>
+<h1>​Cox PH model<a class="headerlink" href="#cox-ph-model" title="Permalink to this headline">¶</a></h1>
 <hr>
 <div class="section" id="assumptions">
-<h2><span class="section-number">12.1. </span>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h2>
+<h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h2>
 <p>Though the Cox model is non-parametric to the extent that no assumptions are made about form of the baseline hazard, there are still a number of important issues which need be assessed before the model results can be safely applied.</p>
 <ol>
 <li><p><strong>Non-informative censoring</strong>: the mechanisms giving rise to censoring of individual subjects are not related to the probability of an event occurring.</p></li>
@@ -558,7 +561,7 @@
 </ol>
 </div>
 <div class="section" id="the-model">
-<h2><span class="section-number">12.2. </span>The model<a class="headerlink" href="#the-model" title="Permalink to this headline">¶</a></h2>
+<h2>The model<a class="headerlink" href="#the-model" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Model specification</p>
 <ul>
@@ -605,9 +608,9 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </div>
 <div class="section" id="checklist-when-fitting-the-cox-model-kragh2021analysis">
-<h2><span class="section-number">12.3. </span>Checklist when fitting the Cox model <span id="id1">[<a class="reference internal" href="#id5">Kragh Andersen <em>et al.</em>, 2021</a>]</span><a class="headerlink" href="#checklist-when-fitting-the-cox-model-kragh2021analysis" title="Permalink to this headline">¶</a></h2>
+<h2>Checklist when fitting the Cox model <span id="id1">[<a class="reference internal" href="#id5">Kragh Andersen <em>et al.</em>, 2021</a>]</span><a class="headerlink" href="#checklist-when-fitting-the-cox-model-kragh2021analysis" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="before-fitting-the-model">
-<h3><span class="section-number">12.3.1. </span>Before fitting the model<a class="headerlink" href="#before-fitting-the-model" title="Permalink to this headline">¶</a></h3>
+<h3>Before fitting the model<a class="headerlink" href="#before-fitting-the-model" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Checks on the covariates to be included in the model</strong></p></li>
 <li><p><strong>Check dates</strong></p></li>
@@ -646,7 +649,7 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </div>
 <div class="section" id="after-fitting-the-model">
-<h3><span class="section-number">12.3.2. </span>After fitting the model<a class="headerlink" href="#after-fitting-the-model" title="Permalink to this headline">¶</a></h3>
+<h3>After fitting the model<a class="headerlink" href="#after-fitting-the-model" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Check PH and the functional form</strong></p>
 <ul>
@@ -703,7 +706,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="section" id="alternatives-modifications-to-cox-ph-model">
-<h2><span class="section-number">12.4. </span>Alternatives/modifications to Cox PH model<a class="headerlink" href="#alternatives-modifications-to-cox-ph-model" title="Permalink to this headline">¶</a></h2>
+<h2>Alternatives/modifications to Cox PH model<a class="headerlink" href="#alternatives-modifications-to-cox-ph-model" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><p><strong>Extended Cox model</strong> (with time-dependent coefficients when PH assumption doesn’t hold)</p>
 <p>​											$<span class="math notranslate nohighlight">\(\lambda(t, x) = \lambda_0(t)\exp(\beta_1X_1 + \sigma_1X_2g(t))\)</span>$</p>
@@ -738,7 +741,7 @@ $<span class="math notranslate nohighlight">\(
 </ol>
 </div>
 <div class="section" id="alternative-hr-uno2014moving">
-<h2><span class="section-number">12.5. </span>Alternative HR <span id="id2">[<a class="reference internal" href="#id6">Uno <em>et al.</em>, 2014</a>]</span><a class="headerlink" href="#alternative-hr-uno2014moving" title="Permalink to this headline">¶</a></h2>
+<h2>Alternative HR <span id="id2">[<a class="reference internal" href="#id6">Uno <em>et al.</em>, 2014</a>]</span><a class="headerlink" href="#alternative-hr-uno2014moving" title="Permalink to this headline">¶</a></h2>
 <p><img alt="image-20210618135446172" src="https://raw.githubusercontent.com/askming/picgo/master/image-20210618135446172.png" /></p>
 <ul class="simple">
 <li><p>Hazard ratio (HR) may not always be a good summary statistic in quantifying the between-group difference in survival analysis for the following reasons</p>
@@ -812,13 +815,13 @@ $<span class="math notranslate nohighlight">\(
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">11. </span>Correlated/Longitudinal Data Analysis</p>
+            <p class="prev-next-title">Correlated/Longitudinal Data Analysis</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Note-FDA%20guidances%20for%20industry.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Notes on FDA Guidances for Industry</p>
+        <p class="prev-next-title">Notes on FDA Guidances for Industry</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

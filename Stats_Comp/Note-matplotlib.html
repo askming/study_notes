@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Notes on matplotlib &#8212; Study Notes</title>
+    <title>Notes on matplotlib &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,9 +37,12 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
@@ -55,8 +58,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html" />
-    <link rel="prev" title="1. How R searches and finds stuff" href="How%20R%20searches%20and%20finds%20stuff.html" />
+    <link rel="next" title="[book] Hands-On Machine Learning with Scikit-Learn and TensorFlow" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html" />
+    <link rel="prev" title="How R searches and finds stuff" href="How%20R%20searches%20and%20finds%20stuff.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,12 +111,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   1. [book] Analysis of Observational Health Care Data Using SAS
+   [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Causal%20inference%20in%20statistics%20a%20primer.html">
-   2. [book] Causal inference in statistics
+   [book] Causal inference in statistics
    <em>
     a primer
    </em>
@@ -121,72 +124,72 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Data%20Analysis%20Using%20Regression%20and%20Multilevel%20Hierarchical%20Models.html">
-   3. [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
-   4. [book] Fundamentals of Clinical Trials (4th edition)
+   [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
-   5. [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">
-   6. [book] Regression Modeling Strategies
+   [book] Regression Modeling Strategies
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Adaptive%20Trial%20Design.html">
-   7. Adaptive Clinical Trial Design
+   Adaptive Clinical Trial Design
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
-   8. Why analysis of stratified randomization trial data need to account for the stratification factors?
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
-   9. Association vs. Prediction vs. Causation
+   Association vs. Prediction vs. Causation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">
-   10. Competing risk models
+   Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Correlated%20Data%20Analysis.html">
-   11. Correlated/Longitudinal Data Analysis
+   Correlated/Longitudinal Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Cox_PH_model.html">
-   12. ​Cox PH model
+   ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-FDA%20guidances%20for%20industry.html">
-   13. Notes on FDA Guidances for Industry
+   Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Group_Sequential_Trial_Design.html">
-   14. Notes on Group Sequential Trial Design​
+   Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-ICH%20guidelines.html">
-   15. Notes on ICH guidelines​
+   Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-MDD%20%26%20Effect%20size.html">
-   16. Power,
+   Power,
    <strong>
     MDD
    </strong>
@@ -203,22 +206,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Monte%20Carlo%20method.html">
-   17. Monte Carlo Method
+   Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Multiplicity%20in%20Clinical%20Trials.html">
-   18. Multiplicity in Clinical Trials
+   Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Quantile%20regression.html">
-   19. Quantile regression
+   Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats/Note-Survival_Analysis.html">
-   20. Survival Analysis
+   Survival Analysis
   </a>
  </li>
 </ul>
@@ -230,12 +233,12 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="How%20R%20searches%20and%20finds%20stuff.html">
-   1. How R searches and finds stuff
+   How R searches and finds stuff
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Notes on
+   Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
      matplotlib
@@ -252,42 +255,42 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   1. [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
-   2. [book] Python Data Science Handbook
+   [book] Python Data Science Handbook
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Boosting.html">
-   3. Boosting
+   Boosting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
-   4. Cluster analysis
+   Cluster analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
-   5. ​Machine Learning (General)
+   ​Machine Learning (General)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
-   6. Naive Bayes
+   Naive Bayes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
-   7. Stochastic Gradient Decent (SGD)
+   Stochastic Gradient Decent (SGD)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   8. Tree/Random Forest (Bagging)
+   Tree/Random Forest (Bagging)
   </a>
  </li>
 </ul>
@@ -299,12 +302,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-Learning%20React.html">
-   1. Learning React
+   Learning React
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
-   2. SQL study notes
+   SQL study notes
   </a>
  </li>
 </ul>
@@ -316,12 +319,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   1. Miscellaneous Study Notes
+   Miscellaneous Study Notes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   2. Pharmacedutical development
+   Pharmacedutical development
   </a>
  </li>
 </ul>
@@ -413,54 +416,54 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#challenges-to-new-users">
-   2.1. Challenges to new users
+   Challenges to new users
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reasons-to-use-matplotlib">
-   2.2. Reasons to use matplotlib
+   Reasons to use matplotlib
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ways-to-use-matplotlib">
-   2.3. Ways to use matplotlib
+   Ways to use matplotlib
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-premises">
-     2.3.1. Basic Premises
+     Basic Premises
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#key-steps-for-learning-how-to-use-matplotlib">
-       2.3.1.1. Key steps for learning how to use matplotlib
+       Key steps for learning how to use matplotlib
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#parts-of-a-figure">
-       2.3.1.2. Parts of a Figure
+       Parts of a Figure
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#making-plots">
-     2.3.2. Making plots
+     Making plots
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#plot-the-data-using-the-standard-pandas-plotting-function">
-       2.3.2.1. Plot the data using the standard pandas plotting function
+       Plot the data using the standard pandas plotting function
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#customizing-the-plot">
-       2.3.2.2. Customizing the plot
+       Customizing the plot
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#multiple-plots-axes-in-one-figure">
-       2.3.2.3. Multiple plots (axes) in one figure
+       Multiple plots (axes) in one figure
       </a>
      </li>
     </ul>
@@ -489,54 +492,54 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#challenges-to-new-users">
-   2.1. Challenges to new users
+   Challenges to new users
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reasons-to-use-matplotlib">
-   2.2. Reasons to use matplotlib
+   Reasons to use matplotlib
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ways-to-use-matplotlib">
-   2.3. Ways to use matplotlib
+   Ways to use matplotlib
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-premises">
-     2.3.1. Basic Premises
+     Basic Premises
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#key-steps-for-learning-how-to-use-matplotlib">
-       2.3.1.1. Key steps for learning how to use matplotlib
+       Key steps for learning how to use matplotlib
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#parts-of-a-figure">
-       2.3.1.2. Parts of a Figure
+       Parts of a Figure
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#making-plots">
-     2.3.2. Making plots
+     Making plots
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#plot-the-data-using-the-standard-pandas-plotting-function">
-       2.3.2.1. Plot the data using the standard pandas plotting function
+       Plot the data using the standard pandas plotting function
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#customizing-the-plot">
-       2.3.2.2. Customizing the plot
+       Customizing the plot
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#multiple-plots-axes-in-one-figure">
-       2.3.2.3. Multiple plots (axes) in one figure
+       Multiple plots (axes) in one figure
       </a>
      </li>
     </ul>
@@ -553,9 +556,9 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="notes-on-matplotlib">
-<h1><span class="section-number">2. </span>Notes on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#notes-on-matplotlib" title="Permalink to this headline">¶</a></h1>
+<h1>Notes on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#notes-on-matplotlib" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="challenges-to-new-users">
-<h2><span class="section-number">2.1. </span>Challenges to new users<a class="headerlink" href="#challenges-to-new-users" title="Permalink to this headline">¶</a></h2>
+<h2>Challenges to new users<a class="headerlink" href="#challenges-to-new-users" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Matplotlib has two interfaces. The first is based on MATLAB and uses a <strong>state-based interface</strong>. The second option is an an <strong>object-oriented interface</strong>.</p>
 <ul>
@@ -576,18 +579,18 @@
 </ul>
 </div>
 <div class="section" id="reasons-to-use-matplotlib">
-<h2><span class="section-number">2.2. </span>Reasons to use matplotlib<a class="headerlink" href="#reasons-to-use-matplotlib" title="Permalink to this headline">¶</a></h2>
+<h2>Reasons to use matplotlib<a class="headerlink" href="#reasons-to-use-matplotlib" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The library allows you to create almost any visualization you could imagine</p></li>
 <li><p>There is a rich ecosystem of python tools built around it and many of the more advanced visualization tools use matplotlib as the base library.</p></li>
 </ul>
 </div>
 <div class="section" id="ways-to-use-matplotlib">
-<h2><span class="section-number">2.3. </span>Ways to use matplotlib<a class="headerlink" href="#ways-to-use-matplotlib" title="Permalink to this headline">¶</a></h2>
+<h2>Ways to use matplotlib<a class="headerlink" href="#ways-to-use-matplotlib" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-premises">
-<h3><span class="section-number">2.3.1. </span>Basic Premises<a class="headerlink" href="#basic-premises" title="Permalink to this headline">¶</a></h3>
+<h3>Basic Premises<a class="headerlink" href="#basic-premises" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="key-steps-for-learning-how-to-use-matplotlib">
-<h4><span class="section-number">2.3.1.1. </span>Key steps for learning how to use matplotlib <a class="footnote-reference brackets" href="#effective-matplotlib" id="id1">1</a><a class="headerlink" href="#key-steps-for-learning-how-to-use-matplotlib" title="Permalink to this headline">¶</a></h4>
+<h4>Key steps for learning how to use matplotlib <a class="footnote-reference brackets" href="#effective-matplotlib" id="id1">1</a><a class="headerlink" href="#key-steps-for-learning-how-to-use-matplotlib" title="Permalink to this headline">¶</a></h4>
 <ol class="simple">
 <li><p>Learn the basic matplotlib terminology, specifically what is a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and an <code class="docutils literal notranslate"><span class="pre">Axes</span></code>.</p>
 <ul class="simple">
@@ -602,12 +605,12 @@
 </ol>
 </div>
 <div class="section" id="parts-of-a-figure">
-<h4><span class="section-number">2.3.1.2. </span>Parts of a Figure <a class="footnote-reference brackets" href="#matplotlib-faq" id="id2">2</a><a class="headerlink" href="#parts-of-a-figure" title="Permalink to this headline">¶</a></h4>
+<h4>Parts of a Figure <a class="footnote-reference brackets" href="#matplotlib-faq" id="id2">2</a><a class="headerlink" href="#parts-of-a-figure" title="Permalink to this headline">¶</a></h4>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/ef2873fb_20200606075422.png?token=ABLIWWYVSPPPYEUHXVWDN7K7EBU6C" /></p>
 </div>
 </div>
 <div class="section" id="making-plots">
-<h3><span class="section-number">2.3.2. </span>Making plots<a class="headerlink" href="#making-plots" title="Permalink to this headline">¶</a></h3>
+<h3>Making plots<a class="headerlink" href="#making-plots" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
@@ -623,7 +626,7 @@
 </li>
 </ul>
 <div class="section" id="plot-the-data-using-the-standard-pandas-plotting-function">
-<h4><span class="section-number">2.3.2.1. </span>Plot the data using the standard pandas plotting function<a class="headerlink" href="#plot-the-data-using-the-standard-pandas-plotting-function" title="Permalink to this headline">¶</a></h4>
+<h4>Plot the data using the standard pandas plotting function<a class="headerlink" href="#plot-the-data-using-the-standard-pandas-plotting-function" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>It is a quick and easy way to prototype your visualization. Since most people are probably already doing some level of data manipulation/analysis in pandas as a first step, go ahead and use the basic plots to get started.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_10</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Sales&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span>
@@ -633,10 +636,10 @@
 </ul>
 </div>
 <div class="section" id="customizing-the-plot">
-<h4><span class="section-number">2.3.2.2. </span>Customizing the plot<a class="headerlink" href="#customizing-the-plot" title="Permalink to this headline">¶</a></h4>
+<h4>Customizing the plot<a class="headerlink" href="#customizing-the-plot" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="multiple-plots-axes-in-one-figure">
-<h4><span class="section-number">2.3.2.3. </span>Multiple plots (axes) in one figure<a class="headerlink" href="#multiple-plots-axes-in-one-figure" title="Permalink to this headline">¶</a></h4>
+<h4>Multiple plots (axes) in one figure<a class="headerlink" href="#multiple-plots-axes-in-one-figure" title="Permalink to this headline">¶</a></h4>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/44af9eec_20200606075451.png?token=ABLIWW26O3BNLFT77UGWQVK7EBU72" /></p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -687,13 +690,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>How R searches and finds stuff</p>
+            <p class="prev-next-title">How R searches and finds stuff</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>[book] Hands-On Machine Learning with Scikit-Learn and TensorFlow</p>
+        <p class="prev-next-title">[book] Hands-On Machine Learning with Scikit-Learn and TensorFlow</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

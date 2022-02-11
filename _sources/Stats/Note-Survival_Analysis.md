@@ -8,6 +8,18 @@ tags: survival analysis
 
 ## Survival analysis general
 
+### Definitions of survival endpoints
+
+*Guidance for Industry Clinical Trial Endpoints for the Approval of Cancer Drugs and Biologics*
+
+- OS: overall survival. time from randomization to death from any cause, and is measured in ITT population.
+- PFS: time from randomization until objective tumor progression or death.
+- TTP: time to progression. time from randomization until objective rumor progression; doesn't include deaths
+- DFS: disease free survival. time from randomization until recurrence of tumor or death for any cause. usually used in the adjuvant setting after definitive surgery or rediotherapy
+- ORR: objective response rate. proportion of patients with tumor size reduction of a predefined amount for a minimum time period.
+
+
+
 ### Counting process representation
 
 - The process $Y_i(t)$ is equal to 1 while a person is known to be at risk and 0 otherwise ($Y_i(t) = I(V_i < t \le T_i)$, where $V_i$ is the time of entering the study) and the process $N_i(t)$ denotes the number of observed events by time $t$, here simply given by $N_i(t) = I(V_i < t \le T_i, \delta_i=1)$
