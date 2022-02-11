@@ -23,6 +23,9 @@
 ### 1.5 Causal inference (Propensity score methods)
 - [Causal inference in statistics *a primer*](Stats/Book-Causal%20inference%20in%20statistics%20a%20primer.md)
 
+#### 1.5.1 Use of external control data in RCT
+
+
 
 ### 1.6 Meta-analysis methods
 
