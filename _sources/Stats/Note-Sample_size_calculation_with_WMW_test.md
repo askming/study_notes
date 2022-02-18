@@ -1,9 +1,6 @@
----
-tags: stats method, WMW test
----
+# Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
 
-Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
-============================================
+Based on {cite:p}`zhao2008sample`
 
 ### 1. When to use Wilcoxon-Mann-Whitney (WMW) test [^alias]?
 
@@ -54,3 +51,7 @@ When there is no ties, the sample size formula simplifies to
 $$N = \frac{(Z_{\alpha/2}+Z_{\beta})^2}{12t(1-t)(\hat{\mu}_1 -0.5)^2} = \frac{(Z_{\alpha/2}+Z_{\beta})^2}{12t(1-t)(\sum_{c=2}^Dp_c\sum_{d=1}^{c-1}q_d + 0.5\sum_{c=1}^Dp_cq_c-0.5)^2}$$
 
 [^alias]: also called two-sample Wilcoxon rank sum test or Mann-Whitney test
+
+```{bibliography}
+:filter: docname in docnames
+```

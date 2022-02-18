@@ -116,11 +116,11 @@ where
 
   
 
-### Method 2: without PO assumtion [^Zhao et al. 2207]
+### Method 2: without PO assumtion {cite:p}`zhao2008sample`
 
 [Link](./Note-Sample_size_calculation_with_WMW_test.md) to notes.
 
-### Method 3: without PO assumption[^ Tang 2011]
+### Method 3: without PO assumption {cite:p}`tang2011size`
 
 - Exact variance method for the size and power calculation for theWilcoxon–Mann–Whitney test for ordered categorical data.
 - Notes to be done
@@ -130,6 +130,6 @@ where
 [^whitehead]: Whitehead J. Sample size calculations for ordered categorical data. Statistics in medicine. 1993 Dec 30;12(24):2257-71.
 [^t-test]: t-test assumes both linearity (normal distribution) and parallelism (equal variance)
 
-[^Zhao et al. 2007]: Zhao, Yan D., Dewi Rahardja, and Yongming Qu. “Sample Size Calculation for the Wilcoxon–Mann–Whitney Test Adjusting for Ties.” *Statistics in Medicine* 27, no. 3 (2008): 462–68.Zhao et al. 2007 
-[^Tang 2011]: Tang, Yongqiang. “Size and Power Estimation for the Wilcoxon–Mann–Whitney Test for Ordered Categorical Data.” *Statistics in Medicine* 30, no. 29 (2011): 3461–70.
-
+```{bibliography}
+:filter: docname in docnames
+```

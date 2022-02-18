@@ -492,8 +492,9 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="sample-size-calculation-for-the-wilcoxon-mann-whitney-test-adjusting-for-ties">
 <h1>Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties<a class="headerlink" href="#sample-size-calculation-for-the-wilcoxon-mann-whitney-test-adjusting-for-ties" title="Permalink to this headline">¶</a></h1>
+<p>Based on <span id="id1">[<a class="reference internal" href="#id27">Zhao <em>et al.</em>, 2008</a>]</span></p>
 <div class="section" id="when-to-use-wilcoxon-mann-whitney-wmw-test">
-<h2>1. When to use Wilcoxon-Mann-Whitney (WMW) test <a class="footnote-reference brackets" href="#alias" id="id1">1</a>?<a class="headerlink" href="#when-to-use-wilcoxon-mann-whitney-wmw-test" title="Permalink to this headline">¶</a></h2>
+<h2>1. When to use Wilcoxon-Mann-Whitney (WMW) test <a class="footnote-reference brackets" href="#alias" id="id2">1</a>?<a class="headerlink" href="#when-to-use-wilcoxon-mann-whitney-wmw-test" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Non-parametric test for comparing two groups of observations on a <strong>continuous</strong> or <strong>ordered categorical (ordinal)</strong> variable when there is no underlying distributional assumption imposed on the data.</p></li>
 </ul>
@@ -531,9 +532,15 @@
 <p>When there is no ties, the sample size formula simplifies to</p>
 <div class="math notranslate nohighlight">
 \[N = \frac{(Z_{\alpha/2}+Z_{\beta})^2}{12t(1-t)(\hat{\mu}_1 -0.5)^2} = \frac{(Z_{\alpha/2}+Z_{\beta})^2}{12t(1-t)(\sum_{c=2}^Dp_c\sum_{d=1}^{c-1}q_d + 0.5\sum_{c=1}^Dp_cq_c-0.5)^2}\]</div>
+<p id="id3"><dl class="citation">
+<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id1">ZRQ08</a></span></dt>
+<dd><p>Yan D Zhao, Dewi Rahardja, and Yongming Qu. Sample size calculation for the wilcoxon–mann–whitney test adjusting for ties. <em>Statistics in medicine</em>, 27(3):462–468, 2008.</p>
+</dd>
+</dl>
+</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="alias"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="alias"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>also called two-sample Wilcoxon rank sum test or Mann-Whitney test</p>
 </dd>
 </dl>
