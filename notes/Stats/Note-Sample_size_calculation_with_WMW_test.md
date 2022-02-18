@@ -5,8 +5,20 @@ Based on {cite:p}`zhao2008sample`
 ### 1. When to use Wilcoxon-Mann-Whitney (WMW) test [^alias]?
 
 - Non-parametric test for comparing two groups of observations on a **continuous** or **ordered categorical (ordinal)** variable when there is no underlying distributional assumption imposed on the data.
+- Data representation
 
-### 2. Detail about WMW
+| Group | $C_1$      | $C_2$      | $\cdots$ | $C_D$      | Total |
+| ----- | ---------- | ---------- | -------- | ---------- | ----- |
+| A     | $m_1(p_1)$ | $m_2(p_2)$ | $\cdots$ | $m_D(p_D)$ | $m$   |
+| B     | $m_1(q_1)$ | $m_2(q_2)$ | $\cdots$ | $m_D(q_D)$ | $n$   |
+| Total | $M_1$      | $M_2$      | $\cdots$ | $M_D$      | $N$   |
+
+where
+- $N$ is the total sample size; $m$ and $n$ are sample sizes for Group A and B, respectively 
+- $M_D$ is the column total for Column $D$, which stands for distinct outcome value
+- $p_i$ = $m_i/m$, enclosed in the parenthese; $q_i$ is defined similarly
+
+### 2. Details about WMW
 
 WMW uses the competing probability $\pi = Pr(X > Y) + 0.5Pr(X = Y)$ to quantify the difference between two groups under comparison, where X and Y are random variables with CDF $F_X$ and $F_Y$, respectively. The null hypothesis is
 
@@ -31,6 +43,9 @@ $$z_0 = \frac{\hat{\pi} - 0.5}{\hat{\sigma}_0}\sim N(0, 1)$$
 In general, e.g. Sigel and Castellan recommended when $m=3$ or 4 and $n>12$; $m>4$ and $n>10$, above normal approximation can be made.
 
 ### 3. Sample size formula
+- To compute the total sample size $N$ , we assume the treatment fraction $t = n/N$ is known.
+- In addition, we assume the proportions $p_1,\cdots, p_D$ and $q_1,\cdots,q_D$ in above table are known.
+
 
 Derived from the fact that 
 
