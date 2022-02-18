@@ -18,7 +18,7 @@
 
 - **VIF: variance inflation factor** of variable  $x_i$, higher the worse (usually < 5 is moderate), is defined as:
 
-  ​							$$\text{VIF}_i = \frac{1}{1-R_i^2}$$
+  $$\text{VIF}_i = \frac{1}{1-R_i^2}$$
 
   where $R_i^2$ is the *coefficient of determination* when regression $X_i$ on the rest of the indepdent variables.
 
