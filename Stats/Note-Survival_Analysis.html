@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="How R searches and finds stuff" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html" />
-    <link rel="prev" title="Quantile regression" href="Note-Quantile%20regression.html" />
+    <link rel="prev" title="Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties" href="Note-Sample%20size%20calculation%20with%20WMW%20test.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -150,6 +150,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Ordinal%20Outcome.html">
+   Analysis of ordinal outcome
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
    Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
@@ -224,6 +229,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Quantile%20regression.html">
    Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Sample%20size%20calculation%20with%20WMW%20test.html">
+   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -902,8 +912,8 @@
     \]</div>
 <ul>
 <li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-f9c763cd-0e58-47d4-ac08-e8f6409e584e">
-<span class="eqno">(12)<a class="headerlink" href="#equation-f9c763cd-0e58-47d4-ac08-e8f6409e584e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-65c884eb-bb85-4dc3-823f-11fd67dee798">
+<span class="eqno">(12)<a class="headerlink" href="#equation-65c884eb-bb85-4dc3-823f-11fd67dee798" title="Permalink to this equation">¶</a></span>\[\begin{align}
       \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc
@@ -972,11 +982,11 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Note-Quantile%20regression.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-Sample%20size%20calculation%20with%20WMW%20test.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Quantile regression</p>
+            <p class="prev-next-title">Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../Stats_Comp/How%20R%20searches%20and%20finds%20stuff.html" title="next page">

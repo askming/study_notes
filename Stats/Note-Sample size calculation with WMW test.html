@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Why analysis of stratified randomization trial data need to account for the stratification factors? &#8212; Study Notes</title>
+    <title>Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -47,6 +47,8 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -58,8 +60,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Association vs. Prediction vs. Causation" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html" />
-    <link rel="prev" title="Analysis of ordinal outcome" href="Note-Analysis%20of%20Ordinal%20Outcome.html" />
+    <link rel="next" title="Survival Analysis" href="Note-Survival_Analysis.html" />
+    <link rel="prev" title="Quantile regression" href="Note-Quantile%20regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -152,8 +154,8 @@
    Analysis of ordinal outcome
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
    Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
  </li>
@@ -229,8 +231,8 @@
    Quantile regression
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Sample%20size%20calculation%20with%20WMW%20test.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
   </a>
  </li>
@@ -383,7 +385,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Note-Analysis of Stratified Randomization Trial Data.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Sample size calculation with WMW test.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -403,7 +405,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Analysis of Stratified Randomization Trial Data.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Sample size calculation with WMW test.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -424,6 +426,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-to-use-wilcoxon-mann-whitney-wmw-test">
+   1. When to use Wilcoxon-Mann-Whitney (WMW) test ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detail-about-wmw">
+   2. Detail about WMW
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-size-formula">
+   3. Sample size formula
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -431,84 +456,88 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Why analysis of stratified randomization trial data need to account for the stratification factors?</h1>
+                <h1>Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-to-use-wilcoxon-mann-whitney-wmw-test">
+   1. When to use Wilcoxon-Mann-Whitney (WMW) test ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detail-about-wmw">
+   2. Detail about WMW
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-size-formula">
+   3. Sample size formula
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="why-analysis-of-stratified-randomization-trial-data-need-to-account-for-the-stratification-factors">
-<h1>Why analysis of stratified randomization trial data need to account for the stratification factors?<a class="headerlink" href="#why-analysis-of-stratified-randomization-trial-data-need-to-account-for-the-stratification-factors" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>The use of stratified randomization induces a dependence in the data between patients. As the <a class="reference external" href="http://www.bmj.com/content/345/bmj.e5840">BMJ article </a>graphically illustrates, the treatment specific means are positively correlated when considering running repeated trials. It turns out that the consequence of this non-independence is that if one analyses the trial ignoring the factors used in the stratified randomization, the standard error estimate is larger than it should be. That is, if one uses stratified randomization in order to ensure balance between arms in respect of the baseline variables used in the randomization, and one ignores these baseline variables in the analysis, the benefit in terms of improved precision is not realised in the calculated standard error. The effect of this is that power is lower than it needs to be, and the type 1 error controlled at lower level than intended.</p>
-</div></blockquote>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># simulation to demontrate the correlation (in outcome) among subjects from stratified randomization</span>
-<span class="c1"># for simplicity, this program assumes only two strata defined by one stratification variable; the block size is set to be 4</span>
-<span class="c1"># assume treatment effect is 0, however it doesn&#39;t affect the simulation result</span>
-<span class="n">y_bar</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
-
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span> <span class="c1"># number of simulations</span>
-	<span class="n">n1</span> <span class="o">=</span> <span class="m">1</span>
-	<span class="n">n2</span> <span class="o">=</span> <span class="m">1</span>
-	<span class="n">trt1</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">)</span> <span class="c1"># randomly assign treatment for the first patient in each stratum</span>
-	<span class="n">trt2</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">)</span> <span class="c1"># stratum 2</span>
-	<span class="n">y1</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">+</span> <span class="m">0</span><span class="o">*</span><span class="n">trt1</span> <span class="o">+</span> <span class="m">3</span><span class="o">*</span><span class="m">0</span> <span class="o">+</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-	<span class="n">y2</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">+</span> <span class="m">0</span><span class="o">*</span><span class="n">trt2</span> <span class="o">+</span> <span class="m">3</span><span class="o">*</span><span class="m">1</span> <span class="o">+</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="c1"># effect from x is 3</span>
-
-	<span class="nf">while</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">&lt;</span> <span class="m">200</span><span class="p">){</span>
-		<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">)</span>
-		<span class="nf">if </span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="m">0</span><span class="p">){</span>
-			<span class="n">n1</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="m">1</span>
-			<span class="nf">if </span><span class="p">(</span><span class="n">n1</span> <span class="o">%%</span> <span class="m">4</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1"># block size is set to 8</span>
-				<span class="n">trt</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">)</span>
-				<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">+</span> <span class="m">0</span><span class="o">*</span><span class="n">trt</span> <span class="o">+</span> <span class="m">3</span><span class="o">*</span><span class="m">0</span> <span class="o">+</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-				<span class="n">trt1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">trt1</span><span class="p">,</span> <span class="n">trt</span><span class="p">)</span>
-				<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-			<span class="p">}</span>
-			<span class="n">else</span> <span class="p">{</span>
-				<span class="n">trt</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="nf">tail</span><span class="p">(</span><span class="n">trt1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-				<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">+</span> <span class="m">0</span><span class="o">*</span><span class="n">trt</span> <span class="o">+</span> <span class="m">3</span><span class="o">*</span><span class="m">0</span> <span class="o">+</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-				<span class="n">trt1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">trt1</span><span class="p">,</span> <span class="n">trt</span><span class="p">)</span>
-				<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-			<span class="p">}</span>
-		<span class="p">}</span>
-		<span class="n">else</span> <span class="p">{</span>
-			<span class="n">n2</span> <span class="o">=</span> <span class="n">n2</span> <span class="o">+</span> <span class="m">1</span>
-			<span class="nf">if </span><span class="p">(</span><span class="n">n2</span> <span class="o">%%</span> <span class="m">4</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
-				<span class="n">trt</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">)</span>
-				<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">+</span> <span class="m">0</span><span class="o">*</span><span class="n">trt</span> <span class="o">+</span> <span class="m">3</span><span class="o">*</span><span class="m">1</span> <span class="o">+</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-				<span class="n">trt2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">trt2</span><span class="p">,</span> <span class="n">trt</span><span class="p">)</span>
-				<span class="n">y2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>				
-			<span class="p">}</span>
-			<span class="n">else</span> <span class="p">{</span>
-				<span class="n">trt</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="nf">tail</span><span class="p">(</span><span class="n">trt2</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-				<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">+</span> <span class="m">0</span><span class="o">*</span><span class="n">trt</span> <span class="o">+</span> <span class="m">3</span><span class="o">*</span><span class="m">1</span> <span class="o">+</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-				<span class="n">trt2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">trt2</span><span class="p">,</span> <span class="n">trt</span><span class="p">)</span>
-				<span class="n">y2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-			<span class="p">}</span>
-		<span class="p">}</span>
-	<span class="p">}</span> <span class="c1"># end of while loop</span>
-
-	<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="n">trt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">trt1</span><span class="p">,</span> <span class="n">trt2</span><span class="p">),</span> <span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">n1</span><span class="p">),</span> <span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">n2</span><span class="p">)))</span>
-	<span class="n">out</span> <span class="o">&lt;-</span> <span class="n">df</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">trt</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">summarize</span><span class="p">(</span><span class="n">m</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-	<span class="n">y_bar</span> <span class="o">&lt;-</span> <span class="nf">bind_rows</span><span class="p">(</span><span class="n">y_bar</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
-
-<span class="p">}</span> <span class="c1"># end of for loop</span>
-
-<span class="c1"># exam the correlation in the outcome between the treatment groups </span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">y_bar</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">trt</span> <span class="o">==</span><span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">y_bar</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">trt</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="o">$</span><span class="n">m</span><span class="p">,</span> <span class="n">y</span><span class="o">$</span><span class="n">m</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="o">$</span><span class="n">m</span><span class="p">,</span> <span class="n">y</span><span class="o">$</span><span class="n">m</span><span class="p">))</span>
-<span class="c1"># [1] 0.5364252</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="sample-size-calculation-for-the-wilcoxon-mann-whitney-test-adjusting-for-ties">
+<h1>Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties<a class="headerlink" href="#sample-size-calculation-for-the-wilcoxon-mann-whitney-test-adjusting-for-ties" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="when-to-use-wilcoxon-mann-whitney-wmw-test">
+<h2>1. When to use Wilcoxon-Mann-Whitney (WMW) test <a class="footnote-reference brackets" href="#alias" id="id1">1</a>?<a class="headerlink" href="#when-to-use-wilcoxon-mann-whitney-wmw-test" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Non-parametric test for comparing two groups of observations on a <strong>continuous</strong> or <strong>ordered categorical (ordinal)</strong> variable when there is no underlying distributional assumption imposed on the data.</p></li>
+</ul>
 </div>
-<p><img alt="figure" src="../_images/stra_rand_data.png" /></p>
+<div class="section" id="detail-about-wmw">
+<h2>2. Detail about WMW<a class="headerlink" href="#detail-about-wmw" title="Permalink to this headline">¶</a></h2>
+<p>WMW uses the competing probability <span class="math notranslate nohighlight">\(\pi = Pr(X &gt; Y) + 0.5Pr(X = Y)\)</span> to quantify the difference between two groups under comparison, where X and Y are random variables with CDF <span class="math notranslate nohighlight">\(F_X\)</span> and <span class="math notranslate nohighlight">\(F_Y\)</span>, respectively. The null hypothesis is</p>
+<div class="math notranslate nohighlight">
+\[H_0: \pi = 0.5\]</div>
+<p>An unbiased estimator <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> of the competing probability <span class="math notranslate nohighlight">\(\pi\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\hat{\pi} = (mn)^{-1}\sum_{i=1}^m\sum_{j=1}^n\delta(X_i - Y_j)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta(t) = 1\)</span> if <span class="math notranslate nohighlight">\(t&gt; 0\)</span>, 0.5 if <span class="math notranslate nohighlight">\(t=0\)</span>, and 0 if <span class="math notranslate nohighlight">\(t&lt;0\)</span>.</p>
+<p>The variance of <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> under the null hypothesis can be calculated as</p>
+<div class="math notranslate nohighlight">
+\[\hat{\sigma}^2_0 = V_0[\hat{\pi}] = \frac{N+1}{12mn} - \frac{1}{12N(N-1)mn}\sum_{c=1}^D(M_c^3 - M_c),\]</div>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are sample sizes for each group, <span class="math notranslate nohighlight">\(N=m+n\)</span> and <span class="math notranslate nohighlight">\(M_c\)</span> is the marginal total for a unique group defined by the outcome value. Where there is no ties, it reduces to <span class="math notranslate nohighlight">\((N+1)/(12mn)\)</span>.</p>
+<p>In WMW test, under null the z-statistic is construct as follows:</p>
+<div class="math notranslate nohighlight">
+\[z_0 = \frac{\hat{\pi} - 0.5}{\hat{\sigma}_0}\sim N(0, 1)\]</div>
+<p>In general, e.g. Sigel and Castellan recommended when <span class="math notranslate nohighlight">\(m=3\)</span> or 4 and <span class="math notranslate nohighlight">\(n&gt;12\)</span>; <span class="math notranslate nohighlight">\(m&gt;4\)</span> and <span class="math notranslate nohighlight">\(n&gt;10\)</span>, above normal approximation can be made.</p>
+</div>
+<div class="section" id="sample-size-formula">
+<h2>3. Sample size formula<a class="headerlink" href="#sample-size-formula" title="Permalink to this headline">¶</a></h2>
+<p>Derived from the fact that</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{\mu_1 - \mu_0}{\sigma_0}\right)^2 = \left(Z_{\alpha/2} + \frac{\sigma_1}{\sigma_0}Z_{\beta}\right)^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu_0\)</span>, <span class="math notranslate nohighlight">\(\sigma_0\)</span> and <span class="math notranslate nohighlight">\(\mu_1\)</span>, <span class="math notranslate nohighlight">\(\sigma_1\)</span> are the means and sd of <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> under the null and the alternative hypothesis, and <span class="math notranslate nohighlight">\(Z_{\alpha/2}\)</span> is the upper <span class="math notranslate nohighlight">\((\alpha/2)\)</span>th quantile of the standard normal distribution.</p>
+<p>Further assume <span class="math notranslate nohighlight">\(\sigma_0 = \sigma_1\)</span> along with the fact that <span class="math notranslate nohighlight">\(\mu_0 = 0.5\)</span>, the sample size formula simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{\mu_1 - \mu_0}{\sigma_0}\right)^2 = \left(Z_{\alpha/2} + Z_{\beta}\right)^2\]</div>
+<p>The final sample size formula for the WMW test is derived as follows:</p>
+<div class="math notranslate nohighlight">
+\[N = \frac{(Z_{\alpha/2}+Z_{\beta})^2(1-\sum_{c=1}^D((1-t)p_c+tq_c)^3)}{12t(1-t)(\sum_{c=2}^Dp_c\sum_{d=1}^{c-1}q_d + 0.5\sum_{c=1}^Dp_cq_c-0.5)^2}\]</div>
+<p>When there is no ties, the sample size formula simplifies to</p>
+<div class="math notranslate nohighlight">
+\[N = \frac{(Z_{\alpha/2}+Z_{\beta})^2}{12t(1-t)(\hat{\mu}_1 -0.5)^2} = \frac{(Z_{\alpha/2}+Z_{\beta})^2}{12t(1-t)(\sum_{c=2}^Dp_c\sum_{d=1}^{c-1}q_d + 0.5\sum_{c=1}^Dp_cq_c-0.5)^2}\]</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="alias"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>also called two-sample Wilcoxon rank sum test or Mann-Whitney test</p>
+</dd>
+</dl>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -542,17 +571,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Note-Analysis%20of%20Ordinal%20Outcome.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-Quantile%20regression.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Analysis of ordinal outcome</p>
+            <p class="prev-next-title">Quantile regression</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html" title="next page">
+    <a class='right-next' id="next-link" href="Note-Survival_Analysis.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Association vs. Prediction vs. Causation</p>
+        <p class="prev-next-title">Survival Analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

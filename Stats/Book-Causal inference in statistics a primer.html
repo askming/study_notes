@@ -150,6 +150,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Ordinal%20Outcome.html">
+   Analysis of ordinal outcome
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
    Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
@@ -224,6 +229,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Note-Quantile%20regression.html">
    Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Sample%20size%20calculation%20with%20WMW%20test.html">
+   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
   </a>
  </li>
  <li class="toctree-l1">
@@ -801,8 +811,8 @@ $<span class="math notranslate nohighlight">\(P_m(Y=y|Z=z,X=x)=P(Y=y|Z=z,X=x) \t
 <ul>
 <li><p><strong>The Causal Effect Rule</strong>: Given a graph G in which a set of variables PA are designated
 as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79b30681-a9fc-46f2-895b-79673862120b">
-<span class="eqno">(3)<a class="headerlink" href="#equation-79b30681-a9fc-46f2-895b-79673862120b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-28a65395-129c-494b-9b09-263541af3507">
+<span class="eqno">(3)<a class="headerlink" href="#equation-28a65395-129c-494b-9b09-263541af3507" title="Permalink to this equation">¶</a></span>\[\begin{align}
   P(Y = y| do(X = x)) &amp; = \sum_z P(Y = y | X = x, PA = z) P(PA = z)\\
   &amp; = \sum_z \frac{P(Y = y | X = x, PA = z) P(PA = z) * P(X=x|PA = z)}{P(X=x|PA = z)}\\
   &amp; = \sum_z \frac{P(Y = y, X = x, PA = z)}{P(X=x|PA = z)}
@@ -813,8 +823,8 @@ as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the c
 </div>
 <div class="section" id="multiple-interventions-and-the-truncated-product-rule">
 <h4>3.2.2 Multiple Interventions and the Truncated Product Rule<a class="headerlink" href="#multiple-interventions-and-the-truncated-product-rule" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-68a6d7e1-79ef-4a96-a695-f6aa9a2b03d4">
-<span class="eqno">(4)<a class="headerlink" href="#equation-68a6d7e1-79ef-4a96-a695-f6aa9a2b03d4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2d34c123-cfa9-40cd-bd11-ffbe41db60df">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2d34c123-cfa9-40cd-bd11-ffbe41db60df" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(x, y, z) &amp; = P(z)P(x|z)P(y|x, z)\\
 P(z, y|do(x)) &amp; = P_m(z)P_m(y|x, z) = P(z)P(y|x, z)\\
 \Rightarrow
@@ -842,8 +852,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p>When trying to find the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>, we want the nodes we condition on to block any “backdoor” path in which one end has an arrow into <span class="math notranslate nohighlight">\(X\)</span>, because such paths may make <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> dependent, but are obviously not transmitting causal influences from <span class="math notranslate nohighlight">\(X\)</span>, and if we do not block them, they will confound the effect that <span class="math notranslate nohighlight">\(X\)</span> has on <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
 <li><p>Consider the fact that <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is an empirical fact of nature, not a byproduct of our analysis. That means that any suitable variable or set of variables that we adjust on—whether it be <span class="math notranslate nohighlight">\(PA(X)\)</span> or any other set that conforms to the backdoor criterion—must return the same result for <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span>. In the case we looked at in Figure 3.6 (<span class="math notranslate nohighlight">\(Y \leftarrow X \leftarrow Z \rightarrow W \rightarrow Y\)</span>), this means that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2a89a338-b470-4110-8042-76b9ff4b4165">
-<span class="eqno">(5)<a class="headerlink" href="#equation-2a89a338-b470-4110-8042-76b9ff4b4165" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-809b25ab-e2ad-4071-b9cb-f248dad2c425">
+<span class="eqno">(5)<a class="headerlink" href="#equation-809b25ab-e2ad-4071-b9cb-f248dad2c425" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;&amp; \sum_w P(Y = y|X = x,W = w)P(W = w) \\
     &amp;&amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
     \end{align}\]</div>
@@ -861,8 +871,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p><em>Problem</em>: The backdoor criterion provides us with a simple method of identifying sets of covariates that should be adjusted for when we seek to estimate causal effects from nonexperimental data. It does not, however, exhaust all ways of estimating such effects. The <span class="math notranslate nohighlight">\(do\)</span>-operator can be applied to graphical patterns that do not satisfy the backdoor criterion to identify effects that on first sight seem to be beyond one’s reach.</p></li>
 <li><p>The <strong>front-door</strong> formula</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ffd93e7e-19a7-4377-ae02-4a517c6df064">
-<span class="eqno">(6)<a class="headerlink" href="#equation-ffd93e7e-19a7-4377-ae02-4a517c6df064" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-22796bd0-cea0-4d98-8f68-c5c754281627">
+<span class="eqno">(6)<a class="headerlink" href="#equation-22796bd0-cea0-4d98-8f68-c5c754281627" title="Permalink to this equation">¶</a></span>\[\begin{align}
   P(Y =y | do(X = x)) = \\
   \sum_z\sum_x' P(Y = y | Z = z, X = x') P(X = x') P(Z = z|X = x) 
   \end{align}\]</div>
