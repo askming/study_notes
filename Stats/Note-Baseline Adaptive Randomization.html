@@ -232,7 +232,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Sample%20size%20calculation%20with%20WMW%20test.html">
+  <a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html">
    Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
   </a>
  </li>
@@ -480,11 +480,12 @@
 <li><p>Generate the probability of biased coin for treatment assignment based on the measure of imbalance from Step 3: group that leads to larger imbalance score should receive smaller probability of having a patient being assigned</p></li>
 </ol>
 <p><strong>Measure of imbalance</strong></p>
-<p>i.
-$<span class="math notranslate nohighlight">\(
+<p>i.</p>
+<div class="math notranslate nohighlight">
+\[
 B(t) =\sum_{f=1}^F w_f*\text{range}(X_{f_1}^t-X_{f_2}^t), t=1, 2, \cdots 
-\)</span>$
-this measure works only for two treatment groups</p>
+\]</div>
+<p>this measure works only for two treatment groups</p>
 <p>ii. max <span class="math notranslate nohighlight">\(\chi\)</span>-square statistic among all the stratification factors</p>
 <div class="section" id="sample-code">
 <h2>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
@@ -546,7 +547,9 @@ this measure works only for two treatment groups</p>
 <span class="nf">summary</span><span class="p">(</span><span class="nf">tableby</span><span class="p">(</span><span class="n">trt</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">temp</span><span class="p">),</span> <span class="n">text</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 
 <span class="c1"># the program works pretty well on balancing equal allocation of treatment overall and within each factor</span>
-<span class="c1"># parameters that we can tune in this program: prob_bc, the probability for levels within each stratification factor; or may be the measure of difference between two arms (so far, frequency difference works better than chisq statistic for the simulation observation)</span>
+<span class="c1"># parameters that we can tune in this program: prob_bc, the probability for levels within each </span>
+<span class="c1"># stratification factor; or may be the measure of difference between two arms (so far, frequency </span>
+<span class="c1"># difference works better than chisq statistic for the simulation observation)</span>
 </pre></div>
 </div>
 </div>

@@ -10,9 +10,11 @@ Steps to conduct baseline adaptive randomization
 **Measure of imbalance**
 
 i. 
+
 $$
 B(t) =\sum_{f=1}^F w_f*\text{range}(X_{f_1}^t-X_{f_2}^t), t=1, 2, \cdots 
 $$
+
 this measure works only for two treatment groups
 
 ii. max $\chi$-square statistic among all the stratification factors
@@ -78,5 +80,7 @@ temp = BAR(test_sample, prob_bc = 0.8) # 0.8/0.2 biased coin probability split f
 summary(tableby(trt ~ ., data = temp), text = TRUE)
 
 # the program works pretty well on balancing equal allocation of treatment overall and within each factor
-# parameters that we can tune in this program: prob_bc, the probability for levels within each stratification factor; or may be the measure of difference between two arms (so far, frequency difference works better than chisq statistic for the simulation observation)
+# parameters that we can tune in this program: prob_bc, the probability for levels within each 
+# stratification factor; or may be the measure of difference between two arms (so far, frequency 
+# difference works better than chisq statistic for the simulation observation)
 ```
