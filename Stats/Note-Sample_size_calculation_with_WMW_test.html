@@ -437,8 +437,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#detail-about-wmw">
-   2. Detail about WMW
+  <a class="reference internal nav-link" href="#details-about-wmw">
+   2. Details about WMW
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -472,8 +472,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#detail-about-wmw">
-   2. Detail about WMW
+  <a class="reference internal nav-link" href="#details-about-wmw">
+   2. Details about WMW
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -497,10 +497,51 @@
 <h2>1. When to use Wilcoxon-Mann-Whitney (WMW) test <a class="footnote-reference brackets" href="#alias" id="id2">1</a>?<a class="headerlink" href="#when-to-use-wilcoxon-mann-whitney-wmw-test" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Non-parametric test for comparing two groups of observations on a <strong>continuous</strong> or <strong>ordered categorical (ordinal)</strong> variable when there is no underlying distributional assumption imposed on the data.</p></li>
+<li><p>Data representation</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Group</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(C_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(C_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\cdots\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(C_D\)</span></p></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_1(p_1)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_2(p_2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cdots\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_D(p_D)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_1(q_1)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_2(q_2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cdots\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_D(q_D)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p><span class="math notranslate nohighlight">\(M_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(M_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cdots\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(M_D\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(N\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N\)</span> is the total sample size; <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are sample sizes for Group A and B, respectively</p></li>
+<li><p><span class="math notranslate nohighlight">\(M_D\)</span> is the column total for Column <span class="math notranslate nohighlight">\(D\)</span>, which stands for distinct outcome value</p></li>
+<li><p><span class="math notranslate nohighlight">\(p_i\)</span> = <span class="math notranslate nohighlight">\(m_i/m\)</span>, enclosed in the parenthese; <span class="math notranslate nohighlight">\(q_i\)</span> is defined similarly</p></li>
 </ul>
 </div>
-<div class="section" id="detail-about-wmw">
-<h2>2. Detail about WMW<a class="headerlink" href="#detail-about-wmw" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="details-about-wmw">
+<h2>2. Details about WMW<a class="headerlink" href="#details-about-wmw" title="Permalink to this headline">¶</a></h2>
 <p>WMW uses the competing probability <span class="math notranslate nohighlight">\(\pi = Pr(X &gt; Y) + 0.5Pr(X = Y)\)</span> to quantify the difference between two groups under comparison, where X and Y are random variables with CDF <span class="math notranslate nohighlight">\(F_X\)</span> and <span class="math notranslate nohighlight">\(F_Y\)</span>, respectively. The null hypothesis is</p>
 <div class="math notranslate nohighlight">
 \[H_0: \pi = 0.5\]</div>
@@ -519,6 +560,10 @@
 </div>
 <div class="section" id="sample-size-formula">
 <h2>3. Sample size formula<a class="headerlink" href="#sample-size-formula" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To compute the total sample size <span class="math notranslate nohighlight">\(N\)</span> , we assume the treatment fraction <span class="math notranslate nohighlight">\(t = n/N\)</span> is known.</p></li>
+<li><p>In addition, we assume the proportions <span class="math notranslate nohighlight">\(p_1,\cdots, p_D\)</span> and <span class="math notranslate nohighlight">\(q_1,\cdots,q_D\)</span> in above table are known.</p></li>
+</ul>
 <p>Derived from the fact that</p>
 <div class="math notranslate nohighlight">
 \[\left(\frac{\mu_1 - \mu_0}{\sigma_0}\right)^2 = \left(Z_{\alpha/2} + \frac{\sigma_1}{\sigma_0}Z_{\beta}\right)^2\]</div>
