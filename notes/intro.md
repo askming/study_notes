@@ -100,6 +100,7 @@
 ### 2.4 Analytical tools (ML implementation)
 
 #### 2.4.1 R
+- [How R Searches and Finds stuff](./Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.md)
 
 #### 2.4.2 Python
 - Scikit-learn
