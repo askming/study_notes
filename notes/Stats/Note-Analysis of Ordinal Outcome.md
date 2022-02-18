@@ -61,7 +61,7 @@
 
 - When analyzing ordinal data where PO is not met, the Wilcoxon test may still work OK but it will not be optimal.
 
-- One way to generate a non-parametric version of OR (called Wilcoxon Mann Whitney Generalized OR [WMW GenOR]) is introduced in `Agresti (1980)` and later discussed in `Chrilov et al (2014)`. `O’Brien and Castelloe` offered a way to eliminate ties and apply Agresti’s formula directly.
+- One way to generate a non-parametric version of OR (called Wilcoxon Mann Whitney Generalized OR [WMW GenOR]) is introduced in {cite:p}`agresti1980generalized` and later discussed in {cite:p}`churilov2014improved`. {cite:p}`o2006exploiting` offered a way to eliminate ties and apply Agresti’s formula directly.
 
 - WMW GenOR test statistic is defined as 
 
