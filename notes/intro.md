@@ -21,13 +21,14 @@
 
 ### 1.3 Bayesian Statistics
 - [Dirichlet process](./Stats/Note-Dirichlet%20process.md)
+- [Bayesian optimization](./Stats/Note-Bayesian%20optimization.md)
 
 ### 1.4 Missing data and imputation methods
 - [Missing data](./Stats/Note-Missing%20data.md)
 
 ### 1.5 Causal inference (Propensity score methods)
+- [Book-Causal inference in statistics *a primer*](Stats/Book-Causal_inference_in_statistics_a_primer.md)
 - [Causal inference notes (general)](./Stats/Note-Causal%20inference%20general.md)
-- [Causal inference in statistics *a primer*](Stats/Book-Causal%20inference%20in%20statistics%20a%20primer.md)
 - [Propensity score methods basics](./Stats/Note-Propensity%20score%20methods.md)
 
 #### 1.5.1 Use of external control data in RCT
@@ -39,6 +40,7 @@
 
 
 ### 1.7 Regression methods
+- [Book-Data Analysis Using Regression and Multilevel Hierarchical Models](./Stats/Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.md)
 - [Quantile regression](Stats/Note-Quantile%20regression.md)
 - [Multicolinearity](./Stats/Note-Multicolinearity.md)
 
@@ -113,6 +115,7 @@
 ### 2.4 Analytical tools
 
 #### 2.4.1 R
+- [R notes](./Stats_Comp/Note-R%20notes.md)
 - [How R Searches and Finds stuff](./Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.md)
 - [googleVis package](./Stats_Comp/Note-googleVis.md)
 
