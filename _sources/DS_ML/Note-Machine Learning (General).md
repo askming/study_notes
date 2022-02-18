@@ -18,30 +18,34 @@
   - feature engineering (can also be a step in next process)
 - Missing data
 
-### 3. Data preparation
+### 3. Data preparation/pre-processing
 
-- Cleaning: missing data, label encoding
-- Handling categorical data: one-hot encoding
+- Cleaning: missing data (imputation?), label encoding
+- Handling categorical data: e.g. one-hot encoding
 - Feature scaling
 - Feature engineering: create new features
+- Train/test data splitting
+  - e.g. 80% vs 20% or 75% vs 25%
+  - Make sure that the two parts are comparable in terms of the outcome variable (e.g. similar % of success if it's binary)
 
-### 4. Select & train a model
+### 4. Model training & hyperparameter tuning
 
-- Use cross-validation as the mean to evaluate the overall performance of a model
+- Use cross-validation as the means to evaluate the overall performance of a model
 
   ```python
   from sklearn.model-selection import cross-val-score
   ```
 
-- Recommend to save both the hyperparameters & the trained parameters as well as the CV scores, and the predictions using `joblib` from external module
-
-### 5. Fine tune the model
-
 - Grid search: `GridSearchCV` in `model-selection` module
 - Random search: `RandomizedSearchCV`
 - Ensemble methods: combine the models that perform best
 - Analyze the best model and their error
-- Evaluate the system on the test data
+
+- Recommend to save both the hyperparameters & the trained parameters as well as the CV scores, and the predictions using `joblib` from external module
+
+- Usually there will be multiple candidate models to be considered; use the same criteria to compare different models for their performance
+
+### 5. Evaluate the final model on the test data
 
 ## Model performance metrics vs model's cost function
 

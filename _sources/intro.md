@@ -37,6 +37,7 @@
 - [ICH guidelines](Stats/Note-ICH%20guidelines.md)
 - [FDA guidances](Stats/Note-FDA%20guidances%20for%20industry.md)
 - [Multiplicity in Clinical Trials](./Stats/Note-Multiplicity%20in%20Clinical%20Trials.md)
+- [Baseline adaptive randomization](./Stats/Note-Baseline%20Adaptive%20Randomization.md)
 
 ### 1.9 Correlated/longitudinal data analysis
 - [Correlated Data Analysis](./Stats/Note-Correlated%20Data%20Analysis.md)
