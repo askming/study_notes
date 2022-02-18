@@ -87,7 +87,7 @@
 
 ## Sample size calculation with ordinal outcome
 
-### Method 1: with proportional odds assumption[^whitehead]
+### Method 1: with proportional odds assumption {cite:p}`whitehead1993sample`
 
 - Let $Q_{ie\text{ or }c} = \sum_{u=1}^i p_{ue\text{ or }c}, \text{for } i = 1,\cdots, k-1$
 - Log odds ratio at cutoff $i$ is defined as $\theta_{iR} = \log\left\{\frac{Q_{ie}(1-Q_{ic})}{(1-Q_{ie})Q_{ic}}\right\}$ 
@@ -127,7 +127,6 @@ where
 
 [^transivisity]: that is, the order of the same observation may be different in different pairwise comparisons, in which different subsets of the data are used. 
 [^other_stats]: to calculate mean, first calculate the probability of the outcome equals to a specific value, then apply the definition of mean for discrete R.V.: $\bar{X} = \sum_{i} x\cdot Pr(X=x)$; finding median/a specific quantile is simpler, which is a direct result from the cumulative distribution of the outcome variable.
-[^whitehead]: Whitehead J. Sample size calculations for ordered categorical data. Statistics in medicine. 1993 Dec 30;12(24):2257-71.
 [^t-test]: t-test assumes both linearity (normal distribution) and parallelism (equal variance)
 
 ```{bibliography}
