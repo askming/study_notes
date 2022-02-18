@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials &#8212; Study Notes</title>
+    <title>Baseline adaptive randomization &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -60,8 +60,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="[book] Regression Modeling Strategies" href="Book-Regression%20Modeling%20Strategies.html" />
-    <link rel="prev" title="[book] Fundamentals of Clinical Trials (4th edition)" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" />
+    <link rel="next" title="Competing risk models" href="Note-Competing_Risk_Regression.html" />
+    <link rel="prev" title="Association vs. Prediction vs. Causation" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -134,8 +134,8 @@
    [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
    [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
   </a>
  </li>
@@ -159,8 +159,8 @@
    Association vs. Prediction vs. Causation
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Baseline%20Adaptive%20Randomization.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Baseline adaptive randomization
   </a>
  </li>
@@ -375,7 +375,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Book-Group Sequential and Confirmatory Adaptive Designs in Clinical Trials.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Baseline Adaptive Randomization.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -395,7 +395,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Group Sequential and Confirmatory Adaptive Designs in Clinical Trials.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Baseline Adaptive Randomization.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -422,52 +422,9 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-2-procedures-with-equally-sized-stages">
-   Chapter 2 Procedures with equally sized stages
+  <a class="reference internal nav-link" href="#sample-code">
+   Sample code
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-3-procedures-with-unequally-sized-stages">
-   Chapter 3 Procedures with unequally sized stages
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-alpha-spending-function-approach">
-     3.3 The
-     <span class="math notranslate nohighlight">
-      \(\alpha\)
-     </span>
-     -spending function approach
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-4-confidence-intervals-p-values-and-point-estimation">
-   Chapter 4 Confidence intervals, p-values, and point estimation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-5-applications">
-   Chapter 5 Applications
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#normal-responses">
-     5.1 Normal responses
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binary-responses">
-     5.2 Binary responses
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#survival-data">
-     5.3 Survival data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -479,7 +436,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>[book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials</h1>
+                <h1>Baseline adaptive randomization</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -490,52 +447,9 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-2-procedures-with-equally-sized-stages">
-   Chapter 2 Procedures with equally sized stages
+  <a class="reference internal nav-link" href="#sample-code">
+   Sample code
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-3-procedures-with-unequally-sized-stages">
-   Chapter 3 Procedures with unequally sized stages
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-alpha-spending-function-approach">
-     3.3 The
-     <span class="math notranslate nohighlight">
-      \(\alpha\)
-     </span>
-     -spending function approach
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-4-confidence-intervals-p-values-and-point-estimation">
-   Chapter 4 Confidence intervals, p-values, and point estimation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-5-applications">
-   Chapter 5 Applications
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#normal-responses">
-     5.1 Normal responses
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binary-responses">
-     5.2 Binary responses
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#survival-data">
-     5.3 Survival data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -546,51 +460,84 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="book-group-sequential-and-confirmatory-adaptive-designs-in-clinical-trials">
-<h1>[book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials<a class="headerlink" href="#book-group-sequential-and-confirmatory-adaptive-designs-in-clinical-trials" title="Permalink to this headline">¶</a></h1>
-<p><em>A study note of <span id="id1">[<a class="reference internal" href="Note-Survival_Analysis.html#id6">Wassmer and Brannath, 2016</a>]</span></em></p>
-<p><img alt="Group_sequential_adaptive_design_updated" src="https://cdn.jsdelivr.net/gh/askming/upic&#64;master/uPic/Book-wassmer2016_2021_08_01.png" /></p>
-<div class="section" id="chapter-2-procedures-with-equally-sized-stages">
-<h2>Chapter 2 Procedures with equally sized stages<a class="headerlink" href="#chapter-2-procedures-with-equally-sized-stages" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>General notes for this chapter (and from other materials) and Chapter 3 can be found <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html"><span class="doc std std-doc">here</span></a>.</p></li>
-</ul>
-</div>
-<div class="section" id="chapter-3-procedures-with-unequally-sized-stages">
-<h2>Chapter 3 Procedures with unequally sized stages<a class="headerlink" href="#chapter-3-procedures-with-unequally-sized-stages" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Critical values when the interims are performed at different sizes of smaples can be different than that is done at equal sizes</p>
-<ul>
-<li><p>Boundaries originally developed from equally sized IAs are not accurate anymore thus adjustment is needed</p></li>
-</ul>
-</li>
-<li><p>The study protocol might contain a schedule of inspection times for the interim analyses during the course of the trial. In this case, the group sizes are unpredictable and the test procedure that is based on the worst case adjusted critical values can be used. An alternative, more sophisticated procedure that is based on the specification of an <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function.</p></li>
-</ul>
-<div class="section" id="the-alpha-spending-function-approach">
-<h3>3.3 The <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approach<a class="headerlink" href="#the-alpha-spending-function-approach" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>The conceptual design of the <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approach is to provide a test procedure that enables interim analyses at arbitrary time points of analyses. Specifically, this approach can be used if the interim analyses are not scheduled at the observation of a specific number of observations but at fixed calendar times.</p></li>
-<li><p>The <span class="math notranslate nohighlight">\(\alpha\)</span>-spending function approximates the classical group sequential boundaries also for the case of unequally spaced stages.</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="chapter-4-confidence-intervals-p-values-and-point-estimation">
-<h2>Chapter 4 Confidence intervals, p-values, and point estimation<a class="headerlink" href="#chapter-4-confidence-intervals-p-values-and-point-estimation" title="Permalink to this headline">¶</a></h2>
-<p>What problem this chapter tries to solve? Didn’t quite get it.</p>
-</div>
-<div class="section" id="chapter-5-applications">
-<h2>Chapter 5 Applications<a class="headerlink" href="#chapter-5-applications" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="normal-responses">
-<h3>5.1 Normal responses<a class="headerlink" href="#normal-responses" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="binary-responses">
-<h3>5.2 Binary responses<a class="headerlink" href="#binary-responses" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="survival-data">
-<h3>5.3 Survival data<a class="headerlink" href="#survival-data" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Sample size calcuation for survival outcome can be found <a class="reference internal" href="Note-Survival_Analysis.html"><span class="doc std std-doc">here</span></a>.</p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="baseline-adaptive-randomization">
+<h1>Baseline adaptive randomization<a class="headerlink" href="#baseline-adaptive-randomization" title="Permalink to this headline">¶</a></h1>
+<p>Steps to conduct baseline adaptive randomization</p>
+<ol class="simple">
+<li><p>Assume there are <span class="math notranslate nohighlight">\(k\)</span> baseline covariates chosen as the stratification factors, each of which would have several levels</p></li>
+<li><p>At the beginning of the randomization, since there isn’t any patients yet, simple randomization will be used for the first <span class="math notranslate nohighlight">\(m\)</span> patients (<span class="math notranslate nohighlight">\(m\)</span> = No. of treatment groups)</p></li>
+<li><p>After Step 2, for every new incoming patient, calculate the measure of imbalance for assigning that patient to every possible treatment</p></li>
+<li><p>Generate the probability of biased coin for treatment assignment based on the measure of imbalance from Step 3: group that leads to larger imbalance score should receive smaller probability of having a patient being assigned</p></li>
+</ol>
+<p><strong>Measure of imbalance</strong></p>
+<p>i.
+$<span class="math notranslate nohighlight">\(
+B(t) =\sum_{f=1}^F w_f*\text{range}(X_{f_1}^t-X_{f_2}^t), t=1, 2, \cdots 
+\)</span>$
+this measure works only for two treatment groups</p>
+<p>ii. max <span class="math notranslate nohighlight">\(\chi\)</span>-square statistic among all the stratification factors</p>
+<div class="section" id="sample-code">
+<h2>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">arsenal</span><span class="p">)</span>
+<span class="c1"># N: total sample size for randomization</span>
+<span class="c1"># treatment groups: LETTERS[1:K]</span>
+<span class="c1"># baseline stratification factors (and levels within each factor)</span>
+
+<span class="c1"># function to generate a sample for randomization</span>
+<span class="n">gen_sample</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">prob_age</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.3</span><span class="p">,</span> <span class="m">0.5</span><span class="p">),</span> <span class="n">prob_sex</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">prob_occ</span> <span class="o">=</span> <span class="m">0.6</span><span class="p">,</span> <span class="n">prob_site</span> <span class="o">=</span> <span class="m">0.6</span><span class="p">){</span>
+	<span class="n">SEX</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">prob_sex</span><span class="p">)</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span>
+	<span class="n">OCCLUTION</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">prob_occ</span><span class="p">)</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span>
+	<span class="n">AGE</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">prob_age</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">prob_age</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
+	<span class="n">SITE</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">prob_site</span><span class="p">)</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span>
+
+	<span class="nf">data.frame</span><span class="p">(</span><span class="n">AGE</span> <span class="o">=</span> <span class="n">AGE</span><span class="p">,</span> <span class="n">SEX</span> <span class="o">=</span> <span class="n">SEX</span><span class="p">,</span> <span class="n">OCCLUTION</span> <span class="o">=</span> <span class="n">OCCLUTION</span><span class="p">,</span> <span class="n">SITE</span> <span class="o">=</span> <span class="n">SITE</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># function to assign group for new patients based on biased coin probability calculated from all assigned pats</span>
+<span class="n">assign</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">trt_grp</span><span class="p">,</span> <span class="n">prob</span><span class="p">){</span>
+	<span class="nf">return</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="n">trt_grp</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">prob</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1"># Baseline Adaptive Randomization using biased coin method</span>
+<span class="n">BAR</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">n_trt</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">prob_bc</span> <span class="o">=</span> <span class="m">2</span><span class="o">/</span><span class="m">3</span><span class="p">){</span>
+	<span class="c1"># df: a sample to be randomized</span>
+	<span class="c1"># n_trt: number of treatment arms </span>
+	<span class="c1"># prob_bc: biased coin probability when there is imbalance between two treatment arms</span>
+	<span class="n">trt_grp</span> <span class="o">=</span> <span class="kc">LETTERS</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="n">n_trt</span><span class="p">]</span>
+	<span class="n">df</span><span class="o">$</span><span class="n">trt</span> <span class="o">=</span> <span class="kc">NA</span>
+	<span class="n">i</span> <span class="o">=</span> <span class="m">1</span>
+	<span class="n">max_x_level</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="nf">sapply</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">length</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span> <span class="c1"># find the maximum length of levels in all x variables</span>
+	<span class="nf">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="m">1</span><span class="p">){</span>
+		<span class="n">new_trt</span> <span class="o">=</span> <span class="nf">assign</span><span class="p">(</span><span class="n">trt_grp</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span> <span class="m">0.5</span><span class="p">))</span>
+		<span class="n">df</span><span class="o">$</span><span class="n">trt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_trt</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="m">1</span>
+	<span class="p">}</span>
+	<span class="nf">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">)){</span>
+		<span class="c1"># print(i)</span>
+		<span class="n">chisq_stat</span> <span class="o">=</span> <span class="n">range</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="kc">Inf</span><span class="p">,</span> <span class="nf">length</span><span class="p">(</span><span class="n">trt_grp</span><span class="p">))</span>
+		<span class="nf">for </span><span class="p">(</span><span class="n">j</span> <span class="n">in</span> <span class="nf">seq_along</span><span class="p">(</span><span class="n">trt_grp</span><span class="p">))</span>
+		<span class="p">{</span>
+			<span class="n">df</span><span class="o">$</span><span class="n">trt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">trt_grp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+			<span class="c1"># chisq_stat[j] = max(sapply(df[, names(df) != &#39;trt&#39;], function(x) chisq.test(table(x, df$trt))$statistic))</span>
+			<span class="n">range</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">sapply</span><span class="p">(</span><span class="n">df</span><span class="p">[,</span> <span class="nf">names</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">!=</span> <span class="s">&#39;trt&#39;</span><span class="p">],</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="nf">table</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">trt</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="nf">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="nf">min</span><span class="p">(</span><span class="n">y</span><span class="p">)))))</span> <span class="c1"># measure the absolute difference in terms of cell frequencies between two arms for all potential treatment assignment (a.k.a range method)</span>
+			<span class="c1"># print(range)</span>
+		<span class="p">}</span>
+		<span class="c1"># prob_assign = ifelse(chisq_stat[1] == chisq_stat[2], 0.5, ifelse(chisq_stat[1] &lt; chisq_stat[2], prob_bc, 1-prob_bc))</span>
+		<span class="n">prob_assign</span> <span class="o">=</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">range</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">range</span><span class="p">[</span><span class="m">2</span><span class="p">],</span> <span class="m">0.5</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">range</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">range</span><span class="p">[</span><span class="m">2</span><span class="p">],</span> <span class="n">prob_bc</span><span class="p">,</span> <span class="m">1</span> <span class="o">-</span> <span class="n">prob_bc</span><span class="p">))</span> <span class="c1"># assign higher probability to assignment leads to smaller imbalance</span>
+		<span class="n">df</span><span class="o">$</span><span class="n">trt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">assign</span><span class="p">(</span><span class="n">trt_grp</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="n">prob_assign</span><span class="p">,</span> <span class="m">1</span><span class="o">-</span><span class="n">prob_assign</span><span class="p">))</span> <span class="c1"># do random draw of the treatment for the patient to be randomized</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="m">1</span>
+	<span class="p">}</span>
+	<span class="nf">return</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># a sample simulation to check the algorithm</span>
+<span class="n">test_sample</span> <span class="o">=</span> <span class="nf">gen_sample</span><span class="p">(</span><span class="m">200</span><span class="p">,</span> <span class="n">prob_age</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.3</span><span class="p">,</span> <span class="m">0.3</span><span class="p">,</span> <span class="m">0.4</span><span class="p">),</span> <span class="n">prob_sex</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">prob_site</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span> <span class="n">prob_occ</span> <span class="o">=</span> <span class="m">0.7</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="nf">BAR</span><span class="p">(</span><span class="n">test_sample</span><span class="p">,</span> <span class="n">prob_bc</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">)</span> <span class="c1"># 0.8/0.2 biased coin probability split for two-arm study </span>
+<span class="nf">summary</span><span class="p">(</span><span class="nf">tableby</span><span class="p">(</span><span class="n">trt</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">temp</span><span class="p">),</span> <span class="n">text</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># the program works pretty well on balancing equal allocation of treatment overall and within each factor</span>
+<span class="c1"># parameters that we can tune in this program: prob_bc, the probability for levels within each stratification factor; or may be the measure of difference between two arms (so far, frequency difference works better than chisq statistic for the simulation observation)</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -626,17 +573,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">[book] Fundamentals of Clinical Trials (4th edition)</p>
+            <p class="prev-next-title">Association vs. Prediction vs. Causation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Book-Regression%20Modeling%20Strategies.html" title="next page">
+    <a class='right-next' id="next-link" href="Note-Competing_Risk_Regression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">[book] Regression Modeling Strategies</p>
+        <p class="prev-next-title">Competing risk models</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

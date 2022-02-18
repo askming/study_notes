@@ -160,6 +160,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Note-Baseline%20Adaptive%20Randomization.html">
+   Baseline adaptive randomization
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Note-Competing_Risk_Regression.html">
    Competing risk models
   </a>
@@ -982,8 +987,8 @@
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e764f5d9-88bb-49a0-be27-5bca4940bdfc">
-<span class="eqno">(7)<a class="headerlink" href="#equation-e764f5d9-88bb-49a0-be27-5bca4940bdfc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7014813d-7521-40f2-8d61-78c50a49a948">
+<span class="eqno">(7)<a class="headerlink" href="#equation-7014813d-7521-40f2-8d61-78c50a49a948" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -1336,8 +1341,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6495b10-4141-4b16-b652-378b2463cfad">
-<span class="eqno">(8)<a class="headerlink" href="#equation-b6495b10-4141-4b16-b652-378b2463cfad" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-02f855b1-b526-4694-a71a-ed72002fcd9a">
+<span class="eqno">(8)<a class="headerlink" href="#equation-02f855b1-b526-4694-a71a-ed72002fcd9a" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -1348,8 +1353,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-13187d6e-426b-463f-8221-22d2c7470393">
-<span class="eqno">(9)<a class="headerlink" href="#equation-13187d6e-426b-463f-8221-22d2c7470393" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d139b084-372d-4ba5-8a01-b2587b590fc3">
+<span class="eqno">(9)<a class="headerlink" href="#equation-d139b084-372d-4ba5-8a01-b2587b590fc3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>
