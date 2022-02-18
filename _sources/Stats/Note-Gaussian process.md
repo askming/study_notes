@@ -14,12 +14,14 @@
   - Being closed under conditioning and marginalization means that the resulting distributions from these operations are also Gaussian, which makes many problems in statistics and machine learning tractable.
 
   - Marginalization
+
     $$
     p_X(x) = \int_yp_{X,Y}(x, y)dy = \int_yp_{X|Y}(x|y)p_Y(y)dy
     $$
     
 
   - Conditioning
+  
     $$
     X∣Y ∼N(μ_X+Σ_{XY}Σ_{YY}^{−1}(Y−μ_Y),Σ_{XX}−Σ_{XY}Σ_{YY}^{−1}Σ_{YX})\\
     Y∣X ∼N(μ_Y+Σ_{YX}Σ_{XX}^{−1}(X−μ_X),Σ_{YY}−Σ_{YX}Σ_{XX}^{−1}Σ_{XY})

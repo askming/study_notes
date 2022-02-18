@@ -170,6 +170,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Note-Bayesian%20optimization.html">
+   Exploring Bayesian Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Note-Causal%20inference%20general.html">
    Causal Inference General Study Notes
   </a>
@@ -301,6 +306,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
    How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">
+   R study notes/tips
   </a>
  </li>
  <li class="toctree-l1">
@@ -718,8 +728,8 @@ Bang and Robins, 2005).</p></li>
 <h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-62150002-d2e0-42c2-b883-53bd25c43427">
-<span class="eqno">(1)<a class="headerlink" href="#equation-62150002-d2e0-42c2-b883-53bd25c43427" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-98471ea7-421c-41ae-a8d1-8437d9b34ba5">
+<span class="eqno">(1)<a class="headerlink" href="#equation-98471ea7-421c-41ae-a8d1-8437d9b34ba5" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{\Delta}_{DR} \\
    &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
    &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
@@ -732,8 +742,8 @@ Bang and Robins, 2005).</p></li>
   SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c599055b-9648-447e-add9-d854e7e5e047">
-<span class="eqno">(2)<a class="headerlink" href="#equation-c599055b-9648-447e-add9-d854e7e5e047" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bfc9a183-1d8d-47cc-a32f-065abd4fa2f7">
+<span class="eqno">(2)<a class="headerlink" href="#equation-bfc9a183-1d8d-47cc-a32f-065abd4fa2f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{I}_i \\
   &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
   &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}

@@ -170,6 +170,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Note-Bayesian%20optimization.html">
+   Exploring Bayesian Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Note-Causal%20inference%20general.html">
    Causal Inference General Study Notes
   </a>
@@ -301,6 +306,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
    How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">
+   R study notes/tips
   </a>
  </li>
  <li class="toctree-l1">
@@ -602,18 +612,21 @@
 </ul>
 </li>
 <li><p>Gaussian distributions have the nice algebraic property of being closed under <em>conditioning</em> and <em>marginalization</em>.</p>
-<ul class="simple">
-<li><p>Being closed under conditioning and marginalization means that the resulting distributions from these operations are also Gaussian, which makes many problems in statistics and machine learning tractable.</p></li>
-<li><p>Marginalization
-$<span class="math notranslate nohighlight">\(
-p_X(x) = \int_yp_{X,Y}(x, y)dy = \int_yp_{X|Y}(x|y)p_Y(y)dy
-\)</span>$</p></li>
-<li><p>Conditioning
-$<span class="math notranslate nohighlight">\(
-X∣Y ∼N(μ_X+Σ_{XY}Σ_{YY}^{−1}(Y−μ_Y),Σ_{XX}−Σ_{XY}Σ_{YY}^{−1}Σ_{YX})\\
-Y∣X ∼N(μ_Y+Σ_{YX}Σ_{XX}^{−1}(X−μ_X),Σ_{YY}−Σ_{YX}Σ_{XX}^{−1}Σ_{XY})
-\)</span>$</p>
 <ul>
+<li><p>Being closed under conditioning and marginalization means that the resulting distributions from these operations are also Gaussian, which makes many problems in statistics and machine learning tractable.</p></li>
+<li><p>Marginalization</p>
+<div class="math notranslate nohighlight">
+\[
+    p_X(x) = \int_yp_{X,Y}(x, y)dy = \int_yp_{X|Y}(x|y)p_Y(y)dy
+    \]</div>
+</li>
+<li><p>Conditioning</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    X∣Y ∼N(μ_X+Σ_{XY}Σ_{YY}^{−1}(Y−μ_Y),Σ_{XX}−Σ_{XY}Σ_{YY}^{−1}Σ_{YX})\\
+    Y∣X ∼N(μ_Y+Σ_{YX}Σ_{XX}^{−1}(X−μ_X),Σ_{YY}−Σ_{YX}Σ_{XX}^{−1}Σ_{XY})
+    \end{split}\]</div>
+<ul class="simple">
 <li><p>In conditioning, the new mean only depends on the conditioned variable, while the covariance matrix is <strong>independent</strong> from this variable (constant and equal to the marginal variance/covariance).</p></li>
 </ul>
 </li>

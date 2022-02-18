@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML Basics &#8212; Study Notes</title>
+    <title>R study notes/tips &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -58,8 +58,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hard Data Analyst SQL Interview Questions" href="Note-Hard%20SQL%20interview%20questions.html" />
-    <link rel="prev" title="Tree/Random Forest (Bagging)" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" />
+    <link rel="next" title="Google R package googleVis" href="Note-googleVis.html" />
+    <link rel="prev" title="How R searches and finds stuff" href="Note-How%20R%20searches%20and%20finds%20stuff.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -300,24 +300,24 @@
   Statistical computing
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
+  <a class="reference internal" href="Note-How%20R%20searches%20and%20finds%20stuff.html">
    How R searches and finds stuff
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    R study notes/tips
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
+  <a class="reference internal" href="Note-googleVis.html">
    Google R package googleVis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
+  <a class="reference internal" href="Note-matplotlib.html">
    Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -379,34 +379,34 @@
   Computer science
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-HTML%20basics.html">
    HTML Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Hard%20SQL%20interview%20questions.html">
+  <a class="reference internal" href="../CS/Note-Hard%20SQL%20interview%20questions.html">
    Hard Data Analyst SQL Interview Questions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Learning%20React.html">
+  <a class="reference internal" href="../CS/Note-Learning%20React.html">
    Learning React
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-Learning%20Rust.html">
+  <a class="reference internal" href="../CS/Note-Learning%20Rust.html">
    Learning Rust
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-SQL%20Study%20Notes.html">
+  <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
    SQL study notes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-git%20and%20github.html">
+  <a class="reference internal" href="../CS/Note-git%20and%20github.html">
    git and github
   </a>
  </li>
@@ -478,7 +478,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/CS/Note-HTML basics.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats_Comp/Note-R notes.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -498,7 +498,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-HTML basics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats_Comp/Note-R notes.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -525,23 +525,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-html">
-   What is HTML?
+  <a class="reference internal nav-link" href="#r-profile-file">
+   R profile file
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#images">
-   Images
+  <a class="reference internal nav-link" href="#useful-packages-functions">
+   Useful packages/functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#marking-up-text">
-   Marking up text
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#links">
-   Links
+  <a class="reference internal nav-link" href="#install-r-on-linux">
+   Install R on Linux
   </a>
  </li>
 </ul>
@@ -554,7 +549,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>HTML Basics</h1>
+                <h1>R study notes/tips</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -565,23 +560,18 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-html">
-   What is HTML?
+  <a class="reference internal nav-link" href="#r-profile-file">
+   R profile file
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#images">
-   Images
+  <a class="reference internal nav-link" href="#useful-packages-functions">
+   Useful packages/functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#marking-up-text">
-   Marking up text
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#links">
-   Links
+  <a class="reference internal nav-link" href="#install-r-on-linux">
+   Install R on Linux
   </a>
  </li>
 </ul>
@@ -593,52 +583,141 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="html-basics">
-<h1>HTML Basics<a class="headerlink" href="#html-basics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-is-html">
-<h2>What is HTML?<a class="headerlink" href="#what-is-html" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Elements</strong>: opening tag, closing tag (sometimes optional), the content (sometimes optional). Elements can be nested.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="r-study-notes-tips">
+<h1>R study notes/tips<a class="headerlink" href="#r-study-notes-tips" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="r-profile-file">
+<h2>R profile file<a class="headerlink" href="#r-profile-file" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p>Doctype: <code class="docutils literal notranslate"><span class="pre">&lt;!DOCTYPE</span> <span class="pre">html&gt;</span></code></p></li>
-<li><p>Root (the <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code>) element: <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span> <span class="pre">&lt;/html&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> element: acts as a container for all the stuff you want to include on the HTML page that <em>isn’t</em> the content you are showing to your page’s viewers.</p></li>
-<li><p>meta element: <code class="docutils literal notranslate"><span class="pre">&lt;meta</span> <span class="pre">chrset</span> <span class="pre">=</span> <span class="pre">&quot;utf-8&quot;&gt;</span></code>, sets the character set your document should use to UTF-8 which includes most characters from the vast majority of written languages.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code> element: put within <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span> <span class="pre">&lt;/head&gt;</span></code>, sets the title of your page, which is the title that appears in the browser tab the page is loaded in. It is also used to describe the page when you bookmark/favourite it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> element: contains <em>all</em> the content that you want to show to web users when they visit your page, whether that’s text, images, videos, games, playable audio tracks or whatever else.</p></li>
+<li><p>At startup, R will source the <strong>Rprofile.site</strong> file. It will then look for a .<strong>Rprofile</strong> file to source in the following order:</p>
+<ul class="simple">
+<li><p><strong>current working directory</strong>: <code class="docutils literal notranslate"><span class="pre">getwd()</span></code></p></li>
+<li><p><strong>user’s home director</strong>y: <code class="docutils literal notranslate"><span class="pre">path.expand('~')</span></code></p></li>
+<li><p>R home directory (where R is installed): <code class="docutils literal notranslate"><span class="pre">R.home()</span></code></p></li>
 </ul>
 </li>
-<li><p><strong>Attributes</strong>: extra information about the element that doesn’t apprea in the actual content, put at the opening tag of a element with attribute name + = + “attribute content”</p></li>
-</ul>
+<li><p>There are two special functions you can place in these files. <code class="docutils literal notranslate"><span class="pre">.First(</span> <span class="pre">)</span></code> will be run at the start of the R session and <code class="docutils literal notranslate"><span class="pre">.Last(</span> <span class="pre">)</span></code> will be run at the end of the session.</p></li>
+<li><p>To edit the .Rprofile file:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">file.edit</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">,</span> <span class="s">&quot;.Rprofile&quot;</span><span class="p">))</span> <span class="c1"># edit .Rprofile in HOME</span>
+<span class="nf">file.edit</span><span class="p">(</span><span class="s">&quot;.Rprofile&quot;</span><span class="p">)</span> <span class="c1"># edit project specific .Rprofile   </span>
+</pre></div>
 </div>
-<div class="section" id="images">
-<h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>It embeds an image into our page in the position it appears. It does this via the <code class="docutils literal notranslate"><span class="pre">src</span></code> (source) attribute, which contains the path to our image file.</p></li>
-</ul>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">alt</span></code> stands for “alternative”</p></li>
-</ul>
-</div>
-<div class="section" id="marking-up-text">
-<h2>Marking up text<a class="headerlink" href="#marking-up-text" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Headings: HTML contains 6 heading levels, <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span> <span class="pre">-</span> <span class="pre">&lt;h6&gt;</span></code></p></li>
-<li><p>Paragraphs: for containing paragraphs of text</p></li>
-<li><p>Lists</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;&lt;/ul&gt;</span></code>: unordered list</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;&lt;/ol&gt;</span></code>: ordered list</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;li&gt;text&lt;/li&gt;</span></code>: list item</p></li>
-</ul>
+<li><p>Can use the following to get a list of directories where .Rprofile may exist</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">candidates</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span> <span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_PROFILE&quot;</span><span class="p">),</span>
+                 <span class="nf">file.path</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_HOME&quot;</span><span class="p">),</span> <span class="s">&quot;etc&quot;</span><span class="p">,</span> <span class="s">&quot;Rprofile.site&quot;</span><span class="p">),</span>
+                 <span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_PROFILE_USER&quot;</span><span class="p">),</span>
+                 <span class="nf">file.path</span><span class="p">(</span><span class="nf">getwd</span><span class="p">(),</span> <span class="s">&quot;.Rprofile&quot;</span><span class="p">))</span>
+
+<span class="nf">Filter</span><span class="p">(</span><span class="n">file.exists</span><span class="p">,</span> <span class="n">candidates</span><span class="p">)</span>
+</pre></div>
+</div>
 </li>
 </ul>
+</li>
+<li><p>Sample .Rprofile file</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample Rprofile.site file</span>
+
+<span class="c1"># Things you might want to change</span>
+<span class="c1"># options(papersize=&quot;a4&quot;)</span>
+<span class="c1"># options(editor=&quot;notepad&quot;)</span>
+<span class="c1"># options(pager=&quot;internal&quot;)</span>
+
+<span class="c1"># R interactive prompt</span>
+<span class="c1"># options(prompt=&quot;&gt; &quot;)</span>
+<span class="c1"># options(continue=&quot;+ &quot;)</span>
+
+<span class="c1"># to prefer Compiled HTML</span>
+<span class="n">help</span> <span class="nf">options</span><span class="p">(</span><span class="n">chmhelp</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1"># to prefer HTML help</span>
+<span class="c1"># options(htmlhelp=TRUE)</span>
+
+<span class="c1"># General options</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">tab.width</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="m">130</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">graphics.record</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="n">.First</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(){</span>
+ <span class="nf">library</span><span class="p">(</span><span class="n">pacman</span><span class="p">)</span>
+ <span class="nf">p_load</span><span class="p">(</span><span class="n">tidyvers</span><span class="p">,</span> <span class="n">data.table</span><span class="p">,</span> <span class="n">arsenal</span><span class="p">,</span> <span class="n">Hmisc</span><span class="p">,</span> <span class="n">haven</span><span class="p">)</span>
+ <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nWelcome at&quot;</span><span class="p">,</span> <span class="nf">date</span><span class="p">(),</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">.Last</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(){</span>
+ <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nGoodbye at &quot;</span><span class="p">,</span> <span class="nf">date</span><span class="p">(),</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>To add a link, we need to use a simple element — <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"><code class="docutils literal notranslate"><span class="pre">a</span></code></a> — “a” being the short form for “anchor”.</p></li>
+</li>
+<li><p>More info about this topic can be found from <code class="docutils literal notranslate"><span class="pre">?Rprofile</span></code> and <code class="docutils literal notranslate"><span class="pre">?Startup</span></code></p></li>
 </ul>
+</div>
+<div class="section" id="useful-packages-functions">
+<h2>Useful packages/functions<a class="headerlink" href="#useful-packages-functions" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/deriv.html">Compute derivatives of simple expressions, symbolically in R</a></p>
+<ul class="simple">
+<li><p>Functions: <code class="docutils literal notranslate"><span class="pre">deriv</span> <span class="pre">/D</span> <span class="pre">/deriv3</span></code></p></li>
+<li><p>Also see <a class="reference external" href="http://www.theresearchkitchen.com/archives/642">here</a> about how we can use these functions.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/sprintf.html">Use C-style String Formatting Commands in R</a></p>
+<ul>
+<li><p>Functions: <code class="docutils literal notranslate"><span class="pre">sprintf/gettextf</span></code></p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%.3f&quot;</span><span class="p">,</span> <span class="kc">pi</span><span class="p">)</span>
+<span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%s is %f feet tall\n&quot;</span><span class="p">,</span> <span class="s">&quot;Sven&quot;</span><span class="p">,</span> <span class="m">7.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://127.0.0.1:13234/library/base/html/tempfile.html">Create Names for Temporary Files in R</a></p>
+<ul class="simple">
+<li><p>Functions: <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> / <code class="docutils literal notranslate"><span class="pre">tempdir</span></code> - assigns a temporary directory</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">switch{base}</span></code>: tests an expression against elements of a list. If the value evaluated from the expression matches item from the list, the corresponding value is returned.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">,</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;green&quot;</span>
+
+<span class="nf">switch</span><span class="p">(</span><span class="s">&quot;color&quot;</span><span class="p">,</span> <span class="s">&quot;color&quot;</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;shape&quot;</span> <span class="o">=</span> <span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="s">&quot;length&quot;</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;red&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://cran.r-project.org/web/packages/iterators/iterators.pdf"><code class="docutils literal notranslate"><span class="pre">icount{iterators}</span></code>:</a> Returns an iterator that counts starting from one.</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">tools::compactPDF</span></code> to resize large pdf file while maintain the quality of the graph. This is dependent on another software for manipulating large PDF file, which is gostscript or qpdf.</p></li>
+</ol>
+</div>
+<div class="section" id="install-r-on-linux">
+<h2>Install R on Linux<a class="headerlink" href="#install-r-on-linux" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>cd to a directory to save the R install file</p></li>
+<li><p>download R install file from web using wget</p></li>
+<li><p>untar the install file using tar xzvf</p></li>
+<li><p>cd to the newly create folder created in step 3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">'./configure'</span></code></p>
+<p>​    <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--prefix=/home1/02784/username/R3.1.2</span></code></p>
+<p>​    <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--prefix=/work/02784/username/R-3.2.0</span></code></p>
+</li>
+<li><p>type ‘make’ to install</p></li>
+<li><p>do ‘make check’ to check installation status</p></li>
+<li><p>export the PATH: export PATH=/thepath_to_bin:${PATH}</p></li>
+<li><p>check:  cd to home directory; vim .bashrc</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source: http://galton.uchicago.edu/~eichler/stat24600/Handouts/Rlinux.html
+
+./configure --prefix<span class="o">=</span>/home/username/tmux1.9
+wget http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/R-3.2.0.tar.gz
+install.packages<span class="o">(</span><span class="s2">&quot;INLA&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://www.math.ntnu.no/inla/R/stable&quot;</span><span class="o">)</span>
+Install rjags package <span class="k">in</span> R on TACC
+wget https://cran.r-project.org/src/contrib/rjags_4-4.tar.gz
+tar xzvf rjags_4-4.tar.gz
+</pre></div>
+</div>
+<p>The configure script has an option <code class="docutils literal notranslate"><span class="pre">--enable-rpath</span></code> for hard-coding the location of the JAGS library into the rjags package. It is not portable, however, so may not work on your Operating System. Also, you do not appear to be passing the configure options correctly. The correct syntax is to put the configure options inside <code class="docutils literal notranslate"><span class="pre">--configure-args</span></code>, e.g.</p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">JHOME=/home/h03/hadsx/extremes/JAGS_BUGS/jags</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">R</span>&#160; <span class="pre">CMD</span> <span class="pre">INSTALL</span> <span class="pre">rjags_4-4.tar.gz</span>&#160; <span class="pre">--configure-args='--with-jags-include=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/include/JAGS</span> <span class="pre">--with-jags-lib=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/lib</span> <span class="pre">--enable-rpath'</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">install.packages(&quot;rjags&quot;,</span> <span class="pre">configure.args=&quot;--with-jags-include=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/include/JAGS</span> <span class="pre">--with-jags-lib=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/lib</span> <span class="pre">--with-jags-modules=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/lib/JAGS/modules-3&quot;)</span></code></p>
 </div>
 </div>
 
@@ -655,7 +734,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./CS"
+            path: "./Stats_Comp"
         },
         predefinedOutput: true
     }
@@ -673,17 +752,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-How%20R%20searches%20and%20finds%20stuff.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tree/Random Forest (Bagging)</p>
+            <p class="prev-next-title">How R searches and finds stuff</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Note-Hard%20SQL%20interview%20questions.html" title="next page">
+    <a class='right-next' id="next-link" href="Note-googleVis.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hard Data Analyst SQL Interview Questions</p>
+        <p class="prev-next-title">Google R package googleVis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Non-inferiority/equivalence/superiority test basics &#8212; Study Notes</title>
+    <title>Exploring Bayesian Optimization &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -60,8 +60,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Observational study design" href="Note-Observational%20study%20design.html" />
-    <link rel="prev" title="Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
+    <link rel="next" title="Causal Inference General Study Notes" href="Note-Causal%20inference%20general.html" />
+    <link rel="prev" title="Baseline adaptive randomization" href="Note-Baseline%20Adaptive%20Randomization.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -169,8 +169,8 @@
    Baseline adaptive randomization
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Bayesian%20optimization.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Exploring Bayesian Optimization
   </a>
  </li>
@@ -266,8 +266,8 @@
    Multiplicity in Clinical Trials
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Non-inferiority%20equivalence%20superiority%20test.html">
    Non-inferiority/equivalence/superiority test basics
   </a>
  </li>
@@ -480,7 +480,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Note-Non-inferiority equivalence superiority test.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Bayesian optimization.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -500,7 +500,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Non-inferiority equivalence superiority test.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Bayesian optimization.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -526,14 +526,43 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#superiority-equivalence-and-non-inferiority">
-   Superiority, equivalence and non-inferiority
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exploring Bayesian Optimization
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mining-gold">
+     Mining gold!
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#active-learning">
+     Active learning
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayesian-optimization">
+     Bayesian optimization
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#acquisition-functions">
+       Acquisition Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hyperparameter-tuning">
+     Hyperparameter Tuning
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understanding-equivalence-and-noninferiority-testing">
-   Understanding Equivalence and Noninferiority Testing
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-readings">
+   Other readings
   </a>
  </li>
 </ul>
@@ -546,7 +575,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Non-inferiority/equivalence/superiority test basics</h1>
+                <h1>Exploring Bayesian Optimization</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -556,14 +585,43 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#superiority-equivalence-and-non-inferiority">
-   Superiority, equivalence and non-inferiority
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exploring Bayesian Optimization
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mining-gold">
+     Mining gold!
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#active-learning">
+     Active learning
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayesian-optimization">
+     Bayesian optimization
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#acquisition-functions">
+       Acquisition Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hyperparameter-tuning">
+     Hyperparameter Tuning
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understanding-equivalence-and-noninferiority-testing">
-   Understanding Equivalence and Noninferiority Testing
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-readings">
+   Other readings
   </a>
  </li>
 </ul>
@@ -575,71 +633,89 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="non-inferiority-equivalence-superiority-test-basics">
-<h1>Non-inferiority/equivalence/superiority test basics<a class="headerlink" href="#non-inferiority-equivalence-superiority-test-basics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="superiority-equivalence-and-non-inferiority">
-<h2>Superiority, equivalence and non-inferiority <a class="footnote-reference brackets" href="#non-inf1" id="id1">1</a><a class="headerlink" href="#superiority-equivalence-and-non-inferiority" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Both non-inferiority and superiority tests are examples of directional (one-sided) tests and their power and sample size could be calculated using the <em>Two-Sample T-Test</em> procedure. <u> A non-inferiority test tests that the treatment mean is not worse than the reference mean by more than the equivalence <strong>margin</strong></u>. The actual direction of the hypothesis depends on the response variable being studied.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="exploring-bayesian-optimization">
+<h1><a class="reference external" href="https://distill.pub/2020/bayesian-optimization/">Exploring Bayesian Optimization</a><a class="headerlink" href="#exploring-bayesian-optimization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mining-gold">
+<h2>Mining gold!<a class="headerlink" href="#mining-gold" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="active-learning">
+<h2>Active learning<a class="headerlink" href="#active-learning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>In the case of lower values are better. The hypotheses are arranged so that rejecting the null hypothesis implies that the treatment mean is no more than a small amount above the reference mean.</p></li>
-<li><p><strong>Margin of non-inferiority</strong>. This is a tolerance value that defines the magnitude of the amount that is not of practical importance. This may be thought of as the largest change from the baseline that is considered to be trivial. The absolute value is shown to emphasize that this is a magnitude. The sign of the value will be determined by the specific design that is being used.</p></li>
-</ul>
+<li><p>Procedure for Active Learning</p>
+<ol class="simple">
+<li><p>Choose and add the point with the highest uncertainty to the training set (by querying/labeling that point)</p></li>
+<li><p>Train on the new training set</p></li>
+<li><p>Go to #1 till convergence or budget elapsed</p></li>
+</ol>
 </li>
-<li><p>The statistical test will be set up so that if the null hypothesis is rejected, the conclusion will be that the new treatment is non-inferior. To assess whether the null hypothesis can be rejected (or, in this case, that the non-inferiority margin is met) it is usual practice to perform a <strong>one-sided</strong> hypothesis test at the α level of significance. One-sided tests are used here because our alternative hypothesis is examining whether the new product is the same (non-inferior to) or better than the existing product.</p></li>
-<li><p><strong>We are not interested in the hypothesis that the new product is significantly worse than the existing product</strong>. By not rejecting the non-inferiority hypothesis test, we will have accomplished this goal. <u>This test will be identical to calculating a two-sided 100(1 – <span class="math notranslate nohighlight">\(\alpha\)</span>) percentage confidence interval for the difference between the two products <span class="math notranslate nohighlight">\((X – Y)\)</span>.</u> If the upper bound on the confidence interval of the difference between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> is less than <span class="math notranslate nohighlight">\(D\)</span> (the prespecified non-inferiority margin), you can conclude that the standard product is more efficacious than the new product by no more than <span class="math notranslate nohighlight">\(D\)</span>. Then the null hypothesis is rejected in favor of the non-inferiority of the new product.</p></li>
-<li><p><strong>Example</strong></p>
-<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/120c5b64_20200421114653.png" /></p>
-<p>a. <strong>Superiority shown</strong>: The confidence bound of <span class="math notranslate nohighlight">\((X – Y)\)</span> does not include the 0 difference line, and the confidence bound exceeds the upper margin of non-inferiority. The result shows the superiority of <span class="math notranslate nohighlight">\(Y\)</span>. This result is identical to that of a hypothesis comparing <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> in which superiority of <span class="math notranslate nohighlight">\(Y\)</span> is shown.</p>
-<p>b. <strong>Non-inferiority shown</strong>: Non-inferiority is shown because the lower bound of <span class="math notranslate nohighlight">\((X – Y)\)</span> crosses the 0 difference line; although the upper bound does exceed the upper non-inferiority boundary, but the lower bound does not cross the lower non-inferiority boundary.</p>
-<p>c. <strong>Non-inferiority shown</strong>: Here non-inferiority is shown because the confidence bounds for <span class="math notranslate nohighlight">\((X – Y)\)</span> are totally within the non-inferiority boundaries.</p>
-<p>d. <strong>Non-inferiority shown</strong>: Non-inferiority is shown because, although the confidence bounds for <span class="math notranslate nohighlight">\((X – Y)\)</span> cross the 0 line, the lower bound does not cross the lower non-inferiority boundary.</p>
-<p>e. <strong>Inferiority shown</strong>: The lower bound of the confidence interval of <span class="math notranslate nohighlight">\((X – Y)\)</span> crosses the lower boundary of the inferiority margin.</p>
-</li>
-<li><p>In summary, the non-inferiority margin must be chosen to test <span class="math notranslate nohighlight">\(Y\)</span> (new treatment) as being superior to placebo and non-inferior to <span class="math notranslate nohighlight">\(X\)</span> (standard treatment). The value of the non-inferiority margin should be chosen as the maximum acceptable difference between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
 </ul>
 </div>
-<div class="section" id="understanding-equivalence-and-noninferiority-testing">
-<h2>Understanding Equivalence and Noninferiority Testing<a class="footnote-reference brackets" href="#non-inf" id="id2">2</a><a class="headerlink" href="#understanding-equivalence-and-noninferiority-testing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bayesian-optimization">
+<h2>Bayesian optimization<a class="headerlink" href="#bayesian-optimization" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The core question in Bayesian Optimization: “<em><strong>Based on what we know so far, which point should we evaluate next?</strong></em>”</p></li>
+<li><p>In Bayesian Optimization, we need to balance exploring uncertain regions, which might unexpectedly have high gold content, against focusing on regions we already know have higher gold content (a kind of exploitation).</p></li>
+<li><p>Acquisition functions are heuristics for how desirable it is to evaluate a point, based on our present model.</p></li>
+<li><p>This brings us to how Bayesian Optimization works. At every step, we determine what the best point to evaluate next is according to the acquisition function by optimizing it. We then update our model and repeat this process to determine the next point to evaluate.</p></li>
+<li><p>To solve this problem, we will follow the following algorithm:</p>
+<ol class="simple">
+<li><p>We first choose a surrogate model for modeling the true function <em>f</em> and define its <strong>prior</strong>.</p></li>
+<li><p>Given the set of <strong>observations</strong> (function evaluations), use Bayes rule to obtain the <strong>posterior</strong>.</p></li>
+<li><p>Use an acquisition function <span class="math notranslate nohighlight">\(\alpha(x)\)</span>, which is a function of the posterior, to decide the next sample point <span class="math notranslate nohighlight">\(x_t = \text{argmax}_x \alpha(x)\)</span>.</p></li>
+<li><p>Add newly sampled data to the set of <strong>observations</strong> and goto step #2 till convergence or budget elapses.</p></li>
+</ol>
+</li>
+</ul>
+<div class="section" id="acquisition-functions">
+<h3>Acquisition Functions<a class="headerlink" href="#acquisition-functions" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Effective standards of care have been developed in many clinical settings, and it is increasingly more difficult to develop new therapies with higher efficacy than the standard of care.</p></li>
-<li><p>These (new) therapies offer advantages such as fewer side effects, lower cost, easier application, or fewer drug interactions.</p></li>
-<li><p>The objective in testing for equivalence/noninferiority is precisely the opposite (to traditional hypothesis testing), and it requires modifications to the traditional hypotheses testing methods.</p></li>
-<li><p>In hypotheses testing, the research or alternative hypothesis represents what the study aims to show.</p>
+<li><p>Acquisition functions are crucial to Bayesian Optimization, and there are a wide variety of options:</p>
+<ul>
+<li><p>Probability of improvement (PI)</p>
+<div class="math notranslate nohighlight">
+\[
+    x_{t+1}=argmax(α_{PI} (x))=argmax(P(f(x)≥(f(x^+)+ϵ)))
+    \]</div>
+<p>Where,</p>
+<p><span class="math notranslate nohighlight">\(P(\cdot)\)</span> Indicate probability</p>
+<p><span class="math notranslate nohighlight">\(\epsilon\)</span> is a small positive number</p>
+<p>And, <span class="math notranslate nohighlight">\(x^+ = \text{argmax}_{x_i\in x_{1:t}}f(x_i)\)</span> where <span class="math notranslate nohighlight">\(x_i\)</span> is the location queried at <span class="math notranslate nohighlight">\(i^{th}\)</span>time step.</p>
 <ul class="simple">
-<li><p>In essence, the null and research hypotheses in testing equivalence are simply those of a traditional comparative study
-reversed. For noninferiority studies, the research hypothesis is that the new therapy is either equivalent or superior to the current therapy (Table 1).
-<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/50a0d802_20200421114716.png" /></p></li>
+<li><p>PI uses <span class="math notranslate nohighlight">\(\epsilon\)</span> to strike a balance between exploration and exploitation. Increasing <span class="math notranslate nohighlight">\(\epsilon\)</span> results in querying locations with a larger <span class="math notranslate nohighlight">\(\sigma\)</span> as their probability density is spread.</p></li>
+<li><p>with high exploration, the setting becomes similar to active learning.</p></li>
 </ul>
 </li>
-<li><p>The term equivalent is not used here in the strict sense, but rather to mean that the efficacies of the two therapies are close enough so that one cannot be considered superior or inferior to the other. This concept is formalized in the definition of a constant called the <strong>equivalence margin</strong>. The equivalence margin defines a range of values for which the efficacies are “close	enough” to be considered equivalent.</p></li>
-<li><p>In practical terms, the margin is the maximum clinically acceptable difference that one is willing to accept in return for the secondary benefits of the new therapy.</p></li>
-<li><p>In summary, the equivalence of a new therapy is established when the data provide enough evidence to conclude that its efficacy is 	within <span class="math notranslate nohighlight">\(δ\)</span> units from that of the current therapy.</p></li>
-<li><p>If the equivalence margin is set to zero, <span class="math notranslate nohighlight">\(δ=0\)</span>, then the problem simplifies to a traditional one-sided superiority test.</p></li>
-<li><p>The simplest and most widely used approach to test equivalence is the <strong>two one-sided test (TOST)</strong> procedure.  Using TOST, <strong>equivalence is established</strong> at the <span class="math notranslate nohighlight">\(α\)</span> significance level if a <span class="math notranslate nohighlight">\((1–2α) × 100\%\)</span> confidence interval for the difference in efficacies (new – current) is contained within the interval <span class="math notranslate nohighlight">\((-δ, δ)\)</span></p></li>
-<li><p><strong>Noninferiority</strong> is established, at the α significance level, if the lower limit of a <span class="math notranslate nohighlight">\((1–2α) × 100\%\)</span> confidence interval for the difference (new – current) is above <span class="math notranslate nohighlight">\(-δ\)</span> (when higher is better) (Fig. 1)</p>
+<li><p>Expected improvement (EI)</p>
 <ul class="simple">
-<li><p>Non-inferiority tests are <strong>one-sided</strong> tests</p></li>
+<li><p>The idea is fairly simple — choose the next query point as the one which has the highest expected improvement over the current max <span class="math notranslate nohighlight">\(f(x^+)\)</span>, where <span class="math notranslate nohighlight">\(x^+ = \text{argmax}_{x_i \in x_{1:t}}f(x_i)\)</span> and <span class="math notranslate nohighlight">\(x_i\)</span> is the location queried at <span class="math notranslate nohighlight">\(i^{th}\)</span> time step.</p></li>
 </ul>
-<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/d6fbc5cb_20200421115443.png" /></p>
 </li>
-<li><p>Since an equivalence test is tantamount to applying two traditional one-sided tests, <strong>a p-value can be reported as the larger of the two p-values of each of the one-sided tests</strong>. (to make sure if one test is significant then both tests are significant <span class="math notranslate nohighlight">\(\rightarrow\)</span> to establish the research hypothesis)</p></li>
-<li><p>An equivalence/noninferiority study should be designed <strong>to minimize the possibility that a new therapy that is found to be  equivalent/noninferior to the current therapy can be nonsuperior to a placebo</strong>.</p></li>
-<li><p>One way to minimize this possibility is to choose a value of the equivalencemargin based on themargin of superiority of the current therapy against the placebo. This margin of superiority can be estimated from previous studies. In noninferiority testing, a  ommonpractice is to set the value of <span class="math notranslate nohighlight">\(δ\)</span> to a fraction, <span class="math notranslate nohighlight">\(f\)</span>, of <strong>the lower limit of a confidence interval of the difference between the current therapy and the placebo obtained from a meta analysis</strong>. The smaller the value of <span class="math notranslate nohighlight">\(f\)</span>, the more difficult the establishment of equivalence/noninferiority of the new therapy.</p></li>
-<li><p>The choice of f is a matter of clinical judgment governed by the maximum loss of efficacy one is willing to accept in return for nonefficacy advantages of the new therapy</p></li>
-<li><p>When the outcome is mortality, the FDA has suggested a value of f of 0.50.</p></li>
-<li><p>Note that the smaller differences commonly observed in ITT have the opposite effect when testing equivalence/noninferiority.  ITT makes it easier to establish equivalency/noninferiority and is considered anticonservative.  The FDA requires the reporting of both (ITT and PP) types of analyses</p></li>
 </ul>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="non-inf1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><a class="reference external" href="http://asq.org/quality-progress/2007/02/statistics-roundtable/superiority-equivalence-and-non-inferiority.html">Statistics Roundtable: Superiority, Equivalence and Non-inferiority</a></p>
-</dd>
-<dt class="label" id="non-inf"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3019319/">Understanding Equivalence and Noninferiority Testing</a></p>
-</dd>
-</dl>
+</li>
+<li><p>summaries of the core ideas associated with acquisition functions:</p>
+<ul class="simple">
+<li><p>i) they are heuristics for evaluating the utility of a point;</p></li>
+<li><p>ii) they are a function of the surrogate posterior;</p></li>
+<li><p>iii) they combine exploration and exploitation; and</p></li>
+<li><p>iv) they are inexpensive to evaluate.</p></li>
+</ul>
+</li>
+</ul>
 </div>
+</div>
+<div class="section" id="hyperparameter-tuning">
+<h2>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>When training a model is not expensive and time-consuming, we can do a grid search to find the optimum hyperparameters. However, grid search is not feasible if function evaluations are costly, as in the case of a large neural network that takes days to train. Further, grid search scales poorly in terms of the number of hyperparameters.</p></li>
+<li><p>We turn to Bayesian Optimization to counter the expensive nature of evaluating our black-box function (accuracy).</p></li>
+</ul>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="other-readings">
+<h1>Other readings<a class="headerlink" href="#other-readings" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stats.stackexchange.com/questions/161923/bayesian-optimization-or-gradient-descent/161936#161936">Bayesian Optimization vs Gradient Descent</a></p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -673,17 +749,17 @@ reversed. For noninferiority studies, the research hypothesis is that the new th
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Note-Multiplicity%20in%20Clinical%20Trials.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-Baseline%20Adaptive%20Randomization.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Multiplicity in Clinical Trials</p>
+            <p class="prev-next-title">Baseline adaptive randomization</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Note-Observational%20study%20design.html" title="next page">
+    <a class='right-next' id="next-link" href="Note-Causal%20inference%20general.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Observational study design</p>
+        <p class="prev-next-title">Causal Inference General Study Notes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
