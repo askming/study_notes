@@ -2,7 +2,9 @@
 
 ## Formal definition
 A Dirichlet process over a set $S$ is a *stochastic process* whose sample path (i.e. an infinite-dimensional set of random variates drawn from the process) is a probability distribution on $S$. The finite dimensional distributions are from the [Dirichlet distribution](https://en.wikipedia.org/wiki/Dirichlet_distribution): If $H$ is a finite measure on $S$, $\alpha$ is a positive real number and $X$ is a sample path drawn from a Dirichlet process, written as
+
 $$X \sim \mathrm{DP}\left(\alpha, H\right) $$
+
 then for any measureable [partition](https://en.wikipedia.org/wiki/Partition_of_a_set) of $S$, say $\left\{B_i\right\}_{i=1}^{n}$, we have that
 $$\left(X\left(B_1\right),\dots,X\left(B_n\right)\right) \sim \mathrm{Dirichlet}\left(\alpha H\left(B_1\right),\dots, \alpha H\left(B_n\right)\right).$$
 

@@ -26,7 +26,7 @@
 
 2. Observational Causal Inference
 
-- One particularly flexible tool for observational causal inference is ***\*double/debiased machine learning\****. It uses any machine learning model you want to first deconfound the feature of interest (i.e. Ad Spend) and then estimate the average causal effect of changing that feature (i.e. the average slope of the causal effect).
+- One particularly flexible tool for observational causal inference is **double/debiased machine learning**. It uses any machine learning model you want to first deconfound the feature of interest (i.e. Ad Spend) and then estimate the average causal effect of changing that feature (i.e. the average slope of the causal effect).
   - Train a model to predict a feature of interest (i.e. Ad Spend) using a set of possible confounders (i.e. any features not caused by Ad Spend).
   - Train a model to predict the outcome (i.e. Did Renew) using the same set of possible confounders.
   - Train a model to predict the residual variation of the outcome (the variation left after subtracting our prediction) using the residual variation of the causal feature of interest.
