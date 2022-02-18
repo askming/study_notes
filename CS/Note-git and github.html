@@ -1,0 +1,1015 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>git and github &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Miscellaneous Study Notes" href="../Miscellaneous/Miscellaneous%20Notes.html" />
+    <link rel="prev" title="SQL study notes" href="Note-SQL%20Study%20Notes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index (knowledge base structure)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Causal_inference_in_statistics_a_primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Adaptive%20Trial%20Design.html">
+   Adaptive Clinical Trial Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Analysis%20of%20Ordinal%20Outcome.html">
+   Analysis of ordinal outcome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
+   Association vs. Prediction vs. Causation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Baseline%20Adaptive%20Randomization.html">
+   Baseline adaptive randomization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Causal%20inference%20general.html">
+   Causal Inference General Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Correlated%20Data%20Analysis.html">
+   Correlated/Longitudinal Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Dirichlet%20process.html">
+   Dirichlet process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Gaussian%20process.html">
+   Gaussain Process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-ICH%20guidelines.html">
+   Notes on ICH guidelines​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-MDD%20%26%20Effect%20size.html">
+   Power,
+   <strong>
+    MDD
+   </strong>
+   /
+   <strong>
+    E
+   </strong>
+   (minimum detectable difference/effect), and
+   <strong>
+    Effect size
+   </strong>
+   in clinical trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Meta-Analysis.html">
+   Meta-analysis​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Missing%20data.html">
+   Missing data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Model%20comparison%20methods.html">
+   Model comparison methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Monte%20Carlo%20method.html">
+   Monte Carlo Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Multicolinearity.html">
+   Multicolinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Multiplicity%20in%20Clinical%20Trials.html">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Non-inferiority%20equivalence%20superiority%20test.html">
+   Non-inferiority/equivalence/superiority test basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Observational%20study%20design.html">
+   Observational study design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Propensity%20score%20methods.html">
+   Propensity Score Methods &amp; Implementation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Quantile%20regression.html">
+   Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Sample_size_calculation_with_WMW_test.html">
+   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
+   Google R package googleVis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
+   Notes on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
+   Boosting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
+   ​Machine Learning (General)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
+   Naive Bayes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
+   Stochastic Gradient Decent (SGD)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
+   Tree/Random Forest (Bagging)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Computer science
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-HTML%20basics.html">
+   HTML Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Hard%20SQL%20interview%20questions.html">
+   Hard Data Analyst SQL Interview Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Learning%20React.html">
+   Learning React
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Learning%20Rust.html">
+   Learning Rust
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-SQL%20Study%20Notes.html">
+   SQL study notes
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   git and github
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
+   Pharmacedutical development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">
+   :bulb: Q: fair coin, # of flips to get two consecutive side (H or T)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">
+   Generate random number 1 to 7 using a fair dice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/CS/Note-git and github.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-git and github.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-basics">
+   git basics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-local-repository-consists-of-3-trees-maintainened-by-git">
+     A local repository consists of 3 “trees” maintainened by git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-connect-with-a-remote-repository">
+     To connect with a remote repository:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-create-a-new-branch-besides-the-master-branch">
+     To create a new branch besides the master branch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-use-tag">
+     To use tag
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-use-log">
+     To use log
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-replace-local-changes">
+     To replace local changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-solve-merge-conflicts-between-two-repos">
+     To solve merge conflicts between two repos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-put-different-local-folders-under-the-same-repo-on-github">
+     To put different local folders under the same repo on Github
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syncing-update-a-fork">
+     Syncing/update a fork
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#others">
+     Others
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-actions">
+   Github actions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>git and github</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-basics">
+   git basics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-local-repository-consists-of-3-trees-maintainened-by-git">
+     A local repository consists of 3 “trees” maintainened by git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-connect-with-a-remote-repository">
+     To connect with a remote repository:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-create-a-new-branch-besides-the-master-branch">
+     To create a new branch besides the master branch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-use-tag">
+     To use tag
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-use-log">
+     To use log
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-replace-local-changes">
+     To replace local changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-solve-merge-conflicts-between-two-repos">
+     To solve merge conflicts between two repos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-put-different-local-folders-under-the-same-repo-on-github">
+     To put different local folders under the same repo on Github
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syncing-update-a-fork">
+     Syncing/update a fork
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#others">
+     Others
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-actions">
+   Github actions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="git-and-github">
+<h1>git and github<a class="headerlink" href="#git-and-github" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="git-basics">
+<h2>git basics<a class="headerlink" href="#git-basics" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init <span class="c1"># to create a new git repository</span>
+git add filename.txt
+
+git rm &lt;file&gt; <span class="c1"># remove file in repository</span>
+git status
+git diff filename.txt
+git commit -m <span class="s1">&#39;text comment&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="a-local-repository-consists-of-3-trees-maintainened-by-git">
+<h3>A local repository consists of 3 “trees” maintainened by git<a class="headerlink" href="#a-local-repository-consists-of-3-trees-maintainened-by-git" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Working Directory: holds the actual files 
+2. Index: acts as a staging area
+3. `HEAD`: points to the last commit
+</pre></div>
+</div>
+<p>​	<em>working directory <span class="math notranslate nohighlight">\(\rightarrow\)</span> stage (index) <span class="math notranslate nohighlight">\(\rightarrow\)</span> master</em>
+​	repository includes stage &amp; master (branch)</p>
+</div>
+<div class="section" id="to-connect-with-a-remote-repository">
+<h3>To connect with a remote repository:<a class="headerlink" href="#to-connect-with-a-remote-repository" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin git@github.com:path/repo-name.git <span class="c1"># connect the local repo with the remote server</span>
+
+<span class="c1"># Push local master repository to remote hub</span>
+<span class="c1"># first time push: </span>
+git push -u origin master
+<span class="c1"># not first, then: </span>
+git push origin master 
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-create-a-new-branch-besides-the-master-branch">
+<h3>To create a new branch besides the master branch<a class="headerlink" href="#to-create-a-new-branch-besides-the-master-branch" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Branches are used to develop features isolated from each other</p></li>
+<li><p>The <em>master</em> branch is the default branch when creating a repo; after done with the development in other branch, can merge them back to the master branch.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b dev <span class="c1"># create and switch to a new branch called dev</span>
+git checkout -b branch-name origin/branch-name <span class="c1"># create a local brach corresponding to the remote branch</span>
+
+git branch <span class="c1"># list all branches, * indicates current branch</span>
+git merge &lt;branch&gt; <span class="c1"># merge &lt;branch&gt; to current branch</span>
+git branch -d &lt;branch&gt; <span class="c1"># delete &lt;branch&gt;</span>
+git branch -D &lt;branch&gt; <span class="c1"># force to delete a unmerged branch</span>
+
+<span class="c1"># a branch is not available to other until pushed to the remote repository</span>
+git push origin &lt;branch&gt;
+
+git branch -m oldname newname <span class="c1"># rename a branch</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-use-tag">
+<h3>To use tag<a class="headerlink" href="#to-use-tag" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git tag &lt;tag-name&gt; &lt;commit id&gt; <span class="c1"># create tag for specific commit under certain branch</span>
+git tag <span class="m">1</span>.0.0 1b2e1d63ff <span class="c1"># e.g. tag the commit start with 1b2e1d63ff (first 10 chars)</span>
+
+git tag <span class="c1"># check all tags</span>
+git show &lt;tag-name&gt; <span class="c1"># show detailed tag info</span>
+git tag -a &lt;tag-name&gt; -m <span class="s1">&#39;tag description&#39;</span>
+git tag -d &lt;tag-name&gt; <span class="c1"># delete local tag</span>
+git push origin :refs/tags/&lt;tag-name&gt; <span class="c1"># delete a remote tag</span>
+
+git push origin &lt;tag-name&gt; <span class="c1"># push single tag to remote</span>
+git push origin --tags <span class="c1"># push all un-pushed tags to remote</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-use-log">
+<h3>To use log<a class="headerlink" href="#to-use-log" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --author<span class="o">=</span>bob <span class="c1"># see log from bob</span>
+git log --pretty<span class="o">==</span>oneline <span class="c1"># see a very compressed log where each commit is one line</span>
+git log --name-status <span class="c1"># see which files have changed</span>
+git reflog <span class="c1">#every command ever used in this repository </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-replace-local-changes">
+<h3>To replace local changes<a class="headerlink" href="#to-replace-local-changes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout --&lt;filename&gt; <span class="c1"># to replace/discard local changes; this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.</span>
+
+<span class="c1"># to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it</span>
+git fetch origin
+git reset --hard origin/master
+
+git reset HEAD &lt;file&gt; <span class="c1">#unstage (opposite of git add &lt;file&gt;), put file back to working directory</span>
+
+git reset --hard HEAD^ <span class="c1">#to previous version</span>
+git reset --hard HEAD~10 <span class="c1">#to 10th previous version</span>
+git reset --hard commit id <span class="c1">#to version with specified id</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-solve-merge-conflicts-between-two-repos">
+<h3>To solve merge conflicts between two repos<a class="headerlink" href="#to-solve-merge-conflicts-between-two-repos" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When merging two repos, there may be <em>conflicts</em> that needs to be resolved manually.</p></li>
+</ul>
+<ol>
+<li><p>Create a temp branch and pull the upstream repo into this temp branch (we will resolve the conflicts here and then merge this branch to our final branch that we originally would like to merge with the upstream repo)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b temp-branch master <span class="c1"># here master is the branch we originally would like to have the merge with</span>
+</pre></div>
+</div>
+</li>
+<li><p>pull the upstream repo that we would like to merge with into the temp branch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull https://github.com/xxx.git
+</pre></div>
+</div>
+</li>
+<li><p>After the pull, merge conflicts will be shown, if lost can retrieve those with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+</li>
+<li><p>Resolve those conflicts in text editor (e.g sublim text): looking for signs as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+<span class="nb">open</span> <span class="n">an</span> <span class="n">issue</span>
+<span class="o">=======</span>
+<span class="n">ask</span> <span class="n">your</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">IRC</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">branch</span><span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>NOTE: anything between  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></code> and <code class="docutils literal notranslate"><span class="pre">=======</span></code> is in our file and that between <code class="docutils literal notranslate"><span class="pre">=======</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">branch-a</span></code> is from the upstream file.</p>
+</div></blockquote>
+<ol>
+<li><p>After cleaning the file, double check the status, if no conflict anymore, add the changes and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add &lt;filename&gt;
+git commit -m <span class="s1">&#39;Resloved merge conflicts by doing XXX&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Merge the temp branch with the master branch and push to github</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout master
+git merge --no-ff temp-branch
+git push origin master
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>NOTE: all these operations can also be done with the assit of github desktop application.</p>
+</div></blockquote>
+</div>
+<div class="section" id="to-put-different-local-folders-under-the-same-repo-on-github">
+<h3>To put different local folders under the same repo on Github<a class="headerlink" href="#to-put-different-local-folders-under-the-same-repo-on-github" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>For example, there is a central Github repo call “top”, which as several sub-directories:</p>
+<ul>
+<li><p>top/sub1</p></li>
+<li><p>top/sub2</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+<li><p>To use each sub-directory for different local project folder, do the following:</p></li>
+<li><p><a class="reference external" href="https://intellipaat.com/community/21245/git-clone-subdirectory-how-do-i-clone-a-subdirectory-only-of-a-git-repository">Reference</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init &lt;repo&gt;
+<span class="nb">cd</span> &lt;repo&gt;
+git remote add origin &lt;url&gt; <span class="c1"># url is the repo link to &quot;top&quot;</span>
+git config core.sparsecheckout <span class="nb">true</span>
+<span class="nb">echo</span> <span class="s2">&quot;sub1/*&quot;</span> &gt;&gt; .git/info/sparse-checkout
+git pull --depth<span class="o">=</span><span class="m">1</span> origin master
+</pre></div>
+</div>
+</div>
+<div class="section" id="syncing-update-a-fork">
+<h3>Syncing/update a fork<a class="headerlink" href="#syncing-update-a-fork" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><a class="reference external" href="https://docs.github.com/en/articles/configuring-a-remote-for-a-fork">Configure a remote that points to the upstream repo.</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote -v
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+</pre></div>
+</div>
+</li>
+<li><p>In terminal, change the current working directory to local project</p></li>
+<li><p>Fetch the brances and their respective commits from the upstreatm repo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git fetch upstream
+</pre></div>
+</div>
+</li>
+<li><p>Check out the fork’s local default branch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout LocalBranchName
+</pre></div>
+</div>
+</li>
+<li><p>Merge the changes from the upstream default branch into the local default branch. This brings the fork’s default branch into sync with the upstream repository, without losing local changes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge upstream/main
+</pre></div>
+</div>
+<ul>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github">another way</a> is to use <code class="docutils literal notranslate"><span class="pre">rebase</span></code>, which will erase local changes; after <code class="docutils literal notranslate"><span class="pre">fetch</span></code> and <code class="docutils literal notranslate"><span class="pre">checkout</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rebase upstream/master
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>there may be difference(s) between the remote master and local repo and need to do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--continue</span></code> to complete the process</p></li>
+</ul>
+<p>may need to force the push in order to push it to the forked repo on Github</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="others">
+<h3>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --graph <span class="c1"># branches merging graph</span>
+
+git stash <span class="c1"># saving working directory and index state...</span>
+git stash list <span class="c1"># check saved working directory</span>
+
+git stash apply <span class="c1"># recover working contents </span>
+git stash drop <span class="c1">#delete saved stash</span>
+
+git stash pop <span class="c1"># recover saved stash and remove it after recovering</span>
+
+git remote -v <span class="c1"># check remote repository information</span>
+
+git branch --set-upstream branch-name origin/branch-name <span class="c1"># create local and remote branch connection</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file to ignore some files in the working directory. need to put it in the root git directory</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global alias.&lt;new-name&gt; &lt;original-name&gt; <span class="c1">#set alias for git command. If no --global, only works for current repository</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To find the configuration file: <code class="docutils literal notranslate"><span class="pre">.git/config</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="github-actions">
+<h2>Github actions<a class="headerlink" href="#github-actions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The main concept at the heart of GitHub actions is the workflow;</p>
+<ul>
+<li><p>this is done by creating a series of YAML files that contain a series of actions that determine your workflow in your repositories.</p></li>
+<li><p>These YAML files are stored in a special folder in the <code class="docutils literal notranslate"><span class="pre">.github/workflows\</span></code> folder inside the repository.</p></li>
+</ul>
+</li>
+<li><p>The most important information about your repository is stored inside a GitHub object, but there’s a few other, what are called contexts, that you can use, including information about the job that is running or the steps that are currently running as well.</p>
+<ul>
+<li><p>There’s also a very special and pretty useful context called <code class="docutils literal notranslate"><span class="pre">secrets</span></code>, which lets you store information in GitHub itself that won’t be seen by anyone else, including other people in your repository.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p><a class="reference external" href="https://launchschool.com/books/git/read/introduction">INTRODUCTION TO GIT AND GITHUB</a> by LaunchSchool</p>
+<blockquote>
+<div><p>A beginner friendly guide to using git and working with Github.com. This book is for the absolute beginner and provides a gentle introduction to git and Github. Get a jump start using git on your projects, and learn how to push those projects to Github.com.</p>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://www.actionsbyexample.com/index.html">Github action by example</a></p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./CS"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Note-SQL%20Study%20Notes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">SQL study notes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Miscellaneous/Miscellaneous%20Notes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Miscellaneous Study Notes</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ming Yang<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

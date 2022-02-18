@@ -6,6 +6,9 @@
 ## 1 Statistics
 ### 1.1 General topics
 - [Monte Carlo method](Stats/Note-Monte%20Carlo%20method.md)
+- [Gaussian process](./Stats/Note-Gaussian%20process.md)
+- [Model comparison methods](./Stats/Note-Model%20comparison%20methods.md)
+- [Obervational study design](./Stats/Note-Observational%20study%20design.md)
 
 ### 1.2 Survival analysis
 - [Survial analysis general](./Stats/Note-Survival_Analysis.md)
@@ -17,27 +20,34 @@
 
 
 ### 1.3 Bayesian Statistics
+- [Dirichlet process](./Stats/Note-Dirichlet%20process.md)
 
 ### 1.4 Missing data and imputation methods
+- [Missing data](./Stats/Note-Missing%20data.md)
 
 ### 1.5 Causal inference (Propensity score methods)
+- [Causal inference notes (general)](./Stats/Note-Causal%20inference%20general.md)
 - [Causal inference in statistics *a primer*](Stats/Book-Causal%20inference%20in%20statistics%20a%20primer.md)
+- [Propensity score methods basics](./Stats/Note-Propensity%20score%20methods.md)
 
 #### 1.5.1 Use of external control data in RCT
 
 
 
 ### 1.6 Meta-analysis methods
+- [Meta-analysis basics](./Stats/Note-Meta-Analysis.md)
 
 
-### 1.7 Various regression methods
+### 1.7 Regression methods
 - [Quantile regression](Stats/Note-Quantile%20regression.md)
+- [Multicolinearity](./Stats/Note-Multicolinearity.md)
 
 ### 1.8 Clinical trials related
 - [ICH guidelines](Stats/Note-ICH%20guidelines.md)
 - [FDA guidances](Stats/Note-FDA%20guidances%20for%20industry.md)
 - [Multiplicity in Clinical Trials](./Stats/Note-Multiplicity%20in%20Clinical%20Trials.md)
 - [Baseline adaptive randomization](./Stats/Note-Baseline%20Adaptive%20Randomization.md)
+- [Non-inferiority, equivalence, and superiority test basics](./Stats/Note-Non-inferiority%20equivalence%20superiority%20test.md)
 
 ### 1.9 Correlated/longitudinal data analysis
 - [Correlated Data Analysis](./Stats/Note-Correlated%20Data%20Analysis.md)
@@ -49,6 +59,9 @@
 
 ### 1.xx Other topics
 - [Analysis of Observational Health Care Data Using SAS](Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.md)
+- [Simulation: No. of flips it takes to get two consective same side](./Miscellaneous/Sim-Coin%20flip.md)
+- [Simulation: Generate random number between 1 to 7 using a dice](./Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.md)
+
 
 <hr>
 
@@ -101,6 +114,7 @@
 
 #### 2.4.1 R
 - [How R Searches and Finds stuff](./Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.md)
+- [googleVis package](./Stats_Comp/Note-googleVis.md)
 
 #### 2.4.2 Python
 - Scikit-learn
@@ -132,19 +146,24 @@
 
 ### 4.2 SQL
 - [SQL study notes](CS/Note-SQL%20Study%20Notes.md)
+- [Hard Data Analyst SQL Interview Questions](./CS/Note-Hard%20SQL%20interview%20questions.md)
 
 ### 4.3 Algorithm & Data Structure
 
 ### 4.4 Git & Github
+- [Git and github](./CS/Note-git%20and%20github.md)
 
 ### 4.5 Use Linux
 
 ### 4.6 Rust
+- [Learning Rust](./CS/Note-Learning%20Rust.md)
+
 
 ### 4.7 Containers
 
 ### 4.8 Web Development
 - [Learning React](CS/Note-Learning%20React.md)
+- [HTML basics](./CS/Note-HTML%20basics.md)
 
 ### 4.9 D3
 

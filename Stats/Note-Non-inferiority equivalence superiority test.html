@@ -1,0 +1,701 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-inferiority/equivalence/superiority test basics &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Observational study design" href="Note-Observational%20study%20design.html" />
+    <link rel="prev" title="Multiplicity in Clinical Trials" href="Note-Multiplicity%20in%20Clinical%20Trials.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index (knowledge base structure)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal_inference_in_statistics_a_primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
+   Adaptive Clinical Trial Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Ordinal%20Outcome.html">
+   Analysis of ordinal outcome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
+   Association vs. Prediction vs. Causation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Baseline%20Adaptive%20Randomization.html">
+   Baseline adaptive randomization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Causal%20inference%20general.html">
+   Causal Inference General Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Correlated%20Data%20Analysis.html">
+   Correlated/Longitudinal Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Dirichlet%20process.html">
+   Dirichlet process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Gaussian%20process.html">
+   Gaussain Process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-ICH%20guidelines.html">
+   Notes on ICH guidelines​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
+   Power,
+   <strong>
+    MDD
+   </strong>
+   /
+   <strong>
+    E
+   </strong>
+   (minimum detectable difference/effect), and
+   <strong>
+    Effect size
+   </strong>
+   in clinical trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Meta-Analysis.html">
+   Meta-analysis​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Missing%20data.html">
+   Missing data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Model%20comparison%20methods.html">
+   Model comparison methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
+   Monte Carlo Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Multicolinearity.html">
+   Multicolinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Non-inferiority/equivalence/superiority test basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Observational%20study%20design.html">
+   Observational study design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Propensity%20score%20methods.html">
+   Propensity Score Methods &amp; Implementation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Quantile%20regression.html">
+   Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html">
+   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
+   Google R package googleVis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
+   Notes on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
+   Boosting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
+   ​Machine Learning (General)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
+   Naive Bayes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
+   Stochastic Gradient Decent (SGD)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
+   Tree/Random Forest (Bagging)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Computer science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-HTML%20basics.html">
+   HTML Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Hard%20SQL%20interview%20questions.html">
+   Hard Data Analyst SQL Interview Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Learning%20React.html">
+   Learning React
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Learning%20Rust.html">
+   Learning Rust
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
+   SQL study notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-git%20and%20github.html">
+   git and github
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
+   Pharmacedutical development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">
+   :bulb: Q: fair coin, # of flips to get two consecutive side (H or T)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">
+   Generate random number 1 to 7 using a fair dice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Non-inferiority equivalence superiority test.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Non-inferiority equivalence superiority test.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#superiority-equivalence-and-non-inferiority">
+   Superiority, equivalence and non-inferiority
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-equivalence-and-noninferiority-testing">
+   Understanding Equivalence and Noninferiority Testing
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Non-inferiority/equivalence/superiority test basics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#superiority-equivalence-and-non-inferiority">
+   Superiority, equivalence and non-inferiority
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-equivalence-and-noninferiority-testing">
+   Understanding Equivalence and Noninferiority Testing
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="non-inferiority-equivalence-superiority-test-basics">
+<h1>Non-inferiority/equivalence/superiority test basics<a class="headerlink" href="#non-inferiority-equivalence-superiority-test-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="superiority-equivalence-and-non-inferiority">
+<h2>Superiority, equivalence and non-inferiority <a class="footnote-reference brackets" href="#non-inf1" id="id1">1</a><a class="headerlink" href="#superiority-equivalence-and-non-inferiority" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Both non-inferiority and superiority tests are examples of directional (one-sided) tests and their power and sample size could be calculated using the <em>Two-Sample T-Test</em> procedure. <u> A non-inferiority test tests that the treatment mean is not worse than the reference mean by more than the equivalence <strong>margin</strong></u>. The actual direction of the hypothesis depends on the response variable being studied.</p>
+<ul class="simple">
+<li><p>In the case of lower values are better. The hypotheses are arranged so that rejecting the null hypothesis implies that the treatment mean is no more than a small amount above the reference mean.</p></li>
+<li><p><strong>Margin of non-inferiority</strong>. This is a tolerance value that defines the magnitude of the amount that is not of practical importance. This may be thought of as the largest change from the baseline that is considered to be trivial. The absolute value is shown to emphasize that this is a magnitude. The sign of the value will be determined by the specific design that is being used.</p></li>
+</ul>
+</li>
+<li><p>The statistical test will be set up so that if the null hypothesis is rejected, the conclusion will be that the new treatment is non-inferior. To assess whether the null hypothesis can be rejected (or, in this case, that the non-inferiority margin is met) it is usual practice to perform a <strong>one-sided</strong> hypothesis test at the α level of significance. One-sided tests are used here because our alternative hypothesis is examining whether the new product is the same (non-inferior to) or better than the existing product.</p></li>
+<li><p><strong>We are not interested in the hypothesis that the new product is significantly worse than the existing product</strong>. By not rejecting the non-inferiority hypothesis test, we will have accomplished this goal. <u>This test will be identical to calculating a two-sided 100(1 – <span class="math notranslate nohighlight">\(\alpha\)</span>) percentage confidence interval for the difference between the two products <span class="math notranslate nohighlight">\((X – Y)\)</span>.</u> If the upper bound on the confidence interval of the difference between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> is less than <span class="math notranslate nohighlight">\(D\)</span> (the prespecified non-inferiority margin), you can conclude that the standard product is more efficacious than the new product by no more than <span class="math notranslate nohighlight">\(D\)</span>. Then the null hypothesis is rejected in favor of the non-inferiority of the new product.</p></li>
+<li><p><strong>Example</strong></p>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/120c5b64_20200421114653.png" /></p>
+<p>a. <strong>Superiority shown</strong>: The confidence bound of <span class="math notranslate nohighlight">\((X – Y)\)</span> does not include the 0 difference line, and the confidence bound exceeds the upper margin of non-inferiority. The result shows the superiority of <span class="math notranslate nohighlight">\(Y\)</span>. This result is identical to that of a hypothesis comparing <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> in which superiority of <span class="math notranslate nohighlight">\(Y\)</span> is shown.</p>
+<p>b. <strong>Non-inferiority shown</strong>: Non-inferiority is shown because the lower bound of <span class="math notranslate nohighlight">\((X – Y)\)</span> crosses the 0 difference line; although the upper bound does exceed the upper non-inferiority boundary, but the lower bound does not cross the lower non-inferiority boundary.</p>
+<p>c. <strong>Non-inferiority shown</strong>: Here non-inferiority is shown because the confidence bounds for <span class="math notranslate nohighlight">\((X – Y)\)</span> are totally within the non-inferiority boundaries.</p>
+<p>d. <strong>Non-inferiority shown</strong>: Non-inferiority is shown because, although the confidence bounds for <span class="math notranslate nohighlight">\((X – Y)\)</span> cross the 0 line, the lower bound does not cross the lower non-inferiority boundary.</p>
+<p>e. <strong>Inferiority shown</strong>: The lower bound of the confidence interval of <span class="math notranslate nohighlight">\((X – Y)\)</span> crosses the lower boundary of the inferiority margin.</p>
+</li>
+<li><p>In summary, the non-inferiority margin must be chosen to test <span class="math notranslate nohighlight">\(Y\)</span> (new treatment) as being superior to placebo and non-inferior to <span class="math notranslate nohighlight">\(X\)</span> (standard treatment). The value of the non-inferiority margin should be chosen as the maximum acceptable difference between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="understanding-equivalence-and-noninferiority-testing">
+<h2>Understanding Equivalence and Noninferiority Testing<a class="footnote-reference brackets" href="#non-inf" id="id2">2</a><a class="headerlink" href="#understanding-equivalence-and-noninferiority-testing" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Effective standards of care have been developed in many clinical settings, and it is increasingly more difficult to develop new therapies with higher efficacy than the standard of care.</p></li>
+<li><p>These (new) therapies offer advantages such as fewer side effects, lower cost, easier application, or fewer drug interactions.</p></li>
+<li><p>The objective in testing for equivalence/noninferiority is precisely the opposite (to traditional hypothesis testing), and it requires modifications to the traditional hypotheses testing methods.</p></li>
+<li><p>In hypotheses testing, the research or alternative hypothesis represents what the study aims to show.</p>
+<ul class="simple">
+<li><p>In essence, the null and research hypotheses in testing equivalence are simply those of a traditional comparative study
+reversed. For noninferiority studies, the research hypothesis is that the new therapy is either equivalent or superior to the current therapy (Table 1).
+<img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/50a0d802_20200421114716.png" /></p></li>
+</ul>
+</li>
+<li><p>The term equivalent is not used here in the strict sense, but rather to mean that the efficacies of the two therapies are close enough so that one cannot be considered superior or inferior to the other. This concept is formalized in the definition of a constant called the <strong>equivalence margin</strong>. The equivalence margin defines a range of values for which the efficacies are “close	enough” to be considered equivalent.</p></li>
+<li><p>In practical terms, the margin is the maximum clinically acceptable difference that one is willing to accept in return for the secondary benefits of the new therapy.</p></li>
+<li><p>In summary, the equivalence of a new therapy is established when the data provide enough evidence to conclude that its efficacy is 	within <span class="math notranslate nohighlight">\(δ\)</span> units from that of the current therapy.</p></li>
+<li><p>If the equivalence margin is set to zero, <span class="math notranslate nohighlight">\(δ=0\)</span>, then the problem simplifies to a traditional one-sided superiority test.</p></li>
+<li><p>The simplest and most widely used approach to test equivalence is the <strong>two one-sided test (TOST)</strong> procedure.  Using TOST, <strong>equivalence is established</strong> at the <span class="math notranslate nohighlight">\(α\)</span> significance level if a <span class="math notranslate nohighlight">\((1–2α) × 100\%\)</span> confidence interval for the difference in efficacies (new – current) is contained within the interval <span class="math notranslate nohighlight">\((-δ, δ)\)</span></p></li>
+<li><p><strong>Noninferiority</strong> is established, at the α significance level, if the lower limit of a <span class="math notranslate nohighlight">\((1–2α) × 100\%\)</span> confidence interval for the difference (new – current) is above <span class="math notranslate nohighlight">\(-δ\)</span> (when higher is better) (Fig. 1)</p>
+<ul class="simple">
+<li><p>Non-inferiority tests are <strong>one-sided</strong> tests</p></li>
+</ul>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/d6fbc5cb_20200421115443.png" /></p>
+</li>
+<li><p>Since an equivalence test is tantamount to applying two traditional one-sided tests, <strong>a p-value can be reported as the larger of the two p-values of each of the one-sided tests</strong>. (to make sure if one test is significant then both tests are significant <span class="math notranslate nohighlight">\(\rightarrow\)</span> to establish the research hypothesis)</p></li>
+<li><p>An equivalence/noninferiority study should be designed <strong>to minimize the possibility that a new therapy that is found to be  equivalent/noninferior to the current therapy can be nonsuperior to a placebo</strong>.</p></li>
+<li><p>One way to minimize this possibility is to choose a value of the equivalencemargin based on themargin of superiority of the current therapy against the placebo. This margin of superiority can be estimated from previous studies. In noninferiority testing, a  ommonpractice is to set the value of <span class="math notranslate nohighlight">\(δ\)</span> to a fraction, <span class="math notranslate nohighlight">\(f\)</span>, of <strong>the lower limit of a confidence interval of the difference between the current therapy and the placebo obtained from a meta analysis</strong>. The smaller the value of <span class="math notranslate nohighlight">\(f\)</span>, the more difficult the establishment of equivalence/noninferiority of the new therapy.</p></li>
+<li><p>The choice of f is a matter of clinical judgment governed by the maximum loss of efficacy one is willing to accept in return for nonefficacy advantages of the new therapy</p></li>
+<li><p>When the outcome is mortality, the FDA has suggested a value of f of 0.50.</p></li>
+<li><p>Note that the smaller differences commonly observed in ITT have the opposite effect when testing equivalence/noninferiority.  ITT makes it easier to establish equivalency/noninferiority and is considered anticonservative.  The FDA requires the reporting of both (ITT and PP) types of analyses</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="non-inf1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="http://asq.org/quality-progress/2007/02/statistics-roundtable/superiority-equivalence-and-non-inferiority.html">Statistics Roundtable: Superiority, Equivalence and Non-inferiority</a></p>
+</dd>
+<dt class="label" id="non-inf"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3019319/">Understanding Equivalence and Noninferiority Testing</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Note-Multiplicity%20in%20Clinical%20Trials.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Multiplicity in Clinical Trials</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Note-Observational%20study%20design.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Observational study design</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ming Yang<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

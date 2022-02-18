@@ -1,0 +1,908 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meta-analysis​ &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Missing data" href="Note-Missing%20data.html" />
+    <link rel="prev" title="Power, MDD/E (minimum detectable difference/effect), and Effect size in clinical trials" href="Note-MDD%20%26%20Effect%20size.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index (knowledge base structure)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal_inference_in_statistics_a_primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
+   Adaptive Clinical Trial Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Ordinal%20Outcome.html">
+   Analysis of ordinal outcome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
+   Association vs. Prediction vs. Causation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Baseline%20Adaptive%20Randomization.html">
+   Baseline adaptive randomization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Causal%20inference%20general.html">
+   Causal Inference General Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Correlated%20Data%20Analysis.html">
+   Correlated/Longitudinal Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Dirichlet%20process.html">
+   Dirichlet process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Gaussian%20process.html">
+   Gaussain Process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-ICH%20guidelines.html">
+   Notes on ICH guidelines​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
+   Power,
+   <strong>
+    MDD
+   </strong>
+   /
+   <strong>
+    E
+   </strong>
+   (minimum detectable difference/effect), and
+   <strong>
+    Effect size
+   </strong>
+   in clinical trials
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Meta-analysis​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Missing%20data.html">
+   Missing data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Model%20comparison%20methods.html">
+   Model comparison methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
+   Monte Carlo Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Multicolinearity.html">
+   Multicolinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Non-inferiority%20equivalence%20superiority%20test.html">
+   Non-inferiority/equivalence/superiority test basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Observational%20study%20design.html">
+   Observational study design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Propensity%20score%20methods.html">
+   Propensity Score Methods &amp; Implementation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Quantile%20regression.html">
+   Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html">
+   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
+   Google R package googleVis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
+   Notes on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
+   Boosting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
+   ​Machine Learning (General)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
+   Naive Bayes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
+   Stochastic Gradient Decent (SGD)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
+   Tree/Random Forest (Bagging)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Computer science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-HTML%20basics.html">
+   HTML Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Hard%20SQL%20interview%20questions.html">
+   Hard Data Analyst SQL Interview Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Learning%20React.html">
+   Learning React
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Learning%20Rust.html">
+   Learning Rust
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
+   SQL study notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-git%20and%20github.html">
+   git and github
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
+   Pharmacedutical development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">
+   :bulb: Q: fair coin, # of flips to get two consecutive side (H or T)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">
+   Generate random number 1 to 7 using a fair dice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Meta-Analysis.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Meta-Analysis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-introduction-to-fixed-vs-random-effects-meta-analysis-model-borenstein2010basic">
+   Basic introduction to fixed- vs random-effects meta-analysis model
+   <span class="xref cite cite-p">
+    borenstein2010basic
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixed-effect-model">
+     Fixed-effect model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-effects-model">
+     Random-effects model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deriving-the-combined-effect">
+     Deriving the combined effect
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#source-of-variance-and-inverse-variance-weights">
+       Source of variance and inverse variance weights
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-the-combined-effect">
+       Computing the combined effect
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difference-between-the-two-models">
+     Difference between the two models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#which-model-to-use-when">
+     Which model to use when
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Meta-analysis​</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-introduction-to-fixed-vs-random-effects-meta-analysis-model-borenstein2010basic">
+   Basic introduction to fixed- vs random-effects meta-analysis model
+   <span class="xref cite cite-p">
+    borenstein2010basic
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixed-effect-model">
+     Fixed-effect model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-effects-model">
+     Random-effects model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deriving-the-combined-effect">
+     Deriving the combined effect
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#source-of-variance-and-inverse-variance-weights">
+       Source of variance and inverse variance weights
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-the-combined-effect">
+       Computing the combined effect
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difference-between-the-two-models">
+     Difference between the two models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#which-model-to-use-when">
+     Which model to use when
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="meta-analysis">
+<h1>Meta-analysis​<a class="headerlink" href="#meta-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-introduction-to-fixed-vs-random-effects-meta-analysis-model-borenstein2010basic">
+<h2>Basic introduction to fixed- vs random-effects meta-analysis model <span id="id1">[<a class="reference internal" href="#id32">Borenstein <em>et al.</em>, 2010</a>]</span><a class="headerlink" href="#basic-introduction-to-fixed-vs-random-effects-meta-analysis-model-borenstein2010basic" title="Permalink to this headline">¶</a></h2>
+<p>[Earlier notes](./attachments/A basic introduction to fixed-effect and random-effects models for meta-analysis.pdf)</p>
+<ul class="simple">
+<li><p>There are two popular statistical models for meta-analysis, the <em>fixed-effect model</em> and the <em>random-effects</em> model.</p>
+<ul>
+<li><p>Under the fixed-effect model we assume that there is one true effect size that underlies all the studies in the analysis, and that all differences in observed effects are due to sampling error.</p></li>
+<li><p>By contrast, under the random-effects model we allow the true effect sizes to differ—it is possible that all studies share a common effect size, but it is also possible that the effect size varies from study to study.</p></li>
+<li><p>The two analyses sometimes produce exactly the same results, but often their results will differ. When this happens, either model can yield the higher estimate of the effect size.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="fixed-effect-model">
+<h3>Fixed-effect model<a class="headerlink" href="#fixed-effect-model" title="Permalink to this headline">¶</a></h3>
+<p><img alt="image-20200715215341884" src="https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202020-07-15%20at%209.50.35%20PM_20200722080642.png" /></p>
+<ul>
+<li><p>The defining feature of the fixed-effect model is that all studies in the analysis <strong>share a common effect size</strong>.</p>
+<p>​																			$<span class="math notranslate nohighlight">\(Y_i = \theta + \epsilon_i\)</span>$</p>
+</li>
+<li><p>:star: The fixed-effect model starts with the assumption that all studies share a common effect size. If we start with that assumption, then the point of the analysis must be to estimate the common effect size.</p></li>
+<li><p>For the fixed-effect model, the null hypothesis is that the <em>common effect size</em> is (for example) zero.</p></li>
+</ul>
+</div>
+<div class="section" id="random-effects-model">
+<h3>Random-effects model<a class="headerlink" href="#random-effects-model" title="Permalink to this headline">¶</a></h3>
+<p><img alt="image-20200715215255480" src="https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202020-07-15%20at%209.52.44%20PM_20200722080703.png" /></p>
+<ul>
+<li><p>The defining feature of the random-effects model is that <strong>there is a distribution of true effect sizes</strong>, and our goal is to estimate the mean of this distribution.</p>
+<ul>
+<li><p>First, the confidence interval for the summary effect will always be wider under the random-effects model</p></li>
+<li><p>Second, the study weights are more similar under the random-effects model (large studies lose influence while small studies gain influence)</p>
+<p>​														$<span class="math notranslate nohighlight">\(Y_i = \mu + \alpha_i + \epsilon_i\)</span>$</p>
+</li>
+</ul>
+</li>
+<li><p>:star: The random-effects model allows that there may be a distribution of true effects. It follows that the first step in the analysis should be to estimate the amount of variation and then use this to inform the direction of the analysis.</p>
+<ul class="simple">
+<li><p>If the variation is trivial, then we would focus on reporting the mean and its confidence interval. If the variation is non trivial, then we might want to address the substantive implications of the variation, but the mean might still be useful as a summary measure.</p></li>
+<li><p>By contrast, if the variation is substantial, then we might want to shift our focus away from the mean and toward the dispersion itself.</p></li>
+</ul>
+</li>
+<li><p>For the random-effects model, the null hypothesis is that the <em>mean effect size</em> is (for example) zero.</p></li>
+</ul>
+</div>
+<div class="section" id="deriving-the-combined-effect">
+<h3>Deriving the combined effect<a class="headerlink" href="#deriving-the-combined-effect" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="source-of-variance-and-inverse-variance-weights">
+<h4>Source of variance and inverse variance weights<a class="headerlink" href="#source-of-variance-and-inverse-variance-weights" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>The majority of meta-analyses assign weights to each study based on the <strong>inverse of the overall study error variance (that is, 1/variance)</strong>. This provides a generic approach to meta-analysis that
+can be used to combine estimates of a large variety of metrics, including standardized mean differences, means differences, correlation coefficients, regression coefficients, odds ratios and simple means or proportions.</p></li>
+<li><p>:star: This scheme is used for both the fixed-effect and random-effects models. Where the models differ is in what we mean by a precise estimate, or (more correctly) how we define the overall study error variance.</p>
+<ul>
+<li><p>For fixed-effect model this weight is given by</p>
+<div class="math notranslate nohighlight">
+\[
+    W _i= \frac{1}{V_i} =\frac{1}{\sigma/n_i}
+    \]</div>
+</li>
+<li><p>For random-effects model, this is given by</p>
+<div class="math notranslate nohighlight">
+\[
+    W_i = \frac{1}{V_i + T^2},
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(V_i\)</span> is the within-study error variance and <span class="math notranslate nohighlight">\(T = \text{var}(\alpha_i)\)</span>, is the variance of random effects or between-study variance</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="computing-the-combined-effect">
+<h4>Computing the combined effect<a class="headerlink" href="#computing-the-combined-effect" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>The weighted mean (M) is computed as</p>
+<div class="math notranslate nohighlight">
+\[
+  M = \frac{\sum_{i=1}^kW_iY_i}{\sum_{i=1}^k W_i}
+  \]</div>
+</li>
+<li><p>Uncertainty in combined effect</p>
+<div class="math notranslate nohighlight">
+\[
+  V_M = \frac{1}{\sum_{i=1}^kW_i}, \text{SE}_M = \sqrt{V_M}
+  \]</div>
+<ul>
+<li><p>Consider study weight as the <em>information</em> contributed by a study, then the sum of weights is the total information available to estimate M, and the higher this value, the lower the variance.</p></li>
+<li><p>For fixed-effect model</p>
+<div class="math notranslate nohighlight">
+\[
+    V_M = \frac{1}{\sum_{i=1}^k\frac{n_i}{\sigma}} = \frac{\sigma}{\sum_{i=1}^kn_i}
+    \]</div>
+<ul class="simple">
+<li><p>If every study has the same sample size, <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(V_M = \frac{\sigma^2}{k\times n}\)</span>; this is equivalent to pooling all the individual observations together for analysis</p></li>
+<li><p>:star: Importantly, because all studies are estimating the same value, it does not matter how the subjects are distributed across the studies. The variance of the combined effect will be the same regardless of whether we have 10 studies with 100 persons in each, 5 studies with 200 in each, or 1 study with 1000 persons, because the cumulative sample size is the same in all cases.</p></li>
+</ul>
+</li>
+<li><p>For random-effects model</p>
+<div class="math notranslate nohighlight">
+\[
+    V_M = \frac{\sigma^2}{k\times n} +\frac{T^2}{k}
+    \]</div>
+<p>assuming every study has the same sample size <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<ul class="simple">
+<li><p>Note that the second term is analogous to <span class="math notranslate nohighlight">\(\sigma^2/n\)</span>, the formula for the variance of the sample mean in a primary study. In the primary study we were dealing with one mean and the observations were subjects. Here we are dealing with a grand mean and the observations are studies.</p></li>
+<li><p>The consequence of this second term in the variance of the combined effect (6) is that, if we have only a few studies, there is a limit to the precision with which we can estimate the grand mean, no matter how large the sample size in these studies. Only as <span class="math notranslate nohighlight">\(k\)</span> approaches infinity will the impact of between-study variation approach zero.</p></li>
+<li><p>Namely, increasing the sample size within studies is not sufficient to reduce the
+standard error beyond a certain point (where that point is determined  by <span class="math notranslate nohighlight">\(T^2\)</span> and <span class="math notranslate nohighlight">\(k\)</span>). If there is only a small number of studies, then the standard error could still be substantial even if the total n is in the tens of thousands or higher.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="difference-between-the-two-models">
+<h3>Difference between the two models<a class="headerlink" href="#difference-between-the-two-models" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In fact, though, the estimate of the combined effect is almost always different under the two models (provided, of course  that, <span class="math notranslate nohighlight">\(T^2\)</span> is not zero).</p></li>
+<li><p>Because <span class="math notranslate nohighlight">\(T^2\)</span> is a constant, it reduces the relative differences among the weights, which means that the relative weights assigned to each study are more balanced under the random-effects model than they are under the fixed-effect model.</p>
+<ul>
+<li><p>Concretely, if we move from fixed-effect weights to random-effects weights, large studies lose influence and small studies gain influence.</p></li>
+</ul>
+</li>
+<li><p>While study weights are always more similar to each other when using random-effects weights as compared with fixed-effect weights, the extent of similarity will depend on the ratio of within-study error variance to between-studies variance.</p></li>
+<li><p>Note that the impact of <span class="math notranslate nohighlight">\(T^2\)</span> on the relative weights does not depend on how many studies are included in the analysis, because the issue here is how much uncertainty <span class="math notranslate nohighlight">\(T^2\)</span> adds to the effect size estimate in a specific study.</p>
+<ul>
+<li><p>By contrast, the precision of the combined effect (above) does depend on the number of studies because the issue there is how much information each study adds to this summary.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="which-model-to-use-when">
+<h3>Which model to use when<a class="headerlink" href="#which-model-to-use-when" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It makes sense to use the fixed-effect model if two conditions are met.</p>
+<ul>
+<li><p>First, there is good reason to believe that all the studies are functionally identical.</p></li>
+<li><p>Second, our goal is to compute the common effect size, which would not be generalized beyond the (narrowly defined) population included in the analysis.</p></li>
+</ul>
+</li>
+<li><p>In the vast majority of meta-analyses the random-effects model would be the more appropriate choice</p>
+<ul>
+<li><p>is more likely to fit the actual sampling distribution;</p></li>
+<li><p>does not impose a restriction of a common effect size;</p></li>
+<li><p>yields the identical results as the fixed-effect model in the absence of heterogeneity;</p></li>
+<li><p>allows the conclusions to be generalized to a wider array of situations.</p></li>
+</ul>
+</li>
+<li><p>Caveats to using a random-effects model</p>
+<ul>
+<li><p>If the number of studies is very small, then the estimate of the between-studies variance (<span class="math notranslate nohighlight">\(\tau^2\)</span>) will have poor precision. In such case:</p>
+<ul>
+<li><p>Option A is to report the separate effects and not report a summary effect.</p></li>
+<li><p>Option B is to perform a fixed-effect analysis.</p></li>
+<li><p>Option C is to perform a <em>Bayesian meta-analysis</em>(?), where the estimate of <span class="math notranslate nohighlight">\(\tau^2\)</span> is based on data from outside of the current set of studies.</p></li>
+</ul>
+</li>
+<li><p>The second caveat is that, although we define a fixed-effect meta-analysis as assuming that every study has a common true effect size, some have argued that the fixed-effect method is valid without making this assumption.</p></li>
+<li><p>The third caveat is that a random-effects meta-analysis can be misleading if the assumed random distribution for the effect sizes across studies does not hold.</p></li>
+<li><p>The fourth caveat is that, as we move from fixed-effect weights to random-effects weights, large studies lose influence and small studies gain influence.</p></li>
+</ul>
+</li>
+<li><p>Avoid mistakes when selecting a model</p>
+<ol class="simple">
+<li><p>Don’t use significance from the test of heterogeneity to decided if a random-effects model is preferred or not</p>
+<ul>
+<li><p>it is a bad idea to use a non-significant heterogeneity test as evidence that the studies share a common effect size as the test is often poor powered</p></li>
+<li><p>it uses fixed-effect as the default model, however the random-effects model is a better candidate for it as mathematically, the fixed-effect model is really a special case of the random-effects model with the additional constraint that all studies share a common effect size.</p></li>
+<li><p>there is no ‘cost’ to using the random-effects model as the impact from misspecification of the model  when using random-effects model is minimal compared with fixed-effect model</p></li>
+<li><p>:star: ​Rather than start with either model as the default, one should select the model based on their understanding about whether or not the studies share a common effect size and on their goals in performing the analysis.</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>weighting schemes</p>
+<ul>
+<li><p>Inverse-variance weights</p></li>
+<li><p>Mantel-Haenszel weights for binary data</p></li>
+<li><p>weighting by sample size for correlations</p></li>
+<li><p>They all assume that all studies in the analysis either share a common effect size (fixed-effect model) or are a random sample from a universe of potential studies (random-effects model).If either assumption is correct, then any weighting scheme will be unbiased.</p></li>
+</ul>
+</li>
+<li><p>Moderator variables</p>
+<ul>
+<li><p>If we expect that the variation in effect sizes is related to a continuous variable, we can use <em><strong>meta-regression</strong></em> to study this relationship. Again, we can apply either a fixed-effect or a random-effects variant of this approach, depending on whether or not we assume that all studies with the same covariate values will have the same true effect</p></li>
+</ul>
+</li>
+</ul>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id1">BHHR10</a></span></dt>
+<dd><p>Michael Borenstein, Larry V Hedges, Julian PT Higgins, and Hannah R Rothstein. A basic introduction to fixed-effect and random-effects models for meta-analysis. <em>Research synthesis methods</em>, 1(2):97–111, 2010.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Note-MDD%20%26%20Effect%20size.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Power, <strong>MDD</strong>/<strong>E</strong> (minimum detectable difference/effect), and <strong>Effect size</strong> in clinical trials</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Note-Missing%20data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Missing data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ming Yang<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

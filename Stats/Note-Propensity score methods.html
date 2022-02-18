@@ -1,0 +1,1238 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propensity Score Methods &amp; Implementation &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quantile regression" href="Note-Quantile%20regression.html" />
+    <link rel="prev" title="Observational study design" href="Note-Observational%20study%20design.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index (knowledge base structure)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal_inference_in_statistics_a_primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
+   Adaptive Clinical Trial Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Ordinal%20Outcome.html">
+   Analysis of ordinal outcome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
+   Association vs. Prediction vs. Causation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Baseline%20Adaptive%20Randomization.html">
+   Baseline adaptive randomization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Causal%20inference%20general.html">
+   Causal Inference General Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Correlated%20Data%20Analysis.html">
+   Correlated/Longitudinal Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Dirichlet%20process.html">
+   Dirichlet process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Gaussian%20process.html">
+   Gaussain Process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-ICH%20guidelines.html">
+   Notes on ICH guidelines​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
+   Power,
+   <strong>
+    MDD
+   </strong>
+   /
+   <strong>
+    E
+   </strong>
+   (minimum detectable difference/effect), and
+   <strong>
+    Effect size
+   </strong>
+   in clinical trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Meta-Analysis.html">
+   Meta-analysis​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Missing%20data.html">
+   Missing data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Model%20comparison%20methods.html">
+   Model comparison methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
+   Monte Carlo Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Multicolinearity.html">
+   Multicolinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Non-inferiority%20equivalence%20superiority%20test.html">
+   Non-inferiority/equivalence/superiority test basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Observational%20study%20design.html">
+   Observational study design
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Propensity Score Methods &amp; Implementation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Quantile%20regression.html">
+   Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html">
+   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
+   Google R package googleVis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
+   Notes on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
+   Boosting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
+   ​Machine Learning (General)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
+   Naive Bayes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
+   Stochastic Gradient Decent (SGD)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
+   Tree/Random Forest (Bagging)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Computer science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-HTML%20basics.html">
+   HTML Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Hard%20SQL%20interview%20questions.html">
+   Hard Data Analyst SQL Interview Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Learning%20React.html">
+   Learning React
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Learning%20Rust.html">
+   Learning Rust
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
+   SQL study notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-git%20and%20github.html">
+   git and github
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
+   Pharmacedutical development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">
+   :bulb: Q: fair coin, # of flips to get two consecutive side (H or T)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">
+   Generate random number 1 to 7 using a fair dice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Stats/Note-Propensity score methods.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Propensity score methods.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propensity-score-methods-in-observational-data-analysis-theoretical-part-austin2011introduction">
+   Propensity score methods in observational data analysis (theoretical part)
+   <span class="xref cite cite-p">
+    austin2011introduction
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomized-controlled-trials-versus-observational-studies">
+     Randomized Controlled Trials Versus Observational Studies
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-potential-outcomes-framework-and-average-treatment-effects">
+       The Potential Outcomes Framework and Average Treatment Effects
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-propensity-score-and-propensity-score-methods">
+     The Propensity Score And Propensity Score Methods
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#propensity-score-matching">
+       1. Propensity Score Matching
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#methods-for-forming-matched-pairs">
+         Methods for forming matched pairs
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stratification-on-the-propensity-score">
+       2. Stratification on the Propensity Score
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inverse-probability-of-treatment-weighting-using-the-propensity-score">
+       3. Inverse Probability of Treatment Weighting Using the Propensity Score
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#derivation-of-the-iptw-from-causal-inference-in-statistics-a-primer-section-3-6">
+         Derivation of the IPTW (from
+         <span class="xref myst">
+          Causal inference in statistics
+          <em>
+           a primer
+          </em>
+         </span>
+         Section 3.6)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariate-adjustment-using-the-propensity-score">
+       4. Covariate Adjustment Using the Propensity Score
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#comparison-of-the-different-propensity-score-methods">
+       Comparison of the Different Propensity Score Methods
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#balance-diagnostics">
+     Balance Diagnostics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-selection-for-the-propensity-score-model">
+     Variable Selection For The Propensity Score Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propensity-score-methods-versus-regression-adjustment">
+     Propensity Score Methods Versus Regression Adjustment
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conditional-versus-marginal-estimates-of-treatment-effect">
+       Conditional Versus Marginal Estimates of Treatment Effect
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#regression-adjustment-versus-propensity-score-methods-practical-concerns">
+       Regression Adjustment Versus Propensity Score Methods: Practical Concerns
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propensity-score-analysis-in-r-a-software-review-implementation-part">
+   Propensity Score Analysis in R: A Software Review (implementation part)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#four-basic-steps-in-matching">
+     Four basic steps in matching
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison-of-packages-in-r">
+     Comparison of packages in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       R
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propensity-score-matching-using-matchit-in-r">
+     Propensity score matching using MatchIt in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       R
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Propensity Score Methods & Implementation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propensity-score-methods-in-observational-data-analysis-theoretical-part-austin2011introduction">
+   Propensity score methods in observational data analysis (theoretical part)
+   <span class="xref cite cite-p">
+    austin2011introduction
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomized-controlled-trials-versus-observational-studies">
+     Randomized Controlled Trials Versus Observational Studies
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-potential-outcomes-framework-and-average-treatment-effects">
+       The Potential Outcomes Framework and Average Treatment Effects
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-propensity-score-and-propensity-score-methods">
+     The Propensity Score And Propensity Score Methods
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#propensity-score-matching">
+       1. Propensity Score Matching
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#methods-for-forming-matched-pairs">
+         Methods for forming matched pairs
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stratification-on-the-propensity-score">
+       2. Stratification on the Propensity Score
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inverse-probability-of-treatment-weighting-using-the-propensity-score">
+       3. Inverse Probability of Treatment Weighting Using the Propensity Score
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#derivation-of-the-iptw-from-causal-inference-in-statistics-a-primer-section-3-6">
+         Derivation of the IPTW (from
+         <span class="xref myst">
+          Causal inference in statistics
+          <em>
+           a primer
+          </em>
+         </span>
+         Section 3.6)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariate-adjustment-using-the-propensity-score">
+       4. Covariate Adjustment Using the Propensity Score
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#comparison-of-the-different-propensity-score-methods">
+       Comparison of the Different Propensity Score Methods
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#balance-diagnostics">
+     Balance Diagnostics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-selection-for-the-propensity-score-model">
+     Variable Selection For The Propensity Score Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propensity-score-methods-versus-regression-adjustment">
+     Propensity Score Methods Versus Regression Adjustment
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conditional-versus-marginal-estimates-of-treatment-effect">
+       Conditional Versus Marginal Estimates of Treatment Effect
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#regression-adjustment-versus-propensity-score-methods-practical-concerns">
+       Regression Adjustment Versus Propensity Score Methods: Practical Concerns
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propensity-score-analysis-in-r-a-software-review-implementation-part">
+   Propensity Score Analysis in R: A Software Review (implementation part)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#four-basic-steps-in-matching">
+     Four basic steps in matching
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison-of-packages-in-r">
+     Comparison of packages in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       R
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propensity-score-matching-using-matchit-in-r">
+     Propensity score matching using MatchIt in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       R
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="propensity-score-methods-implementation">
+<h1>Propensity Score Methods &amp; Implementation<a class="headerlink" href="#propensity-score-methods-implementation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="propensity-score-methods-in-observational-data-analysis-theoretical-part-austin2011introduction">
+<h2>Propensity score methods in observational data analysis (theoretical part) <span id="id1">[<a class="reference internal" href="#id34">Austin, 2011</a>]</span><a class="headerlink" href="#propensity-score-methods-in-observational-data-analysis-theoretical-part-austin2011introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="randomized-controlled-trials-versus-observational-studies">
+<h3>Randomized Controlled Trials Versus Observational Studies<a class="headerlink" href="#randomized-controlled-trials-versus-observational-studies" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-potential-outcomes-framework-and-average-treatment-effects">
+<h4>The Potential Outcomes Framework and Average Treatment Effects<a class="headerlink" href="#the-potential-outcomes-framework-and-average-treatment-effects" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>What is the potential outcomes framework??</p></li>
+<li><p>The average treatment effect (ATE) is defined to be is <span class="math notranslate nohighlight">\(E[Y_i(1)-Y_i(0)]\)</span></p></li>
+<li><p>A related measure of treatment effect is the average treatment effect for the treated (ATT; Imbens, 2004). The ATT is defined as <span class="math notranslate nohighlight">\(E[Y(1)-Y(0)|Z = 1]\)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-propensity-score-and-propensity-score-methods">
+<h3>The Propensity Score And Propensity Score Methods<a class="headerlink" href="#the-propensity-score-and-propensity-score-methods" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="propensity-score-matching">
+<h4>1. Propensity Score Matching<a class="headerlink" href="#propensity-score-matching" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Propensity score matching entails forming matched sets of treated and untreated subjects who share a similar value of the propensity score (Rosenbaum &amp; Rubin, 1983a, 1985).</p></li>
+<li><p>Propensity score matching allows one to estimate the ATT (Imbens, 2004).</p></li>
+<li><p>Once a matched sample has been formed, the treatment effect can be estimated by directly comparing outcomes between treated and untreated subjects in the matched sample.</p></li>
+<li><p>With binary outcomes, the effect of treatment can also be described using the <em>relative risk</em> or the <em>NNT</em> (Austin, 2008a, 2010; Rosenbaum &amp; Rubin, 1983a).</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Schafer and Kang (2008) suggest that, within the matched sample, the treated and untreated subjects should be regarded as independent.</p></li>
+<li><p>In contrast to this, Imbens (2004) suggests that, when using a matched estimator, the variance should be calculated using a method appropriate for paired experiments. I argue that the propensity score matched sample does not consist of independent observations.</p></li>
+<li><p>The lack of independence in the propensity score matched sample should be accounted for when estimating the variance of the treatment effect.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>The analysis of a propensity score matched sample can mimic that of an RCT</p></li>
+<li><p>In the context of an RCT, one expects that, on average, the distribution of covariates will be similar between treatment groups. However, in individual RCTs, residual differences in baseline covariates may exist between treatment groups.</p></li>
+<li><p>Regression adjustment results in increased precision for continuous outcomes and increased statistical power for continuous, binary, and time-to-event outcomes (Steyerberg, 2009).</p></li>
+<li><p>Propensity score matching can be combined with additional matching on prognostic factors or regression adjustment (Imbens, 2004; Rubin &amp; Thomas, 2000).</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="methods-for-forming-matched-pairs">
+<h5>Methods for forming matched pairs<a class="headerlink" href="#methods-for-forming-matched-pairs" title="Permalink to this headline">¶</a></h5>
+<ol class="simple">
+<li><p>one must choose between matching without replacement and matching with replacement (Rosenbaum, 2002).</p>
+<ul class="simple">
+<li><p>When matching with replacement is used, variance estimation must account for the fact that the same untreated subject may be in multiple matched sets (Hill &amp; Reiter, 2006).</p></li>
+</ul>
+</li>
+<li><p>A second choice is between greedy and optimal matching (Rosenbaum, 2002).</p>
+<ul class="simple">
+<li><p>An alternative to greedy matching is optimal matching, in which matches are formed so as to minimize the total within-pair difference of the propensity score.</p></li>
+<li><p>optimal matching did no better than greedy matching in producing balanced matched samples.</p></li>
+</ul>
+</li>
+<li><p>criteria for selecting untreated subjects whose propensity score is “close” to that of a treated subject.</p>
+<ul class="simple">
+<li><p>There are two primary methods for this: <em>nearest neighbor matching</em> and <em>nearest neighbor matching within a specified caliper distance</em> (Rosenbaum &amp; Rubin, 1985)</p></li>
+<li><p>If multiple untreated subjects have propensity scores that are equally close to that of the treated subject, one of these untreated subjects is selected at random. It is important to note that no restrictions are placed upon the maximum acceptable difference between the propensity scores of two matched subjects.</p></li>
+<li><p>Nearest neighbor matching within a specified caliper distance is similar to nearest neighbor matching with the further restriction that the absolute difference in the propensity scores of matched subjects must be below some prespecified threshold (the caliper distance).</p></li>
+<li><p>If no untreated subjects had propensity scores that lay within the specified caliper distance of the propensity score of the treated subject, that treated subject would not be matched with any untreated subject. The unmatched treated subject would then be excluded from the resultant matched sample.</p></li>
+<li><p>there is no uniformly agreed upon definition of what constitutes a maximal acceptable distance.</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>Based on these results, there are theoretical arguments for matching on the logit of the propensity score, as this quantity is more likely to be normally distributed, and for using a caliper width that is a proportion of the standard deviation of the logit of the propensity score.</p>
+<ul>
+<li><p>For instance, if the variance of the logit of the propensity score in the treated subjects is the same as the variance in the untreated subjects, using calipers of width equal to 0.2 of the pooled standard deviation of the logit of the propensity score will eliminate approximately 99% of the bias due to the measured confounders.</p></li>
+<li><p>It was suggested that researchers use a caliper of width equal to 0.2 of the standard deviation of the logit of the propensity score as this value (or one close to it) minimized the mean squared error of the estimated treatment effect in several scenarios.</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Alternatives to one-to-one pair matching when matching on the propensity score:</p>
+<ul>
+<li><p><em>many-to-one (M: l) matching</em>, M untreated subjects are matched to each treated subject.</p></li>
+<li><p><em>Full matching</em> (Gu &amp; Rosenbaum, 1993; Hansen, 2004; Rosenbaum, 1991) involves forming matched sets consisting of either one treated subject and at least one untreated subject or one untreated subject and at least one treated subject.</p></li>
+</ul>
+</li>
+<li><p>In R, the Matching (Sekhon, in press), Matchlt (Ho, Imai, King, &amp; Stuart, 2011), and Optmatch (Hansen &amp; Klopfer, 2006) packages allow one to implement a variety of different matching methods.</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="stratification-on-the-propensity-score">
+<h4>2. Stratification on the Propensity Score<a class="headerlink" href="#stratification-on-the-propensity-score" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Stratification on the propensity score involves stratifying subjects into mutually exclusive subsets based on their estimated propensity score.</p></li>
+<li><p>A common approach is to divide subjects into five equal-size groups using the quintiles of the estimated propensity score.</p></li>
+<li><p>Rosenbaum and Rubin (1984) extended this result to stratification on the propensity score, stating that stratifying on the quintiles of the propensity score eliminates approximately 90% of the bias due to measured confounders when estimating a linear treatment effect. Increasing the number of strata used should result in improved bias reduction, although the marginal reduction in bias decreases as the number of strata increases (Cochran, 1968; Huppler Hullsiek &amp; Louis, 2002).</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Stratification on the propensity can be conceptualized as a meta-analysis of a set of quasi-RCTs.</p></li>
+<li><p>In general, stratum-specific estimates of effect are weighted by the proportion of subjects who lie within that stratum. Thus, when the sample is stratified into K equal-size strata, stratum-specific weights of 1/K are commonly used when pooling the stratum-specific treatment effects, allowing one to estimate the ATE (Imbens, 2004). The use of stratum-specific weights that are equal to that proportion of treated subjects that lie within each stratum allow one to estimate the ATT (Imbens, 2004). A pooled estimate of the variance of the estimated treatment effect can be obtained by pooling the variances of the stratum-specific treatment effects.</p></li>
+<li><p>As with matching, within-stratum regression adjustment may be used to account for residual differences between treated and untreated subjects (Imbens, 2004; Lunceford &amp; Davidian, 2004).</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="inverse-probability-of-treatment-weighting-using-the-propensity-score">
+<h4>3. Inverse Probability of Treatment Weighting Using the Propensity Score<a class="headerlink" href="#inverse-probability-of-treatment-weighting-using-the-propensity-score" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Inverse probability of treatment weighting (IPTW) using the propensity score uses weights based on the propensity score to create a synthetic sample in which the distribution of measured baseline covariates is independent of treatment assignment.</p></li>
+<li><p>Weights can be defined as
+$<span class="math notranslate nohighlight">\(\omega_i = \frac{Z_i}{e_i} + \frac{(1-Z_i)}{1-e_i},\)</span><span class="math notranslate nohighlight">\(
+where \)</span>e_i$ is the propensity score.</p></li>
+<li><p>A subject’s weight is equal to the inverse of the probability of receiving the treatment <strong>that the subject actually received</strong>.</p></li>
+<li><p>An estimate of the ATE is</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{n}\sum_{i=1}^n\frac{Z_iY_i}{e_i} - \frac{1}{n}\sum_{i=1}^n\frac{(1-Z_i)Y_i}{1-e_i},\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> denotes the number of subjects</p>
+</li>
+<li><p>When used in this context, IPTW is part of a larger family of causal methods known as marginal structural model (Hernan, Brumback, &amp; Robins, 2000, 2002).</p></li>
+<li><p>variance estimation must account for the weighted nature of the synthetic sample, with robust variance estimation commonly being used to account for the sample weights (Joffe et al., 2004).</p></li>
+<li><p>The weights may be inaccurate or unstable for subjects with a very low probability of receiving the treatment received.</p></li>
+<li><p>However, using weights equal to</p>
+<div class="math notranslate nohighlight">
+\[\omega_{i, ATT} = Z_i + \frac{(1-Z_i)e_i}{1-e_i}\]</div>
+<p>allows one to estimate the ATT, whereas the use of weights equal to</p>
+<div class="math notranslate nohighlight">
+\[\omega_{i, ATC} = \frac{Z_i(1-e_i)}{e_i} + (1-Z_i)\]</div>
+<p>allows one to estimate the average effect of treatment in the controls (Morgan &amp; Todd, 2008).</p>
+</li>
+</ul>
+<div class="section" id="derivation-of-the-iptw-from-causal-inference-in-statistics-a-primer-section-3-6">
+<h5>Derivation of the IPTW (from <a class="reference internal" href="Book-Causal_inference_in_statistics_a_primer.html"><span class="doc std std-doc">Causal inference in statistics <em>a primer</em></span></a> Section 3.6)<a class="headerlink" href="#derivation-of-the-iptw-from-causal-inference-in-statistics-a-primer-section-3-6" title="Permalink to this headline">¶</a></h5>
+<ul>
+<li><p>Notation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y\)</span>: outcome</p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span>: intervention of interest</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z\)</span>: confounders</p></li>
+</ul>
+</li>
+<li><p>Objective:</p>
+<div class="math notranslate nohighlight">
+\[P(y|\text{do}(x=\text{yes [or no]}))\]</div>
+</li>
+<li><p>Derivation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{ll}
+  P(y|\text{do}(x)) &amp; = \sum_z P(y|X = x, Z = z)P(Z=z)\\
+  &amp; = \sum_z \frac{P(y|X = x, Z = z)P(X=x|Z=z)P(Z=z)}{P(X=x|Z=z)}\\
+  &amp; = \sum_z\frac{P(Y= y, X = x, Z = z)}{P(X=x|Z=z)}
+  \end{array}
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>Each case <span class="math notranslate nohighlight">\((Y = y, X = x, Z = z)\)</span> in the population should boost its probability by a factor equals to <span class="math notranslate nohighlight">\(1∕P(X = x|Z = z)\)</span>. (Hence the name “<strong>Inverse Probability of Treatment Weighting</strong>”; here it is the probability of getting <span class="math notranslate nohighlight">\(X = x\)</span> [0 or 1], it is the 1/propensity score (PS) for the treated subjects but 1/(1 - PS) for the untreated ones)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="covariate-adjustment-using-the-propensity-score">
+<h4>4. Covariate Adjustment Using the Propensity Score<a class="headerlink" href="#covariate-adjustment-using-the-propensity-score" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>This method assumes that the nature of the relationship between the propensity score and the outcome has been correctly modeled.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="comparison-of-the-different-propensity-score-methods">
+<h4>Comparison of the Different Propensity Score Methods<a class="headerlink" href="#comparison-of-the-different-propensity-score-methods" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Propensity score matching, stratification on the propensity score, and IPTW differ from covariate adjustment using the propensity score in that the three former methods separate the design of the study from the analysis of the study</p></li>
+<li><p>As Rubin (2001) notes, when using regression modeling, the temptation to work toward the desired or anticipated result is always present. Another difference between the four propensity score approaches is that covariate adjustment using the propensity score and IPTW may be more sensitive to whether the propensity score has been accurately estimated (Rubin, 2004).</p></li>
+</ul>
+<hr class="docutils" />
+<p>See <a class="reference internal" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html"><span class="doc std std-doc">Data Analysis Using Regression and Multilevel/Hierarchical Models</span></a> <strong>Section 10.3</strong> for another discussion of creation and using propensity score in causal inferenence.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="balance-diagnostics">
+<h3>Balance Diagnostics<a class="headerlink" href="#balance-diagnostics" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The true propensity score is a balancing score: conditional on the true propensity score, the distribution of measured baseline covariates is independent of treatment assignment.</p></li>
+<li><p>In strata of subjects that have the same propensity score, the distribution of measured baseline covariates will be the same between treated and untreated subjects.</p></li>
+<li><p>If, after conditioning on the propensity score, there remain systematic differences in baseline covariates between treated and untreated subjects, this can be an indication that the propensity score model has not been correctly specified.</p></li>
+<li><p>For IPTW this assessment involves comparing treated and untreated subjects in the sample weighted by the inverse probability of treatment.</p></li>
+</ul>
+<hr class="docutils" />
+<ul>
+<li><p>Comparing the similarity of treated and untreated subjects in the matched sample should begin with a comparison of the means or medians of continuous covariates and the distribution of their categorical counterparts between treated and untreated subjects.</p></li>
+<li><p>For a continuous covariate, the standardized difference is defined as</p>
+<div class="math notranslate nohighlight">
+\[d = \frac{(\bar{X}_{treatment} - \bar{X}_{control})}{\sqrt{\frac{s^2_{treatment} + s^2_{control}}{2}}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{X}_{treatment}\)</span> and <span class="math notranslate nohighlight">\(\bar{X}_{control}\)</span> denote the sample mean of the covariate in treated and untreated subjects, respectively, whereas <span class="math notranslate nohighlight">\(s^2\)</span> denote the sample variance of the covariate.</p>
+</li>
+<li><p>For dichotomous variables, the standardized difference is defined as</p>
+<div class="math notranslate nohighlight">
+\[d = \frac{(\hat{p}_{t} - \hat{p}_{c})}{\sqrt{\frac{\hat{p}_t(1-\hat{p_t}) + \hat{p}_c(1-\hat{p_c})}{2}}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{p}\)</span> denote the prevalence or mean of the dichotomous variable</p>
+</li>
+<li><p>The standardized difference compares the difference in means in units of the pooled standard deviation.</p></li>
+<li><p>it is not influenced by sample size and allows for the comparison of the relative balance of variables measured in different units.</p></li>
+<li><p>a standard difference that is less than 0.1 has been taken to indicate a negligible difference in the mean or prevalence of a covariate between treatment groups (Normand et al., 2001).</p></li>
+<li><p>the entire distribution of baseline covariates, not just means and prevalences, should be similar between treatment groups in the matched sample. Therefore, higher order moments of covariates and interactions between covariates should be compared between treatment groups</p></li>
+<li><p>graphical methods such as side-by-side boxplots, quantile-quantile plots, cumulative distribution functions, and empirical nonparametric density plots can be used to compare the distribution of continuous baseline covariates between treatment groups in the propensity score matched sample (Austin, 2009b).</p></li>
+<li><p>One proceeds in an iterative fashion until systematic differences in observed baseline covariates between treated and untreated subjects have either been eliminated or reduced to an acceptable level. It is important to note that at each step of the iterative process, one is not guided by the statistical significance of the estimated regression coefficients in the propensity score model (assuming one is using a logistic regression model).</p></li>
+<li><p>Some authors have suggested that the comparison of baseline covariates may be complemented by comparing the distribution of the estimated propensity score between treated and untreated subjects in the matched sample (Ho et al., 2007).</p></li>
+<li><p>This approach may be useful for determining the common area of support or the degree of overlap in the propensity score between treated and untreated subjects.</p></li>
+<li><p>This approach is insufficient for determining whether an important variable has been omitted from the propensity score model or for assessing whether the propensity score model has been correctly specified (Austin, 2009b).</p></li>
+<li><p>This approach has been criticized by several authors for two reasons (Imai et al., 2008; Austin, 2008b, 2009b).</p>
+<ul class="simple">
+<li><p>First, significance levels are confounded with sample size.</p></li>
+<li><p>Second, Imai et al. suggested that balance is a property of a particular sample and that reference to a superpopulation is inappropriate.</p></li>
+<li><p>For these reasons, the use of statistical significance testing to assess balance in propensity score matched samples is discouraged.</p></li>
+</ul>
+</li>
+<li><p>this statistic provides no information as to whether the propensity score model has been correctly specified</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="variable-selection-for-the-propensity-score-model">
+<h3>Variable Selection For The Propensity Score Model<a class="headerlink" href="#variable-selection-for-the-propensity-score-model" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Possible sets of variables for inclusion in the propensity score model include the following:</p>
+<ul>
+<li><p>all measured baseline covariates,</p></li>
+<li><p>all baseline covariates that are associated with treatment assignment,</p></li>
+<li><p>all covariates that affect the outcome (i.e., the potential confounders)</p></li>
+<li><p>:heavy_check_mark: According to a presentation shared in a seminar, model inference performs best when the PS model includes <strong>L</strong> or  <strong>L + P</strong> as shown in the DAG below</p>
+<ul class="simple">
+<li><p>Adding <strong>X</strong> to <strong>L</strong> does not harm but has a strong cost in precision and power</p></li>
+<li><p>PS based on  <strong>L</strong> + Colliders (C), or only on <strong>X</strong>, or automatic variable selection of predictors of exposure is NOT recommended</p></li>
+</ul>
+<p><img alt="image-20220218114357324" src="https://raw.githubusercontent.com/askming/picgo/master/image-20220218114357324.png" /></p>
+</li>
+</ul>
+</li>
+<li><p>there are theoretical arguments in favor of the inclusion of only those variables that affect treatment assignment.</p></li>
+<li><p>:heavy_check_mark: <strong>It was shown that there were merits to including only the potential confounders or the true confounders in the propensity score model.</strong></p>
+<ul class="simple">
+<li><p>using these two propensity score models did not result in the introduction of additional bias but resulted in estimates of treatment effect with greater precision.</p></li>
+</ul>
+</li>
+<li><p>:heavy_check_mark: variables that do not affect exposure but that affect the outcome (P) should always be included in the propensity score model. Furthermore, they noted that including variables that affect exposure but not the outcome (X) will increase the variance of the estimated treatment effect without a concomitant reduction in bias.</p></li>
+<li><p>Therefore, in many settings, it is likely that one can safely include all measured baseline characteristics in the propensity score model.</p></li>
+<li><p>:heavy_check_mark: Finally, one should stress that the propensity score model should only include variables that are measured at baseline and not post-baseline covariates that may be influenced or modified by the treatment.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="propensity-score-methods-versus-regression-adjustment">
+<h3>Propensity Score Methods Versus Regression Adjustment<a class="headerlink" href="#propensity-score-methods-versus-regression-adjustment" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="conditional-versus-marginal-estimates-of-treatment-effect">
+<h4>Conditional Versus Marginal Estimates of Treatment Effect<a class="headerlink" href="#conditional-versus-marginal-estimates-of-treatment-effect" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>A conditional treatment effect is the average effect of treatment on the individual. A marginal treatment effect is the average effect of treatment on the population. A measure of treatment effect is said to be collapsible if the conditional and marginal effects coincide.</p></li>
+<li><p>Propensity score methods allow for estimation of the marginal treatment effect (Rosenbaum, 2005).</p></li>
+<li><p>Assuming that both the outcome regression model and the propensity score model were correctly specified, it follows that propensity score methods should result in conclusions similar to those obtained using linear regression adjustment.</p></li>
+<li><p>However, when the outcome is either binary or time-to-event in nature and if the odds ratio or the hazard ratio is used as the measure of treatment effect, then, even in the absence of confounding, the marginal and conditional estimates of the treatment effect need not coincide</p></li>
+<li><p>In part, study design and the analytic plan should reflect which treatment effect is more meaningful in a given context.</p></li>
+<li><p>researchers should note that both RCTs and propensity score methods allow one to estimate marginal treatment effects.</p></li>
+</ul>
+</div>
+<div class="section" id="regression-adjustment-versus-propensity-score-methods-practical-concerns">
+<h4>Regression Adjustment Versus Propensity Score Methods: Practical Concerns<a class="headerlink" href="#regression-adjustment-versus-propensity-score-methods-practical-concerns" title="Permalink to this headline">¶</a></h4>
+<ol>
+<li><p>First, it is simpler to determine whether the propensity score model has been adequately specified than to assess whether the regression model relating treatment assignment and baseline covariates to the outcome has been correctly specified.</p>
+<ul class="simple">
+<li><p>it is much more difficult to determine whether the regression model relating treatment selection and baseline covariates to the outcome has been correctly specified.</p></li>
+</ul>
+</li>
+<li><p>Second, these methods allow one to separate the design of the study from the analysis of the study.</p>
+<ul class="simple">
+<li><p>when using regression adjustment, the outcome is always in sight, and the researcher is faced with the subtle temptation to continually modify the regression model until the desired association has been achieved (Rubin, 2001).</p></li>
+</ul>
+</li>
+<li><p>Third, there may be increased flexibility when outcomes (when binary or time-to-event in nature) are rare and treatment is common (Braitman &amp; Rosenbaum, 2002).</p>
+<ul class="simple">
+<li><p>When outcomes are either binary or time-to-event in nature, prior research has suggested that at least 10 events should be observed for every covariate that is entered into a regression model (Peduzzi, Concato, Feinstein, &amp; Holford, 1995; Peduzzi, Concato, Kemper, Holford, &amp; Feinstein, 1996).</p></li>
+</ul>
+</li>
+<li><p>Fourth, one can explicitly examine the degree of overlap in the distribution of baseline covariates between the two treatment groups.</p>
+<ul>
+<li><p>When using regression-based approaches, it may be difficult to assess the degree of overlap between the distribution of baseline covariates for the two groups.</p>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/35260a98_20200421120221.png" /></p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="propensity-score-analysis-in-r-a-software-review-implementation-part">
+<h2>Propensity Score Analysis in R: A Software Review (implementation part)<a class="headerlink" href="#propensity-score-analysis-in-r-a-software-review-implementation-part" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="four-basic-steps-in-matching">
+<h3>Four basic steps in matching<a class="headerlink" href="#four-basic-steps-in-matching" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Estimation of propensity scores
+That is the probability of getting treatment for each unit (various classification methods can be used to estimate this probability)</p></li>
+<li><p>Assessment of overlap
+The support of estimated propensity scores in the treatment and control groups must share common support (units from different arm should have nonzero probability of receiving bot the treatment and control)</p></li>
+<li><p>Assessment of balance
+Balance in confounding variables, measured by mean, std, standardized mean difference, and variance ratio (see below); Kolmogorov-Smirnov distance is another way to measure the balance
+$<span class="math notranslate nohighlight">\(d = \frac{\bar{X}_T - \bar{X}_C}{s_{\text{pooled}}}, r = \frac{s_T^2}{s_C^2}\)</span><span class="math notranslate nohighlight">\(
+ \)</span><span class="math notranslate nohighlight">\(s_{\text{pooled}} = \sqrt{\frac{(N_T-1)s_T^2 + (N_C - 1)s_C^2}{N_T +  N_C - 2}}\)</span>$</p></li>
+<li><p>Estimation of the average causal effect and its standard error
+i. <strong>average treatment effect (ATE)</strong>: average effect for everyone in population
+$<span class="math notranslate nohighlight">\(
+   \begin{array}{ll}
+   ATE &amp; = \frac{1}{N}\sum_{i=1}^N Y_i(1) - Y_i(0)\\
+ &amp; = \pi[E(Y(1) - Y(0)|T = 1)] + (1-\pi)[E(Y(1) - Y(0)|T = 0)],
+   \end{array}
+ \)</span><span class="math notranslate nohighlight">\(
+   where \)</span>\pi<span class="math notranslate nohighlight">\( is the proportion of subjects in the treatment group
+ ii. **average treatment effect on the treated (ATT)**: average treatment effect for those in the treatment group    
+   \)</span><span class="math notranslate nohighlight">\(ATT = \frac{1}{N_t}\sum_{i=1}^{N_t} [Y_i(1) - Y_i(0) | T_i = 1],\)</span><span class="math notranslate nohighlight">\(
+   where \)</span>Y_i(0)$ is hypothetic and not observed in reality.
+iii. <strong>average treatment effect on the control (ATC)</strong></p>
+<ul class="simple">
+<li><p>ATE is more general than ATT as it refers to the entire study cohort while ATT only refers to those who are treated. In the ideal case of randomized control trial, ATE = ATT because we assume
+$<span class="math notranslate nohighlight">\(E[Y(0)|T = 1] = E[Y(0) | T = 0]\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(E[Y(1)|T = 1] = E[Y(1) | T = 0]\)</span>$</p></li>
+<li><p>These are very strong assumptions which are commonly violated in observational studies and therefore the ATT and the ATE are not expected to be equal. Notice that if only the baselines are equal, you can still get an ATT through simple differences: <span class="math notranslate nohighlight">\(\mathrm{E}[Y(1)|T=1] - \mathrm{E}[Y(0)|T=0]\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="comparison-of-packages-in-r">
+<h3>Comparison of packages in <code class="docutils literal notranslate"><span class="pre">R</span></code><a class="headerlink" href="#comparison-of-packages-in-r" title="Permalink to this headline">¶</a></h3>
+<p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/9987ac75_20200421120244.png" /></p>
+</div>
+<div class="section" id="propensity-score-matching-using-matchit-in-r">
+<h3>Propensity score matching using MatchIt in <code class="docutils literal notranslate"><span class="pre">R</span></code><a class="headerlink" href="#propensity-score-matching-using-matchit-in-r" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>General syntax:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">matchit</span><span class="p">(</span><span class="n">trt</span> <span class="o">~</span> <span class="n">covariates</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">ratio</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Different options for <code class="docutils literal notranslate"><span class="pre">method</span></code>:
+a. <strong>Exact matching</strong>: matches each treated with a control unit that has exactly the same values on each covariate (not ideal for cases where there are many covariates that can take a large range of values)
+b. <strong>Subclassification</strong>: breaks the data set into subclasses such that the distributions of the covariates are similar in each subclass
+c. <strong>Nearest neighbor</strong>: matches a treated unit to a control unit(s) that is closest in terms of a distance measure such as a logit (PS calculated using logistic regression)
+d. <strong>Optimal matching</strong>: focuses on minimizing the average absolute distance across all matched pairs (depends on <code class="docutils literal notranslate"><span class="pre">optmatch</span></code> package)
+e. <strong>Genetic matching</strong>: uses a computationally intensive genetic search algorithm to match treatment and control units (depending on Matching package)
+f. <strong>Coarsened exact matching</strong>: matches on a covariate while maintaining the balance of other covariates (supposed to work well for multicategory treatments, determining blocks in experimental designs, and evaluating extreme counterfactuals)</p></li>
+</ol>
+<p>[Earlier note](./attachments/Propensity score methods in observational data analysis.pdf)</p>
+<p><span id="id2">[<a class="reference internal" href="#id35">Brookhart <em>et al.</em>, 2013</a>]</span></p>
+<p id="id3"><dl class="citation">
+<dt class="label" id="id34"><span class="brackets"><a class="fn-backref" href="#id1">Aus11</a></span></dt>
+<dd><p>Peter C Austin. An introduction to propensity score methods for reducing the effects of confounding in observational studies. <em>Multivariate behavioral research</em>, 46(3):399–424, 2011.</p>
+</dd>
+<dt class="label" id="id35"><span class="brackets"><a class="fn-backref" href="#id2">BWLSturmer13</a></span></dt>
+<dd><p>M Alan Brookhart, Richard Wyss, J Bradley Layton, and Til Stürmer. Propensity score methods for confounding control in nonexperimental research. <em>Circulation: Cardiovascular Quality and Outcomes</em>, 6(5):604–611, 2013.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Stats"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Note-Observational%20study%20design.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Observational study design</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Note-Quantile%20regression.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Quantile regression</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ming Yang<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
