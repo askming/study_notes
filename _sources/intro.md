@@ -55,7 +55,7 @@
 ## 2 Data Science & Machine Learning
 
 ### 2.1 Data preprocessing pipeline
-#### 2.2.1 Data manipulation
+#### 2.1.1 Data manipulation
 - Numpy
 - Pandas
 - SQL
@@ -97,7 +97,7 @@
 ### 2.3 Data visualization 
 - [matplotlib](Stats_Comp/Note-matplotlib.md)
 
-### 2.4 Analytical tools (ML implementation)
+### 2.4 Analytical tools
 
 #### 2.4.1 R
 - [How R Searches and Finds stuff](./Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.md)
