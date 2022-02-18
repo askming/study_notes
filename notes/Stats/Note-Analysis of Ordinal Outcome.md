@@ -105,7 +105,9 @@
 
 *using normal approximation*
 
-$$n = \frac{3(A+1)^2}{A(1-\sum_{i=1}^k \bar{p}_i^3)}*\frac{(z_{\alpha/2}+z_{\beta})^2}{\theta_R^2},$$ where
+$$n = \frac{3(A+1)^2}{A(1-\sum_{i=1}^k \bar{p}_i^3)}*\frac{(z_{\alpha/2}+z_{\beta})^2}{\theta_R^2},$$ 
+
+where
 
 - $A = n_c/n_e$, is the randomization ratio between control and treated arms
 - $\theta_R$ is the log of the common odds ratio for treated vs control arm
@@ -116,7 +118,7 @@ $$n = \frac{3(A+1)^2}{A(1-\sum_{i=1}^k \bar{p}_i^3)}*\frac{(z_{\alpha/2}+z_{\bet
 
 ### Method 2: without PO assumtion [^Zhao et al. 2207]
 
-[Link](./Note-Sample20%size20%calculation20%with20%WMW20%test.md) to notes.
+[Link](./Note-Sample_size_calculation_with_WMW_test.md) to notes.
 
 ### Method 3: without PO assumption[^ Tang 2011]
 
