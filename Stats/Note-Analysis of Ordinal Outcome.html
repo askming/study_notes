@@ -723,7 +723,7 @@
 <h3>3. Method for PO is not met (?)<a class="headerlink" href="#method-for-po-is-not-met" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>When analyzing ordinal data where PO is not met, the Wilcoxon test may still work OK but it will not be optimal.</p></li>
-<li><p>One way to generate a non-parametric version of OR (called Wilcoxon Mann Whitney Generalized OR [WMW GenOR]) is introduced in <code class="docutils literal notranslate"><span class="pre">Agresti</span> <span class="pre">(1980)</span></code> and later discussed in <code class="docutils literal notranslate"><span class="pre">Chrilov</span> <span class="pre">et</span> <span class="pre">al</span> <span class="pre">(2014)</span></code>. <code class="docutils literal notranslate"><span class="pre">O’Brien</span> <span class="pre">and</span> <span class="pre">Castelloe</span></code> offered a way to eliminate ties and apply Agresti’s formula directly.</p></li>
+<li><p>One way to generate a non-parametric version of OR (called Wilcoxon Mann Whitney Generalized OR [WMW GenOR]) is introduced in <span id="id5">[<a class="reference internal" href="#id38">Agresti, 1980</a>]</span> and later discussed in <span id="id6">[<a class="reference internal" href="#id40">Churilov <em>et al.</em>, 2014</a>]</span>. <span id="id7">[<a class="reference internal" href="#id39">O’Brien and Castelloe, 2006</a>]</span> offered a way to eliminate ties and apply Agresti’s formula directly.</p></li>
 <li><p>WMW GenOR test statistic is defined as</p>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202020-06-23%20at%204.28.54%20PM_20200624073044.png" /></p>
 <div class="math notranslate nohighlight">
@@ -745,7 +745,7 @@
 <div class="section" id="sample-size-calculation-with-ordinal-outcome">
 <h2>Sample size calculation with ordinal outcome<a class="headerlink" href="#sample-size-calculation-with-ordinal-outcome" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="method-1-with-proportional-odds-assumption-whitehead1993sample">
-<h3>Method 1: with proportional odds assumption <span id="id5">[<a class="reference internal" href="#id34">Whitehead, 1993</a>]</span><a class="headerlink" href="#method-1-with-proportional-odds-assumption-whitehead1993sample" title="Permalink to this headline">¶</a></h3>
+<h3>Method 1: with proportional odds assumption <span id="id8">[<a class="reference internal" href="#id37">Whitehead, 1993</a>]</span><a class="headerlink" href="#method-1-with-proportional-odds-assumption-whitehead1993sample" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Let <span class="math notranslate nohighlight">\(Q_{ie\text{ or }c} = \sum_{u=1}^i p_{ue\text{ or }c}, \text{for } i = 1,\cdots, k-1\)</span></p></li>
 <li><p>Log odds ratio at cutoff <span class="math notranslate nohighlight">\(i\)</span> is defined as <span class="math notranslate nohighlight">\(\theta_{iR} = \log\left\{\frac{Q_{ie}(1-Q_{ic})}{(1-Q_{ie})Q_{ic}}\right\}\)</span></p>
@@ -780,23 +780,32 @@
 </div>
 </div>
 <div class="section" id="method-2-without-po-assumtion-zhao2008sample">
-<h3>Method 2: without PO assumtion <span id="id6">[<a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html#id27">Zhao <em>et al.</em>, 2008</a>]</span><a class="headerlink" href="#method-2-without-po-assumtion-zhao2008sample" title="Permalink to this headline">¶</a></h3>
+<h3>Method 2: without PO assumtion <span id="id9">[<a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html#id27">Zhao <em>et al.</em>, 2008</a>]</span><a class="headerlink" href="#method-2-without-po-assumtion-zhao2008sample" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html"><span class="doc std std-doc">Link</span></a> to notes.</p>
 </div>
 <div class="section" id="method-3-without-po-assumption-tang2011size">
-<h3>Method 3: without PO assumption <span id="id7">[<a class="reference internal" href="#id33">Tang, 2011</a>]</span><a class="headerlink" href="#method-3-without-po-assumption-tang2011size" title="Permalink to this headline">¶</a></h3>
+<h3>Method 3: without PO assumption <span id="id10">[<a class="reference internal" href="#id36">Tang, 2011</a>]</span><a class="headerlink" href="#method-3-without-po-assumption-tang2011size" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Exact variance method for the size and power calculation for theWilcoxon–Mann–Whitney test for ordered categorical data.</p></li>
 <li><p>Notes to be done</p></li>
 </ul>
-<p id="id8"><dl class="citation">
-<dt class="label" id="id33"><span class="brackets"><a class="fn-backref" href="#id7">Tan11</a></span></dt>
+<p id="id11"><dl class="citation">
+<dt class="label" id="id38"><span class="brackets"><a class="fn-backref" href="#id5">Agr80</a></span></dt>
+<dd><p>Alan Agresti. Generalized odds ratios for ordinal data. <em>Biometrics</em>, pages 59–67, 1980.</p>
+</dd>
+<dt class="label" id="id40"><span class="brackets"><a class="fn-backref" href="#id6">CAJ+14</a></span></dt>
+<dd><p>Leonid Churilov, Sarah Arnup, Hayden Johns, Tiffany Leung, Stuart Roberts, Bruce CV Campbell, Stephen M Davis, and Geoffrey A Donnan. An improved method for simple, assumption-free ordinal analysis of the modified rankin scale using generalized odds ratios. <em>International Journal of Stroke</em>, 9(8):999–1005, 2014.</p>
+</dd>
+<dt class="label" id="id39"><span class="brackets"><a class="fn-backref" href="#id7">OBrienC06</a></span></dt>
+<dd><p>Ralph G O’Brien and John Castelloe. Exploiting the link between the wilcoxon-mann-whitney test and a simple odds statistic. In <em>Proceedings of the Thirty-first Annual SAS Users Group International Conference</em>, 209–31. Citeseer, 2006.</p>
+</dd>
+<dt class="label" id="id36"><span class="brackets"><a class="fn-backref" href="#id10">Tan11</a></span></dt>
 <dd><p>Yongqiang Tang. Size and power estimation for the wilcoxon–mann–whitney test for ordered categorical data. <em>Statistics in Medicine</em>, 30(29):3461–3470, 2011.</p>
 </dd>
-<dt class="label" id="id34"><span class="brackets"><a class="fn-backref" href="#id5">Whi93</a></span></dt>
+<dt class="label" id="id37"><span class="brackets"><a class="fn-backref" href="#id8">Whi93</a></span></dt>
 <dd><p>John Whitehead. Sample size calculations for ordered categorical data. <em>Statistics in medicine</em>, 12(24):2257–2271, 1993.</p>
 </dd>
-<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id6">ZRQ08</a></span></dt>
+<dt class="label" id="id35"><span class="brackets"><a class="fn-backref" href="#id9">ZRQ08</a></span></dt>
 <dd><p>Yan D Zhao, Dewi Rahardja, and Yongming Qu. Sample size calculation for the wilcoxon–mann–whitney test adjusting for ties. <em>Statistics in medicine</em>, 27(3):462–468, 2008.</p>
 </dd>
 </dl>
