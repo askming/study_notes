@@ -12,12 +12,12 @@ Steps to conduct baseline adaptive randomization
 i. 
 
 $$
-B(t) =\sum_{f=1}^F w_f*\text{function}(n^1_{f}, n^2_{f}, n^{t}_{f}+1, \cdots, n^K_{f} ), t=1, 2, \cdots, K
+B(t) =\sum_{f=1}^F w_f*\mathcal{F}(n^1_{f}, n^2_{f}, n^{t}_{f}+1, \cdots, n^K_{f} ), t=1, 2, \cdots, K
 $$
 
 - $B(t)$ standards for the imbalance score if the new subject is randomized to arm $t$ 
 - $f$ is the indicator for randomization factor; $t$ is the indicator for treatment arm
-- the function to quantify imbalance can be `variance`, `range`, etc.
+- $\mathcal{F}$ the function to quantify imbalance can be `variance`, `range`, etc.
 
 ii. max $\chi$-square statistic among all the stratification factors
 

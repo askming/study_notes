@@ -577,12 +577,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>i.</p>
 <div class="math notranslate nohighlight">
 \[
-B(t) =\sum_{f=1}^F w_f*\text{function}(n^1_{f}, n^2_{f}, n^{t}_{f}+1, \cdots, n^K_{f} ), t=1, 2, \cdots, K
+B(t) =\sum_{f=1}^F w_f*\mathcal{F}(n^1_{f}, n^2_{f}, n^{t}_{f}+1, \cdots, n^K_{f} ), t=1, 2, \cdots, K
 \]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(B(t)\)</span> standards for the imbalance score if the new subject is randomized to arm <span class="math notranslate nohighlight">\(t\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(f\)</span> is the indicator for randomization factor; <span class="math notranslate nohighlight">\(t\)</span> is the indicator for treatment arm</p></li>
-<li><p>the function to quantify imbalance can be <code class="docutils literal notranslate"><span class="pre">variance</span></code>, <code class="docutils literal notranslate"><span class="pre">range</span></code>, etc.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{F}\)</span> the function to quantify imbalance can be <code class="docutils literal notranslate"><span class="pre">variance</span></code>, <code class="docutils literal notranslate"><span class="pre">range</span></code>, etc.</p></li>
 </ul>
 <p>ii. max <span class="math notranslate nohighlight">\(\chi\)</span>-square statistic among all the stratification factors</p>
 <div class="section" id="sample-code">
