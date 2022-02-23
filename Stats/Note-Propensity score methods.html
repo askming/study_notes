@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -826,7 +825,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="propensity-score-methods-implementation">
 <h1>Propensity Score Methods &amp; Implementation<a class="headerlink" href="#propensity-score-methods-implementation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="propensity-score-methods-in-observational-data-analysis-theoretical-part-austin2011introduction">
-<h2>Propensity score methods in observational data analysis (theoretical part) <span id="id1">[<a class="reference internal" href="#id34">Austin, 2011</a>]</span><a class="headerlink" href="#propensity-score-methods-in-observational-data-analysis-theoretical-part-austin2011introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Propensity score methods in observational data analysis (theoretical part) <span id="id1">[<a class="reference internal" href="#id34" title="Peter C Austin. An introduction to propensity score methods for reducing the effects of confounding in observational studies. Multivariate behavioral research, 46(3):399–424, 2011.">Austin, 2011</a>]</span><a class="headerlink" href="#propensity-score-methods-in-observational-data-analysis-theoretical-part-austin2011introduction" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="randomized-controlled-trials-versus-observational-studies">
 <h3>Randomized Controlled Trials Versus Observational Studies<a class="headerlink" href="#randomized-controlled-trials-versus-observational-studies" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="the-potential-outcomes-framework-and-average-treatment-effects">
@@ -1165,7 +1164,7 @@ e. <strong>Genetic matching</strong>: uses a computationally intensive genetic s
 f. <strong>Coarsened exact matching</strong>: matches on a covariate while maintaining the balance of other covariates (supposed to work well for multicategory treatments, determining blocks in experimental designs, and evaluating extreme counterfactuals)</p></li>
 </ol>
 <p>[Earlier note](./attachments/Propensity score methods in observational data analysis.pdf)</p>
-<p><span id="id2">[<a class="reference internal" href="#id35">Brookhart <em>et al.</em>, 2013</a>]</span></p>
+<p><span id="id2">[<a class="reference internal" href="#id35" title="M Alan Brookhart, Richard Wyss, J Bradley Layton, and Til Stürmer. Propensity score methods for confounding control in nonexperimental research. Circulation: Cardiovascular Quality and Outcomes, 6(5):604–611, 2013.">Brookhart <em>et al.</em>, 2013</a>]</span></p>
 <p id="id3"><dl class="citation">
 <dt class="label" id="id34"><span class="brackets"><a class="fn-backref" href="#id1">Aus11</a></span></dt>
 <dd><p>Peter C Austin. An introduction to propensity score methods for reducing the effects of confounding in observational studies. <em>Multivariate behavioral research</em>, 46(3):399–424, 2011.</p>

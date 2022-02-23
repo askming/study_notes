@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -578,9 +577,13 @@
 <p>i.</p>
 <div class="math notranslate nohighlight">
 \[
-B(t) =\sum_{f=1}^F w_f*\text{range}(X_{f_1}^t-X_{f_2}^t), t=1, 2, \cdots 
+B(t) =\sum_{f=1}^F w_f*\text{function}(n^1_{f}, n^2_{f}, n^{t}_{f}+1, \cdots, n^K_{f} ), t=1, 2, \cdots, K
 \]</div>
-<p>this measure works only for two treatment groups</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(B(t)\)</span> standards for the imbalance score if the new subject is randomized to arm <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is the indicator for randomization factor; <span class="math notranslate nohighlight">\(t\)</span> is the indicator for treatment arm</p></li>
+<li><p>the function to quantify imbalance can be <code class="docutils literal notranslate"><span class="pre">variance</span></code>, <code class="docutils literal notranslate"><span class="pre">range</span></code>, etc.</p></li>
+</ul>
 <p>ii. max <span class="math notranslate nohighlight">\(\chi\)</span>-square statistic among all the stratification factors</p>
 <div class="section" id="sample-code">
 <h2>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">¶</a></h2>

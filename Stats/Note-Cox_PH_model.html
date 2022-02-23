@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -718,7 +717,7 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </div>
 <div class="section" id="checklist-when-fitting-the-cox-model-kragh2021analysis">
-<h2>Checklist when fitting the Cox model <span id="id1">[<a class="reference internal" href="#id5">Kragh Andersen <em>et al.</em>, 2021</a>]</span><a class="headerlink" href="#checklist-when-fitting-the-cox-model-kragh2021analysis" title="Permalink to this headline">¶</a></h2>
+<h2>Checklist when fitting the Cox model <span id="id1">[<a class="reference internal" href="#id5" title="Per Kragh Andersen, Maja Pohar Perme, Hans C van Houwelingen, Richard J Cook, Pierre Joly, Torben Martinussen, Jeremy MG Taylor, Michal Abrahamowicz, and Terry M Therneau. Analysis of time-to-event for observational studies: guidance to the use of intensity models. Statistics in Medicine, 40(1):185–211, 2021.">Kragh Andersen <em>et al.</em>, 2021</a>]</span><a class="headerlink" href="#checklist-when-fitting-the-cox-model-kragh2021analysis" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="before-fitting-the-model">
 <h3>Before fitting the model<a class="headerlink" href="#before-fitting-the-model" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -851,7 +850,7 @@ $<span class="math notranslate nohighlight">\(
 </ol>
 </div>
 <div class="section" id="alternative-hr-uno2014moving">
-<h2>Alternative HR <span id="id2">[<a class="reference internal" href="#id6">Uno <em>et al.</em>, 2014</a>]</span><a class="headerlink" href="#alternative-hr-uno2014moving" title="Permalink to this headline">¶</a></h2>
+<h2>Alternative HR <span id="id2">[<a class="reference internal" href="#id6" title="Hajime Uno, Brian Claggett, Lu Tian, Eisuke Inoue, Paul Gallo, Toshio Miyata, Deborah Schrag, Masahiro Takeuchi, Yoshiaki Uyama, Lihui Zhao, and others. Moving beyond the hazard ratio in quantifying the between-group difference in survival analysis. Journal of clinical Oncology, 32(22):2380, 2014.">Uno <em>et al.</em>, 2014</a>]</span><a class="headerlink" href="#alternative-hr-uno2014moving" title="Permalink to this headline">¶</a></h2>
 <p><img alt="image-20210618135446172" src="https://raw.githubusercontent.com/askming/picgo/master/image-20210618135446172.png" /></p>
 <ul class="simple">
 <li><p>Hazard ratio (HR) may not always be a good summary statistic in quantifying the between-group difference in survival analysis for the following reasons</p>

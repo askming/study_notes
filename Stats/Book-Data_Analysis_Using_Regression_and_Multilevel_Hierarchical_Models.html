@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -1064,7 +1063,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="book-data-analysis-using-regression-and-multilevel-hierarchical-models">
 <h1>[book] Data Analysis Using Regression and Multilevel/Hierarchical Models<a class="headerlink" href="#book-data-analysis-using-regression-and-multilevel-hierarchical-models" title="Permalink to this headline">¶</a></h1>
 <hr>
-<p><em>A study note of <span id="id1">[<a class="reference internal" href="#id15">Gelman and Hill, 2006</a>]</span></em></p>
+<p><em>A study note of <span id="id1">[<a class="reference internal" href="#id15" title="Andrew Gelman and Jennifer Hill. Data analysis using regression and multilevel/hierarchical models. Cambridge university press, 2006.">Gelman and Hill, 2006</a>]</span></em></p>
 <div class="section" id="chapter-9-causal-inference-using-regression-on-the-treatment-variable">
 <h2>Chapter 9 Causal inference using regression on the treatment variable<a class="headerlink" href="#chapter-9-causal-inference-using-regression-on-the-treatment-variable" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="causal-inference-and-predictive-comparisons">
@@ -1092,8 +1091,8 @@
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-748f0b15-8bb2-422a-9333-61236829177c">
-<span class="eqno">(7)<a class="headerlink" href="#equation-748f0b15-8bb2-422a-9333-61236829177c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5fca484c-5917-44b6-837a-fc771881d27e">
+<span class="eqno">(7)<a class="headerlink" href="#equation-5fca484c-5917-44b6-837a-fc771881d27e" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -1446,8 +1445,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0adaa739-12f6-4c48-8e4b-8974655a67c7">
-<span class="eqno">(8)<a class="headerlink" href="#equation-0adaa739-12f6-4c48-8e4b-8974655a67c7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-804d4740-a74a-48b9-8af5-9c9edc45a34d">
+<span class="eqno">(8)<a class="headerlink" href="#equation-804d4740-a74a-48b9-8af5-9c9edc45a34d" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -1458,8 +1457,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6af7f09c-f38e-47f8-87b8-356312eb3eff">
-<span class="eqno">(9)<a class="headerlink" href="#equation-6af7f09c-f38e-47f8-87b8-356312eb3eff" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5584ff10-4624-4229-8d8e-ed2c65f5d6a7">
+<span class="eqno">(9)<a class="headerlink" href="#equation-5584ff10-4624-4229-8d8e-ed2c65f5d6a7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>

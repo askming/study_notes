@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -948,7 +947,7 @@
 </div>
 </div>
 <div class="section" id="sample-size-calculation-wassmer2016group">
-<h2>Sample size calculation <span id="id1">[<a class="reference internal" href="#id6">Wassmer and Brannath, 2016</a>]</span><a class="headerlink" href="#sample-size-calculation-wassmer2016group" title="Permalink to this headline">¶</a></h2>
+<h2>Sample size calculation <span id="id1">[<a class="reference internal" href="#id6" title="Gernot Wassmer and Werner Brannath. Group sequential and confirmatory adaptive designs in clinical trials. Volume 301. Springer, 2016.">Wassmer and Brannath, 2016</a>]</span><a class="headerlink" href="#sample-size-calculation-wassmer2016group" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="log-rank-test">
 <h3>Log-rank test<a class="headerlink" href="#log-rank-test" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -1007,8 +1006,8 @@
     \]</div>
 <ul>
 <li><p><strong>Assuming constant hazard rate (or exponential survival time) and patients enter the trial uniformly over the recruitment time period <span class="math notranslate nohighlight">\(a\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-38e6cad9-a5cf-4ca4-848f-fd9432dc8818">
-<span class="eqno">(12)<a class="headerlink" href="#equation-38e6cad9-a5cf-4ca4-848f-fd9432dc8818" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c2b658fb-5fe6-4bb4-9c83-4a6148a28a2c">
+<span class="eqno">(12)<a class="headerlink" href="#equation-c2b658fb-5fe6-4bb4-9c83-4a6148a28a2c" title="Permalink to this equation">¶</a></span>\[\begin{align}
       \phi_{\lambda_j(s)} &amp;=&amp; P_{\lambda_j}(X &lt; C)\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s P_{\lambda_j}(X&lt;c|C=c)g(c)dc\\
       &amp;=&amp; \int_{\max\{0, s-a\}}^s(1-\exp(-\lambda_jc))\frac{1}{a}dc

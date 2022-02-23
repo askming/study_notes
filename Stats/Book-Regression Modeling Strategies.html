@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -938,7 +937,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="book-regression-modeling-strategies">
 <h1>[book] Regression Modeling Strategies<a class="headerlink" href="#book-regression-modeling-strategies" title="Permalink to this headline">¶</a></h1>
 <hr>
-<p><em>A reading note of <span id="id1">Harrell [<a class="reference internal" href="#id7">2017</a>]</span></em></p>
+<p><em>A reading note of <span id="id1">Harrell [<a class="reference internal" href="#id7" title="Frank E Harrell. Regression modeling strategies. Bios, 330(2018):14, 2017.">2017</a>]</span></em></p>
 <div class="section" id="chapter-9-overview-of-maximum-likelihood-estimation">
 <h2>Chapter 9 Overview of Maximum Likelihood Estimation<a class="headerlink" href="#chapter-9-overview-of-maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -1136,8 +1135,8 @@
 <h4>4.1 Model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>The continuation ratio (CR) model is based on conditional probabilities. The (forward) CR model is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-92087f4c-4490-47cd-9481-6a110059bf61">
-<span class="eqno">(10)<a class="headerlink" href="#equation-92087f4c-4490-47cd-9481-6a110059bf61" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5246de6e-4408-434a-9704-34011985a6b8">
+<span class="eqno">(10)<a class="headerlink" href="#equation-5246de6e-4408-434a-9704-34011985a6b8" title="Permalink to this equation">¶</a></span>\[\begin{align}
    P(Y=j|Y\ge j,  X) &amp; = \frac{1}{1+\exp[-(\theta_j + X\gamma)]}\\
    logit(Y=0|Y\ge0, X) &amp; = logit(Y=0|X)\\
    &amp;=\theta_0 + X\gamma\\

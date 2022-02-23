@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -719,7 +718,7 @@ $<span class="math notranslate nohighlight">\(
 <h2>5. Bayesian quantile regression<a class="headerlink" href="#bayesian-quantile-regression" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Because the quantile regression does not normally assume a parametric likelihood for the conditional distributions of <span class="math notranslate nohighlight">\(Y|X\)</span>, the Bayesian methods work with a working likelihood.</p></li>
-<li><p>A convenient choice is the <em><strong>asymmetric Laplacian distribution</strong></em>, because the mode of the resulting posterior under a flat prior is the usual quantile regression estimates.<span id="id1">[<a class="reference internal" href="#id25">Koenker and Bassett Jr, 1978</a>]</span></p>
+<li><p>A convenient choice is the <em><strong>asymmetric Laplacian distribution</strong></em>, because the mode of the resulting posterior under a flat prior is the usual quantile regression estimates.<span id="id1">[<a class="reference internal" href="#id25" title="Roger Koenker and Gilbert Bassett Jr. Regression quantiles. Econometrica: journal of the Econometric Society, pages 33–50, 1978.">Koenker and Bassett Jr, 1978</a>]</span></p>
 <ul>
 <li><p><strong>Asymmetric Laplace distribution (ALD)</strong>, density function is given by:</p>
 <div class="math notranslate nohighlight">
@@ -766,7 +765,7 @@ $<span class="math notranslate nohighlight">\(
 <li><p>In theory, we can use any prior for <span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span>, but in the absence of any realistic information one could use improper uniform prior distribution for all the components of <span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span>.</p></li>
 </ul>
 </li>
-<li><p>The posterior inference, however, must be interpreted with care. <span id="id2">[<a class="reference internal" href="#id24">Yang and He, 2012</a>]</span> showed that one can have asymptotically valid posterior inference if the working likelihood is chosen to be the empirical likelihood.</p></li>
+<li><p>The posterior inference, however, must be interpreted with care. <span id="id2">[<a class="reference internal" href="#id24" title="Yunwen Yang and Xuming He. Bayesian empirical likelihood for quantile regression. The Annals of Statistics, 40(2):1102–1131, 2012.">Yang and He, 2012</a>]</span> showed that one can have asymptotically valid posterior inference if the working likelihood is chosen to be the empirical likelihood.</p></li>
 </ul>
 </div>
 <div class="section" id="censored-quantile-regression">
@@ -777,11 +776,11 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 <p>A number of papers that are on the early application of quantile regression:</p>
 <ol class="simple">
-<li><p><span id="id3">[<a class="reference internal" href="#id26">Buchinsky, 1998</a>]</span></p></li>
-<li><p><span id="id4">[<a class="reference internal" href="#id27">Yu and Jones, 1998</a>]</span></p></li>
-<li><p><span id="id5">[<a class="reference internal" href="#id28">He <em>et al.</em>, 1998</a>]</span></p></li>
-<li><p><span id="id6">[<a class="reference internal" href="#id30">Koenker and Machado, 1999</a>]</span></p></li>
-<li><p><span id="id7">[<a class="reference internal" href="#id29">Yu and Moyeed, 2001</a>]</span></p></li>
+<li><p><span id="id3">[<a class="reference internal" href="#id26" title="Moshe Buchinsky. Recent advances in quantile regression models: a practical guideline for empirical research. Journal of human resources, pages 88–126, 1998.">Buchinsky, 1998</a>]</span></p></li>
+<li><p><span id="id4">[<a class="reference internal" href="#id27" title="Keming Yu and MC1614628 Jones. Local linear quantile regression. Journal of the American statistical Association, 93(441):228–237, 1998.">Yu and Jones, 1998</a>]</span></p></li>
+<li><p><span id="id5">[<a class="reference internal" href="#id28" title="Xuming He, Pin Ng, and Stephen Portnoy. Bivariate quantile smoothing splines. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 60(3):537–550, 1998.">He <em>et al.</em>, 1998</a>]</span></p></li>
+<li><p><span id="id6">[<a class="reference internal" href="#id30" title="Roger Koenker and Jose AF Machado. Goodness of fit and related inference processes for quantile regression. Journal of the american statistical association, 94(448):1296–1310, 1999.">Koenker and Machado, 1999</a>]</span></p></li>
+<li><p><span id="id7">[<a class="reference internal" href="#id29" title="Keming Yu and Rana A Moyeed. Bayesian quantile regression. Statistics &amp; Probability Letters, 54(4):437–447, 2001.">Yu and Moyeed, 2001</a>]</span></p></li>
 </ol>
 <p id="id8"><dl class="citation">
 <dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id3">Buc98</a></span></dt>

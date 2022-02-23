@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -702,7 +701,7 @@
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathcal{R}_i\)</span> denotes the risk set at <span class="math notranslate nohighlight">\(X_i\)</span> and contains individuals who don’t fail from any cause or are not censored before <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
 </li>
-<li><p>Because competing risks are present, it is no longer appropriate to interpret the cause-specific hazard ratios in terms of a relative risk type of measure as regular hazard ratios. As <span id="id2">[<a class="reference internal" href="#id12">Andersen and Keiding, 2012</a>]</span> point out, this is a direct consequence of the loss of the one-to-one relationship between the cause-specific hazard function and the cumulative incidence function.</p></li>
+<li><p>Because competing risks are present, it is no longer appropriate to interpret the cause-specific hazard ratios in terms of a relative risk type of measure as regular hazard ratios. As <span id="id2">[<a class="reference internal" href="#id12" title="Per Kragh Andersen and Niels Keiding. Interpretability and importance of functionals in competing risks and multistate models. Statistics in medicine, 31(11-12):1074–1088, 2012.">Andersen and Keiding, 2012</a>]</span> point out, this is a direct consequence of the loss of the one-to-one relationship between the cause-specific hazard function and the cumulative incidence function.</p></li>
 </ul>
 </div>
 <div class="section" id="cumulative-incidence-cif-modeling-or-proportional-subdistribution-hazards-model-psh-or-fine-and-gray-model">
@@ -727,7 +726,7 @@
 <p>where <span class="math notranslate nohighlight">\(\omega_{ij}\)</span> is the subject-specific weight for those in the risk set. Subject who experience no event of interest before <span class="math notranslate nohighlight">\(X_i\)</span> are assigned weight <span class="math notranslate nohighlight">\(\omega_{ij} =1\)</span>, and subject who experience competing events before <span class="math notranslate nohighlight">\(X_i\)</span> are given weight <span class="math notranslate nohighlight">\(\omega_{ij} = \frac{\hat{G}(X_i)}{\hat{G}(\min(X_j, X_i))}\)</span>, which decrease with time (refers to event time <span class="math notranslate nohighlight">\(X_i\)</span>). <span class="math notranslate nohighlight">\(\hat{G}(t)\)</span> is the KM estimate of the survival function of the censoring distribution, which is the cumulative prob. that a subject is still be followed at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <ul class="simple">
 <li><p>The new risk set <span class="math notranslate nohighlight">\(\tilde{\mathcal{R}}_i\)</span> is modified from the risk set definition that comes from the regular likelihood in order to accommodate the subdistribution hazard. The difference is that the new risk set includes subjects who have experienced a competing event before <span class="math notranslate nohighlight">\(X_i\)</span> and are therefore immortal.</p></li>
-<li><p>The subdistribution hazard function might not have the proper interpretation of an instantaneous risk of failure <span id="id3">[<a class="reference internal" href="#id12">Andersen and Keiding, 2012</a>]</span>. <span id="id4">[<a class="reference internal" href="#id13">Austin and Fine, 2017</a>]</span> provided practical recommendations for interpreting the regression coefficients and reporting the results properly.</p></li>
+<li><p>The subdistribution hazard function might not have the proper interpretation of an instantaneous risk of failure <span id="id3">[<a class="reference internal" href="#id12" title="Per Kragh Andersen and Niels Keiding. Interpretability and importance of functionals in competing risks and multistate models. Statistics in medicine, 31(11-12):1074–1088, 2012.">Andersen and Keiding, 2012</a>]</span>. <span id="id4">[<a class="reference internal" href="#id13" title="Peter C Austin and Jason P Fine. Practical recommendations for reporting f ine-g ray model analyses for competing risk data. Statistics in medicine, 36(27):4391–4400, 2017.">Austin and Fine, 2017</a>]</span> provided practical recommendations for interpreting the regression coefficients and reporting the results properly.</p></li>
 </ul>
 </li>
 <li><p>As with Cox models, <strong>Fine and Gray</strong> is also based on proportional hazards.</p>
@@ -736,7 +735,7 @@
 </ul>
 </li>
 <li><p>In <strong>Subdistribution hazard ratio (SHR)</strong>, the magnitude of which is affected by both the time to event of interest among survivors and the probability of competing event. It assesses the association between an intervention and primary event of interest <em>accounting for the existence</em> of the alternative outcome of competing event.</p></li>
-<li><p>Difference between <u>cause-specific hazard</u> vs <u>subdistribution hazard</u> is that the competing risk events are treated differently. The former considers competing risk events as non-informative censoring, whereas the latter takes into account the informative censoring nature of the competing risk events <span id="id5">[<a class="reference internal" href="#id11">Zhang, 2017</a>]</span></p>
+<li><p>Difference between <u>cause-specific hazard</u> vs <u>subdistribution hazard</u> is that the competing risk events are treated differently. The former considers competing risk events as non-informative censoring, whereas the latter takes into account the informative censoring nature of the competing risk events <span id="id5">[<a class="reference internal" href="#id11" title="Zhongheng Zhang. Survival analysis in the presence of competing risks. Annals of translational medicine, 2017.">Zhang, 2017</a>]</span></p>
 <ul class="simple">
 <li><p>Proportional subdistribution hazards (PSH) model is a commonly used method for regression analysis of time-to-event data in the presence of competing risks.</p></li>
 </ul>
