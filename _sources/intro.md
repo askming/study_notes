@@ -165,6 +165,7 @@
 ### 4.7 Containers
 
 ### 4.8 Web Development
+- [Moden JS explained](CS/Note-Modern%20JS%20explained.md)
 - [Learning React](CS/Note-Learning%20React.md)
 - [HTML basics](./CS/Note-HTML%20basics.md)
 
