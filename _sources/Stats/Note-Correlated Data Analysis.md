@@ -1,6 +1,6 @@
 # Correlated/Longitudinal Data Analysis
 
-*Based on course notes and blog posts[^MMRM_blog]*
+*Based on course notes and blog posts*
 
 ## Cross-sectional vs longitudinal data
 
@@ -265,13 +265,15 @@ We want to estimate an unknown mean response curve $\mu(t)$ in the model. Nonpar
       \sum_{i=1}^{n_i}v_{ijk}}{n_i}
       $$
 
-  ![o3SXXE_2022_03_21](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/o3SXXE_2022_03_21.png)
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/o3SXXE_2022_03_21.png" width="60%">
+
   _Fig. 7.3 of Regression modeling strategies_
 
-## Linear model for correlated data
+## Linear model for correlated data (continuous outcome)
 
-![wFJP9l_2022_03_21](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/wFJP9l_2022_03_21.png)
-_excerpted from Chapter 7 of Regression Modeling Strategies_
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/wFJP9l_2022_03_21.png" width="80%">
+
+_excerpt from Chapter 7 of Regression Modeling Strategies_
 
 - To develop a general linear model framework for longitudinal data, in which the inference we make about the parameters of interest ($\beta$) *recoginze the likely correlation structure of the data*. There are two ways to archieve this:
 
@@ -340,7 +342,7 @@ $$
 - **Heteogeneity**: variation between groups implies (relative) similarity/correlation within groups. If $v^2 >> \tau^2 \Rightarrow \rho \rightarrow 1 \Rightarrow$ significant difference between groups.
 
 #### MMRM
-- MMRM (mixed model of repeated measures) is a special case of linear mixed model (LMM)[^statsgeek]
+- MMRM (mixed model of repeated measures) is a special case of linear mixed model (LMM)[^MMRM_blog]
   - it doesn’t specify any random effects but it specifies a correlated residual error structure. (similar as the GLS or marginal model?)
 
 - MMRM vs LMM
@@ -742,9 +744,8 @@ b --> i1
 
 [^2]:Two categories of robustness: 1. w.r.t. the outlier; 2. w.r.t. the model assumptions
 
-[^fharrell]: https://www.fharrell.com/post/re/
+[^fharrell]: [Longitudinal Data: Think Serial Correlation First, Random Effects Second](https://www.fharrell.com/post/re/)
 
-[^statsgeek]: https://thestatsgeek.com/2021/02/21/mmrm-vs-lme-model/
 
 ```{bibliography}
 :filter: docname in docnames
