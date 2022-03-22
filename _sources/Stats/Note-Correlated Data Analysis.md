@@ -267,13 +267,13 @@ We want to estimate an unknown mean response curve $\mu(t)$ in the model. Nonpar
 
   <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/o3SXXE_2022_03_21.png" width="60%">
 
-  _Fig. 7.3 of Regression modeling strategies_
+  _Fig. 7.3 of {cite:p}`harrell2015regression`_
 
 ## Linear model for correlated data (continuous outcome)
 
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/wFJP9l_2022_03_21.png" width="80%">
 
-_excerpt from Chapter 7 of Regression Modeling Strategies_
+_excerpt from Chapter 7 of {cite:p}`harrell2015regression`_
 
 - To develop a general linear model framework for longitudinal data, in which the inference we make about the parameters of interest ($\beta$) *recoginze the likely correlation structure of the data*. There are two ways to archieve this:
 

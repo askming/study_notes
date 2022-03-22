@@ -1171,7 +1171,7 @@ Y_i=
 </li>
 </ul>
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/o3SXXE_2022_03_21.png" width="60%">
-<p><em>Fig. 7.3 of Regression modeling strategies</em></p>
+<p><em>Fig. 7.3 of <span id="id1">[<a class="reference internal" href="#id42" title="Frank E Harrell and others. Regression modeling strategies: with applications to linear models, logistic and ordinal regression, and survival analysis. Volume 3. Springer, 2015.">Harrell and others, 2015</a>]</span></em></p>
 </li>
 </ul>
 </div>
@@ -1179,12 +1179,12 @@ Y_i=
 <div class="section" id="linear-model-for-correlated-data-continuous-outcome">
 <h2>Linear model for correlated data (continuous outcome)<a class="headerlink" href="#linear-model-for-correlated-data-continuous-outcome" title="Permalink to this headline">¶</a></h2>
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/wFJP9l_2022_03_21.png" width="80%">
-<p><em>excerpt from Chapter 7 of Regression Modeling Strategies</em></p>
+<p><em>excerpt from Chapter 7 of <span id="id2">[<a class="reference internal" href="#id42" title="Frank E Harrell and others. Regression modeling strategies: with applications to linear models, logistic and ordinal regression, and survival analysis. Volume 3. Springer, 2015.">Harrell and others, 2015</a>]</span></em></p>
 <ul class="simple">
 <li><p>To develop a general linear model framework for longitudinal data, in which the inference we make about the parameters of interest (<span class="math notranslate nohighlight">\(\beta\)</span>) <em>recoginze the likely correlation structure of the data</em>. There are two ways to archieve this:</p>
 <ol class="simple">
 <li><p>To build explicit parametric models of the covariance struture (e.g. CS/exchangable, AR(1), etc.) -&gt; MMRM, GLS, etc. (see above table)</p></li>
-<li><p>To use methods of inference which are robust to misspecification of the covariance structure<a class="footnote-reference brackets" href="#id40" id="id1">1</a><a class="footnote-reference brackets" href="#id41" id="id2">2</a></p></li>
+<li><p>To use methods of inference which are robust to misspecification of the covariance structure<a class="footnote-reference brackets" href="#id43" id="id3">1</a><a class="footnote-reference brackets" href="#id44" id="id4">2</a></p></li>
 </ol>
 </li>
 </ul>
@@ -1250,7 +1250,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 <div class="section" id="mmrm">
 <h4>MMRM<a class="headerlink" href="#mmrm" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>MMRM (mixed model of repeated measures) is a special case of linear mixed model (LMM)<a class="footnote-reference brackets" href="#mmrm-blog" id="id3">3</a></p>
+<li><p>MMRM (mixed model of repeated measures) is a special case of linear mixed model (LMM)<a class="footnote-reference brackets" href="#mmrm-blog" id="id5">3</a></p>
 <ul>
 <li><p>it doesn’t specify any random effects but it specifies a correlated residual error structure. (similar as the GLS or marginal model?)</p></li>
 </ul>
@@ -1259,7 +1259,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 <ul>
 <li><p>The first thing to remember is that it generally only makes sense to fit the MMRM if subjects are measured at a common set of times.</p></li>
 <li><p>If the measurements occur on a more ad-hoc basis, such that the times of measurement vary across subjects, what is typically called the MMRM model can’t really be fitted.</p></li>
-<li><p>It is worth noting that in this case, if one uses a relatively simple random effects structure (e.g. intercepts and slopes) one can still specify that the residual errors are serially correlated over time. Here the correlation in errors is accommodating residual correlation between measurements close in time that cannot be captured by the simple random effects structure. See Section 3.3.4 of <span id="id4">[<a class="reference internal" href="#id39" title="Geert Verbeke. Linear mixed models for longitudinal data. In Linear mixed models in practice, pages 63–153. Springer, 1997.">Verbeke, 1997</a>]</span> for more on this.</p></li>
+<li><p>It is worth noting that in this case, if one uses a relatively simple random effects structure (e.g. intercepts and slopes) one can still specify that the residual errors are serially correlated over time. Here the correlation in errors is accommodating residual correlation between measurements close in time that cannot be captured by the simple random effects structure. See Section 3.3.4 of <span id="id6">[<a class="reference internal" href="#id41" title="Geert Verbeke. Linear mixed models for longitudinal data. In Linear mixed models in practice, pages 63–153. Springer, 1997.">Verbeke, 1997</a>]</span> for more on this.</p></li>
 </ul>
 </li>
 <li><p>If the correlation structure of the repeated measures implied by the specified random effects is incorrect, the standard errors may be general biased. This potential issue suggests that in this setting the the MMRM, which uses an unstructured covariance structure for the residual errors, is preferable.</p></li>
@@ -1275,7 +1275,7 @@ U_i \sim N(0, v^2), \text{variantion between units/clusters}
 <div class="section" id="marginal-model-population-average">
 <h3>Marginal model (population average)<a class="headerlink" href="#marginal-model-population-average" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Generalized least squares is based on these ideas, and can incorporate multiple types of correlation structures without including any random effects.<a class="footnote-reference brackets" href="#fharrell" id="id5">4</a></p></li>
+<li><p>Generalized least squares is based on these ideas, and can incorporate multiple types of correlation structures without including any random effects.<a class="footnote-reference brackets" href="#fharrell" id="id7">4</a></p></li>
 <li><p>Generalized least squares, Markov models when no random effects are added, and GEE are all examples of marginal models, marginal meaning in the sense of not being conditional on subject so not attempting to estimate individual subjects’ trajectories.</p></li>
 </ul>
 <ol>
@@ -1659,24 +1659,27 @@ b --&gt; i1
 <li><p>Independent random errors can be manipulated to assume any covariance structure by premultiplying the independent variates by some square-root decomposition of the covariance structure. (eg [Cholesky decomposition] (https://en.wikipedia.org/wiki/Cholesky_decomposition))</p></li>
 <li><p>The repeated measures OLS algorithm produces accurate F-tests when data are balanced, and quite reasonable results when data are unbalanced and the variance/covariance structure of the data is CS.</p></li>
 </ul>
-<p id="id6"><dl class="citation">
-<dt class="label" id="id39"><span class="brackets"><a class="fn-backref" href="#id4">Ver97</a></span></dt>
+<p id="id8"><dl class="citation">
+<dt class="label" id="id42"><span class="brackets">H+15</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Frank E Harrell and others. <em>Regression modeling strategies: with applications to linear models, logistic and ordinal regression, and survival analysis</em>. Volume 3. Springer, 2015.</p>
+</dd>
+<dt class="label" id="id41"><span class="brackets"><a class="fn-backref" href="#id6">Ver97</a></span></dt>
 <dd><p>Geert Verbeke. Linear mixed models for longitudinal data. In <em>Linear mixed models in practice</em>, pages 63–153. Springer, 1997.</p>
 </dd>
 </dl>
 </p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id40"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id43"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>the convariance structure is usually the nuiance parameter</p>
 </dd>
-<dt class="label" id="id41"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id44"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
 <dd><p>Two categories of robustness: 1. w.r.t. the outlier; 2. w.r.t. the model assumptions</p>
 </dd>
-<dt class="label" id="mmrm-blog"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dt class="label" id="mmrm-blog"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
 <dd><p><a class="reference external" href="https://thestatsgeek.com/2021/02/21/mmrm-vs-lme-model/">MMRM vs LME model</a>, <a class="reference external" href="https://thestatsgeek.com/2020/12/30/mixed-model-repeated-measures-mmrm-in-stata-sas-and-r/">Mixed model repeated measures (MMRM) in Stata, SAS and R</a></p>
 </dd>
-<dt class="label" id="fharrell"><span class="brackets"><a class="fn-backref" href="#id5">4</a></span></dt>
+<dt class="label" id="fharrell"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
 <dd><p><a class="reference external" href="https://www.fharrell.com/post/re/">Longitudinal Data: Think Serial Correlation First, Random Effects Second</a></p>
 </dd>
 </dl>
