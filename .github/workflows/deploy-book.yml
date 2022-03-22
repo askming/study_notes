@@ -14,10 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.7
+      - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.7
+          python-version: 3.9
+          cache: 'pip'
 
       - name: Configure pip cache
         uses: actions/cache@v1
@@ -30,6 +31,7 @@ jobs:
 
       - name: Install dependecies
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
         if: steps.pip-cache.outputs.cache-hit != 'true'
 
