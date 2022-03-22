@@ -195,85 +195,90 @@ We want to estimate an unknown mean response curve $\mu(t)$ in the model. Nonpar
   stationary.
 
 - For irreguarly-sapced data, we can use **Variogram**:
+  - the time difference between all possible pairs of measurements on the same subject is played against the covariance of the pair of measurements within subjec
 
   $$
   \gamma(u)=
   \frac{1}{2}E
   \left[
-  \{Y(t)-Y(t-u)
+  \{Y(t)-Y(t-u) 
   \}^2
   \right], u
   \ge 0
   $$
 
-- If $Y(t)$ is *stationary*, the Variogram is directly related to the ACF $\rho(u)$ by
-
-  $$
-  \gamma(u)=
-  \sigma^2
-  \{1-
-  \rho(u)
-  \}
-  $$
-
-  Where $\sigma^2$ is the variance of $Y$:
-
-  $$
-  \begin{align*}
-  E(X-Y)^2 &= [E(X-Y)]^2+Var(X-Y)\\
-  &= 0+Var(X)+Var(Y)-2Cov(X,Y)\\
-  &= 2\sigma^2-2\rho\sigma^2\\
-  &= \sigma^2(1-\rho)
-  \end{align*}
-  $$
-
-- Calculating $\gamma(u)$, the Vriagram:
-
-  - Starging with the residulas $r_{ij}$ and the time $t_{ij}$, compute all possible
+  - If $Y(t)$ is *stationary*, the Variogram is directly related to the ACF $\rho(u)$ by
 
     $$
-    v_{ijk}=
-    \frac{1}{2}(r_{ij}-r_{ik})^2
+    \gamma(u)=
+    \sigma^2
+    \{1-
+    \rho(u)
+    \}
     $$
 
-    and 
+    Where $\sigma^2$ is the variance of $Y$:
 
     $$
-    u_{ijk}=t_{ij}-t_{ik}
-    \text{ for } j<k
+    \begin{align*}
+    E(X-Y)^2 &= [E(X-Y)]^2+Var(X-Y)\\
+    &= 0+Var(X)+Var(Y)-2Cov(X,Y)\\
+    &= 2\sigma^2-2\rho\sigma^2\\
+    &= \sigma^2(1-\rho)
+    \end{align*}
     $$
 
-  - Smooth $v_{ijk}$ against $u_{ijk}$ (using lowess)
+  - Calculating $\gamma(u)$, the Vriagram:
 
-  - Estimate the total variance as
+    - Starging with the residulas $r_{ij}$ and the time $t_{ij}$, compute all possible
 
-    $$
-    \hat{
-    \sigma}^2=
-    \frac{1}{N-1}
-    \sum_{ij}(r_{ij}-
-    \bar{r})^2
-    $$
+      $$
+      v_{ijk}=
+      \frac{1}{2}(r_{ij}-r_{ik})^2
+      $$
 
-  - If the time $t_{ij}$ are not total irregular, i.e. there will be more than one observations at each vlaue of $u$. Then let
+      and 
 
-    $$
-    \hat{
-    \gamma}(u)=
-    \frac{
-    \sum_{i=1}^{n_i}v_{ijk}}{n_i}
-    $$
+      $$
+      u_{ijk}=t_{ij}-t_{ik}
+      \text{ for } j<k
+      $$
+
+    - Smooth $v_{ijk}$ against $u_{ijk}$ (using lowess)
+
+    - Estimate the total variance as
+
+      $$
+      \hat{
+      \sigma}^2=
+      \frac{1}{N-1}
+      \sum_{ij}(r_{ij}-
+      \bar{r})^2
+      $$
+
+    - If the time $t_{ij}$ are not total irregular, i.e. there will be more than one observations at each vlaue of $u$. Then let
+
+      $$
+      \hat{
+      \gamma}(u)=
+      \frac{
+      \sum_{i=1}^{n_i}v_{ijk}}{n_i}
+      $$
+
+  ![o3SXXE_2022_03_21](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/o3SXXE_2022_03_21.png)
+  _Fig. 7.3 of Regression modeling strategies_
 
 ## Linear model for correlated data
 
-- To develop a general linear model framework for longitudinal data, in which
+![wFJP9l_2022_03_21](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/wFJP9l_2022_03_21.png)
+_excerpted from Chapter 7 of Regression Modeling Strategies_
 
-  the inference we make about the parameters of interest ($\beta$) *recoginze the likely correlation structure of the data*. There are two ways to archieve this:
+- To develop a general linear model framework for longitudinal data, in which the inference we make about the parameters of interest ($\beta$) *recoginze the likely correlation structure of the data*. There are two ways to archieve this:
 
-  1. To build explicit parametric models of the covariance struture (e.g. CS/exchangable, AR(1), etc.) -> MMRM
+  1. To build explicit parametric models of the covariance struture (e.g. CS/exchangable, AR(1), etc.) -> MMRM, GLS, etc. (see above table)
   2. To use methods of inference which are robust to misspecification of the covariance structure[^1][^2]
 
-### Random effect model (conditional model)
+### Random effects model (conditional model)
 
 $$
 Y_{ij} = U_i + \beta_0 + \beta_1t_j + \epsilon_{ij}
@@ -293,7 +298,7 @@ $$
 
 - $var(y_{ij}|U_i) = \tau^2, cov(y_{ij}, y_{ij'}|U_i)=0$
 
-- Example: random effect (repeated measures) ANOVA:
+- Example: random effects (repeated measures) ANOVA:
 
   - we can treat the group (condition) variable as the orignial “time” variable, i.e. the repeated meaures are observed on different conditions (which cause the groups effect that we are interested in).
 
@@ -308,7 +313,7 @@ $$
     $$
 
     $$
-    U_i \sim N(0, v^2) \text{ is the between subjects random effect}
+    U_i \sim N(0, v^2) \text{ is the between subjects random effects}
     $$
 
     $$
@@ -334,7 +339,24 @@ $$
 
 - **Heteogeneity**: variation between groups implies (relative) similarity/correlation within groups. If $v^2 >> \tau^2 \Rightarrow \rho \rightarrow 1 \Rightarrow$ significant difference between groups.
 
+#### MMRM
+- MMRM (mixed model of repeated measures) is a special case of linear mixed model (LMM)[^statsgeek]
+  - it doesn’t specify any random effects but it specifies a correlated residual error structure. (similar as the GLS or marginal model?)
+
+- MMRM vs LMM
+  - The first thing to remember is that it generally only makes sense to fit the MMRM if subjects are measured at a common set of times. 
+  - If the measurements occur on a more ad-hoc basis, such that the times of measurement vary across subjects, what is typically called the MMRM model can’t really be fitted.
+  - It is worth noting that in this case, if one uses a relatively simple random effects structure (e.g. intercepts and slopes) one can still specify that the residual errors are serially correlated over time. Here the correlation in errors is accommodating residual correlation between measurements close in time that cannot be captured by the simple random effects structure. See Section 3.3.4 of {cite:p}`verbeke1997linear` for more on this.
+- If the correlation structure of the repeated measures implied by the specified random effects is incorrect, the standard errors may be general biased. This potential issue suggests that in this setting the the MMRM, which uses an unstructured covariance structure for the residual errors, is preferable.
+- With missing values, mixed models fitted by maximum likelihood are obtained under the missing at random assumption. 
+- If the number of measurement times is moderate or large and there are missing values, sometimes one can encounter convergence problems with the unstructured covariance matrix in the MMRM. In the case of this occurring, trials often pre-specify to use models which parametrise the residual error covariance matrix using fewer parameters (e.g. first order autoregressive).
+  - A possible alternative would be use doubly robust estimation, which would be (asymptotically) unbiased if either the outcome model (including the simpler parametrisation for the residual covariance matrix) or the model for dropout (missingness) were correct. 
+
 ### Marginal model (population average)
+
+- Generalized least squares is based on these ideas, and can incorporate multiple types of correlation structures without including any random effects.[^fharrell]
+
+- Generalized least squares, Markov models when no random effects are added, and GEE are all examples of marginal models, marginal meaning in the sense of not being conditional on subject so not attempting to estimate individual subjects’ trajectories.
 
 1. With **exchangable (or CS)** variance-covariance structure (balanced data)
 
@@ -350,7 +372,7 @@ $$
    \rho=corr(y_{ij}, y_{ij'}), \text{ for $j \ne j'$}
    $$
 
-   - **Marginal model with CS variance structure is equivalent with random effect (intercept) model**: the same $E(Y_i)$ and $Cov(Y_i)$ structures, thus wil return the same estimate of the parameters.
+   - **Marginal model with CS variance structure is equivalent with random effects (intercept) model**: the same $E(Y_i)$ and $Cov(Y_i)$ structures, thus wil return the same estimate of the parameters.
 
 2. **Exponential correlation/autoregressive** model
 
@@ -385,9 +407,11 @@ $$
 
    - Modelling the correlation in longitudinal data is important to be able to obtain correct inference on $\beta$s. Incorporating correlation into estimation of regression models is achieved via **weighted least squares**.
 
-## Weighted least-squares (WLS) estimation
+#### Weighted least-squares (WLS) estimation
 
-*All following etimators are weighted LS etimators, the difference is in the choince of the weight and its impact on the variance (thus the interval) estimation of beta.*
+*All following etimators are weighted LS etimators, the difference is in the choince of the weight and its impact on the variance (or efficiency thus the interval) estimation of beta.*
+
+*Generalized least squares is like weighted least squares but uses a covariance matrix that is not diagonal.*
 
 - (no distribution assumption on $y$) The **weighted least-squares** estimator of $\beta$, using a symmetric *weight matrix*, $W$, is the value $\hat{\beta}_W$, which minimize the quadratic form
 
@@ -411,7 +435,7 @@ $$
 - Also, because the correlation structure may be difficult to identify in practice, it is of interest to ask how much loss of efficiency might result from using a different $W$
 - When we know the correlation structure is CS (uniform/exchangable), the OLS is fully efficient as the WLS estimator; an intuitive explanation is that with a common correlation b/t any two equally spaced measurements on the same unit, there is no reason to weight measurements differently.
 
-### Using OLS estimator is misleading when V $\ne$ I
+##### Using OLS estimator is misleading when V $\ne$ I
 
 - In many circumstances where there is balanced design, the OLS estimator, $\tilde{\beta}$, is perfectly satisfactory for point estimation. But this is not always the case. (Example in book page 63)
 
@@ -442,7 +466,7 @@ $$
 
   
 
-### MLE under Gaussian assumptions
+##### MLE under Gaussian assumptions
 
 - Simultaneous estimtation of the parameter of interest $\beta$ and of covariance parameters $\sigma^2$ and $V_0$ using the likelihood function (*profile likelihood* method)
 
@@ -470,7 +494,7 @@ $$
 
 - By using the profile likelihood method, we gain computational advantage (since we reduce the number of parameters to be maximized in one iteration)  since there are closed forms for the MLEs.
 
-### REML
+##### REML
 
 - To improve the estimation of the $\sigma^2$ from MLE, which is biased, to get an unbiased estimator based on the linearly transformed set of data $\bf{Y}^* = \bf{AY}$ such that the distribution of $\bf{Y}^*$ doesn't depend on $\beta$
 
@@ -484,7 +508,7 @@ $$
 
   However, this matrix is singular. To obtain a non-singular distribution, we can use only $N-p$ rows of the $\bf{A}$ matrix. Actually, the estimators for $\sigma^2$ and $V$ do not depend on which rows we use, nor on the particular choice of $\bf{A}$: any full-rank matrix with the property that $E(\bf{Y}^*) = 0$ for all $\beta$ will give the same answer. 
 
-### Robust estimation (unstructured covarince matrix)
+##### Robust estimation (unstructured covarince matrix)
 
 - Not willing to specify a parameteric model for the covariance structure $V$ for $\bf{Y}$, a "robust" estimation of $\beta$ resembles the form of a WLS estimator by using the **working covariance matrix** (weight) $W$:
 
@@ -575,6 +599,11 @@ $$
   - The robust estimation also requires to estimate the V matrix using the data, however it always involves more parameters (total $n(n + 1)/2$ in unstructured) than the covariance matrix under parametric assumption.
   - So the robust approach is usually satisfactory when the data consist of short, complete sequence of measurements observed at a common set of times on many experimental units, and care is taken in the choice of the working correlation matrix. In other circumstance, it is worth considering a parametric modeling approach.
 
+
+### Transition/stochastic/Markov model
+- Markov models (see especially here and here for references) are more general ways to incorporate a variety of correlation structures with or without random effects.
+- Markov models are more general because they easily extend to binary, nominal, ordinal, and continuous outcome. They are computationally fast and require only standard frequentist or Bayesian software until one gets to the post-model-fit stage of turning transition probabilities into state occupancy probabilities. 
+
 ## Generalized linear models (GLM) for longitudinal data
 
 ```{mermaid}
@@ -591,7 +620,7 @@ g --> g2[RMLE]
 f -- No --> h[Robust estimation]
 c --> i[Marginal mdoel]
 c --> j[Trasitional model]
-c --> k[random effect model]
+c --> k[random effects model]
 i --> i1[GEE: quasi-likelihood]
 j --> l[Likelihood based]
 k --> l
@@ -676,6 +705,11 @@ b --> i1
 - GEE is the maximum likelihood score equation for multivariate Gaussian data, and for binary data when $\text{var}(Y_i)$ is correclty specified.
 - $\hat{\beta}$ is consistent when sample size goes to infinity even when $\text{var}(Y_i)$ is incorrectly specified
 
+- Disadvantages of GEE
+  - it is a large sample approximate method; 
+  - it does not use a full likelihood function so cannot be used in a Bayesian context; 
+  - not being full likelihood the repeated observations are not properly “connected” to each other, so dropouts and missed visits must be missing completely at random, not just missing at random as full likelihood methods require.
+
 ## Appendix: Limitation of OLS models in analyzing repeated measures data
 
 *Date: Feb 28, 2014*
@@ -703,6 +737,15 @@ b --> i1
 
 
 [^MMRM_blog]: [MMRM vs LME model](https://thestatsgeek.com/2021/02/21/mmrm-vs-lme-model/), [Mixed model repeated measures (MMRM) in Stata, SAS and R](https://thestatsgeek.com/2020/12/30/mixed-model-repeated-measures-mmrm-in-stata-sas-and-r/)
+
 [^1]: the convariance structure is usually the nuiance parameter
+
 [^2]:Two categories of robustness: 1. w.r.t. the outlier; 2. w.r.t. the model assumptions
 
+[^fharrell]: https://www.fharrell.com/post/re/
+
+[^statsgeek]: https://thestatsgeek.com/2021/02/21/mmrm-vs-lme-model/
+
+```{bibliography}
+:filter: docname in docnames
+```
