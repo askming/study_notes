@@ -738,7 +738,7 @@ b --> i1
 
 
 
-[^MMRM_blog]: [MMRM vs LME model](https://thestatsgeek.com/2021/02/21/mmrm-vs-lme-model/), [Mixed model repeated measures (MMRM) in Stata, SAS and R](https://thestatsgeek.com/2020/12/30/mixed-model-repeated-measures-mmrm-in-stata-sas-and-r/)
+[^MMRM_blog]: a.[MMRM vs LME model](https://thestatsgeek.com/2021/02/21/mmrm-vs-lme-model/), b.[Mixed model repeated measures (MMRM) in Stata, SAS and R](https://thestatsgeek.com/2020/12/30/mixed-model-repeated-measures-mmrm-in-stata-sas-and-r/)
 
 [^1]: the convariance structure is usually the nuiance parameter
 
