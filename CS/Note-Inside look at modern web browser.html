@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>git and github &#8212; Study Notes</title>
+    <title>Inside look at modern web browser &#8212; Study Notes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,14 +53,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Miscellaneous Study Notes" href="../Miscellaneous/Miscellaneous%20Notes.html" />
-    <link rel="prev" title="SQL study notes" href="Note-SQL%20Study%20Notes.html" />
+    <link rel="next" title="Learning React" href="Note-Learning%20React.html" />
+    <link rel="prev" title="Hard Data Analyst SQL Interview Questions" href="Note-Hard%20SQL%20interview%20questions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -391,8 +389,8 @@ const thebe_selector_output = ".output, .cell_output"
    Hard Data Analyst SQL Interview Questions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Inside%20look%20at%20modern%20web%20browser.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Inside look at modern web browser
   </a>
  </li>
@@ -416,8 +414,8 @@ const thebe_selector_output = ".output, .cell_output"
    SQL study notes
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-git%20and%20github.html">
    git and github
   </a>
  </li>
@@ -489,7 +487,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/CS/Note-git and github.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/CS/Note-Inside look at modern web browser.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -509,7 +507,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-git and github.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-Inside look at modern web browser.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -536,70 +534,74 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-basics">
-   git basics
+  <a class="reference internal nav-link" href="#part-1-cpu-gpu-memory-and-multi-process-architecture">
+   Part 1: CPU, GPU, Memory, and multi-process architecture
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-local-repository-consists-of-3-trees-maintainened-by-git">
-     A local repository consists of 3 “trees” maintainened by git
+    <a class="reference internal nav-link" href="#browser-architecture">
+     Browser architecture
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-connect-with-a-remote-repository">
-     To connect with a remote repository:
+    <a class="reference internal nav-link" href="#which-process-controls-what">
+     Which process controls what
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-create-a-new-branch-besides-the-master-branch">
-     To create a new branch besides the master branch
+    <a class="reference internal nav-link" href="#the-benefit-of-multi-process-architecture-in-chrome">
+     The benefit of multi-process architecture in Chrome
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-use-tag">
-     To use tag
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-use-log">
-     To use log
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-replace-local-changes">
-     To replace local changes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-solve-merge-conflicts-between-two-repos">
-     To solve merge conflicts between two repos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-put-different-local-folders-under-the-same-repo-on-github">
-     To put different local folders under the same repo on Github
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#syncing-update-a-fork">
-     Syncing/update a fork
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#others">
-     Others
+    <a class="reference internal nav-link" href="#per-frame-renderer-processes-site-isolation">
+     Per-frame renderer processes - Site Isolation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-actions">
-   Github actions
+  <a class="reference internal nav-link" href="#part-2-what-happens-in-navigation">
+   Part 2: What happens in navigation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-navitagion">
+     A simple navitagion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigate-to-a-different-site">
+     Navigate to a different site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-case-of-service-worker">
+     In case of service worker
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigation-preload">
+     Navigation preload
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+  <a class="reference internal nav-link" href="#part-3-inner-workings-of-a-renderer-process">
+   Part 3: Inner workings of a Renderer Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing">
+     Parsing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-input-is-coming-to-the-compositor">
+   Part 4: Input is coming to the compositor
   </a>
  </li>
 </ul>
@@ -612,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>git and github</h1>
+                <h1>Inside look at modern web browser</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -623,70 +625,74 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-basics">
-   git basics
+  <a class="reference internal nav-link" href="#part-1-cpu-gpu-memory-and-multi-process-architecture">
+   Part 1: CPU, GPU, Memory, and multi-process architecture
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-local-repository-consists-of-3-trees-maintainened-by-git">
-     A local repository consists of 3 “trees” maintainened by git
+    <a class="reference internal nav-link" href="#browser-architecture">
+     Browser architecture
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-connect-with-a-remote-repository">
-     To connect with a remote repository:
+    <a class="reference internal nav-link" href="#which-process-controls-what">
+     Which process controls what
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-create-a-new-branch-besides-the-master-branch">
-     To create a new branch besides the master branch
+    <a class="reference internal nav-link" href="#the-benefit-of-multi-process-architecture-in-chrome">
+     The benefit of multi-process architecture in Chrome
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-use-tag">
-     To use tag
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-use-log">
-     To use log
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-replace-local-changes">
-     To replace local changes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-solve-merge-conflicts-between-two-repos">
-     To solve merge conflicts between two repos
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-put-different-local-folders-under-the-same-repo-on-github">
-     To put different local folders under the same repo on Github
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#syncing-update-a-fork">
-     Syncing/update a fork
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#others">
-     Others
+    <a class="reference internal nav-link" href="#per-frame-renderer-processes-site-isolation">
+     Per-frame renderer processes - Site Isolation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-actions">
-   Github actions
+  <a class="reference internal nav-link" href="#part-2-what-happens-in-navigation">
+   Part 2: What happens in navigation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-navitagion">
+     A simple navitagion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigate-to-a-different-site">
+     Navigate to a different site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-case-of-service-worker">
+     In case of service worker
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigation-preload">
+     Navigation preload
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+  <a class="reference internal nav-link" href="#part-3-inner-workings-of-a-renderer-process">
+   Part 3: Inner workings of a Renderer Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing">
+     Parsing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-input-is-coming-to-the-compositor">
+   Part 4: Input is coming to the compositor
   </a>
  </li>
 </ul>
@@ -698,270 +704,134 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="git-and-github">
-<h1>git and github<a class="headerlink" href="#git-and-github" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="git-basics">
-<h2>git basics<a class="headerlink" href="#git-basics" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init <span class="c1"># to create a new git repository</span>
-git add filename.txt
-
-git rm &lt;file&gt; <span class="c1"># remove file in repository</span>
-git status
-git diff filename.txt
-git commit -m <span class="s1">&#39;text comment&#39;</span>
-</pre></div>
-</div>
-<div class="section" id="a-local-repository-consists-of-3-trees-maintainened-by-git">
-<h3>A local repository consists of 3 “trees” maintainened by git<a class="headerlink" href="#a-local-repository-consists-of-3-trees-maintainened-by-git" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Working Directory: holds the actual files 
-2. Index: acts as a staging area
-3. `HEAD`: points to the last commit
-</pre></div>
-</div>
-<p>​	<em>working directory <span class="math notranslate nohighlight">\(\rightarrow\)</span> stage (index) <span class="math notranslate nohighlight">\(\rightarrow\)</span> master</em>
-​	repository includes stage &amp; master (branch)</p>
-</div>
-<div class="section" id="to-connect-with-a-remote-repository">
-<h3>To connect with a remote repository:<a class="headerlink" href="#to-connect-with-a-remote-repository" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin git@github.com:path/repo-name.git <span class="c1"># connect the local repo with the remote server</span>
-
-<span class="c1"># Push local master repository to remote hub</span>
-<span class="c1"># first time push: </span>
-git push -u origin master
-<span class="c1"># not first, then: </span>
-git push origin master 
-</pre></div>
-</div>
-</div>
-<div class="section" id="to-create-a-new-branch-besides-the-master-branch">
-<h3>To create a new branch besides the master branch<a class="headerlink" href="#to-create-a-new-branch-besides-the-master-branch" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Branches are used to develop features isolated from each other</p></li>
-<li><p>The <em>master</em> branch is the default branch when creating a repo; after done with the development in other branch, can merge them back to the master branch.</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b dev <span class="c1"># create and switch to a new branch called dev</span>
-git checkout -b branch-name origin/branch-name <span class="c1"># create a local brach corresponding to the remote branch</span>
-
-git branch <span class="c1"># list all branches, * indicates current branch</span>
-git merge &lt;branch&gt; <span class="c1"># merge &lt;branch&gt; to current branch</span>
-git branch -d &lt;branch&gt; <span class="c1"># delete &lt;branch&gt;</span>
-git branch -D &lt;branch&gt; <span class="c1"># force to delete a unmerged branch</span>
-
-<span class="c1"># a branch is not available to other until pushed to the remote repository</span>
-git push origin &lt;branch&gt;
-
-git branch -m oldname newname <span class="c1"># rename a branch</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="to-use-tag">
-<h3>To use tag<a class="headerlink" href="#to-use-tag" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git tag &lt;tag-name&gt; &lt;commit id&gt; <span class="c1"># create tag for specific commit under certain branch</span>
-git tag <span class="m">1</span>.0.0 1b2e1d63ff <span class="c1"># e.g. tag the commit start with 1b2e1d63ff (first 10 chars)</span>
-
-git tag <span class="c1"># check all tags</span>
-git show &lt;tag-name&gt; <span class="c1"># show detailed tag info</span>
-git tag -a &lt;tag-name&gt; -m <span class="s1">&#39;tag description&#39;</span>
-git tag -d &lt;tag-name&gt; <span class="c1"># delete local tag</span>
-git push origin :refs/tags/&lt;tag-name&gt; <span class="c1"># delete a remote tag</span>
-
-git push origin &lt;tag-name&gt; <span class="c1"># push single tag to remote</span>
-git push origin --tags <span class="c1"># push all un-pushed tags to remote</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="to-use-log">
-<h3>To use log<a class="headerlink" href="#to-use-log" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --author<span class="o">=</span>bob <span class="c1"># see log from bob</span>
-git log --pretty<span class="o">==</span>oneline <span class="c1"># see a very compressed log where each commit is one line</span>
-git log --name-status <span class="c1"># see which files have changed</span>
-git reflog <span class="c1">#every command ever used in this repository </span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="to-replace-local-changes">
-<h3>To replace local changes<a class="headerlink" href="#to-replace-local-changes" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout --&lt;filename&gt; <span class="c1"># to replace/discard local changes; this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.</span>
-
-<span class="c1"># to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it</span>
-git fetch origin
-git reset --hard origin/master
-
-git reset HEAD &lt;file&gt; <span class="c1">#unstage (opposite of git add &lt;file&gt;), put file back to working directory</span>
-
-git reset --hard HEAD^ <span class="c1">#to previous version</span>
-git reset --hard HEAD~10 <span class="c1">#to 10th previous version</span>
-git reset --hard commit id <span class="c1">#to version with specified id</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="to-solve-merge-conflicts-between-two-repos">
-<h3>To solve merge conflicts between two repos<a class="headerlink" href="#to-solve-merge-conflicts-between-two-repos" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>When merging two repos, there may be <em>conflicts</em> that needs to be resolved manually.</p></li>
-</ul>
-<ol>
-<li><p>Create a temp branch and pull the upstream repo into this temp branch (we will resolve the conflicts here and then merge this branch to our final branch that we originally would like to merge with the upstream repo)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b temp-branch master <span class="c1"># here master is the branch we originally would like to have the merge with</span>
-</pre></div>
-</div>
-</li>
-<li><p>pull the upstream repo that we would like to merge with into the temp branch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull https://github.com/xxx.git
-</pre></div>
-</div>
-</li>
-<li><p>After the pull, merge conflicts will be shown, if lost can retrieve those with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
-</pre></div>
-</div>
-</li>
-<li><p>Resolve those conflicts in text editor (e.g sublim text): looking for signs as</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
-<span class="nb">open</span> <span class="n">an</span> <span class="n">issue</span>
-<span class="o">=======</span>
-<span class="n">ask</span> <span class="n">your</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">IRC</span><span class="o">.</span>
-<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">branch</span><span class="o">-</span><span class="n">a</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<blockquote>
-<div><p>NOTE: anything between  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></code> and <code class="docutils literal notranslate"><span class="pre">=======</span></code> is in our file and that between <code class="docutils literal notranslate"><span class="pre">=======</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">branch-a</span></code> is from the upstream file.</p>
-</div></blockquote>
-<ol>
-<li><p>After cleaning the file, double check the status, if no conflict anymore, add the changes and commit</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add &lt;filename&gt;
-git commit -m <span class="s1">&#39;Resloved merge conflicts by doing XXX&#39;</span>
-</pre></div>
-</div>
-</li>
-<li><p>Merge the temp branch with the master branch and push to github</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout master
-git merge --no-ff temp-branch
-git push origin master
-</pre></div>
-</div>
-</li>
-</ol>
-<blockquote>
-<div><p>NOTE: all these operations can also be done with the assit of github desktop application.</p>
-</div></blockquote>
-</div>
-<div class="section" id="to-put-different-local-folders-under-the-same-repo-on-github">
-<h3>To put different local folders under the same repo on Github<a class="headerlink" href="#to-put-different-local-folders-under-the-same-repo-on-github" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>For example, there is a central Github repo call “top”, which as several sub-directories:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="inside-look-at-modern-web-browser">
+<h1>Inside look at modern web browser<a class="headerlink" href="#inside-look-at-modern-web-browser" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="part-1-cpu-gpu-memory-and-multi-process-architecture">
+<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part1">Part 1: CPU, GPU, Memory, and multi-process architecture</a><a class="headerlink" href="#part-1-cpu-gpu-memory-and-multi-process-architecture" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p>top/sub1</p></li>
-<li><p>top/sub2</p></li>
-<li><p>…</p></li>
+<li><p>Usually, applications run on the CPU and GPU using mechanisms provided by the Operating System. (computer architecture)</p>
+ <img src="https://wd.imgix.net/image/T4FyVKpzu4WKF1kBNvXepbi08t52/9M8aKlSl3207o9C3QVVp.png?auto=format&w=1600" width="65%">
+</li>
+<li><p>A <strong>process</strong> can be described as an application’s executing program. A <strong>thread</strong> is the one that lives inside of process and executes any part of its process’s program.</p></li>
+<li><p>When you start an application, a process is created.</p>
+<ul class="simple">
+<li><p>The Operating System gives the process a “slab” of memory to work with and all application state is kept in that private memory space. When you close the application, the process also goes away and the Operating System frees up the memory.</p></li>
 </ul>
 </li>
-<li><p>To use each sub-directory for different local project folder, do the following:</p></li>
-<li><p><a class="reference external" href="https://intellipaat.com/community/21245/git-clone-subdirectory-how-do-i-clone-a-subdirectory-only-of-a-git-repository">Reference</a></p></li>
+<li><p>If two processes need to talk, they can do so by using Inter Process Communication (IPC).</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init &lt;repo&gt;
-<span class="nb">cd</span> &lt;repo&gt;
-git remote add origin &lt;url&gt; <span class="c1"># url is the repo link to &quot;top&quot;</span>
-git config core.sparsecheckout <span class="nb">true</span>
-<span class="nb">echo</span> <span class="s2">&quot;sub1/*&quot;</span> &gt;&gt; .git/info/sparse-checkout
-git pull --depth<span class="o">=</span><span class="m">1</span> origin master
-</pre></div>
-</div>
-</div>
-<div class="section" id="syncing-update-a-fork">
-<h3>Syncing/update a fork<a class="headerlink" href="#syncing-update-a-fork" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="browser-architecture">
+<h3>Browser architecture<a class="headerlink" href="#browser-architecture" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p><a class="reference external" href="https://docs.github.com/en/articles/configuring-a-remote-for-a-fork">Configure a remote that points to the upstream repo.</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote -v
-git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+<li><p>it could be one process with many different threads or many different processes with a few threads communicating over IPC.</p>
+<ul>
+<li><p>these different architectures are implementation details. There is no standard specification on how one might build a web browser.</p>
+<img src="https://wd.imgix.net/image/T4FyVKpzu4WKF1kBNvXepbi08t52/BG4tvT7y95iPAelkeadP.png?auto=format&w=1600" with="60%">
+</li>
+</ul>
+</li>
+<li><p>Chrome’s architecture</p>
+<img src="https://wd.imgix.net/image/T4FyVKpzu4WKF1kBNvXepbi08t52/JvSL0B5q1DmZAKgRHj42.png?auto=format&w=1600" width="60%">
+<ul class="simple">
+<li><p>click the options menu icon more_vert at the top right corner, select More Tools, then select Task Manager. This opens up a window with a list of processes that are currently running and how much CPU/Memory they are using.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="which-process-controls-what">
+<h3>Which process controls what<a class="headerlink" href="#which-process-controls-what" title="Permalink to this headline">¶</a></h3>
+<img src="https://wd.imgix.net/image/T4FyVKpzu4WKF1kBNvXepbi08t52/vl5sRzL8pFwlLSN7WW12.png?auto=format&w=1600" width="60%">
+</div>
+<div class="section" id="the-benefit-of-multi-process-architecture-in-chrome">
+<h3>The benefit of multi-process architecture in Chrome<a class="headerlink" href="#the-benefit-of-multi-process-architecture-in-chrome" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>If one tab becomes unresponsive, then you can close the unresponsive tab and move on while keeping other tabs alive</p></li>
+<li><p>Another benefit of separating the browser’s work into multiple processes is security and sandboxing.</p></li>
+</ul>
+</div>
+<div class="section" id="per-frame-renderer-processes-site-isolation">
+<h3>Per-frame renderer processes - Site Isolation<a class="headerlink" href="#per-frame-renderer-processes-site-isolation" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><a class="reference external" href="https://developers.google.com/web/updates/2018/07/site-isolation">Site Isolation</a> is a recently introduced feature in Chrome that runs a separate renderer process for each cross-site iframe.</p>
+<ul>
+<li><p>Site Isolation isn’t as simple as assigning different renderer processes; it fundamentally changes the way iframes talk to each other. Opening devtools on a page with iframes running on different processes means devtools had to implement behind-the-scenes work to make it appear seamless</p>
+<img src="https://wd.imgix.net/image/T4FyVKpzu4WKF1kBNvXepbi08t52/7ilepBEw6b2yUuyABbpZ.png?auto=format&w=1600" width="60%">
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="part-2-what-happens-in-navigation">
+<h2><a class="reference external" href="https://developer.chrome.com/blog/inside-browser-part2/">Part 2: What happens in navigation</a><a class="headerlink" href="#part-2-what-happens-in-navigation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-simple-navitagion">
+<h3>A simple navitagion<a class="headerlink" href="#a-simple-navitagion" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>
+flowchart TD
+    A[handling input] --&gt; B[Start navigation]
+    B --&gt; C[Read response]
+    C --&gt; D[Find a renderer process]
+    D --&gt; E[Commit navigation]
 </pre></div>
 </div>
-</li>
-<li><p>In terminal, change the current working directory to local project</p></li>
-<li><p>Fetch the brances and their respective commits from the upstreatm repo</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git fetch upstream
-</pre></div>
 </div>
-</li>
-<li><p>Check out the fork’s local default branch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout LocalBranchName
-</pre></div>
+<div class="section" id="navigate-to-a-different-site">
+<h3>Navigate to a different site<a class="headerlink" href="#navigate-to-a-different-site" title="Permalink to this headline">¶</a></h3>
 </div>
+<div class="section" id="in-case-of-service-worker">
+<h3>In case of service worker<a class="headerlink" href="#in-case-of-service-worker" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="navigation-preload">
+<h3>Navigation preload<a class="headerlink" href="#navigation-preload" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="part-3-inner-workings-of-a-renderer-process">
+<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part3">Part 3: Inner workings of a Renderer Process</a><a class="headerlink" href="#part-3-inner-workings-of-a-renderer-process" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parsing">
+<h3>Parsing<a class="headerlink" href="#parsing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When the renderer process receives a commit message for a navigation and starts to receive HTML data, the main thread begins to parse the text string (HTML) and turn it into a <strong>Document Object Model (DOM)</strong>.</p>
+<ul>
+<li><p>The DOM is a browser’s internal representation of the page as well as the data structure and API that web developer can interact with via JavaScript.</p></li>
+</ul>
 </li>
-<li><p>Merge the changes from the upstream default branch into the local default branch. This brings the fork’s default branch into sync with the upstream repository, without losing local changes.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge upstream/main
+<li><p>Parsing an HTML document into a DOM is defined by the HTML Standard.</p></li>
+</ul>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart TD
+    A[Style] --&gt; B[Layout]
+    B --&gt; C[Paint]
+    B --&gt; D[Layout Tree]
+    D --&gt; E[Layer Tree]
+    D --&gt; F[Paint Record]
+    C --&gt; F
 </pre></div>
 </div>
 <ul>
-<li><p><a class="reference external" href="https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github">another way</a> is to use <code class="docutils literal notranslate"><span class="pre">rebase</span></code>, which will erase local changes; after <code class="docutils literal notranslate"><span class="pre">fetch</span></code> and <code class="docutils literal notranslate"><span class="pre">checkout</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rebase upstream/master
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>there may be difference(s) between the remote master and local repo and need to do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--continue</span></code> to complete the process</p></li>
-</ul>
-<p>may need to force the push in order to push it to the forked repo on Github</p>
+<li><p>The main thread parses CSS and determines the computed style for each DOM node. This is information about what kind of style is applied to each element based on CSS selectors.</p>
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/RNkSv2_2022_03_25.jpg" width="60%">
+</li>
+<li><p>The layout is a process to find the geometry of elements. The main thread walks through the DOM and computed styles and creates the layout tree which has information like x y coordinates and bounding box sizes.</p>
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/XIz4o6_2022_03_25.jpg" width="60%">
+</li>
+<li><p>Paint record is a note of painting process like “background first, then text, then rectangle”.</p>
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/8pemXJ_2022_03_25.jpg" width="60%">
+</li>
+<li><p>In order to find out which elements need to be in which layers, the main thread walks through the layout tree to create the layer tree (this part is called “Update Layer Tree” in the DevTools performance panel).</p>
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/EvJkyy_2022_03_25.jpg" width="60%">
 </li>
 </ul>
-</li>
-</ul>
 </div>
-<div class="section" id="others">
-<h3>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --graph <span class="c1"># branches merging graph</span>
-
-git stash <span class="c1"># saving working directory and index state...</span>
-git stash list <span class="c1"># check saved working directory</span>
-
-git stash apply <span class="c1"># recover working contents </span>
-git stash drop <span class="c1">#delete saved stash</span>
-
-git stash pop <span class="c1"># recover saved stash and remove it after recovering</span>
-
-git remote -v <span class="c1"># check remote repository information</span>
-
-git branch --set-upstream branch-name origin/branch-name <span class="c1"># create local and remote branch connection</span>
-</pre></div>
 </div>
+<div class="section" id="part-4-input-is-coming-to-the-compositor">
+<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part4">Part 4: Input is coming to the compositor</a><a class="headerlink" href="#part-4-input-is-coming-to-the-compositor" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file to ignore some files in the working directory. need to put it in the root git directory</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global alias.&lt;new-name&gt; &lt;original-name&gt; <span class="c1">#set alias for git command. If no --global, only works for current repository</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>To find the configuration file: <code class="docutils literal notranslate"><span class="pre">.git/config</span></code></p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="github-actions">
-<h2>Github actions<a class="headerlink" href="#github-actions" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>The main concept at the heart of GitHub actions is the workflow;</p>
+<li><p>Since running JavaScript is the main thread’s job, when a page is composited, the compositor thread marks a region of the page that has event handlers attached as <strong>“Non-Fast Scrollable Region”</strong>.</p>
 <ul>
-<li><p>this is done by creating a series of YAML files that contain a series of actions that determine your workflow in your repositories.</p></li>
-<li><p>These YAML files are stored in a special folder in the <code class="docutils literal notranslate"><span class="pre">.github/workflows\</span></code> folder inside the repository.</p></li>
+<li><p>By having this information, the compositor thread can make sure to send input event to the main thread if the event occurs in that region. If input event comes from outside of this region, then the compositor thread carries on compositing new frame without waiting for the main thread.</p></li>
 </ul>
 </li>
-<li><p>The most important information about your repository is stored inside a GitHub object, but there’s a few other, what are called contexts, that you can use, including information about the job that is running or the steps that are currently running as well.</p>
-<ul>
-<li><p>There’s also a very special and pretty useful context called <code class="docutils literal notranslate"><span class="pre">secrets</span></code>, which lets you store information in GitHub itself that won’t be seen by anyone else, including other people in your repository.</p></li>
+<li><p>A common event handling pattern in web development is <strong>event delegation</strong>. Since events bubble, you can attach one event handler at the topmost element and delegate tasks based on event target.</p></li>
 </ul>
-</li>
-</ul>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ol>
-<li><p><a class="reference external" href="https://launchschool.com/books/git/read/introduction">INTRODUCTION TO GIT AND GITHUB</a> by LaunchSchool</p>
-<blockquote>
-<div><p>A beginner friendly guide to using git and working with Github.com. This book is for the absolute beginner and provides a gentle introduction to git and Github. Get a jump start using git on your projects, and learn how to push those projects to Github.com.</p>
-</div></blockquote>
-</li>
-<li><p><a class="reference external" href="https://www.actionsbyexample.com/index.html">Github action by example</a></p></li>
-</ol>
 </div>
 </div>
 
@@ -996,17 +866,17 @@ git branch --set-upstream branch-name origin/branch-name <span class="c1"># crea
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Note-SQL%20Study%20Notes.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-Hard%20SQL%20interview%20questions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">SQL study notes</p>
+            <p class="prev-next-title">Hard Data Analyst SQL Interview Questions</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Miscellaneous/Miscellaneous%20Notes.html" title="next page">
+    <a class='right-next' id="next-link" href="Note-Learning%20React.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Miscellaneous Study Notes</p>
+        <p class="prev-next-title">Learning React</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
