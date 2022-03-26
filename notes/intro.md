@@ -168,6 +168,7 @@
 - [Moden JS explained](CS/Note-Modern%20JS%20explained.md)
 - [Learning React](CS/Note-Learning%20React.md)
 - [HTML basics](./CS/Note-HTML%20basics.md)
+- [Inside look at modern browser](./CS/Note-Inside%20look%20at%20modern%20web%20browser.md)
 
 ### 4.9 D3
 
