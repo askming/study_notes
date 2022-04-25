@@ -68,6 +68,9 @@
   
   where recall = sensitivity (true positive rate, TPR) and precision = positive predicted value(PPV, i.e. true positive/predicted positive)
 
+  [PRECISION & RECALL](https://mlu-explain.github.io/precision-recall/?utm_medium=email&utm_source=topic+optin&utm_campaign=awareness&utm_content=20220411+data+ai+nl&mkt_tok=MTA3LUZNUy0wNzAAAAGDuMLSumJC6VsQfgIY-Uj_GE7L_9PUOLffPXQiCULttnJaDlh1S2O-W30TWxzsjHyUTJ2rN3wYoj25maoZvtlVplbQp78lgp3aSffOiNSOB8m5Z9A)
+  > Intro article about Precision and Recall
+
 - If care about absolute probabilistic difference, go with log-loss
 - If only care about final class prediction, and don't want to tune threshold, go with AUC
 - F1 is sensitive to threshold
