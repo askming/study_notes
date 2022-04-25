@@ -46,11 +46,17 @@
 -----
 ## Advanced SQL tips
 - Joining tables
-![c5831be5.png](https://raw.githubusercontent.com/askming/picgo/master/c5831be5_20200625134008.png)
+  
+  ![c5831be5.png](https://raw.githubusercontent.com/askming/picgo/master/c5831be5_20200625134008.png)
 
   - Filtering with "join" operations: 
     - using "AND" after "ON" clause: filtering happens **before** joining
     - using "WHERE" after "ON" caluse: filtering happens **after** joining
+
+  - Another way to visualize SQL joins: [You Should Use This to Visualize SQL Joins Instead of Venn Diagrams](https://towardsdatascience.com/you-should-use-this-to-visualize-sql-joins-instead-of-venn-diagrams-ede15f9583fc)
+  
+    ![NtZh3N_2022_04_24](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/NtZh3N_2022_04_24.jpg)
+  
 - UNION operator: to stack one dataset on top of the other
   ```sql
   SELECT var1, var2, var3 as var3_new
@@ -124,6 +130,9 @@
   - When reading the values, we need UNNEST and use `C.Name` to read individual field
 
 - Pivoting data in SQL (TBD)
+
+### Resrouces to practice SQL
+#### [Practice SQL](https://www.sql-practice.com/)
 
 -----
 ## Miscellaneous tips

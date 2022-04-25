@@ -1101,8 +1101,8 @@ const thebe_selector_output = ".output, .cell_output"
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6727c238-f0ac-406f-9a03-45fa7fdc177e">
-<span class="eqno">(7)<a class="headerlink" href="#equation-6727c238-f0ac-406f-9a03-45fa7fdc177e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8b2eba02-684f-4720-933e-90372b94889f">
+<span class="eqno">(7)<a class="headerlink" href="#equation-8b2eba02-684f-4720-933e-90372b94889f" title="Permalink to this equation">¶</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -1455,8 +1455,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-06933655-1a6c-413c-a38a-710cb35fa699">
-<span class="eqno">(8)<a class="headerlink" href="#equation-06933655-1a6c-413c-a38a-710cb35fa699" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc461b1f-d913-4c0b-b40c-26510101b3b6">
+<span class="eqno">(8)<a class="headerlink" href="#equation-cc461b1f-d913-4c0b-b40c-26510101b3b6" title="Permalink to this equation">¶</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -1467,8 +1467,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-46822ed3-95a5-4620-b88b-fa85d598dd84">
-<span class="eqno">(9)<a class="headerlink" href="#equation-46822ed3-95a5-4620-b88b-fa85d598dd84" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dcff9bba-b220-459c-aaa0-06bc7aa4195a">
+<span class="eqno">(9)<a class="headerlink" href="#equation-dcff9bba-b220-459c-aaa0-06bc7aa4195a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>
@@ -1903,12 +1903,13 @@ this strategy can be <em>anticonservative</em>.</p></li>
 </li>
 <li><p>If missing data have been included in the main data analysis (as when variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are given distributions in a Bugs model), the uncertainty about the missing data imputations is automatically included in the Bayesian inference, and the above steps are not needed.</p></li>
 </ul>
-<p id="id6"><dl class="citation">
+<div class="docutils container" id="id6">
+<dl class="citation">
 <dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id1">GH06</a></span></dt>
 <dd><p>Andrew Gelman and Jennifer Hill. <em>Data analysis using regression and multilevel/hierarchical models</em>. Cambridge university press, 2006.</p>
 </dd>
 </dl>
-</p>
+</div>
 <p><a class="reference external" href="https://emilyriederer.netlify.app/post/causal-design-patterns/?utm_medium=email&amp;utm_source=topic+optin&amp;utm_campaign=awareness&amp;utm_content=20210301+data+ai+nl&amp;mkt_tok=MTA3LUZNUy0wNzAAAAF7jiS0jM80eBtc7ego_dtS0kCF1mHaWuSAtWI5trEuMx-y7xdFgBkgSO_IAy5UFHmp0nCsahq7M95aBR9-JVYsUbsTmpZ8eo0xzrrTn_g5wWtGTng">Causal design patterns for data analysts</a></p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
