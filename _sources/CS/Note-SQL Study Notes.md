@@ -133,6 +133,7 @@
 
 ### Resrouces to practice SQL
 #### [Practice SQL](https://www.sql-practice.com/)
+#### [LeetCode SQL Summary](https://github.com/siqichen-usc/LeetCode-SQL-Summary)
 
 -----
 ## Miscellaneous tips
