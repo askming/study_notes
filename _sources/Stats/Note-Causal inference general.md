@@ -1,6 +1,6 @@
 # Causal Inference General Study Notes
 
-## [Be Careful When Interpreting Predictive Models in Search of Causal Insights](https://towardsdatascience.com/be-careful-when-interpreting-predictive-models-in-search-of-causal-insights-e68626e664b6)
+## [1. Be Careful When Interpreting Predictive Models in Search of Causal Insights](https://towardsdatascience.com/be-careful-when-interpreting-predictive-models-in-search-of-causal-insights-e68626e664b6)
 
 > A careful exploration of the pitfalls of trying to extract causal insights from modern predictive machine learning models.
 
@@ -53,3 +53,46 @@
 - Barring the ability to measure the previously unmeasured features (or features correlated with them), finding causal effects in the presence of unobserved confounding is difficult. In these situations, the only way to identify causal effects that can inform policy is to create or exploit some ***\*randomization\**** that breaks the correlation between the features of interest and the unmeasured confounders. 
 
 *_SHAP: SHapley Additive exPlanations_*
+
+
+----
+
+
+## 2.Causal Inference Tutorial from [Data Elixir Newsletter](https://dataelixir.com/)
+### [Part 1](https://dataelixir.com/issues/378.html): Foundations
+- [Causal Inference: What If?](https://news.dataelixir.com/t/t-l-qzxdd-l-x/)
+  > Part 1 of this book ("Causal inference without models") is not short but if you want to learn about making causal inferences from data, this provides one of the best introductions to the topic you can find on the web. It assumes zero prior knowledge of modeling or public health, and is quite approachable. 
+
+  *Note: Already have this book for a while but haven't read yet.*
+
+- [Causality for Machine Learning](https://ff13.fastforwardlabs.com)
+  > Chapters one and two provide a math-less introduction to a number of critical topics in causal inference. You'll learn about causal graphs (a simple way to visualize causal relationships), the concept of the "causal hierarchy", and counterfactuals.
+
+- [Thinking Clearly About Correlations and Causation](https://journals.sagepub.com/doi/full/10.1177/2515245917745629?utm_campaign=Data_Elixir&utm_source=Data_Elixir_378)
+ 
+  > a slightly deeper but still math-less explanation of causal graphs.
+
+  *Note: paper in Zotero*
+
+- [Causal Inference Challenges in Industry: A perspective from experiences at LinkedIn](https://www.youtube.com/watch?v=OoKsLAvyIYA)
+  > this video gives you a look at how causal inference is viewed from an industry perspective (specifically at LinkedIn)
+
+### [Part 2](https://dataelixir.com/issues/381.html): Core methods and tools
+
+- MS tutorials
+  - [Understanding the fundamentals](https://medium.com/data-science-at-microsoft/causal-inference-part-1-of-3-understanding-the-fundamentals-816f4723e54a) 
+  - [Selecting algorithms](https://medium.com/data-science-at-microsoft/causal-inference-part-2-of-3-selecting-algorithms-a966f8228a2d)
+  -  [Model validation and applications](https://medium.com/data-science-at-microsoft/causal-inference-part-3-of-3-model-validation-and-applications-c84764156a29)
+  
+    > In this multi-part series, Jane Huang and colleagues at Microsoft outline the critical effect measures to know in causal inference, the data assumptions necessary to employ causal inference in the first place, a comparison of the many open-source packages to carry out the job, and lay out a nice categorization of the algorithms that one can employ. 
+
+- [Implementation of G-Computation on a Simulated Data Set: Demonstration of a Causal Inference Technique](https://academic.oup.com/aje/article/173/7/731/104142?utm_campaign=Data_Elixir&utm_source=Data_Elixir_381) 
+
+  > This paper describes one of the more straight-forward modeling approaches for causal inference. This approachable paper has a FAQ and comes with code if the reader is interested in seeing how the authors arrived at their numbers. It's an approach that [performs well against others in simulation studies too](https://news.dataelixir.com/t/t-l-qjlcut-ehrkiilji-v/).
+
+  *note: paper in Zotero*
+
+- [Trustworthy Online Controlled Experiments:
+A Practical Guide to A/B Testing](https://experimentguide.com/?Chap1T)
+  
+  > This gem of a book was written by the current industry giants in A/B testing and evaluating treatment effects. Understanding the methods and metrics of A/B testing will give you a fantastic intuition for various causal inference approaches.  

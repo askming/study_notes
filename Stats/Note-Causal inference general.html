@@ -535,7 +535,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#be-careful-when-interpreting-predictive-models-in-search-of-causal-insights">
-   Be Careful When Interpreting Predictive Models in Search of Causal Insights
+   1. Be Careful When Interpreting Predictive Models in Search of Causal Insights
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -551,6 +551,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#when-both-predictive-model-causal-method-fail">
      When both (predictive model &amp; causal method) fail
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causal-inference-tutorial-from-data-elixir-newsletter">
+   2.Causal Inference Tutorial from Data Elixir Newsletter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-1-foundations">
+     Part 1: Foundations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2-core-methods-and-tools">
+     Part 2: Core methods and tools
     </a>
    </li>
   </ul>
@@ -577,7 +594,7 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#be-careful-when-interpreting-predictive-models-in-search-of-causal-insights">
-   Be Careful When Interpreting Predictive Models in Search of Causal Insights
+   1. Be Careful When Interpreting Predictive Models in Search of Causal Insights
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -597,6 +614,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causal-inference-tutorial-from-data-elixir-newsletter">
+   2.Causal Inference Tutorial from Data Elixir Newsletter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-1-foundations">
+     Part 1: Foundations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2-core-methods-and-tools">
+     Part 2: Core methods and tools
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -609,7 +643,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="causal-inference-general-study-notes">
 <h1>Causal Inference General Study Notes<a class="headerlink" href="#causal-inference-general-study-notes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="be-careful-when-interpreting-predictive-models-in-search-of-causal-insights">
-<h2><a class="reference external" href="https://towardsdatascience.com/be-careful-when-interpreting-predictive-models-in-search-of-causal-insights-e68626e664b6">Be Careful When Interpreting Predictive Models in Search of Causal Insights</a><a class="headerlink" href="#be-careful-when-interpreting-predictive-models-in-search-of-causal-insights" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://towardsdatascience.com/be-careful-when-interpreting-predictive-models-in-search-of-causal-insights-e68626e664b6">1. Be Careful When Interpreting Predictive Models in Search of Causal Insights</a><a class="headerlink" href="#be-careful-when-interpreting-predictive-models-in-search-of-causal-insights" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>A careful exploration of the pitfalls of trying to extract causal insights from modern predictive machine learning models.</p>
 </div></blockquote>
@@ -666,6 +700,64 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Barring the ability to measure the previously unmeasured features (or features correlated with them), finding causal effects in the presence of unobserved confounding is difficult. In these situations, the only way to identify causal effects that can inform policy is to create or exploit some <em><strong>*randomization*</strong></em> that breaks the correlation between the features of interest and the unmeasured confounders.</p></li>
 </ul>
 <p><em><em>SHAP: SHapley Additive exPlanations</em></em></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="causal-inference-tutorial-from-data-elixir-newsletter">
+<h2>2.Causal Inference Tutorial from <a class="reference external" href="https://dataelixir.com/">Data Elixir Newsletter</a><a class="headerlink" href="#causal-inference-tutorial-from-data-elixir-newsletter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-1-foundations">
+<h3><a class="reference external" href="https://dataelixir.com/issues/378.html">Part 1</a>: Foundations<a class="headerlink" href="#part-1-foundations" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><a class="reference external" href="https://news.dataelixir.com/t/t-l-qzxdd-l-x/">Causal Inference: What If?</a></p>
+<blockquote>
+<div><p>Part 1 of this book (“Causal inference without models”) is not short but if you want to learn about making causal inferences from data, this provides one of the best introductions to the topic you can find on the web. It assumes zero prior knowledge of modeling or public health, and is quite approachable.</p>
+</div></blockquote>
+<p><em>Note: Already have this book for a while but haven’t read yet.</em></p>
+</li>
+<li><p><a class="reference external" href="https://ff13.fastforwardlabs.com">Causality for Machine Learning</a></p>
+<blockquote>
+<div><p>Chapters one and two provide a math-less introduction to a number of critical topics in causal inference. You’ll learn about causal graphs (a simple way to visualize causal relationships), the concept of the “causal hierarchy”, and counterfactuals.</p>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://journals.sagepub.com/doi/full/10.1177/2515245917745629?utm_campaign=Data_Elixir&amp;utm_source=Data_Elixir_378">Thinking Clearly About Correlations and Causation</a></p>
+<blockquote>
+<div><p>a slightly deeper but still math-less explanation of causal graphs.</p>
+</div></blockquote>
+<p><em>Note: paper in Zotero</em></p>
+</li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=OoKsLAvyIYA">Causal Inference Challenges in Industry: A perspective from experiences at LinkedIn</a></p>
+<blockquote>
+<div><p>this video gives you a look at how causal inference is viewed from an industry perspective (specifically at LinkedIn)</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="part-2-core-methods-and-tools">
+<h3><a class="reference external" href="https://dataelixir.com/issues/381.html">Part 2</a>: Core methods and tools<a class="headerlink" href="#part-2-core-methods-and-tools" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>MS tutorials</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/data-science-at-microsoft/causal-inference-part-1-of-3-understanding-the-fundamentals-816f4723e54a">Understanding the fundamentals</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/data-science-at-microsoft/causal-inference-part-2-of-3-selecting-algorithms-a966f8228a2d">Selecting algorithms</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/data-science-at-microsoft/causal-inference-part-3-of-3-model-validation-and-applications-c84764156a29">Model validation and applications</a></p></li>
+</ul>
+<blockquote>
+<div><p>In this multi-part series, Jane Huang and colleagues at Microsoft outline the critical effect measures to know in causal inference, the data assumptions necessary to employ causal inference in the first place, a comparison of the many open-source packages to carry out the job, and lay out a nice categorization of the algorithms that one can employ.</p>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://academic.oup.com/aje/article/173/7/731/104142?utm_campaign=Data_Elixir&amp;utm_source=Data_Elixir_381">Implementation of G-Computation on a Simulated Data Set: Demonstration of a Causal Inference Technique</a></p>
+<blockquote>
+<div><p>This paper describes one of the more straight-forward modeling approaches for causal inference. This approachable paper has a FAQ and comes with code if the reader is interested in seeing how the authors arrived at their numbers. It’s an approach that <a class="reference external" href="https://news.dataelixir.com/t/t-l-qjlcut-ehrkiilji-v/">performs well against others in simulation studies too</a>.</p>
+</div></blockquote>
+<p><em>note: paper in Zotero</em></p>
+</li>
+<li><p><a class="reference external" href="https://experimentguide.com/?Chap1T">Trustworthy Online Controlled Experiments:
+A Practical Guide to A/B Testing</a></p>
+<blockquote>
+<div><p>This gem of a book was written by the current industry giants in A/B testing and evaluating treatment effects. Understanding the methods and metrics of A/B testing will give you a fantastic intuition for various causal inference approaches.</p>
+</div></blockquote>
+</li>
+</ul>
 </div>
 </div>
 </div>
