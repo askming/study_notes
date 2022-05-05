@@ -31,7 +31,7 @@ combination therapy
 
 Situations requiring individual patient risk benefit assessment for which administration of IV alteplase may be considered
 
-details see {cit:p}`warner2019guidelines`
+details see {cite:p}`warner2019guidelines`
 
 ## Evaluate for Mechanical Thrombectomy (< 24 hours)
 - Evaluation for IV alteplase and evaluation for mechanical thrombectomy happens
