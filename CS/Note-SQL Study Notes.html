@@ -685,9 +685,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Apply conditions with <code class="docutils literal notranslate"><span class="pre">WHERE</span></code></p>
 <ul class="simple">
 <li><p>use <code class="docutils literal notranslate"><span class="pre">BETWEEN</span> <span class="pre">...</span> <span class="pre">AND...</span> </code> to select obs with value with a range of a variable (inclusive)</p></li>
-<li><p>Using regrular expression with <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></p>
+<li><p><a class="reference external" href="https://dataschool.com/how-to-teach-people-sql/how-regex-works-in-sql/">Using regular expression with <code class="docutils literal notranslate"><span class="pre">LIKE</span></code></a></p>
 <ul>
-<li></li>
+<li><p>%: any string of 0 or more character</p></li>
 <li><p>_(under score): any single character;</p></li>
 <li><p>[]: any single character with the specificed range e.g. [a-f] &lt;=&gt; [abcdef]</p></li>
 <li><p>[^]: any single character not within the specified range</p></li>
@@ -700,6 +700,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CAST(column_name</span> <span class="pre">AS</span> <span class="pre">integer)</span></code> or <code class="docutils literal notranslate"><span class="pre">column_name::integer</span></code>: convert to integer</p></li>
 </ul>
+</li>
+<li><p>Update SQL table</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span><span class="w"></span>
+<span class="w">  </span><span class="k">SET</span><span class="w"> </span><span class="n">column1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
 </li>
 </ul>
 </div>

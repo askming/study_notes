@@ -32,8 +32,8 @@
   - NULL value is elimiated in all thse functions, except for `COUNT(*)` (`COUNT(var)` still excludes NULL records)
 - Apply conditions with `WHERE`
   - use `BETWEEN ... AND... ` to select obs with value with a range of a variable (inclusive)
-  - Using regrular expression with `LIKE`
-    - %: any string of 0 or more character
+  - [Using regular expression with `LIKE`](https://dataschool.com/how-to-teach-people-sql/how-regex-works-in-sql/)
+    - \%: any string of 0 or more character
     - _(under score): any single character; 
     - []: any single character with the specificed range e.g. [a-f] <=> [abcdef]
     - [^]: any single character not within the specified range
@@ -42,6 +42,16 @@
 - Converting data types
   
   -  `CAST(column_name AS integer)` or `column_name::integer`: convert to integer  
+
+- Update SQL table
+  ```sql
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+  ```
+
+
+
 
 -----
 ## Advanced SQL tips
