@@ -1,10 +1,10 @@
 # SQL study notes
 
 ## Basic data manipulation with SQL
-- SQL clause order: **SELECT --> FROM --> WHERE --> GROUP BY --> HAVING --> ORDER BY**
-- SQL evaluates these clauses in the order: FROM, WHERE, GROUP BY, HAVING, and finally, SELECT. Therefore, each clause receives the filtered results of the previous filter. It would look like this: `SELECT(HAVING(GROUP BY(WHERE(FROM...))))`
+- SQL clause order: `FROM --> WHERE --> GROUP BY --> HAVING --> ORDER BY --> SELECT`
+  - SQL evaluates these clauses in the order: FROM, WHERE, GROUP BY, HAVING, and finally, SELECT. Therefore, each clause receives the filtered results of the previous filter. It would look like this: `SELECT(HAVING(GROUP BY(WHERE(FROM...))))`
 - Create new/modify existing variables
-  - String functions
+  - **String** functions
     - `UPPER()` & `LOWER()`
     - `REPLACE(var, pattern, replacement)`
     - `CONCAT(var1, connection symbol, var2)`
@@ -15,21 +15,24 @@
     - `TRIM(leading/trailing/both, char to be trimed FROM var)`: to remove specific char from a variable
     - `LEFT(str, length)`, `RIGHT()`: selecte certain length of string from left/right
     - `POSITION(substring IN string)`: return a numeric value, which is the index counted from left where the substring appears first in the string
-    - ```sql
+    - Conditioning
+      ```sql
       CASE WHEN ... THEN ... 
       ELSE ... 
       END AS new_var_name
       ```
-   - Date functions
+   - **Date** functions
      -  `DATEDD`: add one year to an existing date
      -  `TO_DATE`: convertrs a string into date
      -  `DATEDIFF`: find the difference b/t two given dates
      -  `DATEPART`: get year, month, or date from the date variable
      -  `DAY`: get day of the month for the given date
      -  `CURRENT_TIMESTAMP`: get the date and time (time stamp)  
-- Using aggregate functions (COUNT, AVG, SUM, MIN, MAX)
+
+- Using **aggregate functions** (COUNT, AVG, SUM, MIN, MAX)
   - usually used with `GROUP BY`
   - NULL value is elimiated in all thse functions, except for `COUNT(*)` (`COUNT(var)` still excludes NULL records)
+
 - Apply conditions with `WHERE`
   - use `BETWEEN ... AND... ` to select obs with value with a range of a variable (inclusive)
   - [Using regular expression with `LIKE`](https://dataschool.com/how-to-teach-people-sql/how-regex-works-in-sql/)
@@ -37,10 +40,10 @@
     - _(under score): any single character; 
     - []: any single character with the specificed range e.g. [a-f] <=> [abcdef]
     - [^]: any single character not within the specified range
-- Apply conditions using aggregated varaible/value with `HAVING`
+
+- Apply conditions using aggregated varaible/value with `HAVING`: be clear about the differnce vs `WHERE`
 
 - Converting data types
-  
   -  `CAST(column_name AS integer)` or `column_name::integer`: convert to integer  
 
 - Update SQL table
@@ -60,14 +63,14 @@
   ![c5831be5.png](https://raw.githubusercontent.com/askming/picgo/master/c5831be5_20200625134008.png)
 
   - Filtering with "join" operations: 
-    - using "AND" after "ON" clause: filtering happens **before** joining
-    - using "WHERE" after "ON" caluse: filtering happens **after** joining
+    - using `AND` after `ON` clause: filtering happens **before** joining
+    - using `WHERE` after `ON` caluse: filtering happens **after** joining
 
-  - Another way to visualize SQL joins: [You Should Use This to Visualize SQL Joins Instead of Venn Diagrams](https://towardsdatascience.com/you-should-use-this-to-visualize-sql-joins-instead-of-venn-diagrams-ede15f9583fc)
+- Another way to visualize SQL joins: [You Should Use This to Visualize SQL Joins Instead of Venn Diagrams](https://towardsdatascience.com/you-should-use-this-to-visualize-sql-joins-instead-of-venn-diagrams-ede15f9583fc)
   
     ![NtZh3N_2022_04_24](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/NtZh3N_2022_04_24.jpg)
   
-- UNION operator: to stack one dataset on top of the other
+- `UNION` operator: to **stack** one dataset on top of the other
   ```sql
   SELECT var1, var2, var3 as var3_new
   FROM table1
@@ -78,7 +81,8 @@
   - If there are same rows from two tables, only one unique row will be shown; or to use `UNION ALL` to keep duplicates; The opposite is `UNION DISTINCT`
   - Two tables must have same # of cols
   - Columns must have same data types in the same order
--  "Cross join": performs cross product b/t 2 tables. connects each row in the left table with each row in the right table
+
+-  "Cross join": performs cross product b/t 2 tables: it connects each row in the left table with each row in the right table
 - Create a **view** of the data table[^Socratica]: security of the data, giving access to only the variables included in the view table
   ```sql
   CREATE VIEW table_name AS
@@ -88,8 +92,9 @@
 - **Subquery**: innter query/nested query: to perform operation in several steps
   - subquery need to have an alias
   - EXAMPLE CODE NEEDED
+
 - **Window functions**: performs a calculation across a set of table rows that are somehow related to the current row
-  - Examples
+  - Example
     ```sql
     Aggregate_fun(var) OVER
       (PARTITION BY var1 ORDER BY var2
@@ -141,10 +146,6 @@
 
 - Pivoting data in SQL (TBD)
 
-### Resrouces to practice SQL
-#### [Practice SQL](https://www.sql-practice.com/)
-#### [LeetCode SQL Summary](https://github.com/siqichen-usc/LeetCode-SQL-Summary)
-
 -----
 ## Miscellaneous tips
 - `IS NULL`: check if it's missing value 
@@ -159,3 +160,9 @@
 [^Socratica]: from [Socratica|YouTube](https://www.youtube.com/channel/UCW6TXMZ5Pq6yL6_k5NZ2e0Q)
 [^kaggle]: from [Advanced SQL \| Kaggle](https://www.kaggle.com/learn/advanced-sql)
 
+---
+## Resrouces to learn and practice SQL
+- [Practice SQL](https://www.sql-practice.com/)
+- [LeetCode SQL Summary](https://github.com/siqichen-usc/LeetCode-SQL-Summary)
+- [Select Star SQL](https://selectstarsql.com/)
+- [Hard SQL interivew questions](./Note-Hard%20SQL%20interview%20questions.md)

@@ -547,29 +547,15 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#advanced-sql-tips">
    Advanced SQL tips
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resrouces-to-practice-sql">
-     Resrouces to practice SQL
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#practice-sql">
-       Practice SQL
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#leetcode-sql-summary">
-       LeetCode SQL Summary
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#miscellaneous-tips">
    Miscellaneous tips
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resrouces-to-learn-and-practice-sql">
+   Resrouces to learn and practice SQL
   </a>
  </li>
 </ul>
@@ -601,29 +587,15 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#advanced-sql-tips">
    Advanced SQL tips
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resrouces-to-practice-sql">
-     Resrouces to practice SQL
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#practice-sql">
-       Practice SQL
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#leetcode-sql-summary">
-       LeetCode SQL Summary
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#miscellaneous-tips">
    Miscellaneous tips
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resrouces-to-learn-and-practice-sql">
+   Resrouces to learn and practice SQL
   </a>
  </li>
 </ul>
@@ -640,11 +612,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="basic-data-manipulation-with-sql">
 <h2>Basic data manipulation with SQL<a class="headerlink" href="#basic-data-manipulation-with-sql" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p>SQL clause order: <strong>SELECT –&gt; FROM –&gt; WHERE –&gt; GROUP BY –&gt; HAVING –&gt; ORDER BY</strong></p></li>
+<li><p>SQL clause order: <code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">--&gt;</span> <span class="pre">WHERE</span> <span class="pre">--&gt;</span> <span class="pre">GROUP</span> <span class="pre">BY</span> <span class="pre">--&gt;</span> <span class="pre">HAVING</span> <span class="pre">--&gt;</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">--&gt;</span> <span class="pre">SELECT</span></code></p>
+<ul class="simple">
 <li><p>SQL evaluates these clauses in the order: FROM, WHERE, GROUP BY, HAVING, and finally, SELECT. Therefore, each clause receives the filtered results of the previous filter. It would look like this: <code class="docutils literal notranslate"><span class="pre">SELECT(HAVING(GROUP</span> <span class="pre">BY(WHERE(FROM...))))</span></code></p></li>
+</ul>
+</li>
 <li><p>Create new/modify existing variables</p>
 <ul>
-<li><p>String functions</p>
+<li><p><strong>String</strong> functions</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">UPPER()</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">LOWER()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">REPLACE(var,</span> <span class="pre">pattern,</span> <span class="pre">replacement)</span></code></p></li>
@@ -656,7 +631,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><code class="docutils literal notranslate"><span class="pre">TRIM(leading/trailing/both,</span> <span class="pre">char</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">trimed</span> <span class="pre">FROM</span> <span class="pre">var)</span></code>: to remove specific char from a variable</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">LEFT(str,</span> <span class="pre">length)</span></code>, <code class="docutils literal notranslate"><span class="pre">RIGHT()</span></code>: selecte certain length of string from left/right</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">POSITION(substring</span> <span class="pre">IN</span> <span class="pre">string)</span></code>: return a numeric value, which is the index counted from left where the substring appears first in the string</p></li>
-<li><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
+<li><p>Conditioning</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
 <span class="k">ELSE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
 <span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_var_name</span><span class="w"></span>
 </pre></div>
@@ -664,7 +640,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li><p>Date functions</p>
+<li><p><strong>Date</strong> functions</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DATEDD</span></code>: add one year to an existing date</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TO_DATE</span></code>: convertrs a string into date</p></li>
@@ -676,7 +652,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li><p>Using aggregate functions (COUNT, AVG, SUM, MIN, MAX)</p>
+<li><p>Using <strong>aggregate functions</strong> (COUNT, AVG, SUM, MIN, MAX)</p>
 <ul class="simple">
 <li><p>usually used with <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code></p></li>
 <li><p>NULL value is elimiated in all thse functions, except for <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code> (<code class="docutils literal notranslate"><span class="pre">COUNT(var)</span></code> still excludes NULL records)</p></li>
@@ -695,7 +671,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li><p>Apply conditions using aggregated varaible/value with <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></p></li>
+<li><p>Apply conditions using aggregated varaible/value with <code class="docutils literal notranslate"><span class="pre">HAVING</span></code>: be clear about the differnce vs <code class="docutils literal notranslate"><span class="pre">WHERE</span></code></p></li>
 <li><p>Converting data types</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CAST(column_name</span> <span class="pre">AS</span> <span class="pre">integer)</span></code> or <code class="docutils literal notranslate"><span class="pre">column_name::integer</span></code>: convert to integer</p></li>
@@ -716,19 +692,19 @@ const thebe_selector_output = ".output, .cell_output"
 <ul>
 <li><p>Joining tables</p>
 <p><img alt="c5831be5.png" src="https://raw.githubusercontent.com/askming/picgo/master/c5831be5_20200625134008.png" /></p>
-<ul>
-<li><p>Filtering with “join” operations:</p>
 <ul class="simple">
-<li><p>using “AND” after “ON” clause: filtering happens <strong>before</strong> joining</p></li>
-<li><p>using “WHERE” after “ON” caluse: filtering happens <strong>after</strong> joining</p></li>
+<li><p>Filtering with “join” operations:</p>
+<ul>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">AND</span></code> after <code class="docutils literal notranslate"><span class="pre">ON</span></code> clause: filtering happens <strong>before</strong> joining</p></li>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> after <code class="docutils literal notranslate"><span class="pre">ON</span></code> caluse: filtering happens <strong>after</strong> joining</p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>Another way to visualize SQL joins: <a class="reference external" href="https://towardsdatascience.com/you-should-use-this-to-visualize-sql-joins-instead-of-venn-diagrams-ede15f9583fc">You Should Use This to Visualize SQL Joins Instead of Venn Diagrams</a></p>
 <p><img alt="NtZh3N_2022_04_24" src="https://cdn.jsdelivr.net/gh/askming/upic&#64;master/uPic/NtZh3N_2022_04_24.jpg" /></p>
 </li>
-</ul>
-</li>
-<li><p>UNION operator: to stack one dataset on top of the other</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">UNION</span></code> operator: to <strong>stack</strong> one dataset on top of the other</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">var3_new</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"></span>
 <span class="k">UNION</span><span class="w"></span>
@@ -742,7 +718,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Columns must have same data types in the same order</p></li>
 </ul>
 </li>
-<li><p>“Cross join”: performs cross product b/t 2 tables. connects each row in the left table with each row in the right table</p></li>
+<li><p>“Cross join”: performs cross product b/t 2 tables: it connects each row in the left table with each row in the right table</p></li>
 <li><p>Create a <strong>view</strong> of the data table<a class="footnote-reference brackets" href="#socratica" id="id1">1</a>: security of the data, giving access to only the variables included in the view table</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">AS</span><span class="w"></span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var3</span><span class="w"></span>
@@ -758,7 +734,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p><strong>Window functions</strong>: performs a calculation across a set of table rows that are somehow related to the current row</p>
 <ul>
-<li><p>Examples</p>
+<li><p>Example</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Aggregate_fun</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"></span>
 <span class="w">  </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var1</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var2</span><span class="w"></span>
 <span class="w">   </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var3</span><span class="w"></span>
@@ -834,15 +810,6 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>Pivoting data in SQL (TBD)</p></li>
 </ul>
-<div class="section" id="resrouces-to-practice-sql">
-<h3>Resrouces to practice SQL<a class="headerlink" href="#resrouces-to-practice-sql" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="practice-sql">
-<h4><a class="reference external" href="https://www.sql-practice.com/">Practice SQL</a><a class="headerlink" href="#practice-sql" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="leetcode-sql-summary">
-<h4><a class="reference external" href="https://github.com/siqichen-usc/LeetCode-SQL-Summary">LeetCode SQL Summary</a><a class="headerlink" href="#leetcode-sql-summary" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="miscellaneous-tips">
@@ -859,6 +826,16 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li><p>We refer to the structure of a table as its schema (something like <code class="docutils literal notranslate"><span class="pre">str()</span></code> in R).</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="resrouces-to-learn-and-practice-sql">
+<h2>Resrouces to learn and practice SQL<a class="headerlink" href="#resrouces-to-learn-and-practice-sql" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sql-practice.com/">Practice SQL</a></p></li>
+<li><p><a class="reference external" href="https://github.com/siqichen-usc/LeetCode-SQL-Summary">LeetCode SQL Summary</a></p></li>
+<li><p><a class="reference external" href="https://selectstarsql.com/">Select Star SQL</a></p></li>
+<li><p><a class="reference internal" href="Note-Hard%20SQL%20interview%20questions.html"><span class="doc std std-doc">Hard SQL interivew questions</span></a></p></li>
 </ul>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
