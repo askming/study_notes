@@ -547,6 +547,57 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#advanced-sql-tips">
    Advanced SQL tips
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-tables">
+     Joining tables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stacking-tables">
+     Stacking tables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-view-of-the-data-table">
+     Create a
+     <strong>
+      view
+     </strong>
+     of the data table:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subquery">
+     Subquery
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#window-functions">
+     Window functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-data">
+     Nested data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repeated-data">
+     Repeated data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-and-repeated-data">
+     Nested and repeated data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pivoting-data-in-sql-tba">
+     Pivoting data in SQL (TBA)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#miscellaneous-tips">
@@ -587,6 +638,57 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#advanced-sql-tips">
    Advanced SQL tips
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-tables">
+     Joining tables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stacking-tables">
+     Stacking tables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-view-of-the-data-table">
+     Create a
+     <strong>
+      view
+     </strong>
+     of the data table:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subquery">
+     Subquery
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#window-functions">
+     Window functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-data">
+     Nested data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repeated-data">
+     Repeated data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-and-repeated-data">
+     Nested and repeated data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pivoting-data-in-sql-tba">
+     Pivoting data in SQL (TBA)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#miscellaneous-tips">
@@ -689,21 +791,25 @@ const thebe_selector_output = ".output, .cell_output"
 <hr class="docutils" />
 <div class="section" id="advanced-sql-tips">
 <h2>Advanced SQL tips<a class="headerlink" href="#advanced-sql-tips" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Joining tables</p>
+<div class="section" id="joining-tables">
+<h3>Joining tables<a class="headerlink" href="#joining-tables" title="Permalink to this headline">¶</a></h3>
 <p><img alt="c5831be5.png" src="https://raw.githubusercontent.com/askming/picgo/master/c5831be5_20200625134008.png" /></p>
-<ul class="simple">
-<li><p>Filtering with “join” operations:</p>
 <ul>
+<li><p>Filtering with “join” operations:</p>
+<ul class="simple">
 <li><p>using <code class="docutils literal notranslate"><span class="pre">AND</span></code> after <code class="docutils literal notranslate"><span class="pre">ON</span></code> clause: filtering happens <strong>before</strong> joining</p></li>
 <li><p>using <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> after <code class="docutils literal notranslate"><span class="pre">ON</span></code> caluse: filtering happens <strong>after</strong> joining</p></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><p>Another way to visualize SQL joins: <a class="reference external" href="https://towardsdatascience.com/you-should-use-this-to-visualize-sql-joins-instead-of-venn-diagrams-ede15f9583fc">You Should Use This to Visualize SQL Joins Instead of Venn Diagrams</a></p>
 <p><img alt="NtZh3N_2022_04_24" src="https://cdn.jsdelivr.net/gh/askming/upic&#64;master/uPic/NtZh3N_2022_04_24.jpg" /></p>
 </li>
+<li><p>“Cross join”: performs cross product b/t 2 tables: it connects each row in the left table with each row in the right table</p></li>
+</ul>
+</div>
+<div class="section" id="stacking-tables">
+<h3>Stacking tables<a class="headerlink" href="#stacking-tables" title="Permalink to this headline">¶</a></h3>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">UNION</span></code> operator: to <strong>stack</strong> one dataset on top of the other</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">var3_new</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"></span>
@@ -718,21 +824,35 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Columns must have same data types in the same order</p></li>
 </ul>
 </li>
-<li><p>“Cross join”: performs cross product b/t 2 tables: it connects each row in the left table with each row in the right table</p></li>
-<li><p>Create a <strong>view</strong> of the data table<a class="footnote-reference brackets" href="#socratica" id="id1">1</a>: security of the data, giving access to only the variables included in the view table</p>
+</ul>
+</div>
+<div class="section" id="create-a-view-of-the-data-table">
+<h3>Create a <strong>view</strong> of the data table<a class="footnote-reference brackets" href="#socratica" id="id1">1</a>:<a class="headerlink" href="#create-a-view-of-the-data-table" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>security of the data, giving access to only the variables included in the view table</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">AS</span><span class="w"></span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var3</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
-<li><p><strong>Subquery</strong>: innter query/nested query: to perform operation in several steps</p>
+</ul>
+</div>
+<div class="section" id="subquery">
+<h3>Subquery<a class="headerlink" href="#subquery" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li><p>innter query/nested query: to perform operation in several steps</p>
+<ul>
 <li><p>subquery need to have an alias</p></li>
 <li><p>EXAMPLE CODE NEEDED</p></li>
 </ul>
 </li>
-<li><p><strong>Window functions</strong>: performs a calculation across a set of table rows that are somehow related to the current row</p>
+</ul>
+</div>
+<div class="section" id="window-functions">
+<h3>Window functions<a class="headerlink" href="#window-functions" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>performs a calculation across a set of table rows that are somehow related to the current row</p>
 <ul>
 <li><p>Example</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Aggregate_fun</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"></span>
@@ -741,6 +861,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="w">   </span><span class="k">ROWS</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">PRECEDING</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">CURRENT</span><span class="w"> </span><span class="k">ROW</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_Var</span><span class="w"></span>
 </pre></div>
 </div>
+</li>
+</ul>
 </li>
 <li><p>This doesn’t cause rows to be grouped into a single output row as done in the aggreated functions</p></li>
 <li><p>Three (optional) <strong>components</strong>:</p>
@@ -784,8 +906,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>Can’t include a window function in a GROUP BY clause</p></li>
 </ul>
-</li>
-<li><p>Nested data</p>
+</div>
+<div class="section" id="nested-data">
+<h3>Nested data<a class="headerlink" href="#nested-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>SQL data can also include a column with multiple fields in it; those fields are nested inside of this column and the nested column has type <code class="docutils literal notranslate"><span class="pre">STRUCT</span></code> (or type <code class="docutils literal notranslate"><span class="pre">RECORD</span></code>)</p></li>
 <li><p>To query a column with nested data, we need to identify each field in the context of the column that contains it:</p>
@@ -794,22 +917,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</li>
-<li><p>Repeated data</p>
+</div>
+<div class="section" id="repeated-data">
+<h3>Repeated data<a class="headerlink" href="#repeated-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>When an ID contains multiple records in another table, and we want to put the multiple records into one column and we say this conlumn contains repeated data.</p></li>
 <li><p>Each entry in a repeated field is an ARRAY, or an ordered list of (zero or more) values with the same datatype.</p></li>
 <li><p>When querying repeated data, we need to put the name of the column containing the repeated data inside an <code class="docutils literal notranslate"><span class="pre">UNNEST()</span></code> function. <code class="docutils literal notranslate"><span class="pre">UNNEST(Column)</span> <span class="pre">AS</span> <span class="pre">var_name</span></code>; This essentially flattens the repeated data (which is then appended to the right side of the table) so that we have one element on each row.</p></li>
 </ul>
-</li>
-<li><p>Nested and repeated data</p>
+</div>
+<div class="section" id="nested-and-repeated-data">
+<h3>Nested and repeated data<a class="headerlink" href="#nested-and-repeated-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>A combination of nest and repeat in a column</p></li>
 <li><p>When reading the values, we need UNNEST and use <code class="docutils literal notranslate"><span class="pre">C.Name</span></code> to read individual field</p></li>
 </ul>
-</li>
-<li><p>Pivoting data in SQL (TBD)</p></li>
-</ul>
+</div>
+<div class="section" id="pivoting-data-in-sql-tba">
+<h3>Pivoting data in SQL (TBA)<a class="headerlink" href="#pivoting-data-in-sql-tba" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="miscellaneous-tips">

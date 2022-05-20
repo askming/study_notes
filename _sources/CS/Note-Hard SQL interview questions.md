@@ -407,7 +407,7 @@ ORDER BY
 
 **Context**: Say we have table `signups` in the form: 
 
-```
+
 | date       | sign_ups |
 |------------|----------|
 | 2018-01-01 | 10       |
@@ -415,7 +415,7 @@ ORDER BY
 | 2018-01-03 | 50       |
 | ...        | ...      |
 | 2018-10-01 | 35       |
-```
+
 
 **Task**: Write a query to get 7-day rolling (preceding) average of daily sign ups. 
 * * *
