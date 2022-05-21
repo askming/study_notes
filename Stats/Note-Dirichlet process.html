@@ -606,8 +606,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>A Dirichlet process over a set <span class="math notranslate nohighlight">\(S\)</span> is a <em>stochastic process</em> whose sample path (i.e. an infinite-dimensional set of random variates drawn from the process) is a probability distribution on <span class="math notranslate nohighlight">\(S\)</span>. The finite dimensional distributions are from the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirichlet_distribution">Dirichlet distribution</a>: If <span class="math notranslate nohighlight">\(H\)</span> is a finite measure on <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span> is a positive real number and <span class="math notranslate nohighlight">\(X\)</span> is a sample path drawn from a Dirichlet process, written as</p>
 <div class="math notranslate nohighlight">
 \[X \sim \mathrm{DP}\left(\alpha, H\right) \]</div>
-<p>then for any measureable <a class="reference external" href="https://en.wikipedia.org/wiki/Partition_of_a_set">partition</a> of <span class="math notranslate nohighlight">\(S\)</span>, say <span class="math notranslate nohighlight">\(\left\{B_i\right\}_{i=1}^{n}\)</span>, we have that
-$<span class="math notranslate nohighlight">\(\left(X\left(B_1\right),\dots,X\left(B_n\right)\right) \sim \mathrm{Dirichlet}\left(\alpha H\left(B_1\right),\dots, \alpha H\left(B_n\right)\right).\)</span>$</p>
+<p>then for any measureable <a class="reference external" href="https://en.wikipedia.org/wiki/Partition_of_a_set">partition</a> of <span class="math notranslate nohighlight">\(S\)</span>, say <span class="math notranslate nohighlight">\(\left\{B_i\right\}_{i=1}^{n}\)</span>, we have that</p>
+<div class="math notranslate nohighlight">
+\[\left(X\left(B_1\right),\dots,X\left(B_n\right)\right) \sim \mathrm{Dirichlet}\left(\alpha H\left(B_1\right),\dots, \alpha H\left(B_n\right)\right).\]</div>
 </div>
 <div class="section" id="a-list-of-facts">
 <h2>A list of facts<a class="headerlink" href="#a-list-of-facts" title="Permalink to this headline">¶</a></h2>
@@ -633,9 +634,7 @@ $<span class="math notranslate nohighlight">\(\left(X\left(B_1\right),\dots,X\le
 <li><p>In a Bayesian nonparametric model, the prior and posterior distributions are not parametric distributions, but stochastic processes.<a class="reference external" href="https://en.wikipedia.org/wiki/Dirichlet_process#cite_note-2">1</a></p></li>
 <li><p>The fact that the Dirichlet distribution is a probability distribution on the simplex of non-negative numbers that sum to one makes it a good candidate to model distributions of distributions or distributions of functions.</p></li>
 <li><p>Additionally, the non-parametric nature of this model makes it an ideal candidate for clustering problems where the distinct number of clusters is unknown beforehand.</p></li>
-</ul>
-<p>-As draws from a Dirichlet process are discrete, an important use is as a prior probability in <a class="reference external" href="https://en.wikipedia.org/wiki/Infinite_mixture_model">infinite mixture models</a>.</p>
-<ul class="simple">
+<li><p>As draws from a Dirichlet process are discrete, an important use is as a prior probability in <a class="reference external" href="https://en.wikipedia.org/wiki/Infinite_mixture_model">infinite mixture models</a>.</p></li>
 <li><p>In this case, S is the parametric set of component distributions. The generative process is therefore that a sample is drawn from a Dirichlet process, and for each data point in turn a value is drawn from this sample distribution and used as the component distribution for that data point.</p></li>
 <li><p>The fact that there is no limit to the number of distinct components which may be generated makes this kind of model appropriate for the case when the number of mixture components is not well-defined in advance. For example, the infinite mixture of Gaussians model.<a class="reference external" href="https://en.wikipedia.org/wiki/Dirichlet_process#cite_note-3">2</a></p></li>
 </ul>

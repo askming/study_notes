@@ -6,6 +6,7 @@ A Dirichlet process over a set $S$ is a *stochastic process* whose sample path (
 $$X \sim \mathrm{DP}\left(\alpha, H\right) $$
 
 then for any measureable [partition](https://en.wikipedia.org/wiki/Partition_of_a_set) of $S$, say $\left\{B_i\right\}_{i=1}^{n}$, we have that
+
 $$\left(X\left(B_1\right),\dots,X\left(B_n\right)\right) \sim \mathrm{Dirichlet}\left(\alpha H\left(B_1\right),\dots, \alpha H\left(B_n\right)\right).$$
 
 ## A list of facts
@@ -39,7 +40,7 @@ $$\left(X\left(B_1\right),\dots,X\left(B_n\right)\right) \sim \mathrm{Dirichlet}
 
 - Additionally, the non-parametric nature of this model makes it an ideal candidate for clustering problems where the distinct number of clusters is unknown beforehand.
 
--As draws from a Dirichlet process are discrete, an important use is as a prior probability in [infinite mixture models](https://en.wikipedia.org/wiki/Infinite_mixture_model).
+- As draws from a Dirichlet process are discrete, an important use is as a prior probability in [infinite mixture models](https://en.wikipedia.org/wiki/Infinite_mixture_model).
 
 - In this case, S is the parametric set of component distributions. The generative process is therefore that a sample is drawn from a Dirichlet process, and for each data point in turn a value is drawn from this sample distribution and used as the component distribution for that data point.
 
