@@ -54,9 +54,9 @@
 ### 1.9 Correlated/longitudinal data analysis
 - [Correlated Data Analysis](./Stats/Note-Correlated%20Data%20Analysis.md)
 
-#### 1.10 Ordinal data
+### 1.10 Ordinal data
 - [Analysis of ordinal data](./Stats/Note-Analysis%20of%20Ordinal%20Outcome.md)
-- [Sample size calculation with WMW test](./Stats/Note-Sample%20size%20calculation%20with%20WMW%20test.md)
+- [Sample size calculation with WMW test](./Stats/Note-Sample_size_calculation_with_WMW_test.md)
 
 
 ### 1.xx Other topics
