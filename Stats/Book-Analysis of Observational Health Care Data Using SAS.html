@@ -387,6 +387,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Course-%E5%BB%96%E9%9B%AA%E5%B3%B0python%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.html">
+   廖雪峰python教程笔记
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-HTML%20basics.html">
    HTML Basics
   </a>
@@ -759,8 +764,8 @@ Bang and Robins, 2005).</p></li>
 <h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0514fa09-2c11-4f43-9324-5c7cfc930616">
-<span class="eqno">(1)<a class="headerlink" href="#equation-0514fa09-2c11-4f43-9324-5c7cfc930616" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-750afcbc-5f26-4d2c-bb5f-99e4bb78080a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-750afcbc-5f26-4d2c-bb5f-99e4bb78080a" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{\Delta}_{DR} \\
    &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
    &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
@@ -773,8 +778,8 @@ Bang and Robins, 2005).</p></li>
   SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a17db5ac-dfdc-4ec1-a2b2-3a91cab02dfe">
-<span class="eqno">(2)<a class="headerlink" href="#equation-a17db5ac-dfdc-4ec1-a2b2-3a91cab02dfe" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cd75c55a-3ed2-4d60-96da-11ec7c47aff1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-cd75c55a-3ed2-4d60-96da-11ec7c47aff1" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \hat{I}_i \\
   &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
   &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}

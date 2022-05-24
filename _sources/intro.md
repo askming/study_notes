@@ -120,6 +120,7 @@
 - [googleVis package](./Stats_Comp/Note-googleVis.md)
 
 #### 2.4.2 Python
+- [Udemy: Python for Data Science and Machine Learning Bootcamp](./DS_ML/Course-Udemy-%20Python%20for%20Data%20Science%20and%20Machine%20Learning%20Bootcamp.md)
 - Scikit-learn
 - Tensorflow/Keras
 - PyTorch
@@ -146,6 +147,8 @@
 ## 4 Computer Science & Programming
 
 ### 4.1 Python
+- [廖雪峰python教程笔记](./CS/Course-%E5%BB%96%E9%9B%AA%E5%B3%B0python%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.md)
+
 
 ### 4.2 SQL
 - [SQL study notes](CS/Note-SQL%20Study%20Notes.md)

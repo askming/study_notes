@@ -1,0 +1,2395 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>廖雪峰python教程笔记 &#8212; Study Notes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://wavedrom.com/skins/default.js"></script>
+    <script src="https://wavedrom.com/wavedrom.min.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="HTML Basics" href="Note-HTML%20basics.html" />
+    <link rel="prev" title="Tree/Random Forest (Bagging)" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Study Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Study Notes Index (knowledge base structure)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+   [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Causal_inference_in_statistics_a_primer.html">
+   [book] Causal inference in statistics
+   <em>
+    a primer
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
+   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+   [book] Fundamentals of Clinical Trials (4th edition)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">
+   [book] Regression Modeling Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Adaptive%20Trial%20Design.html">
+   Adaptive Clinical Trial Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Analysis%20of%20Ordinal%20Outcome.html">
+   Analysis of ordinal outcome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
+   Why analysis of stratified randomization trial data need to account for the stratification factors?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
+   Association vs. Prediction vs. Causation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Baseline%20Adaptive%20Randomization.html">
+   Baseline adaptive randomization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Bayesian%20optimization.html">
+   Exploring Bayesian Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Causal%20inference%20general.html">
+   Causal Inference General Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">
+   Competing risk models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Correlated%20Data%20Analysis.html">
+   Correlated/Longitudinal Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Cox_PH_model.html">
+   ​Cox PH model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Dirichlet%20process.html">
+   Dirichlet process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-FDA%20guidances%20for%20industry.html">
+   Notes on FDA Guidances for Industry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Gaussian%20process.html">
+   Gaussain Process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Group_Sequential_Trial_Design.html">
+   Notes on Group Sequential Trial Design​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-ICH%20guidelines.html">
+   Notes on ICH guidelines​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-MDD%20%26%20Effect%20size.html">
+   Power,
+   <strong>
+    MDD
+   </strong>
+   /
+   <strong>
+    E
+   </strong>
+   (minimum detectable difference/effect), and
+   <strong>
+    Effect size
+   </strong>
+   in clinical trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Meta-Analysis.html">
+   Meta-analysis​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Missing%20data.html">
+   Missing data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Model%20comparison%20methods.html">
+   Model comparison methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Monte%20Carlo%20method.html">
+   Monte Carlo Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Multicolinearity.html">
+   Multicolinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Multiplicity%20in%20Clinical%20Trials.html">
+   Multiplicity in Clinical Trials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Non-inferiority%20equivalence%20superiority%20test.html">
+   Non-inferiority/equivalence/superiority test basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Observational%20study%20design.html">
+   Observational study design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Propensity%20score%20methods.html">
+   Propensity Score Methods &amp; Implementation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Quantile%20regression.html">
+   Quantile regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Sample_size_calculation_with_WMW_test.html">
+   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats/Note-Survival_Analysis.html">
+   Survival Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical computing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
+   How R searches and finds stuff
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">
+   R study notes/tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
+   Google R package googleVis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
+   Notes on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  DS/ML
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
+   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
+   [book] Python Data Science Handbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Course-Udemy-%20Python%20for%20Data%20Science%20and%20Machine%20Learning%20Bootcamp.html">
+   Udemy: Python for Data Science and Machine Learning Bootcamp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
+   Boosting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
+   Cluster analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
+   ​Machine Learning (General)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
+   Naive Bayes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
+   Stochastic Gradient Decent (SGD)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
+   Tree/Random Forest (Bagging)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Computer science
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   廖雪峰python教程笔记
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-HTML%20basics.html">
+   HTML Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Hard%20SQL%20interview%20questions.html">
+   Hard Data Analyst SQL Interview Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Inside%20look%20at%20modern%20web%20browser.html">
+   Inside look at modern web browser
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Learning%20React.html">
+   Learning React
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Learning%20Rust.html">
+   Learning Rust
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Modern%20JS%20explained.html">
+   Modern JavaScript Explained
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-SQL%20Study%20Notes.html">
+   SQL study notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-git%20and%20github.html">
+   git and github
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Math/Course-Essence%20of%20linear%20algebra.html">
+   Essence of linear algebra
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Early%20managment%20of%20patients%20with%20AIS.html">
+   Early management of patients with acute ischemic stroke
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
+   Miscellaneous Study Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
+   Pharmacedutical development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">
+   :bulb: Q: fair coin, # of flips to get two consecutive side (H or T)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">
+   Generate random number 1 to 7 using a fair dice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/CS/Course-廖雪峰python教程笔记.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Course-廖雪峰python教程笔记.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   循环
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictset">
+   使用dict和set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   函数
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     空函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     函数的参数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recursive-functions">
+     递归函数(recursive functions)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   高级特性
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     切片
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     迭代
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-comprehension">
+     列表生成式(list comprehension)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generator">
+     生成器(generator)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     迭代器
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   函数式编程
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#higher-order-function">
+     高阶函数（Higher-order function）
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#map-reduce">
+       map/reduce
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filter">
+       filter
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sorted">
+       sorted
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     返回函数
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#closure">
+       闭包(closure)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     匿名函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decorator">
+     装饰器(Decorator)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#partial-function">
+     偏函数(partial function)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module">
+   模块(Module)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     使用模块
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       作用域
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     安装第三方模块
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       模块搜索路径
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-oriented-programming-oop">
+   面向对象编程(Object Oriented Programming, OOP)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     类和实例
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       数据封装
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     访问限制
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     继承和多态
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vs">
+       静态语言 vs 动态语言
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     获取对象信息
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#type">
+       使用
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         type()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#isinstance">
+       使用
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         isinstance()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dir">
+       使用
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         dir()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     实例属性和类属性
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id22">
+   面向对象高级编程
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slots">
+     使用__slots__
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#property">
+     使用@property
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     多重继承
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mixin-mix-inherit">
+       MixIn (mix inherit)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     定制类
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#str">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __str__
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iter">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __iter__
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#getitem">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __getitem__
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#getattr">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __getattr__
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#call">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __call__
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     使用枚举类
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     使用元类
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>廖雪峰python教程笔记</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   循环
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictset">
+   使用dict和set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   函数
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     空函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     函数的参数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recursive-functions">
+     递归函数(recursive functions)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   高级特性
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     切片
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     迭代
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-comprehension">
+     列表生成式(list comprehension)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generator">
+     生成器(generator)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     迭代器
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   函数式编程
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#higher-order-function">
+     高阶函数（Higher-order function）
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#map-reduce">
+       map/reduce
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filter">
+       filter
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sorted">
+       sorted
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     返回函数
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#closure">
+       闭包(closure)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     匿名函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decorator">
+     装饰器(Decorator)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#partial-function">
+     偏函数(partial function)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module">
+   模块(Module)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     使用模块
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       作用域
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     安装第三方模块
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       模块搜索路径
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-oriented-programming-oop">
+   面向对象编程(Object Oriented Programming, OOP)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     类和实例
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       数据封装
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     访问限制
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     继承和多态
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vs">
+       静态语言 vs 动态语言
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     获取对象信息
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#type">
+       使用
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         type()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#isinstance">
+       使用
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         isinstance()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dir">
+       使用
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         dir()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     实例属性和类属性
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id22">
+   面向对象高级编程
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slots">
+     使用__slots__
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#property">
+     使用@property
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     多重继承
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mixin-mix-inherit">
+       MixIn (mix inherit)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     定制类
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#str">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __str__
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iter">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __iter__
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#getitem">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __getitem__
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#getattr">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __getattr__
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#call">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         __call__
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     使用枚举类
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     使用元类
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="python">
+<h1>廖雪峰python教程笔记<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>循环<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>可以利用<code class="docutils literal notranslate"><span class="pre">break</span></code>提前终止循环或者<code class="docutils literal notranslate"><span class="pre">continue</span></code>跳过当前循环：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># break</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># 当n = 11时，条件满足，执行break语句</span>
+      <span class="k">break</span> <span class="c1"># break语句会结束当前循环</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span>
+
+<span class="c1"># continue</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 如果n是偶数，执行continue语句</span>
+        <span class="k">continue</span> <span class="c1"># continue语句会直接继续下一轮循环，后续的print()语句不会执行</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dictset">
+<h2>使用dict和set<a class="headerlink" href="#dictset" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是<strong>dict的key必须是不可变对象</strong>。 这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。<strong>这个通过key计算位置的算法称为哈希算法（Hash）</strong>。</p></li>
+<li><p>list是可变的，不能作为key。</p></li>
+<li><p>set和dict类似，也是一组key的集合，但不存储value。set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作</p></li>
+<li><p>set和dict的唯一区别仅在于没有存储对应的value，但是，set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>函数<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">abs</span> <span class="c1"># 变量a指向abs函数</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 所以也可以通过a调用abs函数</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>函数执行完毕也没有return语句时，自动return None。</p></li>
+<li><p>函数可以同时返回多个值，但其实就是一个tuple。</p></li>
+</ul>
+<div class="section" id="id3">
+<h3>空函数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>如果想定义一个什么事也不做的空函数，可以用pass语句：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nop</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pass</span></code> 可以用来作为占位符，比如现在还没想好怎么写函数的代码，就可以先放一个<code class="docutils literal notranslate"><span class="pre">pass</span></code>，让代码能运行起来。</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>函数的参数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>位置参数</p></li>
+<li><p>默认参数</p>
+<ul class="simple">
+<li><p>设置默认参数时，有几点要注意：
+一是必选参数在前，默认参数在后，否则Python的解释器会报错（思考一下为什么默认参数不能放在必选参数前面；
+二是如何设置默认参数。当函数有多个参数时，把变化大的参数放前面，变化小的参数放后面。变化小的参数就可以作为默认参数。</p></li>
+<li><p>使用默认参数最大的好处是能降低调用函数的难度。</p></li>
+<li><p>定义默认参数要牢记一点：<strong>默认参数必须指向不变对象！</strong></p></li>
+<li><p>为什么要设计<code class="docutils literal notranslate"><span class="pre">str</span></code>、<code class="docutils literal notranslate"><span class="pre">None</span></code>这样的不变对象呢？因为不变对象一旦创建，对象内部的数据就不能修改，这样就减少了由于修改数据导致的错误。此外，由于对象不变，多任务环境下同时读取对象不需要加锁，同时读一点问题都没有。<strong>我们在编写程序时，如果可以设计一个不变对象，那就尽量设计成不变对象</strong>。</p></li>
+</ul>
+</li>
+<li><p>可变参数</p>
+<ul class="simple">
+<li><p>定义函数的时候在参数名前加星号（<code class="docutils literal notranslate"><span class="pre">*</span></code>）</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
+<span class="k">return</span> <span class="nb">sum</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Python允许你在list或tuple前面加一个<code class="docutils literal notranslate"><span class="pre">*</span></code>号，把list或tuple的元素变成可变参数传进去：</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">)</span>
+<span class="go">14</span>
+</pre></div>
+</div>
+</li>
+<li><p>关键字参数</p>
+<ul>
+<li><p>关键字参数允许你传入0个或任意个含参数名的参数，<strong>这些关键字参数在函数内部自动组装为一个dict</strong>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;age:&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;other:&#39;</span><span class="p">,</span> <span class="n">kw</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">person</span><span class="p">(</span><span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="n">gender</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Engineer&#39;</span><span class="p">)</span>
+<span class="n">name</span><span class="p">:</span> <span class="n">Adam</span> <span class="n">age</span><span class="p">:</span> <span class="mi">45</span> <span class="n">other</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;gender&#39;</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">:</span> <span class="s1">&#39;Engineer&#39;</span><span class="p">}</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">extra</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Beijing&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">:</span> <span class="s1">&#39;Engineer&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">person</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span>
+<span class="n">name</span><span class="p">:</span> <span class="n">Jack</span> <span class="n">age</span><span class="p">:</span> <span class="mi">24</span> <span class="n">other</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Beijing&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">:</span> <span class="s1">&#39;Engineer&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>和可变参数类似，也可以先组装出一个dict，然后，把该dict转换为关键字参数传进去：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">extra</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Beijing&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">:</span> <span class="s1">&#39;Engineer&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="n">city</span><span class="o">=</span><span class="n">extra</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">],</span> <span class="n">job</span><span class="o">=</span><span class="n">extra</span><span class="p">[</span><span class="s1">&#39;job&#39;</span><span class="p">])</span>
+<span class="go">name: Jack age: 24 other: {&#39;city&#39;: &#39;Beijing&#39;, &#39;job&#39;: &#39;Engineer&#39;}</span>
+</pre></div>
+</div>
+<p>或者更简洁地：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">person</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span>
+<span class="go">name: Jack age: 24 other: {&#39;city&#39;: &#39;Beijing&#39;, &#39;job&#39;: &#39;Engineer&#39;}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">**extra</span></code>表示把<code class="docutils literal notranslate"><span class="pre">extra</span></code>这个<code class="docutils literal notranslate"><span class="pre">dict</span></code>的所有key-value用关键字参数传入到函数的<code class="docutils literal notranslate"><span class="pre">**k</span></code>w参数，<code class="docutils literal notranslate"><span class="pre">kw</span></code>将获得一个dict，注意kw获得的dict是<code class="docutils literal notranslate"><span class="pre">extra</span></code>的一份拷贝，对<code class="docutils literal notranslate"><span class="pre">kw</span></code>的改动不会影响到函数外的<code class="docutils literal notranslate"><span class="pre">extra</span></code>。</p>
+</li>
+</ul>
+</li>
+<li><p>命名关键字参数</p>
+<ul>
+<li><p>如果要限制关键字参数的名字，就可以用命名关键字参数</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">city</span><span class="p">,</span> <span class="n">job</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">city</span><span class="p">,</span> <span class="n">job</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>和关键字参数<code class="docutils literal notranslate"><span class="pre">**kw</span></code>不同，命名关键字参数需要一个特殊分隔符<code class="docutils literal notranslate"><span class="pre">*</span></code>，<code class="docutils literal notranslate"><span class="pre">*</span></code>后面的参数被视为命名关键字参数。</p>
+</li>
+<li><p><strong>如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符<code class="docutils literal notranslate"><span class="pre">*</span></code>了</strong></p></li>
+<li><p>命名关键字参数必须传入参数名，这和位置参数不同。如果没有传入参数名，调用将报错</p></li>
+</ul>
+</li>
+<li><p>参数组合</p>
+<ul>
+<li><p>在Python中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这5种参数都可以组合使用。但是请注意，<strong>参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数</strong>。</p></li>
+<li><p>对于任意函数，都可以通过类似<code class="docutils literal notranslate"><span class="pre">func(*args,</span> <span class="pre">**kw)</span></code>的形式调用它，无论它的参数是如何定义的。<code class="docutils literal notranslate"><span class="pre">*args</span></code> 接收的是一个tuple; <code class="docutils literal notranslate"><span class="pre">**kw</span></code> 接收的是一个dict</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a =&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;b =&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;c =&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;args =&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="s1">&#39;kw =&#39;</span><span class="p">,</span> <span class="n">kw</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a =&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;b =&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;c =&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;d =&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="s1">&#39;kw =&#39;</span><span class="p">,</span> <span class="n">kw</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;#&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f1</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,)</span> <span class="n">kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;#&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;#&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">88</span> <span class="n">kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;#&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>小结</p>
+<ul class="simple">
+<li><p>默认参数一定要用不可变对象，如果是可变对象，程序运行时会有逻辑错误！</p></li>
+<li><p>命名的关键字参数是为了限制调用者可以传入的参数名，同时可以提供默认值。</p></li>
+<li><p>定义命名的关键字参数在没有可变参数的情况下不要忘了写分隔符<code class="docutils literal notranslate"><span class="pre">*</span></code>，否则定义的将是位置参数。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="recursive-functions">
+<h3>递归函数(recursive functions)<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>如果一个函数在内部调用自身本身，这个函数就是递归函数。</p></li>
+<li><p>理论上，所有的递归函数都可以写成循环的方式，但循环的逻辑不如递归清晰。</p></li>
+<li><p>使用递归函数需要注意防止栈溢出。在计算机中，函数调用是通过 <strong>栈(stack)</strong> 这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出。(–&gt; stack overflow)</p></li>
+<li><p>解决递归调用栈溢出的方法是通过 <strong>尾递归</strong> 优化，事实上尾递归和循环的效果是一样的，所以，把循环看成是一种特殊的尾递归函数也是可以的</p></li>
+<li><p>尾递归是指，在函数返回的时候，调用自身本身，并且，return语句不能包含表达式。这样，编译器或者解释器就可以把尾递归做优化，使递归本身无论调用多少次，都只占用一个栈帧，不会出现栈溢出的情况。</p></li>
+<li><p>例子：<a class="reference external" href="https://baike.baidu.com/item/%E6%B1%89%E8%AF%BA%E5%A1%94/3468295">汉诺塔</a>的移动</p>
+<p><em>逻辑：初始从A通过B为过渡移动到终点C，然后以B为起点A为过渡转移至终点C。每一步（A –&gt; C 或 B –&gt; C）先转移当前最大的那个到C，通过A,B互相作为过渡柱，最终实现全部转移。</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;move&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">move</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 除去最下面一个以外，先把A柱上的移到B柱 （通过C为过渡， 此时B为终点柱）</span>
+        <span class="n">move</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># 把A柱最大一个放到目标终点C柱上</span>
+        <span class="n">move</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># 把A上的转移到B以后的新目标：把B柱上的通过A柱为过渡移到C柱</span>
+
+<span class="c1"># move(3, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;)</span>
+<span class="c1"># A --&gt; C</span>
+<span class="c1"># A --&gt; B</span>
+<span class="c1"># C --&gt; B</span>
+<span class="c1"># A --&gt; C</span>
+<span class="c1"># B --&gt; A</span>
+<span class="c1"># B --&gt; C</span>
+<span class="c1"># A --&gt; C</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>高级特性<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>切片<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>切片（slice）：取一个list或tuple的部分元素是非常常见的操作。</p></li>
+<li><p>tuple也是一种list，唯一区别是tuple不可变。因此，tuple也可以用切片操作，只是操作的结果仍是tuple</p></li>
+<li><p>字符串<code class="docutils literal notranslate"><span class="pre">'xxx'</span></code>也可以看成是一种list，每个元素就是一个字符。因此，字符串也可以用切片操作，只是操作结果仍是字符串。 在很多编程语言中，针对字符串提供了很多各种截取函数（例如，substring），其实目的就是对字符串切片。Python没有针对字符串的截取函数，只需要切片一个操作就可以完成，非常简单。</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>迭代<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>定义：如果给定一个list或tuple，我们可以通过for循环来遍历这个list或tuple，这种遍历我们称为 <strong>迭代（Iteration）</strong>。</p></li>
+<li><p>当我们使用<code class="docutils literal notranslate"><span class="pre">for</span></code>循环时，只要作用于一个可迭代对象，<code class="docutils literal notranslate"><span class="pre">for</span></code>循环就可以正常运行，而我们不太关心该对象究竟是list还是其他数据类型。</p></li>
+<li><p>那么，如何判断一个对象是可迭代对象呢？方法是通过collections模块的Iterable类型判断：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Iterable</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">Iterable</span><span class="p">)</span> <span class="c1"># list是否可迭代</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span> <span class="c1"># 整数是否可迭代</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</li>
+<li><p>Python内置的<code class="docutils literal notranslate"><span class="pre">enumerate</span></code>函数可以把一个list变成索引-元素对，这样就可以在<code class="docutils literal notranslate"><span class="pre">for</span></code>循环中同时迭代索引和元素本身：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">0 A</span>
+<span class="go">1 B</span>
+<span class="go">2 C</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="list-comprehension">
+<h3>列表生成式(list comprehension)<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>列表生成式则可以用一行语句代替循环生成list：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="go">[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span>
+</pre></div>
+</div>
+</li>
+<li><p>还可以使用两层循环，可以生成全排列(三层和三层以上的循环就很少用到了)：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="s1">&#39;ABC&#39;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="s1">&#39;XYZ&#39;</span><span class="p">]</span>
+<span class="go">[&#39;AX&#39;, &#39;AY&#39;, &#39;AZ&#39;, &#39;BX&#39;, &#39;BY&#39;, &#39;BZ&#39;, &#39;CX&#39;, &#39;CY&#39;, &#39;CZ&#39;]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="generator">
+<h3>生成器(generator)<a class="headerlink" href="#generator" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>目的：不一次性直接生成list的全部元素（避免因为list过大而占用很大的存储空间或者不需要马上使用list后面的元素），取而代之的是一边循环一边生成新的元素。</p></li>
+<li><p>要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的<code class="docutils literal notranslate"><span class="pre">[]</span></code>改成<code class="docutils literal notranslate"><span class="pre">()</span></code>，就创建了一个generator：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span>
+<span class="go">&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>然后，可以通过next()函数获得generator的下一个返回值：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">.</span>
+<span class="go">.</span>
+<span class="go">.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">StopIteration</span>
+</pre></div>
+</div>
+</li>
+<li><p>正确的方法是使用for循环，因为<code class="docutils literal notranslate"><span class="pre">generator</span></code>也是可迭代对象. 我们创建了一个<code class="docutils literal notranslate"><span class="pre">generator</span></code>后，基本上永远不会调用<code class="docutils literal notranslate"><span class="pre">next()</span></code>，而是通过<code class="docutils literal notranslate"><span class="pre">for</span></code>循环来迭代它，并且不需要关心<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>的错误。</p></li>
+<li><p>通过定义函数生成generator：只需要把<code class="docutils literal notranslate"><span class="pre">print()</span></code>改为<code class="docutils literal notranslate"><span class="pre">yield</span></code> 就可以了</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="nb">max</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">b</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="s1">&#39;done&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generator</span></code>和函数的执行流程不一样。函数是顺序执行，遇到<code class="docutils literal notranslate"><span class="pre">return</span></code>语句或者最后一行函数语句就返回。而变成<code class="docutils literal notranslate"><span class="pre">generator</span></code>的函数，在每次调用<code class="docutils literal notranslate"><span class="pre">next()</span></code>的时候执行，遇到<code class="docutils literal notranslate"><span class="pre">yield</span></code>语句返回，再次执行时从上次返回的<code class="docutils literal notranslate"><span class="pre">yield</span></code>语句处继续执行。</p></li>
+<li><p>用<code class="docutils literal notranslate"><span class="pre">for</span></code>循环调用<code class="docutils literal notranslate"><span class="pre">generator</span></code>时，发现拿不到<code class="docutils literal notranslate"><span class="pre">generator</span></code>的<code class="docutils literal notranslate"><span class="pre">return</span></code>语句的返回值。如果想要拿到返回值，必须捕获<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>错误，返回值包含在<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>的<code class="docutils literal notranslate"><span class="pre">value</span></code>中：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">x</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">except</span> <span class="ne">StopIteration</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Generator return value:&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">break</span>
+<span class="gp">...</span>
+<span class="go">g: 1</span>
+<span class="go">g: 1</span>
+<span class="go">g: 2</span>
+<span class="go">g: 3</span>
+<span class="go">g: 5</span>
+<span class="go">g: 8</span>
+<span class="go">Generator return value: done</span>
+</pre></div>
+</div>
+</li>
+<li><p>练习：生成杨辉三角</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">triangles</span><span class="p">():</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">lst</span>
+        <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="s1">&#39;done&#39;</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">triangles</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>迭代器<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>定义：可以被<code class="docutils literal notranslate"><span class="pre">next()</span></code>函数调用并不断返回下一个值的对象称为迭代器：<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>。</p></li>
+<li><p>可以使用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>判断一个对象是否是<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>对象：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Iterator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">((</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)),</span> <span class="n">Iterator</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</li>
+<li><p>把<code class="docutils literal notranslate"><span class="pre">list</span></code>、<code class="docutils literal notranslate"><span class="pre">dict</span></code>、<code class="docutils literal notranslate"><span class="pre">str</span></code>等<code class="docutils literal notranslate"><span class="pre">Iterable</span></code>变成<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>可以使用<code class="docutils literal notranslate"><span class="pre">iter()</span></code>函数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="nb">iter</span><span class="p">([]),</span> <span class="n">Iterator</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</li>
+<li><p>Python的<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>对象表示的是一个数据流，<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>对象可以被<code class="docutils literal notranslate"><span class="pre">next()</span></code>函数调用并不断返回下一个数据，直到没有数据时抛出<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>错误。可以把这个数据流看做是一个有序序列，但我们却不能提前知道序列的长度，只能不断通过<code class="docutils literal notranslate"><span class="pre">next()</span></code>函数实现按需计算下一个数据，所以<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>的计算是惰性的，只有在需要返回下一个数据时它才会计算。<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>甚至可以表示一个无限大的数据流，例如全体自然数。而使用<code class="docutils literal notranslate"><span class="pre">list</span></code>是永远不可能存储全体自然数的。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>函数式编程<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>函数是Python内建支持的一种封装，我们通过把大段代码拆成函数，通过一层一层的函数调用，就可以把复杂任务分解成简单的任务，这种分解可以称之为 <strong>面向过程</strong>的程序设计。函数就是面向过程的程序设计的基本单元。</p></li>
+<li><p>函数式编程就是一种抽象程度很高的编程范式，纯粹的函数式编程语言编写的函数<em>没有变量</em>，因此，任意一个函数，只要输入是确定的，输出就是确定的，这种纯函数我们称之为 <strong>没有副作用</strong>。而<em>允许使用变量</em>的程序设计语言，由于函数内部的变量状态不确定，同样的输入，可能得到不同的输出，因此，这种函数是 <strong>有副作用的</strong>。</p></li>
+<li><p>函数式编程的一个特点就是，允许把函数本身作为参数传入另一个函数，还允许返回一个函数！</p></li>
+<li><p>Python对函数式编程提供部分支持。由于Python允许使用变量，因此，Python不是纯函数式编程语言。</p></li>
+</ul>
+<div class="section" id="higher-order-function">
+<h3>高阶函数（Higher-order function）<a class="headerlink" href="#higher-order-function" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>变量可以指向函数</p></li>
+<li><p>函数名也是变量</p>
+<ul>
+<li><p>函数名其实就是指向函数的变量！</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;int&#39; object is not callable</span>
+</pre></div>
+</div>
+</li>
+<li><p>由于<code class="docutils literal notranslate"><span class="pre">abs</span></code>函数实际上是定义在<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">builtins</span></code>模块中的，所以要让修改<code class="docutils literal notranslate"><span class="pre">abs</span></code>变量的指向在其它模块也生效，要用<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">builtins;</span> <span class="pre">builtins.abs</span> <span class="pre">=</span> <span class="pre">10</span></code>。</p></li>
+</ul>
+</li>
+<li><p>传入函数</p>
+<ul class="simple">
+<li><p>既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为 <strong>高阶函数</strong>。函数式编程就是指这种高度抽象的编程范式。</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="map-reduce">
+<h4>map/reduce<a class="headerlink" href="#map-reduce" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">map()</span></code>函数接收两个参数，一个是函数，一个是<code class="docutils literal notranslate"><span class="pre">Iterable</span></code>，<code class="docutils literal notranslate"><span class="pre">map</span></code>将传入的函数依次作用到序列的每个元素，并把结果作为新的<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>返回。<code class="docutils literal notranslate"><span class="pre">map()</span></code>作为高阶函数，事实上它把运算规则抽象了。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>把一个函数作用在一个序列<code class="docutils literal notranslate"><span class="pre">[x1,</span> <span class="pre">x2,</span> <span class="pre">x3,</span> <span class="pre">...]</span></code>上，这个函数必须接收两个参数，<code class="docutils literal notranslate"><span class="pre">reduce</span></code>把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">])</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="n">x3</span><span class="p">),</span> <span class="n">x4</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>例子， 如果要把序列[1, 3, 5, 7, 9]变换成整数13579，reduce就可以派上用场：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">y</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reduce</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="go">13579</span>
+</pre></div>
+</div>
+</li>
+<li><p>练习：利用<code class="docutils literal notranslate"><span class="pre">map()</span></code>函数，把用户输入的不规范的英文名字，变为首字母大写，其他小写的规范名字。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="s1">&#39;LISA&#39;</span><span class="p">,</span> <span class="s1">&#39;barT&#39;</span><span class="p">]</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">normalize</span><span class="p">,</span> <span class="n">L1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Bart&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>练习：利用<code class="docutils literal notranslate"><span class="pre">reduce()</span></code>求积：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="k">def</span> <span class="nf">prod</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3 * 5 * 7 * 9 =&#39;</span><span class="p">,</span> <span class="n">prod</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
+<span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">945</span>
+</pre></div>
+</div>
+</li>
+<li><p>练习：利用<code class="docutils literal notranslate"><span class="pre">map</span></code>和<code class="docutils literal notranslate"><span class="pre">reduce</span></code>编写一个<code class="docutils literal notranslate"><span class="pre">str2float</span></code>函数，把字符串<code class="docutils literal notranslate"><span class="pre">'123.456'</span></code>转换成浮点数<code class="docutils literal notranslate"><span class="pre">123.456</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="k">def</span> <span class="nf">str2float</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">nums</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ch</span><span class="p">:</span> <span class="n">CHAR_TO_FLOAT</span><span class="p">[</span><span class="n">ch</span><span class="p">],</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="nf">to_float</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">nonlocal</span> <span class="n">point</span>
+        <span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">f</span>
+        <span class="k">if</span> <span class="n">point</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">n</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="n">point</span> <span class="o">*</span> <span class="mi">10</span>
+            <span class="k">return</span> <span class="n">f</span> <span class="o">+</span> <span class="n">n</span> <span class="o">/</span> <span class="n">point</span>
+    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">to_float</span><span class="p">,</span> <span class="n">nums</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="http://research.google.com/archive/mapreduce.html">google 关于MapReduce的论文</a></p></li>
+</ul>
+</div>
+<div class="section" id="filter">
+<h4>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>和<code class="docutils literal notranslate"><span class="pre">map()</span></code>类似，<code class="docutils literal notranslate"><span class="pre">filter()</span></code>也接收一个函数和一个序列。和<code class="docutils literal notranslate"><span class="pre">map()</span></code>不同的是，<code class="docutils literal notranslate"><span class="pre">filter()</span></code>把传入的函数依次作用于每个元素，然后根据返回值是<code class="docutils literal notranslate"><span class="pre">True</span></code>还是<code class="docutils literal notranslate"><span class="pre">False</span></code>决定保留还是丢弃该元素。</p></li>
+<li><p>注意到<code class="docutils literal notranslate"><span class="pre">filter()</span></code>函数返回的是一个<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>，也就是一个惰性序列，所以要强迫<code class="docutils literal notranslate"><span class="pre">filter()</span></code>完成计算结果，需要用<code class="docutils literal notranslate"><span class="pre">list()</span></code>函数获得所有结果并返回<code class="docutils literal notranslate"><span class="pre">list</span></code>。</p></li>
+<li><p>计算素数的一个方法是<a class="reference external" href="http://baike.baidu.com/view/3784258.htm">埃氏筛法</a>，它的算法理解起来非常简单：
+首先，列出从2开始的所有自然数，构造一个序列：</p>
+<p>2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, …</p>
+<p>取序列的第一个数2，它一定是素数，然后用2把序列的2的倍数筛掉：</p>
+<p>3, ~4~, 5, ~6~, 7, ~8~, 9, ~10~, 11, ~12~, 13, ~14~, 15, ~16~, 17, ~18~, 19, ~20~, …</p>
+<p>取新序列的第一个数3，它一定是素数，然后用3把序列的3的倍数筛掉：</p>
+<p>5, 7, ~9~, 11, 13, ~15~, 17, 19, …</p>
+<p>取新序列的第一个数5，然后用5把序列的5的倍数筛掉：</p>
+<p>7, 11, 13, 17, 18, 19, …</p>
+<p>不断筛下去，就可以得到所有的素数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#先构造一个从3开始的奇数序列：</span>
+<span class="k">def</span> <span class="nf">_odd_iter</span><span class="p">():</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">yield</span> <span class="n">n</span>
+
+<span class="c1">#定义一个筛选函数：</span>
+<span class="k">def</span> <span class="nf">_not_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+<span class="c1">#最后，定义一个生成器，不断返回下一个素数：</span>
+<span class="k">def</span> <span class="nf">primes</span><span class="p">():</span>
+<span class="k">yield</span> <span class="mi">2</span>
+<span class="n">it</span> <span class="o">=</span> <span class="n">_odd_iter</span><span class="p">()</span> <span class="c1"># 初始序列</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="c1"># 返回序列的第一个数</span>
+    <span class="k">yield</span> <span class="n">n</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">_not_divisible</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">it</span><span class="p">)</span> <span class="c1"># 构造新序列</span>
+
+<span class="c1"># primes()也是一个无限序列，所以调用时需要设置一个退出循环的条件：</span>
+<span class="c1"># 打印1000以内的素数:</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</li>
+<li><p>练习：回数是指从左向右读和从右向左读都是一样的数，例如<code class="docutils literal notranslate"><span class="pre">12321</span></code>，<code class="docutils literal notranslate"><span class="pre">909</span></code>。请利用<code class="docutils literal notranslate"><span class="pre">filter()</span></code>滤掉非回数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="n">n_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">return</span><span class="p">(</span><span class="n">n_str</span><span class="p">[:]</span> <span class="o">==</span> <span class="n">n_str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">131</span><span class="p">,</span> <span class="mi">141</span><span class="p">,</span> <span class="mi">151</span><span class="p">,</span> <span class="mi">161</span><span class="p">,</span> <span class="mi">171</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">242</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mi">262</span><span class="p">,</span> <span class="mi">272</span><span class="p">,</span> <span class="mi">282</span><span class="p">,</span> <span class="mi">292</span><span class="p">,</span> <span class="mi">303</span><span class="p">,</span> <span class="mi">313</span><span class="p">,</span> <span class="mi">323</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">353</span><span class="p">,</span> <span class="mi">363</span><span class="p">,</span> <span class="mi">373</span><span class="p">,</span> <span class="mi">383</span><span class="p">,</span> <span class="mi">393</span><span class="p">,</span> <span class="mi">404</span><span class="p">,</span> <span class="mi">414</span><span class="p">,</span> <span class="mi">424</span><span class="p">,</span> <span class="mi">434</span><span class="p">,</span> <span class="mi">444</span><span class="p">,</span> <span class="mi">454</span><span class="p">,</span> <span class="mi">464</span><span class="p">,</span> <span class="mi">474</span><span class="p">,</span> <span class="mi">484</span><span class="p">,</span> <span class="mi">494</span><span class="p">,</span> <span class="mi">505</span><span class="p">,</span> <span class="mi">515</span><span class="p">,</span> <span class="mi">525</span><span class="p">,</span> <span class="mi">535</span><span class="p">,</span> <span class="mi">545</span><span class="p">,</span> <span class="mi">555</span><span class="p">,</span> <span class="mi">565</span><span class="p">,</span> <span class="mi">575</span><span class="p">,</span> <span class="mi">585</span><span class="p">,</span> <span class="mi">595</span><span class="p">,</span> <span class="mi">606</span><span class="p">,</span> <span class="mi">616</span><span class="p">,</span> <span class="mi">626</span><span class="p">,</span> <span class="mi">636</span><span class="p">,</span> <span class="mi">646</span><span class="p">,</span> <span class="mi">656</span><span class="p">,</span> <span class="mi">666</span><span class="p">,</span> <span class="mi">676</span><span class="p">,</span> <span class="mi">686</span><span class="p">,</span> <span class="mi">696</span><span class="p">,</span> <span class="mi">707</span><span class="p">,</span> <span class="mi">717</span><span class="p">,</span> <span class="mi">727</span><span class="p">,</span> <span class="mi">737</span><span class="p">,</span> <span class="mi">747</span><span class="p">,</span> <span class="mi">757</span><span class="p">,</span> <span class="mi">767</span><span class="p">,</span> <span class="mi">777</span><span class="p">,</span> <span class="mi">787</span><span class="p">,</span> <span class="mi">797</span><span class="p">,</span> <span class="mi">808</span><span class="p">,</span> <span class="mi">818</span><span class="p">,</span> <span class="mi">828</span><span class="p">,</span> <span class="mi">838</span><span class="p">,</span> <span class="mi">848</span><span class="p">,</span> <span class="mi">858</span><span class="p">,</span> <span class="mi">868</span><span class="p">,</span> <span class="mi">878</span><span class="p">,</span> <span class="mi">888</span><span class="p">,</span> <span class="mi">898</span><span class="p">,</span> <span class="mi">909</span><span class="p">,</span> <span class="mi">919</span><span class="p">,</span> <span class="mi">929</span><span class="p">,</span> <span class="mi">939</span><span class="p">,</span> <span class="mi">949</span><span class="p">,</span> <span class="mi">959</span><span class="p">,</span> <span class="mi">969</span><span class="p">,</span> <span class="mi">979</span><span class="p">,</span> <span class="mi">989</span><span class="p">,</span> <span class="mi">999</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="sorted">
+<h4>sorted<a class="headerlink" href="#sorted" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Python内置的<code class="docutils literal notranslate"><span class="pre">sorted()</span></code>函数就可以对<code class="docutils literal notranslate"><span class="pre">list</span></code>进行排序。<code class="docutils literal notranslate"><span class="pre">sorted()</span></code>函数也是一个高阶函数，它还可以接收一个<code class="docutils literal notranslate"><span class="pre">key</span></code>函数来实现自定义的排序，例如按绝对值大小排序：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">([</span><span class="mi">36</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">21</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">)</span>
+<span class="go">[5, 9, -12, -21, 36]</span>
+</pre></div>
+</div>
+</li>
+<li><p>对字符串排序，是按照ASCII的大小比较的。 若想排序应该忽略大小写，按照字母序排序， 只要我们能用一个key函数把字符串映射为忽略大小写排序即可：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">([</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;Zoo&#39;</span><span class="p">,</span> <span class="s1">&#39;Credit&#39;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="go">[&#39;about&#39;, &#39;bob&#39;, &#39;Credit&#39;, &#39;Zoo&#39;]</span>
+</pre></div>
+</div>
+</li>
+<li><p>要进行反向排序，不必改动<code class="docutils literal notranslate"><span class="pre">key</span></code>函数，可以传入第三个参数<code class="docutils literal notranslate"><span class="pre">reverse=True</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">([</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;Zoo&#39;</span><span class="p">,</span> <span class="s1">&#39;Credit&#39;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">[&#39;Zoo&#39;, &#39;Credit&#39;, &#39;bob&#39;, &#39;about&#39;]</span>
+</pre></div>
+</div>
+</li>
+<li><p>练习：假设我们用一组tuple表示学生名字和成绩 <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">[('Bob',</span> <span class="pre">75),</span> <span class="pre">('Adam',</span> <span class="pre">92),</span> <span class="pre">('Bart',</span> <span class="pre">66),</span> <span class="pre">('Lisa',</span> <span class="pre">88)]</span></code>, 请用<code class="docutils literal notranslate"><span class="pre">sorted()</span></code>对上述列表分别按名字/成绩排序：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">L3</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>返回函数<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="closure">
+<h4>闭包(closure)<a class="headerlink" href="#closure" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>内部函数可以引用外部函数的参数和局部变量，在外部函数返回内部函数时，相关参数和变量都保存在返回的函数中，这种称为 <strong>“闭包”(closure)</strong>，closure拥有极大的威力。</p></li>
+<li><p>返回的函数并没有立刻执行，而是直到调用了被返回的函数才执行。</p>
+<ul>
+<li><p>例子</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count</span><span class="p">():</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+         <span class="k">return</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+    <span class="n">fs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">fs</span>
+
+<span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span> <span class="o">=</span> <span class="n">count</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f1</span><span class="p">()</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f2</span><span class="p">()</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f3</span><span class="p">()</span>
+<span class="mi">9</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>原因就在于返回的函数引用了变量<code class="docutils literal notranslate"><span class="pre">i</span></code>，但它并非立刻执行。等到3个函数都返回时，它们所引用的变量<code class="docutils literal notranslate"><span class="pre">i</span></code>已经变成了<code class="docutils literal notranslate"><span class="pre">3</span></code>，因此最终结果为<code class="docutils literal notranslate"><span class="pre">9</span></code>。</p>
+</li>
+<li><p>返回闭包时牢记的一点就是：返回函数不要引用任何循环变量，或者后续会发生变化的变量。</p></li>
+<li><p>如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到函数参数的值不变：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">j</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">j</span><span class="o">*</span><span class="n">j</span>
+        <span class="k">return</span> <span class="n">g</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="n">fs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># f(i)立刻被执行，因此i的当前值被传入f()</span>
+    <span class="k">return</span> <span class="n">fs</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>匿名函数<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入 <strong>匿名函数</strong>更方便。</p></li>
+<li><p>关键字<code class="docutils literal notranslate"><span class="pre">lambda</span></code>表示匿名函数，冒号前面的<code class="docutils literal notranslate"><span class="pre">x</span></code>表示函数参数。</p></li>
+<li><p>匿名函数有个限制，就是只能有一个表达式，不用写<code class="docutils literal notranslate"><span class="pre">return</span></code>，返回值就是该表达式的结果。</p></li>
+</ul>
+</div>
+<div class="section" id="decorator">
+<h3>装饰器(Decorator)<a class="headerlink" href="#decorator" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>由于函数也是一个对象，而且函数对象可以被赋值给变量，所以，通过变量也能调用该函数。函数对象有一个<code class="docutils literal notranslate"><span class="pre">__name__</span></code>属性，可以拿到函数的名字：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">now</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2015-3-25&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">now</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="go">&#39;now&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>在代码运行期间动态增加功能的方式，称之为 <strong>“装饰器”（Decorator）</strong></p></li>
+<li><p>本质上，decorator就是一个返回函数的高阶函数:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;call </span><span class="si">%s</span><span class="s1">():&#39;</span> <span class="o">%</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+</div>
+<p>我们要借助Python的<code class="docutils literal notranslate"><span class="pre">&#64;</span></code>语法，把decorator置于函数的定义处：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@log</span>
+<span class="k">def</span> <span class="nf">now</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2015-3-25&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>把<code class="docutils literal notranslate"><span class="pre">&#64;log</span></code>放到<code class="docutils literal notranslate"><span class="pre">now()</span></code>函数的定义处，相当于执行了语句：</p>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">now</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>由于<code class="docutils literal notranslate"><span class="pre">log()</span></code>是一个decorator，返回一个函数，所以，原来的<code class="docutils literal notranslate"><span class="pre">now()</span></code>函数仍然存在，只是现在同名的now变量指向了新的函数，于是调用<code class="docutils literal notranslate"><span class="pre">now()</span></code>将执行新函数，即在<code class="docutils literal notranslate"><span class="pre">log()</span></code>函数中返回的<code class="docutils literal notranslate"><span class="pre">wrapper()</span></code>函数。<code class="docutils literal notranslate"><span class="pre">wrapper()</span></code>函数的参数定义是<code class="docutils literal notranslate"><span class="pre">(*args,</span> <span class="pre">**kw)</span></code>，因此，<code class="docutils literal notranslate"><span class="pre">wrapper()</span></code>函数可以接受任意参数的调用。</p></li>
+<li><p>如果decorator本身需要传入参数，那就需要编写一个返回decorator的高阶函数，写出来会更复杂。比如，要自定义log的文本：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">():&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+<span class="nd">@log</span><span class="p">(</span><span class="s1">&#39;execute&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">now</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2015-3-25&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>和两层嵌套的decorator相比，3层嵌套的效果是这样的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">now</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="s1">&#39;execute&#39;</span><span class="p">)(</span><span class="n">now</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>函数经过decorator以后原来函数的<code class="docutils literal notranslate"><span class="pre">__name__</span></code>属性会变成wrapper函数的<code class="docutils literal notranslate"><span class="pre">__name__</span></code>属性，需要把原始函数的<code class="docutils literal notranslate"><span class="pre">__name__</span></code>等属性复制到<code class="docutils literal notranslate"><span class="pre">wrapper()</span></code>函数中，否则，有些依赖函数签名的代码执行就会出错。Python内置的<code class="docutils literal notranslate"><span class="pre">functools.wraps</span></code>就是干这个事的</p></li>
+<li><p>练习: 请编写一个<code class="docutils literal notranslate"><span class="pre">decorator</span></code>，能在函数调用的前后打印出<code class="docutils literal notranslate"><span class="pre">'begin</span> <span class="pre">call'</span></code>和<code class="docutils literal notranslate"><span class="pre">'end</span> <span class="pre">call'</span></code>的日志。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;begin call </span><span class="si">%s</span><span class="s1">():&#39;</span> <span class="o">%</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end call </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@log</span>
+<span class="k">def</span> <span class="nf">today</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2017-09-16&#39;</span><span class="p">)</span>
+
+<span class="n">today</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">begin</span> <span class="n">call</span> <span class="n">today</span><span class="p">():</span>
+<span class="mi">2017</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">16</span>
+<span class="n">end</span> <span class="n">call</span> <span class="n">today</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="partial-function">
+<h3>偏函数(partial function)<a class="headerlink" href="#partial-function" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">functools.partial</span></code>可以帮助我们创建一个偏函数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">int2</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>创建偏函数时，实际上可以接收函数对象、<code class="docutils literal notranslate"><span class="pre">*args</span></code>和<code class="docutils literal notranslate"><span class="pre">**kw</span></code>这3个参数，当传入：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">int2</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>相当于：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kw</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;base&#39;</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span>
+<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;10010&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>当传入：<code class="docutils literal notranslate"><span class="pre">max2</span> <span class="pre">=</span> <span class="pre">functools.partial(max,</span> <span class="pre">10)</span></code> 实际上会把10作为<code class="docutils literal notranslate"><span class="pre">*args</span></code>的一部分自动加到左边，也就是：<code class="docutils literal notranslate"><span class="pre">max2(5,</span> <span class="pre">6,</span> <span class="pre">7)</span></code> 相当于：<code class="docutils literal notranslate"><span class="pre">args</span> <span class="pre">=</span> <span class="pre">(10,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7)</span></code>, <code class="docutils literal notranslate"><span class="pre">max(*args)</span></code>。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="module">
+<h2>模块(Module)<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>为了便于管理众多的函数代码，提高代码的可维护性。在Python中，一个.py文件就称之为一个 <strong>模块（Module）</strong>。</p></li>
+<li><p>使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。但是也要注意，尽量不要与内置函数名字冲突。</p></li>
+<li><p>如果不同的人编写的模块名相同怎么办？为了避免模块名冲突，Python又引入了按目录来组织模块的方法，称为 <strong>包（Package）</strong>。即，把多个模块放入一个包内，只要顶层的包不与别人冲突，那所有内部的模块都不会与人冲突。</p></li>
+<li><p>请注意，每一个包目录下面都会有一个<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>的文件，这个文件是必须存在的，否则，Python就把这个目录当成普通目录，而不是一个包。<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>可以是空文件，也可以有Python代码，因为<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>本身就是一个模块，而它的模块名就是该包的名字。</p></li>
+<li><p>包内还可以有更低一级的目录，内含若干的模块，以此类推。</p></li>
+</ul>
+<div class="section" id="id12">
+<h3>使用模块<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>任何模块代码的第一个字符串都被视为模块的文档注释；</p></li>
+<li><p>例子：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3 #让文件可以直接在Unix/Linux/Mac上运行</span>
+<span class="c1"># -*- coding: utf-8 -*- #表示.py文件本身使用标准UTF-8编码；</span>
+
+<span class="s1">&#39; a test module &#39;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Michael Liao&#39;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="c1"># sys模块有一个argv变量，用list存储了命令行的所有参数</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, </span><span class="si">%s</span><span class="s1">!&#39;</span> <span class="o">%</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Too many arguments!&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span> <span class="c1"># 在命令行运行hello模块文件时，Python解释器把一个特殊变量__name__置为__main__； 让一个模块通过命令行运行时执行一些额外的代码，最常见的就是运行测试。</span>
+    <span class="n">test</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="section" id="id13">
+<h4>作用域<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>在一个模块中，我们可能会定义很多函数和变量，但有的函数和变量我们希望给别人使用（public），有的函数和变量我们希望仅仅在模块内部使用（private）。在Python中，是通过<code class="docutils literal notranslate"><span class="pre">_</span></code>前缀来实现的。</p></li>
+<li><p>private函数和变量“不应该”被直接引用，而不是“不能”被直接引用，是因为Python并没有一种方法可以完全限制访问private函数或变量，但是，从编程习惯上不应该引用private函数或变量。</p></li>
+<li><p>这是一种非常有用的代码封装和抽象的方法，即：外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>安装第三方模块<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h4>模块搜索路径<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>默认情况下，Python解释器会搜索当前目录、所有已安装的内置模块和第三方模块，搜索路径存放在<code class="docutils literal notranslate"><span class="pre">sys</span></code>模块的<code class="docutils literal notranslate"><span class="pre">path</span></code>变量中</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+</div>
+</li>
+<li><p>添加自己的搜索目录</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;\path&#39;</span><span class="p">)</span> <span class="c1">#只在运行时修改，运行结束后失效</span>
+</pre></div>
+</div>
+<p>第二种方法是设置环境变量<code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>，该环境变量的内容会被自动添加到模块搜索路径中。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="object-oriented-programming-oop">
+<h2>面向对象编程(Object Oriented Programming, OOP)<a class="headerlink" href="#object-oriented-programming-oop" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</p></li>
+<li><p><strong>面向过程的程序设计</strong> 把计算机程序视为一系列的命令集合，即一组函数的顺序执行。为了简化程序设计，面向过程把函数继续切分为子函数，即把大块函数通过切割成小块函数来降低系统的复杂度。</p></li>
+<li><p><strong>而面向对象的程序设计</strong> 把计算机程序视为一组对象的集合，而每个对象都可以接收其他对象发过来的消息，并处理这些消息，计算机程序的执行就是一系列消息在各个对象之间传递</p></li>
+<li><p>面向对象的设计思想是从自然界中来的，因为在自然界中，类（Class）和实例（Instance）的概念是很自然的。</p></li>
+<li><p>数据封装、继承和多态是面向对象的三大特点</p></li>
+</ul>
+<div class="section" id="id16">
+<h3>类和实例<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>类是抽象的模板，而实例是根据类创建出来的一个个具体的“对象”，每个对象都拥有相同的方法，但各自的数据可能不同。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>类名通常是大写开头的单词，紧接着是(<code class="docutils literal notranslate"><span class="pre">object</span></code>)，表示该类是从哪个类继承下来的，通常，如果没有合适的继承类，就使用<code class="docutils literal notranslate"><span class="pre">object</span></code>类，这是所有类最终都会继承的类。</p>
+</li>
+<li><p>可以自由地给一个实例变量绑定属性，比如，给实例bart绑定一个<code class="docutils literal notranslate"><span class="pre">name</span></code>属性：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bart</span> <span class="o">=</span> <span class="n">Student</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bart</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bart Simpson&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bart</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Bart Simpson&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>和静态语言不同，Python允许对实例变量绑定任何数据，也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同</p></li>
+<li><p>由于类可以起到模板的作用，因此，可以在创建实例的时候，把一些我们认为必须绑定的属性强制填写进去。通过定义一个特殊的<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法，在创建实例的时候，就把<code class="docutils literal notranslate"><span class="pre">name</span></code>，<code class="docutils literal notranslate"><span class="pre">score</span></code>等属性绑上去：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
+</pre></div>
+</div>
+<p>注意到<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法的第一个参数永远是<code class="docutils literal notranslate"><span class="pre">self</span></code>，表示创建的实例本身，因此，在<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法内部，就可以把各种属性绑定到<code class="docutils literal notranslate"><span class="pre">self</span></code>，因为<code class="docutils literal notranslate"><span class="pre">self</span></code>就指向创建的实例本身。有了<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法，在创建实例的时候，就不能传入空的参数了，必须传入与<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法匹配的参数，但<code class="docutils literal notranslate"><span class="pre">self</span></code>不需要传，Python解释器自己会把实例变量传进去。</p>
+</li>
+<li><p>和普通的函数相比，在类中定义的函数只有一点不同，就是第一个参数永远是实例变量<code class="docutils literal notranslate"><span class="pre">self</span></code>，并且，调用时，不用传递该参数。除此之外，类的方法和普通函数没有什么区别，所以，你仍然可以用默认参数、可变参数、关键字参数和命名关键字参数。</p></li>
+</ul>
+<div class="section" id="id17">
+<h4>数据封装<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>直接在类的内部定义访问数据的函数，这样，就把“数据”给封装起来了。这些封装数据的函数是和类本身是关联起来的，我们称之为类的 <strong>方法 (method)</strong>。 要定义一个方法，除了第一个参数是<code class="docutils literal notranslate"><span class="pre">self</span></code>外，其他和普通函数一样。要调用一个方法，只需要在实例变量上直接调用，除了<code class="docutils literal notranslate"><span class="pre">self</span></code>不用传递，其他参数正常传入。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>访问限制<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>如果要让内部属性不被外部访问，可以把属性的名称前加上两个下划线__，在Python中，实例的变量名如果以<code class="docutils literal notranslate"><span class="pre">__</span></code>开头，就变成了一个私有变量（private），只有内部可以访问，外部不能访问</p></li>
+<li><p>如果又要允许外部修改私有变量的值，可以在类内部定义一个方法来完成，这样可以保证在赋新值的时候做一些必要的检查而避免被赋无效值。</p></li>
+<li><p>需要注意的是，在Python中，变量名类似<code class="docutils literal notranslate"><span class="pre">__xxx__</span></code>的，也就是以双下划线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访问的，不是private变量，所以，不能用<code class="docutils literal notranslate"><span class="pre">__name__</span></code>、<code class="docutils literal notranslate"><span class="pre">__score__</span></code>这样的变量名。</p></li>
+<li><p>有些时候，你会看到以一个下划线开头的实例变量名，比如<code class="docutils literal notranslate"><span class="pre">_name</span></code>，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。</p></li>
+<li><p>双下划线开头的实例变量是不是一定不能从外部访问呢？其实也不是。不能直接访问<code class="docutils literal notranslate"><span class="pre">__name</span></code>是因为Python解释器对外把<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量改成了<code class="docutils literal notranslate"><span class="pre">_Student__name</span></code>，所以，仍然可以通过<code class="docutils literal notranslate"><span class="pre">_Student__name</span></code>来访问<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量。 不同版本的Python解释器可能会把<code class="docutils literal notranslate"><span class="pre">__name</span></code>改成不同的变量名。</p></li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h3>继承和多态<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>在OOP程序设计中，当我们定义一个class的时候，可以从某个现有的class继承，新的class称为 <strong>子类（Subclass）</strong>，而被继承的class称为 <strong>基类、父类或超类（Base class、Super class）</strong>。</p></li>
+<li><p>如何定义： <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">subclass_name(base_class_name):</span></code></p></li>
+<li><p>继承有什么好处？最大的好处是子类获得了父类的全部功能。继承的第二个好处是只要对代码做一点改进而实现某个特定方法的“定制 (customization)”。</p></li>
+<li><p>当子类和父类都存在相同的方法时，我们说，子类的方法覆盖了父类的方法，在代码运行的时候，总是会调用子类的方法。这样，我们就获得了继承的另一个好处：<strong>多态</strong>。</p></li>
+<li><p>当我们定义一个class的时候，我们实际上就定义了一种数据类型。我们定义的数据类型和Python自带的数据类型，比如str、list、dict没什么两样, 可以用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>来判断数据类型。在继承关系中，如果一个实例的数据类型是某个子类，那它的数据类型也可以被看做是父类。但是，反过来就不行。</p></li>
+<li><p>多态的好处就是： 对于一个变量，我们只需要知道它是类型，无需确切地知道它的子类型，就可以放心地调用某一多态方法，而具体调用的方法是作用在子类还是父类对象上，由运行时该对象的确切类型决定，这就是多态真正的威力：调用方只管调用，不管细节，而当我们新增一种子类时，只要确保多态方法编写正确，不用管原来的代码是如何调用的。这就是著名的“开闭”原则：</p>
+<ul>
+<li><p><strong>对扩展开放</strong>：允许新增子类；</p></li>
+<li><p><strong>对修改封闭</strong>：不需要修改依赖父类类型的方法函数。</p></li>
+</ul>
+</li>
+<li><p>继承还可以一级一级地继承下来，就好比从爷爷到爸爸、再到儿子这样的关系。而任何类，最终都可以追溯到根类object，这些继承关系看上去就像一颗倒着的树。比如如下的继承树</p></li>
+</ul>
+<div class="section" id="vs">
+<h4>静态语言 vs 动态语言<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>对于静态语言（例如Java）来说，如果需要传入某类型，则传入的对象必须是该类型或者它的子类，否则，将无法调用父类型下的方法。</p></li>
+<li><p>对于Python这样的动态语言来说，则不一定需要传入父类型类型。我们只需要保证传入的对象有一个同名的方法就可以了。</p></li>
+<li><p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>获取对象信息<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="type">
+<h4>使用<code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">type()</span></code>返回对应的class类型</p></li>
+<li><p>借助<code class="docutils literal notranslate"><span class="pre">types</span></code> 模块来判断一个对象是否是函数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">types</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">fn</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="o">==</span><span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="nb">abs</span><span class="p">)</span><span class="o">==</span><span class="n">types</span><span class="o">.</span><span class="n">BuiltinFunctionType</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="n">types</span><span class="o">.</span><span class="n">LambdaType</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">((</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="o">==</span><span class="n">types</span><span class="o">.</span><span class="n">GeneratorType</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="isinstance">
+<h4>使用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code><a class="headerlink" href="#isinstance" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>更加便于了解class的继承关系</p></li>
+<li><p>能用<code class="docutils literal notranslate"><span class="pre">type()</span></code>判断的基本类型也可以用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>判断</p></li>
+<li><p>还可以判断一个变量是否是某些类型中的一种</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="dir">
+<h4>使用<code class="docutils literal notranslate"><span class="pre">dir()</span></code><a class="headerlink" href="#dir" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>可以用来获取一个对象的所有属性和方法</p></li>
+<li><p>类似<code class="docutils literal notranslate"><span class="pre">__xxx__</span></code>的属性和方法在Python中都是有特殊用途的，比如<code class="docutils literal notranslate"><span class="pre">__len__</span></code>方法返回长度。剩下的都是普通属性或方法。</p></li>
+<li><p>仅仅把属性和方法列出来是不够的，配合<code class="docutils literal notranslate"><span class="pre">getattr()</span></code>、<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>以及<code class="docutils literal notranslate"><span class="pre">hasattr()</span></code>，我们可以直接操作一个对象的状态。</p></li>
+<li><p>如果试图获取不存在的属性，会抛出AttributeError的错误。 可以传入一个default参数，如果属性不存在，就返回默认值：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span> <span class="c1"># 获取属性&#39;z&#39;，如果不存在，返回默认值404</span>
+<span class="go">404</span>
+</pre></div>
+</div>
+</li>
+<li><p>通过类似的操作也可以获得对象的方法</p></li>
+<li><p>一个正确的用法的例子如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">readImage</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s1">&#39;read&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">readData</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+<span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>假设我们希望从文件流fp中读取图像，我们首先要判断该fp对象是否存在read方法，如果存在，则该对象是一个流，如果不存在，则无法读取。
+<code class="docutils literal notranslate"><span class="pre">hasattr()</span></code>就派上了用场。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id21">
+<h3>实例属性和类属性<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>给实例绑定属性的方法是通过实例变量，或者通过self变量：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Bob&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>当我们定义了一个类属性后，这个属性虽然归类所有，但类的所有实例都可以访问到。实例属性高于类属性，当实例和类定义相同的属性时，实例属性将覆盖类属性。但是当你删除实例属性后，再使用相同的名称，访问到的将是类属性。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id22">
+<h2>面向对象高级编程<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<p>数据封装、继承和多态只是面向对象程序设计中最基础的3个概念。在Python中，面向对象还有很多高级特性，允许我们写出非常强大的功能。例如：多重继承、定制类、元类等。</p>
+<div class="section" id="slots">
+<h3>使用__slots__<a class="headerlink" href="#slots" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>动态绑定允许我们在程序运行的过程中动态给class加上功能，这在静态语言中很难实现。</p></li>
+<li><p>但是，如果我们想要限制实例的属性怎么办？为了达到限制的目的，Python允许在定义class的时候，定义一个特殊的<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>变量，来限制该class实例能添加的属性：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)</span> <span class="c1"># 用tuple定义允许绑定的属性名称</span>
+</pre></div>
+</div>
+</li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>要注意，<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>定义的属性仅对当前类实例起作用，对继承的子类是不起作用的。除非在子类中也定义<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>，这样，子类实例允许定义的属性就是自身的<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>加上父类的<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>。</p></li>
+</ul>
+</div>
+<div class="section" id="property">
+<h3>使用&#64;property<a class="headerlink" href="#property" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>主要目的是为了更加方便地给实例赋值（ <strong>通过属性赋值形式实现方法方式赋值过程</strong>），同时又能进行一些必要的赋值检查（只能在方法中定义检查赋值的有效范围）。</p></li>
+<li><p>&#64;property 相当于<code class="docutils literal notranslate"><span class="pre">getter</span></code>方法（即读取）， 而它会制动产生一个<code class="docutils literal notranslate"><span class="pre">setter</span></code>方法（即赋值）。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_score</span>
+    <span class="nd">@score</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;score must be an integer!&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;score must between 0 ~ 100!&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_score</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;property</span></code>广泛应用在类的定义中，可以让调用者写出简短的代码，同时保证对参数进行必要的检查，这样，程序运行时就减少了出错的可能性。</p></li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h3>多重继承<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>继承是面向对象编程的一个重要的方式，因为通过继承，子类就可以扩展父类的功能。</p></li>
+<li><p>多重继承即子类可以同时继承多个父类</p></li>
+</ul>
+<div class="section" id="mixin-mix-inherit">
+<h4>MixIn (mix inherit)<a class="headerlink" href="#mixin-mix-inherit" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>MixIn的目的就是给一个类增加多个功能，这样，在设计类的时候，我们优先考虑通过多重继承来组合多个MixIn的功能，而不是设计多层次的复杂的继承关系。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Mammal</span><span class="p">,</span> <span class="n">RunnableMixIn</span><span class="p">,</span> <span class="n">CarnivorousMixIn</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id24">
+<h3>定制类<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>看到类似<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>这种形如<code class="docutils literal notranslate"><span class="pre">__xxx__</span></code>的变量或者函数名就要注意，这些在Python中是有特殊用途的。</p></li>
+</ul>
+<div class="section" id="str">
+<h4><code class="docutils literal notranslate"><span class="pre">__str__</span></code><a class="headerlink" href="#str" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>对应<code class="docutils literal notranslate"><span class="pre">print</span></code>方法: 只需要定义好<code class="docutils literal notranslate"><span class="pre">__str__()</span></code>方法，返回一个好看的字符串就可以了：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="s1">&#39;Student object (name: </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Michael&#39;</span><span class="p">))</span>
+<span class="go">Student object (name: Michael)</span>
+</pre></div>
+</div>
+</li>
+<li><p>若只用变量名而不用<code class="docutils literal notranslate"><span class="pre">print</span></code>直接显示变量调用的不是<code class="docutils literal notranslate"><span class="pre">__str__()</span></code>，而是<code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>，两者的区别是<code class="docutils literal notranslate"><span class="pre">__str__()</span></code>返回用户看到的字符串，而<code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>返回程序开发者看到的字符串，也就是说，<code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>是为调试服务的。所以可以把<code class="docutils literal notranslate"><span class="pre">__str__</span></code> 赋值给<code class="docutils literal notranslate"><span class="pre">__repr__</span></code>: <code class="docutils literal notranslate"><span class="pre">__repr__</span> <span class="pre">=</span> <span class="pre">__str__</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="iter">
+<h4><code class="docutils literal notranslate"><span class="pre">__iter__</span></code><a class="headerlink" href="#iter" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>如果一个类想被用于<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code>循环，类似<code class="docutils literal notranslate"><span class="pre">list</span></code>或<code class="docutils literal notranslate"><span class="pre">tuple</span></code>那样，就必须实现一个<code class="docutils literal notranslate"><span class="pre">__iter__()</span></code>方法，该方法返回一个迭代对象，然后，Python的<code class="docutils literal notranslate"><span class="pre">for</span></code>循环就会不断调用该迭代对象的<code class="docutils literal notranslate"><span class="pre">__next__()</span></code>方法拿到循环的下一个值，直到遇到<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>错误时退出循环。</p></li>
+</ul>
+</div>
+<div class="section" id="getitem">
+<h4><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code><a class="headerlink" href="#getitem" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Fib实例虽然能作用于for循环，看起来和list有点像，但是，把它当成list来使用还是不行, 比如不能用index取其中的元素。</p></li>
+</ul>
+</div>
+<div class="section" id="getattr">
+<h4><code class="docutils literal notranslate"><span class="pre">__getattr__</span></code><a class="headerlink" href="#getattr" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>当输入的属性在默认属性中不存在，python调用<code class="docutils literal notranslate"><span class="pre">__getattr__</span></code>查找。任意调用不存在的属性都会返回<code class="docutils literal notranslate"><span class="pre">None</span></code>。也可以对不存在的属性自定义抛出<code class="docutils literal notranslate"><span class="pre">AttributeError</span></code>的错误。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">attr</span><span class="o">==</span><span class="s1">&#39;age&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="k">lambda</span><span class="p">:</span> <span class="mi">25</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">Student</span><span class="se">\&#39;</span><span class="s1"> object has no attribute </span><span class="se">\&#39;</span><span class="si">%s</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">attr</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="call">
+<h4><code class="docutils literal notranslate"><span class="pre">__call__</span></code><a class="headerlink" href="#call" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>一个对象实例可以有自己的属性和方法，当我们调用实例方法时，我们用<code class="docutils literal notranslate"><span class="pre">instance.method()</span></code>来调用。能不能直接在实例本身上调用呢？在Python中，答案是肯定的。 任何类，只需要定义一个<code class="docutils literal notranslate"><span class="pre">__call()__</span></code>方法，就可以直接对实例进行调用。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Michael&#39;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="p">()</span> <span class="c1"># self参数不要传入</span>
+    <span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Michael</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__call__()</span></code>还可以定义参数。对实例进行直接调用就好比对一个函数进行调用一样，所以你完全可以把对象看成函数，把函数看成对象，因为这两者之间本来就没啥根本的区别。</p></li>
+<li><p>判断一个变量是对象还是函数，可以用<code class="docutils literal notranslate"><span class="pre">callable()</span></code>函数进行判断。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>使用枚举类<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>使用枚举类型定义一个class类型，然后，每个常量都是class的一个唯一实例。Python提供了<code class="docutils literal notranslate"><span class="pre">Enum</span></code>类来实现这个功能：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Month</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span> <span class="s1">&#39;Feb&#39;</span><span class="p">,</span> <span class="s1">&#39;Mar&#39;</span><span class="p">,</span> <span class="s1">&#39;Apr&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Jul&#39;</span><span class="p">,</span> <span class="s1">&#39;Aug&#39;</span><span class="p">,</span> <span class="s1">&#39;Sep&#39;</span><span class="p">,</span> <span class="s1">&#39;Oct&#39;</span><span class="p">,</span> <span class="s1">&#39;Nov&#39;</span><span class="p">,</span> <span class="s1">&#39;Dec&#39;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">Month</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;=&gt;&#39;</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">member</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>属性则是自动赋给成员的<code class="docutils literal notranslate"><span class="pre">int</span></code>常量，默认从<code class="docutils literal notranslate"><span class="pre">1</span></code>开始计数。</p></li>
+<li><p>如果需要更精确地控制枚举类型，可以从<code class="docutils literal notranslate"><span class="pre">Enum</span></code>派生出自定义类：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span>
+<span class="nd">@unique</span>
+<span class="k">class</span> <span class="nc">Weekday</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">Sun</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Sun的value被设定为0</span>
+    <span class="n">Mon</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">Tue</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">Wed</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">Thu</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">Fri</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">Sat</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;unique</span></code>装饰器可以帮助我们检查保证没有重复值。</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h3>使用元类<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./CS"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tree/Random Forest (Bagging)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Note-HTML%20basics.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">HTML Basics</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Ming Yang<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
