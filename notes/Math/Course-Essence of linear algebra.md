@@ -1,4 +1,4 @@
-# :memo: [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
+# [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
 
 *A geometric understanding of matrices, determinants, eigen-stuffs and more.*
 
