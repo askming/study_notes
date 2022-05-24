@@ -5,11 +5,9 @@
 ----
 ## Study notes
 
-[TOC]
-
  ### Section 5. Numpy arrays
 
-18. numpy array, vector vs matrix	
+1.  numpy array, vector vs matrix	
 
     - `np.arange`: uses step size vs `np.linspace`: uses length as input
     - `np.eye(n)`: creates n-dimensional diagonal matrix, i.e. identity matrix
@@ -22,7 +20,7 @@
       - Compared with `.argX()` functions `idxmax()` or `idxmin()` may be preferred
     - `array.dtype`
 
-    20. numpy array indexing
+    1.  numpy array indexing
 
     - array slicing => a new array: now a copy of the sliced part but just a pointer to the original array
       - to make a real copy, use `array.copy()`method
@@ -30,7 +28,7 @@
     - indexing of 2-d array: if only one index is provided -> refers to the row number, eg `array[0]` -> first row
       - to get a single element, using double `[ `, i.e. `[[]]`,  can achieve it; BUT, single bracket with momma is preferred 
 
-    21. 
+    1.  
 
     - Universal functions: unfun
 
