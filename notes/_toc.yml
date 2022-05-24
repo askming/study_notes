@@ -25,6 +25,11 @@ parts:
     chapters:
     - glob: "CS/*"
 
+  - caption: Math
+    numbered: false
+    chapters:
+    - glob: "Math/*"
+
   - caption: Miscellaneous
     numbered: false
     chapters:

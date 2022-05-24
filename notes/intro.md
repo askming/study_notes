@@ -137,7 +137,7 @@
 
 ## 3 Math
 
-### 3.1 Essence of Linear Algebra
+### 3.1 [Essence of Linear Algebra](./Math/Course-Essence%20of%20linear%20algebra.md)
 
 ### 3.2 Essence of Calculus
 
