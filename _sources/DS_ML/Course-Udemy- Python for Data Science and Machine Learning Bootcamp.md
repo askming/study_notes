@@ -3,9 +3,7 @@
  *Study material stored @  OneDrive/Documents/Study Documents/Online courses*
 
 ----
-## Study notes
-
- ### Section 5. Numpy arrays
+## Section 5. Numpy arrays
 
 1.  numpy array, vector vs matrix	
 
@@ -34,7 +32,7 @@
 
     - broadcasting
 
-### Section 6. Pandas
+## Section 6. Pandas
 
 27. DataFrames - Part 1
     - `df.drop(axis=0/1, inplace = True)`, without `inplace = True`, pd will just wake make a copy of the DF after dropping, or assign DF is unchanged
@@ -76,7 +74,7 @@
        - `pd.read_html("xxx.html")`
     4. SQL: `sqlalchemy` => `create_engine`
 
-### Section 8. Python for data visualization - `matplotlib`
+## Section 8. Python for data visualization - `matplotlib`
 
 42-44. `matplotlib` Parts 1 - 3
 
@@ -98,7 +96,7 @@
 
 - `plt.tight_layout()`: better show multple subplots
 
-### Section 9. Python for data visualization - `seaborn`
+## Section 9. Python for data visualization - `seaborn`
 
 48. `distplot`: histogram
 
@@ -140,14 +138,14 @@
     - `sns.despine()`, inputs: top, right, bottom, left
     - `sns.set_context("poster", font_scale = x)`
 
-### Section 10. Python for data visualization - Pandas built-in data visualization
+## Section 10. Python for data visualization - Pandas built-in data visualization
 
 56. Pandas built-in data visualization
     - `pd[‘col’].plot(kind = “”, …)`
     - `pd['col'].plot.hist()`
     - `df.plot.x()`
 
-### Section 11. Python for data visualization - plotly & cufflinks
+## Section 11. Python for data visualization - plotly & cufflinks
 
 60. plotly & cufflinks
     - Cufflinks: toolbox links plotly & pandas
@@ -157,12 +155,12 @@
     - `init_notebook_mode(connected = True)`
     - use plotly: `df.iplot()`
 
-### Section 13. Data capstone project
+## Section 13. Data capstone project
 
 - `.groupby().unstack()` ?
 - `.groupby().reset_index()` -> `FacetGrid()`
 
-### Section 18. K-nearest neighbors
+## Section 18. K-nearest neighbors
 
 - In KNN, all variables need to be at the same scale, otherwise some variables may dominate the distance calculation
 - Find scikit-learn cheatsheet (multiple)
@@ -170,9 +168,9 @@
   - n-neighbors
   - Distance metric
 
-### Section 19. Decision trees & random forest
+## Section 19. Decision trees & random forest
 
-### Seciton 20. SVM
+## Seciton 20. SVM
 
 102. 
      - `from sklearn.svm import SVC`
@@ -181,14 +179,14 @@
        - `grid = GridSearchCV(SVC(), param_grid, refit = True, Verbose = 3)`
        - `grid_fit(x_train, y_train)`
 
-### Section 21. K means clustering (unsupervised)
+## Section 21. K means clustering (unsupervised)
 
 - Finding K: 
   - "elbow" method, using SSE: sum of the squared distance between each member of the clusters and its centroid
   - In `sklean.dataets`, can use `make_blobs` to generate fake cluster data
   - After fitting kmeans to data, can retrive centers from `x.cluster_centers` and retrieve cluster label from `x.labels_`
 
-### Section 22. PCA
+## Section 22. PCA
 
 110. PCA with python
 
@@ -207,7 +205,7 @@
        from sklearn.decomposition import PCA
        ```
 
-### Section 23. Reconmmendation system
+## Section 23. Reconmmendation system
 
 - Content based: attribute of the items and based on similarity b/t them
 - Collaborative filtering (CF): Amazon. based on knowledge of users' attitude to items, "wisdom of crowd"
@@ -219,7 +217,7 @@
 - Pandas: `df.corrwith(df)`: correlation b/t two df columns
 - Seems the method only uses correlation b/t ratings to check the similarity between 2 movies
 
-### Section 25. Big data and spark with python
+## Section 25. Big data and spark with python
 
 - Local vs distributed system:
 
@@ -300,7 +298,7 @@
      - Transformation => an RDD object
      - Action => a local object 
 
-### Section 26. Neural Nets and Deep Learning
+## Section 26. Neural Nets and Deep Learning
 
 - Perceptron: "feed-formed" model, i.e. inputs are sent into the neuron, are processed, and result in an output
   1. receive inputs
