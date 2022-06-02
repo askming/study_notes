@@ -129,6 +129,15 @@ where
 [^other_stats]: to calculate mean, first calculate the probability of the outcome equals to a specific value, then apply the definition of mean for discrete R.V.: $\bar{X} = \sum_{i} x\cdot Pr(X=x)$; finding median/a specific quantile is simpler, which is a direct result from the cumulative distribution of the outcome variable.
 [^t-test]: t-test assumes both linearity (normal distribution) and parallelism (equal variance)
 
+
+## Resources for Ordinal Regression Models
+
+- [Blog post from Frank Harrell](https://www.fharrell.com/post/rpo)
+
+
+## General references
+- https://hbiostat.org/bib/ordinal.html which includes tutorials such as the one by Susan Scott et al.
+
 ```{bibliography}
 :filter: docname in docnames
 ```
