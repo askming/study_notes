@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Learning Rust &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,7 +67,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +90,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -97,14 +111,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -478,90 +493,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/CS/Note-Learning Rust.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-Learning Rust.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-Learning Rust.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/CS/Note-Learning Rust.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#getting-started">
    Getting started
@@ -694,12 +799,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Learning Rust</h1>
@@ -848,21 +952,22 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="learning-rust">
-<h1>Learning Rust<a class="headerlink" href="#learning-rust" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="creating-new-project">
-<h3>Creating new project<a class="headerlink" href="#creating-new-project" title="Permalink to this headline">¶</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="learning-rust">
+<h1>Learning Rust<a class="headerlink" href="#learning-rust" title="Permalink to this headline">#</a></h1>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
+<section id="creating-new-project">
+<h3>Creating new project<a class="headerlink" href="#creating-new-project" title="Permalink to this headline">#</a></h3>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">$</span><span class="w"> </span><span class="n">cargo</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">project_name</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="rustc">
-<h3><code class="docutils literal notranslate"><span class="pre">rustc</span></code><a class="headerlink" href="#rustc" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rustc">
+<h3><code class="docutils literal notranslate"><span class="pre">rustc</span></code><a class="headerlink" href="#rustc" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>More tedious way to run the program</p></li>
 </ul>
@@ -870,9 +975,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="cp">$</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">main</span><span class="w"> </span><span class="c1">// run it</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="cargo">
-<h3><code class="docutils literal notranslate"><span class="pre">cargo</span></code><a class="headerlink" href="#cargo" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cargo">
+<h3><code class="docutils literal notranslate"><span class="pre">cargo</span></code><a class="headerlink" href="#cargo" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>More efficient way to run the program</p></li>
 </ul>
@@ -889,10 +994,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>We can build and run a project in one step using cargo run.</p></li>
 <li><p>Instead of saving the result of the build in the same directory as our code, Cargo stores it in the target/debug directory.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="programming-a-guessing-game">
-<h2>Programming a Guessing Game<a class="headerlink" href="#programming-a-guessing-game" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="programming-a-guessing-game">
+<h2>Programming a Guessing Game<a class="headerlink" href="#programming-a-guessing-game" title="Permalink to this headline">#</a></h2>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w"></span>
 <span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span><span class="p">;</span><span class="w"></span>
 <span class="k">use</span><span class="w"> </span><span class="n">rand</span>::<span class="n">Rng</span><span class="p">;</span><span class="w"></span>
@@ -929,13 +1034,13 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="common-programming-concepts">
-<h2>Common Programming Concepts<a class="headerlink" href="#common-programming-concepts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="variables-and-mutability">
-<h3>Variables and Mutability<a class="headerlink" href="#variables-and-mutability" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="differences-between-variables-and-constants">
-<h4>Differences between variables and constants<a class="headerlink" href="#differences-between-variables-and-constants" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="common-programming-concepts">
+<h2>Common Programming Concepts<a class="headerlink" href="#common-programming-concepts" title="Permalink to this headline">#</a></h2>
+<section id="variables-and-mutability">
+<h3>Variables and Mutability<a class="headerlink" href="#variables-and-mutability" title="Permalink to this headline">#</a></h3>
+<section id="differences-between-variables-and-constants">
+<h4>Differences between variables and constants<a class="headerlink" href="#differences-between-variables-and-constants" title="Permalink to this headline">#</a></h4>
 <ol>
 <li><p>you aren’t allowed to use mut with constants. Constants aren’t just immutable by default—they’re always immutable.</p></li>
 <li><p>You declare constants using the <code class="docutils literal notranslate"><span class="pre">const</span></code> keyword instead of the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword, and the type of the value must be annotated.</p>
@@ -949,9 +1054,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Constants are valid for the entire time a program runs, within the scope they were declared in, making them a useful choice for values in your application domain that multiple parts of the program might need to know about,</p></li>
 </ul>
-</div>
-<div class="section" id="shadowing">
-<h4>Shadowing<a class="headerlink" href="#shadowing" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="shadowing">
+<h4>Shadowing<a class="headerlink" href="#shadowing" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>declare a new variable with the same name as a previous variable, and the new variable shadows the previous variable. Rustaceans say that the first variable is <em>shadowed</em> by the second, which means that the second variable’s value is what appears when the variable is used.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -977,55 +1082,55 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="data-types">
-<h3>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="data-types">
+<h3>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Keep in mind that Rust is a <em>statically typed</em> language, which means that it must know the types of all variables at compile time.</p></li>
 </ul>
-<div class="section" id="scalar-types">
-<h4>Scalar Types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">¶</a></h4>
+<section id="scalar-types">
+<h4>Scalar Types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>A <em>scalar type</em> represents a single value. Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.</p></li>
 </ul>
-<div class="section" id="integer-types">
-<h5>Integer Types<a class="headerlink" href="#integer-types" title="Permalink to this headline">¶</a></h5>
+<section id="integer-types">
+<h5>Integer Types<a class="headerlink" href="#integer-types" title="Permalink to this headline">#</a></h5>
 <ul class="simple">
 <li><p>An <em>integer</em> is a number without a fractional component.</p></li>
 <li><p>Each variant can be either <em>signed</em> or <em>unsigned</em> and has an explicit size. Signed and unsigned refer to whether it’s possible for the number to be negative or positive—in other words, whether the number needs to have a sign with it (signed) or whether it will only ever be positive and can therefore be represented without a sign (unsigned).</p></li>
 <li><p>Each signed variant can store numbers from <span class="math notranslate nohighlight">\(-(2^{n - 1})\)</span> to <span class="math notranslate nohighlight">\(2^{n - 1} - 1\)</span> inclusive, where n is the number of bits that variant uses.</p></li>
 </ul>
-</div>
-<div class="section" id="floating-point-types">
-<h5>Floating-Point Types<a class="headerlink" href="#floating-point-types" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="floating-point-types">
+<h5>Floating-Point Types<a class="headerlink" href="#floating-point-types" title="Permalink to this headline">#</a></h5>
 <p>Rust also has two primitive types for <em>floating-point numbers</em>, which are numbers with decimal points. Rust’s floating-point types are f32 and f64, which are 32 bits and 64 bits in size, respectively. The default type is f64 because on modern CPUs it’s roughly the same speed as f32 but is capable of more precision.</p>
-</div>
-<div class="section" id="numeric-operations">
-<h5>Numeric Operations<a class="headerlink" href="#numeric-operations" title="Permalink to this headline">¶</a></h5>
-</div>
-<div class="section" id="the-boolean-type">
-<h5>The Boolean Type<a class="headerlink" href="#the-boolean-type" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="numeric-operations">
+<h5>Numeric Operations<a class="headerlink" href="#numeric-operations" title="Permalink to this headline">#</a></h5>
+</section>
+<section id="the-boolean-type">
+<h5>The Boolean Type<a class="headerlink" href="#the-boolean-type" title="Permalink to this headline">#</a></h5>
 <ul class="simple">
 <li><p>Booleans are one byte in size.</p></li>
 </ul>
-</div>
-<div class="section" id="the-character-type">
-<h5>The Character Type<a class="headerlink" href="#the-character-type" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="the-character-type">
+<h5>The Character Type<a class="headerlink" href="#the-character-type" title="Permalink to this headline">#</a></h5>
 <ul class="simple">
 <li><p>Rust’s <code class="docutils literal notranslate"><span class="pre">char</span></code> type is the language’s most primitive alphabetic type, and the following code shows one way to use it. (Note that <code class="docutils literal notranslate"><span class="pre">char</span></code> literals are specified with single quotes, as opposed to string literals, which use double quotes.)</p></li>
 <li><p>Rust’s <code class="docutils literal notranslate"><span class="pre">char</span></code> type is four bytes in size and represents a Unicode Scalar Value, which means it can represent a lot more than just ASCII.</p></li>
 <li><p>Unicode Scalar Values range from <code class="docutils literal notranslate"><span class="pre">U+0000</span></code> to <code class="docutils literal notranslate"><span class="pre">U+D7FF</span></code> and <code class="docutils literal notranslate"><span class="pre">U+E000</span></code> to <code class="docutils literal notranslate"><span class="pre">U+10FFFF</span></code> inclusive. However, a “character” isn’t really a concept in Unicode, so your human intuition for what a “character” is may not match up with what a <code class="docutils literal notranslate"><span class="pre">char</span></code> is in Rust.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="compound-types">
-<h4>Compound Types<a class="headerlink" href="#compound-types" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="compound-types">
+<h4>Compound Types<a class="headerlink" href="#compound-types" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><em>Compound types</em> can group multiple values into one type. Rust has two primitive compound types: <strong>tuples</strong> and <strong>arrays</strong>.</p></li>
 </ul>
-<div class="section" id="the-tuple-type">
-<h5>The Tuple Type<a class="headerlink" href="#the-tuple-type" title="Permalink to this headline">¶</a></h5>
+<section id="the-tuple-type">
+<h5>The Tuple Type<a class="headerlink" href="#the-tuple-type" title="Permalink to this headline">#</a></h5>
 <ul>
 <li><p>A tuple is a general way of grouping together some number of other values with a variety of types into one compound type. Tuples have a fixed length: once declared, they cannot grow or shrink in size.</p></li>
 <li><p>We create a tuple by writing a comma-separated list of values inside parentheses. Each position in the tuple has a type, and the types of the different values in the tuple don’t have to be the same.</p>
@@ -1047,9 +1152,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="the-array-type">
-<h5>The Array Type<a class="headerlink" href="#the-array-type" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="the-array-type">
+<h5>The Array Type<a class="headerlink" href="#the-array-type" title="Permalink to this headline">#</a></h5>
 <ul>
 <li><p>Unlike a tuple, every element of an array must have the <strong>same type</strong>. Arrays in Rust are different from arrays in some other languages because arrays in Rust have a fixed length, like tuples.</p></li>
 <li><p>You would write an array’s type by using square brackets, and within the brackets include the type of each element, a semicolon, and then the number of elements in the array</p>
@@ -1068,20 +1173,20 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="comments">
-<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="control-flow">
-<h3>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h3>
-<img src="https://doc.rust-lang.org/book/img/ferris/panics.svg" width="400"></div>
-</div>
-</div>
+</section>
+</section>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="control-flow">
+<h3>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">#</a></h3>
+<img src="https://doc.rust-lang.org/book/img/ferris/panics.svg" width="400"></section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1111,9 +1216,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Note-Learning%20React.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1129,24 +1236,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

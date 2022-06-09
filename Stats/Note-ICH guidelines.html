@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Notes on ICH guidelines​ &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -476,90 +491,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Note-ICH guidelines.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-ICH guidelines.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-ICH guidelines.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Stats/Note-ICH guidelines.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ich-e9-r1-addendum-on-estimands-and-sensitivity-analysis-in-clinical-trials-to-the-guideline-on-statistical-principles-for-clinical-trials">
    ICH E9 (R1) - Addendum On
@@ -654,12 +759,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Notes on ICH guidelines​</h1>
@@ -770,16 +874,17 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="notes-on-ich-guidelines">
-<h1>Notes on ICH guidelines​<a class="headerlink" href="#notes-on-ich-guidelines" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ich-e9-r1-addendum-on-estimands-and-sensitivity-analysis-in-clinical-trials-to-the-guideline-on-statistical-principles-for-clinical-trials">
-<h2>ICH E9 (R1) - Addendum On <strong>Estimands</strong> And Sensitivity Analysis In Clinical Trials To The Guideline On Statistical Principles For Clinical Trials<a class="headerlink" href="#ich-e9-r1-addendum-on-estimands-and-sensitivity-analysis-in-clinical-trials-to-the-guideline-on-statistical-principles-for-clinical-trials" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="notes-on-ich-guidelines">
+<h1>Notes on ICH guidelines​<a class="headerlink" href="#notes-on-ich-guidelines" title="Permalink to this headline">#</a></h1>
+<section id="ich-e9-r1-addendum-on-estimands-and-sensitivity-analysis-in-clinical-trials-to-the-guideline-on-statistical-principles-for-clinical-trials">
+<h2>ICH E9 (R1) - Addendum On <strong>Estimands</strong> And Sensitivity Analysis In Clinical Trials To The Guideline On Statistical Principles For Clinical Trials<a class="headerlink" href="#ich-e9-r1-addendum-on-estimands-and-sensitivity-analysis-in-clinical-trials-to-the-guideline-on-statistical-principles-for-clinical-trials" title="Permalink to this headline">#</a></h2>
 <p><em>(Adopted on 20 November 2019)</em></p>
-<div class="section" id="purpose-and-scope">
-<h3>1. Purpose and scope<a class="headerlink" href="#purpose-and-scope" title="Permalink to this headline">¶</a></h3>
+<section id="purpose-and-scope">
+<h3>1. Purpose and scope<a class="headerlink" href="#purpose-and-scope" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>With the concept of <strong>Intention-To-Treat (ITT)</strong> introduced by ICH E9, the question remains
 whether estimating an effect in accordance with the ITT principle always represents the
@@ -800,9 +905,9 @@ treatment effect of greatest relevance to regulatory and clinical decision makin
 <li><p>While the main focus is on randomised clinical trials, the principles are also applicable for
 single arm trials and observational studies.</p></li>
 </ul>
-</div>
-<div class="section" id="a-framework-to-align-planning-design-conduct-analysis-and-interpretation">
-<h3>2. A Framework to Align Planning, Design, Conduct, Analysis And Interpretation<a class="headerlink" href="#a-framework-to-align-planning-design-conduct-analysis-and-interpretation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="a-framework-to-align-planning-design-conduct-analysis-and-interpretation">
+<h3>2. A Framework to Align Planning, Design, Conduct, Analysis And Interpretation<a class="headerlink" href="#a-framework-to-align-planning-design-conduct-analysis-and-interpretation" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>Estimand</strong>: trial objective, target of estimation</p></li>
 <li><p><strong>Estimator</strong>: the method of estimation</p></li>
@@ -816,17 +921,17 @@ single arm trials and observational studies.</p></li>
 </li>
 </ul>
 <p><img alt="image-20201029172037481" src="https://raw.githubusercontent.com/askming/picgo/master/image-20201029172037481.png" /></p>
-</div>
-<div class="section" id="estimand">
-<h3>3. Estimand<a class="headerlink" href="#estimand" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="estimand">
+<h3>3. Estimand<a class="headerlink" href="#estimand" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>An estimand is a precise description of the treatment effect reflecting the clinical question posed by a given clinical trial objective.</p>
 </div></blockquote>
 <ul class="simple">
 <li><p>The description of an estimand involves precise specifications of certain attributes, which should be developed based not only on clinical considerations but also on how <em>intercurrent events</em> are reflected in the clinical question of interest.</p></li>
 </ul>
-<div class="section" id="intercurrent-events">
-<h4>3.1 Intercurrent events<a class="headerlink" href="#intercurrent-events" title="Permalink to this headline">¶</a></h4>
+<section id="intercurrent-events">
+<h4>3.1 Intercurrent events<a class="headerlink" href="#intercurrent-events" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><strong>Intercurrent events</strong> are events occurring after treatment initiation that affect either the interpretation or the existence of the measurements associated with the clinical question of interest.</p></li>
 <li><p>Unlike missing data, intercurrent events are not to be thought of as a drawback to be avoided in clinical trials.</p>
@@ -839,9 +944,9 @@ discontinuation of assigned treatment and use of an additional or alternative th
 withdrawal nor other reasons for missing data (e.g. administrative censoring in trials with
 survival outcomes) are in themselves intercurrent events.</p></li>
 </ul>
-</div>
-<div class="section" id="strategies-for-addressing-intercurrent-events-when-defining-the-clinical-question-of-interest">
-<h4>3.2 Strategies for addressing intercurrent events when defining the clinical question of interest<a class="headerlink" href="#strategies-for-addressing-intercurrent-events-when-defining-the-clinical-question-of-interest" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="strategies-for-addressing-intercurrent-events-when-defining-the-clinical-question-of-interest">
+<h4>3.2 Strategies for addressing intercurrent events when defining the clinical question of interest<a class="headerlink" href="#strategies-for-addressing-intercurrent-events-when-defining-the-clinical-question-of-interest" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><strong>Treatment policy strategy</strong></p>
 <ul>
@@ -876,9 +981,9 @@ survival outcomes) are in themselves intercurrent events.</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="estimand-attributes">
-<h4>3.3. Estimand attributes<a class="headerlink" href="#estimand-attributes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="estimand-attributes">
+<h4>3.3. Estimand attributes<a class="headerlink" href="#estimand-attributes" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>The treatment and the alternative treatment condition to which comparison will be made</p></li>
 <li><p>The population of patients targeted by the clinical question</p></li>
@@ -886,9 +991,9 @@ survival outcomes) are in themselves intercurrent events.</p></li>
 <li><p>Intercurrent events</p></li>
 <li><p>A population-level summary for the variable should be specified, providing a basis for comparison between treatment conditions.</p></li>
 </ul>
-</div>
-<div class="section" id="considerations-for-constructing-an-estimand">
-<h4>3.4 Considerations for constructing an estimand<a class="headerlink" href="#considerations-for-constructing-an-estimand" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="considerations-for-constructing-an-estimand">
+<h4>3.4 Considerations for constructing an estimand<a class="headerlink" href="#considerations-for-constructing-an-estimand" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>The construction of an estimand should consider what is of clinical relevance for the particular
 treatment in the particular therapeutic setting.</p>
@@ -919,20 +1024,20 @@ events.</p></li>
 <li><p>When selecting strategies, it might be important to distinguish between trials designed to detect whether differences exist between treatments containing the same or similar active substance (e.g. comparison of a biosimilar to a reference treatment) and trials where a non-inferiority or equivalence hypothesis is used in order to establish and quantify evidence of efficacy.</p></li>
 <li><p>An estimand can be constructed to target a treatment effect that prioritises sensitivity to detect differences between treatments, if appropriate for regulatory decision making.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="impact-on-trial-design-and-conduct">
-<h3>4. Impact on trial design and conduct<a class="headerlink" href="#impact-on-trial-design-and-conduct" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="impact-on-trial-design-and-conduct">
+<h3>4. Impact on trial design and conduct<a class="headerlink" href="#impact-on-trial-design-and-conduct" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Certainly, subjects cannot be retained in a trial against their will, and in some trials missing data for some subjects is inevitable by design, such as administrative censoring in trials with survival outcomes.  On the contrary, the occurrence of intercurrent events such as discontinuation of treatment, treatment switching, or use of additional medication, does not imply that the variable cannot be measured thereafter, though the measures may not be relevant.</p></li>
 <li><p>A prospective plan to collect informative reasons for why data intended for collection are missing may help to distinguish the occurrence of intercurrent events from missing data.</p></li>
 <li><p>Where all subjects contribute information to the analysis, and where the impact of the strategy to reflect intercurrent events is included in the effect size that is targeted and the expected variance, it is not usually necessary to additionally inflate the calculated sample size by the expected proportion of subject withdrawals from the trial.</p></li>
 </ul>
-</div>
-<div class="section" id="impact-on-trial-analysis">
-<h3>5. Impact on trial analysis<a class="headerlink" href="#impact-on-trial-analysis" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="main-estimation">
-<h4>5. 1 Main estimation<a class="headerlink" href="#main-estimation" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="impact-on-trial-analysis">
+<h3>5. Impact on trial analysis<a class="headerlink" href="#impact-on-trial-analysis" title="Permalink to this headline">#</a></h3>
+<section id="main-estimation">
+<h4>5. 1 Main estimation<a class="headerlink" href="#main-estimation" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>All methods of analysis rely on assumptions, and different methods may rely on different
 assumptions even when aligned to the same estimand.</p></li>
@@ -942,44 +1047,44 @@ potential concern relates less to assumptions for estimation, and more to the in
 the estimated treatment effect.</p></li>
 <li><p>Failure to collect relevant data should not be confused with the choice not to collect, or to collect and not to use, data made irrelevant by an intercurrent event.</p></li>
 </ul>
-</div>
-<div class="section" id="sensitivity-analysis">
-<h4>5. 2 Sensitivity analysis<a class="headerlink" href="#sensitivity-analysis" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="role-of-sensitivity-analysis">
-<h5>5.2.1 Role of sensitivity analysis<a class="headerlink" href="#role-of-sensitivity-analysis" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="sensitivity-analysis">
+<h4>5. 2 Sensitivity analysis<a class="headerlink" href="#sensitivity-analysis" title="Permalink to this headline">#</a></h4>
+<section id="role-of-sensitivity-analysis">
+<h5>5.2.1 Role of sensitivity analysis<a class="headerlink" href="#role-of-sensitivity-analysis" title="Permalink to this headline">#</a></h5>
 <ul class="simple">
 <li><p>Sensitivity analysis should be planned for the main estimators of all estimands that will be important for regulatory decision making and labelling in the product information.</p></li>
 <li><p>This might be characterised as the extent of departures from assumptions that change the interpretation of the results in terms of their statistical or clinical significance (e.g. tipping point analysis).</p></li>
 <li><p>Distinct from sensitivity analysis, where investigations are conducted with the intent of exploring robustness of departures from assumptions, other analyses that are conducted in order to more fully investigate and understand the trial data can be termed “supplementary analysis”</p></li>
 </ul>
-</div>
-<div class="section" id="choice-of-sensitivity-analysis">
-<h5>5.2.2 Choice of sensitivity analysis<a class="headerlink" href="#choice-of-sensitivity-analysis" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="choice-of-sensitivity-analysis">
+<h5>5.2.2 Choice of sensitivity analysis<a class="headerlink" href="#choice-of-sensitivity-analysis" title="Permalink to this headline">#</a></h5>
 <ul class="simple">
 <li><p>It is therefore desirable to adopt a structured approach, specifying the changes in assumptions that underlie the alternative analyses, rather than simply comparing the results of different analyses based on different sets of assumptions.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="supplementary-analysis">
-<h4>5.3 Supplementary analysis<a class="headerlink" href="#supplementary-analysis" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="supplementary-analysis">
+<h4>5.3 Supplementary analysis<a class="headerlink" href="#supplementary-analysis" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>(ICH E9) Section 5.2.3. indicates that it is usually appropriate to plan for analyses based on both the FAS and the Per Protocol Set (PPS) so that differences between them can be the subject of explicit discussion and interpretation.</p></li>
 <li><p>It is also described in Section 5.2.2. that results based on a PPS might be subject to severe bias.</p></li>
 <li><p>Notwithstanding the differences between violations and deviations from the protocol and intercurrent events, events likely to affect the interpretation or existence of measurements are considered in the description of the estimand.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="documenting-estimand-and-sensitivity-analysis">
-<h3>6. Documenting estimand and sensitivity analysis<a class="headerlink" href="#documenting-estimand-and-sensitivity-analysis" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="documenting-estimand-and-sensitivity-analysis">
+<h3>6. Documenting estimand and sensitivity analysis<a class="headerlink" href="#documenting-estimand-and-sensitivity-analysis" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Summaries of the number and timings of each intercurrent event in each treatment group should be reported.</p></li>
 <li><p>Changes to the estimand during the trial can be problematic and can reduce the credibility of
 the trial.</p></li>
 <li><p>A change to the estimand should usually be reflected through amendment to the protocol.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1009,9 +1114,11 @@ the trial.</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Note-Group_Sequential_Trial_Design.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1027,24 +1134,28 @@ the trial.</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

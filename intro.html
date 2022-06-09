@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Study Notes Index (knowledge base structure) &#8212; Study Notes</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -65,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,14 +108,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -475,90 +490,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/intro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#statistics">
    1 Statistics
@@ -834,12 +939,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Study Notes Index (knowledge base structure)</h1>
@@ -1131,26 +1235,27 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="study-notes-index-knowledge-base-structure">
-<h1>Study Notes Index (knowledge base structure)<a class="headerlink" href="#study-notes-index-knowledge-base-structure" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="study-notes-index-knowledge-base-structure">
+<h1>Study Notes Index (knowledge base structure)<a class="headerlink" href="#study-notes-index-knowledge-base-structure" title="Permalink to this headline">#</a></h1>
 <hr>
 <p>:construction: ONGOING CONSTRUCTION :construction:</p>
-<div class="section" id="statistics">
-<h2>1 Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general-topics">
-<h3>1.1 General topics<a class="headerlink" href="#general-topics" title="Permalink to this headline">¶</a></h3>
+<section id="statistics">
+<h2>1 Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">#</a></h2>
+<section id="general-topics">
+<h3>1.1 General topics<a class="headerlink" href="#general-topics" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Note-Monte%20Carlo%20method.html"><span class="doc std std-doc">Monte Carlo method</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Gaussian%20process.html"><span class="doc std std-doc">Gaussian process</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Model%20comparison%20methods.html"><span class="doc std std-doc">Model comparison methods</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Observational%20study%20design.html"><span class="doc std std-doc">Obervational study design</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="survival-analysis">
-<h3>1.2 Survival analysis<a class="headerlink" href="#survival-analysis" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="survival-analysis">
+<h3>1.2 Survival analysis<a class="headerlink" href="#survival-analysis" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Note-Survival_Analysis.html"><span class="doc std std-doc">Survial analysis general</span></a></p></li>
 <li><p>Cox regression</p>
@@ -1160,47 +1265,47 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p><a class="reference internal" href="Stats/Note-Competing_Risk_Regression.html"><span class="doc std std-doc">Competing risk model</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="bayesian-statistics">
-<h3>1.3 Bayesian Statistics<a class="headerlink" href="#bayesian-statistics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bayesian-statistics">
+<h3>1.3 Bayesian Statistics<a class="headerlink" href="#bayesian-statistics" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Note-Dirichlet%20process.html"><span class="doc std std-doc">Dirichlet process</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Bayesian%20optimization.html"><span class="doc std std-doc">Bayesian optimization</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="missing-data-and-imputation-methods">
-<h3>1.4 Missing data and imputation methods<a class="headerlink" href="#missing-data-and-imputation-methods" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="missing-data-and-imputation-methods">
+<h3>1.4 Missing data and imputation methods<a class="headerlink" href="#missing-data-and-imputation-methods" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Note-Missing%20data.html"><span class="doc std std-doc">Missing data</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="causal-inference-propensity-score-methods">
-<h3>1.5 Causal inference (Propensity score methods)<a class="headerlink" href="#causal-inference-propensity-score-methods" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="causal-inference-propensity-score-methods">
+<h3>1.5 Causal inference (Propensity score methods)<a class="headerlink" href="#causal-inference-propensity-score-methods" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Book-Causal_inference_in_statistics_a_primer.html"><span class="doc std std-doc">Book-Causal inference in statistics <em>a primer</em></span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Causal%20inference%20general.html"><span class="doc std std-doc">Causal inference notes (general)</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Propensity%20score%20methods.html"><span class="doc std std-doc">Propensity score methods basics</span></a></p></li>
 </ul>
-<div class="section" id="use-of-external-control-data-in-rct">
-<h4>1.5.1 Use of external control data in RCT<a class="headerlink" href="#use-of-external-control-data-in-rct" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="meta-analysis-methods">
-<h3>1.6 Meta-analysis methods<a class="headerlink" href="#meta-analysis-methods" title="Permalink to this headline">¶</a></h3>
+<section id="use-of-external-control-data-in-rct">
+<h4>1.5.1 Use of external control data in RCT<a class="headerlink" href="#use-of-external-control-data-in-rct" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+<section id="meta-analysis-methods">
+<h3>1.6 Meta-analysis methods<a class="headerlink" href="#meta-analysis-methods" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Note-Meta-Analysis.html"><span class="doc std std-doc">Meta-analysis basics</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="regression-methods">
-<h3>1.7 Regression methods<a class="headerlink" href="#regression-methods" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="regression-methods">
+<h3>1.7 Regression methods<a class="headerlink" href="#regression-methods" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html"><span class="doc std std-doc">Book-Data Analysis Using Regression and Multilevel Hierarchical Models</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Quantile%20regression.html"><span class="doc std std-doc">Quantile regression</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Multicolinearity.html"><span class="doc std std-doc">Multicolinearity</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="clinical-trials-related">
-<h3>1.8 Clinical trials related<a class="headerlink" href="#clinical-trials-related" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="clinical-trials-related">
+<h3>1.8 Clinical trials related<a class="headerlink" href="#clinical-trials-related" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Note-ICH%20guidelines.html"><span class="doc std std-doc">ICH guidelines</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-FDA%20guidances%20for%20industry.html"><span class="doc std std-doc">FDA guidances</span></a></p></li>
@@ -1208,46 +1313,46 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference internal" href="Stats/Note-Baseline%20Adaptive%20Randomization.html"><span class="doc std std-doc">Baseline adaptive randomization</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Non-inferiority%20equivalence%20superiority%20test.html"><span class="doc std std-doc">Non-inferiority, equivalence, and superiority test basics</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="correlated-longitudinal-data-analysis">
-<h3>1.9 Correlated/longitudinal data analysis<a class="headerlink" href="#correlated-longitudinal-data-analysis" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="correlated-longitudinal-data-analysis">
+<h3>1.9 Correlated/longitudinal data analysis<a class="headerlink" href="#correlated-longitudinal-data-analysis" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Note-Correlated%20Data%20Analysis.html"><span class="doc std std-doc">Correlated Data Analysis</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="ordinal-data">
-<h3>1.10 Ordinal data<a class="headerlink" href="#ordinal-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ordinal-data">
+<h3>1.10 Ordinal data<a class="headerlink" href="#ordinal-data" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Note-Analysis%20of%20Ordinal%20Outcome.html"><span class="doc std std-doc">Analysis of ordinal data</span></a></p></li>
 <li><p><a class="reference internal" href="Stats/Note-Sample_size_calculation_with_WMW_test.html"><span class="doc std std-doc">Sample size calculation with WMW test</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="xx-other-topics">
-<h3>1.xx Other topics<a class="headerlink" href="#xx-other-topics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="xx-other-topics">
+<h3>1.xx Other topics<a class="headerlink" href="#xx-other-topics" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html"><span class="doc std std-doc">Analysis of Observational Health Care Data Using SAS</span></a></p></li>
 <li><p><a class="reference internal" href="Miscellaneous/Sim-Coin%20flip.html"><span class="doc std std-doc">Simulation: No. of flips it takes to get two consective same side</span></a></p></li>
 <li><p><a class="reference internal" href="Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html"><span class="doc std std-doc">Simulation: Generate random number between 1 to 7 using a dice</span></a></p></li>
 </ul>
 <hr>
-</div>
-</div>
-<div class="section" id="data-science-machine-learning">
-<h2>2 Data Science &amp; Machine Learning<a class="headerlink" href="#data-science-machine-learning" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="data-preprocessing-pipeline">
-<h3>2.1 Data preprocessing pipeline<a class="headerlink" href="#data-preprocessing-pipeline" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="data-manipulation">
-<h4>2.1.1 Data manipulation<a class="headerlink" href="#data-manipulation" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="data-science-machine-learning">
+<h2>2 Data Science &amp; Machine Learning<a class="headerlink" href="#data-science-machine-learning" title="Permalink to this headline">#</a></h2>
+<section id="data-preprocessing-pipeline">
+<h3>2.1 Data preprocessing pipeline<a class="headerlink" href="#data-preprocessing-pipeline" title="Permalink to this headline">#</a></h3>
+<section id="data-manipulation">
+<h4>2.1.1 Data manipulation<a class="headerlink" href="#data-manipulation" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Numpy</p></li>
 <li><p>Pandas</p></li>
 <li><p>SQL</p></li>
 <li><p>Spreadsheets</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="ml-methods">
-<h3>2.2 ML methods<a class="headerlink" href="#ml-methods" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="ml-methods">
+<h3>2.2 ML methods<a class="headerlink" href="#ml-methods" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Fundamental ML concepts</p>
 <ul>
@@ -1268,151 +1373,151 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference internal" href="DS_ML/Note-Machine%20Learning%20%28General%29.html"><span class="doc std std-doc">ML General</span></a></p></li>
 <li><p><a class="reference internal" href="DS_ML/Note-Stochasitic%20Gradient%20Descent.html"><span class="doc std std-doc">Stochastic gradient descent</span></a></p></li>
 </ul>
-<div class="section" id="surpervised-learning">
-<h4>2.2.1 Surpervised learning<a class="headerlink" href="#surpervised-learning" title="Permalink to this headline">¶</a></h4>
+<section id="surpervised-learning">
+<h4>2.2.1 Surpervised learning<a class="headerlink" href="#surpervised-learning" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><a class="reference internal" href="DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html"><span class="doc std std-doc">Tree &amp; Random Forest (Bagging)</span></a></p></li>
 <li><p><a class="reference internal" href="DS_ML/Note-Boosting.html"><span class="doc std std-doc">Boosting</span></a></p></li>
 <li><p><a class="reference internal" href="DS_ML/Note-Naive%20Bayes.html"><span class="doc std std-doc">Naive Bayes</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="unsupervised-learning">
-<h4>2.2.2 Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="unsupervised-learning">
+<h4>2.2.2 Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><a class="reference internal" href="DS_ML/Note-Cluster%20analysis.html"><span class="doc std std-doc">Cluster analysis</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="deep-learning">
-<h4>2.2.3 Deep learning<a class="headerlink" href="#deep-learning" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="reinforcement-learning">
-<h4>2.2.4 Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="nlp">
-<h4>2.2.5 NLP<a class="headerlink" href="#nlp" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="recommendation-systems">
-<h4>2.2.6  Recommendation systems<a class="headerlink" href="#recommendation-systems" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="data-visualization">
-<h3>2.3 Data visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="deep-learning">
+<h4>2.2.3 Deep learning<a class="headerlink" href="#deep-learning" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="reinforcement-learning">
+<h4>2.2.4 Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="nlp">
+<h4>2.2.5 NLP<a class="headerlink" href="#nlp" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="recommendation-systems">
+<h4>2.2.6  Recommendation systems<a class="headerlink" href="#recommendation-systems" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+<section id="data-visualization">
+<h3>2.3 Data visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats_Comp/Note-matplotlib.html"><span class="doc std std-doc">matplotlib</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="analytical-tools">
-<h3>2.4 Analytical tools<a class="headerlink" href="#analytical-tools" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="r">
-<h4>2.4.1 R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="analytical-tools">
+<h3>2.4 Analytical tools<a class="headerlink" href="#analytical-tools" title="Permalink to this headline">#</a></h3>
+<section id="r">
+<h4>2.4.1 R<a class="headerlink" href="#r" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><a class="reference internal" href="Stats_Comp/Note-R%20notes.html"><span class="doc std std-doc">R notes</span></a></p></li>
 <li><p><a class="reference internal" href="Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html"><span class="doc std std-doc">How R Searches and Finds stuff</span></a></p></li>
 <li><p><a class="reference internal" href="Stats_Comp/Note-googleVis.html"><span class="doc std std-doc">googleVis package</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="python">
-<h4>2.4.2 Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="python">
+<h4>2.4.2 Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><a class="reference internal" href="DS_ML/Course-Udemy-%20Python%20for%20Data%20Science%20and%20Machine%20Learning%20Bootcamp.html"><span class="doc std std-doc">Udemy: Python for Data Science and Machine Learning Bootcamp</span></a></p></li>
 <li><p>Scikit-learn</p></li>
 <li><p>Tensorflow/Keras</p></li>
 <li><p>PyTorch</p></li>
 </ul>
-</div>
-<div class="section" id="use-notebook">
-<h4>2.4.3 Use notebook<a class="headerlink" href="#use-notebook" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="cloud-service">
-<h4>2.4.4 Cloud service<a class="headerlink" href="#cloud-service" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="other-topics">
-<h3>2.5 Other topics<a class="headerlink" href="#other-topics" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="ml-real-world-application">
-<h4>2.5.1 ML real-world application<a class="headerlink" href="#ml-real-world-application" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="bussiness-sense">
-<h4>2.5.2 Bussiness sense<a class="headerlink" href="#bussiness-sense" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="data-ethics">
-<h4>2.5.3 Data ethics<a class="headerlink" href="#data-ethics" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="use-notebook">
+<h4>2.4.3 Use notebook<a class="headerlink" href="#use-notebook" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="cloud-service">
+<h4>2.4.4 Cloud service<a class="headerlink" href="#cloud-service" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+<section id="other-topics">
+<h3>2.5 Other topics<a class="headerlink" href="#other-topics" title="Permalink to this headline">#</a></h3>
+<section id="ml-real-world-application">
+<h4>2.5.1 ML real-world application<a class="headerlink" href="#ml-real-world-application" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="bussiness-sense">
+<h4>2.5.2 Bussiness sense<a class="headerlink" href="#bussiness-sense" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="data-ethics">
+<h4>2.5.3 Data ethics<a class="headerlink" href="#data-ethics" title="Permalink to this headline">#</a></h4>
 <hr>
-</div>
-</div>
-</div>
-<div class="section" id="math">
-<h2>3 Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="essence-of-linear-algebra">
-<h3>3.1 <a class="reference internal" href="Math/Course-Essence%20of%20linear%20algebra.html"><span class="doc std std-doc">Essence of Linear Algebra</span></a><a class="headerlink" href="#essence-of-linear-algebra" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="essence-of-calculus">
-<h3>3.2 Essence of Calculus<a class="headerlink" href="#essence-of-calculus" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="math">
+<h2>3 Math<a class="headerlink" href="#math" title="Permalink to this headline">#</a></h2>
+<section id="essence-of-linear-algebra">
+<h3>3.1 <a class="reference internal" href="Math/Course-Essence%20of%20linear%20algebra.html"><span class="doc std std-doc">Essence of Linear Algebra</span></a><a class="headerlink" href="#essence-of-linear-algebra" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="essence-of-calculus">
+<h3>3.2 Essence of Calculus<a class="headerlink" href="#essence-of-calculus" title="Permalink to this headline">#</a></h3>
 <hr>
-</div>
-</div>
-<div class="section" id="computer-science-programming">
-<h2>4 Computer Science &amp; Programming<a class="headerlink" href="#computer-science-programming" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>4.1 Python<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="computer-science-programming">
+<h2>4 Computer Science &amp; Programming<a class="headerlink" href="#computer-science-programming" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>4.1 Python<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="CS/Course-%E5%BB%96%E9%9B%AA%E5%B3%B0python%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.html"><span class="doc std std-doc">廖雪峰python教程笔记</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="sql">
-<h3>4.2 SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sql">
+<h3>4.2 SQL<a class="headerlink" href="#sql" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="CS/Note-SQL%20Study%20Notes.html"><span class="doc std std-doc">SQL study notes</span></a></p></li>
 <li><p><a class="reference internal" href="CS/Note-Hard%20SQL%20interview%20questions.html"><span class="doc std std-doc">Hard Data Analyst SQL Interview Questions</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="algorithm-data-structure">
-<h3>4.3 Algorithm &amp; Data Structure<a class="headerlink" href="#algorithm-data-structure" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="git-github">
-<h3>4.4 Git &amp; Github<a class="headerlink" href="#git-github" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="algorithm-data-structure">
+<h3>4.3 Algorithm &amp; Data Structure<a class="headerlink" href="#algorithm-data-structure" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="git-github">
+<h3>4.4 Git &amp; Github<a class="headerlink" href="#git-github" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="CS/Note-git%20and%20github.html"><span class="doc std std-doc">Git and github</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="use-linux">
-<h3>4.5 Use Linux<a class="headerlink" href="#use-linux" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="rust">
-<h3>4.6 Rust<a class="headerlink" href="#rust" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="use-linux">
+<h3>4.5 Use Linux<a class="headerlink" href="#use-linux" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="rust">
+<h3>4.6 Rust<a class="headerlink" href="#rust" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="CS/Note-Learning%20Rust.html"><span class="doc std std-doc">Learning Rust</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="containers">
-<h3>4.7 Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="web-development">
-<h3>4.8 Web Development<a class="headerlink" href="#web-development" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="containers">
+<h3>4.7 Containers<a class="headerlink" href="#containers" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="web-development">
+<h3>4.8 Web Development<a class="headerlink" href="#web-development" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="CS/Note-Modern%20JS%20explained.html"><span class="doc std std-doc">Moden JS explained</span></a></p></li>
 <li><p><a class="reference internal" href="CS/Note-Learning%20React.html"><span class="doc std std-doc">Learning React</span></a></p></li>
 <li><p><a class="reference internal" href="CS/Note-HTML%20basics.html"><span class="doc std std-doc">HTML basics</span></a></p></li>
 <li><p><a class="reference internal" href="CS/Note-Inside%20look%20at%20modern%20web%20browser.html"><span class="doc std std-doc">Inside look at modern browser</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="d3">
-<h3>4.9 D3<a class="headerlink" href="#d3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="d3">
+<h3>4.9 D3<a class="headerlink" href="#d3" title="Permalink to this headline">#</a></h3>
 <hr>
-</div>
-</div>
-<div class="section" id="soft-skills">
-<h2>5 Soft skills<a class="headerlink" href="#soft-skills" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="communication-collaboration">
-<h3>5.1 Communication &amp; collaboration<a class="headerlink" href="#communication-collaboration" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="interview-skills">
-<h3>5.2 Interview skills<a class="headerlink" href="#interview-skills" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="learning-method-philosophy">
-<h3>5.3 Learning method/philosophy<a class="headerlink" href="#learning-method-philosophy" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
+</section>
+</section>
+<section id="soft-skills">
+<h2>5 Soft skills<a class="headerlink" href="#soft-skills" title="Permalink to this headline">#</a></h2>
+<section id="communication-collaboration">
+<h3>5.1 Communication &amp; collaboration<a class="headerlink" href="#communication-collaboration" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="interview-skills">
+<h3>5.2 Interview skills<a class="headerlink" href="#interview-skills" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="learning-method-philosophy">
+<h3>5.3 Learning method/philosophy<a class="headerlink" href="#learning-method-philosophy" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -1425,7 +1530,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1455,8 +1560,10 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='right-next' id="next-link" href="Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="next page">
     <div class="prev-next-info">
@@ -1466,24 +1573,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

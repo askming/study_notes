@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>廖雪峰python教程笔记 &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -476,90 +491,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/CS/Course-廖雪峰python教程笔记.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Course-廖雪峰python教程笔记.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Course-廖雪峰python教程笔记.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/CS/Course-廖雪峰python教程笔记.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    循环
@@ -882,12 +987,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>廖雪峰python教程笔记</h1>
@@ -1226,13 +1330,14 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python">
-<h1>廖雪峰python教程笔记<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>循环<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1>廖雪峰python教程笔记<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>循环<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>可以利用<code class="docutils literal notranslate"><span class="pre">break</span></code>提前终止循环或者<code class="docutils literal notranslate"><span class="pre">continue</span></code>跳过当前循环：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># break</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1252,18 +1357,18 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="dictset">
-<h2>使用dict和set<a class="headerlink" href="#dictset" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dictset">
+<h2>使用dict和set<a class="headerlink" href="#dictset" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是<strong>dict的key必须是不可变对象</strong>。 这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。<strong>这个通过key计算位置的算法称为哈希算法（Hash）</strong>。</p></li>
 <li><p>list是可变的，不能作为key。</p></li>
 <li><p>set和dict类似，也是一组key的集合，但不存储value。set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作</p></li>
 <li><p>set和dict的唯一区别仅在于没有存储对应的value，但是，set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。</p></li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h2>函数<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id2">
+<h2>函数<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">abs</span> <span class="c1"># 变量a指向abs函数</span>
@@ -1275,8 +1380,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>函数执行完毕也没有return语句时，自动return None。</p></li>
 <li><p>函数可以同时返回多个值，但其实就是一个tuple。</p></li>
 </ul>
-<div class="section" id="id3">
-<h3>空函数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3>空函数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>如果想定义一个什么事也不做的空函数，可以用pass语句：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nop</span><span class="p">():</span>
@@ -1286,9 +1391,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p><code class="docutils literal notranslate"><span class="pre">pass</span></code> 可以用来作为占位符，比如现在还没想好怎么写函数的代码，就可以先放一个<code class="docutils literal notranslate"><span class="pre">pass</span></code>，让代码能运行起来。</p>
 </li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h3>函数的参数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>函数的参数<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>位置参数</p></li>
 <li><p>默认参数</p>
@@ -1395,9 +1500,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="recursive-functions">
-<h3>递归函数(recursive functions)<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="recursive-functions">
+<h3>递归函数(recursive functions)<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>如果一个函数在内部调用自身本身，这个函数就是递归函数。</p></li>
 <li><p>理论上，所有的递归函数都可以写成循环的方式，但循环的逻辑不如递归清晰。</p></li>
@@ -1426,20 +1531,20 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>高级特性<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>切片<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id5">
+<h2>高级特性<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="id6">
+<h3>切片<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>切片（slice）：取一个list或tuple的部分元素是非常常见的操作。</p></li>
 <li><p>tuple也是一种list，唯一区别是tuple不可变。因此，tuple也可以用切片操作，只是操作的结果仍是tuple</p></li>
 <li><p>字符串<code class="docutils literal notranslate"><span class="pre">'xxx'</span></code>也可以看成是一种list，每个元素就是一个字符。因此，字符串也可以用切片操作，只是操作结果仍是字符串。 在很多编程语言中，针对字符串提供了很多各种截取函数（例如，substring），其实目的就是对字符串切片。Python没有针对字符串的截取函数，只需要切片一个操作就可以完成，非常简单。</p></li>
 </ul>
-</div>
-<div class="section" id="id7">
-<h3>迭代<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id7">
+<h3>迭代<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>定义：如果给定一个list或tuple，我们可以通过for循环来遍历这个list或tuple，这种遍历我们称为 <strong>迭代（Iteration）</strong>。</p></li>
 <li><p>当我们使用<code class="docutils literal notranslate"><span class="pre">for</span></code>循环时，只要作用于一个可迭代对象，<code class="docutils literal notranslate"><span class="pre">for</span></code>循环就可以正常运行，而我们不太关心该对象究竟是list还是其他数据类型。</p></li>
@@ -1463,9 +1568,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="list-comprehension">
-<h3>列表生成式(list comprehension)<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="list-comprehension">
+<h3>列表生成式(list comprehension)<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>列表生成式则可以用一行语句代替循环生成list：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
@@ -1480,9 +1585,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="generator">
-<h3>生成器(generator)<a class="headerlink" href="#generator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="generator">
+<h3>生成器(generator)<a class="headerlink" href="#generator" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>目的：不一次性直接生成list的全部元素（避免因为list过大而占用很大的存储空间或者不需要马上使用list后面的元素），取而代之的是一边循环一边生成新的元素。</p></li>
 <li><p>要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的<code class="docutils literal notranslate"><span class="pre">[]</span></code>改成<code class="docutils literal notranslate"><span class="pre">()</span></code>，就创建了一个generator：</p>
@@ -1569,9 +1674,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="id8">
-<h3>迭代器<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3>迭代器<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>定义：可以被<code class="docutils literal notranslate"><span class="pre">next()</span></code>函数调用并不断返回下一个值的对象称为迭代器：<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>。</p></li>
 <li><p>可以使用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>判断一个对象是否是<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>对象：</p>
@@ -1589,18 +1694,18 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>Python的<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>对象表示的是一个数据流，<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>对象可以被<code class="docutils literal notranslate"><span class="pre">next()</span></code>函数调用并不断返回下一个数据，直到没有数据时抛出<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>错误。可以把这个数据流看做是一个有序序列，但我们却不能提前知道序列的长度，只能不断通过<code class="docutils literal notranslate"><span class="pre">next()</span></code>函数实现按需计算下一个数据，所以<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>的计算是惰性的，只有在需要返回下一个数据时它才会计算。<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>甚至可以表示一个无限大的数据流，例如全体自然数。而使用<code class="docutils literal notranslate"><span class="pre">list</span></code>是永远不可能存储全体自然数的。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id9">
-<h2>函数式编程<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id9">
+<h2>函数式编程<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>函数是Python内建支持的一种封装，我们通过把大段代码拆成函数，通过一层一层的函数调用，就可以把复杂任务分解成简单的任务，这种分解可以称之为 <strong>面向过程</strong>的程序设计。函数就是面向过程的程序设计的基本单元。</p></li>
 <li><p>函数式编程就是一种抽象程度很高的编程范式，纯粹的函数式编程语言编写的函数<em>没有变量</em>，因此，任意一个函数，只要输入是确定的，输出就是确定的，这种纯函数我们称之为 <strong>没有副作用</strong>。而<em>允许使用变量</em>的程序设计语言，由于函数内部的变量状态不确定，同样的输入，可能得到不同的输出，因此，这种函数是 <strong>有副作用的</strong>。</p></li>
 <li><p>函数式编程的一个特点就是，允许把函数本身作为参数传入另一个函数，还允许返回一个函数！</p></li>
 <li><p>Python对函数式编程提供部分支持。由于Python允许使用变量，因此，Python不是纯函数式编程语言。</p></li>
 </ul>
-<div class="section" id="higher-order-function">
-<h3>高阶函数（Higher-order function）<a class="headerlink" href="#higher-order-function" title="Permalink to this headline">¶</a></h3>
+<section id="higher-order-function">
+<h3>高阶函数（Higher-order function）<a class="headerlink" href="#higher-order-function" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>变量可以指向函数</p></li>
 <li><p>函数名也是变量</p>
@@ -1623,8 +1728,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<div class="section" id="map-reduce">
-<h4>map/reduce<a class="headerlink" href="#map-reduce" title="Permalink to this headline">¶</a></h4>
+<section id="map-reduce">
+<h4>map/reduce<a class="headerlink" href="#map-reduce" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">map()</span></code>函数接收两个参数，一个是函数，一个是<code class="docutils literal notranslate"><span class="pre">Iterable</span></code>，<code class="docutils literal notranslate"><span class="pre">map</span></code>将传入的函数依次作用到序列的每个元素，并把结果作为新的<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>返回。<code class="docutils literal notranslate"><span class="pre">map()</span></code>作为高阶函数，事实上它把运算规则抽象了。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>把一个函数作用在一个序列<code class="docutils literal notranslate"><span class="pre">[x1,</span> <span class="pre">x2,</span> <span class="pre">x3,</span> <span class="pre">...]</span></code>上，这个函数必须接收两个参数，<code class="docutils literal notranslate"><span class="pre">reduce</span></code>把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
@@ -1686,9 +1791,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p><a class="reference external" href="http://research.google.com/archive/mapreduce.html">google 关于MapReduce的论文</a></p></li>
 </ul>
-</div>
-<div class="section" id="filter">
-<h4>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="filter">
+<h4>filter<a class="headerlink" href="#filter" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>和<code class="docutils literal notranslate"><span class="pre">map()</span></code>类似，<code class="docutils literal notranslate"><span class="pre">filter()</span></code>也接收一个函数和一个序列。和<code class="docutils literal notranslate"><span class="pre">map()</span></code>不同的是，<code class="docutils literal notranslate"><span class="pre">filter()</span></code>把传入的函数依次作用于每个元素，然后根据返回值是<code class="docutils literal notranslate"><span class="pre">True</span></code>还是<code class="docutils literal notranslate"><span class="pre">False</span></code>决定保留还是丢弃该元素。</p></li>
 <li><p>注意到<code class="docutils literal notranslate"><span class="pre">filter()</span></code>函数返回的是一个<code class="docutils literal notranslate"><span class="pre">Iterator</span></code>，也就是一个惰性序列，所以要强迫<code class="docutils literal notranslate"><span class="pre">filter()</span></code>完成计算结果，需要用<code class="docutils literal notranslate"><span class="pre">list()</span></code>函数获得所有结果并返回<code class="docutils literal notranslate"><span class="pre">list</span></code>。</p></li>
@@ -1744,9 +1849,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="sorted">
-<h4>sorted<a class="headerlink" href="#sorted" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="sorted">
+<h4>sorted<a class="headerlink" href="#sorted" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>Python内置的<code class="docutils literal notranslate"><span class="pre">sorted()</span></code>函数就可以对<code class="docutils literal notranslate"><span class="pre">list</span></code>进行排序。<code class="docutils literal notranslate"><span class="pre">sorted()</span></code>函数也是一个高阶函数，它还可以接收一个<code class="docutils literal notranslate"><span class="pre">key</span></code>函数来实现自定义的排序，例如按绝对值大小排序：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">([</span><span class="mi">36</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">21</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">)</span>
@@ -1774,12 +1879,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id10">
-<h3>返回函数<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="closure">
-<h4>闭包(closure)<a class="headerlink" href="#closure" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id10">
+<h3>返回函数<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<section id="closure">
+<h4>闭包(closure)<a class="headerlink" href="#closure" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>内部函数可以引用外部函数的参数和局部变量，在外部函数返回内部函数时，相关参数和变量都保存在返回的函数中，这种称为 <strong>“闭包”(closure)</strong>，closure拥有极大的威力。</p></li>
 <li><p>返回的函数并没有立刻执行，而是直到调用了被返回的函数才执行。</p>
@@ -1821,18 +1926,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id11">
-<h3>匿名函数<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id11">
+<h3>匿名函数<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入 <strong>匿名函数</strong>更方便。</p></li>
 <li><p>关键字<code class="docutils literal notranslate"><span class="pre">lambda</span></code>表示匿名函数，冒号前面的<code class="docutils literal notranslate"><span class="pre">x</span></code>表示函数参数。</p></li>
 <li><p>匿名函数有个限制，就是只能有一个表达式，不用写<code class="docutils literal notranslate"><span class="pre">return</span></code>，返回值就是该表达式的结果。</p></li>
 </ul>
-</div>
-<div class="section" id="decorator">
-<h3>装饰器(Decorator)<a class="headerlink" href="#decorator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="decorator">
+<h3>装饰器(Decorator)<a class="headerlink" href="#decorator" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>由于函数也是一个对象，而且函数对象可以被赋值给变量，所以，通过变量也能调用该函数。函数对象有一个<code class="docutils literal notranslate"><span class="pre">__name__</span></code>属性，可以拿到函数的名字：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">now</span><span class="p">():</span>
@@ -1911,9 +2016,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="partial-function">
-<h3>偏函数(partial function)<a class="headerlink" href="#partial-function" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="partial-function">
+<h3>偏函数(partial function)<a class="headerlink" href="#partial-function" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">functools.partial</span></code>可以帮助我们创建一个偏函数：</p>
@@ -1934,10 +2039,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>当传入：<code class="docutils literal notranslate"><span class="pre">max2</span> <span class="pre">=</span> <span class="pre">functools.partial(max,</span> <span class="pre">10)</span></code> 实际上会把10作为<code class="docutils literal notranslate"><span class="pre">*args</span></code>的一部分自动加到左边，也就是：<code class="docutils literal notranslate"><span class="pre">max2(5,</span> <span class="pre">6,</span> <span class="pre">7)</span></code> 相当于：<code class="docutils literal notranslate"><span class="pre">args</span> <span class="pre">=</span> <span class="pre">(10,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7)</span></code>, <code class="docutils literal notranslate"><span class="pre">max(*args)</span></code>。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="module">
-<h2>模块(Module)<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="module">
+<h2>模块(Module)<a class="headerlink" href="#module" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>为了便于管理众多的函数代码，提高代码的可维护性。在Python中，一个.py文件就称之为一个 <strong>模块（Module）</strong>。</p></li>
 <li><p>使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。但是也要注意，尽量不要与内置函数名字冲突。</p></li>
@@ -1945,8 +2050,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>请注意，每一个包目录下面都会有一个<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>的文件，这个文件是必须存在的，否则，Python就把这个目录当成普通目录，而不是一个包。<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>可以是空文件，也可以有Python代码，因为<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>本身就是一个模块，而它的模块名就是该包的名字。</p></li>
 <li><p>包内还可以有更低一级的目录，内含若干的模块，以此类推。</p></li>
 </ul>
-<div class="section" id="id12">
-<h3>使用模块<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<section id="id12">
+<h3>使用模块<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>任何模块代码的第一个字符串都被视为模块的文档注释；</p></li>
 <li><p>例子：</p>
@@ -1974,19 +2079,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-<div class="section" id="id13">
-<h4>作用域<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<section id="id13">
+<h4>作用域<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>在一个模块中，我们可能会定义很多函数和变量，但有的函数和变量我们希望给别人使用（public），有的函数和变量我们希望仅仅在模块内部使用（private）。在Python中，是通过<code class="docutils literal notranslate"><span class="pre">_</span></code>前缀来实现的。</p></li>
 <li><p>private函数和变量“不应该”被直接引用，而不是“不能”被直接引用，是因为Python并没有一种方法可以完全限制访问private函数或变量，但是，从编程习惯上不应该引用private函数或变量。</p></li>
 <li><p>这是一种非常有用的代码封装和抽象的方法，即：外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id14">
-<h3>安装第三方模块<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id15">
-<h4>模块搜索路径<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id14">
+<h3>安装第三方模块<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<section id="id15">
+<h4>模块搜索路径<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>默认情况下，Python解释器会搜索当前目录、所有已安装的内置模块和第三方模块，搜索路径存放在<code class="docutils literal notranslate"><span class="pre">sys</span></code>模块的<code class="docutils literal notranslate"><span class="pre">path</span></code>变量中</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
@@ -2001,11 +2106,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p>第二种方法是设置环境变量<code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>，该环境变量的内容会被自动添加到模块搜索路径中。</p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="object-oriented-programming-oop">
-<h2>面向对象编程(Object Oriented Programming, OOP)<a class="headerlink" href="#object-oriented-programming-oop" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="object-oriented-programming-oop">
+<h2>面向对象编程(Object Oriented Programming, OOP)<a class="headerlink" href="#object-oriented-programming-oop" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</p></li>
 <li><p><strong>面向过程的程序设计</strong> 把计算机程序视为一系列的命令集合，即一组函数的顺序执行。为了简化程序设计，面向过程把函数继续切分为子函数，即把大块函数通过切割成小块函数来降低系统的复杂度。</p></li>
@@ -2013,8 +2118,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>面向对象的设计思想是从自然界中来的，因为在自然界中，类（Class）和实例（Instance）的概念是很自然的。</p></li>
 <li><p>数据封装、继承和多态是面向对象的三大特点</p></li>
 </ul>
-<div class="section" id="id16">
-<h3>类和实例<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<section id="id16">
+<h3>类和实例<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>类是抽象的模板，而实例是根据类创建出来的一个个具体的“对象”，每个对象都拥有相同的方法，但各自的数据可能不同。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -2043,15 +2148,15 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>和普通的函数相比，在类中定义的函数只有一点不同，就是第一个参数永远是实例变量<code class="docutils literal notranslate"><span class="pre">self</span></code>，并且，调用时，不用传递该参数。除此之外，类的方法和普通函数没有什么区别，所以，你仍然可以用默认参数、可变参数、关键字参数和命名关键字参数。</p></li>
 </ul>
-<div class="section" id="id17">
-<h4>数据封装<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<section id="id17">
+<h4>数据封装<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>直接在类的内部定义访问数据的函数，这样，就把“数据”给封装起来了。这些封装数据的函数是和类本身是关联起来的，我们称之为类的 <strong>方法 (method)</strong>。 要定义一个方法，除了第一个参数是<code class="docutils literal notranslate"><span class="pre">self</span></code>外，其他和普通函数一样。要调用一个方法，只需要在实例变量上直接调用，除了<code class="docutils literal notranslate"><span class="pre">self</span></code>不用传递，其他参数正常传入。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id18">
-<h3>访问限制<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id18">
+<h3>访问限制<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>如果要让内部属性不被外部访问，可以把属性的名称前加上两个下划线__，在Python中，实例的变量名如果以<code class="docutils literal notranslate"><span class="pre">__</span></code>开头，就变成了一个私有变量（private），只有内部可以访问，外部不能访问</p></li>
 <li><p>如果又要允许外部修改私有变量的值，可以在类内部定义一个方法来完成，这样可以保证在赋新值的时候做一些必要的检查而避免被赋无效值。</p></li>
@@ -2059,9 +2164,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>有些时候，你会看到以一个下划线开头的实例变量名，比如<code class="docutils literal notranslate"><span class="pre">_name</span></code>，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。</p></li>
 <li><p>双下划线开头的实例变量是不是一定不能从外部访问呢？其实也不是。不能直接访问<code class="docutils literal notranslate"><span class="pre">__name</span></code>是因为Python解释器对外把<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量改成了<code class="docutils literal notranslate"><span class="pre">_Student__name</span></code>，所以，仍然可以通过<code class="docutils literal notranslate"><span class="pre">_Student__name</span></code>来访问<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量。 不同版本的Python解释器可能会把<code class="docutils literal notranslate"><span class="pre">__name</span></code>改成不同的变量名。</p></li>
 </ul>
-</div>
-<div class="section" id="id19">
-<h3>继承和多态<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id19">
+<h3>继承和多态<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>在OOP程序设计中，当我们定义一个class的时候，可以从某个现有的class继承，新的class称为 <strong>子类（Subclass）</strong>，而被继承的class称为 <strong>基类、父类或超类（Base class、Super class）</strong>。</p></li>
 <li><p>如何定义： <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">subclass_name(base_class_name):</span></code></p></li>
@@ -2076,19 +2181,19 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>继承还可以一级一级地继承下来，就好比从爷爷到爸爸、再到儿子这样的关系。而任何类，最终都可以追溯到根类object，这些继承关系看上去就像一颗倒着的树。比如如下的继承树</p></li>
 </ul>
-<div class="section" id="vs">
-<h4>静态语言 vs 动态语言<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h4>
+<section id="vs">
+<h4>静态语言 vs 动态语言<a class="headerlink" href="#vs" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>对于静态语言（例如Java）来说，如果需要传入某类型，则传入的对象必须是该类型或者它的子类，否则，将无法调用父类型下的方法。</p></li>
 <li><p>对于Python这样的动态语言来说，则不一定需要传入父类型类型。我们只需要保证传入的对象有一个同名的方法就可以了。</p></li>
 <li><p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id20">
-<h3>获取对象信息<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="type">
-<h4>使用<code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id20">
+<h3>获取对象信息<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<section id="type">
+<h4>使用<code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#type" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">type()</span></code>返回对应的class类型</p></li>
 <li><p>借助<code class="docutils literal notranslate"><span class="pre">types</span></code> 模块来判断一个对象是否是函数：</p>
@@ -2108,9 +2213,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="isinstance">
-<h4>使用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code><a class="headerlink" href="#isinstance" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="isinstance">
+<h4>使用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code><a class="headerlink" href="#isinstance" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>更加便于了解class的继承关系</p></li>
 <li><p>能用<code class="docutils literal notranslate"><span class="pre">type()</span></code>判断的基本类型也可以用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>判断</p></li>
@@ -2121,9 +2226,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="dir">
-<h4>使用<code class="docutils literal notranslate"><span class="pre">dir()</span></code><a class="headerlink" href="#dir" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="dir">
+<h4>使用<code class="docutils literal notranslate"><span class="pre">dir()</span></code><a class="headerlink" href="#dir" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>可以用来获取一个对象的所有属性和方法</p></li>
 <li><p>类似<code class="docutils literal notranslate"><span class="pre">__xxx__</span></code>的属性和方法在Python中都是有特殊用途的，比如<code class="docutils literal notranslate"><span class="pre">__len__</span></code>方法返回长度。剩下的都是普通属性或方法。</p></li>
@@ -2146,10 +2251,10 @@ const thebe_selector_output = ".output, .cell_output"
 <code class="docutils literal notranslate"><span class="pre">hasattr()</span></code>就派上了用场。</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id21">
-<h3>实例属性和类属性<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id21">
+<h3>实例属性和类属性<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>给实例绑定属性的方法是通过实例变量，或者通过self变量：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -2161,13 +2266,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>当我们定义了一个类属性后，这个属性虽然归类所有，但类的所有实例都可以访问到。实例属性高于类属性，当实例和类定义相同的属性时，实例属性将覆盖类属性。但是当你删除实例属性后，再使用相同的名称，访问到的将是类属性。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id22">
-<h2>面向对象高级编程<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id22">
+<h2>面向对象高级编程<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h2>
 <p>数据封装、继承和多态只是面向对象程序设计中最基础的3个概念。在Python中，面向对象还有很多高级特性，允许我们写出非常强大的功能。例如：多重继承、定制类、元类等。</p>
-<div class="section" id="slots">
-<h3>使用__slots__<a class="headerlink" href="#slots" title="Permalink to this headline">¶</a></h3>
+<section id="slots">
+<h3>使用__slots__<a class="headerlink" href="#slots" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>动态绑定允许我们在程序运行的过程中动态给class加上功能，这在静态语言中很难实现。</p></li>
 <li><p>但是，如果我们想要限制实例的属性怎么办？为了达到限制的目的，Python允许在定义class的时候，定义一个特殊的<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>变量，来限制该class实例能添加的属性：</p>
@@ -2178,9 +2283,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>使用<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>要注意，<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>定义的属性仅对当前类实例起作用，对继承的子类是不起作用的。除非在子类中也定义<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>，这样，子类实例允许定义的属性就是自身的<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>加上父类的<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>。</p></li>
 </ul>
-</div>
-<div class="section" id="property">
-<h3>使用&#64;property<a class="headerlink" href="#property" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="property">
+<h3>使用&#64;property<a class="headerlink" href="#property" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>主要目的是为了更加方便地给实例赋值（ <strong>通过属性赋值形式实现方法方式赋值过程</strong>），同时又能进行一些必要的赋值检查（只能在方法中定义检查赋值的有效范围）。</p></li>
 <li><p>&#64;property 相当于<code class="docutils literal notranslate"><span class="pre">getter</span></code>方法（即读取）， 而它会制动产生一个<code class="docutils literal notranslate"><span class="pre">setter</span></code>方法（即赋值）。</p>
@@ -2200,15 +2305,15 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&#64;property</span></code>广泛应用在类的定义中，可以让调用者写出简短的代码，同时保证对参数进行必要的检查，这样，程序运行时就减少了出错的可能性。</p></li>
 </ul>
-</div>
-<div class="section" id="id23">
-<h3>多重继承<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id23">
+<h3>多重继承<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>继承是面向对象编程的一个重要的方式，因为通过继承，子类就可以扩展父类的功能。</p></li>
 <li><p>多重继承即子类可以同时继承多个父类</p></li>
 </ul>
-<div class="section" id="mixin-mix-inherit">
-<h4>MixIn (mix inherit)<a class="headerlink" href="#mixin-mix-inherit" title="Permalink to this headline">¶</a></h4>
+<section id="mixin-mix-inherit">
+<h4>MixIn (mix inherit)<a class="headerlink" href="#mixin-mix-inherit" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>MixIn的目的就是给一个类增加多个功能，这样，在设计类的时候，我们优先考虑通过多重继承来组合多个MixIn的功能，而不是设计多层次的复杂的继承关系。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Mammal</span><span class="p">,</span> <span class="n">RunnableMixIn</span><span class="p">,</span> <span class="n">CarnivorousMixIn</span><span class="p">):</span>
@@ -2217,15 +2322,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id24">
-<h3>定制类<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id24">
+<h3>定制类<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>看到类似<code class="docutils literal notranslate"><span class="pre">__slots__</span></code>这种形如<code class="docutils literal notranslate"><span class="pre">__xxx__</span></code>的变量或者函数名就要注意，这些在Python中是有特殊用途的。</p></li>
 </ul>
-<div class="section" id="str">
-<h4><code class="docutils literal notranslate"><span class="pre">__str__</span></code><a class="headerlink" href="#str" title="Permalink to this headline">¶</a></h4>
+<section id="str">
+<h4><code class="docutils literal notranslate"><span class="pre">__str__</span></code><a class="headerlink" href="#str" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>对应<code class="docutils literal notranslate"><span class="pre">print</span></code>方法: 只需要定义好<code class="docutils literal notranslate"><span class="pre">__str__()</span></code>方法，返回一个好看的字符串就可以了：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -2241,21 +2346,21 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>若只用变量名而不用<code class="docutils literal notranslate"><span class="pre">print</span></code>直接显示变量调用的不是<code class="docutils literal notranslate"><span class="pre">__str__()</span></code>，而是<code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>，两者的区别是<code class="docutils literal notranslate"><span class="pre">__str__()</span></code>返回用户看到的字符串，而<code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>返回程序开发者看到的字符串，也就是说，<code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>是为调试服务的。所以可以把<code class="docutils literal notranslate"><span class="pre">__str__</span></code> 赋值给<code class="docutils literal notranslate"><span class="pre">__repr__</span></code>: <code class="docutils literal notranslate"><span class="pre">__repr__</span> <span class="pre">=</span> <span class="pre">__str__</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="iter">
-<h4><code class="docutils literal notranslate"><span class="pre">__iter__</span></code><a class="headerlink" href="#iter" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="iter">
+<h4><code class="docutils literal notranslate"><span class="pre">__iter__</span></code><a class="headerlink" href="#iter" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>如果一个类想被用于<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code>循环，类似<code class="docutils literal notranslate"><span class="pre">list</span></code>或<code class="docutils literal notranslate"><span class="pre">tuple</span></code>那样，就必须实现一个<code class="docutils literal notranslate"><span class="pre">__iter__()</span></code>方法，该方法返回一个迭代对象，然后，Python的<code class="docutils literal notranslate"><span class="pre">for</span></code>循环就会不断调用该迭代对象的<code class="docutils literal notranslate"><span class="pre">__next__()</span></code>方法拿到循环的下一个值，直到遇到<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>错误时退出循环。</p></li>
 </ul>
-</div>
-<div class="section" id="getitem">
-<h4><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code><a class="headerlink" href="#getitem" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="getitem">
+<h4><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code><a class="headerlink" href="#getitem" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Fib实例虽然能作用于for循环，看起来和list有点像，但是，把它当成list来使用还是不行, 比如不能用index取其中的元素。</p></li>
 </ul>
-</div>
-<div class="section" id="getattr">
-<h4><code class="docutils literal notranslate"><span class="pre">__getattr__</span></code><a class="headerlink" href="#getattr" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="getattr">
+<h4><code class="docutils literal notranslate"><span class="pre">__getattr__</span></code><a class="headerlink" href="#getattr" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>当输入的属性在默认属性中不存在，python调用<code class="docutils literal notranslate"><span class="pre">__getattr__</span></code>查找。任意调用不存在的属性都会返回<code class="docutils literal notranslate"><span class="pre">None</span></code>。也可以对不存在的属性自定义抛出<code class="docutils literal notranslate"><span class="pre">AttributeError</span></code>的错误。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -2267,9 +2372,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="call">
-<h4><code class="docutils literal notranslate"><span class="pre">__call__</span></code><a class="headerlink" href="#call" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="call">
+<h4><code class="docutils literal notranslate"><span class="pre">__call__</span></code><a class="headerlink" href="#call" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>一个对象实例可以有自己的属性和方法，当我们调用实例方法时，我们用<code class="docutils literal notranslate"><span class="pre">instance.method()</span></code>来调用。能不能直接在实例本身上调用呢？在Python中，答案是肯定的。 任何类，只需要定义一个<code class="docutils literal notranslate"><span class="pre">__call()__</span></code>方法，就可以直接对实例进行调用。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -2288,10 +2393,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><code class="docutils literal notranslate"><span class="pre">__call__()</span></code>还可以定义参数。对实例进行直接调用就好比对一个函数进行调用一样，所以你完全可以把对象看成函数，把函数看成对象，因为这两者之间本来就没啥根本的区别。</p></li>
 <li><p>判断一个变量是对象还是函数，可以用<code class="docutils literal notranslate"><span class="pre">callable()</span></code>函数进行判断。</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id25">
-<h3>使用枚举类<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id25">
+<h3>使用枚举类<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>使用枚举类型定义一个class类型，然后，每个常量都是class的一个唯一实例。Python提供了<code class="docutils literal notranslate"><span class="pre">Enum</span></code>类来实现这个功能：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
@@ -2319,12 +2424,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p><code class="docutils literal notranslate"><span class="pre">&#64;unique</span></code>装饰器可以帮助我们检查保证没有重复值。</p>
 </li>
 </ul>
-</div>
-<div class="section" id="id26">
-<h3>使用元类<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-</div>
+</section>
+<section id="id26">
+<h3>使用元类<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2354,9 +2459,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2372,24 +2479,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

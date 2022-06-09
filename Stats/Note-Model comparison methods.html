@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Model comparison methods &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,7 +67,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +90,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -97,14 +111,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -478,90 +493,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Note-Model comparison methods.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Model comparison methods.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Model comparison methods.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Stats/Note-Model comparison methods.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Model Comparison Methods
@@ -645,12 +750,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Model comparison methods</h1>
@@ -750,15 +854,16 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="model-comparison-methods">
-<h1>Model comparison methods<a class="headerlink" href="#model-comparison-methods" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>Model Comparison Methods<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general-background">
-<h3>General background<a class="headerlink" href="#general-background" title="Permalink to this headline">¶</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="model-comparison-methods">
+<h1>Model comparison methods<a class="headerlink" href="#model-comparison-methods" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>Model Comparison Methods<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="general-background">
+<h3>General background<a class="headerlink" href="#general-background" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A list of criteria that are thought to be important for model comparison that have been proposed including:</p>
 <ul>
@@ -781,25 +886,25 @@ b) data are inevitably confounded by random noise (sampling error, measurement e
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="notation-and-definition">
-<h3>Notation and definition<a class="headerlink" href="#notation-and-definition" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="notation-and-definition">
+<h3>Notation and definition<a class="headerlink" href="#notation-and-definition" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Formally, a model is defined as a parametric family of probability distributions. Each distribution is indexed by the model’s parameter vector <span class="math notranslate nohighlight">\({\boldsymbol w} = (w_1,\cdots,w_k)\)</span> and corresponds to a population.</p></li>
 <li><p>The <em>probability (density) function</em>, denoted by <span class="math notranslate nohighlight">\(f({\boldsymbol y}|{\boldsymbol w})\)</span>, specifies the probability of observing data <span class="math notranslate nohighlight">\({\boldsymbol y}\)</span> given the parameter <span class="math notranslate nohighlight">\({\boldsymbol w}\)</span>.</p></li>
 <li><p>Given the fixed data vector <span class="math notranslate nohighlight">\({\boldsymbol y}\)</span>, <span class="math notranslate nohighlight">\(f({\boldsymbol y|w})\)</span> becomes a function of <span class="math notranslate nohighlight">\({\boldsymbol w}\)</span> and is called the <em>likelihood function</em> denoted by <span class="math notranslate nohighlight">\({\boldsymbol L(w)}\)</span>.</p></li>
 <li><p>Given a data sample, a model’s descriptive adequacy is assessed by finding parameter values of the model that best fit the data in some defined sense. This procedure, called <em>parameter estimation</em>, is carried out by seeking the parameter vector <span class="math notranslate nohighlight">\({\boldsymbol w}^*\)</span> that maximizes the likelihood function <span class="math notranslate nohighlight">\(L({\boldsymbol w})\)</span> given the observed data vector <span class="math notranslate nohighlight">\({\boldsymbol y}\)</span> <span class="math notranslate nohighlight">\(-\)</span> a procedure known as <em>maximum likelihood estimation</em>.</p></li>
 </ul>
-</div>
-<div class="section" id="goodness-of-fit-maximized-likelihood">
-<h3>Goodness-of-fit (maximized likelihood)<a class="headerlink" href="#goodness-of-fit-maximized-likelihood" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="goodness-of-fit-maximized-likelihood">
+<h3>Goodness-of-fit (maximized likelihood)<a class="headerlink" href="#goodness-of-fit-maximized-likelihood" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The resulting maximized likelihood (ML) value, <span class="math notranslate nohighlight">\(L({\boldsymbol w}^*)\)</span>, defines a measure of the model’s <em>goodness of fit</em>, which represents a model’s ability to fit a particular set of observed data.</p></li>
 <li><p>Other examples of goodness-of-fit measures include the <em>minimized sum of squared errors</em> (<strong>SSE</strong>) between a model’s predictions and observations, the proportion variance accounted for or otherwise known as the <em>coefficient of determination</em> <span class="math notranslate nohighlight">\(r^2\)</span>, and the <em>mean squared error</em> (<strong>MSE</strong>) defined as the square root of SSE divided by the number of observations.</p></li>
 <li><p>ML is a standard measure of goodness of fit, most widely used in statistics, and all of the model comparison methods discussed in the present chapter were developed using ML.</p></li>
 </ul>
-<div class="section" id="a-good-fit-can-be-insufficient-and-misleading">
-<h4>A good fit can be insufficient and misleading<a class="headerlink" href="#a-good-fit-can-be-insufficient-and-misleading" title="Permalink to this headline">¶</a></h4>
+<section id="a-good-fit-can-be-insufficient-and-misleading">
+<h4>A good fit can be insufficient and misleading<a class="headerlink" href="#a-good-fit-can-be-insufficient-and-misleading" title="Permalink to this headline">#</a></h4>
 <div class="math notranslate nohighlight">
 \[\text{goodness of fit = fit to regularity + fit to noise}\]</div>
 <ul class="simple">
@@ -808,10 +913,10 @@ b) data are inevitably confounded by random noise (sampling error, measurement e
 <li><p>Selecting among models using a goodness-of-fit measure would make sense if data were <em>free of noise</em>. In reality, however, data are not “pure” reflections of the population of interest.</p></li>
 <li><p>Any goodness-of-fit measure contains a contribution from the model’s ability to fit random error as well as its ability to approximate the underlying regularity. The problem is that both quantities are unknown because when fitting a data set, we obtain the overall value of their sum, that is, a single goodness of fit.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="model-complexity">
-<h3>Model complexity<a class="headerlink" href="#model-complexity" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="model-complexity">
+<h3>Model complexity<a class="headerlink" href="#model-complexity" title="Permalink to this headline">#</a></h3>
 <p><img alt="e8f0ce9c.png" src="https://raw.githubusercontent.com/askming/picgo/master/e8f0ce9c_20200625130118.png" /></p>
 <ul class="simple">
 <li><p>A model’s ability to fit random noise is closely correlated with the <em>complexity</em> of the model.</p></li>
@@ -820,9 +925,9 @@ b) data are inevitably confounded by random noise (sampling error, measurement e
 <li><p>Generally speaking, the more complex the model, the more easily it can absorb random noise, thus increasing its fit to the data without necessarily increasing its fit to the regularity.</p></li>
 <li><p>In fact one can always improve goodness of fit by increasing model complexity, such as adding more parameters.</p></li>
 </ul>
-</div>
-<div class="section" id="generalizability">
-<h3>Generalizability<a class="headerlink" href="#generalizability" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="generalizability">
+<h3>Generalizability<a class="headerlink" href="#generalizability" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>A model’s ability to fit the regularity in the data, represented by the first term on the right-hand side of the equation (1), defines its <em>generalizability</em>.</p></li>
 <li><p>Generalizability, or predictive accuracy, refers to how well a model predicts the statistical properties of future, as yet unseen, samples from a replication of the experiment that generated the current data sample.</p></li>
@@ -839,11 +944,11 @@ the data by absorbing random noise.</p></li>
 <li><p>To reiterate, in model comparison, one would like to choose the model, among a set of competing models, that maximizes generalizability. Unfortunately, generalizability is not directly observable because noise always distorts the regularity of interest.</p></li>
 <li><p>Generalizability, therefore, must be estimated from a data sample. It is achieved by weighting a model\textquoteright s goodness of fit relative to its complexity.</p></li>
 </ul>
-</div>
-<div class="section" id="model-comparions-methods">
-<h3>Model comparions methods<a class="headerlink" href="#model-comparions-methods" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="measures-of-generalizability">
-<h4>Measures of generalizability<a class="headerlink" href="#measures-of-generalizability" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="model-comparions-methods">
+<h3>Model comparions methods<a class="headerlink" href="#model-comparions-methods" title="Permalink to this headline">#</a></h3>
+<section id="measures-of-generalizability">
+<h4>Measures of generalizability<a class="headerlink" href="#measures-of-generalizability" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p><strong>AIC</strong>: (Akaike, 1973; Bozdogan, 2000): Akaike Information Criterion</p></li>
 <li><p><strong>BIC</strong>: (Schwarz, 1978): Bayesian Information Criterion</p></li>
@@ -876,9 +981,9 @@ the data by absorbing random noise.</p></li>
 <li><p>Among the five comparison methods discussed above, BMS and MDL represent state-of-the-art techniques that will generally perform more accurately across a range of modeling situations than the other three criteria (AIC, BIC, CV).</p></li>
 <li><p>The latter three are attractive given their ease of use, and are likely to perform adequately under certain circumstances. In particular, if the models being compared <strong>do differ in number of parameters</strong> and further, <strong>sample size is sufficiently large</strong>, then one may be able to use AIC or BIC with confidence instead of the more sophisticated BMS and MDL.</p></li>
 </ul>
-</div>
-<div class="section" id="aic-bic-and-mdl">
-<h4>AIC, BIC, and MDL<a class="headerlink" href="#aic-bic-and-mdl" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="aic-bic-and-mdl">
+<h4>AIC, BIC, and MDL<a class="headerlink" href="#aic-bic-and-mdl" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>For these three, the first term represents a lack of fit measure and
 the remaining terms represent a model complexity measure.</p></li>
@@ -894,9 +999,9 @@ the remaining terms represent a model complexity measure.</p></li>
 <li><p><strong>MDL</strong>: originated from algorithmic coding theory in computer science. The goal of MDL is to select the model that provides <em>the shortest description of the data in bits</em>. The more the model is able to compress the data by extracting the regularities or patterns in it, the better the model’s generalizability because these uncovered regularities can then be used to predict accurately future data.</p></li>
 <li><p>Given this additional sensitivity, MDL is expected to perform more accurately than its two competitors. The price to pay for MDL’s superior performance is the computational challenge in its calculation; the evaluation of the integral term generally requires use of numerical integration techniques.</p></li>
 </ul>
-</div>
-<div class="section" id="cross-validation-cv">
-<h4>Cross-validation (CV)<a class="headerlink" href="#cross-validation-cv" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="cross-validation-cv">
+<h4>Cross-validation (CV)<a class="headerlink" href="#cross-validation-cv" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>CV is a sampling-based method in which generalizability is estimated directly from the data without an explicit consideration of model complexity.</p></li>
 <li><p>The method works as follows.</p>
@@ -909,9 +1014,9 @@ the remaining terms represent a model complexity measure.</p></li>
 <li><p>CV’s ease of use is offset by the unreliability of its generalizability estimate, especially for small sample sizes.</p></li>
 <li><p>Unlike AIC and BIC, CV <strong>takes</strong> into account the functional form effects of complexity, although the implicit nature of CV makes it difficult to discern how this is achieved.</p></li>
 </ul>
-</div>
-<div class="section" id="bayesian-model-selection-bms">
-<h4>Bayesian model selection (BMS)<a class="headerlink" href="#bayesian-model-selection-bms" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="bayesian-model-selection-bms">
+<h4>Bayesian model selection (BMS)<a class="headerlink" href="#bayesian-model-selection-bms" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>BMS, a sharper version of BIC, is defined as the <em>minus marginal likelihood</em>.</p></li>
 <li><p>The <em>marginal likelihood</em> is the probability of the observed data given the model, averaged over the entire range of the parameter vector and weighted by the parameter prior density <span class="math notranslate nohighlight">\(\pi({\boldsymbol w})\)</span>. As such, BMS aims to select the model with the <em>highest mean likelihood of the data</em>.</p></li>
@@ -919,9 +1024,9 @@ the remaining terms represent a model complexity measure.</p></li>
 <li><p>BMS does not yield an explicit measure of complexity though complexity is taken into account and is hidden in the integral. It is through the integral that the functional form dimension of complexity, as well as the number of parameters and the sample size, is reflected.</p></li>
 <li><p>It is also the integral that makes it non-trivial to implement BMS.</p></li>
 </ul>
-</div>
-<div class="section" id="relation-to-generalized-likelihood-ratio-test-glrt">
-<h4>Relation to generalized likelihood ratio test (GLRT)<a class="headerlink" href="#relation-to-generalized-likelihood-ratio-test-glrt" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="relation-to-generalized-likelihood-ratio-test-glrt">
+<h4>Relation to generalized likelihood ratio test (GLRT)<a class="headerlink" href="#relation-to-generalized-likelihood-ratio-test-glrt" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>Although the generalized likelihood ratio test (GLRT) is often used to test the adequacy of a model in the context of another model, it is not an appropriate method for model comparison.</p></li>
 <li><p>The GLRT is definded as</p>
@@ -940,10 +1045,10 @@ model alternative, or vice versa.</p></li>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="comments-for-real-work">
-<h3>Comments for real work<a class="headerlink" href="#comments-for-real-work" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="comments-for-real-work">
+<h3>Comments for real work<a class="headerlink" href="#comments-for-real-work" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A good method should be able to identify the true model (i.e., the one that generated the data) 100% of the time. Any deviations from perfect recovery reveal a bias in the selection method.</p></li>
 <li><p>It is importance to account for all relevant dimensions of complexity in model comparison. When comparing two models that have same number of parameters but different functional formats, methods only accout for number of parameters, like AIC, may be less favorable to those also account for the functional form like MDL.</p></li>
@@ -952,11 +1057,11 @@ perfectly all the time.</p></li>
 <li><p>When using any of these selection methods, we advise that the results be interpreted in relation to the other criteria important in model selection</p></li>
 <li><p>They are not the arbiters of truth. Like any such tool, they are blind to the quality of the data and the plausibility of the models under consideration.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="bias-variance-trade-off">
-<h2>Bias-variance trade-off<a class="headerlink" href="#bias-variance-trade-off" title="Permalink to this headline">¶</a></h2>
+<section id="bias-variance-trade-off">
+<h2>Bias-variance trade-off<a class="headerlink" href="#bias-variance-trade-off" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Common question for data science interviews</p></li>
 <li><p>“Bias” and “variance” are two ways of looking at the same thing. (“Bias” is conditional, “variance” is unconditional.) <a class="footnote-reference brackets" href="#bv-trade-off-gelman" id="id3">2</a></p></li>
@@ -970,8 +1075,8 @@ perfectly all the time.</p></li>
 <dd><p><a class="reference external" href="https://statmodeling.stat.columbia.edu/2017/03/18/noise-and-bias/">“Bias” and “variance” are two ways of looking at the same thing. (“Bias” is conditional, “variance” is unconditional.)</a></p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1001,9 +1106,11 @@ perfectly all the time.</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Note-Missing%20data.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1019,24 +1126,28 @@ perfectly all the time.</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

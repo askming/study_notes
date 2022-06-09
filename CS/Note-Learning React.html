@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Learning React &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -476,90 +491,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/CS/Note-Learning React.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-Learning React.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-Learning React.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/CS/Note-Learning React.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-react">
    What is React
@@ -732,12 +837,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Learning React</h1>
@@ -926,13 +1030,14 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="learning-react">
-<h1>Learning React<a class="headerlink" href="#learning-react" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-is-react">
-<h2>What is React<a class="headerlink" href="#what-is-react" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="learning-react">
+<h1>Learning React<a class="headerlink" href="#learning-react" title="Permalink to this headline">#</a></h1>
+<section id="what-is-react">
+<h2>What is React<a class="headerlink" href="#what-is-react" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>React is a JavaScript library, used to build user interfaces (UI) on the front end.</p>
 <ul>
@@ -944,9 +1049,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>React is the view layer of an MVC application (Model View Controller)</p></li>
 <li><p>One of the most important aspects of React is the fact that you can create <strong>components</strong>, which are like custom, reusable HTML elements, to quickly and efficiently build user interfaces. React also streamlines how data is stored and handled, using <strong>state</strong> and <strong>props</strong>.</p></li>
 </ul>
-</div>
-<div class="section" id="create-react-app">
-<h2>Create React app<a class="headerlink" href="#create-react-app" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-react-app">
+<h2>Create React app<a class="headerlink" href="#create-react-app" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p><a class="reference external" href="https://github.com/facebook/create-react-app">Create React App</a> is an environment that comes pre-configured with everything you need to build a React app.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npx create-react-app react-tutorial
@@ -986,15 +1091,15 @@ ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;))
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="react-developer-tools">
-<h2>React Developer Tools<a class="headerlink" href="#react-developer-tools" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="react-developer-tools">
+<h2>React Developer Tools<a class="headerlink" href="#react-developer-tools" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>There is an extension called React Developer Tools that will make your life much easier when working with React. Download <a class="reference external" href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">React DevTools for Chrome</a>, or whatever browser you prefer to work on.</p></li>
 </ul>
-</div>
-<div class="section" id="jsx-javascript-xml">
-<h2>JSX: JavaScript + XML<a class="headerlink" href="#jsx-javascript-xml" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="jsx-javascript-xml">
+<h2>JSX: JavaScript + XML<a class="headerlink" href="#jsx-javascript-xml" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>it is what looks like HTML in React code, but it’s not quite HTML. This is JSX, which stands for JavaScript XML.</p>
 <ul class="simple">
@@ -1024,13 +1129,13 @@ const heading = &lt;h1&gt;Hello, {name}&lt;/h1&gt;
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="elements">
-<h2>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="elements">
+<h2>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">#</a></h2>
 <p>TO ADD.</p>
-</div>
-<div class="section" id="components">
-<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Almost everything in React consists of components, which can be <strong>class components</strong> or <strong>simple components</strong>.</p>
 <ul class="simple">
@@ -1061,8 +1166,8 @@ const heading = &lt;h1&gt;Hello, {name}&lt;/h1&gt;
 </li>
 <li><p>A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be extracted to a separate component.</p></li>
 </ul>
-<div class="section" id="class-components">
-<h3>Class Components<a class="headerlink" href="#class-components" title="Permalink to this headline">¶</a></h3>
+<section id="class-components">
+<h3>Class Components<a class="headerlink" href="#class-components" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>We create a custom class component as we wanted</p>
 <ul class="simple">
@@ -1081,9 +1186,9 @@ const heading = &lt;h1&gt;Hello, {name}&lt;/h1&gt;
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="simple-components">
-<h3>Simple Components<a class="headerlink" href="#simple-components" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="simple-components">
+<h3>Simple Components<a class="headerlink" href="#simple-components" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>Simple component is a function. This component doesn’t use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">SimpleComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1100,9 +1205,9 @@ const heading = &lt;h1&gt;Hello, {name}&lt;/h1&gt;
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="props">
-<h3>Props<a class="headerlink" href="#props" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="props">
+<h3>Props<a class="headerlink" href="#props" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>One of the big deals about React is how it handles data, and it does so with properties, referred to as <strong>props</strong>, and with state.</p></li>
 <li><p>we can access all props through <code class="docutils literal notranslate"><span class="pre">this.props</span></code></p></li>
@@ -1168,10 +1273,10 @@ class App extends Component {
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="state">
-<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="state">
+<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>With props, we have a one way data flow, but with state we can update private data from a component.</p></li>
 <li><p>You can think of state as any data that should be saved and modified without necessarily being added to a database - for example, adding and removing items from a shopping cart before confirming your purchase.</p></li>
@@ -1206,9 +1311,9 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="using-react-router-for-a-spa-single-page-application">
-<h2>Using React Router for a SPA (single page application)<a class="headerlink" href="#using-react-router-for-a-spa-single-page-application" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-react-router-for-a-spa-single-page-application">
+<h2>Using React Router for a SPA (single page application)<a class="headerlink" href="#using-react-router-for-a-spa-single-page-application" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Routing</strong> is how a web applications direct traffic.</p></li>
 <li><p>In Single Page Application (or SPA) - only one page is loaded, and every click to a new page loads some additional JSON data, but does not actually request a new resource like loading index.html and about-me.html would.</p></li>
@@ -1218,8 +1323,8 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-<div class="section" id="browser-router">
-<h3>Browser router<a class="headerlink" href="#browser-router" title="Permalink to this headline">¶</a></h3>
+<section id="browser-router">
+<h3>Browser router<a class="headerlink" href="#browser-router" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>To use <code class="docutils literal notranslate"><span class="pre">react-router-dom</span></code>, we need to wrap our entire <code class="docutils literal notranslate"><span class="pre">App</span></code> component in <code class="docutils literal notranslate"><span class="pre">BrowserRouter</span></code>. There are two types of routers:</p>
 <ul>
@@ -1228,23 +1333,23 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="route-and-switch">
-<h3>Route and switch<a class="headerlink" href="#route-and-switch" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="route-and-switch">
+<h3>Route and switch<a class="headerlink" href="#route-and-switch" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Switch</span></code> - Groups all your routes together, and ensures they take precedence from top-to-bottom.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Route</span></code> - Each individual route.</p></li>
 </ul>
-</div>
-<div class="section" id="link">
-<h3>Link<a class="headerlink" href="#link" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="link">
+<h3>Link<a class="headerlink" href="#link" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>In order to link to a page <strong>within</strong> the SPA, we’ll use <code class="docutils literal notranslate"><span class="pre">Link</span></code>. If we used the traditional <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">href=&quot;/route&quot;&gt;</span></code>, it would make a completely new request and reload the page, so we have <code class="docutils literal notranslate"><span class="pre">Link</span></code> to help us out.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="handling-events">
-<h2>Handling events<a class="headerlink" href="#handling-events" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="handling-events">
+<h2>Handling events<a class="headerlink" href="#handling-events" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Difference in handling events b/t React and HTML</p>
 <ul class="simple">
@@ -1258,9 +1363,9 @@ class App extends Component {
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="conditional-rendering">
-<h2>Conditional Rendering<a class="headerlink" href="#conditional-rendering" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="conditional-rendering">
+<h2>Conditional Rendering<a class="headerlink" href="#conditional-rendering" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to conditionally render a component</p></li>
 <li><p>Use inline condtions in JSX</p>
@@ -1280,13 +1385,13 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="lists-and-kyes">
-<h2>Lists and kyes<a class="headerlink" href="#lists-and-kyes" title="Permalink to this headline">¶</a></h2>
-<div class="margin sidebar">
+</section>
+<section id="lists-and-kyes">
+<h2>Lists and kyes<a class="headerlink" href="#lists-and-kyes" title="Permalink to this headline">#</a></h2>
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Here is an <a class="reference external" href="https://reactjs.org/docs/reconciliation.html#recursing-on-children">in-depth explanation about why keys are necessary</a> if you’re interested in learning more.</p>
-</div>
+</aside>
 <ul>
 <li><p>A “key” is a special string attribute you need to include when creating lists of elements.</p></li>
 <li><p>Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity</p></li>
@@ -1308,10 +1413,10 @@ class App extends Component {
 );
 </pre></div>
 </div>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Check out Robin Pokorny’s article for an <a class="reference external" href="https://medium.com/&#64;robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318">in-depth explanation on the negative impacts of using an index as a key</a>. If you choose not to assign an explicit key to list items then React will default to using indexes as keys.</p>
-</div>
+</aside>
 <ul class="simple">
 <li><p>don’t indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state.</p></li>
 </ul>
@@ -1323,11 +1428,11 @@ class App extends Component {
 </li>
 <li><p>Keys must only be unique among siblings; However, they don’t need to be globally unique.</p></li>
 </ul>
-</div>
-<div class="section" id="forms">
-<h2>Forms<a class="headerlink" href="#forms" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="controlled-components">
-<h3>Controlled components<a class="headerlink" href="#controlled-components" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="forms">
+<h2>Forms<a class="headerlink" href="#forms" title="Permalink to this headline">#</a></h2>
+<section id="controlled-components">
+<h3>Controlled components<a class="headerlink" href="#controlled-components" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a “controlled component”.</p></li>
 <li><p>It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component.</p>
@@ -1336,10 +1441,10 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="lifting-state-up">
-<h2>Lifting state up<a class="headerlink" href="#lifting-state-up" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="lifting-state-up">
+<h2>Lifting state up<a class="headerlink" href="#lifting-state-up" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”.</p>
 <ul>
@@ -1350,29 +1455,29 @@ class App extends Component {
 </li>
 <li><p>There should be a single “source of truth” for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, we should rely on the <a class="reference external" href="https://reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down">top-down data flow</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="composition-vs-inheritance">
-<h2>Composition vs inheritance<a class="headerlink" href="#composition-vs-inheritance" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="composition-vs-inheritance">
+<h2>Composition vs inheritance<a class="headerlink" href="#composition-vs-inheritance" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.</p></li>
 </ul>
-<div class="section" id="containment">
-<h3>Containment<a class="headerlink" href="#containment" title="Permalink to this headline">¶</a></h3>
+<section id="containment">
+<h3>Containment<a class="headerlink" href="#containment" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Some components don’t know their children ahead of time.  Such components can use the special <code class="docutils literal notranslate"><span class="pre">children</span></code> prop to pass children elements directly into their output</p></li>
 </ul>
-</div>
-<div class="section" id="specialization">
-<h3>Specialization<a class="headerlink" href="#specialization" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="specialization">
+<h3>Specialization<a class="headerlink" href="#specialization" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Sometimes we think about components as being “special cases” of other components. In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="thinking-in-react">
-<h2>Thinking in React<a class="headerlink" href="#thinking-in-react" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="step-1-break-the-ui-into-a-component-hierarchy">
-<h3>Step 1: Break The UI Into A Component Hierarchy<a class="headerlink" href="#step-1-break-the-ui-into-a-component-hierarchy" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="thinking-in-react">
+<h2>Thinking in React<a class="headerlink" href="#thinking-in-react" title="Permalink to this headline">#</a></h2>
+<section id="step-1-break-the-ui-into-a-component-hierarchy">
+<h3>Step 1: Break The UI Into A Component Hierarchy<a class="headerlink" href="#step-1-break-the-ui-into-a-component-hierarchy" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>But how do you know what should be its own component? Use the same techniques for deciding if you should create a new function or object.</p>
 <ul>
@@ -1380,9 +1485,9 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="step-2-build-a-static-version-in-react">
-<h3>Step 2: Build A Static Version in React<a class="headerlink" href="#step-2-build-a-static-version-in-react" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="step-2-build-a-static-version-in-react">
+<h3>Step 2: Build A Static Version in React<a class="headerlink" href="#step-2-build-a-static-version-in-react" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>You can build top-down or bottom-up. That is, you can either start with building the components higher up in the hierarchy or with the ones lower in it.</p>
 <ul>
@@ -1390,9 +1495,9 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="step-3-identify-the-minimal-but-complete-representation-of-ui-state">
-<h3>Step 3: Identify The Minimal (but complete) Representation Of UI State<a class="headerlink" href="#step-3-identify-the-minimal-but-complete-representation-of-ui-state" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="step-3-identify-the-minimal-but-complete-representation-of-ui-state">
+<h3>Step 3: Identify The Minimal (but complete) Representation Of UI State<a class="headerlink" href="#step-3-identify-the-minimal-but-complete-representation-of-ui-state" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>To make your UI interactive, you need to be able to trigger changes to your underlying data model. React achieves this with state.</p></li>
 <li><p>To figure out which one is state, ask three questions about each piece of data:</p>
@@ -1403,9 +1508,9 @@ class App extends Component {
 </ol>
 </li>
 </ul>
-</div>
-<div class="section" id="step-4-identify-where-your-state-should-live">
-<h3>Step 4: Identify Where Your State Should Live<a class="headerlink" href="#step-4-identify-where-your-state-should-live" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="step-4-identify-where-your-state-should-live">
+<h3>Step 4: Identify Where Your State Should Live<a class="headerlink" href="#step-4-identify-where-your-state-should-live" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Remember: React is all about one-way data flow down the component hierarchy. It may not be immediately clear which component should own what state. <strong>This is often the most challenging part for newcomers to understand</strong>, so follow these steps to figure it out:</p>
 <ul>
@@ -1420,13 +1525,13 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="step-5-add-inverse-data-flow">
-<h3>Step 5: Add Inverse Data Flow<a class="headerlink" href="#step-5-add-inverse-data-flow" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="notes-from-personal-website-building-using-react-static">
-<h2>Notes from personal website building using <a class="reference external" href="https://github.com/react-static/react-static">React Static</a><a class="headerlink" href="#notes-from-personal-website-building-using-react-static" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="step-5-add-inverse-data-flow">
+<h3>Step 5: Add Inverse Data Flow<a class="headerlink" href="#step-5-add-inverse-data-flow" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="notes-from-personal-website-building-using-react-static">
+<h2>Notes from personal website building using <a class="reference external" href="https://github.com/react-static/react-static">React Static</a><a class="headerlink" href="#notes-from-personal-website-building-using-react-static" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">static.config.js</span></code> controls the overall site structure and “meta data”</p>
 <ul>
@@ -1460,9 +1565,9 @@ class App extends Component {
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="running-questions">
-<h2>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-questions">
+<h2>Running questions<a class="headerlink" href="#running-questions" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>what is ReactDOM</p></li>
 <li><p>when need to use <code class="docutils literal notranslate"><span class="pre">const</span></code> when creating a new object</p></li>
@@ -1480,16 +1585,16 @@ class App extends Component {
 <li><p>What is W3C synthetic event?
 10, what is webpack</p></li>
 </ol>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="https://reactjs.org/docs/getting-started.html">React Official Docs</a></p></li>
 <li><p><a class="reference external" href="https://www.taniarascia.com/getting-started-with-react/">React Tutorial: An Overview and Walkthrough</a></p></li>
 <li><p><a class="reference external" href="https://web.dev/react/">React tutorial from web.dev</a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1519,9 +1624,11 @@ class App extends Component {
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Note-Inside%20look%20at%20modern%20web%20browser.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1537,24 +1644,28 @@ class App extends Component {
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

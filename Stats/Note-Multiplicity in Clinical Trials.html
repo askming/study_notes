@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Multiplicity in Clinical Trials &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,7 +67,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +90,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -97,14 +111,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -478,90 +493,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Note-Multiplicity in Clinical Trials.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Multiplicity in Clinical Trials.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Multiplicity in Clinical Trials.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Stats/Note-Multiplicity in Clinical Trials.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
@@ -720,12 +825,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Multiplicity in Clinical Trials</h1>
@@ -900,13 +1004,14 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="multiplicity-in-clinical-trials">
-<h1>Multiplicity in Clinical Trials<a class="headerlink" href="#multiplicity-in-clinical-trials" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="multiplicity-in-clinical-trials">
+<h1>Multiplicity in Clinical Trials<a class="headerlink" href="#multiplicity-in-clinical-trials" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Type I error rate inflated when conducting multiple hypothesis tests <span class="math notranslate nohighlight">\((m)\)</span> each with the nominal 0.05 significance level <span class="math notranslate nohighlight">\((\alpha)\)</span> –&gt; the multiplicity problem</p></li>
 <li><p>Source of multiplicity in clinical trials</p>
@@ -935,11 +1040,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="common-multiple-test-procedures">
-<h2>Common multiple test procedures<a class="headerlink" href="#common-multiple-test-procedures" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="basic-concepts">
-<h3>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="common-multiple-test-procedures">
+<h2>Common multiple test procedures<a class="headerlink" href="#common-multiple-test-procedures" title="Permalink to this headline">#</a></h2>
+<section id="basic-concepts">
+<h3>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><u>Family-wise error rate (FWER)</u>: overall type I error rate when testing a family of null hypotheses</p>
 <ul>
@@ -965,11 +1070,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="methods">
-<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="bonferroni">
-<h4>Bonferroni<a class="headerlink" href="#bonferroni" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h3>
+<section id="bonferroni">
+<h4>Bonferroni<a class="headerlink" href="#bonferroni" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Use 𝛼/𝑚 for all inferences; for 𝑖=1,…,𝑚:
 $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i \le \alpha/m\)</span><span class="math notranslate nohighlight">\(
@@ -984,9 +1089,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="holm">
-<h4>Holm<a class="headerlink" href="#holm" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="holm">
+<h4>Holm<a class="headerlink" href="#holm" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Overview</p>
 <ul>
@@ -1004,9 +1109,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="simes">
-<h4>Simes<a class="headerlink" href="#simes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="simes">
+<h4>Simes<a class="headerlink" href="#simes" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/ac53937c_20200421113808.png" /></p></li>
@@ -1018,9 +1123,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="hochberg-stepwise-version-of-simes-method-stepup-simes">
-<h4>Hochberg (stepwise version of Simes method/stepup Simes)<a class="headerlink" href="#hochberg-stepwise-version-of-simes-method-stepup-simes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="hochberg-stepwise-version-of-simes-method-stepup-simes">
+<h4>Hochberg (stepwise version of Simes method/stepup Simes)<a class="headerlink" href="#hochberg-stepwise-version-of-simes-method-stepup-simes" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/e7935100_20200421113847.png" /></p></li>
@@ -1037,9 +1142,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="dunnett">
-<h4>Dunnett<a class="headerlink" href="#dunnett" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="dunnett">
+<h4>Dunnett<a class="headerlink" href="#dunnett" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>When comparing several treatments with a control</p></li>
 <li><p>Other methods mentioned above can also be used but <u>only Dunnett test exploits the correlation between the p-values</u></p></li>
@@ -1063,9 +1168,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="stepwise-dunnett">
-<h4>Stepwise Dunnett<a class="headerlink" href="#stepwise-dunnett" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="stepwise-dunnett">
+<h4>Stepwise Dunnett<a class="headerlink" href="#stepwise-dunnett" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/8c404b11_20200421114008.png" /></p></li>
@@ -1087,9 +1192,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="summary">
-<h4>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="summary">
+<h4>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h4>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/96d0eedb_20200421114029.png" /></p>
 <ul class="simple">
 <li><p>Stepwise methods are preferred over single step methods, which are less powerful and less used in practice</p></li>
@@ -1097,21 +1202,21 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 <li><p>Simes-based methods are more powerful than Bonferroni-based methods, but control the FWER only under certain dependence structure</p></li>
 <li><p>In practice, we select the procedure that is not only powerful from a statistical perspective, but also appropriate from clinical perspective</p></li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="hierarchical-test-procedure">
-<h2>Hierarchical test procedure<a class="headerlink" href="#hierarchical-test-procedure" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="background">
-<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="hierarchical-test-procedure">
+<h2>Hierarchical test procedure<a class="headerlink" href="#hierarchical-test-procedure" title="Permalink to this headline">#</a></h2>
+<section id="background">
+<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Previous multiple tests methods do not reflect the relative importance of the two endpoints, which is usually the case in RCT, where we have primary/secondary/exploratory endpoints with ordered importance</p></li>
 <li><p>Previous stepwise procedures use a data-driven order of hypotheses, whereas in the RCT setting we need a multiple test procedure that specifies the <strong>order of the hypothesis based on clinical importance</strong></p></li>
 <li><p><strong>Hierarchical test procedure</strong>: the hierarchy of hypotheses is specified before data is observed</p></li>
 </ul>
-</div>
-<div class="section" id="fixed-sequence-procedure">
-<h3>Fixed sequence procedure<a class="headerlink" href="#fixed-sequence-procedure" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fixed-sequence-procedure">
+<h3>Fixed sequence procedure<a class="headerlink" href="#fixed-sequence-procedure" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/a635f801_20200421114050.png" />
@@ -1134,9 +1239,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="fallback-procedure">
-<h3>Fallback procedure<a class="headerlink" href="#fallback-procedure" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fallback-procedure">
+<h3>Fallback procedure<a class="headerlink" href="#fallback-procedure" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Overview
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/514110bc_20200421114133.png" /></p></li>
@@ -1147,10 +1252,10 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="closed-test-procedure-ctp">
-<h2>Closed test procedure (CTP)<a class="headerlink" href="#closed-test-procedure-ctp" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="closed-test-procedure-ctp">
+<h2>Closed test procedure (CTP)<a class="headerlink" href="#closed-test-procedure-ctp" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Overview/formal definition
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/a0355c89_20200421114152.png" /></p>
@@ -1160,47 +1265,47 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-<div class="section" id="ctp-using-bonferroni-holm-procedure">
-<h3>CTP using Bonferroni ( == Holm procedure)<a class="headerlink" href="#ctp-using-bonferroni-holm-procedure" title="Permalink to this headline">¶</a></h3>
+<section id="ctp-using-bonferroni-holm-procedure">
+<h3>CTP using Bonferroni ( == Holm procedure)<a class="headerlink" href="#ctp-using-bonferroni-holm-procedure" title="Permalink to this headline">#</a></h3>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/2f1a24b8_20200421114217.png" /></p>
-</div>
-<div class="section" id="ctp-usign-simes">
-<h3>CTP usign Simes<a class="headerlink" href="#ctp-usign-simes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ctp-usign-simes">
+<h3>CTP usign Simes<a class="headerlink" href="#ctp-usign-simes" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>When <em>m</em>=2, it’s equivalent to Hochberg procedure</p></li>
 <li><p>When <em>m</em>&gt;2, it’s less powerful
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/aa34ea2b_20200421114236.png" /></p></li>
 </ul>
-</div>
-<div class="section" id="ctp-using-dunnett">
-<h3>CTP using Dunnett<a class="headerlink" href="#ctp-using-dunnett" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ctp-using-dunnett">
+<h3>CTP using Dunnett<a class="headerlink" href="#ctp-using-dunnett" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>This is equivalent to stepdown Dunnett procedure
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/85a5085b_20200421114257.png" /></p></li>
 </ul>
-</div>
-<div class="section" id="ctp-using-weighted-bonferroni">
-<h3>CTP using weighted Bonferroni<a class="headerlink" href="#ctp-using-weighted-bonferroni" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ctp-using-weighted-bonferroni">
+<h3>CTP using weighted Bonferroni<a class="headerlink" href="#ctp-using-weighted-bonferroni" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The first is equivalent to the the <strong>fixed sequence procedure</strong>
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/48fd9af8_20200421114316.png" /></p></li>
 <li><p>The second version is equivalent to the <strong>fallback procedure</strong>
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/476695e4_20200421114335.png" /></p></li>
 </ul>
-</div>
-<div class="section" id="what-if-more-than-two-hypotheses">
-<h3>What if more than two hypotheses?<a class="headerlink" href="#what-if-more-than-two-hypotheses" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="what-if-more-than-two-hypotheses">
+<h3>What if more than two hypotheses?<a class="headerlink" href="#what-if-more-than-two-hypotheses" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Do CTP for pairwise combinations
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/229c844b_20200421114353.png" /></p></li>
 </ul>
-</div>
-<div class="section" id="id1">
-<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/41aedf7a_20200421114415.png" /></p>
-</div>
-<div class="section" id="summary-and-conclusions">
-<h3>Summary and Conclusions<a class="headerlink" href="#summary-and-conclusions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="summary-and-conclusions">
+<h3>Summary and Conclusions<a class="headerlink" href="#summary-and-conclusions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>Closed test procedure</strong> is a general principle to construct powerful multiple test procedures; many common procedures are CTPs</p></li>
 <li><p>For <u>structured hypotheses</u>, one can apply the graphical approach, which is based on CTPs</p></li>
@@ -1213,28 +1318,28 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="graphical-approachbretz2009graphicalbretz2011graphical">
-<h2>Graphical approach<span id="id2">[<a class="reference internal" href="#id18" title="Frank Bretz, Willi Maurer, Werner Brannath, and Martin Posch. A graphical approach to sequentially rejective multiple test procedures. Statistics in medicine, 28(4):586–604, 2009.">Bretz <em>et al.</em>, 2009</a>]</span><span id="id3">[<a class="reference internal" href="#id19" title="Frank Bretz, Martin Posch, Ekkehard Glimm, Florian Klinglmueller, Willi Maurer, and Kornelius Rohmeyer. Graphical approaches for multiple comparison procedures using weighted bonferroni, simes, or parametric tests. Biometrical Journal, 53(6):894–913, 2011.">Bretz <em>et al.</em>, 2011</a>]</span><a class="headerlink" href="#graphical-approachbretz2009graphicalbretz2011graphical" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="graphical-approachbretz2009graphicalbretz2011graphical">
+<h2>Graphical approach<span id="id2">[<a class="reference internal" href="#id18" title="Frank Bretz, Willi Maurer, Werner Brannath, and Martin Posch. A graphical approach to sequentially rejective multiple test procedures. Statistics in medicine, 28(4):586–604, 2009.">Bretz <em>et al.</em>, 2009</a>]</span><span id="id3">[<a class="reference internal" href="#id19" title="Frank Bretz, Martin Posch, Ekkehard Glimm, Florian Klinglmueller, Willi Maurer, and Kornelius Rohmeyer. Graphical approaches for multiple comparison procedures using weighted bonferroni, simes, or parametric tests. Biometrical Journal, 53(6):894–913, 2011.">Bretz <em>et al.</em>, 2011</a>]</span><a class="headerlink" href="#graphical-approachbretz2009graphicalbretz2011graphical" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Initial allocation of the significance level to <span class="math notranslate nohighlight">\(m\)</span> hypothesis: <span class="math notranslate nohighlight">\(\alpha_1 + \cdots + \alpha_m = \alpha\)</span></p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(\alpha\)</span>-propagation</strong>: if a hypothesis <span class="math notranslate nohighlight">\(H_i\)</span> is rejected at level <span class="math notranslate nohighlight">\(\alpha_i\)</span>, propagate its level <span class="math notranslate nohighlight">\(\alpha_i\)</span> to the remaining, not yet rejected hypotheses (according to aprefixed rule) and continue testing with the updated <span class="math notranslate nohighlight">\(\alpha\)</span> levels</p></li>
 </ul>
-<div class="section" id="conventions">
-<h3>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h3>
+<section id="conventions">
+<h3>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">#</a></h3>
 <p>Weighted Holm procedure: i.e. <span class="math notranslate nohighlight">\(\alpha\)</span> is no longer evenly splited among hypotheses</p>
 <p><img alt="graphical method - conventions" src="https://raw.githubusercontent.com/askming/picgo/master/image-20201211120002657.png" /></p>
-</div>
-<div class="section" id="common-multiple-test-procedues">
-<h3>Common multiple test procedues<a class="headerlink" href="#common-multiple-test-procedues" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="common-multiple-test-procedues">
+<h3>Common multiple test procedues<a class="headerlink" href="#common-multiple-test-procedues" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Fixed sequence procedure</p></li>
 <li><p>Fallback procedure</p></li>
 </ul>
-</div>
-<div class="section" id="formal-description">
-<h3>Formal description<a class="headerlink" href="#formal-description" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="formal-description">
+<h3>Formal description<a class="headerlink" href="#formal-description" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>Initial levels <span class="math notranslate nohighlight">\(\alpha = (\alpha_1, \cdots, \alpha_m)\)</span> with <span class="math notranslate nohighlight">\(\sum_{i=1}^m\alpha_i = \alpha \in (0, 1)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m \times m\)</span> Transition matrix <span class="math notranslate nohighlight">\(\bf{G}=(g_{ij})\)</span>, Where <span class="math notranslate nohighlight">\(g_{ij}\)</span> is the fraction of the level of <span class="math notranslate nohighlight">\(H_i\)</span> that is propagated to <span class="math notranslate nohighlight">\(H_j\)</span> with <span class="math notranslate nohighlight">\(0\le g_{ij} \le 1, g_{ii} = 0\)</span> and <span class="math notranslate nohighlight">\(\sum_{j=1}^mg_{ij}\le1, \forall i=1, \cdots, m\)</span></p>
@@ -1249,9 +1354,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 <li><p>The algorithm defines a shortcut for the resulting CTP, which does not depend on the rejection sequence</p></li>
 <li><p>Tools: <code class="docutils literal notranslate"><span class="pre">R</span></code> {gMPA} package</p></li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h3>Summary<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>Summary<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Tailor advanced multiple test procedures to structured families of hypotheses</p></li>
 <li><p>Visualize complex decision strategies in an efficient and easily communicable way</p></li>
@@ -1268,9 +1373,9 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 </dd>
 </dl>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1300,9 +1405,11 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Note-Multicolinearity.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1318,24 +1425,28 @@ $<span class="math notranslate nohighlight">\(\text{Reject } H_i \text{ if } p_i
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

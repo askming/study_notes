@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>[book] Python Data Science Handbook &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,7 +67,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +90,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -97,14 +111,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -478,90 +493,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/DS_ML/Book-Python Data Science Handbook.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FDS_ML/Book-Python Data Science Handbook.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FDS_ML/Book-Python Data Science Handbook.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/DS_ML/Book-Python Data Science Handbook.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numpy">
    1. Numpy
@@ -755,12 +860,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>[book] Python Data Science Handbook</h1>
@@ -970,17 +1074,18 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="book-python-data-science-handbook">
-<h1>[book] Python Data Science Handbook<a class="headerlink" href="#book-python-data-science-handbook" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="book-python-data-science-handbook">
+<h1>[book] Python Data Science Handbook<a class="headerlink" href="#book-python-data-science-handbook" title="Permalink to this headline">#</a></h1>
 <hr>
 <p><em>A study note of <span id="id1">[<a class="reference internal" href="#id14" title="Jake VanderPlas. Python data science handbook: Essential tools for working with data. &quot; O'Reilly Media, Inc.&quot;, 2016.">VanderPlas, 2016</a>]</span></em></p>
-<div class="section" id="numpy">
-<h2>1. Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="data-types-in-python-snake">
-<h3>Data types in Python :snake:<a class="headerlink" href="#data-types-in-python-snake" title="Permalink to this headline">¶</a></h3>
+<section id="numpy">
+<h2>1. Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h2>
+<section id="data-types-in-python-snake">
+<h3>Data types in Python :snake:<a class="headerlink" href="#data-types-in-python-snake" title="Permalink to this headline">#</a></h3>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/69d7b1a7_20200421112255.png" /></p>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/01b18a2e_20200421112320.png" /></p>
 <ul class="simple">
@@ -989,9 +1094,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>A Python integer is a pointer to a position in memory containing all the Python object information, including the bytes that contain the integer value. This extra information in the Python integer structure is what allows Python to be coded so freely and dynamically. All this additional information in Python types comes at a cost, however, which becomes especially apparent in structures that combine many of these objects.</p></li>
 <li><p>Much more useful, however, is the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object of the NumPy package. While Python’s array object provides efficient storage of array-based data, NumPy adds to this efficient operations on that data.</p></li>
 </ul>
-</div>
-<div class="section" id="basics-of-numpy-arrays">
-<h3>Basics of NumPy arrays<a class="headerlink" href="#basics-of-numpy-arrays" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="basics-of-numpy-arrays">
+<h3>Basics of NumPy arrays<a class="headerlink" href="#basics-of-numpy-arrays" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1049,9 +1154,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="computation-on-numpy-arrays-universal-functions">
-<h3>Computation on NumPy Arrays: Universal Functions<a class="headerlink" href="#computation-on-numpy-arrays-universal-functions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="computation-on-numpy-arrays-universal-functions">
+<h3>Computation on NumPy Arrays: Universal Functions<a class="headerlink" href="#computation-on-numpy-arrays-universal-functions" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1152,9 +1257,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>The <code class="docutils literal notranslate"><span class="pre">ufunc.at</span></code> and <code class="docutils literal notranslate"><span class="pre">ufunc.reduceat</span></code> methods, which we’ll explore in Fancy Indexing, are very helpful as well.</p></li>
 <li><p>More information on universal functions (including the full list of available functions) can be found on the <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> documentation websites.</p></li>
 </ul>
-</div>
-<div class="section" id="aggregations-min-max-and-everything-in-between">
-<h3>Aggregations: Min, Max, and Everything In Between<a class="headerlink" href="#aggregations-min-max-and-everything-in-between" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="aggregations-min-max-and-everything-in-between">
+<h3>Aggregations: Min, Max, and Everything In Between<a class="headerlink" href="#aggregations-min-max-and-everything-in-between" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1239,9 +1344,9 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="computation-on-arrays-broadcasting">
-<h3>Computation on Arrays: Broadcasting<a class="headerlink" href="#computation-on-arrays-broadcasting" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="computation-on-arrays-broadcasting">
+<h3>Computation on Arrays: Broadcasting<a class="headerlink" href="#computation-on-arrays-broadcasting" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1272,9 +1377,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="comparisons-masks-and-boolean-logic">
-<h3>Comparisons, Masks, and Boolean Logic<a class="headerlink" href="#comparisons-masks-and-boolean-logic" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="comparisons-masks-and-boolean-logic">
+<h3>Comparisons, Masks, and Boolean Logic<a class="headerlink" href="#comparisons-masks-and-boolean-logic" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1294,9 +1399,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>A quick warning: as mentioned in Aggregations: Min, Max, and Everything In Between, Python has built-in <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">any()</span></code>, and <code class="docutils literal notranslate"><span class="pre">all()</span></code> functions. These have a different syntax than the <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> versions, and in particular will fail or produce unintended results when used on multidimensional arrays. Be sure that you are using <code class="docutils literal notranslate"><span class="pre">np.sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.any()</span></code>, and <code class="docutils literal notranslate"><span class="pre">np.all()</span></code> for these examples!</p></li>
 <li><p>When you use <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code>, it’s equivalent to asking Python to treat the object as a single Boolean entity. So remember this: <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> perform a single Boolean evaluation on an entire object, while <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> perform multiple Boolean evaluations on the content (the individual bits or bytes) of an object. For Boolean <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> arrays, the latter is nearly always the desired operation.</p></li>
 </ul>
-</div>
-<div class="section" id="fancy-indexing">
-<h3>Fancy Indexing<a class="headerlink" href="#fancy-indexing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fancy-indexing">
+<h3>Fancy Indexing<a class="headerlink" href="#fancy-indexing" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1351,9 +1456,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>The pairing of indices in fancy indexing follows all the broadcasting rules that were mentioned in Computation on Arrays: Broadcasting.</p></li>
 </ul>
-</div>
-<div class="section" id="sorting-arrays">
-<h3>Sorting Arrays<a class="headerlink" href="#sorting-arrays" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sorting-arrays">
+<h3>Sorting Arrays<a class="headerlink" href="#sorting-arrays" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1406,9 +1511,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Big-O notation, in this loose sense, tells you how much time your algorithm will take as you increase the amount of data. If you have an  <span class="math notranslate nohighlight">\(\mathcal{O}[N]\)</span>  (read “order <span class="math notranslate nohighlight">\(N\)</span>”) algorithm that takes 1 second to operate on a list of length <em>N=1,000</em>, then you should expect it to take roughly 5 seconds for a list of length <em>N=5,000</em>. If you have an  <span class="math notranslate nohighlight">\(\mathcal{O}[N^2]\)</span>  (read “order N squared”) algorithm that takes 1 second for <em>N=1000</em>, then you should expect it to take about 25 seconds for <em>N=5000</em>.</p></li>
 <li><p>Notice that the big-O notation by itself tells you nothing about the actual wall-clock time of a computation, but only about its scaling as you change <em>N</em>. Generally, for example, an  <span class="math notranslate nohighlight">\(\mathcal{O}[N]\)</span>  algorithm is considered to have better scaling than an  <span class="math notranslate nohighlight">\(\mathcal{O}[N^2]\)</span>  algorithm, and for good reason. But for small datasets in particular, the algorithm with better scaling might not be faster.</p></li>
 </ul>
-</div>
-<div class="section" id="structured-data-numpy-s-structured-arrays">
-<h3>Structured Data: NumPy’s Structured Arrays<a class="headerlink" href="#structured-data-numpy-s-structured-arrays" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="structured-data-numpy-s-structured-arrays">
+<h3>Structured Data: NumPy’s Structured Arrays<a class="headerlink" href="#structured-data-numpy-s-structured-arrays" title="Permalink to this headline">#</a></h3>
 <p><em>less important - use more pandas instead of numpy structed array</em></p>
 <details>
   <summary> TOC </summary>
@@ -1473,12 +1578,12 @@ const thebe_selector_output = ".output, .cell_output"
 </tbody>
 </table>
 <hr class="docutils" />
-</div>
-</div>
-<div class="section" id="pandas-panda-face">
-<h2>2. Pandas :panda_face:<a class="headerlink" href="#pandas-panda-face" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="introducing-pandas-objects">
-<h3>Introducing Pandas Objects<a class="headerlink" href="#introducing-pandas-objects" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="pandas-panda-face">
+<h2>2. Pandas :panda_face:<a class="headerlink" href="#pandas-panda-face" title="Permalink to this headline">#</a></h2>
+<section id="introducing-pandas-objects">
+<h3>Introducing Pandas Objects<a class="headerlink" href="#introducing-pandas-objects" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1525,9 +1630,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="o">&gt;&gt;&gt;</span> <span class="n">RangeIndex</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-indexing-and-selection">
-<h3>Data Indexing and Selection<a class="headerlink" href="#data-indexing-and-selection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-indexing-and-selection">
+<h3>Data Indexing and Selection<a class="headerlink" href="#data-indexing-and-selection" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1588,9 +1693,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Avoid the temptation to try column assignment via attribute (i.e., use data[‘pop’] = z rather than data.pop = z)</p></li>
 </ul>
-</div>
-<div class="section" id="operating-on-data-in-pandas">
-<h3>Operating on Data in Pandas<a class="headerlink" href="#operating-on-data-in-pandas" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="operating-on-data-in-pandas">
+<h3>Operating on Data in Pandas<a class="headerlink" href="#operating-on-data-in-pandas" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1622,9 +1727,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>This preservation and alignment of indices and columns means that operations on data in Pandas will always maintain the data context, which prevents the types of silly errors that might come up when working with heterogeneous and/or misaligned data in raw NumPy arrays.</p></li>
 </ul>
-</div>
-<div class="section" id="handling-missing-data">
-<h3>Handling Missing Data<a class="headerlink" href="#handling-missing-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="handling-missing-data">
+<h3>Handling Missing Data<a class="headerlink" href="#handling-missing-data" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1717,9 +1822,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="hierarchical-indexing">
-<h3>Hierarchical Indexing<a class="headerlink" href="#hierarchical-indexing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hierarchical-indexing">
+<h3>Hierarchical Indexing<a class="headerlink" href="#hierarchical-indexing" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1859,9 +1964,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>panel data is fundamentally a dense data representation, while multi-indexing is fundamentally a sparse data representation. As the number of dimensions increases, the dense representation can become very inefficient for the majority of real-world datasets.</p></li>
 </ul>
-</div>
-<div class="section" id="combining-datasets-concat-and-append">
-<h3>Combining Datasets: Concat and Append<a class="headerlink" href="#combining-datasets-concat-and-append" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="combining-datasets-concat-and-append">
+<h3>Combining Datasets: Concat and Append<a class="headerlink" href="#combining-datasets-concat-and-append" title="Permalink to this headline">#</a></h3>
 <details>
   <summary> TOC </summary>
 <ul class="simple">
@@ -1891,9 +1996,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="combining-datasets-merge-and-join">
-<h3>Combining Datasets: Merge and Join<a class="headerlink" href="#combining-datasets-merge-and-join" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="combining-datasets-merge-and-join">
+<h3>Combining Datasets: Merge and Join<a class="headerlink" href="#combining-datasets-merge-and-join" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -1958,9 +2063,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </details>
-</div>
-<div class="section" id="aggregation-and-grouping">
-<h3>Aggregation and Grouping<a class="headerlink" href="#aggregation-and-grouping" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="aggregation-and-grouping">
+<h3>Aggregation and Grouping<a class="headerlink" href="#aggregation-and-grouping" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -2020,9 +2125,9 @@ const thebe_selector_output = ".output, .cell_output"
   </details>
 </li>
 </ul>
-</div>
-<div class="section" id="pivotal-tables">
-<h3>Pivotal tables<a class="headerlink" href="#pivotal-tables" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pivotal-tables">
+<h3>Pivotal tables<a class="headerlink" href="#pivotal-tables" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -2061,9 +2166,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </details>
-</div>
-<div class="section" id="vectorized-string-operations">
-<h3>Vectorized String Operations<a class="headerlink" href="#vectorized-string-operations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="vectorized-string-operations">
+<h3>Vectorized String Operations<a class="headerlink" href="#vectorized-string-operations" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -2177,9 +2282,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </details>  
-</div>
-<div class="section" id="working-with-time-series">
-<h3>Working with Time Series<a class="headerlink" href="#working-with-time-series" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="working-with-time-series">
+<h3>Working with Time Series<a class="headerlink" href="#working-with-time-series" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -2451,9 +2556,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </details>
-</div>
-<div class="section" id="high-performance-pandas-eval-and-query">
-<h3>High-Performance Pandas: eval() and query()<a class="headerlink" href="#high-performance-pandas-eval-and-query" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="high-performance-pandas-eval-and-query">
+<h3>High-Performance Pandas: eval() and query()<a class="headerlink" href="#high-performance-pandas-eval-and-query" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -2528,9 +2633,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </details>
-</div>
-<div class="section" id="further-resources">
-<h3>Further Resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="further-resources">
+<h3>Further Resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="http://pandas.pydata.org/">Python Data Analysis Library — pandas: Python Data Analysis Library</a></p></li>
 <li><p><a class="reference external" href="http://shop.oreilly.com/product/0636920023784.do">Python for Data Analysis - O’Reilly Media</a></p></li>
@@ -2538,12 +2643,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="http://pyvideo.org/search?q=pandas">PyVideo.org</a></p></li>
 </ul>
 <hr class="docutils" />
-</div>
-</div>
-<div class="section" id="machine-learning-computer">
-<h2>3. Machine Learning :computer:<a class="headerlink" href="#machine-learning-computer" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="what-is-machine-learning">
-<h3>What Is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="machine-learning-computer">
+<h2>3. Machine Learning :computer:<a class="headerlink" href="#machine-learning-computer" title="Permalink to this headline">#</a></h2>
+<section id="what-is-machine-learning">
+<h3>What Is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The study of machine learning certainly arose from research in this context, but in the data science application of machine learning methods, it’s more helpful to think of machine learning as a means of <em>building models of data</em>.</p></li>
 <li><p>Fundamentally, machine learning involves building mathematical models to help understand data. “Learning” enters the fray when we give these models <em>tunable parameters</em> that can be adapted to observed data; in this way the program can be considered to be “learning” from the data. Once these models have been fit to previously seen data, they can be used to predict and understand aspects of newly observed data.</p></li>
@@ -2574,9 +2679,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>Summary</p></li>
 </ul>
-</div>
-<div class="section" id="introducing-scikit-learn">
-<h3>Introducing Scikit-Learn<a class="headerlink" href="#introducing-scikit-learn" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="introducing-scikit-learn">
+<h3>Introducing Scikit-Learn<a class="headerlink" href="#introducing-scikit-learn" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul class="simple">
@@ -2667,9 +2772,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Summary</p></li>
 </ul>
 </details>
-</div>
-<div class="section" id="hyperparameters-and-model-validation">
-<h3>Hyperparameters and Model Validation<a class="headerlink" href="#hyperparameters-and-model-validation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hyperparameters-and-model-validation">
+<h3>Hyperparameters and Model Validation<a class="headerlink" href="#hyperparameters-and-model-validation" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul class="simple">
@@ -2733,9 +2838,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Summary</p></li>
 </ul>
 </details> 
-</div>
-<div class="section" id="feature-engineering">
-<h3>Feature Engineering<a class="headerlink" href="#feature-engineering" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="feature-engineering">
+<h3>Feature Engineering<a class="headerlink" href="#feature-engineering" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary>TOC</summary>
 <ul>
@@ -2783,9 +2888,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </details>
-</div>
-<div class="section" id="in-depth-naive-bayes-classification">
-<h3>In Depth: Naive Bayes Classification<a class="headerlink" href="#in-depth-naive-bayes-classification" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-depth-naive-bayes-classification">
+<h3>In Depth: Naive Bayes Classification<a class="headerlink" href="#in-depth-naive-bayes-classification" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul class="simple">
@@ -2830,9 +2935,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </details>  
-</div>
-<div class="section" id="in-depth-linear-regression">
-<h3>In Depth: Linear Regression<a class="headerlink" href="#in-depth-linear-regression" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-depth-linear-regression">
+<h3>In Depth: Linear Regression<a class="headerlink" href="#in-depth-linear-regression" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -2888,9 +2993,9 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
 <li><p>Example: Predicting Bicycle Traffic</p></li>
 </ul>
 </details>
-</div>
-<div class="section" id="in-depth-support-vector-machines">
-<h3>In-Depth: Support Vector Machines<a class="headerlink" href="#in-depth-support-vector-machines" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-depth-support-vector-machines">
+<h3>In-Depth: Support Vector Machines<a class="headerlink" href="#in-depth-support-vector-machines" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -2956,9 +3061,9 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
 </li>
 </ul>
 </details>
-</div>
-<div class="section" id="in-depth-decision-trees-and-random-forests">
-<h3>In-Depth: Decision Trees and Random Forests<a class="headerlink" href="#in-depth-decision-trees-and-random-forests" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-depth-decision-trees-and-random-forests">
+<h3>In-Depth: Decision Trees and Random Forests<a class="headerlink" href="#in-depth-decision-trees-and-random-forests" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -3009,9 +3114,9 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
 </li>
 </ul>
 </details>  
-</div>
-<div class="section" id="in-depth-principal-component-analysis">
-<h3>In Depth: Principal Component Analysis<a class="headerlink" href="#in-depth-principal-component-analysis" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-depth-principal-component-analysis">
+<h3>In Depth: Principal Component Analysis<a class="headerlink" href="#in-depth-principal-component-analysis" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -3071,9 +3176,9 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
 </li>
 </ul>
 </details>
-</div>
-<div class="section" id="in-depth-manifold-learning">
-<h3>In-Depth: Manifold Learning<a class="headerlink" href="#in-depth-manifold-learning" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-depth-manifold-learning">
+<h3>In-Depth: Manifold Learning<a class="headerlink" href="#in-depth-manifold-learning" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul class="simple">
@@ -3139,9 +3244,9 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
 </li>
 </ul>
 </details>
-</div>
-<div class="section" id="in-depth-k-means-clustering">
-<h3>In Depth: k-Means Clustering<a class="headerlink" href="#in-depth-k-means-clustering" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-depth-k-means-clustering">
+<h3>In Depth: k-Means Clustering<a class="headerlink" href="#in-depth-k-means-clustering" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -3210,9 +3315,9 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
 </details>
 </li>
 </ul>
-</div>
-<div class="section" id="in-depth-gaussian-mixture-models">
-<h3>In Depth: Gaussian Mixture Models<a class="headerlink" href="#in-depth-gaussian-mixture-models" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-depth-gaussian-mixture-models">
+<h3>In Depth: Gaussian Mixture Models<a class="headerlink" href="#in-depth-gaussian-mixture-models" title="Permalink to this headline">#</a></h3>
 <details open>
   <summary> TOC </summary>
 <ul>
@@ -3266,9 +3371,9 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
 </dd>
 </dl>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3298,9 +3403,11 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -3316,24 +3423,28 @@ $<span class="math notranslate nohighlight">\(P = \alpha\sum_{n=1}^N|\theta_n|\)
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

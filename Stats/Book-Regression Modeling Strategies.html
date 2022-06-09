@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>[book] Regression Modeling Strategies &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,7 +67,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +90,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -97,14 +111,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -478,90 +493,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Book-Regression Modeling Strategies.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Regression Modeling Strategies.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Regression Modeling Strategies.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Stats/Book-Regression Modeling Strategies.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-9-overview-of-maximum-likelihood-estimation">
    Chapter 9 Overview of Maximum Likelihood Estimation
@@ -754,12 +859,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>[book] Regression Modeling Strategies</h1>
@@ -968,15 +1072,16 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="book-regression-modeling-strategies">
-<h1>[book] Regression Modeling Strategies<a class="headerlink" href="#book-regression-modeling-strategies" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="book-regression-modeling-strategies">
+<h1>[book] Regression Modeling Strategies<a class="headerlink" href="#book-regression-modeling-strategies" title="Permalink to this headline">#</a></h1>
 <hr>
 <p><em>A reading note of <span id="id1">Harrell [<a class="reference internal" href="#id7" title="Frank E Harrell. Regression modeling strategies. Bios, 330(2018):14, 2017.">2017</a>]</span></em></p>
-<div class="section" id="chapter-9-overview-of-maximum-likelihood-estimation">
-<h2>Chapter 9 Overview of Maximum Likelihood Estimation<a class="headerlink" href="#chapter-9-overview-of-maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h2>
+<section id="chapter-9-overview-of-maximum-likelihood-estimation">
+<h2>Chapter 9 Overview of Maximum Likelihood Estimation<a class="headerlink" href="#chapter-9-overview-of-maximum-likelihood-estimation" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><em>How to understand Fisher information and what info it provides</em>: The degree of peakedness of a function at a given point is the speed with which the slope is changing at that point, that is, the slope of the slope or second derivative of the funciton at that point.</p>
 <ul>
@@ -985,10 +1090,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>An estimate of variance is given by the inverse of the information at the point estimate (e.g. the MLE)</p></li>
 </ul>
-<div class="section" id="hypothesis-testing">
-<h3>2. Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="likelihood-ratio-test">
-<h4>2.1 Likelihood ratio test<a class="headerlink" href="#likelihood-ratio-test" title="Permalink to this headline">¶</a></h4>
+<section id="hypothesis-testing">
+<h3>2. Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">#</a></h3>
+<section id="likelihood-ratio-test">
+<h4>2.1 Likelihood ratio test<a class="headerlink" href="#likelihood-ratio-test" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>This test statistic is the ratio of the likelihood at the hypothesized parameter values to the likelihood of the data at the maximum (i.e., at parameter values = MLEs).</p>
 <ul class="simple">
@@ -999,9 +1104,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>for large enough sample size, where <span class="math notranslate nohighlight">\(p\)</span> is the number parameters to be tested</p>
 </li>
 </ul>
-</div>
-<div class="section" id="wald-test">
-<h4>2.2 Wald test<a class="headerlink" href="#wald-test" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="wald-test">
+<h4>2.2 Wald test<a class="headerlink" href="#wald-test" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>The Wald test statistic is a generalization of a <em>t-</em> or <em>z-</em> statistic. It is a function of the difference in the MLE and its hypothesized value, normalized by an estimate of the standard deviation of the MLE.  For large enough <span class="math notranslate nohighlight">\(n\)</span>,</p>
 <p>​$<span class="math notranslate nohighlight">\(W = \frac{(\hat{\theta} - \theta_0)^2}{var(\hat{\theta})}\sim \chi^2_p\)</span>$</p>
@@ -1011,9 +1116,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="score-test">
-<h4>2.3 Score test<a class="headerlink" href="#score-test" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="score-test">
+<h4>2.3 Score test<a class="headerlink" href="#score-test" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Rao’s score statistic measures how far from zero the score function is when evaluated at the null hypothesis.</p>
 <ul>
@@ -1024,14 +1129,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="which-test-to-use-when">
-<h4>Which test to use when<a class="headerlink" href="#which-test-to-use-when" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="which-test-to-use-when">
+<h4>Which test to use when<a class="headerlink" href="#which-test-to-use-when" title="Permalink to this headline">#</a></h4>
 <p><img alt="image-20200729230109310" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200729230109310.png?token=ABLIWWZARHQGPM46JKSEN2C7EJRGK" /></p>
-</div>
-</div>
-<div class="section" id="general-case">
-<h3>3. General case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="general-case">
+<h3>3. General case<a class="headerlink" href="#general-case" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>Estimating a vector of parameters</p>
 <ul>
@@ -1054,41 +1159,41 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Testing a subset of the parameters</p></li>
 <li><p>Tests based on contrasts</p></li>
 </ul>
-</div>
-<div class="section" id="confidence-intervals">
-<h3>6. Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="further-use-of-the-log-likelihood">
-<h3>8. Further use of the log likelihood<a class="headerlink" href="#further-use-of-the-log-likelihood" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="weighted-maximum-likelihood-estimation">
-<h3>9. Weighted maximum likelihood estimation<a class="headerlink" href="#weighted-maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="penalized-maximum-likelihood-estimation">
-<h3>10. Penalized maximum likelihood estimation<a class="headerlink" href="#penalized-maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="chapter-13-ordinal-logistic-regression">
-<h2>Chapter 13 Ordinal Logistic Regression<a class="headerlink" href="#chapter-13-ordinal-logistic-regression" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="background">
-<h3>1. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="ordinality-assumption">
-<h3>2. Ordinality assumption<a class="headerlink" href="#ordinality-assumption" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="proportional-odds-model">
-<h3>3. Proportional odds model<a class="headerlink" href="#proportional-odds-model" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="model">
-<h4>3.1 Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="assumptions-and-interpretation-of-parameters">
-<h4>3.2 Assumptions and interpretation of parameters<a class="headerlink" href="#assumptions-and-interpretation-of-parameters" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="estimation">
-<h4>3.3 Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="residuals">
-<h4>3.4 Residuals<a class="headerlink" href="#residuals" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="confidence-intervals">
+<h3>6. Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="further-use-of-the-log-likelihood">
+<h3>8. Further use of the log likelihood<a class="headerlink" href="#further-use-of-the-log-likelihood" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="weighted-maximum-likelihood-estimation">
+<h3>9. Weighted maximum likelihood estimation<a class="headerlink" href="#weighted-maximum-likelihood-estimation" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="penalized-maximum-likelihood-estimation">
+<h3>10. Penalized maximum likelihood estimation<a class="headerlink" href="#penalized-maximum-likelihood-estimation" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="chapter-13-ordinal-logistic-regression">
+<h2>Chapter 13 Ordinal Logistic Regression<a class="headerlink" href="#chapter-13-ordinal-logistic-regression" title="Permalink to this headline">#</a></h2>
+<section id="background">
+<h3>1. Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="ordinality-assumption">
+<h3>2. Ordinality assumption<a class="headerlink" href="#ordinality-assumption" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="proportional-odds-model">
+<h3>3. Proportional odds model<a class="headerlink" href="#proportional-odds-model" title="Permalink to this headline">#</a></h3>
+<section id="model">
+<h4>3.1 Model<a class="headerlink" href="#model" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="assumptions-and-interpretation-of-parameters">
+<h4>3.2 Assumptions and interpretation of parameters<a class="headerlink" href="#assumptions-and-interpretation-of-parameters" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="estimation">
+<h4>3.3 Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="residuals">
+<h4>3.4 Residuals<a class="headerlink" href="#residuals" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>In binary logistic regression, <em>partial residuals</em> are very useful as they allow the analyst to fit linear effect for all the predictors but then to nonparametrically estimate the true transformation that each predictor requires.</p>
 <div class="math notranslate nohighlight">
@@ -1107,9 +1212,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="assessment-of-model-fit">
-<h4>3.5 Assessment of model fit<a class="headerlink" href="#assessment-of-model-fit" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="assessment-of-model-fit">
+<h4>3.5 Assessment of model fit<a class="headerlink" href="#assessment-of-model-fit" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>Score test in <code class="docutils literal notranslate"><span class="pre">PROC</span> <span class="pre">LOGISTIC</span></code>: extreme anti-conservatism in many cases</p></li>
 <li><p>Compare means of <span class="math notranslate nohighlight">\(X|Y\)</span> with and without assuming PO</p></li>
@@ -1123,9 +1228,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p>Regarding assessment of linearity and additivity assumptions, splines, partial residual plots, and interaction tests are among the best tools.</p></li>
 </ul>
-</div>
-<div class="section" id="quantifying-predictive-ability">
-<h4>3.6 Quantifying predictive ability<a class="headerlink" href="#quantifying-predictive-ability" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="quantifying-predictive-ability">
+<h4>3.6 Quantifying predictive ability<a class="headerlink" href="#quantifying-predictive-ability" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(R_N^2\)</span> coefficient: model LR <span class="math notranslate nohighlight">\(\chi^2\)</span> (<span class="math notranslate nohighlight">\(\chi^2\)</span> added to a model containing only the <span class="math notranslate nohighlight">\(k\)</span> intercept parameter)</p></li>
 <li><p>Somers’ <span class="math notranslate nohighlight">\(D_{xy}\)</span> rank correlation between <span class="math notranslate nohighlight">\(X\hat{\beta}\)</span> and <span class="math notranslate nohighlight">\(Y\)</span></p></li>
@@ -1135,9 +1240,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="describing-the-fitted-model">
-<h4>3.7 Describing the fitted model<a class="headerlink" href="#describing-the-fitted-model" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="describing-the-fitted-model">
+<h4>3.7 Describing the fitted model<a class="headerlink" href="#describing-the-fitted-model" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(logit(Y\ge j|X)\)</span>, the linear predictor</p></li>
 <li><p><span class="math notranslate nohighlight">\(Prob(Y\ge j| X)\)</span></p></li>
@@ -1145,16 +1250,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Quantiles of <span class="math notranslate nohighlight">\(Y|X\)</span>, e.g. the median</p></li>
 <li><p><span class="math notranslate nohighlight">\(E(Y|X)\)</span> if <span class="math notranslate nohighlight">\(Y\)</span> is interval scaled</p></li>
 </ul>
-</div>
-<div class="section" id="validating-the-fitted-model">
-<h4>3.8 Validating the fitted model<a class="headerlink" href="#validating-the-fitted-model" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="validating-the-fitted-model">
+<h4>3.8 Validating the fitted model<a class="headerlink" href="#validating-the-fitted-model" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>The PO model is validated much the same way as the binary logistic model</p></li>
 <li><p>For estimating an overfitting-corrected calibration curve one estimates <span class="math notranslate nohighlight">\(Pr(Y ≥ j|X)\)</span> using one <span class="math notranslate nohighlight">\(j\)</span> at a time.</p></li>
 </ul>
-</div>
-<div class="section" id="r-function">
-<h4>3.9 <code class="docutils literal notranslate"><span class="pre">R</span></code> function<a class="headerlink" href="#r-function" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="r-function">
+<h4>3.9 <code class="docutils literal notranslate"><span class="pre">R</span></code> function<a class="headerlink" href="#r-function" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">{rms}</span></code>:</p>
 <ul>
@@ -1164,16 +1269,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{Hmisc}</span></code>: <code class="docutils literal notranslate"><span class="pre">popower</span></code> and <code class="docutils literal notranslate"><span class="pre">posamsize</span></code> compute power and sample size estimates for ordinal responses using the proportional odds model.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="continuation-ratio-model">
-<h3>4. Continuation ratio model<a class="headerlink" href="#continuation-ratio-model" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id2">
-<h4>4.1 Model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="continuation-ratio-model">
+<h3>4. Continuation ratio model<a class="headerlink" href="#continuation-ratio-model" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h4>4.1 Model<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>The continuation ratio (CR) model is based on conditional probabilities. The (forward) CR model is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f3aaa2b9-21a8-4056-ad05-a822d0e2192a">
-<span class="eqno">(10)<a class="headerlink" href="#equation-f3aaa2b9-21a8-4056-ad05-a822d0e2192a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c8d9cdc6-e377-4b15-89e9-dab5eb0b7b7f">
+<span class="eqno">(10)<a class="headerlink" href="#equation-c8d9cdc6-e377-4b15-89e9-dab5eb0b7b7f" title="Permalink to this equation">#</a></span>\[\begin{align}
    P(Y=j|Y\ge j,  X) &amp; = \frac{1}{1+\exp[-(\theta_j + X\gamma)]}\\
    logit(Y=0|Y\ge0, X) &amp; = logit(Y=0|X)\\
    &amp;=\theta_0 + X\gamma\\
@@ -1186,15 +1291,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="chapter-20-cox-proportional-hazards-regression-model">
-<h2>Chapter 20 Cox Proportional Hazards Regression Model<a class="headerlink" href="#chapter-20-cox-proportional-hazards-regression-model" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1. Model<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="extending-the-ph-cox-model-by-stratification">
-<h4>1.7 Extending the (PH Cox) model by stratification<a class="headerlink" href="#extending-the-ph-cox-model-by-stratification" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+</section>
+<section id="chapter-20-cox-proportional-hazards-regression-model">
+<h2>Chapter 20 Cox Proportional Hazards Regression Model<a class="headerlink" href="#chapter-20-cox-proportional-hazards-regression-model" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>1. Model<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<section id="extending-the-ph-cox-model-by-stratification">
+<h4>1.7 Extending the (PH Cox) model by stratification<a class="headerlink" href="#extending-the-ph-cox-model-by-stratification" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>The model assumes different baseline hazard but common regression coefficient among stratified models</p>
 <p><span class="math notranslate nohighlight">\(\lambda(t | C =j) = \lambda_j(t)\exp(X\beta)\)</span></p>
@@ -1231,10 +1336,10 @@ for.”</p></li>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="sample-size-considerations">
-<h3>3. Sample size considerations<a class="headerlink" href="#sample-size-considerations" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="sample-size-considerations">
+<h3>3. Sample size considerations<a class="headerlink" href="#sample-size-considerations" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>Then the Kaplan-Meier estimate (<em>one-sample</em>) is just one minus the empirical cumulative distribution function, assuming there is no censoring. By the <em>Dvoretzky-Kiefer-Wolfowitz inequality</em>, the maximum absolute error in an empirical distribution function estimate of the true continuous distribution function is less than or equal to <span class="math notranslate nohighlight">\(\epsilon\)</span> with probability of at least <span class="math notranslate nohighlight">\(1 − 2e^{−2n\epsilon^2}\)</span>.</p></li>
 <li><p>To estimate the subject-specific survival curves <span class="math notranslate nohighlight">\((S(t|X))\)</span> will require greater sample sizes, as will having censored data.</p></li>
@@ -1247,9 +1352,9 @@ for.”</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="test-statistics">
-<h3>4. Test statistics<a class="headerlink" href="#test-statistics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="test-statistics">
+<h3>4. Test statistics<a class="headerlink" href="#test-statistics" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Wald, score, and likelihood ratio statistics are useful and valid for drawing inferences about β in the Cox model.</p>
 <ul>
@@ -1260,20 +1365,20 @@ for.”</p></li>
 <li><p>The likelihood ratio or Wald tests could also be used in this situation, and in fact the likelihood ratio test may be better than the score test (i.e., type I errors by treating the likelihood ratio test statistic as having a <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution may be more accurate than using the log-rank statistic).</p></li>
 <li><p>The Cox model can be thought of as a generalization of the log-rank procedure since it allows one to test continuous predictors, perform simultaneous tests of various predictors, and adjust for other continuous factors without grouping them. Although a stratified log-rank test does not make assumptions regarding the effect of the adjustment (stratifying) factors, it makes the same assumption (i.e., PH) as the Cox model regarding the treatment effect for the statistical test of no difference in survival between groups.</p></li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h3>5. Residuals<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>5. Residuals<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p><em>Therneau et al.</em> discussed four types of residuals from the Cox model**: martingale, score, Schoenfeld**, and <strong>deviance</strong>.</p>
 <p><img alt="image-20200807104402567" src="https://raw.githubusercontent.com/askming/picgo/master/image-20200807104402567.png" /></p>
 </li>
 </ul>
-</div>
-<div class="section" id="id5">
-<h3>6. Assessment of model fit<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="what-to-do-when-ph-fails">
-<h3>7. What to do when PH fails<a class="headerlink" href="#what-to-do-when-ph-fails" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id5">
+<h3>6. Assessment of model fit<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="what-to-do-when-ph-fails">
+<h3>7. What to do when PH fails<a class="headerlink" href="#what-to-do-when-ph-fails" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Also check note on <a class="reference internal" href="Note-Cox_PH_model.html"><span class="doc std std-doc">Cox PH Model</span></a></p></li>
 </ul>
@@ -1284,9 +1389,9 @@ for.”</p></li>
 </dd>
 </dl>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1316,9 +1421,11 @@ for.”</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1334,24 +1441,28 @@ for.”</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

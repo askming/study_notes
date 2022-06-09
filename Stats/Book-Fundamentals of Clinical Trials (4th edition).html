@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>[book] Fundamentals of Clinical Trials (4th edition) &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,7 +67,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +90,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -97,14 +111,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -478,90 +493,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Book-Fundamentals of Clinical Trials (4th edition).md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Fundamentals of Clinical Trials (4th edition).html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Fundamentals of Clinical Trials (4th edition).html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Stats/Book-Fundamentals of Clinical Trials (4th edition).md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-5-basic-study-design">
    Chapter 5 Basic Study Design
@@ -818,12 +923,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>[book] Fundamentals of Clinical Trials (4th edition)</h1>
@@ -1096,16 +1200,17 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="book-fundamentals-of-clinical-trials-4th-edition">
-<h1>[book] Fundamentals of Clinical Trials (4th edition)<a class="headerlink" href="#book-fundamentals-of-clinical-trials-4th-edition" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="book-fundamentals-of-clinical-trials-4th-edition">
+<h1>[book] Fundamentals of Clinical Trials (4th edition)<a class="headerlink" href="#book-fundamentals-of-clinical-trials-4th-edition" title="Permalink to this headline">#</a></h1>
 <hr>
 <p><em>A study note of <span id="id1">[<a class="reference internal" href="#id12" title="Lawrence M Friedman, Curt D Furberg, David L DeMets, David M Reboussin, and Christopher B Granger. Fundamentals of clinical trials. Springer, 2015.">Friedman <em>et al.</em>, 2015</a>]</span></em></p>
 <hr class="docutils" />
-<div class="section" id="chapter-5-basic-study-design">
-<h2>Chapter 5 Basic Study Design<a class="headerlink" href="#chapter-5-basic-study-design" title="Permalink to this headline">¶</a></h2>
+<section id="chapter-5-basic-study-design">
+<h2>Chapter 5 Basic Study Design<a class="headerlink" href="#chapter-5-basic-study-design" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Sound scientific clinical investigation almost always demands that a control group be used against which the new intervention can be compared. Randomization is the preferred way of assigning participants to control and intervention groups.</p>
 </div></blockquote>
@@ -1120,8 +1225,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>there are superiority trials and equivalence or noninferiority trials. A <strong>superiority trial</strong>, which for many years was the typical kind of trial, assesses whether the new intervention is better or worse than the control. An <strong>equivalence trial</strong> would assess if the new intervention is more or less equal to the control. A noninferiority trial evaluates whether the new intervention is no worse than the control by some margin, delta (d).</p></li>
 <li><p>In both of these latter cases, the control group would be on a treatment that had previously been shown to be effective, i.e., have an active control.</p></li>
 </ul>
-<div class="section" id="randomized-control-trials">
-<h3>5.1 Randomized control trials<a class="headerlink" href="#randomized-control-trials" title="Permalink to this headline">¶</a></h3>
+<section id="randomized-control-trials">
+<h3>5.1 Randomized control trials<a class="headerlink" href="#randomized-control-trials" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>There are three advantages of the randomized design over other methods for selecting controls:
 i. First, randomization removes the potential of bias in the allocation of participants to the intervention group or to the control group.
@@ -1130,16 +1235,16 @@ iii. The third advantage of randomization is that the validity of statistical te
 <li><p>The process of randomization makes it possible to ascribe a probability distribution to the difference in outcome between treatment groups receiving equally effective treatments and thus to assign significance levels to observed differences.</p></li>
 <li><p>Not all clinical studies can use randomized controls, e.g. for rare diseases. In such an instance, only case–control studies might be possible.</p></li>
 </ul>
-</div>
-<div class="section" id="non-randomized-concurrent-control-study">
-<h3>5.2 Non-randomized concurrent control study<a class="headerlink" href="#non-randomized-concurrent-control-study" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="non-randomized-concurrent-control-study">
+<h3>5.2 Non-randomized concurrent control study<a class="headerlink" href="#non-randomized-concurrent-control-study" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The major weakness of the nonrandomized concurrent control study is the potential that the intervention group and control group are not strictly comparable.</p></li>
 <li><p>Even for large studies that could detect most differences of real clinical importance, the uncertainty about the unknown or unmeasured factors is still of concern.</p></li>
 </ul>
-</div>
-<div class="section" id="historical-controls-and-databases">
-<h3>5.3 Historical controls and databases<a class="headerlink" href="#historical-controls-and-databases" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="historical-controls-and-databases">
+<h3>5.3 Historical controls and databases<a class="headerlink" href="#historical-controls-and-databases" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>If an investigator is already of the opinion that the new intervention is beneficial, then she would most likely consider any restriction on its use unethical.</p></li>
 <li><p>In addition, participants may be more willing to enroll in a study if they can be assured of receiving a particular therapy or intervention.</p></li>
@@ -1164,9 +1269,9 @@ ii. Second, data may not have been published but may be available on computer fi
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="cross-over-designs">
-<h3>5.4 Cross-over designs<a class="headerlink" href="#cross-over-designs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cross-over-designs">
+<h3>5.4 Cross-over designs<a class="headerlink" href="#cross-over-designs" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The cross-over design allows each participant to serve as his own control. In the simplest case, namely the two period cross-over design, each participant will receive either intervention or control (A or B) in the first period and the alternative in the succeeding period. The order in which A and B are given to each participant is randomized.</p></li>
 <li><p>Depending on the duration of expected action of the intervention (for example, drug half-life), a wash-out period may be used between the periods.</p></li>
@@ -1178,18 +1283,18 @@ ii. Second, data may not have been published but may be available on computer fi
 <li><p>The basic appeal of the cross-over design is to avoid between-participant variation in estimating the intervention effect, thereby requiring a smaller sample size.</p></li>
 <li><p>Only if there is substantial evidence that the therapy has no carryover effects, and the scientific community is convinced by that evidence, should a crossover design be considered.</p></li>
 </ul>
-</div>
-<div class="section" id="withdrawal-studies">
-<h3>5.5 Withdrawal studies<a class="headerlink" href="#withdrawal-studies" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="withdrawal-studies">
+<h3>5.5 Withdrawal studies<a class="headerlink" href="#withdrawal-studies" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A number of studies have been conducted in which the participants on a particular treatment for a chronic disease are taken off therapy or have the dosage reduced. The objective is to assess response to discontinuation or reduction. This design may be validly used to evaluate the duration of benefit of an intervention already known to be useful.</p></li>
 <li><p>Withdrawal studies have also been used to assess the efficacy of an intervention that had not conclusively been shown to be beneficial in the long term.</p></li>
 <li><p>One serious limitation of this type of study is that a highly selected sample is evaluated. Only those participants who physicians thought were benefiting from the intervention were likely to have been on it for several months or years. Anyone who had major adverse effects from the drug would have been taken off and, therefore, not been eligible for the withdrawal study. Thus, this design can overestimate benefit and underestimate toxicity.</p></li>
 <li><p>Another drawback is that both participants and disease states change over time.</p></li>
 </ul>
-</div>
-<div class="section" id="factorial-design">
-<h3>5.6 Factorial design<a class="headerlink" href="#factorial-design" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="factorial-design">
+<h3>5.6 Factorial design<a class="headerlink" href="#factorial-design" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>In the simple case, the factorial design attempts to evaluate two interventions compared to control in a single experiment.</p></li>
 <li><p>A concern with the factorial design is the possibility of the existence of interaction and its impact on the sample size. Interaction means that the effect of intervention X differs depending upon the presence or absence of intervention Y, or vice versa. It is more likely to occur when the two drugs are expected to have related mechanisms of action.</p></li>
@@ -1198,18 +1303,18 @@ ii. Second, data may not have been published but may be available on computer fi
 <li><p>The factorial design has some distinct advantages. If the interaction of two interventions is important to determine, or if there is little chance of interaction, then such a design with appropriate sample size can be very informative and efficient.</p></li>
 <li><p>However, the added complexity, impact on recruitment and adherence, and potential adverse effects of “polypharmacy” must be considered.</p></li>
 </ul>
-</div>
-<div class="section" id="group-allocation-designs">
-<h3>5.7 Group allocation designs<a class="headerlink" href="#group-allocation-designs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="group-allocation-designs">
+<h3>5.7 Group allocation designs<a class="headerlink" href="#group-allocation-designs" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>In group or cluster allocation designs, a group of individuals, a clinic or a community are randomized to a particular intervention or control.</p></li>
 <li><p>The rationale is that the intervention is most appropriately or more feasibly administered to an entire group. This design may also be better if there is concern about contamination. That is, when what one individual does might readily influence what other participants do.</p></li>
 <li><p>In group or cluster allocation designs, a group of individuals, a clinic or a community are randomized to a particular intervention or control.</p></li>
 <li><p>The rationale is that the intervention is most appropriately or more feasibly administered to an entire group. This design may also be better if there is concern about contamination. That is, when what one individual does might readily influence what other participants do.</p></li>
 </ul>
-</div>
-<div class="section" id="hibrid-designs">
-<h3>5.8 Hibrid designs<a class="headerlink" href="#hibrid-designs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hibrid-designs">
+<h3>5.8 Hibrid designs<a class="headerlink" href="#hibrid-designs" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Combining historical and randomized controls in a single study.</p></li>
 <li><p>A number of criteria must be met in order to combine the historical and randomized controls. These include the same entry criteria and evaluation factors and participant recruitment by the same clinic or investigator. The data from the historical</p></li>
@@ -1217,9 +1322,9 @@ ii. Second, data may not have been published but may be available on computer fi
 <li><p>This approach, if feasible, requires fewer participants to be entered into a trial.</p></li>
 <li><p>cautions that if biases introduced from the nonrandomized participants (historical controls) are substantial, more participants might have to be randomized to compensate than would be the case in a corresponding fully randomized trial</p></li>
 </ul>
-</div>
-<div class="section" id="large-simple-and-paragmatic-clinical-trials">
-<h3>5.9 Large, simple and paragmatic clinical trials<a class="headerlink" href="#large-simple-and-paragmatic-clinical-trials" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="large-simple-and-paragmatic-clinical-trials">
+<h3>5.9 Large, simple and paragmatic clinical trials<a class="headerlink" href="#large-simple-and-paragmatic-clinical-trials" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The arguments for Large, simple and pragmatic clinical trials:</p></li>
 <li><p>Advocates of large, simple trials maintain that for common pathological conditions, it is important to uncover even modest benefits of intervention, particularly short term interventions that are easily implemented in a large population.</p></li>
@@ -1227,9 +1332,9 @@ ii. Second, data may not have been published but may be available on computer fi
 <li><p>The simplification of the study design and management allows for sufficiently large trials at reasonable cost.</p></li>
 <li><p>Because of the broad involvement of many practitioners, the results of the trial may be more widely applied than the results of a trial done in just major medical settings.</p></li>
 </ul>
-</div>
-<div class="section" id="studies-of-equivalency-and-non-inferiority">
-<h3>5.10 Studies of equivalency and non-inferiority<a class="headerlink" href="#studies-of-equivalency-and-non-inferiority" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="studies-of-equivalency-and-non-inferiority">
+<h3>5.10 Studies of equivalency and non-inferiority<a class="headerlink" href="#studies-of-equivalency-and-non-inferiority" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>New interventions may have little or no superiority to existing therapies, but, as long as they are not materially worse, may be of interest because they are less toxic, less invasive, less costly, require fewer doses, improve quality of life, or have some other value to patients.</p></li>
 <li><p>In <strong>studies of equivalency</strong>, the objective is to test whether a new intervention is equivalent to an established one. <strong>Noninferiority trials</strong> test whether the new intervention is no worse than, or at least as good as, some established intervention.</p></li>
@@ -1253,9 +1358,9 @@ ii. Second, data may not have been published but may be available on computer fi
 <li><p>For noninferiority trials, the margin of indifference, <span class="math notranslate nohighlight">\(d\)</span>, is specified, where <span class="math notranslate nohighlight">\(I − C &lt; d\)</span>.
 To select the best control <span class="math notranslate nohighlight">\(\rightarrow\)</span> decide the margin of noninferiority <span class="math notranslate nohighlight">\(\rightarrow\)</span> conduct the best trial</p></li>
 </ul>
-</div>
-<div class="section" id="adaptive-designs">
-<h3>5.11 Adaptive designs<a class="headerlink" href="#adaptive-designs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="adaptive-designs">
+<h3>5.11 Adaptive designs<a class="headerlink" href="#adaptive-designs" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Early phase studies have designs that allow for modifications as the data accrue. Many late phase trials are adaptive in the sense that the protocol allows for modification of the intervention to achieve a certain goal, typically using an interim variable.</p></li>
 <li><p>Some trials, by design, will adjust the sample size to retain a desired power if the overall event rate is lower than expected, the variability is higher than planned, or adherence is worse than expected. In such cases, the sample size can be recalculated using the updated information</p></li>
@@ -1263,10 +1368,10 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 <li><p>A criticism of these designs is that they can introduce bias during the implementation of the adjustment. They may also provide sufficient information to allow people not privy to the accumulating data to make reasonable guesses as to the trend.</p></li>
 <li><p>Group sequential designs, in common use for many years, are also considered to be response adaptive in that they facilitate early termination of the trial when there is convincing evidence of benefit or harm.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="chapter-6-the-randomization-process">
-<h2>Chapter 6 The Randomization Process<a class="headerlink" href="#chapter-6-the-randomization-process" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="chapter-6-the-randomization-process">
+<h2>Chapter 6 The Randomization Process<a class="headerlink" href="#chapter-6-the-randomization-process" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Randomization tends to produce study groups comparable with respect to known as well as unknown risk factors, removes investigator bias in the allocation of participants, and guarantees that statistical tests will have valid false positive error rates.</p>
 </div></blockquote>
@@ -1278,10 +1383,10 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 </ul>
 </li>
 </ul>
-<div class="section" id="randomization-methods">
-<h3>6.1 Randomization methods<a class="headerlink" href="#randomization-methods" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="fixed-allocation-randomization">
-<h4>Fixed allocation randomization<a class="headerlink" href="#fixed-allocation-randomization" title="Permalink to this headline">¶</a></h4>
+<section id="randomization-methods">
+<h3>6.1 Randomization methods<a class="headerlink" href="#randomization-methods" title="Permalink to this headline">#</a></h3>
+<section id="fixed-allocation-randomization">
+<h4>Fixed allocation randomization<a class="headerlink" href="#fixed-allocation-randomization" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><strong>Fixed allocation</strong> procedures assign the interventions to participants with a prespecified probability, usually equal, and that allocation probability is not altered as the study progresses.</p></li>
 <li><p><strong>Equal or unequal allocation</strong>?</p>
@@ -1331,9 +1436,9 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="adaptive-randomization-procedure">
-<h4>Adaptive randomization procedure<a class="headerlink" href="#adaptive-randomization-procedure" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="adaptive-randomization-procedure">
+<h4>Adaptive randomization procedure<a class="headerlink" href="#adaptive-randomization-procedure" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Adaptive procedures change the allocation probabilities as the study progresses</p></li>
 <li><p><strong>Baseline adpative procedure</strong></p>
@@ -1368,13 +1473,13 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="ixrs-related">
-<h3>6.2 IxRS related<a class="headerlink" href="#ixrs-related" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="final-notes">
-<h3>Final notes<a class="headerlink" href="#final-notes" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="ixrs-related">
+<h3>6.2 IxRS related<a class="headerlink" href="#ixrs-related" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="final-notes">
+<h3>Final notes<a class="headerlink" href="#final-notes" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The manner in which the chosen randomization method is actually implemented is very important. If this aspect of randomization does not receive careful attention, the entire randomization process can easily be compromised, thus voiding any of the advantages for using it.</p></li>
 <li><p>In some cases, the clinic may register a participant by dialing into a central computer and entering data via touchtone, with a voice response. These systems, referred to as Interactive Voice Response Systems or IVRS, or Interactive Web Response Systems, IWRS, are effective and can be used to not only assign intervention but can also capture basic eligibility data.</p></li>
@@ -1386,10 +1491,10 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 <li><p>achieved for at least those factors.</p></li>
 <li><p>For a larger number of prognostic factors, the adaptive stratification techniques should be considered and the appropriate analyses performed. As in large studies, stratified analysis can be performed even if stratified randomization was not done.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="chapter-7-blindness">
-<h2>Chapter 7 Blindness<a class="headerlink" href="#chapter-7-blindness" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="chapter-7-blindness">
+<h2>Chapter 7 Blindness<a class="headerlink" href="#chapter-7-blindness" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Bias may be defined as systematic error, or “difference between the true value and that actually obtained due to all causes other than sampling variability”</p></li>
 <li><p>Large sample size does not reduce bias although it generally improves precision and thus power.</p></li>
@@ -1397,8 +1502,8 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 <blockquote>
 <div><p>A clinical trial should, ideally, have a double-blind design in order to avoid potential problems of bias during data collection and assessment. In studies where such a design is impossible, other measures to reduce potential bias are advocated.</p>
 </div></blockquote>
-<div class="section" id="types-of-trials-in-terms-of-blindness">
-<h3>Types of trials (in terms of blindness)<a class="headerlink" href="#types-of-trials-in-terms-of-blindness" title="Permalink to this headline">¶</a></h3>
+<section id="types-of-trials-in-terms-of-blindness">
+<h3>Types of trials (in terms of blindness)<a class="headerlink" href="#types-of-trials-in-terms-of-blindness" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>An <strong>unblinded study</strong> is appealing for two reasons. First, all other things being equal, it is simpler to execute than other studies.</p>
 <ul>
@@ -1424,9 +1529,9 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="protecting-the-double-blind-design">
-<h3>Protecting the double-blind design<a class="headerlink" href="#protecting-the-double-blind-design" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="protecting-the-double-blind-design">
+<h3>Protecting the double-blind design<a class="headerlink" href="#protecting-the-double-blind-design" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>One of the surest ways to unblind a drug study is to have dissimilar appearing medications.</p></li>
 <li><p>When the treatment identity of one participant becomes known to the investigator, the whole trial is unblinded. Thus, matching of drugs is essential.</p></li>
@@ -1442,93 +1547,93 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 <li><p>Known pharmaceutical effects of the study medication may lead to unblinding.</p></li>
 <li><p>Another way of estimating the success of a double-blind design is to monitor specific intermediate effects of the study medication.</p></li>
 </ul>
-</div>
-<div class="section" id="assessing-and-reporting-of-blindness">
-<h3>Assessing and reporting of blindness<a class="headerlink" href="#assessing-and-reporting-of-blindness" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="assessing-and-reporting-of-blindness">
+<h3>Assessing and reporting of blindness<a class="headerlink" href="#assessing-and-reporting-of-blindness" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Randomized trials with inadequate blinding, on average, show larger treatment effects than properly blinded trials</p></li>
 <li><p>In assessing the success of blindness, decisions have to be made when to conduct the assessment and what questions to ask.</p></li>
 <li><p>We believe that monitoring and reporting of the success of blindness are important for two reasons. First, knowing that the level of this success is one of the measures of trial quality may keep the investigators’ attention on blindness during trial conduct. Second, it helps readers of the trial report determine how much confidence they can place on the trial results.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="chapter-8-sample-size-power-calculation">
-<h2>Chapter 8 Sample size/power calculation<a class="headerlink" href="#chapter-8-sample-size-power-calculation" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="chapter-11-data-collection-and-quality-control">
-<h2>Chapter 11 Data collection and quality control<a class="headerlink" href="#chapter-11-data-collection-and-quality-control" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="chapter-12-assessing-and-reporting-adverse-events">
-<h2>Chapter 12 Assessing and reporting adverse events<a class="headerlink" href="#chapter-12-assessing-and-reporting-adverse-events" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="chapter-16-monitoring-response-variables">
-<h2>Chapter 16 Monitoring response variables<a class="headerlink" href="#chapter-16-monitoring-response-variables" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="monitoring-committee">
-<h3>16.1 Monitoring committee<a class="headerlink" href="#monitoring-committee" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="statistical-methods-used-in-monitoring-interim-analysis">
-<h3>16.2 Statistical methods used in monitoring (interim analysis)<a class="headerlink" href="#statistical-methods-used-in-monitoring-interim-analysis" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="classical-sequential-methods">
-<h4>Classical sequential methods<a class="headerlink" href="#classical-sequential-methods" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="group-sequential-methods">
-<h4>Group sequential methods<a class="headerlink" href="#group-sequential-methods" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="flexible-group-sequential-procedures-alpha-spending-functions">
-<h4>Flexible group sequential procedures: alpha spending functions<a class="headerlink" href="#flexible-group-sequential-procedures-alpha-spending-functions" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="asymmetric-boundaries">
-<h4>Asymmetric boundaries<a class="headerlink" href="#asymmetric-boundaries" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="curtailed-sampling-and-conditional-power-procedures">
-<h4>Curtailed sampling and conditional power procedures<a class="headerlink" href="#curtailed-sampling-and-conditional-power-procedures" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="other-approaches">
-<h4>Other approaches<a class="headerlink" href="#other-approaches" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-</div>
-<div class="section" id="chapter-17-issues-in-data-analysis">
-<h2>Chapter 17 Issues in data analysis<a class="headerlink" href="#chapter-17-issues-in-data-analysis" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="analysis-populations">
-<h3>Analysis populations<a class="headerlink" href="#analysis-populations" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="missing-data-or-poor-quality-data">
-<h3>Missing data or poor quality data<a class="headerlink" href="#missing-data-or-poor-quality-data" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="competing-events">
-<h3>Competing events<a class="headerlink" href="#competing-events" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="composite-outcomes">
-<h3>Composite outcomes<a class="headerlink" href="#composite-outcomes" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="covariate-adjustment">
-<h3>Covariate adjustment<a class="headerlink" href="#covariate-adjustment" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="subgroup-analyses">
-<h3>Subgroup analyses<a class="headerlink" href="#subgroup-analyses" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="comparison-of-multiple-variables">
-<h3>Comparison of multiple variables<a class="headerlink" href="#comparison-of-multiple-variables" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="use-of-cutpoints">
-<h3>Use of cutpoints<a class="headerlink" href="#use-of-cutpoints" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="analysis-of-non-inferiority-trial">
-<h3>Analysis of non-inferiority trial<a class="headerlink" href="#analysis-of-non-inferiority-trial" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="analysis-following-trend-adaptive-designs">
-<h3>Analysis following trend adaptive designs<a class="headerlink" href="#analysis-following-trend-adaptive-designs" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="meta-analysis-of-multiple-studies">
-<h3>Meta-analysis of multiple studies<a class="headerlink" href="#meta-analysis-of-multiple-studies" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="chapter-18-closeout">
-<h2>Chapter 18 Closeout<a class="headerlink" href="#chapter-18-closeout" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="chapter-19-reporting-and-interpreting-of-results">
-<h2>Chapter 19 Reporting and interpreting of results<a class="headerlink" href="#chapter-19-reporting-and-interpreting-of-results" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="chapter-8-sample-size-power-calculation">
+<h2>Chapter 8 Sample size/power calculation<a class="headerlink" href="#chapter-8-sample-size-power-calculation" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="chapter-11-data-collection-and-quality-control">
+<h2>Chapter 11 Data collection and quality control<a class="headerlink" href="#chapter-11-data-collection-and-quality-control" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="chapter-12-assessing-and-reporting-adverse-events">
+<h2>Chapter 12 Assessing and reporting adverse events<a class="headerlink" href="#chapter-12-assessing-and-reporting-adverse-events" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="chapter-16-monitoring-response-variables">
+<h2>Chapter 16 Monitoring response variables<a class="headerlink" href="#chapter-16-monitoring-response-variables" title="Permalink to this headline">#</a></h2>
+<section id="monitoring-committee">
+<h3>16.1 Monitoring committee<a class="headerlink" href="#monitoring-committee" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="statistical-methods-used-in-monitoring-interim-analysis">
+<h3>16.2 Statistical methods used in monitoring (interim analysis)<a class="headerlink" href="#statistical-methods-used-in-monitoring-interim-analysis" title="Permalink to this headline">#</a></h3>
+<section id="classical-sequential-methods">
+<h4>Classical sequential methods<a class="headerlink" href="#classical-sequential-methods" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="group-sequential-methods">
+<h4>Group sequential methods<a class="headerlink" href="#group-sequential-methods" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="flexible-group-sequential-procedures-alpha-spending-functions">
+<h4>Flexible group sequential procedures: alpha spending functions<a class="headerlink" href="#flexible-group-sequential-procedures-alpha-spending-functions" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="asymmetric-boundaries">
+<h4>Asymmetric boundaries<a class="headerlink" href="#asymmetric-boundaries" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="curtailed-sampling-and-conditional-power-procedures">
+<h4>Curtailed sampling and conditional power procedures<a class="headerlink" href="#curtailed-sampling-and-conditional-power-procedures" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="other-approaches">
+<h4>Other approaches<a class="headerlink" href="#other-approaches" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+</section>
+<section id="chapter-17-issues-in-data-analysis">
+<h2>Chapter 17 Issues in data analysis<a class="headerlink" href="#chapter-17-issues-in-data-analysis" title="Permalink to this headline">#</a></h2>
+<section id="analysis-populations">
+<h3>Analysis populations<a class="headerlink" href="#analysis-populations" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="missing-data-or-poor-quality-data">
+<h3>Missing data or poor quality data<a class="headerlink" href="#missing-data-or-poor-quality-data" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="competing-events">
+<h3>Competing events<a class="headerlink" href="#competing-events" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="composite-outcomes">
+<h3>Composite outcomes<a class="headerlink" href="#composite-outcomes" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="covariate-adjustment">
+<h3>Covariate adjustment<a class="headerlink" href="#covariate-adjustment" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="subgroup-analyses">
+<h3>Subgroup analyses<a class="headerlink" href="#subgroup-analyses" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="comparison-of-multiple-variables">
+<h3>Comparison of multiple variables<a class="headerlink" href="#comparison-of-multiple-variables" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="use-of-cutpoints">
+<h3>Use of cutpoints<a class="headerlink" href="#use-of-cutpoints" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="analysis-of-non-inferiority-trial">
+<h3>Analysis of non-inferiority trial<a class="headerlink" href="#analysis-of-non-inferiority-trial" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="analysis-following-trend-adaptive-designs">
+<h3>Analysis following trend adaptive designs<a class="headerlink" href="#analysis-following-trend-adaptive-designs" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="meta-analysis-of-multiple-studies">
+<h3>Meta-analysis of multiple studies<a class="headerlink" href="#meta-analysis-of-multiple-studies" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="chapter-18-closeout">
+<h2>Chapter 18 Closeout<a class="headerlink" href="#chapter-18-closeout" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="chapter-19-reporting-and-interpreting-of-results">
+<h2>Chapter 19 Reporting and interpreting of results<a class="headerlink" href="#chapter-19-reporting-and-interpreting-of-results" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id1">FFD+15</a></span></dt>
@@ -1536,8 +1641,8 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 </dd>
 </dl>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1567,9 +1672,11 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1585,24 +1692,28 @@ To select the best control <span class="math notranslate nohighlight">\(\rightar
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

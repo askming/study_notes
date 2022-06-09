@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>[book] Causal inference in statistics a primer &#8212; Study Notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,7 +67,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +90,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -97,14 +111,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Study Notes Index (knowledge base structure)
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Study Notes Index (knowledge base structure)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -478,90 +493,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Stats/Book-Causal_inference_in_statistics_a_primer.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/askming/study_notes"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Causal_inference_in_statistics_a_primer.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/askming/study_notes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Causal_inference_in_statistics_a_primer.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Stats/Book-Causal_inference_in_statistics_a_primer.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-1-preliminaries-statistical-and-causal-models">
    Chapter 1 Preliminaries: Statistical and Causal Models
@@ -679,12 +784,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>[book] Causal inference in statistics a primer</h1>
@@ -818,22 +922,23 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="book-causal-inference-in-statistics-a-primer">
-<h1>[book] Causal inference in statistics <em>a primer</em><a class="headerlink" href="#book-causal-inference-in-statistics-a-primer" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="book-causal-inference-in-statistics-a-primer">
+<h1>[book] Causal inference in statistics <em>a primer</em><a class="headerlink" href="#book-causal-inference-in-statistics-a-primer" title="Permalink to this headline">#</a></h1>
 <hr>
 <p><em>a study note of <span id="id1">[<a class="reference internal" href="#id10" title="Judea Pearl, Madelyn Glymour, and Nicholas P Jewell. Causal inference in statistics: A primer. John Wiley &amp; Sons, 2016.">Pearl <em>et al.</em>, 2016</a>]</span></em></p>
-<div class="section" id="chapter-1-preliminaries-statistical-and-causal-models">
-<h2>Chapter 1 Preliminaries: Statistical and Causal Models<a class="headerlink" href="#chapter-1-preliminaries-statistical-and-causal-models" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="simpson-s-paradox">
-<h3>Simpson’s Paradox<a class="headerlink" href="#simpson-s-paradox" title="Permalink to this headline">¶</a></h3>
+<section id="chapter-1-preliminaries-statistical-and-causal-models">
+<h2>Chapter 1 Preliminaries: Statistical and Causal Models<a class="headerlink" href="#chapter-1-preliminaries-statistical-and-causal-models" title="Permalink to this headline">#</a></h2>
+<section id="simpson-s-paradox">
+<h3>Simpson’s Paradox<a class="headerlink" href="#simpson-s-paradox" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>The paradox refers to the existence of data in which a statistical association that holds for an entire popu- lation is reversed in every subpopulation.</p>
 </div></blockquote>
-<div class="section" id="example-1">
-<h4>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h4>
+<section id="example-1">
+<h4>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h4>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/3a11164d_20200421090218.png" /></p>
 <p>The first row shows the outcome for male patients; the second row shows the outcome for female patients; and the third row shows the outcome for all patients, regardless of gender. In male patients, drug takers had a better recovery rate than those who went without the drug (93% vs 87%). In female patients, again, those who took the drug had a better recovery rate than nontakers (73% vs 69%). However, in the combined population, those who did not take the drug had a better recovery rate than those who did (83% vs 78%).</p>
 <p><strong>Explaination:</strong></p>
@@ -841,9 +946,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div><p>As we can see from the data, women are significantly more likely to take the drug than men are (<em>i.e. there is gender imbalance in the two treatment arm</em>). So, the reason the drug appears to be harmful overall is that, if we select a drug user at random, that person is more likely to be a woman and hence less likely to recover than a random person who does not take the drug.
 Put differently, being a woman is a common cause of both drug taking and failure to recover. Therefore, to assess the effectiveness, we need to compare subjects of the same gender <em>(i.e. control for gender</em>), thereby ensuring that any difference in recovery rates between those who take the drug and those who do not is not ascribable to estrogen.</p>
 </div></blockquote>
-</div>
-<div class="section" id="example-2">
-<h4>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="example-2">
+<h4>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h4>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/af05e8f9_20200421110946.png" /></p>
 <p>We see that there is a general trend downward in each group; the more young people exercise, the lower their cholesterol is, and the same applies for middle-aged people and the elderly.
 <img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/d7c225ea_20200421111024.png" /></p>
@@ -852,9 +957,9 @@ Put differently, being a woman is a common cause of both drug taking and failure
 <blockquote>
 <div><p>Older people, who are more likely to exercise (Figure 1.1), are also more likely to have high cholesterol regardless of exercise, then the reversal is easily explained, and easily resolved. Age is a common cause of both treatment (exercise) and outcome (cholesterol). So we should look at the age-segregated data in order to compare same-age people and thereby eliminate the possibility that the high exercisers in each group we examine are more likely to have high cholesterol due to their age, and not due to exercising.</p>
 </div></blockquote>
-</div>
-<div class="section" id="example-3-segregated-data-doesn-t-give-correct-answer">
-<h4>Example 3 (segregated data doesn’t give correct answer)<a class="headerlink" href="#example-3-segregated-data-doesn-t-give-correct-answer" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="example-3-segregated-data-doesn-t-give-correct-answer">
+<h4>Example 3 (segregated data doesn’t give correct answer)<a class="headerlink" href="#example-3-segregated-data-doesn-t-give-correct-answer" title="Permalink to this headline">#</a></h4>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/49d255fb_20200421111052.png" /></p>
 <p>we looked at the same numbers from our first example of drug taking and recovery, instead of recording participants’ gender, patients’ blood pressure were recorded <strong>at the end of the experiment</strong>. In this case, we know that the drug affects recovery by lowering the blood pressure of those who take it—but unfortunately, it also has a toxic effect. At the end of our experiment, we receive the results shown in Table 1.2. (Table 1.2 is numerically identical to Table 1.1, with the exception of the column labels, which have been switched.)</p>
 <p><strong>Explaination:</strong></p>
@@ -874,17 +979,17 @@ Treatment –&gt; blood pressure –&gt; outcome, conditional on blood pressure 
 </li>
 </ul>
 <hr>
-</div>
-</div>
-</div>
-<div class="section" id="chapter-2-graphical-models-and-their-applications">
-<h2>Chapter 2 Graphical Models and Their Applications<a class="headerlink" href="#chapter-2-graphical-models-and-their-applications" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="chapter-2-graphical-models-and-their-applications">
+<h2>Chapter 2 Graphical Models and Their Applications<a class="headerlink" href="#chapter-2-graphical-models-and-their-applications" title="Permalink to this headline">#</a></h2>
 <hr>
-</div>
-<div class="section" id="chapter-3-the-effects-of-interventions">
-<h2>Chapter 3 The Effects of Interventions<a class="headerlink" href="#chapter-3-the-effects-of-interventions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="interventions">
-<h3>3.1 Interventions<a class="headerlink" href="#interventions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="chapter-3-the-effects-of-interventions">
+<h2>Chapter 3 The Effects of Interventions<a class="headerlink" href="#chapter-3-the-effects-of-interventions" title="Permalink to this headline">#</a></h2>
+<section id="interventions">
+<h3>3.1 Interventions<a class="headerlink" href="#interventions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>When we <em>intervene</em> on a variable in a model, we fix its value. We change the system, and the values of other variables often change as a result. When we <em>condition</em> on a variable, we change nothing; we merely narrow our focus to the subset of cases in which the variable takes the value we are interested in.</p></li>
 <li><p>When we intervene to fix the value of a variable, we curtail the natural tendency of that variable to vary in response to other variables in nature. This amounts to performing a kind of surgery on the graphical model, removing all edges directed into that variable.</p></li>
@@ -896,9 +1001,9 @@ Treatment –&gt; blood pressure –&gt; outcome, conditional on blood pressure 
 </li>
 <li><p>It is worth noting here that we are making a tacit assumption here that the intervention has no “side effects,” that is, that assigning the value <span class="math notranslate nohighlight">\(x\)</span> for the valuable <span class="math notranslate nohighlight">\(X\)</span> for an individual does not alter subsequent variables in a direct way.</p></li>
 </ul>
-</div>
-<div class="section" id="the-adjustment-formula">
-<h3>3.2 The Adjustment Formula<a class="headerlink" href="#the-adjustment-formula" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-adjustment-formula">
+<h3>3.2 The Adjustment Formula<a class="headerlink" href="#the-adjustment-formula" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>Denoting the first intervention by <span class="math notranslate nohighlight">\(do(X = 1)\)</span> and the second by <span class="math notranslate nohighlight">\(do(X = 0)\)</span>, our task is to estimate the difference
 $<span class="math notranslate nohighlight">\(P(Y = 1|do(X = 1)) − P(Y = 1|do(X = 0))\)</span>$
@@ -937,13 +1042,13 @@ $<span class="math notranslate nohighlight">\(P_m(Y=y|Z=z,X=x)=P(Y=y|Z=z,X=x) \t
 </ul>
 </li>
 </ul>
-<div class="section" id="to-adjust-or-not-to-adjust">
-<h4>3.2.1 To Adjust or not to Adjust<a class="headerlink" href="#to-adjust-or-not-to-adjust" title="Permalink to this headline">¶</a></h4>
+<section id="to-adjust-or-not-to-adjust">
+<h4>3.2.1 To Adjust or not to Adjust<a class="headerlink" href="#to-adjust-or-not-to-adjust" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p><strong>The Causal Effect Rule</strong>: Given a graph G in which a set of variables PA are designated
 as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a1030817-c209-44f6-90c3-2ef46db24550">
-<span class="eqno">(3)<a class="headerlink" href="#equation-a1030817-c209-44f6-90c3-2ef46db24550" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d368094e-422e-48a3-83ce-84cae28b8c3b">
+<span class="eqno">(3)<a class="headerlink" href="#equation-d368094e-422e-48a3-83ce-84cae28b8c3b" title="Permalink to this equation">#</a></span>\[\begin{align}
   P(Y = y| do(X = x)) &amp; = \sum_z P(Y = y | X = x, PA = z) P(PA = z)\\
   &amp; = \sum_z \frac{P(Y = y | X = x, PA = z) P(PA = z) * P(X=x|PA = z)}{P(X=x|PA = z)}\\
   &amp; = \sum_z \frac{P(Y = y, X = x, PA = z)}{P(X=x|PA = z)}
@@ -951,11 +1056,11 @@ as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the c
 <p>where <span class="math notranslate nohighlight">\(z\)</span> ranges over all the combinations of values that the variables in PA can take and <span class="math notranslate nohighlight">\(P(X=x|PA = z)\)</span> is the <em>propensity score</em>.</p>
 </li>
 </ul>
-</div>
-<div class="section" id="multiple-interventions-and-the-truncated-product-rule">
-<h4>3.2.2 Multiple Interventions and the Truncated Product Rule<a class="headerlink" href="#multiple-interventions-and-the-truncated-product-rule" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-4cc174d7-4f75-4167-968e-d6b15fa1cb6c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-4cc174d7-4f75-4167-968e-d6b15fa1cb6c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+</section>
+<section id="multiple-interventions-and-the-truncated-product-rule">
+<h4>3.2.2 Multiple Interventions and the Truncated Product Rule<a class="headerlink" href="#multiple-interventions-and-the-truncated-product-rule" title="Permalink to this headline">#</a></h4>
+<div class="amsmath math notranslate nohighlight" id="equation-0577ae07-9954-411d-a89c-954d063675b7">
+<span class="eqno">(4)<a class="headerlink" href="#equation-0577ae07-9954-411d-a89c-954d063675b7" title="Permalink to this equation">#</a></span>\[\begin{align}
 P(x, y, z) &amp; = P(z)P(x|z)P(y|x, z)\\
 P(z, y|do(x)) &amp; = P_m(z)P_m(y|x, z) = P(z)P(y|x, z)\\
 \Rightarrow
@@ -964,10 +1069,10 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul class="simple">
 <li><p>It tells us that the conditional probability <span class="math notranslate nohighlight">\(P(x|z)\)</span> is all we need to know in order to predict the effect of an intervention <span class="math notranslate nohighlight">\(do(x)\)</span> from nonexperimental data governed by the distribution <span class="math notranslate nohighlight">\(P(x, y, z)\)</span>.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="the-backdoor-criterion">
-<h3>3.3 The Backdoor Criterion<a class="headerlink" href="#the-backdoor-criterion" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="the-backdoor-criterion">
+<h3>3.3 The Backdoor Criterion<a class="headerlink" href="#the-backdoor-criterion" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p><em>Challenge</em>: variables may have unmeasured parents that, though represented in the graph, may be inaccessible for measurement. In those cases, we need to find an alternative set of variables to adjust for.</p></li>
 <li><p><em>Question</em>: Under what conditions does a causal story permit us to compute the causal effect of one variable on another, from data obtained by passive observations, with no interventions? (Under what conditions, is the structure of the causal graph sufficient for computing a causal effect from a given data set?)</p></li>
@@ -983,8 +1088,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p>When trying to find the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>, we want the nodes we condition on to block any “backdoor” path in which one end has an arrow into <span class="math notranslate nohighlight">\(X\)</span>, because such paths may make <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> dependent, but are obviously not transmitting causal influences from <span class="math notranslate nohighlight">\(X\)</span>, and if we do not block them, they will confound the effect that <span class="math notranslate nohighlight">\(X\)</span> has on <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
 <li><p>Consider the fact that <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is an empirical fact of nature, not a byproduct of our analysis. That means that any suitable variable or set of variables that we adjust on—whether it be <span class="math notranslate nohighlight">\(PA(X)\)</span> or any other set that conforms to the backdoor criterion—must return the same result for <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span>. In the case we looked at in Figure 3.6 (<span class="math notranslate nohighlight">\(Y \leftarrow X \leftarrow Z \rightarrow W \rightarrow Y\)</span>), this means that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7dda4d24-576c-4e3e-be25-1d387afe4937">
-<span class="eqno">(5)<a class="headerlink" href="#equation-7dda4d24-576c-4e3e-be25-1d387afe4937" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7247b4a5-42d4-4fd6-8846-1d9decb8997e">
+<span class="eqno">(5)<a class="headerlink" href="#equation-7247b4a5-42d4-4fd6-8846-1d9decb8997e" title="Permalink to this equation">#</a></span>\[\begin{align}
     &amp;&amp; \sum_w P(Y = y|X = x,W = w)P(W = w) \\
     &amp;&amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
     \end{align}\]</div>
@@ -996,14 +1101,14 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="the-front-door-criterion">
-<h3>3.4 The Front-Door Criterion<a class="headerlink" href="#the-front-door-criterion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-front-door-criterion">
+<h3>3.4 The Front-Door Criterion<a class="headerlink" href="#the-front-door-criterion" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p><em>Problem</em>: The backdoor criterion provides us with a simple method of identifying sets of covariates that should be adjusted for when we seek to estimate causal effects from nonexperimental data. It does not, however, exhaust all ways of estimating such effects. The <span class="math notranslate nohighlight">\(do\)</span>-operator can be applied to graphical patterns that do not satisfy the backdoor criterion to identify effects that on first sight seem to be beyond one’s reach.</p></li>
 <li><p>The <strong>front-door</strong> formula</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40aad543-f704-477f-b2f0-d9b9cad0e5e9">
-<span class="eqno">(6)<a class="headerlink" href="#equation-40aad543-f704-477f-b2f0-d9b9cad0e5e9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-11ee9ae5-5af0-4061-b4f6-dcc5031e82fc">
+<span class="eqno">(6)<a class="headerlink" href="#equation-11ee9ae5-5af0-4061-b4f6-dcc5031e82fc" title="Permalink to this equation">#</a></span>\[\begin{align}
   P(Y =y | do(X = x)) = \\
   \sum_z\sum_x' P(Y = y | Z = z, X = x') P(X = x') P(Z = z|X = x) 
   \end{align}\]</div>
@@ -1020,29 +1125,29 @@ $<span class="math notranslate nohighlight">\(P(y|do(x)) = \sum_z P(z|x) \sum_{x
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="conditional-interventions-and-covariate-specific-effects">
-<h3>3.5 Conditional Interventions and Covariate-Specific Effects<a class="headerlink" href="#conditional-interventions-and-covariate-specific-effects" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="inverse-probability-weighing">
-<h3>3.6 Inverse Probability Weighing<a class="headerlink" href="#inverse-probability-weighing" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="mediation">
-<h3>3.7 Mediation<a class="headerlink" href="#mediation" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="causual-inference-in-linear-systems">
-<h3>3.8 Causual Inference in Linear Systems<a class="headerlink" href="#causual-inference-in-linear-systems" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="structual-vesus-regression-coefficients">
-<h4>3.8.1 Structual vesus Regression Coefficients<a class="headerlink" href="#structual-vesus-regression-coefficients" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="the-causal-interpretation-of-structural-coefficients">
-<h4>3.8.2 The Causal Interpretation of Structural Coefficients<a class="headerlink" href="#the-causal-interpretation-of-structural-coefficients" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="indentifying-structural-coefficients-and-causal-effect">
-<h4>3.8.3 Indentifying Structural Coefficients and Causal Effect<a class="headerlink" href="#indentifying-structural-coefficients-and-causal-effect" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="mediation-in-linear-systems">
-<h4>3.8.4 Mediation in Linear Systems<a class="headerlink" href="#mediation-in-linear-systems" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="conditional-interventions-and-covariate-specific-effects">
+<h3>3.5 Conditional Interventions and Covariate-Specific Effects<a class="headerlink" href="#conditional-interventions-and-covariate-specific-effects" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="inverse-probability-weighing">
+<h3>3.6 Inverse Probability Weighing<a class="headerlink" href="#inverse-probability-weighing" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="mediation">
+<h3>3.7 Mediation<a class="headerlink" href="#mediation" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="causual-inference-in-linear-systems">
+<h3>3.8 Causual Inference in Linear Systems<a class="headerlink" href="#causual-inference-in-linear-systems" title="Permalink to this headline">#</a></h3>
+<section id="structual-vesus-regression-coefficients">
+<h4>3.8.1 Structual vesus Regression Coefficients<a class="headerlink" href="#structual-vesus-regression-coefficients" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="the-causal-interpretation-of-structural-coefficients">
+<h4>3.8.2 The Causal Interpretation of Structural Coefficients<a class="headerlink" href="#the-causal-interpretation-of-structural-coefficients" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="indentifying-structural-coefficients-and-causal-effect">
+<h4>3.8.3 Indentifying Structural Coefficients and Causal Effect<a class="headerlink" href="#indentifying-structural-coefficients-and-causal-effect" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="mediation-in-linear-systems">
+<h4>3.8.4 Mediation in Linear Systems<a class="headerlink" href="#mediation-in-linear-systems" title="Permalink to this headline">#</a></h4>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">PGJ16</a></span></dt>
@@ -1050,10 +1155,10 @@ $<span class="math notranslate nohighlight">\(P(y|do(x)) = \sum_z P(z|x) \sum_{x
 </dd>
 </dl>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1083,9 +1188,11 @@ $<span class="math notranslate nohighlight">\(P(y|do(x)) = \sum_z P(z|x) \sum_{x
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1101,24 +1208,28 @@ $<span class="math notranslate nohighlight">\(P(y|do(x)) = \sum_z P(z|x) \sum_{x
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ming Yang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Ming Yang<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
