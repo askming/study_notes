@@ -77,12 +77,14 @@
 
 #### 3. Inverse Probability of Treatment Weighting Using the Propensity Score
 
-- Inverse probability of treatment weighting (IPTW) using the propensity score uses weights based on the propensity score to create a synthetic sample in which the distribution of measured baseline covariates is independent of treatment assignment.
+- Inverse probability of treatment weighting (IPTW) uses weights based on the propensity score to create a synthetic sample in which the distribution of measured baseline covariates is independent of treatment assignment.
 - Weights can be defined as 
-  $$\omega_i = \frac{Z_i}{e_i} + \frac{(1-Z_i)}{1-e_i},$$
-  where $e_i$ is the propensity score.
   
-- A subject's weight is equal to the inverse of the probability of receiving the treatment **that the subject actually received**.
+  $$\omega_i = \frac{Z_i}{e_i} + \frac{(1-Z_i)}{1-e_i},$$
+
+  where $e_i$ is the propensity score and $Z_i$ is the indicator of treatment assignment, where $Z_i=1$ for treated and 0 for control.
+  
+- A subject's weight is equal to the inverse of the probability of receiving the treatment **that the subject actually received**. Thus, for control patients, the weight is $1/(1-e_i)$
 - An estimate of the ATE is 
 
   $$\frac{1}{n}\sum_{i=1}^n\frac{Z_iY_i}{e_i} - \frac{1}{n}\sum_{i=1}^n\frac{(1-Z_i)Y_i}{1-e_i},$$ 
@@ -90,7 +92,7 @@
   where $n$ denotes the number of subjects
 - When used in this context, IPTW is part of a larger family of causal methods known as marginal structural model (Hernan, Brumback, & Robins, 2000, 2002).
 - variance estimation must account for the weighted nature of the synthetic sample, with robust variance estimation commonly being used to account for the sample weights (Joffe et al., 2004).
-- The weights may be inaccurate or unstable for subjects with a very low probability of receiving the treatment received. 
+- The weights may be inaccurate or unstable for subjects with a very low probability of receiving the treatment. 
 - However, using weights equal to 
 
   $$\omega_{i, ATT} = Z_i + \frac{(1-Z_i)e_i}{1-e_i}$$ 
