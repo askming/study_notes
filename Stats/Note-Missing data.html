@@ -669,13 +669,67 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#missing-data-mechanism">
-   1. Missing data mechanism
+   Missing data mechanism
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#handling-missing-data">
    2. Handling missing data
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-imputation-yuan2010multiple">
+     2.5 Multiple imputation
+     <span class="xref cite cite-p">
+      yuan2010multiple}
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-multiple-imputation">
+       Why multiple imputation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#imputation-mechanisms">
+       Imputation mechanisms
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#regression-method">
+         Regression method
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#propensity-score-method">
+         Propensity score method
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#mcmc-method">
+         MCMC method
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combining-inferences-from-mi-data-sets">
+       Combining inferences from MI data sets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-imputation-efficiency">
+       Multiple imputation efficiency
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#imputation-model">
+       Imputation Model
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -698,13 +752,67 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#missing-data-mechanism">
-   1. Missing data mechanism
+   Missing data mechanism
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#handling-missing-data">
    2. Handling missing data
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-imputation-yuan2010multiple">
+     2.5 Multiple imputation
+     <span class="xref cite cite-p">
+      yuan2010multiple}
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-multiple-imputation">
+       Why multiple imputation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#imputation-mechanisms">
+       Imputation mechanisms
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#regression-method">
+         Regression method
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#propensity-score-method">
+         Propensity score method
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#mcmc-method">
+         MCMC method
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combining-inferences-from-mi-data-sets">
+       Combining inferences from MI data sets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-imputation-efficiency">
+       Multiple imputation efficiency
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#imputation-model">
+       Imputation Model
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -719,12 +827,13 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="missing-data">
 <h1>Missing data<a class="headerlink" href="#missing-data" title="Permalink to this headline">#</a></h1>
 <section id="missing-data-mechanism">
-<h2>1. Missing data mechanism<a class="headerlink" href="#missing-data-mechanism" title="Permalink to this headline">#</a></h2>
+<h2>Missing data mechanism<a class="headerlink" href="#missing-data-mechanism" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>MCAR: missingness is independent of observed &amp; unobserved data</p></li>
-<li><p>MAR: missing only depends on observed information and is independent on unobserved</p>
+<li><p>MAR: (prob. of) missing only depends on observed information and is independent on unobserved info</p>
 <ul class="simple">
-<li><p>MAR assumption = ignorability assumption, similar/same assumption as ignorability in the causal framework</p></li>
+<li><p><strong>Distinctness</strong>: the parameters <span class="math notranslate nohighlight">\(\theta\)</span> of the data model and the parameters <span class="math notranslate nohighlight">\(\phi\)</span> of the missing data indicators are distinct. That is, knowing the values of <span class="math notranslate nohighlight">\(\theta\)</span> does not provide any additional information about <span class="math notranslate nohighlight">\(\phi\)</span>, and vice versa.</p></li>
+<li><p>If both <em>MAR</em> and <em>distinctness</em> assumptions are satisfied, the missing-data mechanism is said to be <strong>ignorable</strong>. <span id="id1">[]</span> (this is similar/same assumption as ignorability in the causal framework)</p></li>
 </ul>
 </li>
 <li><p>Missing that depends on unobserved predictors</p></li>
@@ -733,22 +842,19 @@ title="Print to PDF"
 </section>
 <section id="handling-missing-data">
 <h2>2. Handling missing data<a class="headerlink" href="#handling-missing-data" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Discard the data with missing or complete-case analysis</p>
+<p>2.1 Discard the data with missing or complete-case analysis</p>
 <ul class="simple">
 <li><p>Can potentially leading to hiased results if missing cases is different from complete case</p></li>
 <li><p>Many data can potentially discarded =&gt; much smaller sample size</p></li>
 </ul>
-</li>
-<li><p>Available-case analysis</p>
+<p>2.2 Available-case analysis</p>
 <ul class="simple">
 <li><p>use different subsets (complete data) for different analyses</p></li>
 <li><p>=&gt; non-consistency b/t subsets systematic bias</p></li>
 <li><p>related: complete-variables analysis</p></li>
 </ul>
-</li>
-<li><p>Non-response weighting: e.g. IPW</p></li>
-<li><p>Impute missing data</p>
+<p>2.3 Non-response weighting: e.g. IPW</p>
+<p>2.4 Single imputation for missing data</p>
 <ul class="simple">
 <li><p>single imputation: s.e. tend to be too low</p>
 <ul>
@@ -764,12 +870,8 @@ title="Print to PDF"
 <li><p>adding interaction b/t an indicator for response and these predictors can help alternative this bias</p></li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
 <li><p>Random imputation of single variable</p>
-<ul class="simple">
+<ul>
 <li><p>simple random imputation</p></li>
 <li><p>zero coding &amp; topcoding</p>
 <ul>
@@ -780,7 +882,230 @@ title="Print to PDF"
 <li><p>Using regression predictions to perform deterministric imputation</p></li>
 </ul>
 </li>
-</ol>
+</ul>
+</li>
+</ul>
+<section id="multiple-imputation-yuan2010multiple">
+<h3>2.5 Multiple imputation <span id="id2">[]</span><a class="headerlink" href="#multiple-imputation-yuan2010multiple" title="Permalink to this headline">#</a></h3>
+<section id="why-multiple-imputation">
+<h4>Why multiple imputation<a class="headerlink" href="#why-multiple-imputation" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Single imputation does not reflect the uncertainty about the predictions of the unknown missing values, and the resulting estimated variances of the parameter estimates will be biased toward zero.</p></li>
+<li><p>Multiple imputation does not attempt to estimate each missing value through simulated values but rather to represent a random sample of the missing values.</p></li>
+</ul>
+</section>
+<section id="imputation-mechanisms">
+<h4>Imputation mechanisms<a class="headerlink" href="#imputation-mechanisms" title="Permalink to this headline">#</a></h4>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>A data set is said to have a monotone missing pattern when the event that a variable <span class="math notranslate nohighlight">\(Y_j\)</span> is missing for the individual <span class="math notranslate nohighlight">\(i\)</span> implies that all subsequent variables <span class="math notranslate nohighlight">\(Y_k, k&gt;j\)</span>, are all missing for the individual <span class="math notranslate nohighlight">\(i\)</span>.</p>
+</aside>
+<ul class="simple">
+<li><p>For <em>monotone missing</em> data patterns, either a parametric regression method that assumes multivariate normality or a nonparametric method that uses propensity scores is appropriate.</p>
+<ul>
+<li><p>When you have a monotone missing data pattern, you have greater flexibility in your choice of strategies.</p></li>
+</ul>
+</li>
+<li><p>For an <em>arbitrary missing</em> data pattern, a Markov chain Monte Carlo (MCMC) method (Schafer 1997) that assumes multivariate normality can be used.</p>
+<ul>
+<li><p>The MCMC method, which creates multiple imputations by using simulations from a Bayesian prediction distribution for normal data.</p></li>
+</ul>
+</li>
+<li><p>Another way to handle a data set with an arbitrary missing data pattern is to use the MCMC approach to impute enough values to make the missing data pattern monotone. Then, you can use a more flexible imputation method.</p></li>
+</ul>
+<section id="regression-method">
+<h5>Regression method<a class="headerlink" href="#regression-method" title="Permalink to this headline">#</a></h5>
+<ul>
+<li><p>In the regression method, a regression model is fitted for each variable with missing values. Based on the resulting model, a new regression model is then drawn and is used to impute the missing values for the variable</p></li>
+<li><p>High-level description of the procedure</p>
+<ul class="simple">
+<li><p>A regression model is fit for the variable with missing data as the outcome (e.g. <span class="math notranslate nohighlight">\(Y_j\)</span> below) with complete data:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+   Y_j = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdots + \beta_kX_k
+   \]</div>
+</li>
+<li><p>Once the model is fit, generate regression parameters from the posterior predictive distribution:</p>
+<ul>
+<li><p>The variance is drawn as</p>
+<div class="math notranslate nohighlight">
+\[
+      \sigma^2_{*j} = \hat{\sigma}_j^2(n_j-k-1)/g
+      \]</div>
+<p>where <span class="math notranslate nohighlight">\(g\)</span> is a <span class="math notranslate nohighlight">\(\chi^2_{n_j-k-1}\)</span> random variable and <span class="math notranslate nohighlight">\(n_j\)</span> is the number of non-missing observations for <span class="math notranslate nohighlight">\(Y_j\)</span></p>
+</li>
+<li><p>The regression coefficients are drawn as</p>
+<div class="math notranslate nohighlight">
+\[
+      \beta_* = \hat{\beta} + \sigma_{*j}\bf{V}_{hj}'\bf{Z}
+      \]</div>
+<p>where <span class="math notranslate nohighlight">\(\bf{V}'_{hj}\)</span> is the upper triangular matrix of the Cholesky decomposition, i.e. <span class="math notranslate nohighlight">\(\bf{V}_{j} = \bf{V}'_{hj}\bf{V}_{hj}\)</span>; and <span class="math notranslate nohighlight">\(\bf{Z}\)</span> is a vector of <span class="math notranslate nohighlight">\(k+1\)</span> independent random normal varirates(?).</p>
+</li>
+<li><p>The missing values are then replaced by</p>
+<div class="math notranslate nohighlight">
+\[
+      \beta_{*0} + \beta_{*1}x_1 + \beta_{*2}x_2 + \cdots + \beta_{*k}x_k + z_i\sigma_{*j}
+      \]</div>
+<p>where <span class="math notranslate nohighlight">\(x_1, x_2, \cdots, x_k\)</span> are the covariates of the observation with missing value and <span class="math notranslate nohighlight">\(z_i\)</span> is a simulated normal deviate (i.e. random error).</p>
+</li>
+</ul>
+</li>
+<li><p>Missing data imputed from predictive mean matching (pmm) method</p>
+<ul class="simple">
+<li><p>for each missing value, it imputes an observed value which is closest to the predicted value from the simulated regression model</p></li>
+<li><p>The predictive mean matching method ensures that imputed values are plausible and may be more appropriate than the regression method if the normality assumption is violated (Horton and Lipsitz 2001, p. 246).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="propensity-score-method">
+<h5>Propensity score method<a class="headerlink" href="#propensity-score-method" title="Permalink to this headline">#</a></h5>
+<ul>
+<li><p>In the propensity score method, a propensity score is generated for each variable with missing values to indicate the probability of that observation being missing.</p></li>
+<li><p>The observations are then grouped based on these propensity scores, and an approximate Bayesian bootstrap imputation (Rubin 1987, p. 124) is applied to each group (Lavori, Dawson, and Shera 1995).</p></li>
+<li><p>High-level description of the procedure</p>
+<ul class="simple">
+<li><p>Create an indicator variable <span class="math notranslate nohighlight">\(R_j\)</span> with the value 0 for observations with missing <span class="math notranslate nohighlight">\(Y_j\)</span> and 1 otherwise</p></li>
+<li><p>Fit a logistic regression model with <span class="math notranslate nohighlight">\(R_j\)</span> as the outcome</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+   \text{logit}(p_j) = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdots + \beta_kX_k
+   \]</div>
+<p>where <span class="math notranslate nohighlight">\(p_j = Pr(R_j=0 | X_1, X_2, \cdots, X_k)\)</span></p>
+<ul class="simple">
+<li><p>Divide the observations into a fixed number of groups, e.g. 5, based on the propensity scores</p></li>
+<li><p>Apply an approximate Bayesian bootstrap imputation to each group.</p>
+<ul>
+<li><p>In each group, randomly draw the same number of samples as with that in the completed data (say <span class="math notranslate nohighlight">\(n_1\)</span>) with replacement; then draw the number of samples as with that in the missing data (say <span class="math notranslate nohighlight">\(n_1\)</span>) with replacement from the sample just created</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The method uses only the covariate information that is associated with whether the imputed variable values are missing. It does not use correlations among variables.</p></li>
+<li><p><mark>It is effective for inferences about the distributions of individual imputed variables, such as an univariate analysis, but it is not appropriate for analyses involving relationship among variables, such as a regression analysis (Schafer 1999, p. 11).</mark></p></li>
+</ul>
+</section>
+<section id="mcmc-method">
+<h5>MCMC method<a class="headerlink" href="#mcmc-method" title="Permalink to this headline">#</a></h5>
+<ul class="simple">
+<li><p>High-level description of the procedure</p>
+<ul>
+<li><p>The imputation I-step</p>
+<ul>
+<li><p>this step draws values for <span class="math notranslate nohighlight">\(Y_{miss}\)</span> from a conditional distribution: <span class="math notranslate nohighlight">\(Y_{miss}^{(t+1)} \sim p(Y_{miss}|Y_{obs}, \theta^{(t)})\)</span></p></li>
+</ul>
+</li>
+<li><p>The posterior P-step</p>
+<ul>
+<li><p>Simulates the posterior population mean vector and coariance maxtrix from the complete sample estimates. These estimates are then used in the I-step: <span class="math notranslate nohighlight">\(\theta^{(t+1)} \sim p(\theta|Y_{obs}, Y^{(t+1)}_{miss})\)</span></p></li>
+</ul>
+</li>
+<li><p>This creates a Markov Chain: <span class="math notranslate nohighlight">\((Y_{miss}^{(1)}, \theta^{(1)}), (Y_{miss}^{(2)}, \theta^{(2)}), \cdots\)</span>, which comverges in distribution to <span class="math notranslate nohighlight">\(p(Y_{miss}, \theta | Y_{obs})\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="combining-inferences-from-mi-data-sets">
+<h4>Combining inferences from MI data sets<a class="headerlink" href="#combining-inferences-from-mi-data-sets" title="Permalink to this headline">#</a></h4>
+<ul>
+<li><p>Let <span class="math notranslate nohighlight">\(\hat{Q}_i\)</span> and <span class="math notranslate nohighlight">\(\hat{U}_i\)</span> denote the point and variance estimates from the <span class="math notranslate nohighlight">\(i\)</span>th imputed data set, <span class="math notranslate nohighlight">\(i=1, 2, \cdots, m\)</span>.</p>
+<ul>
+<li><p>Then the point estimate from MI is</p>
+<div class="math notranslate nohighlight">
+\[
+      \bar{Q} = {1\over m}\sum_{i=1}^m\hat{Q}_i
+      \]</div>
+</li>
+<li><p>The variance estimate associated with <span class="math notranslate nohighlight">\(\bar{Q}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ 
+      T = \bar{U} + (1 + \frac{1}{m})B
+      \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[ 
+      \bar{U} = \frac{1}{m}\sum_{i=1}^m \hat{U}_i
+      \]</div>
+<p>is the within-impuatio variance; and</p>
+<div class="math notranslate nohighlight">
+\[
+      B = \frac{1}{m-1}\sum_{i=1}^m (\hat{Q}_i - \bar{Q})^2
+      \]</div>
+<p>is the between-impuation variance.</p>
+</li>
+<li><p>The statistic <span class="math notranslate nohighlight">\((Q - \hat{Q})T^{-1/2} \sim t_{v_m}\)</span>, where</p>
+<div class="math notranslate nohighlight">
+\[
+      v_m = (m-1)\left[ 1 + \frac{\bar{U}}{(1-m^{-1})B}\right]
+      \]</div>
+<ul class="simple">
+<li><p>When the complete-data degrees of freedom <span class="math notranslate nohighlight">\(v_0\)</span> is small and there is only a modest proportion of missing data, the computed degrees of freedom, <span class="math notranslate nohighlight">\(v_m\)</span>, can be much larger than <span class="math notranslate nohighlight">\(v_0\)</span>, which is inappropriate. Barnard and Rubin (1999) recommend the use of an adjusted degrees of freedom, <span class="math notranslate nohighlight">\(v_m^*\)</span>. Where</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ 
+      v_m^* = \left[\frac{1}{v_m} + \frac{1}{\hat{v}_{obs}}\right]^{-1}
+      \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+      \hat{v}_{obs} = \frac{v_0+1}{v_0+3}v_0(1-\gamma),
+      \]</div>
+<div class="math notranslate nohighlight">
+\[
+      \gamma = \frac{(1+m^-1)B}{T}.
+      \]</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="multiple-imputation-efficiency">
+<h4>Multiple imputation efficiency<a class="headerlink" href="#multiple-imputation-efficiency" title="Permalink to this headline">#</a></h4>
+<ul>
+<li><p>The <strong>relative increase in variance ratio</strong> due to nonresponse</p>
+<div class="math notranslate nohighlight">
+\[
+   r = \frac{1+m^{-1}B}{\bar{U}}
+   \]</div>
+<ul class="simple">
+<li><p>When there is no missing info about <span class="math notranslate nohighlight">\(Q\)</span>, both values <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are zero.</p></li>
+<li><p>With large value of <span class="math notranslate nohighlight">\(m\)</span> or a small value of <span class="math notranslate nohighlight">\(r\)</span>, the df <span class="math notranslate nohighlight">\(v_m\)</span> will be large and the distribution will be approx. normal.</p></li>
+</ul>
+</li>
+<li><p>The <strong>fraction of missing info</strong> about <span class="math notranslate nohighlight">\(Q\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+   \hat{\lambda} = \frac{r + 2/(v_m+3)}{r+1}
+   \]</div>
+</li>
+<li><p>The relative efficiency of using the finite <span class="math notranslate nohighlight">\(m\)</span> imputation estimator, rather than using an infinite number for the fully efficient imputation, in units of variance, is approx. a funciton of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ 
+  RE = \left(1+\frac{\lambda}{m}\right)^{-1}
+  \]</div>
+<ul class="simple">
+<li><p>For cases with little missing info, only a small number of imputations are necessary for the MI analysis.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="imputation-model">
+<h4>Imputation Model<a class="headerlink" href="#imputation-model" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><strong>Imputer’s model</strong>: model used to impute missing values</p></li>
+<li><p><strong>Analyst’s model</strong>: model (variables) used to analyze the multiply imputed data</p>
+<ul>
+<li><p>In practice, the two models need not be the same, as explained by Schafer (1997, pp. 139–143), who discusses the consequences for various scenarios.</p></li>
+</ul>
+</li>
+<li><p>In general, as many variables should be included in the imputer’s model.</p></li>
+<li><p>To produce high-quality impuations for a particular variable, include variables that are potentially related to the imputed variable and variables that are potentially related to the missingness of the imputed variable (Schafer 1997, p. 143).</p></li>
+</ul>
+</section>
+</section>
 </section>
 </section>
 
