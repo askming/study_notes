@@ -175,6 +175,9 @@
 
 ### 4.9 D3
 
+### 4.x Learning resources
+- [CS自学指南](https://csdiy.wiki/)
+- [Coding questions - FAANG prep](https://hollow-wood-560.notion.site/Coding-questions-FAANG-prep-9cdf280e5f30425fa188cbbaa6d1998c#d8618bc577f34e99a1f1d0681c3543c4)
 
 <hr>
 
