@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -702,6 +704,18 @@ title="Print to PDF"
      Part 2: Core methods and tools
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#effect-measure-modifier-vs-confounding-factor-vs-interaction">
+     3. Effect (measure) modifier vs confounding factor vs interaction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reference">
+       Reference
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -759,6 +773,18 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#part-2-core-methods-and-tools">
      Part 2: Core methods and tools
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#effect-measure-modifier-vs-confounding-factor-vs-interaction">
+     3. Effect (measure) modifier vs confounding factor vs interaction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reference">
+       Reference
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -890,6 +916,26 @@ A Practical Guide to A/B Testing</a></p>
 </div></blockquote>
 </li>
 </ul>
+</section>
+<hr class="docutils" />
+<section id="effect-measure-modifier-vs-confounding-factor-vs-interaction">
+<h3>3. Effect (measure) modifier vs confounding factor vs interaction<a class="headerlink" href="#effect-measure-modifier-vs-confounding-factor-vs-interaction" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>We say that <span class="math notranslate nohighlight">\(V\)</span> is a <em>modifier</em> of the effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> when the average causal effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> varies across levels of <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<ul>
+<li><p>Effect modifier is really an effect measure modifier, since its effect depends on which outcome measure (e.g. odds ratio, risk difference, etc.) is being used.</p></li>
+<li><p>Effect modification can exist when it’s not a confounding factor</p></li>
+</ul>
+</li>
+<li><p>Does confouding leads to effect modification??</p></li>
+<li><p>When there is effect modificaiton, there is an interaction between the effect modifier and the treatment variable</p></li>
+</ul>
+<section id="reference">
+<h4>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://thestatsgeek.com/2021/01/13/confounding-vs-effect-modification/">Confounding vs. effect modification</a></p></li>
+</ul>
+</section>
 </section>
 </section>
 </section>
