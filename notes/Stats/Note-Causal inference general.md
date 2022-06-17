@@ -96,3 +96,15 @@
 A Practical Guide to A/B Testing](https://experimentguide.com/?Chap1T)
   
   > This gem of a book was written by the current industry giants in A/B testing and evaluating treatment effects. Understanding the methods and metrics of A/B testing will give you a fantastic intuition for various causal inference approaches.  
+
+
+---
+### 3. Effect (measure) modifier vs confounding factor vs interaction
+- We say that $V$ is a *modifier* of the effect of $A$ on $Y$ when the average causal effect of $A$ on $Y$ varies across levels of $V$.
+  - Effect modifier is really an effect measure modifier, since its effect depends on which outcome measure (e.g. odds ratio, risk difference, etc.) is being used.
+  - Effect modification can exist when it's not a confounding factor
+- Does confouding leads to effect modification??
+- When there is effect modificaiton, there is an interaction between the effect modifier and the treatment variable
+  
+#### Reference
+- [Confounding vs. effect modification](https://thestatsgeek.com/2021/01/13/confounding-vs-effect-modification/)
