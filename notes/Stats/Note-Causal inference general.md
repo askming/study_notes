@@ -103,8 +103,10 @@ A Practical Guide to A/B Testing](https://experimentguide.com/?Chap1T)
 - We say that $V$ is a *modifier* of the effect of $A$ on $Y$ when the average causal effect of $A$ on $Y$ varies across levels of $V$.
   - Effect modifier is really an effect measure modifier, since its effect depends on which outcome measure (e.g. odds ratio, risk difference, etc.) is being used.
   - Effect modification can exist when it's not a confounding factor
-- Does confouding leads to effect modification??
-- When there is effect modificaiton, there is an interaction between the effect modifier and the treatment variable
+  - When there is effect modificaiton, there is an interaction between the effect modifier and the treatment variable
+- Confounding factor meaing a factor affects both independent (e.g. treatment) and dependent variables, it's a different concent from effect modificaton; when a model misses adjustment for the confounding factor, there is a risk of generating biased estimate of the effec from the independent variable of interest
+- see also [Retro study note](https://github.com/askming/Retro/issues/10) on this topic
+
   
 #### Reference
 - [Confounding vs. effect modification](https://thestatsgeek.com/2021/01/13/confounding-vs-effect-modification/)
