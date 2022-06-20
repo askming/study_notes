@@ -59,7 +59,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="[book] Data Analysis Using Regression and Multilevel/Hierarchical Models" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html" />
-    <link rel="prev" title="[book] Analysis of Observational Health Care Data Using SAS" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" />
+    <link rel="prev" title="Causal Inference: What If" href="Book-Causal%20Inference%20What%20If.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -128,6 +128,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
    [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20Inference%20What%20If.html">
+   Causal Inference: What If
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -1047,8 +1052,8 @@ $<span class="math notranslate nohighlight">\(P_m(Y=y|Z=z,X=x)=P(Y=y|Z=z,X=x) \t
 <ul>
 <li><p><strong>The Causal Effect Rule</strong>: Given a graph G in which a set of variables PA are designated
 as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d4590e9-c811-4de4-b571-a2ec01d67603">
-<span class="eqno">(3)<a class="headerlink" href="#equation-6d4590e9-c811-4de4-b571-a2ec01d67603" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-571ec15f-c15f-4d75-b512-07c99773cfab">
+<span class="eqno">(3)<a class="headerlink" href="#equation-571ec15f-c15f-4d75-b512-07c99773cfab" title="Permalink to this equation">#</a></span>\[\begin{align}
   P(Y = y| do(X = x)) &amp; = \sum_z P(Y = y | X = x, PA = z) P(PA = z)\\
   &amp; = \sum_z \frac{P(Y = y | X = x, PA = z) P(PA = z) * P(X=x|PA = z)}{P(X=x|PA = z)}\\
   &amp; = \sum_z \frac{P(Y = y, X = x, PA = z)}{P(X=x|PA = z)}
@@ -1059,8 +1064,8 @@ as the parents of <span class="math notranslate nohighlight">\(X\)</span>, the c
 </section>
 <section id="multiple-interventions-and-the-truncated-product-rule">
 <h4>3.2.2 Multiple Interventions and the Truncated Product Rule<a class="headerlink" href="#multiple-interventions-and-the-truncated-product-rule" title="Permalink to this headline">#</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-b009838f-ffb4-4a4a-a2f6-cbc428b09a9d">
-<span class="eqno">(4)<a class="headerlink" href="#equation-b009838f-ffb4-4a4a-a2f6-cbc428b09a9d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-817cb0f7-e016-40e8-bada-effbebf69c0e">
+<span class="eqno">(4)<a class="headerlink" href="#equation-817cb0f7-e016-40e8-bada-effbebf69c0e" title="Permalink to this equation">#</a></span>\[\begin{align}
 P(x, y, z) &amp; = P(z)P(x|z)P(y|x, z)\\
 P(z, y|do(x)) &amp; = P_m(z)P_m(y|x, z) = P(z)P(y|x, z)\\
 \Rightarrow
@@ -1088,8 +1093,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p>When trying to find the causal effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>, we want the nodes we condition on to block any “backdoor” path in which one end has an arrow into <span class="math notranslate nohighlight">\(X\)</span>, because such paths may make <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> dependent, but are obviously not transmitting causal influences from <span class="math notranslate nohighlight">\(X\)</span>, and if we do not block them, they will confound the effect that <span class="math notranslate nohighlight">\(X\)</span> has on <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
 <li><p>Consider the fact that <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span> is an empirical fact of nature, not a byproduct of our analysis. That means that any suitable variable or set of variables that we adjust on—whether it be <span class="math notranslate nohighlight">\(PA(X)\)</span> or any other set that conforms to the backdoor criterion—must return the same result for <span class="math notranslate nohighlight">\(P(Y = y|do(X = x))\)</span>. In the case we looked at in Figure 3.6 (<span class="math notranslate nohighlight">\(Y \leftarrow X \leftarrow Z \rightarrow W \rightarrow Y\)</span>), this means that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a575f97a-0647-4db2-a816-b2bc581d9ad6">
-<span class="eqno">(5)<a class="headerlink" href="#equation-a575f97a-0647-4db2-a816-b2bc581d9ad6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3f9d6a32-d398-4103-a398-0930bf21fb74">
+<span class="eqno">(5)<a class="headerlink" href="#equation-3f9d6a32-d398-4103-a398-0930bf21fb74" title="Permalink to this equation">#</a></span>\[\begin{align}
     &amp;&amp; \sum_w P(Y = y|X = x,W = w)P(W = w) \\
     &amp;&amp; = \sum_z P(Y = y|X = x, Z = z)P(Z = z)
     \end{align}\]</div>
@@ -1107,8 +1112,8 @@ P(z, y|do(x)) &amp; = \frac{P(x, y, z)}{P(x|z)}
 <ul>
 <li><p><em>Problem</em>: The backdoor criterion provides us with a simple method of identifying sets of covariates that should be adjusted for when we seek to estimate causal effects from nonexperimental data. It does not, however, exhaust all ways of estimating such effects. The <span class="math notranslate nohighlight">\(do\)</span>-operator can be applied to graphical patterns that do not satisfy the backdoor criterion to identify effects that on first sight seem to be beyond one’s reach.</p></li>
 <li><p>The <strong>front-door</strong> formula</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e7442a40-69ce-470c-82e9-ab79a5049943">
-<span class="eqno">(6)<a class="headerlink" href="#equation-e7442a40-69ce-470c-82e9-ab79a5049943" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e827d653-b586-44c7-8cf4-256ba2e6be01">
+<span class="eqno">(6)<a class="headerlink" href="#equation-e827d653-b586-44c7-8cf4-256ba2e6be01" title="Permalink to this equation">#</a></span>\[\begin{align}
   P(Y =y | do(X = x)) = \\
   \sum_z\sum_x' P(Y = y | Z = z, X = x') P(X = x') P(Z = z|X = x) 
   \end{align}\]</div>
@@ -1193,11 +1198,11 @@ $<span class="math notranslate nohighlight">\(P(y|do(x)) = \sum_z P(z|x) \sum_{x
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Book-Causal%20Inference%20What%20If.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">[book] Analysis of Observational Health Care Data Using SAS</p>
+            <p class="prev-next-title">Causal Inference: What If</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html" title="next page">

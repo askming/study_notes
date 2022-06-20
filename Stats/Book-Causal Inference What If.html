@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>R study notes/tips &#8212; Study Notes</title>
+    <title>Causal Inference: What If &#8212; Study Notes</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,12 +52,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Google R package googleVis" href="Note-googleVis.html" />
-    <link rel="prev" title="How R searches and finds stuff" href="Note-How%20R%20searches%20and%20finds%20stuff.html" />
+    <link rel="next" title="[book] Causal inference in statistics a primer" href="Book-Causal_inference_in_statistics_a_primer.html" />
+    <link rel="prev" title="[book] Analysis of Observational Health Care Data Using SAS" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -122,19 +124,19 @@ const thebe_selector_output = ".output, .cell_output"
   Statistics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
+  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
    [book] Analysis of Observational Health Care Data Using SAS
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Causal%20Inference%20What%20If.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Causal Inference: What If
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Causal_inference_in_statistics_a_primer.html">
+  <a class="reference internal" href="Book-Causal_inference_in_statistics_a_primer.html">
    [book] Causal inference in statistics
    <em>
     a primer
@@ -142,102 +144,102 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
+  <a class="reference internal" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
    [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
+  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
    [book] Fundamentals of Clinical Trials (4th edition)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
+  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
    [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">
+  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
    [book] Regression Modeling Strategies
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Adaptive%20Trial%20Design.html">
+  <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
    Adaptive Clinical Trial Design
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Analysis%20of%20Ordinal%20Outcome.html">
+  <a class="reference internal" href="Note-Analysis%20of%20Ordinal%20Outcome.html">
    Analysis of ordinal outcome
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
+  <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
    Why analysis of stratified randomization trial data need to account for the stratification factors?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
+  <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
    Association vs. Prediction vs. Causation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Baseline%20Adaptive%20Randomization.html">
+  <a class="reference internal" href="Note-Baseline%20Adaptive%20Randomization.html">
    Baseline adaptive randomization
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Bayesian%20optimization.html">
+  <a class="reference internal" href="Note-Bayesian%20optimization.html">
    Exploring Bayesian Optimization
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Causal%20inference%20general.html">
+  <a class="reference internal" href="Note-Causal%20inference%20general.html">
    Causal Inference General Study Notes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">
+  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
    Competing risk models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Correlated%20Data%20Analysis.html">
+  <a class="reference internal" href="Note-Correlated%20Data%20Analysis.html">
    Correlated/Longitudinal Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Cox_PH_model.html">
+  <a class="reference internal" href="Note-Cox_PH_model.html">
    ​Cox PH model
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Dirichlet%20process.html">
+  <a class="reference internal" href="Note-Dirichlet%20process.html">
    Dirichlet process
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-FDA%20guidances%20for%20industry.html">
+  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
    Notes on FDA Guidances for Industry
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Gaussian%20process.html">
+  <a class="reference internal" href="Note-Gaussian%20process.html">
    Gaussain Process
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Group_Sequential_Trial_Design.html">
+  <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
    Notes on Group Sequential Trial Design​
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-ICH%20guidelines.html">
+  <a class="reference internal" href="Note-ICH%20guidelines.html">
    Notes on ICH guidelines​
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-MDD%20%26%20Effect%20size.html">
+  <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
    Power,
    <strong>
     MDD
@@ -254,62 +256,62 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Meta-Analysis.html">
+  <a class="reference internal" href="Note-Meta-Analysis.html">
    Meta-analysis​
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Missing%20data.html">
+  <a class="reference internal" href="Note-Missing%20data.html">
    Missing data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Model%20comparison%20methods.html">
+  <a class="reference internal" href="Note-Model%20comparison%20methods.html">
    Model comparison methods
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Monte%20Carlo%20method.html">
+  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
    Monte Carlo Method
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Multicolinearity.html">
+  <a class="reference internal" href="Note-Multicolinearity.html">
    Multicolinearity
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Multiplicity%20in%20Clinical%20Trials.html">
+  <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
    Multiplicity in Clinical Trials
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Non-inferiority%20equivalence%20superiority%20test.html">
+  <a class="reference internal" href="Note-Non-inferiority%20equivalence%20superiority%20test.html">
    Non-inferiority/equivalence/superiority test basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Observational%20study%20design.html">
+  <a class="reference internal" href="Note-Observational%20study%20design.html">
    Observational study design
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Propensity%20score%20methods.html">
+  <a class="reference internal" href="Note-Propensity%20score%20methods.html">
    Propensity Score Methods &amp; Implementation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Quantile%20regression.html">
+  <a class="reference internal" href="Note-Quantile%20regression.html">
    Quantile regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Sample_size_calculation_with_WMW_test.html">
+  <a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html">
    Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Survival_Analysis.html">
+  <a class="reference internal" href="Note-Survival_Analysis.html">
    Survival Analysis
   </a>
  </li>
@@ -319,24 +321,24 @@ const thebe_selector_output = ".output, .cell_output"
   Statistical computing
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-How%20R%20searches%20and%20finds%20stuff.html">
+  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
    How R searches and finds stuff
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">
    R study notes/tips
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-googleVis.html">
+  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
    Google R package googleVis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Note-matplotlib.html">
+  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
    Notes on
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -583,7 +585,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats_Comp/Note-R notes.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Causal Inference What If.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -611,7 +613,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/Stats_Comp/Note-R notes.md"
+        <a href="../_sources/Stats/Book-Causal Inference What If.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -671,18 +673,30 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#r-profile-file">
-   R profile file
+  <a class="reference internal nav-link" href="#chapter-2-randomized-experiments">
+   Chapter 2 Randomized Experiments
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-randomization">
+     2.2 Conditional randomization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standardization">
+     2.3 Standardization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inverse-probability-weighting">
+     2.4 Inverse probability weighting
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#useful-packages-functions">
-   Useful packages/functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-r-on-linux">
-   Install R on Linux
+  <a class="reference internal nav-link" href="#chapter-4-effect-modification">
+   Chapter 4 Effect Modification
   </a>
  </li>
 </ul>
@@ -694,7 +708,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>R study notes/tips</h1>
+                <h1>Causal Inference: What If</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -705,18 +719,30 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#r-profile-file">
-   R profile file
+  <a class="reference internal nav-link" href="#chapter-2-randomized-experiments">
+   Chapter 2 Randomized Experiments
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-randomization">
+     2.2 Conditional randomization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standardization">
+     2.3 Standardization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inverse-probability-weighting">
+     2.4 Inverse probability weighting
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#useful-packages-functions">
-   Useful packages/functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-r-on-linux">
-   Install R on Linux
+  <a class="reference internal nav-link" href="#chapter-4-effect-modification">
+   Chapter 4 Effect Modification
   </a>
  </li>
 </ul>
@@ -729,141 +755,51 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="r-study-notes-tips">
-<h1>R study notes/tips<a class="headerlink" href="#r-study-notes-tips" title="Permalink to this headline">#</a></h1>
-<section id="r-profile-file">
-<h2>R profile file<a class="headerlink" href="#r-profile-file" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="causal-inference-what-if">
+<h1>Causal Inference: What If<a class="headerlink" href="#causal-inference-what-if" title="Permalink to this headline">#</a></h1>
+<p><em>by Miguel A. Hernan and James M. Robins</em></p>
+<section id="chapter-2-randomized-experiments">
+<h2>Chapter 2 Randomized Experiments<a class="headerlink" href="#chapter-2-randomized-experiments" title="Permalink to this headline">#</a></h2>
+<section id="conditional-randomization">
+<h3>2.2 Conditional randomization<a class="headerlink" href="#conditional-randomization" title="Permalink to this headline">#</a></h3>
 <ul>
-<li><p>At startup, R will source the <strong>Rprofile.site</strong> file. It will then look for a .<strong>Rprofile</strong> file to source in the following order:</p>
+<li><p><em>Conditionally randomized experiments</em> meaning there are several randomization probabilities that depend (are conditional) on the values of some variable <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
+<li><p><em>Marginally randomized experiments</em> meaning there is only a single unconditional (marginal) randomization probability that is common to all individuals.</p>
 <ul class="simple">
-<li><p><strong>current working directory</strong>: <code class="docutils literal notranslate"><span class="pre">getwd()</span></code></p></li>
-<li><p><strong>user’s home director</strong>y: <code class="docutils literal notranslate"><span class="pre">path.expand('~')</span></code></p></li>
-<li><p>R home directory (where R is installed): <code class="docutils literal notranslate"><span class="pre">R.home()</span></code></p></li>
+<li><p>a marginally randomized experiment is expected to result in exchangeability of the treated and the untreated:</p></li>
 </ul>
-</li>
-<li><p>There are two special functions you can place in these files. <code class="docutils literal notranslate"><span class="pre">.First(</span> <span class="pre">)</span></code> will be run at the start of the R session and <code class="docutils literal notranslate"><span class="pre">.Last(</span> <span class="pre">)</span></code> will be run at the end of the session.</p></li>
-<li><p>To edit the .Rprofile file:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">file.edit</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">,</span> <span class="s">&quot;.Rprofile&quot;</span><span class="p">))</span> <span class="c1"># edit .Rprofile in HOME</span>
-<span class="nf">file.edit</span><span class="p">(</span><span class="s">&quot;.Rprofile&quot;</span><span class="p">)</span> <span class="c1"># edit project specific .Rprofile   </span>
-</pre></div>
-</div>
-<ul>
-<li><p>Can use the following to get a list of directories where .Rprofile may exist</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">candidates</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span> <span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_PROFILE&quot;</span><span class="p">),</span>
-                 <span class="nf">file.path</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_HOME&quot;</span><span class="p">),</span> <span class="s">&quot;etc&quot;</span><span class="p">,</span> <span class="s">&quot;Rprofile.site&quot;</span><span class="p">),</span>
-                 <span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_PROFILE_USER&quot;</span><span class="p">),</span>
-                 <span class="nf">file.path</span><span class="p">(</span><span class="nf">getwd</span><span class="p">(),</span> <span class="s">&quot;.Rprofile&quot;</span><span class="p">))</span>
-
-<span class="nf">Filter</span><span class="p">(</span><span class="n">file.exists</span><span class="p">,</span> <span class="n">candidates</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="math notranslate nohighlight">
+\[
+  Pr(Y^a=1|A=1) = Pr(Y^a=1|A=0) \text{ or } Y^a \perp\!\!\!\perp A \text{ for all } a
+  \]</div>
 </li>
 </ul>
-</li>
-<li><p>Sample .Rprofile file</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample Rprofile.site file</span>
-
-<span class="c1"># Things you might want to change</span>
-<span class="c1"># options(papersize=&quot;a4&quot;)</span>
-<span class="c1"># options(editor=&quot;notepad&quot;)</span>
-<span class="c1"># options(pager=&quot;internal&quot;)</span>
-
-<span class="c1"># R interactive prompt</span>
-<span class="c1"># options(prompt=&quot;&gt; &quot;)</span>
-<span class="c1"># options(continue=&quot;+ &quot;)</span>
-
-<span class="c1"># to prefer Compiled HTML</span>
-<span class="n">help</span> <span class="nf">options</span><span class="p">(</span><span class="n">chmhelp</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="c1"># to prefer HTML help</span>
-<span class="c1"># options(htmlhelp=TRUE)</span>
-
-<span class="c1"># General options</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">tab.width</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="m">130</span><span class="p">)</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">graphics.record</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="n">.First</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(){</span>
- <span class="nf">library</span><span class="p">(</span><span class="n">pacman</span><span class="p">)</span>
- <span class="nf">p_load</span><span class="p">(</span><span class="n">tidyvers</span><span class="p">,</span> <span class="n">data.table</span><span class="p">,</span> <span class="n">arsenal</span><span class="p">,</span> <span class="n">Hmisc</span><span class="p">,</span> <span class="n">haven</span><span class="p">)</span>
- <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nWelcome at&quot;</span><span class="p">,</span> <span class="nf">date</span><span class="p">(),</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">.Last</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(){</span>
- <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nGoodbye at &quot;</span><span class="p">,</span> <span class="nf">date</span><span class="p">(),</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</li>
-<li><p>More info about this topic can be found from <code class="docutils literal notranslate"><span class="pre">?Rprofile</span></code> and <code class="docutils literal notranslate"><span class="pre">?Startup</span></code></p></li>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>This imbalance indicates that the risk of bad outcome in treated, had they remained untreated, would have been higher than that in the untreated.</p>
+</aside>
+<ul class="simple">
+<li><p>In contrast, a conditionally randomized experiment will not generally result in exchangeability of the treated and the untreated because, by design, each group may have a different proportion of individuals with bad prognosis.</p></li>
 </ul>
 </section>
-<section id="useful-packages-functions">
-<h2>Useful packages/functions<a class="headerlink" href="#useful-packages-functions" title="Permalink to this headline">#</a></h2>
-<ol>
-<li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/deriv.html">Compute derivatives of simple expressions, symbolically in R</a></p>
-<ul class="simple">
-<li><p>Functions: <code class="docutils literal notranslate"><span class="pre">deriv</span> <span class="pre">/D</span> <span class="pre">/deriv3</span></code></p></li>
-<li><p>Also see <a class="reference external" href="http://www.theresearchkitchen.com/archives/642">here</a> about how we can use these functions.</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/sprintf.html">Use C-style String Formatting Commands in R</a></p>
-<ul>
-<li><p>Functions: <code class="docutils literal notranslate"><span class="pre">sprintf/gettextf</span></code></p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%.3f&quot;</span><span class="p">,</span> <span class="kc">pi</span><span class="p">)</span>
-<span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%s is %f feet tall\n&quot;</span><span class="p">,</span> <span class="s">&quot;Sven&quot;</span><span class="p">,</span> <span class="m">7.1</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p><a class="reference external" href="http://127.0.0.1:13234/library/base/html/tempfile.html">Create Names for Temporary Files in R</a></p>
-<ul class="simple">
-<li><p>Functions: <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> / <code class="docutils literal notranslate"><span class="pre">tempdir</span></code> - assigns a temporary directory</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">switch{base}</span></code>: tests an expression against elements of a list. If the value evaluated from the expression matches item from the list, the corresponding value is returned.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">,</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;green&quot;</span>
-
-<span class="nf">switch</span><span class="p">(</span><span class="s">&quot;color&quot;</span><span class="p">,</span> <span class="s">&quot;color&quot;</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;shape&quot;</span> <span class="o">=</span> <span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="s">&quot;length&quot;</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;red&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p><a class="reference external" href="https://cran.r-project.org/web/packages/iterators/iterators.pdf"><code class="docutils literal notranslate"><span class="pre">icount{iterators}</span></code>:</a> Returns an iterator that counts starting from one.</p></li>
-<li><p>use <code class="docutils literal notranslate"><span class="pre">tools::compactPDF</span></code> to resize large pdf file while maintain the quality of the graph. This is dependent on another software for manipulating large PDF file, which is gostscript or qpdf.</p></li>
-</ol>
+<section id="standardization">
+<h3>2.3 Standardization<a class="headerlink" href="#standardization" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="install-r-on-linux">
-<h2>Install R on Linux<a class="headerlink" href="#install-r-on-linux" title="Permalink to this headline">#</a></h2>
-<ol>
-<li><p>cd to a directory to save the R install file</p></li>
-<li><p>download R install file from web using wget</p></li>
-<li><p>untar the install file using tar xzvf</p></li>
-<li><p>cd to the newly create folder created in step 3</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">'./configure'</span></code></p>
-<p>​    <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--prefix=/home1/02784/username/R3.1.2</span></code></p>
-<p>​    <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--prefix=/work/02784/username/R-3.2.0</span></code></p>
+<section id="inverse-probability-weighting">
+<h3>2.4 Inverse probability weighting<a class="headerlink" href="#inverse-probability-weighting" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="chapter-4-effect-modification">
+<h2>Chapter 4 Effect Modification<a class="headerlink" href="#chapter-4-effect-modification" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>We say that <span class="math notranslate nohighlight">\(V\)</span> is a modifier of the effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> when the average causal effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> varies across levels of <span class="math notranslate nohighlight">\(V\)</span></p>
+<ul>
+<li><p>Since the average causal effect can be measured using different effect measures (e.g., risk difference, risk ratio), the presence of effect modification depends on the effect measure being used.</p></li>
+<li><p><em>qualitative effect modification</em>: when the average causal effects in the subsets are in the opposite direction.</p></li>
+</ul>
 </li>
-<li><p>type ‘make’ to install</p></li>
-<li><p>do ‘make check’ to check installation status</p></li>
-<li><p>export the PATH: export PATH=/thepath_to_bin:${PATH}</p></li>
-<li><p>check:  cd to home directory; vim .bashrc</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source: http://galton.uchicago.edu/~eichler/stat24600/Handouts/Rlinux.html
-
-./configure --prefix<span class="o">=</span>/home/username/tmux1.9
-wget http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/R-3.2.0.tar.gz
-install.packages<span class="o">(</span><span class="s2">&quot;INLA&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://www.math.ntnu.no/inla/R/stable&quot;</span><span class="o">)</span>
-Install rjags package <span class="k">in</span> R on TACC
-wget https://cran.r-project.org/src/contrib/rjags_4-4.tar.gz
-tar xzvf rjags_4-4.tar.gz
-</pre></div>
-</div>
-<p>The configure script has an option <code class="docutils literal notranslate"><span class="pre">--enable-rpath</span></code> for hard-coding the location of the JAGS library into the rjags package. It is not portable, however, so may not work on your Operating System. Also, you do not appear to be passing the configure options correctly. The correct syntax is to put the configure options inside <code class="docutils literal notranslate"><span class="pre">--configure-args</span></code>, e.g.</p>
-<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">JHOME=/home/h03/hadsx/extremes/JAGS_BUGS/jags</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">R</span>&#160; <span class="pre">CMD</span> <span class="pre">INSTALL</span> <span class="pre">rjags_4-4.tar.gz</span>&#160; <span class="pre">--configure-args='--with-jags-include=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/include/JAGS</span> <span class="pre">--with-jags-lib=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/lib</span> <span class="pre">--enable-rpath'</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">install.packages(&quot;rjags&quot;,</span> <span class="pre">configure.args=&quot;--with-jags-include=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/include/JAGS</span> <span class="pre">--with-jags-lib=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/lib</span> <span class="pre">--with-jags-modules=/work/02784/username/softwares/TACC_JAGS/JAGS-3.4.0/lib/JAGS/modules-3&quot;)</span></code></p>
+</ul>
+<p><img alt="kyDpUe_2022_06_20" src="https://cdn.jsdelivr.net/gh/askming/upic&#64;master/uPic/kyDpUe_2022_06_20.png" /></p>
 </section>
 </section>
 
@@ -880,7 +816,7 @@ tar xzvf rjags_4-4.tar.gz
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Stats_Comp"
+            path: "./Stats"
         },
         predefinedOutput: true
     }
@@ -900,17 +836,17 @@ tar xzvf rjags_4-4.tar.gz
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Note-How%20R%20searches%20and%20finds%20stuff.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">How R searches and finds stuff</p>
+            <p class="prev-next-title">[book] Analysis of Observational Health Care Data Using SAS</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Note-googleVis.html" title="next page">
+    <a class='right-next' id="next-link" href="Book-Causal_inference_in_statistics_a_primer.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Google R package googleVis</p>
+        <p class="prev-next-title">[book] Causal inference in statistics <em>a primer</em></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

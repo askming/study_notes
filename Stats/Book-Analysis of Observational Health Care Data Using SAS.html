@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="[book] Causal inference in statistics a primer" href="Book-Causal_inference_in_statistics_a_primer.html" />
+    <link rel="next" title="Causal Inference: What If" href="Book-Causal%20Inference%20What%20If.html" />
     <link rel="prev" title="Study Notes Index (knowledge base structure)" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -128,6 +128,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    [book] Analysis of Observational Health Care Data Using SAS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Book-Causal%20Inference%20What%20If.html">
+   Causal Inference: What If
   </a>
  </li>
  <li class="toctree-l1">
@@ -869,8 +874,8 @@ Bang and Robins, 2005).</p></li>
 <h3>Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>The estimator of the causal effect</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af3260e3-b754-465d-868d-adb33930e9de">
-<span class="eqno">(1)<a class="headerlink" href="#equation-af3260e3-b754-465d-868d-adb33930e9de" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ea524808-975f-43ce-a3bf-9610d2e023fb">
+<span class="eqno">(1)<a class="headerlink" href="#equation-ea524808-975f-43ce-a3bf-9610d2e023fb" title="Permalink to this equation">#</a></span>\[\begin{align}
   \hat{\Delta}_{DR} \\
    &amp; = n^{-1}\sum_{i=1}^n\left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right] \\
    &amp; - n^{-1}\sum_{i=1}^n\left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] \\
@@ -883,8 +888,8 @@ Bang and Robins, 2005).</p></li>
   SE_{\hat{\Delta}_{DR}} = \sqrt{n^{-2}\sum_{i=1}^n \hat{I}^2_i}, 
   \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{I}_i\)</span> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6c8f63e-3b34-45a5-89e1-5e55436c563d">
-<span class="eqno">(2)<a class="headerlink" href="#equation-a6c8f63e-3b34-45a5-89e1-5e55436c563d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c2dd6cd1-0cb1-4233-8c6f-6ad6f0282797">
+<span class="eqno">(2)<a class="headerlink" href="#equation-c2dd6cd1-0cb1-4233-8c6f-6ad6f0282797" title="Permalink to this equation">#</a></span>\[\begin{align}
   \hat{I}_i \\
   &amp; = \left[\frac{Z_iY_i}{e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{e(X_i, \hat{\beta})}m_1(X_i, \hat{\alpha}_1)\right]\\
   &amp;  - \left[\frac{(1-Z_i)Y_i}{1-e(X_i, \hat{\beta})} - \frac{Z_i-e(X_i, \hat{\beta})}{1-e(X_i, \hat{\beta})}m_0(X_i, \hat{\alpha}_0)\right] - \hat{\Delta}_{DR}
@@ -941,10 +946,10 @@ Bang and Robins, 2005).</p></li>
             <p class="prev-next-title">Study Notes Index (knowledge base structure)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Book-Causal_inference_in_statistics_a_primer.html" title="next page">
+    <a class='right-next' id="next-link" href="Book-Causal%20Inference%20What%20If.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">[book] Causal inference in statistics <em>a primer</em></p>
+        <p class="prev-next-title">Causal Inference: What If</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
