@@ -688,8 +688,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inverse-probability-weighting">
-     2.4 Inverse probability weighting
+    <a class="reference internal nav-link" href="#inverse-probability-weighting-ipw">
+     2.4 Inverse probability weighting (IPW)
     </a>
    </li>
   </ul>
@@ -734,8 +734,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inverse-probability-weighting">
-     2.4 Inverse probability weighting
+    <a class="reference internal nav-link" href="#inverse-probability-weighting-ipw">
+     2.4 Inverse probability weighting (IPW)
     </a>
    </li>
   </ul>
@@ -764,7 +764,7 @@ title="Print to PDF"
 <h3>2.2 Conditional randomization<a class="headerlink" href="#conditional-randomization" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p><em>Conditionally randomized experiments</em> meaning there are several randomization probabilities that depend (are conditional) on the values of some variable <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
-<li><p><em>Marginally randomized experiments</em> meaning there is only a single unconditional (marginal) randomization probability that is common to all individuals.</p>
+<li><p><em>Marginally randomized experiments</em> meaning there is only a single unconditional (marginal) randomization probability (doesn’t need to be 0.5) that is common to all individuals.</p>
 <ul class="simple">
 <li><p>a marginally randomized experiment is expected to result in exchangeability of the treated and the untreated:</p></li>
 </ul>
@@ -778,15 +778,31 @@ title="Print to PDF"
 <p class="sidebar-title"></p>
 <p>This imbalance indicates that the risk of bad outcome in treated, had they remained untreated, would have been higher than that in the untreated.</p>
 </aside>
-<ul class="simple">
+<ul>
 <li><p>In contrast, a conditionally randomized experiment will not generally result in exchangeability of the treated and the untreated because, by design, each group may have a different proportion of individuals with bad prognosis.</p></li>
+<li><p>However, the conditional (or stratified) randomization can be considered as a combination of separate marginal randomiztions from each unique stratum, within which the general rules of marginal randomization and causal inference apply, that is</p>
+<div class="math notranslate nohighlight">
+\[
+  Pr[Y^a=1|A =1, L=l]=Pr[Y^a=1|A =0, L=l] \text{ or } Y^a \perp\!\!\!\perp A|L=l \text{ for all } a
+  \]</div>
+</li>
+<li><p>To calculate the population average causal effect with conditional randomization, do the following two steps</p>
+<ol class="simple">
+<li><p>First, compute the average causal effect in each of these subsets or strata of the population</p></li>
+<li><p>Second, compute the average causal effect by combining the individual effects from step 1</p>
+<ul class="simple">
+<li><p>Using <mark>standardization</mark> or <mark>inverse probability weighting</mark> (wich are mathmatically equivalent)</p></li>
+</ul>
+</li>
+</ol>
+</li>
 </ul>
 </section>
 <section id="standardization">
 <h3>2.3 Standardization<a class="headerlink" href="#standardization" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="inverse-probability-weighting">
-<h3>2.4 Inverse probability weighting<a class="headerlink" href="#inverse-probability-weighting" title="Permalink to this headline">#</a></h3>
+<section id="inverse-probability-weighting-ipw">
+<h3>2.4 Inverse probability weighting (IPW)<a class="headerlink" href="#inverse-probability-weighting-ipw" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="chapter-4-effect-modification">
