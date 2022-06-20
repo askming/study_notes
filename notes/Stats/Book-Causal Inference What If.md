@@ -5,7 +5,7 @@
 ## Chapter 2 Randomized Experiments
 
 ### 2.2 Conditional randomization
-- *Conditionally randomized experiments* meaning there are several randomization probabilities that depend (are conditional) on the values of some variable $L$.
+- *Conditionally randomized experiments* meaning there are several randomization probabilities that depend (are conditional) on the values of some variable(s) $L$.
 - *Marginally randomized experiments* meaning there is only a single unconditional (marginal) randomization probability (doesn't need to be 0.5) that is common to all individuals.
   - a marginally randomized experiment is expected to result in exchangeability of the treated and the untreated: 
   
@@ -17,7 +17,7 @@
 This imbalance indicates that the risk of bad outcome in treated, had they remained untreated, would have been higher than that in the untreated.
 ```
 - In contrast, a conditionally randomized experiment will not generally result in exchangeability of the treated and the untreated because, by design, each group may have a different proportion of individuals with bad prognosis.
-- However, the conditional (or stratified) randomization can be considered as a combination of separate marginal randomiztions from each unique stratum, within which the general rules of marginal randomization and causal inference apply, that is
+- However, the conditional (or stratified) randomization can be considered as a combination of separate marginal randomiztions from each unique stratum defined by the randomization factors, within which the general rules of marginal randomization and causal inference apply, that is
   
   $$
   Pr[Y^a=1|A =1, L=l]=Pr[Y^a=1|A =0, L=l] \text{ or } Y^a \perp\!\!\!\perp A|L=l \text{ for all } a
