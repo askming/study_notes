@@ -1,4 +1,4 @@
-# Causal Inference: What If
+# [book] Causal Inference: What If
 
 *by Miguel A. Hernan and James M. Robins*
 

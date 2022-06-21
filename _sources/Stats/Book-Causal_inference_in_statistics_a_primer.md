@@ -170,6 +170,7 @@ P(z, y|do(x)) & = \frac{P(x, y, z)}{P(x|z)}
   3. All backdoor paths from $Z$ to $Y$ are blocked by $X$.
 
   - **Theorem (Front-Door Adjustment)** If $Z$ satisfies the front-door criterion relative to $(X, Y)$ and if $P(x, z) > 0$, then the causal effect of $X$ on $Y$ is identifiable and is given by the formula
+  
     $$P(y|do(x)) = \sum_z P(z|x) \sum_{x′} P(y|x′, z)P(x′)$$
     
     
