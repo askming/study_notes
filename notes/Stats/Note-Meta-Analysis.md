@@ -15,7 +15,9 @@
 
 - The defining feature of the fixed-effect model is that all studies in the analysis **share a common effect size**.
 
-  ​																			$$Y_i = \theta + \epsilon_i$$
+ $$
+ Y_i = \theta + \epsilon_i
+ $$
   
 - :star: The fixed-effect model starts with the assumption that all studies share a common effect size. If we start with that assumption, then the point of the analysis must be to estimate the common effect size.
 
@@ -31,7 +33,9 @@
 
   - Second, the study weights are more similar under the random-effects model (large studies lose influence while small studies gain influence)
 
-    ​														$$Y_i = \mu + \alpha_i + \epsilon_i$$
+   $$
+   Y_i = \mu + \alpha_i + \epsilon_i
+   $$
   
 - :star: The random-effects model allows that there may be a distribution of true effects. It follows that the first step in the analysis should be to estimate the amount of variation and then use this to inform the direction of the analysis.
 
