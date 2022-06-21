@@ -812,10 +812,14 @@ title="Print to PDF"
 <section id="fixed-effect-model">
 <h3>Fixed-effect model<a class="headerlink" href="#fixed-effect-model" title="Permalink to this headline">#</a></h3>
 <p><img alt="image-20200715215341884" src="https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202020-07-15%20at%209.50.35%20PM_20200722080642.png" /></p>
-<ul>
-<li><p>The defining feature of the fixed-effect model is that all studies in the analysis <strong>share a common effect size</strong>.</p>
-<p>​																			$<span class="math notranslate nohighlight">\(Y_i = \theta + \epsilon_i\)</span>$</p>
-</li>
+<ul class="simple">
+<li><p>The defining feature of the fixed-effect model is that all studies in the analysis <strong>share a common effect size</strong>.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+ Y_i = \theta + \epsilon_i
+ \]</div>
+<ul class="simple">
 <li><p>:star: The fixed-effect model starts with the assumption that all studies share a common effect size. If we start with that assumption, then the point of the analysis must be to estimate the common effect size.</p></li>
 <li><p>For the fixed-effect model, the null hypothesis is that the <em>common effect size</em> is (for example) zero.</p></li>
 </ul>
@@ -825,12 +829,14 @@ title="Print to PDF"
 <p><img alt="image-20200715215255480" src="https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202020-07-15%20at%209.52.44%20PM_20200722080703.png" /></p>
 <ul>
 <li><p>The defining feature of the random-effects model is that <strong>there is a distribution of true effect sizes</strong>, and our goal is to estimate the mean of this distribution.</p>
-<ul>
+<ul class="simple">
 <li><p>First, the confidence interval for the summary effect will always be wider under the random-effects model</p></li>
-<li><p>Second, the study weights are more similar under the random-effects model (large studies lose influence while small studies gain influence)</p>
-<p>​														$<span class="math notranslate nohighlight">\(Y_i = \mu + \alpha_i + \epsilon_i\)</span>$</p>
-</li>
+<li><p>Second, the study weights are more similar under the random-effects model (large studies lose influence while small studies gain influence)</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+   Y_i = \mu + \alpha_i + \epsilon_i
+   \]</div>
 </li>
 <li><p>:star: The random-effects model allows that there may be a distribution of true effects. It follows that the first step in the analysis should be to estimate the amount of variation and then use this to inform the direction of the analysis.</p>
 <ul class="simple">
