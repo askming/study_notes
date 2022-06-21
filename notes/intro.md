@@ -30,6 +30,7 @@
 - [Book-Causal inference in statistics *a primer*](Stats/Book-Causal_inference_in_statistics_a_primer.md)
 - [Causal inference notes (general)](./Stats/Note-Causal%20inference%20general.md)
 - [Propensity score methods basics](./Stats/Note-Propensity%20score%20methods.md)
+- [Causal inference: what if](./Stats/Book-Causal%20Inference%20What%20If.md)
 
 #### 1.5.1 Use of external control data in RCT
 
