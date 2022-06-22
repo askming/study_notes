@@ -94,6 +94,7 @@ IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in w
     E\left[\frac{I(A=a)Y}{f(A|L)}\right]
     $$
     - proof of equivalence
+  
     $$
     E\left[\frac{I(A=a)Y}{f(A|L)}\right]  \\ 
     = \sum_l\frac{1}{f(a|l)}\{E\left[Y|A=a, L=l\right]f(a|l)Pr(L=l)\} \\
