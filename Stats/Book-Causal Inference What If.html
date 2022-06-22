@@ -800,9 +800,99 @@ title="Print to PDF"
 </section>
 <section id="standardization">
 <h3>2.3 Standardization<a class="headerlink" href="#standardization" title="Permalink to this headline">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Weighted average of the treatment effects from subgroups; weight is defined by the sample size of the subgorup</p>
+</aside>
+<ul>
+<li><p>More formally, in <em>standardization</em>, the marginal counterfactual risk <span class="math notranslate nohighlight">\(Pr[Y^a=1]\)</span> is the weighted average of the stratum-specific risks <span class="math notranslate nohighlight">\(Pr[Y^a=1|L=0]\)</span> and <span class="math notranslate nohighlight">\(Pr[Y^a=1|L=1]\)</span> with weights equal to the proportion of individuals in the population with <span class="math notranslate nohighlight">\(L=0\)</span> and <span class="math notranslate nohighlight">\(L=1\)</span>, respectively.</p></li>
+<li><p>Derivation of counterfactual risk by standardization</p>
+<div class="math notranslate nohighlight">
+\[
+  Pr(Y^a=1) = \sum_l Pr(Y^a=1|L=l)Pr(L=l)
+  \]</div>
+<p>under conditoinal exchangeability, we can replace the (unobserved) counterfactual riks with the obsered risk:</p>
+<div class="math notranslate nohighlight">
+\[
+  Pr(Y^a=1|L=l) = Pr(Y=1|A=a, L=l)
+  \]</div>
+<ul class="simple">
+<li><p>When, as here, a counterfactual quantity can be expressed as function of the distribution (i.e., probabilities) of the observed data, we say that the counterfactual quantity is identified or identifiable; otherwise, we say it is unidentified or not identifiable.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="inverse-probability-weighting-ipw">
 <h3>2.4 Inverse probability weighting (IPW)<a class="headerlink" href="#inverse-probability-weighting-ipw" title="Permalink to this headline">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The idea is that assuming all the patients in one subgroup receive treatment/control, and the outcome probability follows the obseved one from one of the arms (under conditional exchangeability assumption), how would the outcome look like (pseudo counterfactual).</p>
+<p>Since the sample size in either arm is increased by N/ni folds (inverse of the proportion of patients in one of the arms), where N is the total sample size in this subgroup and ni is the sample size in one of the arms, the outcome from each invidividual should also be also upscaled by this ratio (N/n).</p>
+</aside>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in which subjects are sampled with unequal probabilities</p>
+</aside>
+<ul>
+<li><p>Under conditional exchangeability <span class="math notranslate nohighlight">\(Y^a \perp\!\!\!\perp A|L\)</span> in the original population, the treated and the untreated are (unconditionally) exchangeable in the pseudo-population because the <span class="math notranslate nohighlight">\(L\)</span> is independent of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<ul class="simple">
+<li><p>That is, the associational risk ratio in the pseudo-population is equal to the causal risk ratio in both the pseudo-population and the original population.</p></li>
+</ul>
+<p><img alt="sJRh3P_2022_06_22" src="https://cdn.jsdelivr.net/gh/askming/upic&#64;master/uPic/sJRh3P_2022_06_22.png" /></p>
+</li>
+<li><p>Informally, the pseudo-population is created by weighting each individual in the population by the inverse of the conditional probability of receiving the treatment level, IP weight:</p>
+<div class="math notranslate nohighlight">
+\[
+  W^A = 1/f(A|L)
+  \]</div>
+</li>
+<li><p>Standardization and IP weighting are mathematically equivalent</p>
+<ul class="simple">
+<li><p>In fact, both standardization and IP weighting can be viewed as procedures to build a new tree in which all individuals receive treatment <span class="math notranslate nohighlight">\(a\)</span>. Each method uses a different set of the probabilities to build the counterfactual tree: IP weighting uses the conditional probability of treatment <span class="math notranslate nohighlight">\(A\)</span> given the covariate <span class="math notranslate nohighlight">\(L\)</span> (as shown in Figure above), standardization uses the probability of the covariate <span class="math notranslate nohighlight">\(L\)</span> and the conditional probability of outcome <span class="math notranslate nohighlight">\(Y\)</span> given <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>In a slight abuse of language we sometimes say that these methods <em>control</em> for <span class="math notranslate nohighlight">\(L\)</span>, but this “analytic control” is quite different from the “physical control” in a randomized experiment.
+Standardization and IP weighting can be generalized to conditionally randomized studies with continuous outcomes</p>
+</aside>
+<ul class="simple">
+<li><p>Because both standardization and IP weighting simulate what would have been observed if the variable (or variables in the vector) <span class="math notranslate nohighlight">\(L\)</span> had not been used to decide the probability of treatment, we often say that these methods <em><strong>adjust</strong></em> for <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Proof of the equivalence of IP weighting and standardization</p>
+<ul>
+<li><p>Standardized mean for treatment level <span class="math notranslate nohighlight">\(a\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+    \sum_l E\left[Y|A=a, L=l\right]
+    \]</div>
+</li>
+<li><p>IP weighted mean for the treatment level <span class="math notranslate nohighlight">\(a\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+    E\left[\frac{I(A=a)Y}{f(A|L)}\right]
+    \]</div>
+<ul class="simple">
+<li><p>proof of equivalence
+$<span class="math notranslate nohighlight">\(
+E\left[\frac{I(A=a)Y}{f(A|L)}\right]  \\ 
+= \sum_l\frac{1}{f(a|l)}\{E\left[Y|A=a, L=l\right]f(a|l)Pr(L=l)\} \\
+=\sum_l E\left[Y|A=a, L=l\right]
+\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>It can be shown that both estimates of mean are euqal to the counterfactual mean <span class="math notranslate nohighlight">\(E[Y^a]\)</span> under the conditional exchangeability assumption, that is</p>
+<div class="math notranslate nohighlight">
+\[
+  E[Y^a] = \sum_l E\left[Y|A=a, L=l\right] = E\left[\frac{I(A=a)Y}{f(A|L)}\right], \text{ under } Y\perp\!\!\!\perp A|L
+  \]</div>
+<ul class="simple">
+<li><p>When treatment is continuous, which is an unlikely design choice in conditionally randomized experiments, <span class="math notranslate nohighlight">\(E[I(A=a)Y/f(A|L)]\)</span> is no longer equal to <span class="math notranslate nohighlight">\(\sum_l E\left[Y|A=a, L=l\right]\)</span> and thus is biased for <span class="math notranslate nohighlight">\(E[Y^a]\)</span> even under exchangeability</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 <section id="chapter-4-effect-modification">
