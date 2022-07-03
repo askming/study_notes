@@ -442,6 +442,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../CS/Note-Python%20numpy.html">
+   Numpy study notes
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
    SQL study notes
   </a>
@@ -678,6 +683,11 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomization">
+     2.1 Randomization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conditional-randomization">
      2.2 Conditional randomization
     </a>
@@ -724,6 +734,11 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomization">
+     2.1 Randomization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conditional-randomization">
      2.2 Conditional randomization
     </a>
@@ -760,6 +775,26 @@ title="Print to PDF"
 <p><em>by Miguel A. Hernan and James M. Robins</em></p>
 <section id="chapter-2-randomized-experiments">
 <h2>Chapter 2 Randomized Experiments<a class="headerlink" href="#chapter-2-randomized-experiments" title="Permalink to this headline">#</a></h2>
+<section id="randomization">
+<h3>2.1 Randomization<a class="headerlink" href="#randomization" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Counterfacatual: <span class="math notranslate nohighlight">\(Y^a\)</span> the “theoretical” outcome under certain treatment <span class="math notranslate nohighlight">\(a\)</span></p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note  <span class="math notranslate nohighlight">\(Y^a\perp\!\!\!\perp A\)</span> is different from  <span class="math notranslate nohighlight">\(Y\perp\!\!\!\perp A\)</span></p>
+</aside>
+<ul class="simple">
+<li><p><strong>Exchangeability</strong> assumption: <span class="math notranslate nohighlight">\(Y^a\perp\!\!\!\perp A\)</span>, the counterfacatual is independent of actual treatment assigned; i.e. the counterfacatual is “fixed” no matter what treatment the subject receives. It can be observed if the actual treatment received is the same as the counterfactual treatment.</p></li>
+<li><p><strong>Mean exchangeability</strong>: <span class="math notranslate nohighlight">\(E[Y^a|A=1] = E[Y^a|A=0] \text{ for all } a\)</span></p>
+<ul>
+<li><p>Exchangeability implies mean exchangeability, but not verse vasa (e.g. due to the difference in other distributional parameter, such as variance)</p></li>
+<li><p>For dichotomous outcomes, exchangeability is equivalent to mean exchangeability</p></li>
+</ul>
+</li>
+<li><p><mark>In ideal randomized experiments association is causation.</mark></p></li>
+</ul>
+</section>
 <section id="conditional-randomization">
 <h3>2.2 Conditional randomization<a class="headerlink" href="#conditional-randomization" title="Permalink to this headline">#</a></h3>
 <ul>

@@ -4,6 +4,19 @@
 
 ## Chapter 2 Randomized Experiments
 
+### 2.1 Randomization
+- Counterfacatual: $Y^a$ the "theoretical" outcome under certain treatment $a$
+
+```{margin}
+Note  $Y^a\perp\!\!\!\perp A$ is different from  $Y\perp\!\!\!\perp A$
+```
+- **Exchangeability** assumption: $Y^a\perp\!\!\!\perp A$, the counterfacatual is independent of actual treatment assigned; i.e. the counterfacatual is "fixed" no matter what treatment the subject receives. It can be observed if the actual treatment received is the same as the counterfactual treatment.
+
+- **Mean exchangeability**: $E[Y^a|A=1] = E[Y^a|A=0] \text{ for all } a$
+  - Exchangeability implies mean exchangeability, but not verse vasa (e.g. due to the difference in other distributional parameter, such as variance)
+  - For dichotomous outcomes, exchangeability is equivalent to mean exchangeability
+- <mark>In ideal randomized experiments association is causation.</mark>
+
 ### 2.2 Conditional randomization
 - *Conditionally randomized experiments* meaning there are several randomization probabilities that depend (are conditional) on the values of some variable(s) $L$.
 - *Marginally randomized experiments* meaning there is only a single unconditional (marginal) randomization probability (doesn't need to be 0.5) that is common to all individuals.
