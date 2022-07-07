@@ -60,9 +60,31 @@ The memory size of an array equals to `array.size * array.itemsize`
 ## Uncategorized
 - `numpy.unravel_index(99, (6, 7, 8))`
 - creating new dtype
-  ```python
-  color = np.dtype([("r", np.ubyte),
+    ```python
+    color = np.dtype([("r", np.ubyte),
                   ("g", np.ubyte),
                   ("b", np.ubyte),
                   ("a", np.ubyte)])
- ```  
+    ```  
+
+ ## Find common values between two array
+ - `np.intersect1d(v1, v2)`, where `v1` and `v2` are two numpy arrays
+
+
+## Ignore numpy warnings
+- `defaults = np.seterr(all="ignore")`
+  - back to sanity: `np.setarr(**defaults)`
+
+- with a context manager
+  ```python
+    with np.errstate(all="ignore"):
+        np.arange(3)/0
+  ```
+
+## Date in numpy
+- today: `numpy.datetime64('today')`
+- yesterday: `numpy.datetime64('today') - numpy.timedelta64(1)`
+- get all the dates in cerntain month/between two dates, e.g. `np.arange('2016-07', '2016-08', dtype='datetime64[D]')`
+
+## Doing calculation in place
+- `numpy.add(A, B, out = B)`
