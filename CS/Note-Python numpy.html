@@ -736,6 +736,40 @@ title="Print to PDF"
    </code>
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-np-nan">
+   Understanding
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.nan
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-diag">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy.diag
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-array-index">
+   numpy array index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-production-in-numpy">
+   matrix production in numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uncategorized">
+   Uncategorized
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -811,6 +845,40 @@ title="Print to PDF"
    </code>
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-np-nan">
+   Understanding
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.nan
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-diag">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy.diag
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-array-index">
+   numpy array index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-production-in-numpy">
+   matrix production in numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uncategorized">
+   Uncategorized
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -880,6 +948,55 @@ title="Print to PDF"
 <section id="pad-an-array-with-np-pad">
 <h2>Pad an array with <code class="docutils literal notranslate"><span class="pre">np.pad</span></code><a class="headerlink" href="#pad-an-array-with-np-pad" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">numpy.pad(array,</span> <span class="pre">pad_width,</span> <span class="pre">mode='constant',</span> <span class="pre">**kwargs)</span></code></p>
+</section>
+<section id="understanding-np-nan">
+<h2>Understanding <code class="docutils literal notranslate"><span class="pre">np.nan</span></code><a class="headerlink" href="#understanding-np-nan" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="numpy-diag">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy.diag</span></code><a class="headerlink" href="#numpy-diag" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.diag(v,</span> <span class="pre">k=0)</span></code>: Extract a diagonal or construct a diagonal array.</p>
+<ul>
+<li><p>The default is 0. Use k&gt;0 for diagonals above the main diagonal, and k&lt;0 for diagonals below the main diagonal.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="numpy-array-index">
+<h2>numpy array index<a class="headerlink" href="#numpy-array-index" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>what does the following code mean?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">Z</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Z</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="matrix-production-in-numpy">
+<h2>matrix production in numpy<a class="headerlink" href="#matrix-production-in-numpy" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.dot(m1,</span> <span class="pre">m2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">&#64;</span> <span class="pre">m2</span></code> in Python 3.5 and above</p></li>
+</ul>
+</section>
+<section id="uncategorized">
+<h2>Uncategorized<a class="headerlink" href="#uncategorized" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.unravel_index(99,</span> <span class="pre">(6,</span> <span class="pre">7,</span> <span class="pre">8))</span></code></p></li>
+<li><p>creating new dtype</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">([(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">)])</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
 </section>
 

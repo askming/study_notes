@@ -37,3 +37,32 @@ The memory size of an array equals to `array.size * array.itemsize`
 
 ## Pad an array with `np.pad`
 `numpy.pad(array, pad_width, mode='constant', **kwargs)`
+
+## Understanding `np.nan`
+
+## `numpy.diag`
+- `numpy.diag(v, k=0)`: Extract a diagonal or construct a diagonal array. 
+  - The default is 0. Use k>0 for diagonals above the main diagonal, and k<0 for diagonals below the main diagonal.
+
+## numpy array index
+- what does the following code mean?
+    ```python
+    Z = np.zeros((8,8),dtype=int)
+    Z[1::2,::2] = 1
+    Z[::2,1::2] = 1
+    ```
+
+## matrix production in numpy
+- `numpy.dot(m1, m2)`
+- `m1 @ m2` in Python 3.5 and above
+
+
+## Uncategorized
+- `numpy.unravel_index(99, (6, 7, 8))`
+- creating new dtype
+  ```python
+  color = np.dtype([("r", np.ubyte),
+                  ("g", np.ubyte),
+                  ("b", np.ubyte),
+                  ("a", np.ubyte)])
+ ```  
