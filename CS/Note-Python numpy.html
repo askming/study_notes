@@ -770,6 +770,26 @@ title="Print to PDF"
    Uncategorized
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-common-values-between-two-array">
+   Find common values between two array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ignore-numpy-warnings">
+   Ignore numpy warnings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#date-in-numpy">
+   Date in numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doing-calculation-in-place">
+   Doing calculation in place
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -877,6 +897,26 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uncategorized">
    Uncategorized
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-common-values-between-two-array">
+   Find common values between two array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ignore-numpy-warnings">
+   Ignore numpy warnings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#date-in-numpy">
+   Date in numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doing-calculation-in-place">
+   Doing calculation in place
   </a>
  </li>
 </ul>
@@ -987,16 +1027,49 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy.unravel_index(99,</span> <span class="pre">(6,</span> <span class="pre">7,</span> <span class="pre">8))</span></code></p></li>
 <li><p>creating new dtype</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">([(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">),</span>
-                <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">),</span>
-                <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">),</span>
-                <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">)])</span>
+              <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ubyte</span><span class="p">)])</span>
 </pre></div>
 </div>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</section>
+<section id="find-common-values-between-two-array">
+<h2>Find common values between two array<a class="headerlink" href="#find-common-values-between-two-array" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.intersect1d(v1,</span> <span class="pre">v2)</span></code>, where <code class="docutils literal notranslate"><span class="pre">v1</span></code> and <code class="docutils literal notranslate"><span class="pre">v2</span></code> are two numpy arrays</p></li>
+</ul>
+</section>
+<section id="ignore-numpy-warnings">
+<h2>Ignore numpy warnings<a class="headerlink" href="#ignore-numpy-warnings" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">defaults</span> <span class="pre">=</span> <span class="pre">np.seterr(all=&quot;ignore&quot;)</span></code></p>
+<ul class="simple">
+<li><p>back to sanity: <code class="docutils literal notranslate"><span class="pre">np.setarr(**defaults)</span></code></p></li>
+</ul>
+</li>
+<li><p>with a context manager</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+      <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">0</span>
 </pre></div>
 </div>
+</li>
+</ul>
+</section>
+<section id="date-in-numpy">
+<h2>Date in numpy<a class="headerlink" href="#date-in-numpy" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>today: <code class="docutils literal notranslate"><span class="pre">numpy.datetime64('today')</span></code></p></li>
+<li><p>yesterday: <code class="docutils literal notranslate"><span class="pre">numpy.datetime64('today')</span> <span class="pre">-</span> <span class="pre">numpy.timedelta64(1)</span></code></p></li>
+<li><p>get all the dates in cerntain month/between two dates, e.g. <code class="docutils literal notranslate"><span class="pre">np.arange('2016-07',</span> <span class="pre">'2016-08',</span> <span class="pre">dtype='datetime64[D]')</span></code></p></li>
+</ul>
+</section>
+<section id="doing-calculation-in-place">
+<h2>Doing calculation in place<a class="headerlink" href="#doing-calculation-in-place" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.add(A,</span> <span class="pre">B,</span> <span class="pre">out</span> <span class="pre">=</span> <span class="pre">B)</span></code></p></li>
+</ul>
 </section>
 </section>
 
