@@ -790,6 +790,16 @@ title="Print to PDF"
    Doing calculation in place
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-if-two-arrays-are-equal">
+   Check if two arrays are equal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-an-array-immutable">
+   Make an array immutable
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -917,6 +927,16 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doing-calculation-in-place">
    Doing calculation in place
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-if-two-arrays-are-equal">
+   Check if two arrays are equal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-an-array-immutable">
+   Make an array immutable
   </a>
  </li>
 </ul>
@@ -1069,6 +1089,19 @@ title="Print to PDF"
 <h2>Doing calculation in place<a class="headerlink" href="#doing-calculation-in-place" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy.add(A,</span> <span class="pre">B,</span> <span class="pre">out</span> <span class="pre">=</span> <span class="pre">B)</span></code></p></li>
+</ul>
+</section>
+<section id="check-if-two-arrays-are-equal">
+<h2>Check if two arrays are equal<a class="headerlink" href="#check-if-two-arrays-are-equal" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>comparing values only: <code class="docutils literal notranslate"><span class="pre">np.allclose(A,</span> <span class="pre">B)</span></code></p></li>
+<li><p>comapring both shape and values: <code class="docutils literal notranslate"><span class="pre">np.array_equal(A,</span> <span class="pre">B)</span></code></p></li>
+</ul>
+</section>
+<section id="make-an-array-immutable">
+<h2>Make an array immutable<a class="headerlink" href="#make-an-array-immutable" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>given an array v: <code class="docutils literal notranslate"><span class="pre">v.flags.writeable</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
 </ul>
 </section>
 </section>

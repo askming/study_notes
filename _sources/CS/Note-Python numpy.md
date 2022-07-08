@@ -88,3 +88,10 @@ The memory size of an array equals to `array.size * array.itemsize`
 
 ## Doing calculation in place
 - `numpy.add(A, B, out = B)`
+
+## Check if two arrays are equal
+- comparing values only: `np.allclose(A, B)`
+- comapring both shape and values: `np.array_equal(A, B)`
+
+## Make an array immutable
+- given an array v: `v.flags.writeable = False`
