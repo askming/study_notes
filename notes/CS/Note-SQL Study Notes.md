@@ -126,7 +126,7 @@
   3. Analytic numbering functions   
       - `ROW_NUMBER()`: show row # across the OVER & ORDER BY var
       - `RANK()`: similar to `ROW_NUMBER()` but will give same rank if value for ORDER BY variable is the same
-      - `DENSE_RANK()`: differently from `RANK()`, it won't skip rank number if there are more than one obs. share the same rank
+      - `DENSE_RANK()`: differently from `RANK()`, it won't skip rank number if there are more than one obs. records with same value share the same rank
 
 - Defining a window alias: a convenient way to use several window functions that use the same window:
     ```sql
@@ -172,3 +172,4 @@
 - [LeetCode SQL Summary](https://github.com/siqichen-usc/LeetCode-SQL-Summary)
 - [Select Star SQL](https://selectstarsql.com/)
 - [Hard SQL interivew questions](./Note-Hard%20SQL%20interview%20questions.md)
+- [5 Advanced SQL Concepts You Should Know in 2022](https://towardsdatascience.com/5-advanced-sql-concepts-you-should-know-in-2022-b50efe6c99): for some examples
