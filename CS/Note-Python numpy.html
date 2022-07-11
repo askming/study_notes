@@ -800,6 +800,25 @@ title="Print to PDF"
    Make an array immutable
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-txt-file-in-numpy">
+   Read txt file in numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-an-array-by-the-nth-column">
+   Sort an array by the nth column
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#np-reshape">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.reshape()
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -937,6 +956,25 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#make-an-array-immutable">
    Make an array immutable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-txt-file-in-numpy">
+   Read txt file in numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-an-array-by-the-nth-column">
+   Sort an array by the nth column
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#np-reshape">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.reshape()
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -1102,6 +1140,41 @@ title="Print to PDF"
 <h2>Make an array immutable<a class="headerlink" href="#make-an-array-immutable" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>given an array v: <code class="docutils literal notranslate"><span class="pre">v.flags.writeable</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
+</ul>
+</section>
+<section id="read-txt-file-in-numpy">
+<h2>Read txt file in numpy<a class="headerlink" href="#read-txt-file-in-numpy" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+
+<span class="c1"># Fake file</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;1, 2, 3, 4, 5</span>
+
+<span class="s1">                6,  ,  , 7, 8</span>
+
+<span class="s1">                ,  , 9,10,11</span>
+<span class="s1">            &#39;&#39;&#39;</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="sort-an-array-by-the-nth-column">
+<h2>Sort an array by the nth column<a class="headerlink" href="#sort-an-array-by-the-nth-column" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">[</span><span class="n">Z</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()])</span>
+</pre></div>
+</div>
+</section>
+<section id="np-reshape">
+<h2><code class="docutils literal notranslate"><span class="pre">np.reshape()</span></code><a class="headerlink" href="#np-reshape" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>what does the <code class="docutils literal notranslate"><span class="pre">-1</span></code> mean in <code class="docutils literal notranslate"><span class="pre">v.reshape(-1,</span> <span class="pre">x)</span></code></p></li>
+<li><p>more generally, the index of arraries</p></li>
 </ul>
 </section>
 </section>
