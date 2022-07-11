@@ -95,3 +95,32 @@ The memory size of an array equals to `array.size * array.itemsize`
 
 ## Make an array immutable
 - given an array v: `v.flags.writeable = False`
+
+
+## Read txt file in numpy
+- Example
+  ```python
+  from io import StringIO
+
+  # Fake file
+  s = StringIO('''1, 2, 3, 4, 5
+
+                  6,  ,  , 7, 8
+
+                  ,  , 9,10,11
+              ''')
+  Z = np.genfromtxt(s, delimiter=",", dtype=np.int)
+  print(Z)
+  ```
+
+## Sort an array by the nth column
+  ```python
+  Z = np.random.randint(0,10,(3,3))
+  print(Z)
+  print(Z[Z[:,1].argsort()])
+  ```
+
+
+## `np.reshape()`
+- what does the `-1` mean in `v.reshape(-1, x)`
+- more generally, the index of arraries
