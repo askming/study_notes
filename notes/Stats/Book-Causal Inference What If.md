@@ -131,3 +131,6 @@ IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in w
 
 
 ![kyDpUe_2022_06_20](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/kyDpUe_2022_06_20.png)
+
+
+## Chapter 5 Interaction
