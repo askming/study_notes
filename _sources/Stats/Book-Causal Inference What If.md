@@ -123,10 +123,44 @@ IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in w
   - When treatment is continuous, which is an unlikely design choice in conditionally randomized experiments, $E[I(A=a)Y/f(A|L)]$ is no longer equal to $\sum_l E\left[Y|A=a, L=l\right]$ and thus is biased for $E[Y^a]$ even under exchangeability
 
 ## Chapter 4 Effect Modification
-- We say that $V$ is a modifier of the effect of $A$ on $Y$ when the average causal effect of $A$ on $Y$ varies across levels of $V$
-  - Since the average causal effect can be measured using different effect measures (e.g., risk difference, risk ratio), the presence of effect modification depends on the effect measure being used.
-  - *qualitative effect modification*: when the average causal effects in the subsets are in the opposite direction.
+- Key ideas in this chapter
+  - Definition of effect modification (EM); why we care about it?
+  - How to identify/quantify effect modification? Hint: use stratification
+  - Stratification and matching are both adjustment methods; what is the definition of adjustment? Any other adjustment methods?
 
+### 4.1 & 4.3 Definitionof effect modification and why effect modification
+- Definition of effect modification
+  - We say that $V$ is a modifier of the effect of $A$ on $Y$ when the average causal effect of $A$ on $Y$ varies across levels of $V$
+    - The existence of effect modification depends on the effect measure being used (e.g., risk difference, risk ratio), so it is more accurate to use the term *effect-measure modification*, to emphasize the dependence of the concept on the choice of effect measure
+  - Since the average causal effect can be measured using different effect measures (e.g., risk difference, risk ratio), the presence of effect modification depends on the effect measure being used.
+  - Here only consider variables $V$ that are not affected by treatment $A$
+
+- Types of effect modification
+  - *qualitative effect modification*: when the average causal effects in the subsets are in the opposite direction.
+    - In the presence of qualitative effect modification, additive effect modification implies multiplicative effect modification, and vice versa. In the absence of qualitative effect modification, however, one can find effect modification on one scale (e.g., multiplicative) but not on the other (e.g., additive).
+
+- Why we are about effect modification
+  1. If a factor $V$ modifies the effect of treatment $A$ on the outcome $Y$ then the average causal effect will differ between populations with different prevalence of $V$
+     - There is generally no such athingas “*the average* causal effect of treatment $A$ on outcome $Y$ (period)”, but “the average causal effect of treatment $A$ on outcome $Y$ in a population with a particular mix of causal effect modifiers.” 
+  2. Evaluating the presence of effect modification is helpful to identify the groups of individuals that would benefit most from an intervention.
+     - if there is a nonzero causal effect in at least one stratum of $V$ and the counterfactual risk $Pr[Y^{a=0} =1|V = v]$ varies with $v$,then effect modification is guaranteed on either the additive or the multiplicative scale. 
+     - Additive, but not multiplicative, effect modification is the appropriate scale to identify the groups that will benefit most from intervention.
+  
+  ```{margin}
+  The terms “effect modification” and “interaction” are sometimes used as synonymous in the scientific literature. “Interaction” as a causal concept that is related to, but different from, effect modification (Chapter 5).
+  ```
+  3. The identification of effect modification may help understand the biological, social, or other mechanisms leading to the outcome.
+
+- *Transportability* of causal inference: The extrapolation of causal effects computed in one population to a second population
+  - Conditional causal effects in the strata defined by the effect modifiers may be more transportable than the causal effect in the entire population, but there is no guarantee that the conditional effect measures in one population equal the conditional effect measures in another population. Due to different reasons:
+    - unmeasured, or unknown, causal effect modifiers whose conditional distributions vary between the two populations
+    - **Fine Point 4.2 place holder**
+  - transportability of causal effects is an unverifiable assumption that relies heavily on subject-matter knowledge. It is a more difficult problem than the identification of causal effects in a single population
+
+
+
+
+### 4.2, 4.4, & 4.5 How to quantify effect modification
 
 
 

@@ -713,6 +713,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#chapter-4-effect-modification">
    Chapter 4 Effect Modification
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitionof-effect-modification-and-why-effect-modification">
+     4.1 &amp; 4.3 Definitionof effect modification and why effect modification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-quantify-effect-modification">
+     4.2, 4.4, &amp; 4.5 How to quantify effect modification
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-5-interaction">
@@ -769,6 +781,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#chapter-4-effect-modification">
    Chapter 4 Effect Modification
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitionof-effect-modification-and-why-effect-modification">
+     4.1 &amp; 4.3 Definitionof effect modification and why effect modification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-quantify-effect-modification">
+     4.2, 4.4, &amp; 4.5 How to quantify effect modification
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-5-interaction">
@@ -949,14 +973,76 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 <section id="chapter-4-effect-modification">
 <h2>Chapter 4 Effect Modification<a class="headerlink" href="#chapter-4-effect-modification" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>We say that <span class="math notranslate nohighlight">\(V\)</span> is a modifier of the effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> when the average causal effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> varies across levels of <span class="math notranslate nohighlight">\(V\)</span></p>
+<li><p>Key ideas in this chapter</p>
 <ul>
-<li><p>Since the average causal effect can be measured using different effect measures (e.g., risk difference, risk ratio), the presence of effect modification depends on the effect measure being used.</p></li>
-<li><p><em>qualitative effect modification</em>: when the average causal effects in the subsets are in the opposite direction.</p></li>
+<li><p>Definition of effect modification (EM); why we care about it?</p></li>
+<li><p>How to identify/quantify effect modification? Hint: use stratification</p></li>
+<li><p>Stratification and matching are both adjustment methods; what is the definition of adjustment? Any other adjustment methods?</p></li>
 </ul>
 </li>
 </ul>
+<section id="definitionof-effect-modification-and-why-effect-modification">
+<h3>4.1 &amp; 4.3 Definitionof effect modification and why effect modification<a class="headerlink" href="#definitionof-effect-modification-and-why-effect-modification" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Definition of effect modification</p>
+<ul class="simple">
+<li><p>We say that <span class="math notranslate nohighlight">\(V\)</span> is a modifier of the effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> when the average causal effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> varies across levels of <span class="math notranslate nohighlight">\(V\)</span></p>
+<ul>
+<li><p>The existence of effect modification depends on the effect measure being used (e.g., risk difference, risk ratio), so it is more accurate to use the term <em>effect-measure modification</em>, to emphasize the dependence of the concept on the choice of effect measure</p></li>
+</ul>
+</li>
+<li><p>Since the average causal effect can be measured using different effect measures (e.g., risk difference, risk ratio), the presence of effect modification depends on the effect measure being used.</p></li>
+<li><p>Here only consider variables <span class="math notranslate nohighlight">\(V\)</span> that are not affected by treatment <span class="math notranslate nohighlight">\(A\)</span></p></li>
+</ul>
+</li>
+<li><p>Types of effect modification</p>
+<ul class="simple">
+<li><p><em>qualitative effect modification</em>: when the average causal effects in the subsets are in the opposite direction.</p>
+<ul>
+<li><p>In the presence of qualitative effect modification, additive effect modification implies multiplicative effect modification, and vice versa. In the absence of qualitative effect modification, however, one can find effect modification on one scale (e.g., multiplicative) but not on the other (e.g., additive).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Why we are about effect modification</p>
+<ol class="simple">
+<li><p>If a factor <span class="math notranslate nohighlight">\(V\)</span> modifies the effect of treatment <span class="math notranslate nohighlight">\(A\)</span> on the outcome <span class="math notranslate nohighlight">\(Y\)</span> then the average causal effect will differ between populations with different prevalence of <span class="math notranslate nohighlight">\(V\)</span></p>
+<ul class="simple">
+<li><p>There is generally no such athingas “<em>the average</em> causal effect of treatment <span class="math notranslate nohighlight">\(A\)</span> on outcome <span class="math notranslate nohighlight">\(Y\)</span> (period)”, but “the average causal effect of treatment <span class="math notranslate nohighlight">\(A\)</span> on outcome <span class="math notranslate nohighlight">\(Y\)</span> in a population with a particular mix of causal effect modifiers.”</p></li>
+</ul>
+</li>
+<li><p>Evaluating the presence of effect modification is helpful to identify the groups of individuals that would benefit most from an intervention.</p>
+<ul class="simple">
+<li><p>if there is a nonzero causal effect in at least one stratum of <span class="math notranslate nohighlight">\(V\)</span> and the counterfactual risk <span class="math notranslate nohighlight">\(Pr[Y^{a=0} =1|V = v]\)</span> varies with <span class="math notranslate nohighlight">\(v\)</span>,then effect modification is guaranteed on either the additive or the multiplicative scale.</p></li>
+<li><p>Additive, but not multiplicative, effect modification is the appropriate scale to identify the groups that will benefit most from intervention.</p></li>
+</ul>
+</li>
+</ol>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The terms “effect modification” and “interaction” are sometimes used as synonymous in the scientific literature. “Interaction” as a causal concept that is related to, but different from, effect modification (Chapter 5).</p>
+</aside>
+<ol class="simple">
+<li><p>The identification of effect modification may help understand the biological, social, or other mechanisms leading to the outcome.</p></li>
+</ol>
+</li>
+<li><p><em>Transportability</em> of causal inference: The extrapolation of causal effects computed in one population to a second population</p>
+<ul class="simple">
+<li><p>Conditional causal effects in the strata defined by the effect modifiers may be more transportable than the causal effect in the entire population, but there is no guarantee that the conditional effect measures in one population equal the conditional effect measures in another population. Due to different reasons:</p>
+<ul>
+<li><p>unmeasured, or unknown, causal effect modifiers whose conditional distributions vary between the two populations</p></li>
+<li><p><strong>Fine Point 4.2 place holder</strong></p></li>
+</ul>
+</li>
+<li><p>transportability of causal effects is an unverifiable assumption that relies heavily on subject-matter knowledge. It is a more difficult problem than the identification of causal effects in a single population</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="how-to-quantify-effect-modification">
+<h3>4.2, 4.4, &amp; 4.5 How to quantify effect modification<a class="headerlink" href="#how-to-quantify-effect-modification" title="Permalink to this headline">#</a></h3>
 <p><img alt="kyDpUe_2022_06_20" src="https://cdn.jsdelivr.net/gh/askming/upic&#64;master/uPic/kyDpUe_2022_06_20.png" /></p>
+</section>
 </section>
 <section id="chapter-5-interaction">
 <h2>Chapter 5 Interaction<a class="headerlink" href="#chapter-5-interaction" title="Permalink to this headline">#</a></h2>
