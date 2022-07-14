@@ -715,13 +715,40 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definitionof-effect-modification-and-why-effect-modification">
-     4.1 &amp; 4.3 Definitionof effect modification and why effect modification
+    <a class="reference internal nav-link" href="#definitionof-effect-modification-what-and-why-effect-modification">
+     4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-to-quantify-effect-modification">
      4.2, 4.4, &amp; 4.5 How to quantify effect modification
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stratification">
+       Stratification
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adjustment-via-stratification">
+       Adjustment via stratification
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adjustment-via-matching">
+       Adjustment via matching
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated">
+       Fine and Tech Points 4.1 Causal effect in the treated/untreated
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     4.6 Summary
     </a>
    </li>
   </ul>
@@ -783,13 +810,40 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definitionof-effect-modification-and-why-effect-modification">
-     4.1 &amp; 4.3 Definitionof effect modification and why effect modification
+    <a class="reference internal nav-link" href="#definitionof-effect-modification-what-and-why-effect-modification">
+     4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-to-quantify-effect-modification">
      4.2, 4.4, &amp; 4.5 How to quantify effect modification
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stratification">
+       Stratification
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adjustment-via-stratification">
+       Adjustment via stratification
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adjustment-via-matching">
+       Adjustment via matching
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated">
+       Fine and Tech Points 4.1 Causal effect in the treated/untreated
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     4.6 Summary
     </a>
    </li>
   </ul>
@@ -938,7 +992,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 <li><p>Standardized mean for treatment level <span class="math notranslate nohighlight">\(a\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-    \sum_l E\left[Y|A=a, L=l\right]
+    \sum_l E\left[Y|A=a, L=l\right]Pr(L=l)
     \]</div>
 </li>
 <li><p>IP weighted mean for the treatment level <span class="math notranslate nohighlight">\(a\)</span> is defined as</p>
@@ -981,8 +1035,8 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </ul>
 </li>
 </ul>
-<section id="definitionof-effect-modification-and-why-effect-modification">
-<h3>4.1 &amp; 4.3 Definitionof effect modification and why effect modification<a class="headerlink" href="#definitionof-effect-modification-and-why-effect-modification" title="Permalink to this headline">#</a></h3>
+<section id="definitionof-effect-modification-what-and-why-effect-modification">
+<h3>4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification<a class="headerlink" href="#definitionof-effect-modification-what-and-why-effect-modification" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>Definition of effect modification</p>
 <ul class="simple">
@@ -1031,7 +1085,13 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 <li><p>Conditional causal effects in the strata defined by the effect modifiers may be more transportable than the causal effect in the entire population, but there is no guarantee that the conditional effect measures in one population equal the conditional effect measures in another population. Due to different reasons:</p>
 <ul>
 <li><p>unmeasured, or unknown, causal effect modifiers whose conditional distributions vary between the two populations</p></li>
-<li><p><strong>Fine Point 4.2 place holder</strong></p></li>
+<li><p>when transportability may be justified from one to antoher population?</p>
+<ul>
+<li><p>Effection modification: similar distribution of effect modifiers</p></li>
+<li><p>Versions fo treatment: requires similar distr. of versions fo treatment</p></li>
+<li><p>Interference: treating one individual many affect the outcome of others in the populaiton</p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>transportability of causal effects is an unverifiable assumption that relies heavily on subject-matter knowledge. It is a more difficult problem than the identification of causal effects in a single population</p></li>
@@ -1041,7 +1101,142 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </section>
 <section id="how-to-quantify-effect-modification">
 <h3>4.2, 4.4, &amp; 4.5 How to quantify effect modification<a class="headerlink" href="#how-to-quantify-effect-modification" title="Permalink to this headline">#</a></h3>
+<section id="stratification">
+<h4>Stratification<a class="headerlink" href="#stratification" title="Permalink to this headline">#</a></h4>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>if treatment assignment was random and unconditional, exchangeability is expected in every subset of the population.</p>
+</aside>
+<ul class="simple">
+<li><p>To identify effect modification by <span class="math notranslate nohighlight">\(V\)</span> in an ideal experiment with unconditional randomization, one just needs to conduct a stratified analysis, that is, to compute the association measure in each level of the variable <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Step 2 can be ignored when <span class="math notranslate nohighlight">\(V\)</span> is equal to the variables <span class="math notranslate nohighlight">\(L\)</span> that are needed for conditional exchangeability</p>
+</aside>
+<ul class="simple">
+<li><p>The procedure to compute the conditional risks <span class="math notranslate nohighlight">\(Pr[Y^{a=1}=1|V = v]\)</span> and <span class="math notranslate nohighlight">\(Pr[Y^{a=0}=1|V = v]\)</span> in each stratum <span class="math notranslate nohighlight">\(v\)</span> has two stages: 1) stratification by <span class="math notranslate nohighlight">\(V\)</span> , and 2) standardization by <span class="math notranslate nohighlight">\(L\)</span> (or, equivalently, IP weighting with weights depending on <span class="math notranslate nohighlight">\(L\)</span>).</p></li>
+</ul>
+</section>
+<section id="adjustment-via-stratification">
+<h4>Adjustment via stratification<a class="headerlink" href="#adjustment-via-stratification" title="Permalink to this headline">#</a></h4>
+<ul>
+<li><p>In practice stratification is often used as an alternative to standardization (and IP weighting) to adjust for <span class="math notranslate nohighlight">\(L\)</span>. In fact, the use of stratification as a method to adjust for <span class="math notranslate nohighlight">\(L\)</span> is so widespread that many investigators consider the terms “stratification” and “adjustment” as synonymous.</p>
+<ul class="simple">
+<li><p>Stratification provides conditional effect measures within each of the stratum</p></li>
+</ul>
+</li>
+<li><p>Unlike standardization and IP weighting, adjustment via stratification requires computing the effect measures in subsets of the population defined by a combination of all variables <span class="math notranslate nohighlight">\(L\)</span> that are required for conditional exchangeability.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>In contrast, stratification by <span class="math notranslate nohighlight">\(V\)</span> followed by IP weighting or standardization to adjust for <span class="math notranslate nohighlight">\(L\)</span> allows one to deal with exchangeability and effect modification separately, as described above.</p>
+</aside>
+<ul class="simple">
+<li><p>That is, the use of stratification forces one to evaluate effect modification by all variables <span class="math notranslate nohighlight">\(L\)</span> required to achieve conditional exchangeability, regardless of whether one is interested in such effect modification.</p></li>
+</ul>
+</li>
+<li><p>Other problems associated with the use of stratification are <em>noncollapsibility</em> of certain effect measures like the odds ratio (Fine Point 4.3) and inappropriate adjustment that leads to bias when, in the case for <strong>time-varying treatments</strong>, it is necessary to adjust for time-varying variables <span class="math notranslate nohighlight">\(L\)</span> that are affected by prior treatment (see Part III of the book).</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Stratification requires positivity in addition to exchangeability: the causal effectcannotbecomputed in subsets <span class="math notranslate nohighlight">\(L=l\)</span> in which there are only treated, or untreated, individuals.</p>
+</aside>
+<ul class="simple">
+<li><p><em>Ristriction</em>: compute causal effect in only some of the strata defined by the variables <span class="math notranslate nohighlight">\(L\)</span> and no stratum-specific measures for some other strata</p></li>
+</ul>
+</section>
+<section id="adjustment-via-matching">
+<h4>Adjustment via matching<a class="headerlink" href="#adjustment-via-matching" title="Permalink to this headline">#</a></h4>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Pay attention to the difference in matching applied to case-control studies:</p>
+<p>Even if the matching factors suffice for conditional exchangeability, matching in cases and controls does not achieve unconditional exchangeability of the treated and the untreated in the matched population. Adjustment for the matching factors via stratification is required to estimate conditional (stratumspecific) effect measures.</p>
+</aside>
+<ul class="simple">
+<li><p>The goal of matching is to construct a subset of the population in which the variables <span class="math notranslate nohighlight">\(L\)</span> have the same distribution in both the treated and the untreated.</p>
+<ul>
+<li><p>Under the assumption of conditional exchangeability given <span class="math notranslate nohighlight">\(L\)</span>, the result of this procedure is (unconditional) exchangeability of the treated and the untreated in the matched population.</p></li>
+<li><p>The chosen group defines the subpopulation on which the causal effect is being computed (e.g. effect in the treated/untreated)</p></li>
+</ul>
+</li>
+<li><p>Because the matched population is a subset of the original study population, the distribution of causal effect modifiers in the matched study population will generally differ from that in the original, unmatched study population</p></li>
+</ul>
+</section>
+<section id="fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated">
+<h4>Fine and Tech Points 4.1 Causal effect in the treated/untreated<a class="headerlink" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Consider a particular and special subset of the population, the treated (<span class="math notranslate nohighlight">\(A=1\)</span>), the average causal effect in the treated is expressed as</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
+\]</div>
+<ul>
+<li><p>The causal risk ratio in the treated is also called the <strong>standardized morbidity ratio (SMR)</strong></p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>However, even though one could say that there is effect modification by the pretreatment variable <span class="math notranslate nohighlight">\(V\)</span> even if <span class="math notranslate nohighlight">\(V\)</span> is only a surrogate (e.g., nationality) for the causal effect modifiers, one would not say that there is modification of the effect <span class="math notranslate nohighlight">\(A\)</span> by treatment <span class="math notranslate nohighlight">\(A\)</span> because it sounds confusing.</p>
+</aside>
+</li>
+<li><p>The average effect in the treated will differ from the average effect in the population if the distribution of individual causal effects varies between the treated and the untreated.</p></li>
+</ul>
 <p><img alt="kyDpUe_2022_06_20" src="https://cdn.jsdelivr.net/gh/askming/upic&#64;master/uPic/kyDpUe_2022_06_20.png" /></p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>In other words, it is irrelevant whether the risk in the untreated, had they been treated, equals the risk in those who were actually treated.</p>
+</aside>
+<ul>
+<li><p>Computing the average causal effect in the treated only requires partial exchangeability <span class="math notranslate nohighlight">\(Y^{A=0} \perp\!\!\!\perp A|L\)</span>.</p>
+<ul class="simple">
+<li><p>similarly, the average causal effect in the untreated is computed under the partial exchangeability condition <span class="math notranslate nohighlight">\(Y^{a=1} \perp\!\!\!\perp A|L\)</span></p></li>
+</ul>
+</li>
+<li><p>To compute the counterfactual mean <span class="math notranslate nohighlight">\(E(Y^{a}|A=a')\)</span>:</p>
+<ul>
+<li><p>Standardization</p>
+<div class="math notranslate nohighlight">
+\[
+    E(Y^{a}|A=a') = \sum_l E(Y|A=a, L=l)Pr(L=l|A=a')
+    \]</div>
+</li>
+<li><p>IP weighting</p>
+<div class="math notranslate nohighlight">
+\[
+    E(Y^{a}|A=a') = \frac{E\left[\frac{I(A=a)Y}{f(A|L)Pr(A=a'|L)}\right]}{E\left[\frac{I(A=a)}{f(A|L)Pr(A=a'|L)}\right]}
+    \]</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="summary">
+<h3>4.6 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Stratified analysis is needed to inspect the existence of effect modification from certain variable(s) <span class="math notranslate nohighlight">\(L\)</span> on the treatment <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p>When doing standardization and IP weighting, stratefication is used as a technique to estimate the average/weighted outcome in each of the treatment arms to construct the final estimate of the treatment effect</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{ll}
+  Pr(Y^{a=1}=1) - Pr(Y^{a=0}=1)
+  &amp;= \sum_lPr(Y^{a=1}=1|L=l) - \sum_lPr(Y^{a=0}=1|L=l) \\
+  &amp;= \sum_l Pr(Y=1|A=1, L=l) - \sum_l Pr(Y=1|A=0, L=l)
+  \end{array}
+  \end{split}\]</div>
+</li>
+<li><p>In contrast, pooling stratum-specific effect (e.g., Woolf, Mantel-Haenszel, maximum likelihood) needs to compute the stratum-specific effect first followed by combining the individual effects using some kind of weighted average with weights chosen to reduce the variability of the pooled estimate.</p>
+<ul class="simple">
+<li><p>The main goal of pooling is to obtain a narrower confidence interval around the common stratum-specificeffect measure, but <strong>the pooled effect measure is still a conditional effect measure</strong>.</p></li>
+</ul>
+</li>
+<li><p>These four approaches can be divided into two groups according to the type of effect they estimate: standardization and IP weighting can be used to compute either marginal or conditional effects, stratification/restriction and matching can only be used to compute conditional effects in certain subsets of the population.</p>
+<ul class="simple">
+<li><p>The idea is that, if the effect measure is the same in all strata (i.e., if there is no effect-measure modification), then the pooled effect measure will be a more precise estimate of the common effect measure.</p></li>
+<li><p>In the absence of effect modification, the effect measures (risk ratio or risk difference) computed via standardization, IP weighting, stratification/restriction, and matching will be equal.</p></li>
+</ul>
+</li>
+<li><p>Investigators conducting observational studies need to explicitly define the causal effect of interest and the subset of the population in which the effect is being computed. Otherwise, misunderstandings might easily arise when effect measures obtained via different methods are different.</p></li>
+</ul>
 </section>
 </section>
 <section id="chapter-5-interaction">
