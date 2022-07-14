@@ -820,7 +820,12 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#np-bincount">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.bincount()
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -982,7 +987,12 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#np-bincount">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.bincount()
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -1185,8 +1195,17 @@ title="Print to PDF"
 <li><p>more generally, the index of arraries</p></li>
 </ul>
 </section>
-<section id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="np-bincount">
+<h2><code class="docutils literal notranslate"><span class="pre">np.bincount()</span></code><a class="headerlink" href="#np-bincount" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Convert a <code class="docutils literal notranslate"><span class="pre">np.bincount()</span></code> result back to the original vector</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)),</span> <span class="n">C</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
 </section>
 </section>
 

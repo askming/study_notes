@@ -125,4 +125,10 @@ The memory size of an array equals to `array.size * array.itemsize`
 - what does the `-1` mean in `v.reshape(-1, x)`
 - more generally, the index of arraries
 
-## 
+## `np.bincount()`
+- Convert a `np.bincount()` result back to the original vector
+  ```python
+  C = np.bincount([1,1,2,3,4,4,6])
+  A = np.repeat(np.arange(len(C)), C)
+  print(A)
+  ```
