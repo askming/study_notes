@@ -124,3 +124,5 @@ The memory size of an array equals to `array.size * array.itemsize`
 ## `np.reshape()`
 - what does the `-1` mean in `v.reshape(-1, x)`
 - more generally, the index of arraries
+
+## 
