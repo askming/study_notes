@@ -98,7 +98,7 @@ IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in w
   - Standardized mean for treatment level $a$ is defined as
 
     $$
-    \sum_l E\left[Y|A=a, L=l\right]
+    \sum_l E\left[Y|A=a, L=l\right]Pr(L=l)
     $$
   
   - IP weighted mean for the treatment level $a$ is defined as
@@ -128,7 +128,7 @@ IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in w
   - How to identify/quantify effect modification? Hint: use stratification
   - Stratification and matching are both adjustment methods; what is the definition of adjustment? Any other adjustment methods?
 
-### 4.1 & 4.3 Definitionof effect modification and why effect modification
+### 4.1 & 4.3 Definitionof effect modification (what) and why effect modification
 - Definition of effect modification
   - We say that $V$ is a modifier of the effect of $A$ on $Y$ when the average causal effect of $A$ on $Y$ varies across levels of $V$
     - The existence of effect modification depends on the effect measure being used (e.g., risk difference, risk ratio), so it is more accurate to use the term *effect-measure modification*, to emphasize the dependence of the concept on the choice of effect measure
@@ -154,17 +154,109 @@ IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in w
 - *Transportability* of causal inference: The extrapolation of causal effects computed in one population to a second population
   - Conditional causal effects in the strata defined by the effect modifiers may be more transportable than the causal effect in the entire population, but there is no guarantee that the conditional effect measures in one population equal the conditional effect measures in another population. Due to different reasons:
     - unmeasured, or unknown, causal effect modifiers whose conditional distributions vary between the two populations
-    - **Fine Point 4.2 place holder**
+    - when transportability may be justified from one to antoher population?
+      - Effection modification: similar distribution of effect modifiers
+      - Versions fo treatment: requires similar distr. of versions fo treatment
+      - Interference: treating one individual many affect the outcome of others in the populaiton
   - transportability of causal effects is an unverifiable assumption that relies heavily on subject-matter knowledge. It is a more difficult problem than the identification of causal effects in a single population
 
 
-
-
 ### 4.2, 4.4, & 4.5 How to quantify effect modification
+#### Stratification
+```{margin}
+if treatment assignment was random and unconditional, exchangeability is expected in every subset of the population.
+```
+- To identify effect modification by $V$ in an ideal experiment with unconditional randomization, one just needs to conduct a stratified analysis, that is, to compute the association measure in each level of the variable $V$.
+
+```{margin}
+Step 2 can be ignored when $V$ is equal to the variables $L$ that are needed for conditional exchangeability
+```
+- The procedure to compute the conditional risks $Pr[Y^{a=1}=1|V = v]$ and $Pr[Y^{a=0}=1|V = v]$ in each stratum $v$ has two stages: 1) stratification by $V$ , and 2) standardization by $L$ (or, equivalently, IP weighting with weights depending on $L$).
+
+#### Adjustment via stratification
+- In practice stratification is often used as an alternative to standardization (and IP weighting) to adjust for $L$. In fact, the use of stratification as a method to adjust for $L$ is so widespread that many investigators consider the terms “stratification” and “adjustment” as synonymous.
+  - Stratification provides conditional effect measures within each of the stratum
+
+- Unlike standardization and IP weighting, adjustment via stratification requires computing the effect measures in subsets of the population defined by a combination of all variables $L$ that are required for conditional exchangeability.
+  ```{margin}
+  In contrast, stratification by $V$ followed by IP weighting or standardization to adjust for $L$ allows one to deal with exchangeability and effect modification separately, as described above.
+  ```
+  - That is, the use of stratification forces one to evaluate effect modification by all variables $L$ required to achieve conditional exchangeability, regardless of whether one is interested in such effect modification.
+- Other problems associated with the use of stratification are *noncollapsibility* of certain effect measures like the odds ratio (Fine Point 4.3) and inappropriate adjustment that leads to bias when, in the case for **time-varying treatments**, it is necessary to adjust for time-varying variables $L$ that are affected by prior treatment (see Part III of the book).
+
+```{margin}
+Stratification requires positivity in addition to exchangeability: the causal effectcannotbecomputed in subsets $L=l$ in which there are only treated, or untreated, individuals.
+```
+- *Ristriction*: compute causal effect in only some of the strata defined by the variables $L$ and no stratum-specific measures for some other strata
 
 
+#### Adjustment via matching
+```{margin}
+Pay attention to the difference in matching applied to case-control studies: 
+
+Even if the matching factors suffice for conditional exchangeability, matching in cases and controls does not achieve unconditional exchangeability of the treated and the untreated in the matched population. Adjustment for the matching factors via stratification is required to estimate conditional (stratumspecific) effect measures.
+```
+- The goal of matching is to construct a subset of the population in which the variables $L$ have the same distribution in both the treated and the untreated.
+  - Under the assumption of conditional exchangeability given $L$, the result of this procedure is (unconditional) exchangeability of the treated and the untreated in the matched population.
+  - The chosen group defines the subpopulation on which the causal effect is being computed (e.g. effect in the treated/untreated)
+
+- Because the matched population is a subset of the original study population, the distribution of causal effect modifiers in the matched study population will generally differ from that in the original, unmatched study population
+
+#### Fine and Tech Points 4.1 Causal effect in the treated/untreated 
+- Consider a particular and special subset of the population, the treated ($A=1$), the average causal effect in the treated is expressed as
+
+$$
+Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
+$$
+
+- The causal risk ratio in the treated is also called the **standardized morbidity ratio (SMR)**
+  ```{margin}
+  However, even though one could say that there is effect modification by the pretreatment variable $V$ even if $V$ is only a surrogate (e.g., nationality) for the causal effect modifiers, one would not say that there is modification of the effect $A$ by treatment $A$ because it sounds confusing.
+  ```
+- The average effect in the treated will differ from the average effect in the population if the distribution of individual causal effects varies between the treated and the untreated.
 
 ![kyDpUe_2022_06_20](https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/kyDpUe_2022_06_20.png)
+
+```{margin}
+In other words, it is irrelevant whether the risk in the untreated, had they been treated, equals the risk in those who were actually treated.
+```
+- Computing the average causal effect in the treated only requires partial exchangeability $Y^{A=0} \perp\!\!\!\perp A|L$.
+  - similarly, the average causal effect in the untreated is computed under the partial exchangeability condition $Y^{a=1} \perp\!\!\!\perp A|L$
+
+- To compute the counterfactual mean $E(Y^{a}|A=a')$:
+  - Standardization
+    
+    $$
+    E(Y^{a}|A=a') = \sum_l E(Y|A=a, L=l)Pr(L=l|A=a')
+    $$
+
+  - IP weighting
+    
+    $$
+    E(Y^{a}|A=a') = \frac{E\left[\frac{I(A=a)Y}{f(A|L)Pr(A=a'|L)}\right]}{E\left[\frac{I(A=a)}{f(A|L)Pr(A=a'|L)}\right]}
+    $$
+
+### 4.6 Summary
+- Stratified analysis is needed to inspect the existence of effect modification from certain variable(s) $L$ on the treatment $A$
+- When doing standardization and IP weighting, stratefication is used as a technique to estimate the average/weighted outcome in each of the treatment arms to construct the final estimate of the treatment effect
+  
+  $$
+  \begin{array}{ll}
+  Pr(Y^{a=1}=1) - Pr(Y^{a=0}=1)
+  &= \sum_lPr(Y^{a=1}=1|L=l) - \sum_lPr(Y^{a=0}=1|L=l) \\
+  &= \sum_l Pr(Y=1|A=1, L=l) - \sum_l Pr(Y=1|A=0, L=l)
+  \end{array}
+  $$
+
+- In contrast, pooling stratum-specific effect (e.g., Woolf, Mantel-Haenszel, maximum likelihood) needs to compute the stratum-specific effect first followed by combining the individual effects using some kind of weighted average with weights chosen to reduce the variability of the pooled estimate.
+  - The main goal of pooling is to obtain a narrower confidence interval around the common stratum-specificeffect measure, but **the pooled effect measure is still a conditional effect measure**.
+
+- These four approaches can be divided into two groups according to the type of effect they estimate: standardization and IP weighting can be used to compute either marginal or conditional effects, stratification/restriction and matching can only be used to compute conditional effects in certain subsets of the population.
+  - The idea is that, if the effect measure is the same in all strata (i.e., if there is no effect-measure modification), then the pooled effect measure will be a more precise estimate of the common effect measure.
+  - In the absence of effect modification, the effect measures (risk ratio or risk difference) computed via standardization, IP weighting, stratification/restriction, and matching will be equal.
+
+- Investigators conducting observational studies need to explicitly define the causal effect of interest and the subset of the population in which the effect is being computed. Otherwise, misunderstandings might easily arise when effect measures obtained via different methods are different.
+
 
 
 ## Chapter 5 Interaction
