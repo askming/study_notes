@@ -1,6 +1,22 @@
 # Pandas study note
 
+- understanding how index works in pandas
+  - Understanding `.loc`, `iloc`, `.ilocx`
 
+  - `.idxmin`, `.idxmax`
+
+  - subsetting
+
+- `duplicated()`, `drop_duplicate()`
+- `len(df)` returns # of rows of a df
+- `level=` option in `sum()` or `groupby()` 
+- `nlargest(n)`
+- Understanding `rang`, `np.arange`, `np.linspace`
+- `.shift()`?
+- `transform(aggfunc)`
+- `rolling(n, min_period)`
+- `freq` argument in `date_range()`
+- `df.interpolate()`?
 
 
 
