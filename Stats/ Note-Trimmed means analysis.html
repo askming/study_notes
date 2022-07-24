@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Gaussain Process &#8212; Study Notes</title>
+    <title>Trimmed means analysis &#8212; Study Notes</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -58,8 +58,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Notes on Group Sequential Trial Design​" href="Note-Group_Sequential_Trial_Design.html" />
-    <link rel="prev" title="Notes on FDA Guidances for Industry" href="Note-FDA%20guidances%20for%20industry.html" />
+    <link rel="next" title="How R searches and finds stuff" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html" />
+    <link rel="prev" title="Survival Analysis" href="Note-Survival_Analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -223,8 +223,8 @@ const thebe_selector_output = ".output, .cell_output"
    Notes on FDA Guidances for Industry
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Note-Gaussian%20process.html">
    Gaussain Process
   </a>
  </li>
@@ -315,8 +315,8 @@ const thebe_selector_output = ".output, .cell_output"
    Survival Analysis
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="%C2%A0Note-Trimmed%20means%20analysis.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Trimmed means analysis
   </a>
  </li>
@@ -600,7 +600,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Note-Gaussian process.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/ Note-Trimmed means analysis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -628,7 +628,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/Stats/Note-Gaussian process.md"
+        <a href="../_sources/Stats/ Note-Trimmed means analysis.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -665,94 +665,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multivariate-gaussian-distributions">
-   Multivariate Gaussian distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gaussian-processes">
-   Gaussian Processes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kernels">
-     Kernels
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References:
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Gaussain Process</h1>
+                <h1>Trimmed means analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multivariate-gaussian-distributions">
-   Multivariate Gaussian distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gaussian-processes">
-   Gaussian Processes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kernels">
-     Kernels
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References:
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -760,93 +689,32 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="gaussain-process">
-<h1>Gaussain Process<a class="headerlink" href="#gaussain-process" title="Permalink to this headline">#</a></h1>
-<section id="multivariate-gaussian-distributions">
-<h2>Multivariate Gaussian distributions<a class="headerlink" href="#multivariate-gaussian-distributions" title="Permalink to this headline">#</a></h2>
-<ul>
-<li><p>For a given set of training points, there are potentially infinitely many functions that fit the data. Gaussian processes offer an elegant solution to this problem by assigning a probability to each of these functions</p>
-<p><a class="reference external" href="http://www.gaussianprocess.org/gpml/chapters/RW.pdf">[1]</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="trimmed-means-analysis">
+<h1>Trimmed means analysis<a class="headerlink" href="#trimmed-means-analysis" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
-<li><p>The mean of this probability distribution then represents the most probable characterization of the data.</p></li>
-<li><p>Furthermore, using a probabilistic approach allows us to incorporate the confidence of the prediction into the regression result.</p></li>
-</ul>
-</li>
-<li><p>Gaussian distributions have the nice algebraic property of being closed under <em>conditioning</em> and <em>marginalization</em>.</p>
+<li><p>In clinical trials, some patients may discontinue the randomized treatment due to lack of efficacy or toxicity, which can be considered as intercurrent event (ICE) under the ICH E9 framework. To handle such ICE, one can use the composite strategy, whereby one somehow incorporates the occurrence of the ICE into the definition of the outcome or endpoint variable.</p>
 <ul>
-<li><p>Being closed under conditioning and marginalization means that the resulting distributions from these operations are also Gaussian, which makes many problems in statistics and machine learning tractable.</p></li>
-<li><p>Marginalization</p>
-<div class="math notranslate nohighlight">
-\[
-    p_X(x) = \int_yp_{X,Y}(x, y)dy = \int_yp_{X|Y}(x|y)p_Y(y)dy
-    \]</div>
-</li>
-<li><p>Conditioning</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    X∣Y ∼N(μ_X+Σ_{XY}Σ_{YY}^{−1}(Y−μ_Y),Σ_{XX}−Σ_{XY}Σ_{YY}^{−1}Σ_{YX})\\
-    Y∣X ∼N(μ_Y+Σ_{YX}Σ_{XX}^{−1}(X−μ_X),Σ_{YY}−Σ_{YX}Σ_{XX}^{−1}Σ_{XY})
-    \end{split}\]</div>
-<ul class="simple">
-<li><p>In conditioning, the new mean only depends on the conditioned variable, while the covariance matrix is <strong>independent</strong> from this variable (constant and equal to the marginal variance/covariance).</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="gaussian-processes">
-<h2>Gaussian Processes<a class="headerlink" href="#gaussian-processes" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Stochastic processes, such as Gaussian processes, are essentially a set of random variables. In addition, each of these random variables has a corresponding index <em>i</em>.</p></li>
-<li><p>In Gaussian processes we treat each test point as a random variable. A multivariate Gaussian distribution has the same number of dimensions as the number of random variables. Since we want to predict the function values at <span class="math notranslate nohighlight">\(∣X∣=N\)</span> test points, the corresponding multivariate Gaussian distribution is also <em>N</em>-dimensional. Making a prediction using a Gaussian process ultimately boils down to drawing samples from this distribution. We then interpret the <em>i</em>-th component of the resulting vector as the function value corresponding to the i<em>i</em>-th test point.</p></li>
-</ul>
-<section id="kernels">
-<h3>Kernels<a class="headerlink" href="#kernels" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>The clever step of Gaussian processes is how we set up the covariance matrix <span class="math notranslate nohighlight">\(\Sigma\)</span>. The covariance matrix will not only describe the shape of our distribution, but ultimately determines the characteristics of the function that we want to predict.</p>
+<li><p>when the outcome is binary, this approach is relative straightforward, for those experienced an ICE due to the above reasons, their endpoint value is set to the category or level which constitutes a bad outcome. Hence we lump together patients who experienced the intercurrent event with those that did not but which had a bad outcome nevertheless.</p></li>
+<li><p>When the endpoint is continuous, applying the composite strategy is harder, i.e. whcih value should be assign for those patients with ICE?</p>
 <ul>
-<li><p>We generate the covariance matrix by evaluating the kernel <em>k</em>, which is often also called <em>covariance function</em>, pairwise on all the points.</p></li>
-</ul>
-</li>
-<li><p>The kernel receives two points <span class="math notranslate nohighlight">\(t,t’ \in \mathbb{R}^n\)</span> as an input and returns a similarity measure between those points in the form of a scalar:
-$<span class="math notranslate nohighlight">\(
-k:\mathbb{R}^n \times \mathbb{R}^n, \Sigma = \text{Cov}(X, X') = k(t, t')
-\)</span>$</p></li>
-<li><p>Since the kernel describes the similarity between the values of our function, it controls the possible shape that a fitted function can adopt.</p></li>
-<li><p>Kernels allow similarity measures that go far beyond the standard euclidean distance (<em>L</em>2-distance). Many of these kernels conceptually embed the input points into a higher dimensional space in which they then measure the similarity</p></li>
-<li><p>Example of kernels</p>
+<li><p><span id="id1">[<a class="reference internal" href="#id40" title="Thomas Permutt and Feng Li. Trimmed means for symptom trials with dropouts. Pharmaceutical statistics, 16(1):20–28, 2017.">Permutt and Li, 2017</a>]</span> proposed a trimmed means approach to answering this question.</p>
 <ul>
-<li><p><strong>RBF</strong>: <span class="math notranslate nohighlight">\(\sigma^2\exp\left(-{||t-t'||}\over{2l^2}\right)\)</span></p></li>
-<li><p><strong>Periodic</strong>: <span class="math notranslate nohighlight">\(\sigma^2\exp\left(-{2\sin^2(\pi|t-t'|/p)}\over{l^2}\right)\)</span></p></li>
-<li><p><strong>Linear</strong>: <span class="math notranslate nohighlight">\(\sigma_b^2 + \sigma^2(t-c)(t'-c)\)</span></p></li>
-</ul>
-</li>
-<li><p>Kernels can be separated into <em>stationary</em> and <em>non-stationary</em> kernels.</p>
-<ul>
-<li><p><em>Stationary</em> kernels, such as the RBF kernel or the periodic kernel, are functions invariant to translations, and the covariance of two points is only dependent on their relative position.</p></li>
-<li><p><em>Non-stationary</em> kernels, such as the linear kernel, do not have this constraint and depend on an absolute location.</p></li>
-</ul>
-</li>
-<li><p>A big benefit that kernels provide is that they can be combined together, resulting in a more specialized kernel.</p>
-<ul>
-<li><p>The decision which kernel to use is highly dependent on prior knowledge about the data, e.g. if certain characteristics are expected.</p></li>
-<li><p>The most common kernel combinations would be addition and multiplication. And there are more possibilities such as concatenation or composition with a functions</p></li>
+<li><p>Patients who experience the ICE are assigned a very bad value (e.g. the worst value possible for the variable) for the outcome, with the justification that the ICE occurring constitutes a bad outcome (in a general sense) for the patient. It does not matter precisely what value is assigned, because in the next step we trim (delete) the worst <span class="math notranslate nohighlight">\(x\%\)</span> of patients from treatment group.</p></li>
+<li><p>Thus as long as the very bad value is so bad that we are guaranteed the patients assigned this value are trimmed (excluded), it doesn’t matter precisely what the value is. We then calculate the difference in means (difference in trimmed means) between the two treatment groups.</p></li>
 </ul>
 </li>
 </ul>
-<p>Qs:</p>
-<ul class="simple">
-<li><p>didn’t understand what is a GP in an intuitive way and hot wo interpret it.</p></li>
-<li><p>what does functions from xx  distributions taht are created using different kernels mean?</p></li>
-<li><p>each data sample/point is a variable in GP? the dimension is the number of data points?</p></li>
+</li>
 </ul>
-</section>
-</section>
-<section id="references">
-<h2>References:<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://distill.pub/2019/visual-exploration-gaussian-processes/">A Visual Exploration of Gaussian Processes</a></p>
-</section>
+</li>
+</ul>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id40"><span class="brackets"><a class="fn-backref" href="#id1">PL17</a></span></dt>
+<dd><p>Thomas Permutt and Feng Li. Trimmed means for symptom trials with dropouts. <em>Pharmaceutical statistics</em>, 16(1):20–28, 2017.</p>
+</dd>
+</dl>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -882,17 +750,17 @@ k:\mathbb{R}^n \times \mathbb{R}^n, \Sigma = \text{Cov}(X, X') = k(t, t')
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Note-FDA%20guidances%20for%20industry.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Note-Survival_Analysis.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Notes on FDA Guidances for Industry</p>
+            <p class="prev-next-title">Survival Analysis</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Note-Group_Sequential_Trial_Design.html" title="next page">
+    <a class='right-next' id="next-link" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notes on Group Sequential Trial Design​</p>
+        <p class="prev-next-title">How R searches and finds stuff</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
