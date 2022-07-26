@@ -132,3 +132,7 @@ The memory size of an array equals to `array.size * array.itemsize`
   A = np.repeat(np.arange(len(C)), C)
   print(A)
   ```
+
+
+## `np.enisum`
+See intro blog [here](https://ajcr.net/Basic-guide-to-einsum/)
