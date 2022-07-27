@@ -762,6 +762,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#chapter-5-interaction">
    Chapter 5 Interaction
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interaction-requires-a-joint-intervention">
+     5.1 Interaction requires a joint intervention
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifying-interaction">
+     5.2 Identifying interaction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">
+   Chapter 6 Graphical representation of causal effects
+  </a>
  </li>
 </ul>
 
@@ -856,6 +873,23 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-5-interaction">
    Chapter 5 Interaction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interaction-requires-a-joint-intervention">
+     5.1 Interaction requires a joint intervention
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifying-interaction">
+     5.2 Identifying interaction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">
+   Chapter 6 Graphical representation of causal effects
   </a>
  </li>
 </ul>
@@ -1027,6 +1061,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </ul>
 </li>
 </ul>
+<hr>
 </section>
 </section>
 <section id="chapter-4-effect-modification">
@@ -1242,10 +1277,62 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
 </li>
 <li><p>Investigators conducting observational studies need to explicitly define the causal effect of interest and the subset of the population in which the effect is being computed. Otherwise, misunderstandings might easily arise when effect measures obtained via different methods are different.</p></li>
 </ul>
+<hr>
 </section>
 </section>
 <section id="chapter-5-interaction">
 <h2>Chapter 5 Interaction<a class="headerlink" href="#chapter-5-interaction" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Key ideas/points in this chapter</p>
+<ul>
+<li><p>What is an interaction?</p></li>
+<li><p>What is the difference between interaction and effect modification?</p></li>
+<li><p>How is an interaction caused? How to identify it?</p></li>
+<li><p>What is sufficient causes?</p></li>
+</ul>
+</li>
+</ul>
+<section id="interaction-requires-a-joint-intervention">
+<h3>5.1 Interaction requires a joint intervention<a class="headerlink" href="#interaction-requires-a-joint-intervention" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>Joint interventions</em>: interventions on two or more treatments</p></li>
+<li><p>Definition of interaction:</p>
+<ul>
+<li><p>There is interaction between two treatments <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> if the causal effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> after a joint intervention that set <span class="math notranslate nohighlight">\(E\)</span> to 1 differs from the causal effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> after a joint intervention that set <span class="math notranslate nohighlight">\(E\)</span> to 0.</p></li>
+<li><p>Depending on the choice of effect measure, the interaction can be on the additive scale or multiplicative scale</p></li>
+</ul>
+</li>
+<li><p>Differentiating interaction and effect modification</p>
+<ul>
+<li><p>Under interaction, there are two treatments, and these two treatments have euqal status in the definition of interaction. That is the counterfactual can be defined on either interventions to define the existence of interaction</p></li>
+<li><p>In contrast, the definition of effect modification involves the counterfactual outcomes only on one of the two variables, i.e. the treatment variable of interest (say, <span class="math notranslate nohighlight">\(Y^a\)</span>) but not the counterfactual outcomes <span class="math notranslate nohighlight">\(Y^{a, v}\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="identifying-interaction">
+<h3>5.2 Identifying interaction<a class="headerlink" href="#identifying-interaction" title="Permalink to this headline">#</a></h3>
+<hr>
+</section>
+</section>
+<section id="chapter-6-graphical-representation-of-causal-effects">
+<h2>Chapter 6 Graphical representation of causal effects<a class="headerlink" href="#chapter-6-graphical-representation-of-causal-effects" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Key ideas/points in this chapter</p>
+<ul>
+<li><p>What is a DAG (Direct Acyclic Graph), what is it used for?</p></li>
+<li><p>DAG representation of the key causal inference concepts: marginal/conditional independence, positivity, and consistency</p></li>
+<li><p>Type of biases</p></li>
+<li><p>DAG representation of effect modification</p></li>
+</ul>
+</li>
+</ul>
+<p><em>The following three chapters (7, 8, 9) are about different sources of biases in causal analysis, which are</em></p>
+<ul class="simple">
+<li><p>Confounding: common cause of intervention and outcome</p></li>
+<li><p>Selection bias: common effect</p></li>
+<li><p>Measurement bias or information bias</p></li>
+</ul>
 </section>
 </section>
 
