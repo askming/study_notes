@@ -122,6 +122,8 @@ IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in w
 
   - When treatment is continuous, which is an unlikely design choice in conditionally randomized experiments, $E[I(A=a)Y/f(A|L)]$ is no longer equal to $\sum_l E\left[Y|A=a, L=l\right]$ and thus is biased for $E[Y^a]$ even under exchangeability
 
+<hr>
+
 ## Chapter 4 Effect Modification
 - Key ideas in this chapter
   - Definition of effect modification (EM); why we care about it?
@@ -257,6 +259,39 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
 
 - Investigators conducting observational studies need to explicitly define the causal effect of interest and the subset of the population in which the effect is being computed. Otherwise, misunderstandings might easily arise when effect measures obtained via different methods are different.
 
-
+<hr>
 
 ## Chapter 5 Interaction
+- Key ideas/points in this chapter
+  - What is an interaction?
+  - What is the difference between interaction and effect modification?
+  - How is an interaction caused? How to identify it?
+  - What is sufficient causes?
+
+
+### 5.1 Interaction requires a joint intervention
+- *Joint interventions*: interventions on two or more treatments
+- Definition of interaction: 
+  - There is interaction between two treatments $A$ and $E$ if the causal effect of $A$ on $Y$ after a joint intervention that set $E$ to 1 differs from the causal effect of $A$ on $Y$ after a joint intervention that set $E$ to 0.
+  - Depending on the choice of effect measure, the interaction can be on the additive scale or multiplicative scale
+
+- Differentiating interaction and effect modification
+  - Under interaction, there are two treatments, and these two treatments have euqal status in the definition of interaction. That is the counterfactual can be defined on either interventions to define the existence of interaction
+  - In contrast, the definition of effect modification involves the counterfactual outcomes only on one of the two variables, i.e. the treatment variable of interest (say, $Y^a$) but not the counterfactual outcomes $Y^{a, v}$.
+
+### 5.2 Identifying interaction
+
+<hr>
+
+## Chapter 6 Graphical representation of causal effects
+- Key ideas/points in this chapter
+  - What is a DAG (Direct Acyclic Graph), what is it used for?
+  - DAG representation of the key causal inference concepts: marginal/conditional independence, positivity, and consistency
+  - Type of biases
+  - DAG representation of effect modification
+
+
+*The following three chapters (7, 8, 9) are about different sources of biases in causal analysis, which are*
+- Confounding: common cause of intervention and outcome
+- Selection bias: common effect
+- Measurement bias or information bias
