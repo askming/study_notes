@@ -280,6 +280,56 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
   - In contrast, the definition of effect modification involves the counterfactual outcomes only on one of the two variables, i.e. the treatment variable of interest (say, $Y^a$) but not the counterfactual outcomes $Y^{a, v}$.
 
 ### 5.2 Identifying interaction
+- Identifying interaction requires exchangeability, positivity, and consistency for both treatments.
+  - When both treatments are randomly assigned, then the concepts of interaction and effect modification conincide.
+  
+  $$
+  Pr(Y^{a=1, e=1} = 1) = Pr(Y^{a=1}=1|E=1)
+  $$
+
+  and the techniques used to identify effect modification can be used to identify interaction.
+
+  - When one of the treatment, say $E$, is not randomly assigned, four marginal risks $Pr(Y^{a, e} = 1)$ need to be computed under the usual identifying assumtpions, by standardiztion or IP weighting conditional on the measured covariates.
+    - Rather than viewing $A$ and $E$ as two distinct treatments with two possible levels (1 or 0) each, one can view $AE$ as a combined treatment with four possible levels (11, 01, 10, 00) and interaction can be evaluated when exchangeability, positivity,and consistency are all satisfied for the joint treatment $(A, E)$. 
+      - However, this condistion is not necessary when the two tretments occur at different times (see Part III of the book)
+
+- When conditional exchangeability can only be assumed for treatment $A$ but $E$, one cannot generally assess the presence of interaction between $A$ and $E$, but can still assess the presence of the effect modification by $E$.
+  - Thus, there can be modification of the effect of $A$ by another variable without interaction between $A$ and that variable.
+
+### 5.3 Counterfactual response types and interaction
+- Each combination of counterfactual responses is often referred to as are sponse pattern or a *response type*.
+
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/Nvo64V_2022_07_27.png" width='40%'>
+ 
+  - When considering two dichotomous treatments $A$ and $E$,thereare16 possible response types because each individual has four counterfactual outcomes
+
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/jlHwmV_2022_07_27.png" width = "40%">
+
+    - if all individuals in the population have response types 1, 4, 6, 11, 13 and 16 then there will be no interaction between $A$ and $E$ on the additive scale.
+
+    - The presence of **additive** interaction between $A$ and $E$ implies that, for some individuals in the population, the value of their two counterfactual outcomes under $A = a$ cannot be determined without knowledge of the value of $E$, and vice versa.
+      - types 8, 12, 14, and 15
+      - types 7 and 10
+      - types 2, 3, 5, and 9
+
+### 5.4 Sufficient causes
+- We refer to the smallest set of background factors that, together with $A =1$ are sufficient to inevitably produce the outcome as $U_1$. The simultaneous presence of treatment $(A=1)$ and $U_1=1$ is a minimal *sufficient cause* of the outcome $Y$.
+  - By definition of background factors, the dichotomous variables $U$ cannot be intervened on, and cannot be affected by treatment $A$.
+  - The term *sufficient-component causes* is often used to refer to the sufficient causes and their components (e.g. $A$ or $U$ or both).
+
+### 5.4 Sufficient causes interaction
+- The definition of interaction within the counterfactual framework does not require any knowledge about those mechanisms nor even that the treatments work together (see Fine Point 5.3).
+- A sufficient cause interaction between $A$ and $E$ exists in the population if $A$ and $E$ occur together in a sufficient cause.
+
+
+
+
+
+
+
+
+
+
 
 <hr>
 

@@ -773,6 +773,21 @@ title="Print to PDF"
      5.2 Identifying interaction
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counterfactual-response-types-and-interaction">
+     5.3 Counterfactual response types and interaction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sufficient-causes">
+     5.4 Sufficient causes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sufficient-causes-interaction">
+     5.4 Sufficient causes interaction
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -883,6 +898,21 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#identifying-interaction">
      5.2 Identifying interaction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counterfactual-response-types-and-interaction">
+     5.3 Counterfactual response types and interaction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sufficient-causes">
+     5.4 Sufficient causes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sufficient-causes-interaction">
+     5.4 Sufficient causes interaction
     </a>
    </li>
   </ul>
@@ -1312,6 +1342,75 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
 </section>
 <section id="identifying-interaction">
 <h3>5.2 Identifying interaction<a class="headerlink" href="#identifying-interaction" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Identifying interaction requires exchangeability, positivity, and consistency for both treatments.</p>
+<ul class="simple">
+<li><p>When both treatments are randomly assigned, then the concepts of interaction and effect modification conincide.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  Pr(Y^{a=1, e=1} = 1) = Pr(Y^{a=1}=1|E=1)
+  \]</div>
+<p>and the techniques used to identify effect modification can be used to identify interaction.</p>
+<ul class="simple">
+<li><p>When one of the treatment, say <span class="math notranslate nohighlight">\(E\)</span>, is not randomly assigned, four marginal risks <span class="math notranslate nohighlight">\(Pr(Y^{a, e} = 1)\)</span> need to be computed under the usual identifying assumtpions, by standardiztion or IP weighting conditional on the measured covariates.</p>
+<ul>
+<li><p>Rather than viewing <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> as two distinct treatments with two possible levels (1 or 0) each, one can view <span class="math notranslate nohighlight">\(AE\)</span> as a combined treatment with four possible levels (11, 01, 10, 00) and interaction can be evaluated when exchangeability, positivity,and consistency are all satisfied for the joint treatment <span class="math notranslate nohighlight">\((A, E)\)</span>.</p>
+<ul>
+<li><p>However, this condistion is not necessary when the two tretments occur at different times (see Part III of the book)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>When conditional exchangeability can only be assumed for treatment <span class="math notranslate nohighlight">\(A\)</span> but <span class="math notranslate nohighlight">\(E\)</span>, one cannot generally assess the presence of interaction between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span>, but can still assess the presence of the effect modification by <span class="math notranslate nohighlight">\(E\)</span>.</p>
+<ul class="simple">
+<li><p>Thus, there can be modification of the effect of <span class="math notranslate nohighlight">\(A\)</span> by another variable without interaction between <span class="math notranslate nohighlight">\(A\)</span> and that variable.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="counterfactual-response-types-and-interaction">
+<h3>5.3 Counterfactual response types and interaction<a class="headerlink" href="#counterfactual-response-types-and-interaction" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Each combination of counterfactual responses is often referred to as are sponse pattern or a <em>response type</em>.</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/Nvo64V_2022_07_27.png" width='40%'>
+<ul>
+<li><p>When considering two dichotomous treatments <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span>,thereare16 possible response types because each individual has four counterfactual outcomes</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/jlHwmV_2022_07_27.png" width = "40%">
+<ul class="simple">
+<li><p>if all individuals in the population have response types 1, 4, 6, 11, 13 and 16 then there will be no interaction between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> on the additive scale.</p></li>
+<li><p>The presence of <strong>additive</strong> interaction between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> implies that, for some individuals in the population, the value of their two counterfactual outcomes under <span class="math notranslate nohighlight">\(A = a\)</span> cannot be determined without knowledge of the value of <span class="math notranslate nohighlight">\(E\)</span>, and vice versa.</p>
+<ul>
+<li><p>types 8, 12, 14, and 15</p></li>
+<li><p>types 7 and 10</p></li>
+<li><p>types 2, 3, 5, and 9</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sufficient-causes">
+<h3>5.4 Sufficient causes<a class="headerlink" href="#sufficient-causes" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>We refer to the smallest set of background factors that, together with <span class="math notranslate nohighlight">\(A =1\)</span> are sufficient to inevitably produce the outcome as <span class="math notranslate nohighlight">\(U_1\)</span>. The simultaneous presence of treatment <span class="math notranslate nohighlight">\((A=1)\)</span> and <span class="math notranslate nohighlight">\(U_1=1\)</span> is a minimal <em>sufficient cause</em> of the outcome <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<ul>
+<li><p>By definition of background factors, the dichotomous variables <span class="math notranslate nohighlight">\(U\)</span> cannot be intervened on, and cannot be affected by treatment <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>The term <em>sufficient-component causes</em> is often used to refer to the sufficient causes and their components (e.g. <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(U\)</span> or both).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sufficient-causes-interaction">
+<h3>5.4 Sufficient causes interaction<a class="headerlink" href="#sufficient-causes-interaction" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>The definition of interaction within the counterfactual framework does not require any knowledge about those mechanisms nor even that the treatments work together (see Fine Point 5.3).</p></li>
+<li><p>A sufficient cause interaction between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> exists in the population if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> occur together in a sufficient cause.</p></li>
+</ul>
 <hr>
 </section>
 </section>
