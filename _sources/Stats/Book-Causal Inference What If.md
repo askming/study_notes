@@ -266,7 +266,7 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
   - What is an interaction?
   - What is the difference between interaction and effect modification?
   - How is an interaction caused? How to identify it?
-  - What is sufficient causes?
+  - What is sufficient causes and sufficient cause interaction? How is sufficient component causes related with counterfactual response types? (optional)
 
 
 ### 5.1 Interaction requires a joint intervention
@@ -312,23 +312,49 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
       - types 7 and 10
       - types 2, 3, 5, and 9
 
-### 5.4 Sufficient causes
+### 5.4 Sufficient causes & 5.5 Sufficient causes interaction & 5.6
 - We refer to the smallest set of background factors that, together with $A =1$ are sufficient to inevitably produce the outcome as $U_1$. The simultaneous presence of treatment $(A=1)$ and $U_1=1$ is a minimal *sufficient cause* of the outcome $Y$.
   - By definition of background factors, the dichotomous variables $U$ cannot be intervened on, and cannot be affected by treatment $A$.
   - The term *sufficient-component causes* is often used to refer to the sufficient causes and their components (e.g. $A$ or $U$ or both).
 
-### 5.4 Sufficient causes interaction
 - The definition of interaction within the counterfactual framework does not require any knowledge about those mechanisms nor even that the treatments work together (see Fine Point 5.3).
+  ```{margin}
+  another concept of interaction is not based on counterfactual contrasts but rather on sufficient-component causes, and thus we refer to it as interaction within the *sufficient-component-cause* framework or, for brevity, sufficient cause interaction.
+  ```
 - A sufficient cause interaction between $A$ and $E$ exists in the population if $A$ and $E$ occur together in a sufficient cause.
+  - *Synergistic*: when $A=1$ and $E=1$ are present in the same sufficient cause
+  - *Antagonistic*: when $A=1$ and $E=0$ (or $A=0$ and $E=1$) are present in the same sufficient cause
 
+- The correspondence between conterfactual response types and the sufficient component causes
+  - Example with a dichtomous treatment and outcome
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/iRs0aP_2022_07_29.png" width="80%">
 
+  - A particular combination of component causes corresponds to one and only one counterfactual type.
+  - However, a particular response type may correspond to several combinations of component causes
+  - There will be exchangeability if the proportions of “doomed” + “hurt” ($U_0=1$ or $U_1=1$) and of “doomed” + “helped” ($U_0=1$ or $U_1=2$) are equal in the treated and the untreated. That is, exchangeability for a dichotomous treatment and out come can be expressed in terms of sufficient-component causes as
+  
+    $$
+    Pr(U_0=1 \text{ or } U_1=1|A=1) = Pr(U_0=1 \text{ or } U_1=1|A=0), \text{ and}
+    $$
 
+    
+    $$
+    Pr(U_0=1 \text{ or } U_2=1|A=1) = Pr(U_0=1 \text{ or } U_2=1|A=0)
+    $$
 
+- In epidemiologic discussions, sufficient cause interaction is commonly referred to as *biologic interaction* (Rothman et al, 1980).
 
+- Counterfactuals or sufficient-component causes
+  - The sufficient component cause model considers sets of actions, events, or states of nature which together inevitably bring about the outcome under consideration.
+    - It addresses the question, “Given a particular effect, what are the various events which might have been its cause?”
 
-
-
-
+  - The potential outcomes or counterfactual model focuses on one particular cause or intervention and gives an account of the various effects of that cause.
+    - the potential outcomes framework addresses the question, “What would have occurred if a particular factor were intervened upon and thus set to a different level than it in fact was?”
+  
+  - The counterfactual approach addresses the question “what happens?” The sufficient-component-cause approach addresses the question “how does it happen?”
+  - Though the sufficient-component-cause framework is useful from a pedagogic standpoint, its relevance to actual data analysis is yet to be determined.
+  - Suffcient-component-cause framework's conclusions depend on the coding on the outcome, and is by definition limited to dichotomous treatments and outcomes (or to variables that can be recoded as dichotomous variables).
+  - Some apparently alternative frameworks–causal diagrams, decision theory–are essentially equivalent to the counterfactual framework
 
 
 <hr>

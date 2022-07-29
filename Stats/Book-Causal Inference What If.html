@@ -779,13 +779,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sufficient-causes">
-     5.4 Sufficient causes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sufficient-causes-interaction">
-     5.4 Sufficient causes interaction
+    <a class="reference internal nav-link" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6">
+     5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6
     </a>
    </li>
   </ul>
@@ -906,13 +901,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sufficient-causes">
-     5.4 Sufficient causes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sufficient-causes-interaction">
-     5.4 Sufficient causes interaction
+    <a class="reference internal nav-link" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6">
+     5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6
     </a>
    </li>
   </ul>
@@ -1318,7 +1308,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
 <li><p>What is an interaction?</p></li>
 <li><p>What is the difference between interaction and effect modification?</p></li>
 <li><p>How is an interaction caused? How to identify it?</p></li>
-<li><p>What is sufficient causes?</p></li>
+<li><p>What is sufficient causes and sufficient cause interaction? How is sufficient component causes related with counterfactual response types? (optional)</p></li>
 </ul>
 </li>
 </ul>
@@ -1394,22 +1384,64 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
 </li>
 </ul>
 </section>
-<section id="sufficient-causes">
-<h3>5.4 Sufficient causes<a class="headerlink" href="#sufficient-causes" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>We refer to the smallest set of background factors that, together with <span class="math notranslate nohighlight">\(A =1\)</span> are sufficient to inevitably produce the outcome as <span class="math notranslate nohighlight">\(U_1\)</span>. The simultaneous presence of treatment <span class="math notranslate nohighlight">\((A=1)\)</span> and <span class="math notranslate nohighlight">\(U_1=1\)</span> is a minimal <em>sufficient cause</em> of the outcome <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<section id="sufficient-causes-5-5-sufficient-causes-interaction-5-6">
+<h3>5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6<a class="headerlink" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6" title="Permalink to this headline">#</a></h3>
 <ul>
+<li><p>We refer to the smallest set of background factors that, together with <span class="math notranslate nohighlight">\(A =1\)</span> are sufficient to inevitably produce the outcome as <span class="math notranslate nohighlight">\(U_1\)</span>. The simultaneous presence of treatment <span class="math notranslate nohighlight">\((A=1)\)</span> and <span class="math notranslate nohighlight">\(U_1=1\)</span> is a minimal <em>sufficient cause</em> of the outcome <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<ul class="simple">
 <li><p>By definition of background factors, the dichotomous variables <span class="math notranslate nohighlight">\(U\)</span> cannot be intervened on, and cannot be affected by treatment <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
 <li><p>The term <em>sufficient-component causes</em> is often used to refer to the sufficient causes and their components (e.g. <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(U\)</span> or both).</p></li>
 </ul>
 </li>
-</ul>
-</section>
-<section id="sufficient-causes-interaction">
-<h3>5.4 Sufficient causes interaction<a class="headerlink" href="#sufficient-causes-interaction" title="Permalink to this headline">#</a></h3>
+<li><p>The definition of interaction within the counterfactual framework does not require any knowledge about those mechanisms nor even that the treatments work together (see Fine Point 5.3).</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>another concept of interaction is not based on counterfactual contrasts but rather on sufficient-component causes, and thus we refer to it as interaction within the <em>sufficient-component-cause</em> framework or, for brevity, sufficient cause interaction.</p>
+</aside>
+</li>
+<li><p>A sufficient cause interaction between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> exists in the population if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> occur together in a sufficient cause.</p>
 <ul class="simple">
-<li><p>The definition of interaction within the counterfactual framework does not require any knowledge about those mechanisms nor even that the treatments work together (see Fine Point 5.3).</p></li>
-<li><p>A sufficient cause interaction between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> exists in the population if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> occur together in a sufficient cause.</p></li>
+<li><p><em>Synergistic</em>: when <span class="math notranslate nohighlight">\(A=1\)</span> and <span class="math notranslate nohighlight">\(E=1\)</span> are present in the same sufficient cause</p></li>
+<li><p><em>Antagonistic</em>: when <span class="math notranslate nohighlight">\(A=1\)</span> and <span class="math notranslate nohighlight">\(E=0\)</span> (or <span class="math notranslate nohighlight">\(A=0\)</span> and <span class="math notranslate nohighlight">\(E=1\)</span>) are present in the same sufficient cause</p></li>
+</ul>
+</li>
+<li><p>The correspondence between conterfactual response types and the sufficient component causes</p>
+<ul>
+<li><p>Example with a dichtomous treatment and outcome
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/iRs0aP_2022_07_29.png" width="80%"></p></li>
+<li><p>A particular combination of component causes corresponds to one and only one counterfactual type.</p></li>
+<li><p>However, a particular response type may correspond to several combinations of component causes</p></li>
+<li><p>There will be exchangeability if the proportions of “doomed” + “hurt” (<span class="math notranslate nohighlight">\(U_0=1\)</span> or <span class="math notranslate nohighlight">\(U_1=1\)</span>) and of “doomed” + “helped” (<span class="math notranslate nohighlight">\(U_0=1\)</span> or <span class="math notranslate nohighlight">\(U_1=2\)</span>) are equal in the treated and the untreated. That is, exchangeability for a dichotomous treatment and out come can be expressed in terms of sufficient-component causes as</p>
+<div class="math notranslate nohighlight">
+\[
+    Pr(U_0=1 \text{ or } U_1=1|A=1) = Pr(U_0=1 \text{ or } U_1=1|A=0), \text{ and}
+    \]</div>
+<div class="math notranslate nohighlight">
+\[
+    Pr(U_0=1 \text{ or } U_2=1|A=1) = Pr(U_0=1 \text{ or } U_2=1|A=0)
+    \]</div>
+</li>
+</ul>
+</li>
+<li><p>In epidemiologic discussions, sufficient cause interaction is commonly referred to as <em>biologic interaction</em> (Rothman et al, 1980).</p></li>
+<li><p>Counterfactuals or sufficient-component causes</p>
+<ul class="simple">
+<li><p>The sufficient component cause model considers sets of actions, events, or states of nature which together inevitably bring about the outcome under consideration.</p>
+<ul>
+<li><p>It addresses the question, “Given a particular effect, what are the various events which might have been its cause?”</p></li>
+</ul>
+</li>
+<li><p>The potential outcomes or counterfactual model focuses on one particular cause or intervention and gives an account of the various effects of that cause.</p>
+<ul>
+<li><p>the potential outcomes framework addresses the question, “What would have occurred if a particular factor were intervened upon and thus set to a different level than it in fact was?”</p></li>
+</ul>
+</li>
+<li><p>The counterfactual approach addresses the question “what happens?” The sufficient-component-cause approach addresses the question “how does it happen?”</p></li>
+<li><p>Though the sufficient-component-cause framework is useful from a pedagogic standpoint, its relevance to actual data analysis is yet to be determined.</p></li>
+<li><p>Suffcient-component-cause framework’s conclusions depend on the coding on the outcome, and is by definition limited to dichotomous treatments and outcomes (or to variables that can be recoded as dichotomous variables).</p></li>
+<li><p>Some apparently alternative frameworks–causal diagrams, decision theory–are essentially equivalent to the counterfactual framework</p></li>
+</ul>
+</li>
 </ul>
 <hr>
 </section>
