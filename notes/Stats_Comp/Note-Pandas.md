@@ -1,13 +1,36 @@
 # Pandas study note
 
 - understanding how index works in pandas
-  - Understanding `.loc`, `iloc`, `.ilocx`
+  - Understanding `.loc`, `iloc`, `.ilocx` and others
+    - `[]`: Primarily selects subsets of columns, but can select rows as well. Cannot simultaneously select rows and columns.
+      - when given names/list of names, default is to select the cols; when gvien slicing index/names, selects the rows 
+    - `.loc` only works on index (i.e. row and col names); selects subsets of rows and columns by label only
+      ```python
+      # selecting rows
+      df.loc['row_label']
+      # or
+      df.loc[[row_labels]]
+      
+      # selecting cols
+      df.loc[, 'col_name']
+      ```
+    - `.iloc` works on position (**integer** location, you must use intergers when selecting by interger location); selects subsets of rows and columns by integer location only
+      ```python
+      # index can take the format as start:end:step for both row and col
+      df.iloc[row_index, col_index]
+      ```
+    - `at` gets scalar values. it's a very fast `loc`
+    - `iat` gets scalar values. it's avery fast `iloc`
 
   - `.idxmin`, `.idxmax`
+    - to return the index of the maximum/minimum value across a specified axis in a pandas DataFrame: `df.idxmax(axis = 0, skipna = True)`
+      - they will return the **first occurrence** of the maximum value.
 
-  - subsetting
+  - subsetting: using boolean in the `.loc` row indexing to select subset of the data
 
-- `duplicated()`, `drop_duplicate()`
+- `duplicated()`, `drop_duplicates()`
+  - `df.duplicated(subset, keep)`: returns a Series of bool denoting dupliate rows.
+  - `drop_duplicates(subset = col_lables, keep = {`first`, `last`, False}, inplace)`
 - `len(df)` returns # of rows of a df
 - `level=` option in `sum()` or `groupby()` 
 - `nlargest(n)`
