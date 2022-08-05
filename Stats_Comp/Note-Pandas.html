@@ -726,15 +726,55 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-study-note">
 <h1>Pandas study note<a class="headerlink" href="#pandas-study-note" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
+<ul>
 <li><p>understanding how index works in pandas</p>
 <ul>
-<li><p>Understanding <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, <code class="docutils literal notranslate"><span class="pre">.ilocx</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.idxmin</span></code>, <code class="docutils literal notranslate"><span class="pre">.idxmax</span></code></p></li>
-<li><p>subsetting</p></li>
+<li><p>Understanding <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, <code class="docutils literal notranslate"><span class="pre">.ilocx</span></code> and others</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code>: Primarily selects subsets of columns, but can select rows as well. Cannot simultaneously select rows and columns.</p>
+<ul class="simple">
+<li><p>when given names/list of names, default is to select the cols; when gvien slicing index/names, selects the rows</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">duplicated()</span></code>, <code class="docutils literal notranslate"><span class="pre">drop_duplicate()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> only works on index (i.e. row and col names); selects subsets of rows and columns by label only</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># selecting rows</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;row_label&#39;</span><span class="p">]</span>
+<span class="c1"># or</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="n">row_labels</span><span class="p">]]</span>
+
+<span class="c1"># selecting cols</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[,</span> <span class="s1">&#39;col_name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> works on position (<strong>integer</strong> location, you must use intergers when selecting by interger location); selects subsets of rows and columns by integer location only</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># index can take the format as start:end:step for both row and col</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">at</span></code> gets scalar values. it’s a very fast <code class="docutils literal notranslate"><span class="pre">loc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iat</span></code> gets scalar values. it’s avery fast <code class="docutils literal notranslate"><span class="pre">iloc</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.idxmin</span></code>, <code class="docutils literal notranslate"><span class="pre">.idxmax</span></code></p>
+<ul class="simple">
+<li><p>to return the index of the maximum/minimum value across a specified axis in a pandas DataFrame: <code class="docutils literal notranslate"><span class="pre">df.idxmax(axis</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">skipna</span> <span class="pre">=</span> <span class="pre">True)</span></code></p>
+<ul>
+<li><p>they will return the <strong>first occurrence</strong> of the maximum value.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>subsetting: using boolean in the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> row indexing to select subset of the data</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">duplicated()</span></code>, <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.duplicated(subset,</span> <span class="pre">keep)</span></code>: returns a Series of bool denoting dupliate rows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">drop_duplicates(subset</span> <span class="pre">=</span> <span class="pre">col_lables,</span> <span class="pre">keep</span> <span class="pre">=</span> <span class="pre">{</span></code>first<code class="docutils literal notranslate"><span class="pre">,</span> </code>last<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">False},</span> <span class="pre">inplace)</span></code></p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">len(df)</span></code> returns # of rows of a df</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">level=</span></code> option in <code class="docutils literal notranslate"><span class="pre">sum()</span></code> or <code class="docutils literal notranslate"><span class="pre">groupby()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nlargest(n)</span></code></p></li>
