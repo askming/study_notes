@@ -790,6 +790,11 @@ title="Print to PDF"
    Chapter 6 Graphical representation of causal effects
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-7-confounding">
+   Chapter 7 Confounding
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -910,6 +915,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">
    Chapter 6 Graphical representation of causal effects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-7-confounding">
+   Chapter 7 Confounding
   </a>
  </li>
 </ul>
@@ -1229,7 +1239,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </ul>
 <div class="math notranslate nohighlight">
 \[
-Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
+Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 \]</div>
 <ul>
 <li><p>The causal risk ratio in the treated is also called the <strong>standardized morbidity ratio (SMR)</strong></p>
@@ -1463,6 +1473,35 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
 <li><p>Confounding: common cause of intervention and outcome</p></li>
 <li><p>Selection bias: common effect</p></li>
 <li><p>Measurement bias or information bias</p></li>
+</ul>
+</section>
+<section id="chapter-7-confounding">
+<h2>Chapter 7 Confounding<a class="headerlink" href="#chapter-7-confounding" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Key ideas/points in this chapter</p>
+<ul class="simple">
+<li><p>Defintion of confounding and confounder (7.4)</p>
+<ul>
+<li><p>What are the issues with the traditional defintion of confounder? why doesn’t it work? And how to fix them?</p></li>
+</ul>
+</li>
+<li><p>What are the common types of confoundings? (7.1)</p></li>
+<li><p>What is the back door criterion (and the front door fomula)? (7.3, 7.6)</p></li>
+<li><p>What is the Single-world intervention graph (SWIG)? (7.5)</p></li>
+</ul>
+</li>
+<li><p>The front door formula</p>
+<ul>
+<li><p>Given the following DAG, where U is an unobserved confounder, the average causal effect of A on Y cannot be idenfitied with the standardization or IP weighting methods to compurate the counterfactual risk <span class="math notranslate nohighlight">\(Pr(Y^a=1)\)</span>.</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/CzdbwT_2022_08_05.png" width='30%'>
+</li>
+<li><p>Instead, the so-called front door formula can be used to calculate the counterfactual</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  Pr(Y^a=1) = \sum_m Pr(M=m|A=a)\sum_{a'}Pr(Y=1|M=m, A=a')Pr(A=a')
+  \]</div>
+</li>
 </ul>
 </section>
 </section>

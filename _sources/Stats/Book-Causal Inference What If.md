@@ -208,7 +208,7 @@ Even if the matching factors suffice for conditional exchangeability, matching i
 - Consider a particular and special subset of the population, the treated ($A=1$), the average causal effect in the treated is expressed as
 
 $$
-Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=0)
+Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 $$
 
 - The causal risk ratio in the treated is also called the **standardized morbidity ratio (SMR)**
@@ -371,3 +371,33 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
 - Confounding: common cause of intervention and outcome
 - Selection bias: common effect
 - Measurement bias or information bias
+
+
+
+
+
+
+
+
+
+## Chapter 7 Confounding
+- Key ideas/points in this chapter
+  - Defintion of confounding and confounder (7.4)
+    - What are the issues with the traditional defintion of confounder? why doesn't it work? And how to fix them?
+  - What are the common types of confoundings? (7.1)
+  - What is the back door criterion (and the front door fomula)? (7.3, 7.6)
+  - What is the Single-world intervention graph (SWIG)? (7.5)
+
+
+
+- The front door formula
+
+  - Given the following DAG, where U is an unobserved confounder, the average causal effect of A on Y cannot be idenfitied with the standardization or IP weighting methods to compurate the counterfactual risk $Pr(Y^a=1)$.
+  
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/CzdbwT_2022_08_05.png" width='30%'>
+
+  - Instead, the so-called front door formula can be used to calculate the counterfactual
+  
+  $$
+  Pr(Y^a=1) = \sum_m Pr(M=m|A=a)\sum_{a'}Pr(Y=1|M=m, A=a')Pr(A=a')
+  $$
