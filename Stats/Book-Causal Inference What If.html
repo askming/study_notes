@@ -805,6 +805,11 @@ title="Print to PDF"
      6.5 A structural classification of bias
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-structure-of-effect-modification">
+     6.6 The structure of effect modification
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -947,6 +952,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-structural-classification-of-bias">
      6.5 A structural classification of bias
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-structure-of-effect-modification">
+     6.6 The structure of effect modification
     </a>
    </li>
   </ul>
@@ -1495,10 +1505,12 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 <ul class="simple">
 <li><p>Key ideas/points in this chapter</p>
 <ul>
-<li><p>What is a DAG (Direct Acyclic Graph), what is it used for?</p></li>
-<li><p>DAG representation of the key causal inference concepts: marginal/conditional independence, positivity, and consistency</p></li>
-<li><p>Type of biases</p></li>
-<li><p>DAG representation of effect modification</p></li>
+<li><p>What is a DAG (Direct Acyclic Graph), what is it used for? (6.1)</p></li>
+<li><p>DAG representation of the key causal inference concepts: marginal/conditional independence, positivity, and consistency (Section 6.2 to 6.4)</p></li>
+<li><p>D-seperation (6.4)</p></li>
+<li><p>Faithfullness (6.4)</p></li>
+<li><p>Type of biases (6.5)</p></li>
+<li><p>DAG representation of effect modification (6.6)</p></li>
 </ul>
 </li>
 </ul>
@@ -1546,6 +1558,85 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/BPcmvn_2022_08_08.png" width="40%"></p></li>
 </ul>
 </li>
+<li><p>When conditional independence is established</p>
+<ul>
+<li><p>Effect of <span class="math notranslate nohighlight">\(A\)</span> on the outcome <span class="math notranslate nohighlight">\(Y\)</span> is only through a mediator <span class="math notranslate nohighlight">\(B\)</span>, and the analysis is conditonal on <span class="math notranslate nohighlight">\(B\)</span>: <span class="math notranslate nohighlight">\(A\perp\!\!\!\perp Y|B\)</span></p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/thuius_2022_08_09.png" width="40%">
+</li>
+<li><p>Conditioning on the common cause of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> (outcome): <span class="math notranslate nohighlight">\(A\perp\!\!\!\perp Y|L\)</span></p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/pKmk6i_2022_08_09.png" width="40%">
+<ul class="simple">
+<li><p>Blocking the flow of association between treatment and outcome through the common cause is the graph-based justification to use stratification as a method to achieve exchangeability.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>When conditional association is introduced</p>
+<ul>
+<li><p>Conditional on the collider or its consequence, the common causes of the the collider (the outcome) are then associated/not independent any more</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/uAAsRt_2022_08_09.png" width="40%">
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/GzGVfy_2022_08_09.png" width="40%">
+<ul class="simple">
+<li><p>Causal graphs theory shows that indeed conditioning on a collider like <span class="math notranslate nohighlight">\(L\)</span> opens the path <span class="math notranslate nohighlight">\(A\rightarrow L \leftarrow Y\)</span> ,which was blocked when the collider was not conditioned on.</p></li>
+<li><p>Causal graphs theory shows that conditioning on a variable <span class="math notranslate nohighlight">\(C\)</span> affected by a collider <span class="math notranslate nohighlight">\(L\)</span> also opens the path <span class="math notranslate nohighlight">\(A\rightarrow L \leftarrow Y\)</span>. This path is blocked in the absence of conditioning on either the collider <span class="math notranslate nohighlight">\(L\)</span> or its consequence <span class="math notranslate nohighlight">\(C\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Three structural reasons why two variables may be associated:</p>
+<ul class="simple">
+<li><p>one causes the other,</p></li>
+<li><p>they share common causes, or</p></li>
+<li><p>they share a common effect and the analysis is restricted to certain level of that common effect (or of its descendants).</p></li>
+<li><p>There is another possible source of association between two variables that we have not discussed yet: <em>chance or random variability</em>.</p></li>
+</ul>
+</li>
+<li><p>Standardization and IP weighting can also be derived using causal graphs theory, as part of what is sometimes referred to as the <strong>do-calculus</strong>.</p></li>
+<li><p>“D-seperation”: to define a path to be either blocked or open</p>
+<ol class="simple">
+<li><p>If there are no variables being conditioned on, a path is blocked if and only if two arrowheads on the path collide at some variable on the path.</p></li>
+<li><p>Any path that contains a non-collider that has been conditioned on is blocked.</p></li>
+<li><p>A collider that has been conditioned on does not block a path.</p></li>
+<li><p>A collider that has a descendant that has been conditioned on does not block a path.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Two variables are d-separated if all paths between them are blocked (otherwise they are d-connected).</p></li>
+<li><p>Two sets of variables are d-separated if each variable in the first set is d-separated from every variable in the second set.</p></li>
+<li><p>The relationship between statistical independence and the purely graphical concept of d-separation relies on the causal Markov assumption (Technical Point 6.1):</p>
+<ul>
+<li><p>In a causal DAG, any variable is independent of its non-descendants conditional on its parents.</p></li>
+<li><p>The causal Markov assumption implies that, given any three disjoint sets <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> of variables, if <span class="math notranslate nohighlight">\(A\)</span> is d-separated from <span class="math notranslate nohighlight">\(B\)</span> conditional on <span class="math notranslate nohighlight">\(C\)</span>,then <span class="math notranslate nohighlight">\(A\)</span> is statistically independent of <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(C\)</span>.</p></li>
+<li><p>The assumption that the converse holds, i.e., that <span class="math notranslate nohighlight">\(A\)</span> is d-separated from <span class="math notranslate nohighlight">\(B\)</span> conditional on <span class="math notranslate nohighlight">\(C\)</span> if <span class="math notranslate nohighlight">\(A\)</span> is statistically independent of <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(C\)</span>, is a separate assumption–the <strong>faithfulness assumption</strong> described in Fine Point 6.2.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Positivity</p>
+<ul class="simple">
+<li><p>Positivity is roughly translated into graph language as the condition that the arrows from the nodes <span class="math notranslate nohighlight">\(L\)</span> to the treatment node <span class="math notranslate nohighlight">\(A\)</span> are not deterministic.</p></li>
+</ul>
+</li>
+<li><p>Consistency</p>
+<ul class="simple">
+<li><p>The first component of consistency–well-defined interventions–means that the arrow from treatment <span class="math notranslate nohighlight">\(A\)</span> to outcome <span class="math notranslate nohighlight">\(L\)</span> corresponds to a possibly hypothetical but relatively unambiguous intervention.</p></li>
+</ul>
+</li>
+<li><p>Positivity is concerned with arrows into the treatment nodes, and well-defined interventions are only concerned with arrows leaving the treatment nodes.</p></li>
+<li><p>Faithfullness</p>
+<ul>
+<li><p>Formally, faithfulness is the assumption that, for three disjoint sets <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> on a causal DAG, (where <span class="math notranslate nohighlight">\(C\)</span> may be the empty set), <span class="math notranslate nohighlight">\(A\)</span> independent of <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(C\)</span> implies <span class="math notranslate nohighlight">\(A\)</span> is d-separated from <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(C\)</span>.</p></li>
+<li><p>When the causal diagram makes us expect a non-null association that does not actually exist in the data (e.g. due to effect modification, which is rare ), we say that the joint distribution of the data is not faithful to the causal DAG.</p></li>
+<li><p>In some occassions, faithfulness may be violated by design: for example in mathcing</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/OJMhqJ_2022_08_09.png" width="40%">
+<ul class="simple">
+<li><p>selection <span class="math notranslate nohighlight">\(S\)</span> (1: yes, 0: no) is determined by both <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(A\)</span>. The box around <span class="math notranslate nohighlight">\(S\)</span> indicates that the analysis is restricted to those selected into the matched cohort (<span class="math notranslate nohighlight">\(S\)</span> =1)</p></li>
+<li><p>there are two open paths between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(L\)</span> when conditioning on <span class="math notranslate nohighlight">\(S\)</span>: <span class="math notranslate nohighlight">\(L \rightarrow A\)</span> and <span class="math notranslate nohighlight">\(L \rightarrow S \leftarrow A\)</span> thus association between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(S\)</span> are expected.</p></li>
+<li><p>However, matching creates an association via the path <span class="math notranslate nohighlight">\(L \rightarrow S \leftarrow A\)</span> that is of equal magnitude, but opposite direction, as the association via the path <span class="math notranslate nohighlight">\(L \rightarrow A\)</span>. The net result is a perfect cancellation of the associations and matching leads to unfaithfulness.</p></li>
+</ul>
+</li>
+<li><p>Faithfulness may be violated when there exist deterministic relations between variables on the graph.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="a-structural-classification-of-bias">
@@ -1568,6 +1659,34 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 <li><p>Confounding: common cause of intervention and outcome</p></li>
 <li><p>Selection bias: common effect</p></li>
 <li><p>Measurement bias or information bias</p></li>
+</ul>
+</section>
+<section id="the-structure-of-effect-modification">
+<h3>6.6 The structure of effect modification<a class="headerlink" href="#the-structure-of-effect-modification" title="Permalink to this headline">#</a></h3>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/mj56N4_2022_08_09.png" width="40%">
+<ul>
+<li><p>The causal diagram in Figure 6.11 includes the effect modifier <span class="math notranslate nohighlight">\(V\)</span> with an arrow into the outcome <span class="math notranslate nohighlight">\(Y\)</span> but no arrow into treatment <span class="math notranslate nohighlight">\(A\)</span> (which is randomly assigned and thus independent of <span class="math notranslate nohighlight">\(V\)</span>).</p>
+<ul class="simple">
+<li><p>First, the causal diagram in Figure 6.11 would still be a valid causal diagram if it did not include <span class="math notranslate nohighlight">\(V\)</span> because <span class="math notranslate nohighlight">\(V\)</span> is not a common cause of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. It is only because the causal question makes reference to <span class="math notranslate nohighlight">\(V\)</span> (i.e., what is the average causal effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> within levels of <span class="math notranslate nohighlight">\(V\)</span>?), that <span class="math notranslate nohighlight">\(V\)</span> needs to be included on the causal diagram.</p></li>
+<li><p>Second, the causal diagram in Figure 6.11 does not necessarily indicate the presence of effect modification by <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Many effect modifiers, however, do not have a causal effect on the outcome. Rather, they are surrogates for variables that have a causal effect on the outcome.</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/b81jQg_2022_08_09.png" width="40%">
+<ul class="simple">
+<li><p>Ananalys is stratified by <span class="math notranslate nohighlight">\(S\)</span> (but not by <span class="math notranslate nohighlight">\(V\)</span>) will generally detect effect modification by <span class="math notranslate nohighlight">\(S\)</span> even though the variable that truly modifies the effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> is <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<ul>
+<li><p>The variable <span class="math notranslate nohighlight">\(S\)</span> is a <em>surrogate effect modifier</em> where as the variable <span class="math notranslate nohighlight">\(V\)</span> is a <em>causal effect modifier</em></p>
+<ul>
+<li><p>A surrogate effect modifier is simply a variable associated with the causal effect modifier.</p></li>
+</ul>
+</li>
+<li><p>Because causal and surrogate effect modifiers are often indistinguishable in practice, the concept of effect modification comprises both.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>surrogate effect modifiers can be associated with the causal effect modifier by structures including common causes, conditioning on common effects, or cause and effect.</p></li>
 </ul>
 <hr>
 </section>
