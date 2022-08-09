@@ -361,10 +361,12 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
 
 ## Chapter 6 Graphical representation of causal effects
 - Key ideas/points in this chapter
-  - What is a DAG (Direct Acyclic Graph), what is it used for?
-  - DAG representation of the key causal inference concepts: marginal/conditional independence, positivity, and consistency
-  - Type of biases
-  - DAG representation of effect modification
+  - What is a DAG (Direct Acyclic Graph), what is it used for? (6.1)
+  - DAG representation of the key causal inference concepts: marginal/conditional independence, positivity, and consistency (Section 6.2 to 6.4)
+  - D-seperation (6.4)
+  - Faithfullness (6.4)
+  - Type of biases (6.5)
+  - DAG representation of effect modification (6.6)
 
 ### 6.1 Causal diagrams
 
@@ -398,6 +400,66 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
   - In Figure 6.3 below, $A$ and $Y$ are associated because there is a flow of association from $A$ to $Y$ (or, equivalently, from $Y$ to $A$) through the common cause $L$.
     <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/BPcmvn_2022_08_08.png" width="40%">
 
+- When conditional independence is established
+  - Effect of $A$ on the outcome $Y$ is only through a mediator $B$, and the analysis is conditonal on $B$: $A\perp\!\!\!\perp Y|B$
+  
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/thuius_2022_08_09.png" width="40%">
+
+  - Conditioning on the common cause of $A$ and $Y$ (outcome): $A\perp\!\!\!\perp Y|L$
+    
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/pKmk6i_2022_08_09.png" width="40%">
+
+    - Blocking the flow of association between treatment and outcome through the common cause is the graph-based justification to use stratification as a method to achieve exchangeability.
+
+- When conditional association is introduced
+  - Conditional on the collider or its consequence, the common causes of the the collider (the outcome) are then associated/not independent any more
+  
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/uAAsRt_2022_08_09.png" width="40%">
+
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/GzGVfy_2022_08_09.png" width="40%">
+
+    - Causal graphs theory shows that indeed conditioning on a collider like $L$ opens the path $A\rightarrow L \leftarrow Y$ ,which was blocked when the collider was not conditioned on.
+    - Causal graphs theory shows that conditioning on a variable $C$ affected by a collider $L$ also opens the path $A\rightarrow L \leftarrow Y$. This path is blocked in the absence of conditioning on either the collider $L$ or its consequence $C$.
+
+- Three structural reasons why two variables may be associated: 
+  - one causes the other, 
+  - they share common causes, or 
+  - they share a common effect and the analysis is restricted to certain level of that common effect (or of its descendants).
+  - There is another possible source of association between two variables that we have not discussed yet: *chance or random variability*.
+
+- Standardization and IP weighting can also be derived using causal graphs theory, as part of what is sometimes referred to as the **do-calculus**.
+- "D-seperation": to define a path to be either blocked or open
+  1. If there are no variables being conditioned on, a path is blocked if and only if two arrowheads on the path collide at some variable on the path.
+  2. Any path that contains a non-collider that has been conditioned on is blocked.
+  3. A collider that has been conditioned on does not block a path.
+  4. A collider that has a descendant that has been conditioned on does not block a path.
+
+  - Two variables are d-separated if all paths between them are blocked (otherwise they are d-connected).
+  - Two sets of variables are d-separated if each variable in the first set is d-separated from every variable in the second set.
+  - The relationship between statistical independence and the purely graphical concept of d-separation relies on the causal Markov assumption (Technical Point 6.1): 
+    - In a causal DAG, any variable is independent of its non-descendants conditional on its parents.
+    - The causal Markov assumption implies that, given any three disjoint sets $A$, $B$, $C$ of variables, if $A$ is d-separated from $B$ conditional on $C$,then $A$ is statistically independent of $B$ given $C$.
+    - The assumption that the converse holds, i.e., that $A$ is d-separated from $B$ conditional on $C$ if $A$ is statistically independent of $B$ given $C$, is a separate assumption–the **faithfulness assumption** described in Fine Point 6.2.
+
+- Positivity
+  - Positivity is roughly translated into graph language as the condition that the arrows from the nodes $L$ to the treatment node $A$ are not deterministic.
+- Consistency
+  - The first component of consistency–well-defined interventions–means that the arrow from treatment $A$ to outcome $L$ corresponds to a possibly hypothetical but relatively unambiguous intervention.
+
+- Positivity is concerned with arrows into the treatment nodes, and well-defined interventions are only concerned with arrows leaving the treatment nodes.
+
+- Faithfullness
+  - Formally, faithfulness is the assumption that, for three disjoint sets $A$, $B$, $C$ on a causal DAG, (where $C$ may be the empty set), $A$ independent of $B$ given $C$ implies $A$ is d-separated from $B$ given $C$.
+  - When the causal diagram makes us expect a non-null association that does not actually exist in the data (e.g. due to effect modification, which is rare ), we say that the joint distribution of the data is not faithful to the causal DAG.
+  - In some occassions, faithfulness may be violated by design: for example in mathcing
+
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/OJMhqJ_2022_08_09.png" width="40%">
+
+    - selection $S$ (1: yes, 0: no) is determined by both $L$ and $A$. The box around $S$ indicates that the analysis is restricted to those selected into the matched cohort ($S$ =1)
+    - there are two open paths between $A$ and $L$ when conditioning on $S$: $L \rightarrow A$ and $L \rightarrow S \leftarrow A$ thus association between $A$ and $S$ are expected.
+    - However, matching creates an association via the path $L \rightarrow S \leftarrow A$ that is of equal magnitude, but opposite direction, as the association via the path $L \rightarrow A$. The net result is a perfect cancellation of the associations and matching leads to unfaithfulness.
+
+  - Faithfulness may be violated when there exist deterministic relations between variables on the graph.
 
 ### 6.5 A structural classification of bias
 - We say that there is *systematic bias* when the data are insufficient to identify–compute–the causal effect even with an infinite sample size.
@@ -413,10 +475,24 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
 - Measurement bias or information bias
 
 
+### 6.6 The structure of effect modification
 
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/mj56N4_2022_08_09.png" width="40%">
 
+- The causal diagram in Figure 6.11 includes the effect modifier $V$ with an arrow into the outcome $Y$ but no arrow into treatment $A$ (which is randomly assigned and thus independent of $V$).
+  - First, the causal diagram in Figure 6.11 would still be a valid causal diagram if it did not include $V$ because $V$ is not a common cause of $A$ and $Y$. It is only because the causal question makes reference to $V$ (i.e., what is the average causal effect of $A$ on $Y$ within levels of $V$?), that $V$ needs to be included on the causal diagram.
+  - Second, the causal diagram in Figure 6.11 does not necessarily indicate the presence of effect modification by $V$.
 
+- Many effect modifiers, however, do not have a causal effect on the outcome. Rather, they are surrogates for variables that have a causal effect on the outcome.
 
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/b81jQg_2022_08_09.png" width="40%">
+
+  - Ananalys is stratified by $S$ (but not by $V$) will generally detect effect modification by $S$ even though the variable that truly modifies the effect of $A$ on $Y$ is $V$.
+    - The variable $S$ is a *surrogate effect modifier* where as the variable $V$ is a *causal effect modifier* 
+      - A surrogate effect modifier is simply a variable associated with the causal effect modifier.
+    - Because causal and surrogate effect modifiers are often indistinguishable in practice, the concept of effect modification comprises both.
+
+- surrogate effect modifiers can be associated with the causal effect modifier by structures including common causes, conditioning on common effects, or cause and effect.
 
 <hr>
 
