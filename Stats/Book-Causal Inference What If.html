@@ -789,6 +789,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">
    Chapter 6 Graphical representation of causal effects
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-diagrams">
+     6.1 Causal diagrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency">
+     6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-structural-classification-of-bias">
+     6.5 A structural classification of bias
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-7-confounding">
@@ -916,6 +933,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">
    Chapter 6 Graphical representation of causal effects
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-diagrams">
+     6.1 Causal diagrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency">
+     6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-structural-classification-of-bias">
+     6.5 A structural classification of bias
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-7-confounding">
@@ -1468,12 +1502,75 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </li>
 </ul>
+<section id="causal-diagrams">
+<h3>6.1 Causal diagrams<a class="headerlink" href="#causal-diagrams" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Causal diagrams like the one below are known as directed acyclic graphs, which is commonly abbreviated as DAGs.</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/tpZKOa_2022_08_08.png" width="40%">
+<ul class="simple">
+<li><p>The presence of an arrow pointing from a particular variable <span class="math notranslate nohighlight">\(V\)</span> to another variable <span class="math notranslate nohighlight">\(W\)</span> indicates that we know there is a direct causal effect (i.e., an effect not mediated through any other variables on the graph) for at least one individual.</p></li>
+<li><p>In DAG, the variable <span class="math notranslate nohighlight">\(V_m\)</span> is a descendant of <span class="math notranslate nohighlight">\(V_j\)</span> (and <span class="math notranslate nohighlight">\(V_j\)</span> is an ancestor of <span class="math notranslate nohighlight">\(V_m\)</span>) if there is a sequence of nodes connected by edges between <span class="math notranslate nohighlight">\(V_j\)</span> and <span class="math notranslate nohighlight">\(V_m\)</span> such that, following the direction indicated by the arrows, one can reach <span class="math notranslate nohighlight">\(V_m\)</span> by starting at <span class="math notranslate nohighlight">\(V_j\)</span>.</p></li>
+<li><p>A <strong>causal DAG</strong> is a DAG in which</p>
+<ol class="simple">
+<li><p>the lack of an arrow from node <span class="math notranslate nohighlight">\(V_j\)</span> to <span class="math notranslate nohighlight">\(V_m\)</span> (i.e., <span class="math notranslate nohighlight">\(V_j\)</span> is not a parent of <span class="math notranslate nohighlight">\(V_m\)</span>)can be interpreted as the absence of a direct causal effect of <span class="math notranslate nohighlight">\(V_j\)</span> on <span class="math notranslate nohighlight">\(V_m\)</span> relative to the other variables on the graph,</p></li>
+<li><p>all common causes, even if unmeasured, of any pair of variables on the graph are themselves on the graph, and</p></li>
+<li><p>any variable is a cause of its descendants.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>A defining property of causal DAGs is that, conditional on its direct causes, any variable on the DAG is independent of any other variable for which it is not a cause.</p>
+<ul class="simple">
+<li><p>This assumption, referred to as the <strong>causal Markov assumption</strong>, implies that in a causal DAG the common causes of any pair of variables in the graph must be also in the graph.</p></li>
+</ul>
+</li>
+<li><p>Conventional causal diagrams do not include the underlying counterfactual variables on the graph. Therefore the link between graphs and counterfactuals has traditionally remained hidden.</p>
+<ul class="simple">
+<li><p>The <strong>Single World Intervention Graph (SWIG)</strong>–seamlessly unifies the counterfactual and graphical approaches to causal inference by explicitly including the counterfactual variables on the graph.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency">
+<h3>6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency<a class="headerlink" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Two variables are (marginally) associated if one causes the other, or if they share common causes. Otherwise they will be <strong>(marginally) independent</strong> (<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(L\)</span> in Figure 6.4 below).</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/GL4w71_2022_08_08.png" width = "40%">
+<ul class="simple">
+<li><p>The common effect <span class="math notranslate nohighlight">\(L\)</span> is referred to as a <em>collider</em> on the path <span class="math notranslate nohighlight">\(A \rightarrow L \leftarrow Y\)</span> because two arrowheads collide on this node.</p></li>
+</ul>
+</li>
+<li><p>Association, unlike causation, is a symmetric relationship between two variables; thus, when present, association flows between two variables regardless of the direction of the causal arrows.</p>
+<ul class="simple">
+<li><p>In Figure 6.3 below, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are associated because there is a flow of association from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(Y\)</span> (or, equivalently, from <span class="math notranslate nohighlight">\(Y\)</span> to <span class="math notranslate nohighlight">\(A\)</span>) through the common cause <span class="math notranslate nohighlight">\(L\)</span>.
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/BPcmvn_2022_08_08.png" width="40%"></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="a-structural-classification-of-bias">
+<h3>6.5 A structural classification of bias<a class="headerlink" href="#a-structural-classification-of-bias" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>We say that there is <em>systematic bias</em> when the data are insufficient to identify–compute–the causal effect even with an infinite sample size.</p>
+<ul>
+<li><p>Informally, we often refer to systematic bias as any structural association between treatment and outcome that does not arise from the causal effect of treatment on outcome in the population of interest</p></li>
+</ul>
+</li>
+<li><p>For the average causal effect in the entire population, we say that there is (unconditional) bias when <span class="math notranslate nohighlight">\(Pr[Y^{a=1} =1]− Pr[Y^{a=0}=1]=Pr[Y =1|A =1]− Pr [Y =1|A =0]\)</span>, which is the case when (unconditional) exchangeability <span class="math notranslate nohighlight">\(Y^{a} \perp\!\!\!\perp A\)</span> does not hold.</p>
+<ul>
+<li><p>For the average causal effects within levels of <span class="math notranslate nohighlight">\(L\)</span>, we say that there is <em>conditional bias</em> whenever <span class="math notranslate nohighlight">\(Pr[Y^{a=1}=1|L = l] − Pr[Y^{a=0}=1|L = l]\)</span> differs from <span class="math notranslate nohighlight">\(Pr[Y =1|L=l, A =1]− Pr [Y =1|L=l, A =0]\)</span> for at least one stratum <span class="math notranslate nohighlight">\(l\)</span>, which is generally the case when conditonal exchangeability <span class="math notranslate nohighlight">\(Y^{a} \perp\!\!\!\perp A|L=l\)</span> doesn not hold for all <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(l\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Absence of (unconditional) bias implies that the association measure (e.g., associational risk ratio or difference) in the population is a consistent estimate of the corresponding effect measure (e.g., causal risk ratio or difference) in the population.</p></li>
+</ul>
 <p><em>The following three chapters (7, 8, 9) are about different sources of biases in causal analysis, which are</em></p>
 <ul class="simple">
 <li><p>Confounding: common cause of intervention and outcome</p></li>
 <li><p>Selection bias: common effect</p></li>
 <li><p>Measurement bias or information bias</p></li>
 </ul>
+<hr>
+</section>
 </section>
 <section id="chapter-7-confounding">
 <h2>Chapter 7 Confounding<a class="headerlink" href="#chapter-7-confounding" title="Permalink to this headline">#</a></h2>

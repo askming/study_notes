@@ -366,6 +366,46 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
   - Type of biases
   - DAG representation of effect modification
 
+### 6.1 Causal diagrams
+
+- Causal diagrams like the one below are known as directed acyclic graphs, which is commonly abbreviated as DAGs.
+  
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/tpZKOa_2022_08_08.png" width="40%">
+
+  - The presence of an arrow pointing from a particular variable $V$ to another variable $W$ indicates that we know there is a direct causal effect (i.e., an effect not mediated through any other variables on the graph) for at least one individual.
+
+  - In DAG, the variable $V_m$ is a descendant of $V_j$ (and $V_j$ is an ancestor of $V_m$) if there is a sequence of nodes connected by edges between $V_j$ and $V_m$ such that, following the direction indicated by the arrows, one can reach $V_m$ by starting at $V_j$.
+  - A **causal DAG** is a DAG in which 
+    1) the lack of an arrow from node $V_j$ to $V_m$ (i.e., $V_j$ is not a parent of $V_m$)can be interpreted as the absence of a direct causal effect of $V_j$ on $V_m$ relative to the other variables on the graph, 
+    2) all common causes, even if unmeasured, of any pair of variables on the graph are themselves on the graph, and 
+    3) any variable is a cause of its descendants.
+
+- A defining property of causal DAGs is that, conditional on its direct causes, any variable on the DAG is independent of any other variable for which it is not a cause.
+  - This assumption, referred to as the **causal Markov assumption**, implies that in a causal DAG the common causes of any pair of variables in the graph must be also in the graph.
+
+- Conventional causal diagrams do not include the underlying counterfactual variables on the graph. Therefore the link between graphs and counterfactuals has traditionally remained hidden.
+  - The **Single World Intervention Graph (SWIG)**–seamlessly unifies the counterfactual and graphical approaches to causal inference by explicitly including the counterfactual variables on the graph.
+
+### 6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency
+- Two variables are (marginally) associated if one causes the other, or if they share common causes. Otherwise they will be **(marginally) independent** ($A$ and $L$ in Figure 6.4 below).
+   
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/GL4w71_2022_08_08.png" width = "40%">
+
+  - The common effect $L$ is referred to as a *collider* on the path $A \rightarrow L \leftarrow Y$ because two arrowheads collide on this node.
+
+- Association, unlike causation, is a symmetric relationship between two variables; thus, when present, association flows between two variables regardless of the direction of the causal arrows.
+  
+  - In Figure 6.3 below, $A$ and $Y$ are associated because there is a flow of association from $A$ to $Y$ (or, equivalently, from $Y$ to $A$) through the common cause $L$.
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/BPcmvn_2022_08_08.png" width="40%">
+
+
+### 6.5 A structural classification of bias
+- We say that there is *systematic bias* when the data are insufficient to identify–compute–the causal effect even with an infinite sample size.
+  - Informally, we often refer to systematic bias as any structural association between treatment and outcome that does not arise from the causal effect of treatment on outcome in the population of interest
+- For the average causal effect in the entire population, we say that there is (unconditional) bias when $Pr[Y^{a=1} =1]− Pr[Y^{a=0}=1]=Pr[Y =1|A =1]− Pr [Y =1|A =0]$, which is the case when (unconditional) exchangeability $Y^{a} \perp\!\!\!\perp A$ does not hold.
+  - For the average causal effects within levels of $L$, we say that there is *conditional bias* whenever $Pr[Y^{a=1}=1|L = l] − Pr[Y^{a=0}=1|L = l]$ differs from $Pr[Y =1|L=l, A =1]− Pr [Y =1|L=l, A =0]$ for at least one stratum $l$, which is generally the case when conditonal exchangeability $Y^{a} \perp\!\!\!\perp A|L=l$ doesn not hold for all $a$ and $l$.
+
+- Absence of (unconditional) bias implies that the association measure (e.g., associational risk ratio or difference) in the population is a consistent estimate of the corresponding effect measure (e.g., causal risk ratio or difference) in the population.
 
 *The following three chapters (7, 8, 9) are about different sources of biases in causal analysis, which are*
 - Confounding: common cause of intervention and outcome
@@ -378,7 +418,7 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
 
 
 
-
+<hr>
 
 ## Chapter 7 Confounding
 - Key ideas/points in this chapter
