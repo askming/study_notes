@@ -492,7 +492,7 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
       - A surrogate effect modifier is simply a variable associated with the causal effect modifier.
     - Because causal and surrogate effect modifiers are often indistinguishable in practice, the concept of effect modification comprises both.
 
-- surrogate effect modifiers can be associated with the causal effect modifier by structures including common causes, conditioning on common effects, or cause and effect.
+  - surrogate effect modifiers can be associated with the causal effect modifier by structures including common causes, conditioning on common effects, or cause and effect.
 
 <hr>
 
