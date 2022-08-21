@@ -517,3 +517,10 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
   $$
   Pr(Y^a=1) = \sum_m Pr(M=m|A=a)\sum_{a'}Pr(Y=1|M=m, A=a')Pr(A=a')
   $$
+
+
+## Chapter 8 Selection bias
+- Source/structure bias
+- Selection bias vs confounding and censoring
+- How to adjust selection bias
+- How to avoid selection bias
