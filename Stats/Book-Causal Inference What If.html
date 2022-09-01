@@ -816,6 +816,28 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#chapter-7-confounding">
    Chapter 7 Confounding
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confounding-and-confounders-7-1-7-4">
+     Confounding and confounders (7.1 &amp; 7.4)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-structure-type-of-confounding-7-1">
+     The structure (type) of confounding (7.1)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#backdoor-criterion-7-3-front-door-criterion-7-6">
+     Backdoor criterion (7.3) &amp; front door criterion (7.6)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-world-intervention-graphs-7-5">
+     Single-world intervention graphs (7.5)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-8-selection-bias">
@@ -970,6 +992,28 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#chapter-7-confounding">
    Chapter 7 Confounding
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confounding-and-confounders-7-1-7-4">
+     Confounding and confounders (7.1 &amp; 7.4)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-structure-type-of-confounding-7-1">
+     The structure (type) of confounding (7.1)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#backdoor-criterion-7-3-front-door-criterion-7-6">
+     Backdoor criterion (7.3) &amp; front door criterion (7.6)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-world-intervention-graphs-7-5">
+     Single-world intervention graphs (7.5)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-8-selection-bias">
@@ -1182,7 +1226,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </li>
 </ul>
 </li>
-<li><p>Why we are about effect modification</p>
+<li><p>Why we care about effect modification</p>
 <ol class="simple">
 <li><p>If a factor <span class="math notranslate nohighlight">\(V\)</span> modifies the effect of treatment <span class="math notranslate nohighlight">\(A\)</span> on the outcome <span class="math notranslate nohighlight">\(Y\)</span> then the average causal effect will differ between populations with different prevalence of <span class="math notranslate nohighlight">\(V\)</span></p>
 <ul class="simple">
@@ -1703,10 +1747,10 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </section>
 <section id="chapter-7-confounding">
 <h2>Chapter 7 Confounding<a class="headerlink" href="#chapter-7-confounding" title="Permalink to this headline">#</a></h2>
-<ul>
-<li><p>Key ideas/points in this chapter</p>
 <ul class="simple">
-<li><p>Defintion of confounding and confounder (7.4)</p>
+<li><p>Key ideas/points in this chapter</p>
+<ul>
+<li><p>Defintion of confounding and confounder (7.3 &amp; 7.4)</p>
 <ul>
 <li><p>What are the issues with the traditional defintion of confounder? why doesn’t it work? And how to fix them?</p></li>
 </ul>
@@ -1716,24 +1760,134 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 <li><p>What is the Single-world intervention graph (SWIG)? (7.5)</p></li>
 </ul>
 </li>
+</ul>
+<section id="confounding-and-confounders-7-1-7-4">
+<h3>Confounding and confounders (7.1 &amp; 7.4)<a class="headerlink" href="#confounding-and-confounders-7-1-7-4" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Confounding (7.1)</p>
+<ul>
+<li><p>The bias caused by shared causes of treatment and outcome</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>In a causal DAG, a backdoor path is a noncausal path between treatment and outcome that remains even if all arrows pointing from treatment to other variables (the descendants of treatment) are removed. That is, the path has an arrow pointing into treatment.</p>
+</aside>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The alternative definition can be equivalently expressed as follows: confounding is “any systematic bias that would be eliminated by randomized assignment of <span class="math notranslate nohighlight">\(A\)</span>”.</p>
+</aside>
+<ul class="simple">
+<li><p>The structure of confounding can be represented by using causal diagrams, i.e. when there is a <strong>backdoor path</strong> exists</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>However, this traditional approach may lead to inappropriate adjustment.</p>
+</aside>
+<ul>
+<li><p>(7.4) Under the traditional approach, a confounder was defined as a variable that meets the following three conditions:</p>
+<ul class="simple">
+<li><p>(1) it is associated with the treatment,</p></li>
+<li><p>(2) it is associated with the outcome conditional on the treatment (with “conditional on the treatment” often replaced by “in the untreated”), and</p></li>
+<li><p>(3) it does not lie on a causal pathway between treatment and outcome.</p></li>
+</ul>
+</li>
+<li><p>An <strong>approach based on a definition of confounder</strong> (i.e. the traditional approach) that relies almost exclusively on statistical considerations may lead, as shown by Figures 7.4 and 7.7, to the wrong advice: adjust for a “confounder” even when structural confounding does not exist.</p>
+<ul class="simple">
+<li><p>The problem arises because the traditional approach starts by defining confounders in the absence of sufficient causal knowledge about the sources of confounding, and then mandates adjustment for those so-called confounders.</p></li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/3zitud_2022_08_31.png" width="40%">
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/wTAfwk_2022_08_31.png" width="40%">
+</li>
+<li><p>Fixing the traditional definition of confounder:</p>
+<ol class="simple">
+<li><p>Replace condition (3) by the condition that “there exist variables <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(U\)</span> such that there is conditional exchangeability within their joint levels <span class="math notranslate nohighlight">\(Y^a \perp\!\!\!\perp A|L, U\)</span>.</p></li>
+<li><p>Replace conditions (1) and (2) by the following condition: <span class="math notranslate nohighlight">\(U\)</span> can be decomposed into two disjoint subsets <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(U_2\)</span> (i.e., <span class="math notranslate nohighlight">\(U=U_1\cup U_2\)</span> and <span class="math notranslate nohighlight">\(U=U_1\cap U_2\)</span> is empty) such that (i) <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(A\)</span> are not associated within strata of <span class="math notranslate nohighlight">\(L\)</span>, and (ii) <span class="math notranslate nohighlight">\(U_2\)</span> and <span class="math notranslate nohighlight">\(A\)</span> are not associated within joint strata of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(L\)</span>, and <span class="math notranslate nohighlight">\(U_1\)</span>.The variables in <span class="math notranslate nohighlight">\(U_1\)</span> may be associated with the variables in <span class="math notranslate nohighlight">\(U_2\)</span>. <span class="math notranslate nohighlight">\(U_1\)</span> can always be chosen to be the largest subset of <span class="math notranslate nohighlight">\(U\)</span> that is unassociated with treatment.</p></li>
+</ol>
+</li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>A structural approach to confounding emphasizes that causal inference from observational data requires a priori causal knowledge. This causal knowledge is summarized in a causal DAG that encodes the researchers’ beliefs or assumptions about the causal network.</p>
+</aside>
+<ul class="simple">
+<li><p>In contrast, a <strong>structural approach</strong> starts by explicitly identifying the sources of confounding–the common causes of treatment and outcome that, were they all measured, would be sufficient to adjust for confounding–and then identifies a sufficient set of adjustment variables.</p>
+<ul>
+<li><p>The structural approach makes clear that including a particular variable in a sufficient set depends on the variables already included in the set.</p></li>
+<li><p>Given a causal DAG, confounding is an absolute concept whereas confounder is a relative one.</p></li>
+</ul>
+</li>
+<li><p>the structural approach to confounding has two important advantages.</p>
+<ul>
+<li><p>First, it prevents inconsistencies between beliefs and actions.</p></li>
+<li><p>Second, the researchers’ assumptions about confounding become explicit and therefore can be explicitly criticized by other investigators.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="the-structure-type-of-confounding-7-1">
+<h3>The structure (type) of confounding (7.1)<a class="headerlink" href="#the-structure-type-of-confounding-7-1" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Healthy worker bias: <em>e.g. the effect of working as a firefighter on the risk of death will be confounded if “being physically fit” is a cause of both being an active firefighter and having a lower mortality rate.</em></p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>channeling: a term to describe the bias created by patient-specific risk factors that encourage doctors to use certain drug within a class of drugs.</p>
+</aside>
+</li>
+<li><p>Confounding by indication or channeling: <em>e.g. the effect of drug on teh risk of disease will be confounded if the drug is more likely to be prescribed to individuals with certain condition that is both an indication for treatment and a risk factor for the disease.</em></p></li>
+<li><p>Reverse causation: <em>e.g. the effect of behavior on the risk of death will be confounded if the behavior is associated with another behavior that has a causal effect on death and tends to co-occur with the behavior.</em></p></li>
+<li><p>Linkage disequilibrium or population stratification: <em>e.g. the effect of a DNA sequence on the risk of developing certain trait will be confounded if there exists another DNA sequence that has a causal effect on y and is more frequent among people carrying the first DNA sequence.</em></p></li>
+</ul>
+</section>
+<section id="backdoor-criterion-7-3-front-door-criterion-7-6">
+<h3>Backdoor criterion (7.3) &amp; front door criterion (7.6)<a class="headerlink" href="#backdoor-criterion-7-3-front-door-criterion-7-6" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>The presence of common causes of treatment and outcome causes confounding because it creates an open backdoor path</p></li>
+<li><p>A open backdoor path can be block by conditioning on a variable on the path</p></li>
+<li><p>A backdoor path is blocked if there is a collider on the path; conditioning on the collider opens the backdoor path</p>
+<ul class="simple">
+<li><p>The definition of collider is pathspecific: <span class="math notranslate nohighlight">\(L\)</span> is a collider on the path <span class="math notranslate nohighlight">\(A\leftarrow U_2 \rightarrow L \leftarrow U_1 \rightarrow Y\)</span> , but not on the path <span class="math notranslate nohighlight">\(A \leftarrow L \leftarrow U_1 \rightarrow Y\)</span>.</p></li>
+<li><p>conditioning on a collider, which happens to be a common effect, may open a previously blocked backdoor path and introduces selection bias.</p></li>
+</ul>
+</li>
+<li><p>In Figure 7.5, the bias is intractable: attempting to block the confounding path opens a selection bias path. There is neither unconditional exchangeability nor conditional exchangeability given <span class="math notranslate nohighlight">\(L\)</span>.</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/New6uk_2022_08_31.png" width="40%">
+<ul>
+<li><p>A solution to the bias in Figure 7.5 would be to measure either (i) a variable <span class="math notranslate nohighlight">\(L_1\)</span> between <span class="math notranslate nohighlight">\(U_1\)</span> and either <span class="math notranslate nohighlight">\(L\)</span> or <span class="math notranslate nohighlight">\(Y\)</span> (condition on <span class="math notranslate nohighlight">\(L_1\)</span> is adequate), or (ii) a variable <span class="math notranslate nohighlight">\(L_2\)</span> between <span class="math notranslate nohighlight">\(U_2\)</span> and either <span class="math notranslate nohighlight">\(L\)</span> or <span class="math notranslate nohighlight">\(A\)</span> (condition on both <span class="math notranslate nohighlight">\(L_2\)</span> and <span class="math notranslate nohighlight">\(L\)</span>).</p>
+<img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/0Eo2Ko_2022_08_31.png" width="40%">
+</li>
+</ul>
+</li>
 <li><p>The front door formula</p>
 <ul>
 <li><p>Given the following DAG, where U is an unobserved confounder, the average causal effect of A on Y cannot be idenfitied with the standardization or IP weighting methods to compurate the counterfactual risk <span class="math notranslate nohighlight">\(Pr(Y^a=1)\)</span>.</p>
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/CzdbwT_2022_08_05.png" width='30%'>
 </li>
+</ul>
+</li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>this identification formula is called front door adjustment because it relies on the existence of a path from <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> that, contrary to a backdoor path, goes through a descendant <span class="math notranslate nohighlight">\(M\)</span> of <span class="math notranslate nohighlight">\(A\)</span> that completely mediates the effect of <span class="math notranslate nohighlight">\(A\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+</aside>
+<ul class="simple">
 <li><p>Instead, the so-called front door formula can be used to calculate the counterfactual</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
   Pr(Y^a=1) = \sum_m Pr(M=m|A=a)\sum_{a'}Pr(Y=1|M=m, A=a')Pr(A=a')
   \]</div>
-</li>
-</ul>
+</section>
+<section id="single-world-intervention-graphs-7-5">
+<h3>Single-world intervention graphs (7.5)<a class="headerlink" href="#single-world-intervention-graphs-7-5" title="Permalink to this headline">#</a></h3>
+</section>
 </section>
 <section id="chapter-8-selection-bias">
 <h2>Chapter 8 Selection bias<a class="headerlink" href="#chapter-8-selection-bias" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Source/structure bias</p></li>
+<li><p>Source/structure (type of) selection bias</p></li>
 <li><p>Selection bias vs confounding and censoring</p></li>
 <li><p>How to adjust selection bias</p></li>
 <li><p>How to avoid selection bias</p></li>

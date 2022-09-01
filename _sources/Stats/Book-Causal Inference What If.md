@@ -141,7 +141,7 @@ IP weighted estimators were proposedbyHorvitzandThompson (1952) for surveys in w
   - *qualitative effect modification*: when the average causal effects in the subsets are in the opposite direction.
     - In the presence of qualitative effect modification, additive effect modification implies multiplicative effect modification, and vice versa. In the absence of qualitative effect modification, however, one can find effect modification on one scale (e.g., multiplicative) but not on the other (e.g., additive).
 
-- Why we are about effect modification
+- Why we care about effect modification
   1. If a factor $V$ modifies the effect of treatment $A$ on the outcome $Y$ then the average causal effect will differ between populations with different prevalence of $V$
      - There is generally no such athingas “*the average* causal effect of treatment $A$ on outcome $Y$ (period)”, but “the average causal effect of treatment $A$ on outcome $Y$ in a population with a particular mix of causal effect modifiers.” 
   2. Evaluating the presence of effect modification is helpful to identify the groups of individuals that would benefit most from an intervention.
@@ -498,29 +498,130 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
 
 ## Chapter 7 Confounding
 - Key ideas/points in this chapter
-  - Defintion of confounding and confounder (7.4)
+  - Defintion of confounding and confounder (7.3 & 7.4)
     - What are the issues with the traditional defintion of confounder? why doesn't it work? And how to fix them?
   - What are the common types of confoundings? (7.1)
   - What is the back door criterion (and the front door fomula)? (7.3, 7.6)
   - What is the Single-world intervention graph (SWIG)? (7.5)
 
+### Confounding and confounders (7.1 & 7.4)
 
+- Confounding (7.1)
+  - The bias caused by shared causes of treatment and outcome
+    ```{margin}
+    In a causal DAG, a backdoor path is a noncausal path between treatment and outcome that remains even if all arrows pointing from treatment to other variables (the descendants of treatment) are removed. That is, the path has an arrow pointing into treatment.
+    ```
+
+    ```{margin}
+    The alternative definition can be equivalently expressed as follows: confounding is “any systematic bias that would be eliminated by randomized assignment of $A$”.
+    ```
+    - The structure of confounding can be represented by using causal diagrams, i.e. when there is a **backdoor path** exists 
+
+```{margin}
+However, this traditional approach may lead to inappropriate adjustment. 
+```
+- (7.4) Under the traditional approach, a confounder was defined as a variable that meets the following three conditions: 
+  - (1) it is associated with the treatment, 
+  - (2) it is associated with the outcome conditional on the treatment (with “conditional on the treatment” often replaced by “in the untreated”), and 
+  - (3) it does not lie on a causal pathway between treatment and outcome.
+
+- An **approach based on a definition of confounder** (i.e. the traditional approach) that relies almost exclusively on statistical considerations may lead, as shown by Figures 7.4 and 7.7, to the wrong advice: adjust for a “confounder” even when structural confounding does not exist.
+  - The problem arises because the traditional approach starts by defining confounders in the absence of sufficient causal knowledge about the sources of confounding, and then mandates adjustment for those so-called confounders.
+
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/3zitud_2022_08_31.png" width="40%">
+
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/wTAfwk_2022_08_31.png" width="40%">
+
+
+- Fixing the traditional definition of confounder:
+  1. Replace condition (3) by the condition that “there exist variables $L$ and $U$ such that there is conditional exchangeability within their joint levels $Y^a \perp\!\!\!\perp A|L, U$. 
+  2. Replace conditions (1) and (2) by the following condition: $U$ can be decomposed into two disjoint subsets $U_1$ and $U_2$ (i.e., $U=U_1\cup U_2$ and $U=U_1\cap U_2$ is empty) such that (i) $U_1$ and $A$ are not associated within strata of $L$, and (ii) $U_2$ and $A$ are not associated within joint strata of $A$, $L$, and $U_1$.The variables in $U_1$ may be associated with the variables in $U_2$. $U_1$ can always be chosen to be the largest subset of $U$ that is unassociated with treatment.
+
+
+```{margin}
+A structural approach to confounding emphasizes that causal inference from observational data requires a priori causal knowledge. This causal knowledge is summarized in a causal DAG that encodes the researchers’ beliefs or assumptions about the causal network.
+```
+- In contrast, a **structural approach** starts by explicitly identifying the sources of confounding–the common causes of treatment and outcome that, were they all measured, would be sufficient to adjust for confounding–and then identifies a sufficient set of adjustment variables.
+  - The structural approach makes clear that including a particular variable in a sufficient set depends on the variables already included in the set.
+  - Given a causal DAG, confounding is an absolute concept whereas confounder is a relative one.
+
+- the structural approach to confounding has two important advantages. 
+  - First, it prevents inconsistencies between beliefs and actions.
+  - Second, the researchers’ assumptions about confounding become explicit and therefore can be explicitly criticized by other investigators.
+
+
+
+
+
+### The structure (type) of confounding (7.1)
+- Healthy worker bias: *e.g. the effect of working as a firefighter on the risk of death will be confounded if "being physically fit" is a cause of both being an active firefighter and having a lower mortality rate.*
+  ```{margin}
+  channeling: a term to describe the bias created by patient-specific risk factors that encourage doctors to use certain drug within a class of drugs.
+  ```
+- Confounding by indication or channeling: *e.g. the effect of drug on teh risk of disease will be confounded if the drug is more likely to be prescribed to individuals with certain condition that is both an indication for treatment and a risk factor for the disease.*
+- Reverse causation: *e.g. the effect of behavior on the risk of death will be confounded if the behavior is associated with another behavior that has a causal effect on death and tends to co-occur with the behavior.*
+- Linkage disequilibrium or population stratification: *e.g. the effect of a DNA sequence on the risk of developing certain trait will be confounded if there exists another DNA sequence that has a causal effect on y and is more frequent among people carrying the first DNA sequence.*
+
+
+### Backdoor criterion (7.3) & front door criterion (7.6)
+- The presence of common causes of treatment and outcome causes confounding because it creates an open backdoor path
+- A open backdoor path can be block by conditioning on a variable on the path
+- A backdoor path is blocked if there is a collider on the path; conditioning on the collider opens the backdoor path
+  - The definition of collider is pathspecific: $L$ is a collider on the path $A\leftarrow U_2 \rightarrow L \leftarrow U_1 \rightarrow Y$ , but not on the path $A \leftarrow L \leftarrow U_1 \rightarrow Y$.
+  - conditioning on a collider, which happens to be a common effect, may open a previously blocked backdoor path and introduces selection bias. 
+
+- In Figure 7.5, the bias is intractable: attempting to block the confounding path opens a selection bias path. There is neither unconditional exchangeability nor conditional exchangeability given $L$.
+  
+  <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/New6uk_2022_08_31.png" width="40%">
+
+  - A solution to the bias in Figure 7.5 would be to measure either (i) a variable $L_1$ between $U_1$ and either $L$ or $Y$ (condition on $L_1$ is adequate), or (ii) a variable $L_2$ between $U_2$ and either $L$ or $A$ (condition on both $L_2$ and $L$).
+
+    <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/0Eo2Ko_2022_08_31.png" width="40%">
 
 - The front door formula
-
   - Given the following DAG, where U is an unobserved confounder, the average causal effect of A on Y cannot be idenfitied with the standardization or IP weighting methods to compurate the counterfactual risk $Pr(Y^a=1)$.
   
     <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/CzdbwT_2022_08_05.png" width='30%'>
 
+```{margin}
+this identification formula is called front door adjustment because it relies on the existence of a path from $A$ and $Y$ that, contrary to a backdoor path, goes through a descendant $M$ of $A$ that completely mediates the effect of $A$ on $Y$.
+```
   - Instead, the so-called front door formula can be used to calculate the counterfactual
   
   $$
   Pr(Y^a=1) = \sum_m Pr(M=m|A=a)\sum_{a'}Pr(Y=1|M=m, A=a')Pr(A=a')
   $$
 
+### Single-world intervention graphs (7.5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Chapter 8 Selection bias
-- Source/structure bias
+- Source/structure (type of) selection bias
 - Selection bias vs confounding and censoring
 - How to adjust selection bias
 - How to avoid selection bias
