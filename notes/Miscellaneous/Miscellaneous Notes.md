@@ -200,4 +200,20 @@
 
 16. If two statistics have non-overlapping confidence intervals, they are necessarily significantly different but if they have overlapping confidence intervals, it is not necessarily true that they are not significantly different.
   ![](https://user-images.githubusercontent.com/5671771/145944091-01a75288-440a-4fe9-ad46-3a445e996935.png)
+
+17. Derive confidence interval from p-value or vice versa (under the normality assumption)
+    1. Knowing p-value and the point estimate, we can derive the corresponding confidence interval when normal approximation is valid:
+         - P-value $\rightarrow$ $Z$ score under $N(0, 1)$
+         - with $Z$ score, point estimate, and the null hypothesis of the parameter of interest, we can derive the standard error (SE) of the point estimate, since
+
+        $$Z = \frac{\bar{x} - \theta_0}{SE(\bar{x})}$$
+      
+         - Then two-sided $(1-\alpha)*100$% CI is $\bar{x} \pm Z_{1-\alpha/2}*SE(\bar{x})$ 
+
+    2. From CI to p-value:
+         - from CI we can get the $SE(\bar{x})$, with which we then can construct the $Z$ score as in the formula above 
+         - With $Z$ score, we can then calculated one- or two-sided p-value based on standard normal distribution
+
+      - Note: one- or two-sided p-value ($p$) can be used to get the one- or two-sided $(1-p)*100%$% CI just as how we use the significance level $\alpha$: $|\hat{x} - \theta_0|$ is the half width of the two-sided $(1-p)*100%$% CI or the width of the one-sided $(1-p)*100%$% CI.
+
     
