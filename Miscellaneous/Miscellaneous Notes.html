@@ -888,6 +888,30 @@ title="Print to PDF"
 </li>
 <li><p>If two statistics have non-overlapping confidence intervals, they are necessarily significantly different but if they have overlapping confidence intervals, it is not necessarily true that they are not significantly different.
 <img alt="" src="https://user-images.githubusercontent.com/5671771/145944091-01a75288-440a-4fe9-ad46-3a445e996935.png" /></p></li>
+<li><p>Derive confidence interval from p-value or vice versa (under the normality assumption)</p>
+<ol>
+<li><p>Knowing p-value and the point estimate, we can derive the corresponding confidence interval when normal approximation is valid:</p>
+<ul class="simple">
+<li><p>P-value <span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(Z\)</span> score under <span class="math notranslate nohighlight">\(N(0, 1)\)</span></p></li>
+<li><p>with <span class="math notranslate nohighlight">\(Z\)</span> score, point estimate, and the null hypothesis of the parameter of interest, we can derive the standard error (SE) of the point estimate, since</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[Z = \frac{\bar{x} - \theta_0}{SE(\bar{x})}\]</div>
+<ul class="simple">
+<li><p>Then two-sided <span class="math notranslate nohighlight">\((1-\alpha)*100\)</span>% CI is <span class="math notranslate nohighlight">\(\bar{x} \pm Z_{1-\alpha/2}*SE(\bar{x})\)</span></p></li>
+</ul>
+</li>
+<li><p>From CI to p-value:</p>
+<ul class="simple">
+<li><p>from CI we can get the <span class="math notranslate nohighlight">\(SE(\bar{x})\)</span>, with which we then can construct the <span class="math notranslate nohighlight">\(Z\)</span> score as in the formula above</p></li>
+<li><p>With <span class="math notranslate nohighlight">\(Z\)</span> score, we can then calculated one- or two-sided p-value based on standard normal distribution</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>Note: one- or two-sided p-value (<span class="math notranslate nohighlight">\(p\)</span>) can be used to get the one- or two-sided <span class="math notranslate nohighlight">\((1-p)*100%\)</span>% CI just as how we use the significance level <span class="math notranslate nohighlight">\(\alpha\)</span>: <span class="math notranslate nohighlight">\(|\hat{x} - \theta_0|\)</span> is the half width of the two-sided <span class="math notranslate nohighlight">\((1-p)*100%\)</span>% CI or the width of the one-sided <span class="math notranslate nohighlight">\((1-p)*100%\)</span>% CI.</p></li>
+</ul>
+</li>
 </ol>
 </section>
 
