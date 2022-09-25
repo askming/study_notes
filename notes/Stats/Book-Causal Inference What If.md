@@ -502,6 +502,7 @@ In other words, it is irrelevant whether the risk in the untreated, had they bee
     - What are the issues with the traditional defintion of confounder? why doesn't it work? And how to fix them?
   - What are the common types of confoundings? (7.1)
   - What is the back door criterion (and the front door fomula)? (7.3, 7.6)
+  - How to adjust for confounding?
   - What is the Single-world intervention graph (SWIG)? (7.5)
 
 ### Confounding and confounders (7.1 & 7.4)
@@ -550,9 +551,6 @@ A structural approach to confounding emphasizes that causal inference from obser
   - Second, the researchers’ assumptions about confounding become explicit and therefore can be explicitly criticized by other investigators.
 
 
-
-
-
 ### The structure (type) of confounding (7.1)
 - Healthy worker bias: *e.g. the effect of working as a firefighter on the risk of death will be confounded if "being physically fit" is a cause of both being an active firefighter and having a lower mortality rate.*
   ```{margin}
@@ -563,7 +561,11 @@ A structural approach to confounding emphasizes that causal inference from obser
 - Linkage disequilibrium or population stratification: *e.g. the effect of a DNA sequence on the risk of developing certain trait will be confounded if there exists another DNA sequence that has a causal effect on y and is more frequent among people carrying the first DNA sequence.*
 
 
-### Backdoor criterion (7.3) & front door criterion (7.6)
+### Confounding and exchangeability (7.2), Backdoor criterion (7.3) & front door criterion (7.6)
+
+
+
+
 - The presence of common causes of treatment and outcome causes confounding because it creates an open backdoor path
 - A open backdoor path can be block by conditioning on a variable on the path
 - A backdoor path is blocked if there is a collider on the path; conditioning on the collider opens the backdoor path
@@ -594,6 +596,7 @@ this identification formula is called front door adjustment because it relies on
 
 ### Single-world intervention graphs (7.5)
 
+### Confounding adjustment (7.6)
 
 
 
@@ -608,6 +611,9 @@ this identification formula is called front door adjustment because it relies on
 
 
 
+
+
+<hr>
 
 
 
