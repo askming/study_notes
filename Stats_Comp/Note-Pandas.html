@@ -759,35 +759,86 @@ title="Print to PDF"
 <section id="index-subsetting">
 <h2>Index, subsetting<a class="headerlink" href="#index-subsetting" title="Permalink to this headline">#</a></h2>
 <ul>
-<li><p>understanding how index works in pandas</p>
+<li><p>understanding how index works in pandas <a class="footnote-reference brackets" href="#indexing" id="id1">1</a></p>
 <ul>
-<li><p>Understanding <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, <code class="docutils literal notranslate"><span class="pre">.ilocx</span></code> and others</p>
+<li><p>Understanding <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, <code class="docutils literal notranslate"><span class="pre">.ilocx</span></code></p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code>: Primarily selects subsets of columns, but can select rows as well. Cannot simultaneously select rows and columns.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note that if you use df[3] it will return not row 3 but a column named 3.</p>
+</aside>
 <ul class="simple">
-<li><p>when given names/list of names, default is to select the cols; when gvien slicing index/names, selects the rows</p></li>
+<li><p>when given names/list of names, default is to select the cols, e.g. <code class="docutils literal notranslate"><span class="pre">df['name']</span></code>; when gvien slicing index/names, selects the rows, e.g. <code class="docutils literal notranslate"><span class="pre">df[2:3]</span></code></p></li>
+<li><p>Cons:</p>
+<ul>
+<li><p>It is not as optimised as <code class="docutils literal notranslate"><span class="pre">.loc</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>.</p></li>
+<li><p>It is more implicit, so Pandas has to figure out stuff like ‘are we indexing rows or columns?’ and more, behind the scenes.</p></li>
+<li><p>not the recommended way to select data from your dataframe in production environments.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> only works on index (i.e. row and col names); selects subsets of rows and columns by label only</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># selecting rows</span>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> label-based indexing on columns and/or rows; selects subsets of rows and columns by label only: <code class="docutils literal notranslate"><span class="pre">df.loc[[row_indexer],</span> <span class="pre">[col_indexer]]</span></code></p>
+<ul class="simple">
+<li><p>selection is inclusive, it slices from the start label up to and including the stop label</p></li>
+<li><p>Integers are accepted as labels, but they will be seen as labels, not as the position in the dataframe!</p></li>
+<li><p>Can use boolean mask to filter and select rows</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># selecting rows based on their index labels (could also be numerical)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;row_label&#39;</span><span class="p">]</span>
 <span class="c1"># or</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="n">row_labels</span><span class="p">]]</span>
+<span class="c1"># or</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># for numeric row label, result will be inclusive</span>
 
-<span class="c1"># selecting cols</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[,</span> <span class="s1">&#39;col_name&#39;</span><span class="p">]</span>
+<span class="c1"># selecting cols based on their names (labels)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;col_name&#39;</span><span class="p">]</span>
+<span class="c1"># or </span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="n">col_names</span><span class="p">]]</span>
+<span class="c1"># or </span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;col1&#39;</span><span class="p">:</span><span class="s1">&#39;col4&#39;</span><span class="p">]</span> <span class="c1">#result will be inclusive</span>
 </pre></div>
 </div>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> works on position (<strong>integer</strong> location, you must use intergers when selecting by interger location); selects subsets of rows and columns by integer location only</p>
+<ul class="simple">
+<li><p>contrary to <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> selection is <strong>exclusive</strong>, meaning that the stop position is not included in the final result.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># index can take the format as start:end:step for both row and col</span>
 <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">]</span>
+
+<span class="c1"># selecting rows based on their integer row position</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">]],</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># selecting both rows and cols</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">at</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">iat</span></code></p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">at</span></code> gets scalar values. it’s a very fast <code class="docutils literal notranslate"><span class="pre">loc</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">iat</span></code> gets scalar values. it’s avery fast <code class="docutils literal notranslate"><span class="pre">iloc</span></code></p></li>
 </ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.where()</span></code>: Replaces every row that doesn’t match the filter with <code class="docutils literal notranslate"><span class="pre">NA</span></code>s</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">low_fat</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;diet&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;low fat&#39;</span>
+<span class="n">df_lf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">low_fat</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.query()</span></code>: quickly select rows based on explicit SQL-like filters</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;pulse &lt; 85&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.get()</span></code>: select a column, dictionary-style</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;diet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.idxmin</span></code>, <code class="docutils literal notranslate"><span class="pre">.idxmax</span></code></p>
 <ul class="simple">
@@ -894,6 +945,12 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><a class="reference external" href="https://pythonspeed.com/articles/pandas-vectorization/?utm_medium=email&amp;utm_source=topic+optin&amp;utm_campaign=awareness&amp;utm_content=20220620+data+ai+nl&amp;mkt_tok=MTA3LUZNUy0wNzAAAAGFIT-XwYQWtkAEpfgsP268hTBrSlq4DeAtsoPVMDm7nv4dyVkbzk5i3Pu5Zl9OboAgvsPBtkI97J7XKEIEpXzuys840fcmvF6-AhFE2xysMTY_c1Y">Pandas vectorization: faster code, slower code, bloated memory</a></p></li>
 </ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="indexing"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>https://lucytalksdata.com/how-to-effectively-index-pandas-dataframes/</p>
+</dd>
+</dl>
 </section>
 </section>
 

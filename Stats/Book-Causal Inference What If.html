@@ -828,13 +828,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#backdoor-criterion-7-3-front-door-criterion-7-6">
-     Backdoor criterion (7.3) &amp; front door criterion (7.6)
+    <a class="reference internal nav-link" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6">
+     Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-world-intervention-graphs-7-5">
      Single-world intervention graphs (7.5)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confounding-adjustment-7-6">
+     Confounding adjustment (7.6)
     </a>
    </li>
   </ul>
@@ -1004,13 +1009,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#backdoor-criterion-7-3-front-door-criterion-7-6">
-     Backdoor criterion (7.3) &amp; front door criterion (7.6)
+    <a class="reference internal nav-link" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6">
+     Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-world-intervention-graphs-7-5">
      Single-world intervention graphs (7.5)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confounding-adjustment-7-6">
+     Confounding adjustment (7.6)
     </a>
    </li>
   </ul>
@@ -1757,6 +1767,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </li>
 <li><p>What are the common types of confoundings? (7.1)</p></li>
 <li><p>What is the back door criterion (and the front door fomula)? (7.3, 7.6)</p></li>
+<li><p>How to adjust for confounding?</p></li>
 <li><p>What is the Single-world intervention graph (SWIG)? (7.5)</p></li>
 </ul>
 </li>
@@ -1841,8 +1852,8 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 <li><p>Linkage disequilibrium or population stratification: <em>e.g. the effect of a DNA sequence on the risk of developing certain trait will be confounded if there exists another DNA sequence that has a causal effect on y and is more frequent among people carrying the first DNA sequence.</em></p></li>
 </ul>
 </section>
-<section id="backdoor-criterion-7-3-front-door-criterion-7-6">
-<h3>Backdoor criterion (7.3) &amp; front door criterion (7.6)<a class="headerlink" href="#backdoor-criterion-7-3-front-door-criterion-7-6" title="Permalink to this headline">#</a></h3>
+<section id="confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6">
+<h3>Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)<a class="headerlink" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>The presence of common causes of treatment and outcome causes confounding because it creates an open backdoor path</p></li>
 <li><p>A open backdoor path can be block by conditioning on a variable on the path</p></li>
@@ -1882,6 +1893,10 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </section>
 <section id="single-world-intervention-graphs-7-5">
 <h3>Single-world intervention graphs (7.5)<a class="headerlink" href="#single-world-intervention-graphs-7-5" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="confounding-adjustment-7-6">
+<h3>Confounding adjustment (7.6)<a class="headerlink" href="#confounding-adjustment-7-6" title="Permalink to this headline">#</a></h3>
+<hr>
 </section>
 </section>
 <section id="chapter-8-selection-bias">
