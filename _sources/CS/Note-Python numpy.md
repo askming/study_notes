@@ -1,5 +1,8 @@
 # Numpy study notes
 
+## General learning resources
+- [Python Numpy Tutorial (with Jupyter and Colab)](https://cs231n.github.io/python-numpy-tutorial/)
+
 ## Show numpy version and the configuration
 ```python
 np.__version__
