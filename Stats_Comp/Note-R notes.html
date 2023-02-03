@@ -758,18 +758,18 @@ title="Print to PDF"
 </li>
 <li><p>There are two special functions you can place in these files. <code class="docutils literal notranslate"><span class="pre">.First(</span> <span class="pre">)</span></code> will be run at the start of the R session and <code class="docutils literal notranslate"><span class="pre">.Last(</span> <span class="pre">)</span></code> will be run at the end of the session.</p></li>
 <li><p>To edit the .Rprofile file:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">file.edit</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">,</span> <span class="s">&quot;.Rprofile&quot;</span><span class="p">))</span> <span class="c1"># edit .Rprofile in HOME</span>
-<span class="nf">file.edit</span><span class="p">(</span><span class="s">&quot;.Rprofile&quot;</span><span class="p">)</span> <span class="c1"># edit project specific .Rprofile   </span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">file.edit</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.Rprofile&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1"># edit .Rprofile in HOME</span>
+<span class="nf">file.edit</span><span class="p">(</span><span class="s">&quot;.Rprofile&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># edit project specific .Rprofile   </span>
 </pre></div>
 </div>
 <ul>
 <li><p>Can use the following to get a list of directories where .Rprofile may exist</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">candidates</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span> <span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_PROFILE&quot;</span><span class="p">),</span>
-                 <span class="nf">file.path</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_HOME&quot;</span><span class="p">),</span> <span class="s">&quot;etc&quot;</span><span class="p">,</span> <span class="s">&quot;Rprofile.site&quot;</span><span class="p">),</span>
-                 <span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_PROFILE_USER&quot;</span><span class="p">),</span>
-                 <span class="nf">file.path</span><span class="p">(</span><span class="nf">getwd</span><span class="p">(),</span> <span class="s">&quot;.Rprofile&quot;</span><span class="p">))</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">candidates</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_PROFILE&quot;</span><span class="p">),</span>
+<span class="w">                 </span><span class="nf">file.path</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_HOME&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;etc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Rprofile.site&quot;</span><span class="p">),</span>
+<span class="w">                 </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_PROFILE_USER&quot;</span><span class="p">),</span>
+<span class="w">                 </span><span class="nf">file.path</span><span class="p">(</span><span class="nf">getwd</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;.Rprofile&quot;</span><span class="p">))</span>
 
-<span class="nf">Filter</span><span class="p">(</span><span class="n">file.exists</span><span class="p">,</span> <span class="n">candidates</span><span class="p">)</span>
+<span class="nf">Filter</span><span class="p">(</span><span class="n">file.exists</span><span class="p">,</span><span class="w"> </span><span class="n">candidates</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -788,23 +788,23 @@ title="Print to PDF"
 <span class="c1"># options(continue=&quot;+ &quot;)</span>
 
 <span class="c1"># to prefer Compiled HTML</span>
-<span class="n">help</span> <span class="nf">options</span><span class="p">(</span><span class="n">chmhelp</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">help</span><span class="w"> </span><span class="nf">options</span><span class="p">(</span><span class="n">chmhelp</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="c1"># to prefer HTML help</span>
 <span class="c1"># options(htmlhelp=TRUE)</span>
 
 <span class="c1"># General options</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">tab.width</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="m">130</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">tab.width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">130</span><span class="p">)</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">graphics.record</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 
-<span class="n">.First</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(){</span>
- <span class="nf">library</span><span class="p">(</span><span class="n">pacman</span><span class="p">)</span>
- <span class="nf">p_load</span><span class="p">(</span><span class="n">tidyvers</span><span class="p">,</span> <span class="n">data.table</span><span class="p">,</span> <span class="n">arsenal</span><span class="p">,</span> <span class="n">Hmisc</span><span class="p">,</span> <span class="n">haven</span><span class="p">)</span>
- <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nWelcome at&quot;</span><span class="p">,</span> <span class="nf">date</span><span class="p">(),</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="n">.First</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(){</span>
+<span class="w"> </span><span class="nf">library</span><span class="p">(</span><span class="n">pacman</span><span class="p">)</span>
+<span class="w"> </span><span class="nf">p_load</span><span class="p">(</span><span class="n">tidyvers</span><span class="p">,</span><span class="w"> </span><span class="n">data.table</span><span class="p">,</span><span class="w"> </span><span class="n">arsenal</span><span class="p">,</span><span class="w"> </span><span class="n">Hmisc</span><span class="p">,</span><span class="w"> </span><span class="n">haven</span><span class="p">)</span>
+<span class="w"> </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nWelcome at&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">date</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="n">.Last</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(){</span>
- <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nGoodbye at &quot;</span><span class="p">,</span> <span class="nf">date</span><span class="p">(),</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="n">.Last</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(){</span>
+<span class="w"> </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\nGoodbye at &quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">date</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -824,8 +824,8 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/sprintf.html">Use C-style String Formatting Commands in R</a></p>
 <ul>
 <li><p>Functions: <code class="docutils literal notranslate"><span class="pre">sprintf/gettextf</span></code></p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%.3f&quot;</span><span class="p">,</span> <span class="kc">pi</span><span class="p">)</span>
-<span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%s is %f feet tall\n&quot;</span><span class="p">,</span> <span class="s">&quot;Sven&quot;</span><span class="p">,</span> <span class="m">7.1</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%.3f&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">pi</span><span class="p">)</span>
+<span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%s is %f feet tall\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sven&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">7.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -838,10 +838,10 @@ title="Print to PDF"
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">switch{base}</span></code>: tests an expression against elements of a list. If the value evaluated from the expression matches item from the list, the corresponding value is returned.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">,</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;green&quot;</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;green&quot;</span>
 
-<span class="nf">switch</span><span class="p">(</span><span class="s">&quot;color&quot;</span><span class="p">,</span> <span class="s">&quot;color&quot;</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;shape&quot;</span> <span class="o">=</span> <span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="s">&quot;length&quot;</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;red&quot;</span>
+<span class="nf">switch</span><span class="p">(</span><span class="s">&quot;color&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;color&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;shape&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;square&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;length&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;red&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -865,14 +865,14 @@ title="Print to PDF"
 <li><p>export the PATH: export PATH=/thepath_to_bin:${PATH}</p></li>
 <li><p>check:  cd to home directory; vim .bashrc</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source: http://galton.uchicago.edu/~eichler/stat24600/Handouts/Rlinux.html
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source:<span class="w"> </span>http://galton.uchicago.edu/~eichler/stat24600/Handouts/Rlinux.html
 
-./configure --prefix<span class="o">=</span>/home/username/tmux1.9
-wget http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/R-3.2.0.tar.gz
-install.packages<span class="o">(</span><span class="s2">&quot;INLA&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://www.math.ntnu.no/inla/R/stable&quot;</span><span class="o">)</span>
-Install rjags package <span class="k">in</span> R on TACC
-wget https://cran.r-project.org/src/contrib/rjags_4-4.tar.gz
-tar xzvf rjags_4-4.tar.gz
+./configure<span class="w"> </span>--prefix<span class="o">=</span>/home/username/tmux1.9
+wget<span class="w"> </span>http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/R-3.2.0.tar.gz
+install.packages<span class="o">(</span><span class="s2">&quot;INLA&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://www.math.ntnu.no/inla/R/stable&quot;</span><span class="o">)</span>
+Install<span class="w"> </span>rjags<span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span>R<span class="w"> </span>on<span class="w"> </span>TACC
+wget<span class="w"> </span>https://cran.r-project.org/src/contrib/rjags_4-4.tar.gz
+tar<span class="w"> </span>xzvf<span class="w"> </span>rjags_4-4.tar.gz
 </pre></div>
 </div>
 <p>The configure script has an option <code class="docutils literal notranslate"><span class="pre">--enable-rpath</span></code> for hard-coding the location of the JAGS library into the rjags package. It is not portable, however, so may not work on your Operating System. Also, you do not appear to be passing the configure options correctly. The correct syntax is to put the configure options inside <code class="docutils literal notranslate"><span class="pre">--configure-args</span></code>, e.g.</p>

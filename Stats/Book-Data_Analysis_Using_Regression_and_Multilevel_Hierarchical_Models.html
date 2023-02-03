@@ -1253,8 +1253,8 @@ title="Print to PDF"
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8ac6a7e-997e-4ab6-83af-7b72d50f49f7">
-<span class="eqno">(7)<a class="headerlink" href="#equation-e8ac6a7e-997e-4ab6-83af-7b72d50f49f7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-054e4919-cbfd-4703-ad33-7dbfb011ef94">
+<span class="eqno">(7)<a class="headerlink" href="#equation-054e4919-cbfd-4703-ad33-7dbfb011ef94" title="Permalink to this equation">#</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -1607,8 +1607,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8cb42bd4-81d1-46d0-a04b-23f78b11f957">
-<span class="eqno">(8)<a class="headerlink" href="#equation-8cb42bd4-81d1-46d0-a04b-23f78b11f957" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0388f036-fdbb-4f11-903b-926f81b0177a">
+<span class="eqno">(8)<a class="headerlink" href="#equation-0388f036-fdbb-4f11-903b-926f81b0177a" title="Permalink to this equation">#</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -1619,8 +1619,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ddec379-5094-4200-9194-ffcbfa3bee2f">
-<span class="eqno">(9)<a class="headerlink" href="#equation-7ddec379-5094-4200-9194-ffcbfa3bee2f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-111ff6f0-ed64-4641-8500-dbdd379f1928">
+<span class="eqno">(9)<a class="headerlink" href="#equation-111ff6f0-ed64-4641-8500-dbdd379f1928" title="Permalink to this equation">#</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>
@@ -1643,41 +1643,41 @@ of receiving the supplemental version of the treatment.</p></li>
 <li><p>Then make predicted values of the treatment and plug them into the equaiton of predicting the outcome of <span class="math notranslate nohighlight">\(y\)</span></p></li>
 <li><p>the coefficient on the predicted treatment variable is the estimate of the causal effect of treatment of interest</p></li>
 </ul>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.2a</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">watched</span> <span class="o">~</span> <span class="n">encouraged</span><span class="p">)</span> 
-<span class="n">watched.hat</span> <span class="o">&lt;-</span> <span class="n">fit.2a</span><span class="o">$</span><span class="n">fitted</span>
-<span class="n">fit.2b</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">watched.hat</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.2a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm </span><span class="p">(</span><span class="n">watched</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">encouraged</span><span class="p">)</span><span class="w"> </span>
+<span class="n">watched.hat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fit.2a</span><span class="o">$</span><span class="n">fitted</span>
+<span class="n">fit.2b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">watched.hat</span><span class="p">)</span>
 
-                <span class="n">coef.est</span>  <span class="nf">coef.se </span>
-<span class="p">(</span><span class="n">Intercept</span><span class="p">)</span>     <span class="m">20.6</span>        <span class="m">3.9</span>
-<span class="n">watched.hat</span>     <span class="m">7.9</span>           <span class="m">4.9</span>
-<span class="n">n</span> <span class="o">=</span> <span class="m">240</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="m">2</span>
-<span class="n">residual</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">13.3</span><span class="p">,</span> <span class="n">R</span><span class="o">-</span><span class="n">Squared</span> <span class="o">=</span> <span class="m">0.01</span>
+<span class="w">                </span><span class="n">coef.est</span><span class="w">  </span><span class="nf">coef.se </span>
+<span class="p">(</span><span class="n">Intercept</span><span class="p">)</span><span class="w">     </span><span class="m">20.6</span><span class="w">        </span><span class="m">3.9</span>
+<span class="n">watched.hat</span><span class="w">     </span><span class="m">7.9</span><span class="w">           </span><span class="m">4.9</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">240</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="n">residual</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">13.3</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="o">-</span><span class="n">Squared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.01</span>
 </pre></div>
 </div>
 </li>
 <li><p>Addjusting for covariates and standard error estimate</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># put same set of adjustment variable in two stages</span>
-<span class="n">fit.3a</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">watched</span> <span class="o">~</span> <span class="n">encouraged</span> <span class="o">+</span> <span class="n">pretest</span> <span class="o">+</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span> <span class="o">+</span> <span class="n">setting</span><span class="p">)</span>
-<span class="n">watched.hat</span> <span class="o">&lt;-</span> <span class="n">fit.3a</span><span class="o">$</span><span class="n">fitted</span>
-<span class="n">fit.3b</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">watched.hat</span> <span class="o">+</span> <span class="n">pretest</span> <span class="o">+</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span> <span class="o">+</span> <span class="n">setting</span><span class="p">)</span> 
+<span class="n">fit.3a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm </span><span class="p">(</span><span class="n">watched</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">encouraged</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pretest</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">setting</span><span class="p">)</span>
+<span class="n">watched.hat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fit.3a</span><span class="o">$</span><span class="n">fitted</span>
+<span class="n">fit.3b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">watched.hat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pretest</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">setting</span><span class="p">)</span><span class="w"> </span>
 <span class="nf">display </span><span class="p">(</span><span class="n">fit.3b</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul>
 <li><p>the standard-error calculation is complicated because we cannot simply look at the second regression in isolation.</p></li>
 <li><p>To adjust the standard error to account for the uncertainty in both stages of the model. The adjusted standard errors are calculated as the square roots of the diag- onal elements of <span class="math notranslate nohighlight">\((X^tX)^{-1}\hat{\sigma}^2_{TSLS}\)</span>, where <span class="math notranslate nohighlight">\(\hat{\sigma}^2_{TSLS}\)</span> is calculated using the residuals from an equation predicting the outcome from original design matrix using the two-stage least squares estimate of the coefficient, not the coefficient that would have been obtained in a least squares regression of the outcome on watched.</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.3b</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">watched.hat</span><span class="o">+</span><span class="n">pretest</span><span class="o">+</span><span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span><span class="o">+</span><span class="n">setting</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">X.adj</span> <span class="o">&lt;-</span> <span class="n">fit.2</span><span class="o">$</span><span class="n">x</span>
-<span class="n">X.adj</span><span class="p">[,</span><span class="s">&quot;watched.hat&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">watched</span>
-<span class="n">residual.sd.adj</span> <span class="o">&lt;-</span> <span class="nf">sd </span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">X.adj</span> <span class="o">%*%</span> <span class="nf">coef</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">))</span>
-<span class="n">se.adj</span> <span class="o">&lt;-</span><span class="nf">se.coef</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">)[</span><span class="s">&quot;watched.hat&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">residual.sd.adj</span><span class="o">/</span><span class="nf">sigma.hat</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.3b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">watched.hat</span><span class="o">+</span><span class="n">pretest</span><span class="o">+</span><span class="nf">as.factor</span><span class="p">(</span><span class="n">site</span><span class="p">)</span><span class="o">+</span><span class="n">setting</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">X.adj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fit.2</span><span class="o">$</span><span class="n">x</span>
+<span class="n">X.adj</span><span class="p">[,</span><span class="s">&quot;watched.hat&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">watched</span>
+<span class="n">residual.sd.adj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">X.adj</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">coef</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">))</span>
+<span class="n">se.adj</span><span class="w"> </span><span class="o">&lt;-</span><span class="nf">se.coef</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">)[</span><span class="s">&quot;watched.hat&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">residual.sd.adj</span><span class="o">/</span><span class="nf">sigma.hat</span><span class="p">(</span><span class="n">fit.3b</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
 <li><p>Performing two-stage least squares automatically using the <code class="docutils literal notranslate"><span class="pre">tsls</span></code> function</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">iv1</span> <span class="o">&lt;-</span> <span class="nf">tsls </span><span class="p">(</span><span class="n">postlet</span> <span class="o">~</span> <span class="n">regular</span><span class="p">,</span> <span class="o">~</span> <span class="n">encour</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sesame</span><span class="p">)</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">iv1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tsls </span><span class="p">(</span><span class="n">postlet</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">regular</span><span class="p">,</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">encour</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">sesame</span><span class="p">)</span><span class="w"> </span>
 <span class="nf">display </span><span class="p">(</span><span class="n">iv1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1918,15 +1918,15 @@ this strategy can be <em>anticonservative</em>.</p></li>
 <h3>25.4 Random imputation of a single variable<a class="headerlink" href="#random-imputation-of-a-single-variable" title="Permalink to this headline">#</a></h3>
 <section id="simple-random-imputation">
 <h4>Simple random imputation<a class="headerlink" href="#simple-random-imputation" title="Permalink to this headline">#</a></h4>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">random.imp</span> <span class="o">&lt;-</span> <span class="nf">function </span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
-  <span class="n">missing</span> <span class="o">&lt;-</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-  <span class="n">n.missing</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span>
-  <span class="n">a.obs</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="o">!</span><span class="n">missing</span><span class="p">]</span>
-  <span class="n">imputed</span> <span class="o">&lt;-</span> <span class="n">a</span>
-  <span class="n">imputed</span><span class="p">[</span><span class="n">missing</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="nf">sample </span><span class="p">(</span><span class="n">a.obs</span><span class="p">,</span> <span class="n">n.missing</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-  <span class="nf">return </span><span class="p">(</span><span class="n">imputed</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">random.imp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function </span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+<span class="w">  </span><span class="n">missing</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">is.na</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="w">  </span><span class="n">n.missing</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span>
+<span class="w">  </span><span class="n">a.obs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="o">!</span><span class="n">missing</span><span class="p">]</span>
+<span class="w">  </span><span class="n">imputed</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span>
+<span class="w">  </span><span class="n">imputed</span><span class="p">[</span><span class="n">missing</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample </span><span class="p">(</span><span class="n">a.obs</span><span class="p">,</span><span class="w"> </span><span class="n">n.missing</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">return </span><span class="p">(</span><span class="n">imputed</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="o">&gt;</span> <span class="n">earnings.imp</span> <span class="o">&lt;-</span> <span class="nf">random.imp </span><span class="p">(</span><span class="n">earnings</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">earnings.imp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">random.imp </span><span class="p">(</span><span class="n">earnings</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1947,14 +1947,14 @@ this strategy can be <em>anticonservative</em>.</p></li>
 <h4>Using regression predictions to perform deterministic imputation<a class="headerlink" href="#using-regression-predictions-to-perform-deterministic-imputation" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>A simple and general imputation procedure that uses individual-level information uses a regression to the nonzero values of earnings.</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">lm.imp.1</span> <span class="o">&lt;-</span> <span class="nf">lm </span><span class="p">(</span><span class="n">earnings</span> <span class="o">~</span> <span class="n">male</span> <span class="o">+</span> <span class="n">over65</span> <span class="o">+</span> <span class="n">white</span> <span class="o">+</span> <span class="n">immig</span> <span class="o">+</span> <span class="n">educ_r</span> <span class="o">+</span> <span class="n">workmos</span> <span class="o">+</span> 
-<span class="n">workhrs.top</span> <span class="o">+</span> <span class="n">any.ssi</span> <span class="o">+</span> <span class="n">any.welfare</span> <span class="o">+</span> <span class="n">any.charity</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">SIS</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="n">earnings</span><span class="o">&gt;</span><span class="m">0</span><span class="p">)</span>
-<span class="n">pred.1</span> <span class="o">&lt;-</span> <span class="nf">predict </span><span class="p">(</span><span class="n">lm.imp.1</span><span class="p">,</span> <span class="n">SIS</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">lm.imp.1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm </span><span class="p">(</span><span class="n">earnings</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">male</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">over65</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">white</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">immig</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">educ_r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">workmos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="n">workhrs.top</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">any.ssi</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">any.welfare</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">any.charity</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">SIS</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="o">=</span><span class="n">earnings</span><span class="o">&gt;</span><span class="m">0</span><span class="p">)</span>
+<span class="n">pred.1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict </span><span class="p">(</span><span class="n">lm.imp.1</span><span class="p">,</span><span class="w"> </span><span class="n">SIS</span><span class="p">)</span>
 
-<span class="n">impute</span> <span class="o">&lt;-</span> <span class="nf">function </span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a.impute</span><span class="p">){</span> 
-  <span class="nf">ifelse </span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">a.impute</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">impute</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">a.impute</span><span class="p">){</span><span class="w"> </span>
+<span class="w">  </span><span class="nf">ifelse </span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="n">a.impute</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="n">earnings.imp.1</span> <span class="o">&lt;-</span> <span class="nf">impute </span><span class="p">(</span><span class="n">earnings</span><span class="p">,</span> <span class="n">pred.1</span><span class="p">)</span>
+<span class="n">earnings.imp.1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">impute </span><span class="p">(</span><span class="n">earnings</span><span class="p">,</span><span class="w"> </span><span class="n">pred.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -1965,9 +1965,9 @@ this strategy can be <em>anticonservative</em>.</p></li>
 <h4>Random regression imputation<a class="headerlink" href="#random-regression-imputation" title="Permalink to this headline">#</a></h4>
 <ul>
 <li><p>Put the uncertainty back into the imputations by adding the prediction error into the regression</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pred.4.sqrt</span> <span class="o">&lt;-</span> <span class="nf">rnorm </span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nf">predict </span><span class="p">(</span><span class="n">lm.imp.2.sqrt</span><span class="p">,</span> <span class="n">SIS</span><span class="p">),</span> <span class="nf">sigma.hat </span><span class="p">(</span><span class="n">lm.imp.2.sqrt</span><span class="p">))</span>
-<span class="n">pred.4</span> <span class="o">&lt;-</span> <span class="nf">topcode </span><span class="p">(</span><span class="n">pred.4.sqrt</span><span class="o">^</span><span class="m">2</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
-<span class="n">earnings.imp.4</span> <span class="o">&lt;-</span> <span class="nf">impute </span><span class="p">(</span><span class="n">earnings.top</span><span class="p">,</span> <span class="n">pred.4</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pred.4.sqrt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm </span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="nf">predict </span><span class="p">(</span><span class="n">lm.imp.2.sqrt</span><span class="p">,</span><span class="w"> </span><span class="n">SIS</span><span class="p">),</span><span class="w"> </span><span class="nf">sigma.hat </span><span class="p">(</span><span class="n">lm.imp.2.sqrt</span><span class="p">))</span>
+<span class="n">pred.4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">topcode </span><span class="p">(</span><span class="n">pred.4.sqrt</span><span class="o">^</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
+<span class="n">earnings.imp.4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">impute </span><span class="p">(</span><span class="n">earnings.top</span><span class="p">,</span><span class="w"> </span><span class="n">pred.4</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>

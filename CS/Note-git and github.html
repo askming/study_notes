@@ -854,13 +854,13 @@ title="Print to PDF"
 <h1>git and github<a class="headerlink" href="#git-and-github" title="Permalink to this headline">#</a></h1>
 <section id="git-basics">
 <h2>git basics<a class="headerlink" href="#git-basics" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init <span class="c1"># to create a new git repository</span>
-git add filename.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init<span class="w"> </span><span class="c1"># to create a new git repository</span>
+git<span class="w"> </span>add<span class="w"> </span>filename.txt
 
-git rm &lt;file&gt; <span class="c1"># remove file in repository</span>
-git status
-git diff filename.txt
-git commit -m <span class="s1">&#39;text comment&#39;</span>
+git<span class="w"> </span>rm<span class="w"> </span>&lt;file&gt;<span class="w"> </span><span class="c1"># remove file in repository</span>
+git<span class="w"> </span>status
+git<span class="w"> </span>diff<span class="w"> </span>filename.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;text comment&#39;</span>
 </pre></div>
 </div>
 <section id="a-local-repository-consists-of-3-trees-maintainened-by-git">
@@ -875,13 +875,13 @@ git commit -m <span class="s1">&#39;text comment&#39;</span>
 </section>
 <section id="to-connect-with-a-remote-repository">
 <h3>To connect with a remote repository:<a class="headerlink" href="#to-connect-with-a-remote-repository" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin git@github.com:path/repo-name.git <span class="c1"># connect the local repo with the remote server</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:path/repo-name.git<span class="w"> </span><span class="c1"># connect the local repo with the remote server</span>
 
 <span class="c1"># Push local master repository to remote hub</span>
 <span class="c1"># first time push: </span>
-git push -u origin master
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master
 <span class="c1"># not first, then: </span>
-git push origin master 
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span>
 </pre></div>
 </div>
 </section>
@@ -891,59 +891,59 @@ git push origin master
 <li><p>Branches are used to develop features isolated from each other</p></li>
 <li><p>The <em>master</em> branch is the default branch when creating a repo; after done with the development in other branch, can merge them back to the master branch.</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b dev <span class="c1"># create and switch to a new branch called dev</span>
-git checkout -b branch-name origin/branch-name <span class="c1"># create a local brach corresponding to the remote branch</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev<span class="w"> </span><span class="c1"># create and switch to a new branch called dev</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branch-name<span class="w"> </span>origin/branch-name<span class="w"> </span><span class="c1"># create a local brach corresponding to the remote branch</span>
 
-git branch <span class="c1"># list all branches, * indicates current branch</span>
-git merge &lt;branch&gt; <span class="c1"># merge &lt;branch&gt; to current branch</span>
-git branch -d &lt;branch&gt; <span class="c1"># delete &lt;branch&gt;</span>
-git branch -D &lt;branch&gt; <span class="c1"># force to delete a unmerged branch</span>
+git<span class="w"> </span>branch<span class="w"> </span><span class="c1"># list all branches, * indicates current branch</span>
+git<span class="w"> </span>merge<span class="w"> </span>&lt;branch&gt;<span class="w"> </span><span class="c1"># merge &lt;branch&gt; to current branch</span>
+git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>&lt;branch&gt;<span class="w"> </span><span class="c1"># delete &lt;branch&gt;</span>
+git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>&lt;branch&gt;<span class="w"> </span><span class="c1"># force to delete a unmerged branch</span>
 
 <span class="c1"># a branch is not available to other until pushed to the remote repository</span>
-git push origin &lt;branch&gt;
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;branch&gt;
 
-git branch -m oldname newname <span class="c1"># rename a branch</span>
+git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>oldname<span class="w"> </span>newname<span class="w"> </span><span class="c1"># rename a branch</span>
 </pre></div>
 </div>
 </section>
 <section id="to-use-tag">
 <h3>To use tag<a class="headerlink" href="#to-use-tag" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git tag &lt;tag-name&gt; &lt;commit id&gt; <span class="c1"># create tag for specific commit under certain branch</span>
-git tag <span class="m">1</span>.0.0 1b2e1d63ff <span class="c1"># e.g. tag the commit start with 1b2e1d63ff (first 10 chars)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>&lt;tag-name&gt;<span class="w"> </span>&lt;commit<span class="w"> </span>id&gt;<span class="w"> </span><span class="c1"># create tag for specific commit under certain branch</span>
+git<span class="w"> </span>tag<span class="w"> </span><span class="m">1</span>.0.0<span class="w"> </span>1b2e1d63ff<span class="w"> </span><span class="c1"># e.g. tag the commit start with 1b2e1d63ff (first 10 chars)</span>
 
-git tag <span class="c1"># check all tags</span>
-git show &lt;tag-name&gt; <span class="c1"># show detailed tag info</span>
-git tag -a &lt;tag-name&gt; -m <span class="s1">&#39;tag description&#39;</span>
-git tag -d &lt;tag-name&gt; <span class="c1"># delete local tag</span>
-git push origin :refs/tags/&lt;tag-name&gt; <span class="c1"># delete a remote tag</span>
+git<span class="w"> </span>tag<span class="w"> </span><span class="c1"># check all tags</span>
+git<span class="w"> </span>show<span class="w"> </span>&lt;tag-name&gt;<span class="w"> </span><span class="c1"># show detailed tag info</span>
+git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>&lt;tag-name&gt;<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;tag description&#39;</span>
+git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>&lt;tag-name&gt;<span class="w"> </span><span class="c1"># delete local tag</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>:refs/tags/&lt;tag-name&gt;<span class="w"> </span><span class="c1"># delete a remote tag</span>
 
-git push origin &lt;tag-name&gt; <span class="c1"># push single tag to remote</span>
-git push origin --tags <span class="c1"># push all un-pushed tags to remote</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;tag-name&gt;<span class="w"> </span><span class="c1"># push single tag to remote</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--tags<span class="w"> </span><span class="c1"># push all un-pushed tags to remote</span>
 </pre></div>
 </div>
 </section>
 <section id="to-use-log">
 <h3>To use log<a class="headerlink" href="#to-use-log" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --author<span class="o">=</span>bob <span class="c1"># see log from bob</span>
-git log --pretty<span class="o">==</span>oneline <span class="c1"># see a very compressed log where each commit is one line</span>
-git log --name-status <span class="c1"># see which files have changed</span>
-git reflog <span class="c1">#every command ever used in this repository </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--author<span class="o">=</span>bob<span class="w"> </span><span class="c1"># see log from bob</span>
+git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">==</span>oneline<span class="w"> </span><span class="c1"># see a very compressed log where each commit is one line</span>
+git<span class="w"> </span>log<span class="w"> </span>--name-status<span class="w"> </span><span class="c1"># see which files have changed</span>
+git<span class="w"> </span>reflog<span class="w"> </span><span class="c1">#every command ever used in this repository </span>
 </pre></div>
 </div>
 </section>
 <section id="to-replace-local-changes">
 <h3>To replace local changes<a class="headerlink" href="#to-replace-local-changes" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout --&lt;filename&gt; <span class="c1"># to replace/discard local changes; this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>--&lt;filename&gt;<span class="w"> </span><span class="c1"># to replace/discard local changes; this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.</span>
 
 <span class="c1"># to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it</span>
-git fetch origin
-git reset --hard origin/master
+git<span class="w"> </span>fetch<span class="w"> </span>origin
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/master
 
-git reset HEAD &lt;file&gt; <span class="c1">#unstage (opposite of git add &lt;file&gt;), put file back to working directory</span>
+git<span class="w"> </span>reset<span class="w"> </span>HEAD<span class="w"> </span>&lt;file&gt;<span class="w"> </span><span class="c1">#unstage (opposite of git add &lt;file&gt;), put file back to working directory</span>
 
-git reset --hard HEAD^ <span class="c1">#to previous version</span>
-git reset --hard HEAD~10 <span class="c1">#to 10th previous version</span>
-git reset --hard commit id <span class="c1">#to version with specified id</span>
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^<span class="w"> </span><span class="c1">#to previous version</span>
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~10<span class="w"> </span><span class="c1">#to 10th previous version</span>
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>commit<span class="w"> </span>id<span class="w"> </span><span class="c1">#to version with specified id</span>
 </pre></div>
 </div>
 </section>
@@ -954,17 +954,17 @@ git reset --hard commit id <span class="c1">#to version with specified id</span>
 </ul>
 <ol>
 <li><p>Create a temp branch and pull the upstream repo into this temp branch (we will resolve the conflicts here and then merge this branch to our final branch that we originally would like to merge with the upstream repo)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b temp-branch master <span class="c1"># here master is the branch we originally would like to have the merge with</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>temp-branch<span class="w"> </span>master<span class="w"> </span><span class="c1"># here master is the branch we originally would like to have the merge with</span>
 </pre></div>
 </div>
 </li>
 <li><p>pull the upstream repo that we would like to merge with into the temp branch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull https://github.com/xxx.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>https://github.com/xxx.git
 </pre></div>
 </div>
 </li>
 <li><p>After the pull, merge conflicts will be shown, if lost can retrieve those with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
 </li>
@@ -983,15 +983,15 @@ git reset --hard commit id <span class="c1">#to version with specified id</span>
 </div></blockquote>
 <ol>
 <li><p>After cleaning the file, double check the status, if no conflict anymore, add the changes and commit</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add &lt;filename&gt;
-git commit -m <span class="s1">&#39;Resloved merge conflicts by doing XXX&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>&lt;filename&gt;
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Resloved merge conflicts by doing XXX&#39;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Merge the temp branch with the master branch and push to github</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout master
-git merge --no-ff temp-branch
-git push origin master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>merge<span class="w"> </span>--no-ff<span class="w"> </span>temp-branch
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
 </pre></div>
 </div>
 </li>
@@ -1013,12 +1013,12 @@ git push origin master
 <li><p>To use each sub-directory for different local project folder, do the following:</p></li>
 <li><p><a class="reference external" href="https://intellipaat.com/community/21245/git-clone-subdirectory-how-do-i-clone-a-subdirectory-only-of-a-git-repository">Reference</a></p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init &lt;repo&gt;
-<span class="nb">cd</span> &lt;repo&gt;
-git remote add origin &lt;url&gt; <span class="c1"># url is the repo link to &quot;top&quot;</span>
-git config core.sparsecheckout <span class="nb">true</span>
-<span class="nb">echo</span> <span class="s2">&quot;sub1/*&quot;</span> &gt;&gt; .git/info/sparse-checkout
-git pull --depth<span class="o">=</span><span class="m">1</span> origin master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init<span class="w"> </span>&lt;repo&gt;
+<span class="nb">cd</span><span class="w"> </span>&lt;repo&gt;
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;url&gt;<span class="w"> </span><span class="c1"># url is the repo link to &quot;top&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>core.sparsecheckout<span class="w"> </span><span class="nb">true</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;sub1/*&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.git/info/sparse-checkout
+git<span class="w"> </span>pull<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>origin<span class="w"> </span>master
 </pre></div>
 </div>
 </section>
@@ -1026,29 +1026,29 @@ git pull --depth<span class="o">=</span><span class="m">1</span> origin master
 <h3>Syncing/update a fork<a class="headerlink" href="#syncing-update-a-fork" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p><a class="reference external" href="https://docs.github.com/en/articles/configuring-a-remote-for-a-fork">Configure a remote that points to the upstream repo.</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote -v
-git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>-v
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 </pre></div>
 </div>
 </li>
 <li><p>In terminal, change the current working directory to local project</p></li>
 <li><p>Fetch the brances and their respective commits from the upstreatm repo</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git fetch upstream
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch<span class="w"> </span>upstream
 </pre></div>
 </div>
 </li>
 <li><p>Check out the fork’s local default branch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout LocalBranchName
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>LocalBranchName
 </pre></div>
 </div>
 </li>
 <li><p>Merge the changes from the upstream default branch into the local default branch. This brings the fork’s default branch into sync with the upstream repository, without losing local changes.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge upstream/main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>upstream/main
 </pre></div>
 </div>
 <ul>
 <li><p><a class="reference external" href="https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github">another way</a> is to use <code class="docutils literal notranslate"><span class="pre">rebase</span></code>, which will erase local changes; after <code class="docutils literal notranslate"><span class="pre">fetch</span></code> and <code class="docutils literal notranslate"><span class="pre">checkout</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rebase upstream/master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rebase<span class="w"> </span>upstream/master
 </pre></div>
 </div>
 <ul class="simple">
@@ -1062,25 +1062,25 @@ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.gi
 </section>
 <section id="others">
 <h3>Others<a class="headerlink" href="#others" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --graph <span class="c1"># branches merging graph</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span><span class="c1"># branches merging graph</span>
 
-git stash <span class="c1"># saving working directory and index state...</span>
-git stash list <span class="c1"># check saved working directory</span>
+git<span class="w"> </span>stash<span class="w"> </span><span class="c1"># saving working directory and index state...</span>
+git<span class="w"> </span>stash<span class="w"> </span>list<span class="w"> </span><span class="c1"># check saved working directory</span>
 
-git stash apply <span class="c1"># recover working contents </span>
-git stash drop <span class="c1">#delete saved stash</span>
+git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span><span class="c1"># recover working contents </span>
+git<span class="w"> </span>stash<span class="w"> </span>drop<span class="w"> </span><span class="c1">#delete saved stash</span>
 
-git stash pop <span class="c1"># recover saved stash and remove it after recovering</span>
+git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w"> </span><span class="c1"># recover saved stash and remove it after recovering</span>
 
-git remote -v <span class="c1"># check remote repository information</span>
+git<span class="w"> </span>remote<span class="w"> </span>-v<span class="w"> </span><span class="c1"># check remote repository information</span>
 
-git branch --set-upstream branch-name origin/branch-name <span class="c1"># create local and remote branch connection</span>
+git<span class="w"> </span>branch<span class="w"> </span>--set-upstream<span class="w"> </span>branch-name<span class="w"> </span>origin/branch-name<span class="w"> </span><span class="c1"># create local and remote branch connection</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file to ignore some files in the working directory. need to put it in the root git directory</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global alias.&lt;new-name&gt; &lt;original-name&gt; <span class="c1">#set alias for git command. If no --global, only works for current repository</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.&lt;new-name&gt;<span class="w"> </span>&lt;original-name&gt;<span class="w"> </span><span class="c1">#set alias for git command. If no --global, only works for current repository</span>
 </pre></div>
 </div>
 <ul class="simple">

@@ -775,7 +775,7 @@ title="Print to PDF"
 <li><p>on the browser side (front end) it works differently since browser doesn’t have access to the file system and this is where the module bundler comes in</p></li>
 <li><p>A JavaScript <strong>module bundler</strong> is a tool that gets around the problem with a build step (which has access to the file system) to create a final output that is browser compatible (which doesn’t need access to the file system). It finds all <code class="docutils literal notranslate"><span class="pre">require</span></code> statements and replace them with the actual contents of each required file. The final result is a single bundled JS file.</p></li>
 <li><p>how it works: after installation, it can be used as follows</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./node_modules/.bin/webpack index.js --mode<span class="o">=</span>development
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./node_modules/.bin/webpack<span class="w"> </span>index.js<span class="w"> </span>--mode<span class="o">=</span>development
 </pre></div>
 </div>
 <ul class="simple">
@@ -783,7 +783,7 @@ title="Print to PDF"
 </ul>
 </li>
 <li><p>To avoid the tediousness of running above command with all the options every time when <code class="docutils literal notranslate"><span class="pre">index.js</span></code> is updated, we can use <code class="docutils literal notranslate"><span class="pre">webpack.config.js</span></code> to specify all the options inside and only run the following command (better but still tedious)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./node_modules/.bin/webpack
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./node_modules/.bin/webpack
 </pre></div>
 </div>
 </li>

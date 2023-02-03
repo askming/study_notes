@@ -1059,7 +1059,7 @@ title="Print to PDF"
 <p><em><strong>Solution:</strong></em></p>
 <p><em>(This solution, like other solution code blocks you will see in this doc, contains comments about SQL syntax that may differ between flavors of SQL or other comments about the solutions as listed)</em></p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">mau</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
-<span class="p">(</span><span class="w"></span>
+<span class="p">(</span>
 <span class="w">  </span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">   </span><span class="cm">/* </span>
 <span class="cm">    * Typically, interviewers allow you to write psuedocode for date functions </span>
@@ -1070,13 +1070,13 @@ title="Print to PDF"
 <span class="cm">    * combinations of date functions can give you a identical results   </span>
 <span class="cm">    * See https://www.postgresql.org/docs/9.0/functions-datetime.html#FUNCTIONS-DATETIME-TRUNC</span>
 <span class="cm">    */</span><span class="w"> </span>
-<span class="w">    </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="n">month_timestamp</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="n">mau</span><span class="w"></span>
+<span class="w">    </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="n">month_timestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="n">mau</span>
 <span class="w">  </span><span class="k">FROM</span><span class="w"> </span>
 <span class="w">    </span><span class="n">logins</span><span class="w"> </span>
 <span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">    </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
 <span class="w"> </span>
 <span class="w"> </span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="cm">/*</span>
@@ -1091,12 +1091,12 @@ title="Print to PDF"
 <span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="n">current_month</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="n">mau</span><span class="w"> </span><span class="n">current_mau</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="n">ROUND</span><span class="p">(</span><span class="mi">100</span><span class="p">.</span><span class="mi">0</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">mau</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">mau</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">.</span><span class="n">mau</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">percent_change</span><span class="w"> </span>
-<span class="w"> </span><span class="k">FROM</span><span class="w"></span>
+<span class="w"> </span><span class="k">FROM</span>
 <span class="w">    </span><span class="n">mau</span><span class="w"> </span><span class="n">a</span><span class="w"> </span>
 <span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
 <span class="w">    </span><span class="cm">/*</span>
 <span class="cm">    * Could also have done `ON b.month_timestamp = a.month_timestamp + interval &#39;1 month&#39;` </span>
-<span class="cm">    */</span><span class="w"></span>
+<span class="cm">    */</span>
 <span class="w">    </span><span class="n">mau</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;1 month&#39;</span><span class="w"> </span>
 <span class="w">  </span>
 </pre></div>
@@ -1160,22 +1160,22 @@ title="Print to PDF"
 <p><em><strong>Solution:</strong></em></p>
 <p><strong>Note:</strong> This solution works for the example above with tree depth = 2, but is not generalizable beyond that.</p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">join_table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
-<span class="p">(</span><span class="w"></span>
+<span class="p">(</span>
 <span class="k">SELECT</span><span class="w"> </span>
-<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">node</span><span class="w"> </span><span class="n">a_node</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="n">a_parent</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">node</span><span class="w"> </span><span class="n">a_node</span><span class="p">,</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="n">a_parent</span><span class="p">,</span>
 <span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="n">node</span><span class="w"> </span><span class="n">b_node</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="n">b_parent</span><span class="w"></span>
-<span class="w"> </span><span class="k">FROM</span><span class="w"></span>
+<span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="n">b_parent</span>
+<span class="w"> </span><span class="k">FROM</span>
 <span class="w">    </span><span class="n">tree</span><span class="w"> </span><span class="n">a</span><span class="w"> </span>
 <span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
 <span class="w">    </span><span class="n">tree</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">node</span><span class="w"> </span>
-<span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="p">)</span>
 <span class="w"> </span>
 <span class="w"> </span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="n">a_node</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="k">CASE</span><span class="w"> </span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">b_node</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">b_parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Root&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">b_node</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">b_parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Root&#39;</span>
 <span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">b_node</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">b_parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Leaf&#39;</span><span class="w">        </span>
 <span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;Inner&#39;</span><span class="w"> </span>
 <span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">label</span><span class="w"> </span>
@@ -1186,28 +1186,28 @@ title="Print to PDF"
 </div>
 <p>An alternate solution, that is generalizable to any tree depth:</p>
 <p><strong>Acknowledgement:</strong> this more generalizable solution was contributed by Fabian Hofmann on 5/2/20. Thank, FH!</p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">join_table</span><span class="w"> </span><span class="k">AS</span><span class="w"></span>
-<span class="p">(</span><span class="w"></span>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">join_table</span><span class="w"> </span><span class="k">AS</span>
+<span class="p">(</span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">        </span><span class="n">cur</span><span class="p">.</span><span class="n">node</span><span class="p">,</span><span class="w"> </span>
 <span class="w">        </span><span class="n">cur</span><span class="p">.</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span>
-<span class="w">        </span><span class="k">COUNT</span><span class="p">(</span><span class="k">next</span><span class="p">.</span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">num_children</span><span class="w"></span>
+<span class="w">        </span><span class="k">COUNT</span><span class="p">(</span><span class="k">next</span><span class="p">.</span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">num_children</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span>
-<span class="w">        </span><span class="n">tree</span><span class="w"> </span><span class="n">cur</span><span class="w"></span>
+<span class="w">        </span><span class="n">tree</span><span class="w"> </span><span class="n">cur</span>
 <span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
-<span class="w">        </span><span class="n">tree</span><span class="w"> </span><span class="k">next</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="k">next</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="n">node</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">tree</span><span class="w"> </span><span class="k">next</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="k">next</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="n">node</span><span class="p">)</span>
 <span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
 <span class="w">        </span><span class="n">cur</span><span class="p">.</span><span class="n">node</span><span class="p">,</span><span class="w"> </span>
-<span class="w">        </span><span class="n">cur</span><span class="p">.</span><span class="n">parent</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">cur</span><span class="p">.</span><span class="n">parent</span>
+<span class="p">)</span>
 
-<span class="k">SELECT</span><span class="w"></span>
-<span class="w">    </span><span class="n">node</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="k">CASE</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="ss">&quot;Root&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">num_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="ss">&quot;Leaf&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="ss">&quot;Inner&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">label</span><span class="w"></span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">node</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CASE</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="ss">&quot;Root&quot;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">num_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="ss">&quot;Leaf&quot;</span>
+<span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="ss">&quot;Inner&quot;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">label</span>
 <span class="k">FROM</span><span class="w"> </span>
 <span class="w">    </span><span class="n">join_table</span><span class="w"> </span>
 </pre></div>
@@ -1215,15 +1215,15 @@ title="Print to PDF"
 <p>An alternate solution, without explicit joins:</p>
 <p><strong>Acknowledgement:</strong> William Chargin on 5/2/20 noted that <code class="docutils literal notranslate"><span class="pre">WHERE</span> <span class="pre">parent</span> <span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></code>  is needed to make this solution return <code class="docutils literal notranslate"><span class="pre">Leaf</span></code> instead of <code class="docutils literal notranslate"><span class="pre">NULL</span></code>. Thanks, WC!</p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
-<span class="w">    </span><span class="n">node</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">node</span><span class="p">,</span>
 <span class="w">    </span><span class="k">CASE</span><span class="w"> </span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Root&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Root&#39;</span>
 <span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span>
-<span class="w">            </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tree</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Leaf&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Inner&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tree</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Leaf&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Inner&#39;</span>
 <span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">label</span><span class="w"> </span>
 <span class="w"> </span><span class="k">from</span><span class="w"> </span>
-<span class="w">    </span><span class="n">tree</span><span class="w"></span>
+<span class="w">    </span><span class="n">tree</span>
 </pre></div>
 </div>
 </section>
@@ -1272,35 +1272,35 @@ title="Print to PDF"
 <span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
 <span class="w">    </span><span class="n">logins</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span>
 <span class="w">        </span><span class="k">AND</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">                                             </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;1 month&#39;</span><span class="w"></span>
+<span class="w">                                             </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;1 month&#39;</span>
 <span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">    </span><span class="n">date_trunc</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">date_trunc</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Acknowledgement:</strong> Tom Moertel pointed out de-duping user-login pairs before the self-join would make the solution more efficient and contributed the alternate solution below. Thanks, TM!</p>
 <p><strong>Note:</strong> De-duping <code class="docutils literal notranslate"><span class="pre">logins</span></code> would also make the given solutions to Parts 2 and 3 of this problem more efficient as well.</p>
 <p>Alternate solution:</p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">DistinctMonthlyUsers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">DistinctMonthlyUsers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="cm">/*</span>
 <span class="cm">  * For each month, compute the *set* of users having logins.</span>
-<span class="cm">  */</span><span class="w"></span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"></span>
-<span class="w">      </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;MONTH&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">month_timestamp</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="n">user_id</span><span class="w"></span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span><span class="w"></span>
-<span class="w">  </span><span class="p">)</span><span class="w"></span>
+<span class="cm">  */</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span>
+<span class="w">      </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;MONTH&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">month_timestamp</span><span class="p">,</span>
+<span class="w">      </span><span class="n">user_id</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">logins</span>
+<span class="w">  </span><span class="p">)</span>
 
-<span class="k">SELECT</span><span class="w"></span>
-<span class="w">  </span><span class="n">CurrentMonth</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="n">month_timestamp</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="k">COUNT</span><span class="p">(</span><span class="n">PriorMonth</span><span class="p">.</span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">retained_user_count</span><span class="w"></span>
+<span class="k">SELECT</span>
+<span class="w">  </span><span class="n">CurrentMonth</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="n">month_timestamp</span><span class="p">,</span>
+<span class="w">  </span><span class="k">COUNT</span><span class="p">(</span><span class="n">PriorMonth</span><span class="p">.</span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">retained_user_count</span>
 <span class="k">FROM</span><span class="w"> </span>
-<span class="w">    </span><span class="n">DistinctMonthlyUsers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">CurrentMonth</span><span class="w"></span>
+<span class="w">    </span><span class="n">DistinctMonthlyUsers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">CurrentMonth</span>
 <span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
-<span class="w">    </span><span class="n">DistinctMonthlyUsers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">PriorMonth</span><span class="w"></span>
-<span class="w">  </span><span class="k">ON</span><span class="w"></span>
-<span class="w">    </span><span class="n">CurrentMonth</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PriorMonth</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;1 MONTH&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">DistinctMonthlyUsers</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">PriorMonth</span>
+<span class="w">  </span><span class="k">ON</span>
+<span class="w">    </span><span class="n">CurrentMonth</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PriorMonth</span><span class="p">.</span><span class="n">month_timestamp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;1 MONTH&#39;</span>
 <span class="w">    </span><span class="k">AND</span><span class="w"> </span>
-<span class="w">    </span><span class="n">CurrentMonth</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PriorMonth</span><span class="p">.</span><span class="n">user_id</span><span class="w"></span>
+<span class="w">    </span><span class="n">CurrentMonth</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PriorMonth</span><span class="p">.</span><span class="n">user_id</span>
 </pre></div>
 </div>
 <section id="part-2">
@@ -1316,11 +1316,11 @@ title="Print to PDF"
 <span class="k">FULL</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
 <span class="w">    </span><span class="n">logins</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span>
 <span class="w">        </span><span class="k">AND</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">                                         </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;1 month&#39;</span><span class="w"></span>
+<span class="w">                                         </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;1 month&#39;</span>
 <span class="k">WHERE</span><span class="w"> </span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">    </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that there are solutions to this problem that can use <code class="docutils literal notranslate"><span class="pre">LEFT</span></code> or <code class="docutils literal notranslate"><span class="pre">RIGHT</span></code> joins.</p>
@@ -1332,8 +1332,8 @@ title="Print to PDF"
 <hr class="docutils" />
 <p><em><strong>Solution:</strong></em></p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="w">     </span><span class="k">SELECT</span><span class="w"> </span>
-<span class="w">        </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="n">month_timestamp</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="n">reactivated_users</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="n">month_timestamp</span><span class="p">,</span>
+<span class="w">        </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="n">reactivated_users</span><span class="p">,</span>
 <span class="w">        </span><span class="cm">/* </span>
 <span class="cm">        * At least in the flavors of SQL I have used, you don&#39;t need to </span>
 <span class="cm">        * include the columns used in HAVING in the SELECT statement.</span>
@@ -1341,13 +1341,13 @@ title="Print to PDF"
 <span class="cm">        */</span><span class="w"> </span>
 <span class="w">        </span><span class="k">MAX</span><span class="p">(</span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="p">))</span><span class="w"> </span><span class="n">most_recent_active_previously</span><span class="w"> </span>
 <span class="w">     </span><span class="k">FROM</span><span class="w"> </span>
-<span class="w">        </span><span class="n">logins</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"></span>
+<span class="w">        </span><span class="n">logins</span><span class="w"> </span><span class="n">a</span>
+<span class="w">     </span><span class="k">JOIN</span>
 <span class="w">        </span><span class="n">logins</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span>
 <span class="w">                </span><span class="k">AND</span><span class="w"> </span>
-<span class="w">                </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span>
 <span class="w">     </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">        </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span>
 <span class="w">     </span><span class="k">HAVING</span><span class="w"> </span>
 <span class="w">        </span><span class="n">month_timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">most_recent_active_previously</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;1 month&#39;</span><span class="w"> </span>
 </pre></div>
@@ -1407,24 +1407,24 @@ title="Print to PDF"
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="nb">date</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">cash_flow</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">cumulative_cf</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"></span>
-<span class="w">    </span><span class="n">transactions</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">transactions</span><span class="w"> </span><span class="n">a</span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">b</span><span class="w"> </span>
 <span class="w">    </span><span class="n">transactions</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">date</span><span class="w"> </span><span class="k">ASC</span><span class="w"></span>
+<span class="w">    </span><span class="nb">date</span><span class="w"> </span><span class="k">ASC</span>
 </pre></div>
 </div>
 <p>Alternate solution using a window function (more efficient!):</p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="nb">date</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">cash_flow</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">ASC</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">cumulative_cf</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"></span>
+<span class="k">FROM</span>
 <span class="w">    </span><span class="n">transactions</span><span class="w"> </span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">date</span><span class="w"> </span><span class="k">ASC</span><span class="w"></span>
+<span class="w">    </span><span class="nb">date</span><span class="w"> </span><span class="k">ASC</span>
 </pre></div>
 </div>
 </section>
@@ -1466,9 +1466,9 @@ title="Print to PDF"
 <span class="k">FROM</span><span class="w"> </span>
 <span class="w">  </span><span class="n">signups</span><span class="w"> </span><span class="n">a</span><span class="w"> </span>
 <span class="k">JOIN</span><span class="w"> </span>
-<span class="w">  </span><span class="n">signups</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;6 days&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="w"></span>
+<span class="w">  </span><span class="n">signups</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="s1">&#39;6 days&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="nb">date</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span><span class="w"></span>
+<span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="nb">date</span>
 </pre></div>
 </div>
 </section>
@@ -1538,12 +1538,12 @@ title="Print to PDF"
 <span class="w">    </span><span class="k">MIN</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="k">timestamp</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="k">timestamp</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">time_to_respond</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span>
 <span class="w">    </span><span class="n">emails</span><span class="w"> </span><span class="n">a</span><span class="w"> </span>
-<span class="k">JOIN</span><span class="w"></span>
+<span class="k">JOIN</span>
 <span class="w">    </span><span class="n">emails</span><span class="w"> </span><span class="n">b</span><span class="w"> </span>
 <span class="w">        </span><span class="k">ON</span><span class="w"> </span>
 <span class="w">            </span><span class="n">b</span><span class="p">.</span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">subject</span><span class="w"> </span>
 <span class="w">        </span><span class="k">AND</span><span class="w"> </span>
-<span class="w">            </span><span class="n">a</span><span class="p">.</span><span class="k">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="k">from</span><span class="w"></span>
+<span class="w">            </span><span class="n">a</span><span class="p">.</span><span class="k">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="k">from</span>
 <span class="w">        </span><span class="k">AND</span><span class="w"> </span>
 <span class="w">            </span><span class="n">a</span><span class="p">.</span><span class="k">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="k">to</span><span class="w"> </span>
 <span class="w">        </span><span class="k">AND</span><span class="w"> </span>
@@ -1614,33 +1614,33 @@ title="Print to PDF"
 <p><strong>Task</strong>: Write a query to get the <code class="docutils literal notranslate"><span class="pre">empno</span></code> with the highest salary. Make sure your solution can handle ties!</p>
 <hr class="docutils" />
 <p><em><strong>Solution:</strong></em></p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">max_salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">max_salary</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
-<span class="w">        </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="n">max_salary</span><span class="w"></span>
+<span class="w">        </span><span class="k">MAX</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="n">max_salary</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span>
-<span class="w">        </span><span class="o">`</span><span class="n">salaries</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="o">`</span><span class="n">salaries</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="k">SELECT</span><span class="w"> </span>
-<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">empno</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">empno</span>
 <span class="k">FROM</span><span class="w"> </span>
-<span class="w">    </span><span class="o">`</span><span class="n">salaries</span><span class="w"> </span><span class="n">s</span><span class="w"></span>
+<span class="w">    </span><span class="o">`</span><span class="n">salaries</span><span class="w"> </span><span class="n">s</span>
 <span class="k">JOIN</span><span class="w"> </span>
-<span class="w">    </span><span class="n">max_salary</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ms</span><span class="p">.</span><span class="n">max_salary</span><span class="w"> </span><span class="o">``</span><span class="w"></span>
+<span class="w">    </span><span class="n">max_salary</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ms</span><span class="p">.</span><span class="n">max_salary</span><span class="w"> </span><span class="o">``</span>
 </pre></div>
 </div>
 <p>Alternate solution using <code class="docutils literal notranslate"><span class="pre">RANK()</span></code>:</p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">sal_rank</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
 <span class="w">  </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="n">empno</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="n">rnk</span><span class="w"></span>
+<span class="w">    </span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="n">rnk</span>
 <span class="w">  </span><span class="k">FROM</span><span class="w"> </span>
-<span class="w">    </span><span class="n">salaries</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">salaries</span><span class="p">)</span>
 <span class="k">SELECT</span><span class="w"> </span>
-<span class="w">  </span><span class="n">empno</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"></span>
-<span class="w">  </span><span class="n">sal_rank</span><span class="w"></span>
+<span class="w">  </span><span class="n">empno</span>
+<span class="k">FROM</span>
+<span class="w">  </span><span class="n">sal_rank</span>
 <span class="k">WHERE</span><span class="w"> </span>
-<span class="w">  </span><span class="n">rnk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">rnk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
@@ -1769,9 +1769,9 @@ title="Print to PDF"
 <span class="cm">    * AVG() is a Postgres command, but other SQL flavors like BigQuery use </span>
 <span class="cm">    * AVERAGE()</span>
 <span class="cm">    */</span><span class="w"> </span>
-<span class="w">    </span><span class="n">ROUND</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">depname</span><span class="p">)</span><span class="w"> </span><span class="n">avg_salary</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"></span>
-<span class="w">    </span><span class="n">salaries</span><span class="w"></span>
+<span class="w">    </span><span class="n">ROUND</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">salary</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">depname</span><span class="p">)</span><span class="w"> </span><span class="n">avg_salary</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">salaries</span>
 </pre></div>
 </div>
 </section>
@@ -1843,7 +1843,7 @@ title="Print to PDF"
 <p><em><strong>Solution:</strong></em></p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="o">*</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">depname</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="n">salary_rank</span><span class="w"></span>
+<span class="w">    </span><span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">depname</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="n">salary_rank</span>
 <span class="w"> </span><span class="k">FROM</span><span class="w">  </span>
 <span class="w">    </span><span class="n">salaries</span><span class="w"> </span>
 </pre></div>
@@ -1900,16 +1900,16 @@ title="Print to PDF"
 <span class="p">(</span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="n">session_id</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="n">FLOOR</span><span class="p">(</span><span class="n">length_seconds</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">bin_label</span><span class="w"> </span>
-<span class="w"> </span><span class="k">FROM</span><span class="w"></span>
+<span class="w"> </span><span class="k">FROM</span>
 <span class="w">    </span><span class="n">sessions</span><span class="w"> </span>
-<span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="p">)</span>
 <span class="w"> </span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="o">`</span><span class="n">CONCATENTATE</span><span class="p">(</span><span class="n">STR</span><span class="p">(</span><span class="n">bin_label</span><span class="o">*</span><span class="mi">5</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">STR</span><span class="p">(</span><span class="o">`</span><span class="n">bin_label</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="mi">5</span><span class="p">))</span><span class="w"> </span><span class="n">bucket</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">session_id</span><span class="p">)</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="o">``</span><span class="w"></span>
+<span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">session_id</span><span class="p">)</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="o">``</span>
 <span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">    </span><span class="n">bin_label</span><span class="w"></span>
+<span class="w">    </span><span class="n">bin_label</span>
 <span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">    </span><span class="o">`</span><span class="n">bin_label</span><span class="w"> </span><span class="k">ASC</span><span class="w"> </span><span class="o">`</span><span class="w"></span>
+<span class="w">    </span><span class="o">`</span><span class="n">bin_label</span><span class="w"> </span><span class="k">ASC</span><span class="w"> </span><span class="o">`</span>
 </pre></div>
 </div>
 </section>
@@ -1961,27 +1961,27 @@ title="Print to PDF"
 </table>
 <hr class="docutils" />
 <p><em><strong>Solution:</strong></em></p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"></span>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">state_a</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">state_b</span><span class="w"> </span>
 <span class="w"> </span><span class="k">FROM</span><span class="w">   </span>
-<span class="w">    </span><span class="n">state_streams</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<span class="w">    </span><span class="n">state_streams</span><span class="w"> </span><span class="n">a</span>
 <span class="w"> </span><span class="k">CROSS</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
 <span class="w">    </span><span class="n">state_streams</span><span class="w"> </span><span class="n">b</span><span class="w"> </span>
 <span class="w"> </span><span class="k">WHERE</span><span class="w"> </span>
-<span class="w">    </span><span class="k">ABS</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">total_streams</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">total_streams</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="w">    </span><span class="k">ABS</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">total_streams</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">total_streams</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span>
 <span class="w">    </span><span class="k">AND</span><span class="w"> </span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="k">state</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>FYI, <code class="docutils literal notranslate"><span class="pre">CROSS</span> <span class="pre">JOIN</span></code> s can also be written without explicitly specifying a join:</p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"></span>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">state_a</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">state_b</span><span class="w"> </span>
 <span class="w"> </span><span class="k">FROM</span><span class="w">   </span>
 <span class="w">    </span><span class="n">state_streams</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">state_streams</span><span class="w"> </span><span class="n">b</span><span class="w"> </span>
 <span class="w"> </span><span class="k">WHERE</span><span class="w"> </span>
-<span class="w">    </span><span class="k">ABS</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">total_streams</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">total_streams</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="w">    </span><span class="k">ABS</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">total_streams</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">total_streams</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span>
 <span class="w">    </span><span class="k">AND</span><span class="w"> </span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="k">state</span><span class="w"> </span>
 </pre></div>
@@ -1993,13 +1993,13 @@ title="Print to PDF"
 <p><strong>Task:</strong> How could you modify the SQL from the solution to Part 1 of this question so that duplicates are removed? For example, if we used the sample table from Part 1, the pair <code class="docutils literal notranslate"><span class="pre">NC</span></code> and <code class="docutils literal notranslate"><span class="pre">SC</span></code> should only appear in one row instead of two.</p>
 <hr class="docutils" />
 <p><strong>Solution:</strong></p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"></span>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">state_a</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="n">b</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">state_b</span><span class="w"> </span>
 <span class="w"> </span><span class="k">FROM</span><span class="w">   </span>
 <span class="w">    </span><span class="n">state_streams</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">state_streams</span><span class="w"> </span><span class="n">b</span><span class="w"> </span>
 <span class="w"> </span><span class="k">WHERE</span><span class="w"> </span>
-<span class="w">    </span><span class="k">ABS</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">total_streams</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">total_streams</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="w">    </span><span class="k">ABS</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">total_streams</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">total_streams</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span>
 <span class="w">    </span><span class="k">AND</span><span class="w"> </span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="k">state</span><span class="w"> </span>
 </pre></div>
@@ -2055,64 +2055,64 @@ title="Print to PDF"
 <hr class="docutils" />
 <p><strong>Solution:</strong></p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">usr_b_sum</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
-<span class="p">(</span><span class="w"></span>
+<span class="p">(</span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">        </span><span class="k">user</span><span class="p">,</span><span class="w"> </span>
-<span class="w">        </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="n">num_b</span><span class="w"></span>
+<span class="w">        </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="n">num_b</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span>
-<span class="w">        </span><span class="k">table</span><span class="w"></span>
+<span class="w">        </span><span class="k">table</span>
 <span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">        </span><span class="k">user</span><span class="w"></span>
+<span class="w">        </span><span class="k">user</span>
 <span class="p">),</span><span class="w"> </span>
 
 <span class="n">usr_class_label</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
-<span class="p">(</span><span class="w"></span>
+<span class="p">(</span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">        </span><span class="k">user</span><span class="p">,</span><span class="w"> </span>
 <span class="w">        </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">num_b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">class</span><span class="w"> </span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span>
-<span class="w">        </span><span class="n">usr_b_sum</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">usr_b_sum</span>
+<span class="p">)</span>
 
 <span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="k">class</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="k">user</span><span class="p">)</span><span class="w"> </span><span class="k">count</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"></span>
-<span class="w">    </span><span class="n">usr_class_label</span><span class="w"></span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">usr_class_label</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
 <span class="w">    </span><span class="k">class</span><span class="w"> </span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="k">ASC</span><span class="w"></span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="k">ASC</span>
 </pre></div>
 </div>
 <p>Alternate solution: Using <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>s in the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement and <code class="docutils literal notranslate"><span class="pre">UNION</span></code>:</p>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
-<span class="w">    </span><span class="ss">&quot;a&quot;</span><span class="w"> </span><span class="k">class</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="ss">&quot;a&quot;</span><span class="w"> </span><span class="k">class</span><span class="p">,</span>
 <span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>
 <span class="w">        </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">count</span><span class="w"> </span>
-<span class="k">UNION</span><span class="w"></span>
+<span class="k">UNION</span>
 <span class="k">SELECT</span><span class="w"> </span>
-<span class="w">    </span><span class="ss">&quot;b&quot;</span><span class="w"> </span><span class="k">class</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="ss">&quot;b&quot;</span><span class="w"> </span><span class="k">class</span><span class="p">,</span>
 <span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">count</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>Alternate solution: Since the problem as stated didn’t ask for generalizable solution, you can leverage the fact that <code class="docutils literal notranslate"><span class="pre">b</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">a</span></code> to produce this straightforward solution:</p>
 <p><strong>Acknowledgement</strong>: Thanks to Karan Gadiya for contributing this solution. Thanks, KG!</p>
-<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">max_class</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"></span>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">max_class</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span>
 <span class="w">        </span><span class="k">user</span><span class="p">,</span><span class="w"> </span>
 <span class="w">        </span><span class="k">MAX</span><span class="p">(</span><span class="k">class</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">class</span><span class="w"> </span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span>
 <span class="w">        </span><span class="k">table</span><span class="w"> </span>
 <span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
-<span class="w">        </span><span class="k">user</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">user</span>
+<span class="p">)</span>
 
 <span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="k">class</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">user</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"></span>
-<span class="w">    </span><span class="n">max_class</span><span class="w"></span>
+<span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">user</span><span class="p">)</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">max_class</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
 <span class="w">    </span><span class="k">class</span><span class="w">    </span>
 </pre></div>

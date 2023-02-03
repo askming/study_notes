@@ -883,7 +883,7 @@ title="Print to PDF"
 <li><p>Conditioning</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
 <span class="k">ELSE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span>
-<span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_var_name</span><span class="w"></span>
+<span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_var_name</span>
 </pre></div>
 </div>
 </li>
@@ -927,9 +927,9 @@ title="Print to PDF"
 </ul>
 </li>
 <li><p>Update SQL table</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span><span class="w"></span>
-<span class="w">  </span><span class="k">SET</span><span class="w"> </span><span class="n">column1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span>
+<span class="w">  </span><span class="k">SET</span><span class="w"> </span><span class="n">column1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
@@ -958,11 +958,11 @@ title="Print to PDF"
 <h3>Stacking tables<a class="headerlink" href="#stacking-tables" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">UNION</span></code> operator: to <strong>stack</strong> one dataset on top of the other</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">var3_new</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"></span>
-<span class="k">UNION</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var4</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">var3_new</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">var3_new</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var4</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">var3_new</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table2</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -977,9 +977,9 @@ title="Print to PDF"
 <h3>Create a <strong>view</strong> of the data table<a class="footnote-reference brackets" href="#socratica" id="id1">1</a>:<a class="headerlink" href="#create-a-view-of-the-data-table" title="Permalink to this headline">#</a></h3>
 <ul>
 <li><p>security of the data, giving access to only the variables included in the view table</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">AS</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var3</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">AS</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">var1</span><span class="p">,</span><span class="w"> </span><span class="n">var2</span><span class="p">,</span><span class="w"> </span><span class="n">var3</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
@@ -1002,10 +1002,10 @@ title="Print to PDF"
 <li><p>performs a calculation across a set of table rows that are somehow related to the current row</p>
 <ul>
 <li><p>Example</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Aggregate_fun</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var1</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var2</span><span class="w"></span>
-<span class="w">   </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var3</span><span class="w"></span>
-<span class="w">   </span><span class="k">ROWS</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">PRECEDING</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">CURRENT</span><span class="w"> </span><span class="k">ROW</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_Var</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">Aggregate_fun</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span>
+<span class="w">  </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var1</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var2</span>
+<span class="w">   </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var3</span>
+<span class="w">   </span><span class="k">ROWS</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">PRECEDING</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">CURRENT</span><span class="w"> </span><span class="k">ROW</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_Var</span>
 </pre></div>
 </div>
 </li>
@@ -1045,8 +1045,8 @@ title="Print to PDF"
 </ol>
 </li>
 <li><p>Defining a window alias: a convenient way to use several window functions that use the same window:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">WINDOW</span><span class="w"> </span><span class="n">window_name</span><span class="w"> </span><span class="k">AS</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var1</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var2</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">WINDOW</span><span class="w"> </span><span class="n">window_name</span><span class="w"> </span><span class="k">AS</span>
+<span class="w">  </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var1</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">var2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>this should come after <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause</p>
