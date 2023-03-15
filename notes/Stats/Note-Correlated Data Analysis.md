@@ -354,6 +354,18 @@ $$
 - If the number of measurement times is moderate or large and there are missing values, sometimes one can encounter convergence problems with the unstructured covariance matrix in the MMRM. In the case of this occurring, trials often pre-specify to use models which parametrise the residual error covariance matrix using fewer parameters (e.g. first order autoregressive).
   - A possible alternative would be use doubly robust estimation, which would be (asymptotically) unbiased if either the outcome model (including the simpler parametrisation for the residual covariance matrix) or the model for dropout (missingness) were correct. 
 
+- SAS warning in MMRM model (or proc mixed macro) and how to handle it
+  - Example warning message: 
+    > The Hessian (or G or D) Matrix is not positive definite. Convergence has stopped.
+  - Meaning of the warning: 
+    - The Hessian Matrix is based on the D Matrix (the variance covariance matrix of the random effects), and is used to compute the standard errors of the covariance parameters.
+    - Algorithms that estimate these parameters get stuck if the Hessian Matrix doesn’t have those same positive diagonal entries.
+  - What to do about it?
+    - To check the scaling of your predictor variables. Variables with vastly different scales may lead to this issue
+    - To respecify the random parts of the model: reduce number of random effects, specify a different covariance structure (usually simpler structure)
+    - Change to a different model, such as GEE model
+  - [Reference](https://www.theanalysisfactor.com/wacky-hessian-matrix/)
+
 ### Marginal model (population average)
 
 - Generalized least squares is based on these ideas, and can incorporate multiple types of correlation structures without including any random effects.[^fharrell]
