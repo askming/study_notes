@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Inside look at modern web browser &#8212; Study Notes</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
@@ -52,63 +63,95 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS/Note-Inside look at modern web browser';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Learning React" href="Note-Learning%20React.html" />
     <link rel="prev" title="Hard Data Analyst SQL Interview Questions" href="Note-Hard%20SQL%20interview%20questions.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Study Notes</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -117,749 +160,317 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Statistics
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistics</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   [book] Analysis of Observational Health Care Data Using SAS
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Causal%20Inference%20What%20If.html">
-   [book] Causal Inference: What If
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Causal_inference_in_statistics_a_primer.html">
-   [book] Causal inference in statistics
-   <em>
-    a primer
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
-   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
-   [book] Fundamentals of Clinical Trials (4th edition)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
-   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">
-   [book] Regression Modeling Strategies
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Adaptive%20Trial%20Design.html">
-   Adaptive Clinical Trial Design
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Analysis%20of%20Ordinal%20Outcome.html">
-   Analysis of ordinal outcome
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
-   Why analysis of stratified randomization trial data need to account for the stratification factors?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
-   Association vs. Prediction vs. Causation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Baseline%20Adaptive%20Randomization.html">
-   Baseline adaptive randomization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Bayesian%20optimization.html">
-   Exploring Bayesian Optimization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Causal%20inference%20general.html">
-   Causal Inference General Study Notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">
-   Competing risk models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Correlated%20Data%20Analysis.html">
-   Correlated/Longitudinal Data Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Cox_PH_model.html">
-   ​Cox PH model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Dirichlet%20process.html">
-   Dirichlet process
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-FDA%20guidances%20for%20industry.html">
-   Notes on FDA Guidances for Industry
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Gaussian%20process.html">
-   Gaussain Process
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Group_Sequential_Trial_Design.html">
-   Notes on Group Sequential Trial Design​
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-ICH%20guidelines.html">
-   Notes on ICH guidelines​
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-MDD%20%26%20Effect%20size.html">
-   Power,
-   <strong>
-    MDD
-   </strong>
-   /
-   <strong>
-    E
-   </strong>
-   (minimum detectable difference/effect), and
-   <strong>
-    Effect size
-   </strong>
-   in clinical trials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Meta-Analysis.html">
-   Meta-analysis​
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Missing%20data.html">
-   Missing data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Model%20comparison%20methods.html">
-   Model comparison methods
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Monte%20Carlo%20method.html">
-   Monte Carlo Method
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Multicolinearity.html">
-   Multicolinearity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Multiplicity%20in%20Clinical%20Trials.html">
-   Multiplicity in Clinical Trials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Non-inferiority%20equivalence%20superiority%20test.html">
-   Non-inferiority/equivalence/superiority test basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Observational%20study%20design.html">
-   Observational study design
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Propensity%20score%20methods.html">
-   Propensity Score Methods &amp; Implementation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Quantile%20regression.html">
-   Quantile regression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Sample_size_calculation_with_WMW_test.html">
-   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/Note-Survival_Analysis.html">
-   Survival Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats/%C2%A0Note-Trimmed%20means%20analysis.html">
-   Trimmed means analysis
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">[book] Analysis of Observational Health Care Data Using SAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Book-Causal%20Inference%20What%20If.html">[book] Causal Inference: What If</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Book-Causal_inference_in_statistics_a_primer.html">[book] Causal inference in statistics <em>a primer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">[book] Data Analysis Using Regression and Multilevel/Hierarchical Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">[book] Fundamentals of Clinical Trials (4th edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">[book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Book-Regression%20Modeling%20Strategies.html">[book] Regression Modeling Strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Adaptive%20Trial%20Design.html">Adaptive Clinical Trial Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Analysis%20of%20Ordinal%20Outcome.html">Analysis of ordinal outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">Why analysis of stratified randomization trial data need to account for the stratification factors?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Association%20vs.%20Prediction%20vs.%20Causation.html">Association vs. Prediction vs. Causation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Baseline%20Adaptive%20Randomization.html">Baseline adaptive randomization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Bayesian%20optimization.html">Exploring Bayesian Optimization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Causal%20inference%20general.html">Causal Inference General Study Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Competing_Risk_Regression.html">Competing risk models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Correlated%20Data%20Analysis.html">Correlated/Longitudinal Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Cox_PH_model.html">​Cox PH model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Dirichlet%20process.html">Dirichlet process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-FDA%20guidances%20for%20industry.html">Notes on FDA Guidances for Industry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Gaussian%20process.html">Gaussain Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Group_Sequential_Trial_Design.html">Notes on Group Sequential Trial Design​</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-ICH%20guidelines.html">Notes on ICH guidelines​</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-MDD%20%26%20Effect%20size.html">Power, <strong>MDD</strong>/<strong>E</strong> (minimum detectable difference/effect), and <strong>Effect size</strong> in clinical trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Meta-Analysis.html">Meta-analysis​</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Missing%20data.html">Missing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Model%20comparison%20methods.html">Model comparison methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Monte%20Carlo%20method.html">Monte Carlo Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Multicolinearity.html">Multicolinearity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Multiplicity%20in%20Clinical%20Trials.html">Multiplicity in Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Non-inferiority%20equivalence%20superiority%20test.html">Non-inferiority/equivalence/superiority test basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Observational%20study%20design.html">Observational study design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Propensity%20score%20methods.html">Propensity Score Methods &amp; Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Quantile%20regression.html">Quantile regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Sample_size_calculation_with_WMW_test.html">Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/Note-Survival_Analysis.html">Survival Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats/%C2%A0Note-Trimmed%20means%20analysis.html">Trimmed means analysis</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Statistical computing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical computing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
-   How R searches and finds stuff
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-Pandas.html">
-   Pandas study note
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">
-   R study notes/tips
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
-   Google R package googleVis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
-   Notes on
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     matplotlib
-    </span>
-   </code>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">How R searches and finds stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-Pandas.html">Pandas study note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">R study notes/tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-googleVis.html">Google R package googleVis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">Notes on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  DS/ML
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DS/ML</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
-   [book] Python Data Science Handbook
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Course-Udemy-%20Python%20for%20Data%20Science%20and%20Machine%20Learning%20Bootcamp.html">
-   Udemy: Python for Data Science and Machine Learning Bootcamp
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
-   Boosting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
-   Cluster analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
-   ​Machine Learning (General)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
-   Naive Bayes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
-   Stochastic Gradient Decent (SGD)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   Tree/Random Forest (Bagging)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">[book] Hands-On Machine Learning with Scikit-Learn and TensorFlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">[book] Python Data Science Handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Course-Udemy-%20Python%20for%20Data%20Science%20and%20Machine%20Learning%20Bootcamp.html">Udemy: Python for Data Science and Machine Learning Bootcamp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Boosting.html">Boosting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">Cluster analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">​Machine Learning (General)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">Naive Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">Stochastic Gradient Decent (SGD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">Tree/Random Forest (Bagging)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Computer science
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computer science</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Course-%E5%BB%96%E9%9B%AA%E5%B3%B0python%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.html">
-   廖雪峰python教程笔记
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-HTML%20basics.html">
-   HTML Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Hard%20SQL%20interview%20questions.html">
-   Hard Data Analyst SQL Interview Questions
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Inside look at modern web browser
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Learning%20React.html">
-   Learning React
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Learning%20Rust.html">
-   Learning Rust
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Modern%20JS%20explained.html">
-   Modern JavaScript Explained
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Python%20numpy.html">
-   Numpy study notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-SQL%20Study%20Notes.html">
-   SQL study notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-git%20and%20github.html">
-   git and github
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Course-%E5%BB%96%E9%9B%AA%E5%B3%B0python%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.html">廖雪峰python教程笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-HTML%20basics.html">HTML Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Hard%20SQL%20interview%20questions.html">Hard Data Analyst SQL Interview Questions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Inside look at modern web browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Learning%20React.html">Learning React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Learning%20Rust.html">Learning Rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Modern%20JS%20explained.html">Modern JavaScript Explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Python%20numpy.html">Numpy study notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-SQL%20Study%20Notes.html">SQL study notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-git%20and%20github.html">git and github</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Math
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Math/Course-Essence%20of%20linear%20algebra.html">
-   Essence of linear algebra
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Math/Course-Essence%20of%20linear%20algebra.html">Essence of linear algebra</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Miscellaneous
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Early%20managment%20of%20patients%20with%20AIS.html">
-   Early management of patients with acute ischemic stroke
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   Miscellaneous Study Notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   Pharmacedutical development
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">
-   :bulb: Q: fair coin, # of flips to get two consecutive side (H or T)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">
-   Generate random number 1 to 7 using a fair dice
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Early%20managment%20of%20patients%20with%20AIS.html">Early management of patients with acute ischemic stroke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">Miscellaneous Study Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">Pharmacedutical development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">:bulb: Q: fair coin, # of flips to get two consecutive side (H or T)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">Generate random number 1 to 7 using a fair dice</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/askming/study_notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-Inside look at modern web browser.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/CS/Note-Inside look at modern web browser.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/askming/study_notes"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FCS/Note-Inside look at modern web browser.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/CS/Note-Inside look at modern web browser.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-cpu-gpu-memory-and-multi-process-architecture">
-   Part 1: CPU, GPU, Memory, and multi-process architecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#browser-architecture">
-     Browser architecture
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#which-process-controls-what">
-     Which process controls what
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-benefit-of-multi-process-architecture-in-chrome">
-     The benefit of multi-process architecture in Chrome
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#per-frame-renderer-processes-site-isolation">
-     Per-frame renderer processes - Site Isolation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-what-happens-in-navigation">
-   Part 2: What happens in navigation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-simple-navitagion">
-     A simple navitagion
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#navigate-to-a-different-site">
-     Navigate to a different site
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#in-case-of-service-worker">
-     In case of service worker
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#navigation-preload">
-     Navigation preload
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3-inner-workings-of-a-renderer-process">
-   Part 3: Inner workings of a Renderer Process
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parsing">
-     Parsing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-4-input-is-coming-to-the-compositor">
-   Part 4: Input is coming to the compositor
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Inside look at modern web browser</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-cpu-gpu-memory-and-multi-process-architecture">
-   Part 1: CPU, GPU, Memory, and multi-process architecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#browser-architecture">
-     Browser architecture
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#which-process-controls-what">
-     Which process controls what
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-benefit-of-multi-process-architecture-in-chrome">
-     The benefit of multi-process architecture in Chrome
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#per-frame-renderer-processes-site-isolation">
-     Per-frame renderer processes - Site Isolation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-what-happens-in-navigation">
-   Part 2: What happens in navigation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-simple-navitagion">
-     A simple navitagion
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#navigate-to-a-different-site">
-     Navigate to a different site
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#in-case-of-service-worker">
-     In case of service worker
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#navigation-preload">
-     Navigation preload
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3-inner-workings-of-a-renderer-process">
-   Part 3: Inner workings of a Renderer Process
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parsing">
-     Parsing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-4-input-is-coming-to-the-compositor">
-   Part 4: Input is coming to the compositor
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Inside look at modern web browser</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-cpu-gpu-memory-and-multi-process-architecture">Part 1: CPU, GPU, Memory, and multi-process architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#browser-architecture">Browser architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-process-controls-what">Which process controls what</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-benefit-of-multi-process-architecture-in-chrome">The benefit of multi-process architecture in Chrome</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-frame-renderer-processes-site-isolation">Per-frame renderer processes - Site Isolation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-what-happens-in-navigation">Part 2: What happens in navigation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-navitagion">A simple navitagion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-a-different-site">Navigate to a different site</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-case-of-service-worker">In case of service worker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-preload">Navigation preload</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-inner-workings-of-a-renderer-process">Part 3: Inner workings of a Renderer Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing">Parsing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-input-is-coming-to-the-compositor">Part 4: Input is coming to the compositor</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="inside-look-at-modern-web-browser">
-<h1>Inside look at modern web browser<a class="headerlink" href="#inside-look-at-modern-web-browser" title="Permalink to this headline">#</a></h1>
+<h1>Inside look at modern web browser<a class="headerlink" href="#inside-look-at-modern-web-browser" title="Permalink to this heading">#</a></h1>
 <section id="part-1-cpu-gpu-memory-and-multi-process-architecture">
-<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part1">Part 1: CPU, GPU, Memory, and multi-process architecture</a><a class="headerlink" href="#part-1-cpu-gpu-memory-and-multi-process-architecture" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part1">Part 1: CPU, GPU, Memory, and multi-process architecture</a><a class="headerlink" href="#part-1-cpu-gpu-memory-and-multi-process-architecture" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>Usually, applications run on the CPU and GPU using mechanisms provided by the Operating System. (computer architecture)</p>
  <img src="https://wd.imgix.net/image/T4FyVKpzu4WKF1kBNvXepbi08t52/9M8aKlSl3207o9C3QVVp.png?auto=format&w=1600" width="65%">
@@ -873,7 +484,7 @@ title="Print to PDF"
 <li><p>If two processes need to talk, they can do so by using Inter Process Communication (IPC).</p></li>
 </ul>
 <section id="browser-architecture">
-<h3>Browser architecture<a class="headerlink" href="#browser-architecture" title="Permalink to this headline">#</a></h3>
+<h3>Browser architecture<a class="headerlink" href="#browser-architecture" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>it could be one process with many different threads or many different processes with a few threads communicating over IPC.</p>
 <ul>
@@ -891,18 +502,18 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="which-process-controls-what">
-<h3>Which process controls what<a class="headerlink" href="#which-process-controls-what" title="Permalink to this headline">#</a></h3>
+<h3>Which process controls what<a class="headerlink" href="#which-process-controls-what" title="Permalink to this heading">#</a></h3>
 <img src="https://wd.imgix.net/image/T4FyVKpzu4WKF1kBNvXepbi08t52/vl5sRzL8pFwlLSN7WW12.png?auto=format&w=1600" width="60%">
 </section>
 <section id="the-benefit-of-multi-process-architecture-in-chrome">
-<h3>The benefit of multi-process architecture in Chrome<a class="headerlink" href="#the-benefit-of-multi-process-architecture-in-chrome" title="Permalink to this headline">#</a></h3>
+<h3>The benefit of multi-process architecture in Chrome<a class="headerlink" href="#the-benefit-of-multi-process-architecture-in-chrome" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>If one tab becomes unresponsive, then you can close the unresponsive tab and move on while keeping other tabs alive</p></li>
 <li><p>Another benefit of separating the browser’s work into multiple processes is security and sandboxing.</p></li>
 </ul>
 </section>
 <section id="per-frame-renderer-processes-site-isolation">
-<h3>Per-frame renderer processes - Site Isolation<a class="headerlink" href="#per-frame-renderer-processes-site-isolation" title="Permalink to this headline">#</a></h3>
+<h3>Per-frame renderer processes - Site Isolation<a class="headerlink" href="#per-frame-renderer-processes-site-isolation" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p><a class="reference external" href="https://developers.google.com/web/updates/2018/07/site-isolation">Site Isolation</a> is a recently introduced feature in Chrome that runs a separate renderer process for each cross-site iframe.</p>
 <ul>
@@ -915,9 +526,9 @@ title="Print to PDF"
 </section>
 </section>
 <section id="part-2-what-happens-in-navigation">
-<h2><a class="reference external" href="https://developer.chrome.com/blog/inside-browser-part2/">Part 2: What happens in navigation</a><a class="headerlink" href="#part-2-what-happens-in-navigation" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://developer.chrome.com/blog/inside-browser-part2/">Part 2: What happens in navigation</a><a class="headerlink" href="#part-2-what-happens-in-navigation" title="Permalink to this heading">#</a></h2>
 <section id="a-simple-navitagion">
-<h3>A simple navitagion<a class="headerlink" href="#a-simple-navitagion" title="Permalink to this headline">#</a></h3>
+<h3>A simple navitagion<a class="headerlink" href="#a-simple-navitagion" title="Permalink to this heading">#</a></h3>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>
 flowchart TD
     A[handling input] --&gt; B[Start navigation]
@@ -928,19 +539,19 @@ flowchart TD
 </div>
 </section>
 <section id="navigate-to-a-different-site">
-<h3>Navigate to a different site<a class="headerlink" href="#navigate-to-a-different-site" title="Permalink to this headline">#</a></h3>
+<h3>Navigate to a different site<a class="headerlink" href="#navigate-to-a-different-site" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="in-case-of-service-worker">
-<h3>In case of service worker<a class="headerlink" href="#in-case-of-service-worker" title="Permalink to this headline">#</a></h3>
+<h3>In case of service worker<a class="headerlink" href="#in-case-of-service-worker" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="navigation-preload">
-<h3>Navigation preload<a class="headerlink" href="#navigation-preload" title="Permalink to this headline">#</a></h3>
+<h3>Navigation preload<a class="headerlink" href="#navigation-preload" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 <section id="part-3-inner-workings-of-a-renderer-process">
-<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part3">Part 3: Inner workings of a Renderer Process</a><a class="headerlink" href="#part-3-inner-workings-of-a-renderer-process" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part3">Part 3: Inner workings of a Renderer Process</a><a class="headerlink" href="#part-3-inner-workings-of-a-renderer-process" title="Permalink to this heading">#</a></h2>
 <section id="parsing">
-<h3>Parsing<a class="headerlink" href="#parsing" title="Permalink to this headline">#</a></h3>
+<h3>Parsing<a class="headerlink" href="#parsing" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>When the renderer process receives a commit message for a navigation and starts to receive HTML data, the main thread begins to parse the text string (HTML) and turn it into a <strong>Document Object Model (DOM)</strong>.</p>
 <ul>
@@ -975,7 +586,7 @@ flowchart TD
 </section>
 </section>
 <section id="part-4-input-is-coming-to-the-compositor">
-<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part4">Part 4: Input is coming to the compositor</a><a class="headerlink" href="#part-4-input-is-coming-to-the-compositor" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://developers.google.com/web/updates/2018/09/inside-browser-part4">Part 4: Input is coming to the compositor</a><a class="headerlink" href="#part-4-input-is-coming-to-the-compositor" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Since running JavaScript is the main thread’s job, when a page is composited, the compositor thread marks a region of the page that has event handlers attached as <strong>“Non-Fast Scrollable Region”</strong>.</p>
 <ul>
@@ -999,7 +610,7 @@ flowchart TD
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./CS"
         },
         predefinedOutput: true
@@ -1013,50 +624,117 @@ flowchart TD
         window.onload = init;
     </script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Note-Hard%20SQL%20interview%20questions.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Hard Data Analyst SQL Interview Questions</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Note-Hard%20SQL%20interview%20questions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Hard Data Analyst SQL Interview Questions</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Note-Learning%20React.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Note-Learning%20React.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Learning React</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-cpu-gpu-memory-and-multi-process-architecture">Part 1: CPU, GPU, Memory, and multi-process architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#browser-architecture">Browser architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-process-controls-what">Which process controls what</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-benefit-of-multi-process-architecture-in-chrome">The benefit of multi-process architecture in Chrome</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-frame-renderer-processes-site-isolation">Per-frame renderer processes - Site Isolation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-what-happens-in-navigation">Part 2: What happens in navigation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-navitagion">A simple navitagion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-a-different-site">Navigate to a different site</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-case-of-service-worker">In case of service worker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-preload">Navigation preload</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-inner-workings-of-a-renderer-process">Part 3: Inner workings of a Renderer Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing">Parsing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-input-is-coming-to-the-compositor">Part 4: Input is coming to the compositor</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By Ming Yang<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+By Ming Yang
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>[book] Causal Inference: What If &#8212; Study Notes</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="https://wavedrom.com/skins/default.js"></script>
     <script src="https://wavedrom.com/wavedrom.min.js"></script>
@@ -54,63 +65,95 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Stats/Book-Causal Inference What If';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="[book] Causal inference in statistics a primer" href="Book-Causal_inference_in_statistics_a_primer.html" />
     <link rel="prev" title="[book] Analysis of Observational Health Care Data Using SAS" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Study Notes</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -119,934 +162,343 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Statistics
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistics</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">
-   [book] Analysis of Observational Health Care Data Using SAS
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   [book] Causal Inference: What If
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Causal_inference_in_statistics_a_primer.html">
-   [book] Causal inference in statistics
-   <em>
-    a primer
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">
-   [book] Data Analysis Using Regression and Multilevel/Hierarchical Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">
-   [book] Fundamentals of Clinical Trials (4th edition)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">
-   [book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">
-   [book] Regression Modeling Strategies
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">
-   Adaptive Clinical Trial Design
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Analysis%20of%20Ordinal%20Outcome.html">
-   Analysis of ordinal outcome
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">
-   Why analysis of stratified randomization trial data need to account for the stratification factors?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">
-   Association vs. Prediction vs. Causation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Baseline%20Adaptive%20Randomization.html">
-   Baseline adaptive randomization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Bayesian%20optimization.html">
-   Exploring Bayesian Optimization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Causal%20inference%20general.html">
-   Causal Inference General Study Notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Competing_Risk_Regression.html">
-   Competing risk models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Correlated%20Data%20Analysis.html">
-   Correlated/Longitudinal Data Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Cox_PH_model.html">
-   ​Cox PH model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Dirichlet%20process.html">
-   Dirichlet process
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">
-   Notes on FDA Guidances for Industry
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Gaussian%20process.html">
-   Gaussain Process
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">
-   Notes on Group Sequential Trial Design​
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-ICH%20guidelines.html">
-   Notes on ICH guidelines​
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">
-   Power,
-   <strong>
-    MDD
-   </strong>
-   /
-   <strong>
-    E
-   </strong>
-   (minimum detectable difference/effect), and
-   <strong>
-    Effect size
-   </strong>
-   in clinical trials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Meta-Analysis.html">
-   Meta-analysis​
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Missing%20data.html">
-   Missing data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Model%20comparison%20methods.html">
-   Model comparison methods
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Monte%20Carlo%20method.html">
-   Monte Carlo Method
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Multicolinearity.html">
-   Multicolinearity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">
-   Multiplicity in Clinical Trials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Non-inferiority%20equivalence%20superiority%20test.html">
-   Non-inferiority/equivalence/superiority test basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Observational%20study%20design.html">
-   Observational study design
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Propensity%20score%20methods.html">
-   Propensity Score Methods &amp; Implementation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Quantile%20regression.html">
-   Quantile regression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html">
-   Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Note-Survival_Analysis.html">
-   Survival Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="%C2%A0Note-Trimmed%20means%20analysis.html">
-   Trimmed means analysis
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html">[book] Analysis of Observational Health Care Data Using SAS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">[book] Causal Inference: What If</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Book-Causal_inference_in_statistics_a_primer.html">[book] Causal inference in statistics <em>a primer</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Book-Data_Analysis_Using_Regression_and_Multilevel_Hierarchical_Models.html">[book] Data Analysis Using Regression and Multilevel/Hierarchical Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Book-Fundamentals%20of%20Clinical%20Trials%20%284th%20edition%29.html">[book] Fundamentals of Clinical Trials (4th edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Book-Group%20Sequential%20and%20Confirmatory%20Adaptive%20Designs%20in%20Clinical%20Trials.html">[book] Group Sequential and Confirmatory Adaptive Designs in Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Book-Regression%20Modeling%20Strategies.html">[book] Regression Modeling Strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Adaptive%20Trial%20Design.html">Adaptive Clinical Trial Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Analysis%20of%20Ordinal%20Outcome.html">Analysis of ordinal outcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Analysis%20of%20Stratified%20Randomization%20Trial%20Data.html">Why analysis of stratified randomization trial data need to account for the stratification factors?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Association%20vs.%20Prediction%20vs.%20Causation.html">Association vs. Prediction vs. Causation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Baseline%20Adaptive%20Randomization.html">Baseline adaptive randomization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Bayesian%20optimization.html">Exploring Bayesian Optimization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Note-Causal%20inference%20general.html">Causal Inference General Study Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Competing_Risk_Regression.html">Competing risk models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Correlated%20Data%20Analysis.html">Correlated/Longitudinal Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Cox_PH_model.html">​Cox PH model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Dirichlet%20process.html">Dirichlet process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-FDA%20guidances%20for%20industry.html">Notes on FDA Guidances for Industry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Gaussian%20process.html">Gaussain Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Group_Sequential_Trial_Design.html">Notes on Group Sequential Trial Design​</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-ICH%20guidelines.html">Notes on ICH guidelines​</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-MDD%20%26%20Effect%20size.html">Power, <strong>MDD</strong>/<strong>E</strong> (minimum detectable difference/effect), and <strong>Effect size</strong> in clinical trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Meta-Analysis.html">Meta-analysis​</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Missing%20data.html">Missing data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Model%20comparison%20methods.html">Model comparison methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Monte%20Carlo%20method.html">Monte Carlo Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Multicolinearity.html">Multicolinearity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">Multiplicity in Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Non-inferiority%20equivalence%20superiority%20test.html">Non-inferiority/equivalence/superiority test basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Observational%20study%20design.html">Observational study design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Propensity%20score%20methods.html">Propensity Score Methods &amp; Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Quantile%20regression.html">Quantile regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Sample_size_calculation_with_WMW_test.html">Sample size calculation for the Wilcoxon-Mann-Whitney test adjusting for ties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Survival_Analysis.html">Survival Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C2%A0Note-Trimmed%20means%20analysis.html">Trimmed means analysis</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Statistical computing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical computing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">
-   How R searches and finds stuff
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-Pandas.html">
-   Pandas study note
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">
-   R study notes/tips
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-googleVis.html">
-   Google R package googleVis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">
-   Notes on
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     matplotlib
-    </span>
-   </code>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-How%20R%20searches%20and%20finds%20stuff.html">How R searches and finds stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-Pandas.html">Pandas study note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-R%20notes.html">R study notes/tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-googleVis.html">Google R package googleVis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Stats_Comp/Note-matplotlib.html">Notes on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  DS/ML
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DS/ML</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">
-   [book] Hands-On Machine Learning with Scikit-Learn and TensorFlow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">
-   [book] Python Data Science Handbook
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Course-Udemy-%20Python%20for%20Data%20Science%20and%20Machine%20Learning%20Bootcamp.html">
-   Udemy: Python for Data Science and Machine Learning Bootcamp
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Boosting.html">
-   Boosting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">
-   Cluster analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">
-   ​Machine Learning (General)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">
-   Naive Bayes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">
-   Stochastic Gradient Decent (SGD)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">
-   Tree/Random Forest (Bagging)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Book-Hands-On%20Machine%20Learning%20with%20Scikit-Learn%20and%20TensorFlow.html">[book] Hands-On Machine Learning with Scikit-Learn and TensorFlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Book-Python%20Data%20Science%20Handbook.html">[book] Python Data Science Handbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Course-Udemy-%20Python%20for%20Data%20Science%20and%20Machine%20Learning%20Bootcamp.html">Udemy: Python for Data Science and Machine Learning Bootcamp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Boosting.html">Boosting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Cluster%20analysis.html">Cluster analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Machine%20Learning%20%28General%29.html">​Machine Learning (General)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Naive%20Bayes.html">Naive Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Stochasitic%20Gradient%20Descent.html">Stochastic Gradient Decent (SGD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_ML/Note-Tree%2C%20Random%20Forest%20%28Bagging%29.html">Tree/Random Forest (Bagging)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Computer science
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computer science</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Course-%E5%BB%96%E9%9B%AA%E5%B3%B0python%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.html">
-   廖雪峰python教程笔记
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-HTML%20basics.html">
-   HTML Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-Hard%20SQL%20interview%20questions.html">
-   Hard Data Analyst SQL Interview Questions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-Inside%20look%20at%20modern%20web%20browser.html">
-   Inside look at modern web browser
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-Learning%20React.html">
-   Learning React
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-Learning%20Rust.html">
-   Learning Rust
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-Modern%20JS%20explained.html">
-   Modern JavaScript Explained
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-Python%20numpy.html">
-   Numpy study notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">
-   SQL study notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CS/Note-git%20and%20github.html">
-   git and github
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Course-%E5%BB%96%E9%9B%AA%E5%B3%B0python%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.html">廖雪峰python教程笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-HTML%20basics.html">HTML Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-Hard%20SQL%20interview%20questions.html">Hard Data Analyst SQL Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-Inside%20look%20at%20modern%20web%20browser.html">Inside look at modern web browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-Learning%20React.html">Learning React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-Learning%20Rust.html">Learning Rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-Modern%20JS%20explained.html">Modern JavaScript Explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-Python%20numpy.html">Numpy study notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-SQL%20Study%20Notes.html">SQL study notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CS/Note-git%20and%20github.html">git and github</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Math
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Math</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Math/Course-Essence%20of%20linear%20algebra.html">
-   Essence of linear algebra
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Math/Course-Essence%20of%20linear%20algebra.html">Essence of linear algebra</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Miscellaneous
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Early%20managment%20of%20patients%20with%20AIS.html">
-   Early management of patients with acute ischemic stroke
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">
-   Miscellaneous Study Notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">
-   Pharmacedutical development
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">
-   :bulb: Q: fair coin, # of flips to get two consecutive side (H or T)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">
-   Generate random number 1 to 7 using a fair dice
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Early%20managment%20of%20patients%20with%20AIS.html">Early management of patients with acute ischemic stroke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Miscellaneous%20Notes.html">Miscellaneous Study Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Phamaceutical%20development.html">Pharmacedutical development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Sim-Coin%20flip.html">:bulb: Q: fair coin, # of flips to get two consecutive side (H or T)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Miscellaneous/Sim-Generate%20random%20number%20between%201%20to%207.html">Generate random number 1 to 7 using a fair dice</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/askming/study_notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Causal Inference What If.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Stats/Book-Causal Inference What If.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/askming/study_notes"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/askming/study_notes/issues/new?title=Issue%20on%20page%20%2FStats/Book-Causal Inference What If.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Stats/Book-Causal Inference What If.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-2-randomized-experiments">
-   Chapter 2 Randomized Experiments
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#randomization">
-     2.1 Randomization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conditional-randomization">
-     2.2 Conditional randomization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standardization">
-     2.3 Standardization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inverse-probability-weighting-ipw">
-     2.4 Inverse probability weighting (IPW)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-4-effect-modification">
-   Chapter 4 Effect Modification
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definitionof-effect-modification-what-and-why-effect-modification">
-     4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-quantify-effect-modification">
-     4.2, 4.4, &amp; 4.5 How to quantify effect modification
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#stratification">
-       Stratification
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#adjustment-via-stratification">
-       Adjustment via stratification
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#adjustment-via-matching">
-       Adjustment via matching
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated">
-       Fine and Tech Points 4.1 Causal effect in the treated/untreated
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     4.6 Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-5-interaction">
-   Chapter 5 Interaction
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interaction-requires-a-joint-intervention">
-     5.1 Interaction requires a joint intervention
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#identifying-interaction">
-     5.2 Identifying interaction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#counterfactual-response-types-and-interaction">
-     5.3 Counterfactual response types and interaction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6">
-     5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">
-   Chapter 6 Graphical representation of causal effects
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#causal-diagrams">
-     6.1 Causal diagrams
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency">
-     6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-structural-classification-of-bias">
-     6.5 A structural classification of bias
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-structure-of-effect-modification">
-     6.6 The structure of effect modification
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-7-confounding">
-   Chapter 7 Confounding
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#confounding-and-confounders-7-1-7-4">
-     Confounding and confounders (7.1 &amp; 7.4)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-structure-type-of-confounding-7-1">
-     The structure (type) of confounding (7.1)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6">
-     Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#single-world-intervention-graphs-7-5">
-     Single-world intervention graphs (7.5)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#confounding-adjustment-7-6">
-     Confounding adjustment (7.6)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-8-selection-bias">
-   Chapter 8 Selection bias
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>[book] Causal Inference: What If</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-2-randomized-experiments">
-   Chapter 2 Randomized Experiments
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#randomization">
-     2.1 Randomization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conditional-randomization">
-     2.2 Conditional randomization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standardization">
-     2.3 Standardization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inverse-probability-weighting-ipw">
-     2.4 Inverse probability weighting (IPW)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-4-effect-modification">
-   Chapter 4 Effect Modification
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definitionof-effect-modification-what-and-why-effect-modification">
-     4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-quantify-effect-modification">
-     4.2, 4.4, &amp; 4.5 How to quantify effect modification
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#stratification">
-       Stratification
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#adjustment-via-stratification">
-       Adjustment via stratification
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#adjustment-via-matching">
-       Adjustment via matching
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated">
-       Fine and Tech Points 4.1 Causal effect in the treated/untreated
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     4.6 Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-5-interaction">
-   Chapter 5 Interaction
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interaction-requires-a-joint-intervention">
-     5.1 Interaction requires a joint intervention
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#identifying-interaction">
-     5.2 Identifying interaction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#counterfactual-response-types-and-interaction">
-     5.3 Counterfactual response types and interaction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6">
-     5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">
-   Chapter 6 Graphical representation of causal effects
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#causal-diagrams">
-     6.1 Causal diagrams
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency">
-     6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-structural-classification-of-bias">
-     6.5 A structural classification of bias
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-structure-of-effect-modification">
-     6.6 The structure of effect modification
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-7-confounding">
-   Chapter 7 Confounding
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#confounding-and-confounders-7-1-7-4">
-     Confounding and confounders (7.1 &amp; 7.4)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-structure-type-of-confounding-7-1">
-     The structure (type) of confounding (7.1)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6">
-     Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#single-world-intervention-graphs-7-5">
-     Single-world intervention graphs (7.5)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#confounding-adjustment-7-6">
-     Confounding adjustment (7.6)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-8-selection-bias">
-   Chapter 8 Selection bias
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>[book] Causal Inference: What If</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-randomized-experiments">Chapter 2 Randomized Experiments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#randomization">2.1 Randomization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-randomization">2.2 Conditional randomization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardization">2.3 Standardization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-probability-weighting-ipw">2.4 Inverse probability weighting (IPW)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-4-effect-modification">Chapter 4 Effect Modification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definitionof-effect-modification-what-and-why-effect-modification">4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-quantify-effect-modification">4.2, 4.4, &amp; 4.5 How to quantify effect modification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stratification">Stratification</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjustment-via-stratification">Adjustment via stratification</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjustment-via-matching">Adjustment via matching</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated">Fine and Tech Points 4.1 Causal effect in the treated/untreated</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.6 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-5-interaction">Chapter 5 Interaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-requires-a-joint-intervention">5.1 Interaction requires a joint intervention</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-interaction">5.2 Identifying interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-response-types-and-interaction">5.3 Counterfactual response types and interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6">5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">Chapter 6 Graphical representation of causal effects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-diagrams">6.1 Causal diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency">6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structural-classification-of-bias">6.5 A structural classification of bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-effect-modification">6.6 The structure of effect modification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-7-confounding">Chapter 7 Confounding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confounding-and-confounders-7-1-7-4">Confounding and confounders (7.1 &amp; 7.4)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-type-of-confounding-7-1">The structure (type) of confounding (7.1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6">Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-world-intervention-graphs-7-5">Single-world intervention graphs (7.5)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confounding-adjustment-7-6">Confounding adjustment (7.6)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-8-selection-bias">Chapter 8 Selection bias</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="book-causal-inference-what-if">
-<h1>[book] Causal Inference: What If<a class="headerlink" href="#book-causal-inference-what-if" title="Permalink to this headline">#</a></h1>
+<h1>[book] Causal Inference: What If<a class="headerlink" href="#book-causal-inference-what-if" title="Permalink to this heading">#</a></h1>
 <p><em>by Miguel A. Hernan and James M. Robins</em></p>
 <section id="chapter-2-randomized-experiments">
-<h2>Chapter 2 Randomized Experiments<a class="headerlink" href="#chapter-2-randomized-experiments" title="Permalink to this headline">#</a></h2>
+<h2>Chapter 2 Randomized Experiments<a class="headerlink" href="#chapter-2-randomized-experiments" title="Permalink to this heading">#</a></h2>
 <section id="randomization">
-<h3>2.1 Randomization<a class="headerlink" href="#randomization" title="Permalink to this headline">#</a></h3>
+<h3>2.1 Randomization<a class="headerlink" href="#randomization" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Counterfacatual: <span class="math notranslate nohighlight">\(Y^a\)</span> the “theoretical” outcome under certain treatment <span class="math notranslate nohighlight">\(a\)</span></p></li>
 </ul>
@@ -1066,7 +518,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="conditional-randomization">
-<h3>2.2 Conditional randomization<a class="headerlink" href="#conditional-randomization" title="Permalink to this headline">#</a></h3>
+<h3>2.2 Conditional randomization<a class="headerlink" href="#conditional-randomization" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p><em>Conditionally randomized experiments</em> meaning there are several randomization probabilities that depend (are conditional) on the values of some variable(s) <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
 <li><p><em>Marginally randomized experiments</em> meaning there is only a single unconditional (marginal) randomization probability (doesn’t need to be 0.5) that is common to all individuals.</p>
@@ -1092,7 +544,7 @@ title="Print to PDF"
   \]</div>
 </li>
 <li><p>To calculate the population average causal effect with conditional randomization, do the following two steps</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>First, compute the average causal effect in each of these subsets or strata of the population</p></li>
 <li><p>Second, compute the average causal effect by combining the individual effects from step 1</p>
 <ul class="simple">
@@ -1104,7 +556,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="standardization">
-<h3>2.3 Standardization<a class="headerlink" href="#standardization" title="Permalink to this headline">#</a></h3>
+<h3>2.3 Standardization<a class="headerlink" href="#standardization" title="Permalink to this heading">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Weighted average of the treatment effects from subgroups; weight is defined by the sample size of the subgorup</p>
@@ -1128,7 +580,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="inverse-probability-weighting-ipw">
-<h3>2.4 Inverse probability weighting (IPW)<a class="headerlink" href="#inverse-probability-weighting-ipw" title="Permalink to this headline">#</a></h3>
+<h3>2.4 Inverse probability weighting (IPW)<a class="headerlink" href="#inverse-probability-weighting-ipw" title="Permalink to this heading">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>The idea is that assuming all the patients in one subgroup receive treatment/control, and the outcome probability follows the obseved one from one of the arms (under conditional exchangeability assumption), how would the outcome look like (pseudo counterfactual).</p>
@@ -1203,7 +655,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </section>
 </section>
 <section id="chapter-4-effect-modification">
-<h2>Chapter 4 Effect Modification<a class="headerlink" href="#chapter-4-effect-modification" title="Permalink to this headline">#</a></h2>
+<h2>Chapter 4 Effect Modification<a class="headerlink" href="#chapter-4-effect-modification" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Key ideas in this chapter</p>
 <ul>
@@ -1214,7 +666,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </li>
 </ul>
 <section id="definitionof-effect-modification-what-and-why-effect-modification">
-<h3>4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification<a class="headerlink" href="#definitionof-effect-modification-what-and-why-effect-modification" title="Permalink to this headline">#</a></h3>
+<h3>4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification<a class="headerlink" href="#definitionof-effect-modification-what-and-why-effect-modification" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Definition of effect modification</p>
 <ul class="simple">
@@ -1237,7 +689,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </ul>
 </li>
 <li><p>Why we care about effect modification</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>If a factor <span class="math notranslate nohighlight">\(V\)</span> modifies the effect of treatment <span class="math notranslate nohighlight">\(A\)</span> on the outcome <span class="math notranslate nohighlight">\(Y\)</span> then the average causal effect will differ between populations with different prevalence of <span class="math notranslate nohighlight">\(V\)</span></p>
 <ul class="simple">
 <li><p>There is generally no such athingas “<em>the average</em> causal effect of treatment <span class="math notranslate nohighlight">\(A\)</span> on outcome <span class="math notranslate nohighlight">\(Y\)</span> (period)”, but “the average causal effect of treatment <span class="math notranslate nohighlight">\(A\)</span> on outcome <span class="math notranslate nohighlight">\(Y\)</span> in a population with a particular mix of causal effect modifiers.”</p></li>
@@ -1254,7 +706,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 <p class="sidebar-title"></p>
 <p>The terms “effect modification” and “interaction” are sometimes used as synonymous in the scientific literature. “Interaction” as a causal concept that is related to, but different from, effect modification (Chapter 5).</p>
 </aside>
-<ol class="simple">
+<ol class="arabic simple" start="3">
 <li><p>The identification of effect modification may help understand the biological, social, or other mechanisms leading to the outcome.</p></li>
 </ol>
 </li>
@@ -1278,9 +730,9 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </ul>
 </section>
 <section id="how-to-quantify-effect-modification">
-<h3>4.2, 4.4, &amp; 4.5 How to quantify effect modification<a class="headerlink" href="#how-to-quantify-effect-modification" title="Permalink to this headline">#</a></h3>
+<h3>4.2, 4.4, &amp; 4.5 How to quantify effect modification<a class="headerlink" href="#how-to-quantify-effect-modification" title="Permalink to this heading">#</a></h3>
 <section id="stratification">
-<h4>Stratification<a class="headerlink" href="#stratification" title="Permalink to this headline">#</a></h4>
+<h4>Stratification<a class="headerlink" href="#stratification" title="Permalink to this heading">#</a></h4>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>if treatment assignment was random and unconditional, exchangeability is expected in every subset of the population.</p>
@@ -1297,7 +749,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </ul>
 </section>
 <section id="adjustment-via-stratification">
-<h4>Adjustment via stratification<a class="headerlink" href="#adjustment-via-stratification" title="Permalink to this headline">#</a></h4>
+<h4>Adjustment via stratification<a class="headerlink" href="#adjustment-via-stratification" title="Permalink to this heading">#</a></h4>
 <ul>
 <li><p>In practice stratification is often used as an alternative to standardization (and IP weighting) to adjust for <span class="math notranslate nohighlight">\(L\)</span>. In fact, the use of stratification as a method to adjust for <span class="math notranslate nohighlight">\(L\)</span> is so widespread that many investigators consider the terms “stratification” and “adjustment” as synonymous.</p>
 <ul class="simple">
@@ -1324,7 +776,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </ul>
 </section>
 <section id="adjustment-via-matching">
-<h4>Adjustment via matching<a class="headerlink" href="#adjustment-via-matching" title="Permalink to this headline">#</a></h4>
+<h4>Adjustment via matching<a class="headerlink" href="#adjustment-via-matching" title="Permalink to this heading">#</a></h4>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Pay attention to the difference in matching applied to case-control studies:</p>
@@ -1341,7 +793,7 @@ Standardization and IP weighting can be generalized to conditionally randomized 
 </ul>
 </section>
 <section id="fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated">
-<h4>Fine and Tech Points 4.1 Causal effect in the treated/untreated<a class="headerlink" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated" title="Permalink to this headline">#</a></h4>
+<h4>Fine and Tech Points 4.1 Causal effect in the treated/untreated<a class="headerlink" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Consider a particular and special subset of the population, the treated (<span class="math notranslate nohighlight">\(A=1\)</span>), the average causal effect in the treated is expressed as</p></li>
 </ul>
@@ -1389,7 +841,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </section>
 </section>
 <section id="summary">
-<h3>4.6 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<h3>4.6 Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Stratified analysis is needed to inspect the existence of effect modification from certain variable(s) <span class="math notranslate nohighlight">\(L\)</span> on the treatment <span class="math notranslate nohighlight">\(A\)</span></p></li>
 <li><p>When doing standardization and IP weighting, stratefication is used as a technique to estimate the average/weighted outcome in each of the treatment arms to construct the final estimate of the treatment effect</p>
@@ -1419,7 +871,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </section>
 </section>
 <section id="chapter-5-interaction">
-<h2>Chapter 5 Interaction<a class="headerlink" href="#chapter-5-interaction" title="Permalink to this headline">#</a></h2>
+<h2>Chapter 5 Interaction<a class="headerlink" href="#chapter-5-interaction" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Key ideas/points in this chapter</p>
 <ul>
@@ -1431,7 +883,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </li>
 </ul>
 <section id="interaction-requires-a-joint-intervention">
-<h3>5.1 Interaction requires a joint intervention<a class="headerlink" href="#interaction-requires-a-joint-intervention" title="Permalink to this headline">#</a></h3>
+<h3>5.1 Interaction requires a joint intervention<a class="headerlink" href="#interaction-requires-a-joint-intervention" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><em>Joint interventions</em>: interventions on two or more treatments</p></li>
 <li><p>Definition of interaction:</p>
@@ -1449,7 +901,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </section>
 <section id="identifying-interaction">
-<h3>5.2 Identifying interaction<a class="headerlink" href="#identifying-interaction" title="Permalink to this headline">#</a></h3>
+<h3>5.2 Identifying interaction<a class="headerlink" href="#identifying-interaction" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Identifying interaction requires exchangeability, positivity, and consistency for both treatments.</p>
 <ul class="simple">
@@ -1480,7 +932,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </section>
 <section id="counterfactual-response-types-and-interaction">
-<h3>5.3 Counterfactual response types and interaction<a class="headerlink" href="#counterfactual-response-types-and-interaction" title="Permalink to this headline">#</a></h3>
+<h3>5.3 Counterfactual response types and interaction<a class="headerlink" href="#counterfactual-response-types-and-interaction" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Each combination of counterfactual responses is often referred to as are sponse pattern or a <em>response type</em>.</p>
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/Nvo64V_2022_07_27.png" width='40%'>
@@ -1503,7 +955,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </section>
 <section id="sufficient-causes-5-5-sufficient-causes-interaction-5-6">
-<h3>5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6<a class="headerlink" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6" title="Permalink to this headline">#</a></h3>
+<h3>5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6<a class="headerlink" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>We refer to the smallest set of background factors that, together with <span class="math notranslate nohighlight">\(A =1\)</span> are sufficient to inevitably produce the outcome as <span class="math notranslate nohighlight">\(U_1\)</span>. The simultaneous presence of treatment <span class="math notranslate nohighlight">\((A=1)\)</span> and <span class="math notranslate nohighlight">\(U_1=1\)</span> is a minimal <em>sufficient cause</em> of the outcome <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 <ul class="simple">
@@ -1565,7 +1017,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </section>
 </section>
 <section id="chapter-6-graphical-representation-of-causal-effects">
-<h2>Chapter 6 Graphical representation of causal effects<a class="headerlink" href="#chapter-6-graphical-representation-of-causal-effects" title="Permalink to this headline">#</a></h2>
+<h2>Chapter 6 Graphical representation of causal effects<a class="headerlink" href="#chapter-6-graphical-representation-of-causal-effects" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Key ideas/points in this chapter</p>
 <ul>
@@ -1579,7 +1031,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </li>
 </ul>
 <section id="causal-diagrams">
-<h3>6.1 Causal diagrams<a class="headerlink" href="#causal-diagrams" title="Permalink to this headline">#</a></h3>
+<h3>6.1 Causal diagrams<a class="headerlink" href="#causal-diagrams" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Causal diagrams like the one below are known as directed acyclic graphs, which is commonly abbreviated as DAGs.</p>
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/tpZKOa_2022_08_08.png" width="40%">
@@ -1587,7 +1039,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 <li><p>The presence of an arrow pointing from a particular variable <span class="math notranslate nohighlight">\(V\)</span> to another variable <span class="math notranslate nohighlight">\(W\)</span> indicates that we know there is a direct causal effect (i.e., an effect not mediated through any other variables on the graph) for at least one individual.</p></li>
 <li><p>In DAG, the variable <span class="math notranslate nohighlight">\(V_m\)</span> is a descendant of <span class="math notranslate nohighlight">\(V_j\)</span> (and <span class="math notranslate nohighlight">\(V_j\)</span> is an ancestor of <span class="math notranslate nohighlight">\(V_m\)</span>) if there is a sequence of nodes connected by edges between <span class="math notranslate nohighlight">\(V_j\)</span> and <span class="math notranslate nohighlight">\(V_m\)</span> such that, following the direction indicated by the arrows, one can reach <span class="math notranslate nohighlight">\(V_m\)</span> by starting at <span class="math notranslate nohighlight">\(V_j\)</span>.</p></li>
 <li><p>A <strong>causal DAG</strong> is a DAG in which</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>the lack of an arrow from node <span class="math notranslate nohighlight">\(V_j\)</span> to <span class="math notranslate nohighlight">\(V_m\)</span> (i.e., <span class="math notranslate nohighlight">\(V_j\)</span> is not a parent of <span class="math notranslate nohighlight">\(V_m\)</span>)can be interpreted as the absence of a direct causal effect of <span class="math notranslate nohighlight">\(V_j\)</span> on <span class="math notranslate nohighlight">\(V_m\)</span> relative to the other variables on the graph,</p></li>
 <li><p>all common causes, even if unmeasured, of any pair of variables on the graph are themselves on the graph, and</p></li>
 <li><p>any variable is a cause of its descendants.</p></li>
@@ -1608,7 +1060,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </section>
 <section id="causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency">
-<h3>6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency<a class="headerlink" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency" title="Permalink to this headline">#</a></h3>
+<h3>6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency<a class="headerlink" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Two variables are (marginally) associated if one causes the other, or if they share common causes. Otherwise they will be <strong>(marginally) independent</strong> (<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(L\)</span> in Figure 6.4 below).</p>
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/GL4w71_2022_08_08.png" width = "40%">
@@ -1657,7 +1109,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </li>
 <li><p>Standardization and IP weighting can also be derived using causal graphs theory, as part of what is sometimes referred to as the <strong>do-calculus</strong>.</p></li>
 <li><p>“D-seperation”: to define a path to be either blocked or open</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>If there are no variables being conditioned on, a path is blocked if and only if two arrowheads on the path collide at some variable on the path.</p></li>
 <li><p>Any path that contains a non-collider that has been conditioned on is blocked.</p></li>
 <li><p>A collider that has been conditioned on does not block a path.</p></li>
@@ -1704,7 +1156,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </section>
 <section id="a-structural-classification-of-bias">
-<h3>6.5 A structural classification of bias<a class="headerlink" href="#a-structural-classification-of-bias" title="Permalink to this headline">#</a></h3>
+<h3>6.5 A structural classification of bias<a class="headerlink" href="#a-structural-classification-of-bias" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>We say that there is <em>systematic bias</em> when the data are insufficient to identify–compute–the causal effect even with an infinite sample size.</p>
 <ul>
@@ -1726,7 +1178,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </section>
 <section id="the-structure-of-effect-modification">
-<h3>6.6 The structure of effect modification<a class="headerlink" href="#the-structure-of-effect-modification" title="Permalink to this headline">#</a></h3>
+<h3>6.6 The structure of effect modification<a class="headerlink" href="#the-structure-of-effect-modification" title="Permalink to this heading">#</a></h3>
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/mj56N4_2022_08_09.png" width="40%">
 <ul>
 <li><p>The causal diagram in Figure 6.11 includes the effect modifier <span class="math notranslate nohighlight">\(V\)</span> with an arrow into the outcome <span class="math notranslate nohighlight">\(Y\)</span> but no arrow into treatment <span class="math notranslate nohighlight">\(A\)</span> (which is randomly assigned and thus independent of <span class="math notranslate nohighlight">\(V\)</span>).</p>
@@ -1756,7 +1208,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </section>
 </section>
 <section id="chapter-7-confounding">
-<h2>Chapter 7 Confounding<a class="headerlink" href="#chapter-7-confounding" title="Permalink to this headline">#</a></h2>
+<h2>Chapter 7 Confounding<a class="headerlink" href="#chapter-7-confounding" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Key ideas/points in this chapter</p>
 <ul>
@@ -1773,7 +1225,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </li>
 </ul>
 <section id="confounding-and-confounders-7-1-7-4">
-<h3>Confounding and confounders (7.1 &amp; 7.4)<a class="headerlink" href="#confounding-and-confounders-7-1-7-4" title="Permalink to this headline">#</a></h3>
+<h3>Confounding and confounders (7.1 &amp; 7.4)<a class="headerlink" href="#confounding-and-confounders-7-1-7-4" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Confounding (7.1)</p>
 <ul>
@@ -1813,7 +1265,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 <img src="https://cdn.jsdelivr.net/gh/askming/upic@master/uPic/wTAfwk_2022_08_31.png" width="40%">
 </li>
 <li><p>Fixing the traditional definition of confounder:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Replace condition (3) by the condition that “there exist variables <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(U\)</span> such that there is conditional exchangeability within their joint levels <span class="math notranslate nohighlight">\(Y^a \perp\!\!\!\perp A|L, U\)</span>.</p></li>
 <li><p>Replace conditions (1) and (2) by the following condition: <span class="math notranslate nohighlight">\(U\)</span> can be decomposed into two disjoint subsets <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(U_2\)</span> (i.e., <span class="math notranslate nohighlight">\(U=U_1\cup U_2\)</span> and <span class="math notranslate nohighlight">\(U=U_1\cap U_2\)</span> is empty) such that (i) <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(A\)</span> are not associated within strata of <span class="math notranslate nohighlight">\(L\)</span>, and (ii) <span class="math notranslate nohighlight">\(U_2\)</span> and <span class="math notranslate nohighlight">\(A\)</span> are not associated within joint strata of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(L\)</span>, and <span class="math notranslate nohighlight">\(U_1\)</span>.The variables in <span class="math notranslate nohighlight">\(U_1\)</span> may be associated with the variables in <span class="math notranslate nohighlight">\(U_2\)</span>. <span class="math notranslate nohighlight">\(U_1\)</span> can always be chosen to be the largest subset of <span class="math notranslate nohighlight">\(U\)</span> that is unassociated with treatment.</p></li>
 </ol>
@@ -1839,7 +1291,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </section>
 <section id="the-structure-type-of-confounding-7-1">
-<h3>The structure (type) of confounding (7.1)<a class="headerlink" href="#the-structure-type-of-confounding-7-1" title="Permalink to this headline">#</a></h3>
+<h3>The structure (type) of confounding (7.1)<a class="headerlink" href="#the-structure-type-of-confounding-7-1" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Healthy worker bias: <em>e.g. the effect of working as a firefighter on the risk of death will be confounded if “being physically fit” is a cause of both being an active firefighter and having a lower mortality rate.</em></p>
 <aside class="margin sidebar">
@@ -1853,7 +1305,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
 </ul>
 </section>
 <section id="confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6">
-<h3>Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)<a class="headerlink" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6" title="Permalink to this headline">#</a></h3>
+<h3>Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)<a class="headerlink" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>The presence of common causes of treatment and outcome causes confounding because it creates an open backdoor path</p></li>
 <li><p>A open backdoor path can be block by conditioning on a variable on the path</p></li>
@@ -1892,15 +1344,15 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
   \]</div>
 </section>
 <section id="single-world-intervention-graphs-7-5">
-<h3>Single-world intervention graphs (7.5)<a class="headerlink" href="#single-world-intervention-graphs-7-5" title="Permalink to this headline">#</a></h3>
+<h3>Single-world intervention graphs (7.5)<a class="headerlink" href="#single-world-intervention-graphs-7-5" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="confounding-adjustment-7-6">
-<h3>Confounding adjustment (7.6)<a class="headerlink" href="#confounding-adjustment-7-6" title="Permalink to this headline">#</a></h3>
+<h3>Confounding adjustment (7.6)<a class="headerlink" href="#confounding-adjustment-7-6" title="Permalink to this heading">#</a></h3>
 <hr>
 </section>
 </section>
 <section id="chapter-8-selection-bias">
-<h2>Chapter 8 Selection bias<a class="headerlink" href="#chapter-8-selection-bias" title="Permalink to this headline">#</a></h2>
+<h2>Chapter 8 Selection bias<a class="headerlink" href="#chapter-8-selection-bias" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Source/structure (type of) selection bias</p></li>
 <li><p>Selection bias vs confounding and censoring</p></li>
@@ -1922,7 +1374,7 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Stats"
         },
         predefinedOutput: true
@@ -1936,50 +1388,140 @@ Pr(Y^{a=1} =1|A=1) - Pr(Y^{a=0} = 1 | A=1)
         window.onload = init;
     </script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">[book] Analysis of Observational Health Care Data Using SAS</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Book-Analysis%20of%20Observational%20Health%20Care%20Data%20Using%20SAS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">[book] Analysis of Observational Health Care Data Using SAS</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Book-Causal_inference_in_statistics_a_primer.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Book-Causal_inference_in_statistics_a_primer.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">[book] Causal inference in statistics <em>a primer</em></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-randomized-experiments">Chapter 2 Randomized Experiments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#randomization">2.1 Randomization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-randomization">2.2 Conditional randomization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardization">2.3 Standardization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-probability-weighting-ipw">2.4 Inverse probability weighting (IPW)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-4-effect-modification">Chapter 4 Effect Modification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definitionof-effect-modification-what-and-why-effect-modification">4.1 &amp; 4.3 Definitionof effect modification (what) and why effect modification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-quantify-effect-modification">4.2, 4.4, &amp; 4.5 How to quantify effect modification</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stratification">Stratification</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjustment-via-stratification">Adjustment via stratification</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjustment-via-matching">Adjustment via matching</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-and-tech-points-4-1-causal-effect-in-the-treated-untreated">Fine and Tech Points 4.1 Causal effect in the treated/untreated</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.6 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-5-interaction">Chapter 5 Interaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-requires-a-joint-intervention">5.1 Interaction requires a joint intervention</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-interaction">5.2 Identifying interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-response-types-and-interaction">5.3 Counterfactual response types and interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sufficient-causes-5-5-sufficient-causes-interaction-5-6">5.4 Sufficient causes &amp; 5.5 Sufficient causes interaction &amp; 5.6</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-6-graphical-representation-of-causal-effects">Chapter 6 Graphical representation of causal effects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-diagrams">6.1 Causal diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-diagrams-and-marginal-independence-conditional-independence-positivity-and-consistency">6.2-6.4 Causal diagrams and marginal independence, conditional independence, positivity and consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structural-classification-of-bias">6.5 A structural classification of bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-effect-modification">6.6 The structure of effect modification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-7-confounding">Chapter 7 Confounding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confounding-and-confounders-7-1-7-4">Confounding and confounders (7.1 &amp; 7.4)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-type-of-confounding-7-1">The structure (type) of confounding (7.1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confounding-and-exchangeability-7-2-backdoor-criterion-7-3-front-door-criterion-7-6">Confounding and exchangeability (7.2), Backdoor criterion (7.3) &amp; front door criterion (7.6)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-world-intervention-graphs-7-5">Single-world intervention graphs (7.5)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confounding-adjustment-7-6">Confounding adjustment (7.6)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-8-selection-bias">Chapter 8 Selection bias</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By Ming Yang<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+By Ming Yang
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
