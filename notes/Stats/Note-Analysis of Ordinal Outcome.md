@@ -62,12 +62,15 @@
 - When analyzing ordinal data where PO is not met, the Wilcoxon test may still work OK but it will not be optimal.
 
 - One way to generate a non-parametric version of OR (called Wilcoxon Mann Whitney Generalized OR [WMW GenOR]) is introduced in {cite:p}`agresti1980generalized` and later discussed in {cite:p}`churilov2014improved`. {cite:p}`o2006exploiting` offered a way to eliminate ties and apply Agresti’s formula directly.
+  - Note: this statistic isn't really an "odds ratio", rather it's an odds per its mathematic definition
 
 - WMW GenOR test statistic is defined as 
 
   ![输入图片描述](https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202020-06-23%20at%204.28.54%20PM_20200624073044.png)
 
   $$\hat{\alpha} = \sum_{j>i} p_{1i}p_{2j}/\sum_{j<i}p_{1i}p_{2j}$$
+
+  where $p_{1i} = N_{1i}/\sum_i N_{1i}$ and $p_{2i} = N_{2i}/\sum_i N_{2i}$
 
   which follows normal distribution with mean $\alpha = Pr(Y_2 > Y_1)/Pr(Y_1 > Y_2)$ and variance 
   
