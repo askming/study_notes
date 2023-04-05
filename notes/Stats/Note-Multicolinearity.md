@@ -1,4 +1,4 @@
-# Multicolinearity
+# Multicollinearity
 
 ![Multicolinearity](https://raw.githubusercontent.com/askming/picgo/master/Multicolinearity.png)
 
