@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Note-Missing%20data.html">Missing data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Model%20comparison%20methods.html">Model comparison methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Monte%20Carlo%20method.html">Monte Carlo Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Note-Multicolinearity.html">Multicolinearity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Multicolinearity.html">Multicollinearity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">Multiplicity in Clinical Trials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Non-inferiority%20equivalence%20superiority%20test.html">Non-inferiority/equivalence/superiority test basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Observational%20study%20design.html">Observational study design</a></li>
@@ -563,11 +563,16 @@ document.write(`
 <h3>3. Method for PO is not met (?)<a class="headerlink" href="#method-for-po-is-not-met" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>When analyzing ordinal data where PO is not met, the Wilcoxon test may still work OK but it will not be optimal.</p></li>
-<li><p>One way to generate a non-parametric version of OR (called Wilcoxon Mann Whitney Generalized OR [WMW GenOR]) is introduced in <span id="id5">[<a class="reference internal" href="#id38" title="Alan Agresti. Generalized odds ratios for ordinal data. Biometrics, pages 59–67, 1980.">Agresti, 1980</a>]</span> and later discussed in <span id="id6">[<a class="reference internal" href="#id40" title="Leonid Churilov, Sarah Arnup, Hayden Johns, Tiffany Leung, Stuart Roberts, Bruce CV Campbell, Stephen M Davis, and Geoffrey A Donnan. An improved method for simple, assumption-free ordinal analysis of the modified rankin scale using generalized odds ratios. International Journal of Stroke, 9(8):999–1005, 2014.">Churilov <em>et al.</em>, 2014</a>]</span>. <span id="id7">[<a class="reference internal" href="#id39" title="Ralph G O’Brien and John Castelloe. Exploiting the link between the wilcoxon-mann-whitney test and a simple odds statistic. In Proceedings of the Thirty-first Annual SAS Users Group International Conference, 209–31. Citeseer, 2006.">O’Brien and Castelloe, 2006</a>]</span> offered a way to eliminate ties and apply Agresti’s formula directly.</p></li>
+<li><p>One way to generate a non-parametric version of OR (called Wilcoxon Mann Whitney Generalized OR [WMW GenOR]) is introduced in <span id="id5">[<a class="reference internal" href="#id38" title="Alan Agresti. Generalized odds ratios for ordinal data. Biometrics, pages 59–67, 1980.">Agresti, 1980</a>]</span> and later discussed in <span id="id6">[<a class="reference internal" href="#id40" title="Leonid Churilov, Sarah Arnup, Hayden Johns, Tiffany Leung, Stuart Roberts, Bruce CV Campbell, Stephen M Davis, and Geoffrey A Donnan. An improved method for simple, assumption-free ordinal analysis of the modified rankin scale using generalized odds ratios. International Journal of Stroke, 9(8):999–1005, 2014.">Churilov <em>et al.</em>, 2014</a>]</span>. <span id="id7">[<a class="reference internal" href="#id39" title="Ralph G O’Brien and John Castelloe. Exploiting the link between the wilcoxon-mann-whitney test and a simple odds statistic. In Proceedings of the Thirty-first Annual SAS Users Group International Conference, 209–31. Citeseer, 2006.">O’Brien and Castelloe, 2006</a>]</span> offered a way to eliminate ties and apply Agresti’s formula directly.</p>
+<ul class="simple">
+<li><p>Note: this statistic isn’t really an “odds ratio”, rather it’s an odds per its mathematic definition</p></li>
+</ul>
+</li>
 <li><p>WMW GenOR test statistic is defined as</p>
 <p><img alt="输入图片描述" src="https://raw.githubusercontent.com/askming/picgo/master/Screen%20Shot%202020-06-23%20at%204.28.54%20PM_20200624073044.png" /></p>
 <div class="math notranslate nohighlight">
 \[\hat{\alpha} = \sum_{j&gt;i} p_{1i}p_{2j}/\sum_{j&lt;i}p_{1i}p_{2j}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_{1i} = N_{1i}/\sum_i N_{1i}\)</span> and <span class="math notranslate nohighlight">\(p_{2i} = N_{2i}/\sum_i N_{2i}\)</span></p>
 <p>which follows normal distribution with mean <span class="math notranslate nohighlight">\(\alpha = Pr(Y_2 &gt; Y_1)/Pr(Y_1 &gt; Y_2)\)</span> and variance</p>
 <div class="math notranslate nohighlight">
 \[\hat{\sigma}^2 = \left\{\frac{1}{N_1}\sum_{j}p_{ij}\left(\hat{\alpha}\sum_{i&lt;j}p_{2i} - \sum_{i&gt;j}p_{2i}\right)^2 + \frac{1}{N_2}\left(\hat{\alpha}\sum_{i&gt;j}p_{1i} - \sum_{i&lt;j}p_{2i}\right)^2\right\} \Bigg/ \left(\sum_{i&gt;j}p_{1i}p_{2j}\right)^2\]</div>
@@ -718,7 +723,10 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Note-Adaptive%20Trial%20Design.html"
@@ -738,7 +746,10 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -785,7 +796,7 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -815,7 +826,7 @@ By Ming Yang
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -824,8 +835,8 @@ By Ming Yang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

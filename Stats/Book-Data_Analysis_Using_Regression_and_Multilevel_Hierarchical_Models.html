@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Note-Missing%20data.html">Missing data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Model%20comparison%20methods.html">Model comparison methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Monte%20Carlo%20method.html">Monte Carlo Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Note-Multicolinearity.html">Multicolinearity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Note-Multicolinearity.html">Multicollinearity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Multiplicity%20in%20Clinical%20Trials.html">Multiplicity in Clinical Trials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Non-inferiority%20equivalence%20superiority%20test.html">Non-inferiority/equivalence/superiority test basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Note-Observational%20study%20design.html">Observational study design</a></li>
@@ -546,8 +546,8 @@ document.write(`
 \[y_i = \beta_0^* + \beta_1^*T_i + \epsilon_i^*\]</div>
 <ul>
 <li><p>Then if we assume <span class="math notranslate nohighlight">\(x_i = \gamma_0 + \gamma_1T_i + v_i\)</span>, the second model is equivalent to replacing <span class="math notranslate nohighlight">\(x_i\)</span> in the first model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee833c2f-ceed-4609-ba73-2f7c8cb174b1">
-<span class="eqno">(7)<a class="headerlink" href="#equation-ee833c2f-ceed-4609-ba73-2f7c8cb174b1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a3a8474f-13ba-42c1-904d-b7291dfb91ef">
+<span class="eqno">(7)<a class="headerlink" href="#equation-a3a8474f-13ba-42c1-904d-b7291dfb91ef" title="Permalink to this equation">#</a></span>\[\begin{align}
       y_i &amp;= \beta_0 + \beta_1T_i +  \beta_2( \gamma_0 + \gamma_1T_i)+ \epsilon_i\\
       &amp; = \beta_0 +\beta_2\gamma_0 + (\beta_1 + \beta_2\gamma_1)T_i  + \epsilon_i + \beta_2v_i
       \end{align}\]</div>
@@ -900,8 +900,8 @@ of receiving the supplemental version of the treatment.</p></li>
 <h3>10.6 Instrumental variables in a regression framework<a class="headerlink" href="#instrumental-variables-in-a-regression-framework" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Model setting</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b208b00-9397-41bf-a336-a4ab6dc05156">
-<span class="eqno">(8)<a class="headerlink" href="#equation-0b208b00-9397-41bf-a336-a4ab6dc05156" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-913fd2fc-07c6-440c-82e3-76fb913b9faa">
+<span class="eqno">(8)<a class="headerlink" href="#equation-913fd2fc-07c6-440c-82e3-76fb913b9faa" title="Permalink to this equation">#</a></span>\[\begin{align}
   y_i &amp; = \beta_0 + \beta_1 T_i + \epsilon_i\\
   T_i &amp; = \gamma_0 + \gamma_1 z_i + v_i
   \end{align}\]</div>
@@ -912,8 +912,8 @@ of receiving the supplemental version of the treatment.</p></li>
 </ul>
 </li>
 <li><p>Without the assumption of exclusion restriction of instrument variable, true treatment effect is not identifiable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b07e8fd-c38a-41e2-a762-65cd7b73294c">
-<span class="eqno">(9)<a class="headerlink" href="#equation-0b07e8fd-c38a-41e2-a762-65cd7b73294c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e04f6e26-5583-45b2-a31f-d5b5c9c31a85">
+<span class="eqno">(9)<a class="headerlink" href="#equation-e04f6e26-5583-45b2-a31f-d5b5c9c31a85" title="Permalink to this equation">#</a></span>\[\begin{align}
     y &amp; = \beta_0 + \beta_1 T + \beta_2 z + error\\
     T&amp; = \gamma_0 + \gamma_1 z + error
     \end{align}\]</div>
@@ -1409,7 +1409,10 @@ this strategy can be <em>anticonservative</em>.</p></li>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Book-Causal_inference_in_statistics_a_primer.html"
@@ -1429,7 +1432,10 @@ this strategy can be <em>anticonservative</em>.</p></li>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1517,7 +1523,7 @@ this strategy can be <em>anticonservative</em>.</p></li>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1547,7 +1553,7 @@ By Ming Yang
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1556,8 +1562,8 @@ By Ming Yang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
