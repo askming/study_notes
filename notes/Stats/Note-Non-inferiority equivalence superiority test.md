@@ -49,6 +49,7 @@
 - If the equivalence margin is set to zero, $δ=0$, then the problem simplifies to a traditional one-sided superiority test.
 	
 - The simplest and most widely used approach to test equivalence is the **two one-sided test (TOST)** procedure.  Using TOST, **equivalence is established** at the $α$ significance level if a $(1–2α) × 100\%$ confidence interval for the difference in efficacies (new – current) is contained within the interval $(-δ, δ)$
+  - The reason the confidence interval is $(1–2α) × 100\%$ and not the usual $(1- α) × 100\%$ is because this method is tantamount to performing two one-sided tests. Thus, using a 90% confidence interval yields a 0.05 significance level for testing equivalence.
 
 - **Noninferiority** is established, at the α significance level, if the lower limit of a $(1–2α) × 100\%$ confidence interval for the difference (new – current) is above $-δ$ (when higher is better) (Fig. 1)
   
